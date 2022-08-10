@@ -36,6 +36,15 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsConfiguration")
+        private DnsConfiguration dnsConfiguration;
+
+        public Builder dnsConfiguration(DnsConfiguration dnsConfiguration) {
+            this.dnsConfiguration = dnsConfiguration;
+            this.__explicitlySet__.add("dnsConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
         private NetworkConfiguration networkConfiguration;
 
@@ -49,20 +58,29 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScriptedRestMonitorConfiguration build() {
-            ScriptedRestMonitorConfiguration __instance__ =
-                    new ScriptedRestMonitorConfiguration(isFailureRetried, networkConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ScriptedRestMonitorConfiguration model =
+                    new ScriptedRestMonitorConfiguration(
+                            this.isFailureRetried,
+                            this.dnsConfiguration,
+                            this.networkConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScriptedRestMonitorConfiguration o) {
-            Builder copiedBuilder =
-                    isFailureRetried(o.getIsFailureRetried())
-                            .networkConfiguration(o.getNetworkConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScriptedRestMonitorConfiguration model) {
+            if (model.wasPropertyExplicitlySet("isFailureRetried")) {
+                this.isFailureRetried(model.getIsFailureRetried());
+            }
+            if (model.wasPropertyExplicitlySet("dnsConfiguration")) {
+                this.dnsConfiguration(model.getDnsConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfiguration")) {
+                this.networkConfiguration(model.getNetworkConfiguration());
+            }
+            return this;
         }
     }
 
@@ -79,8 +97,10 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
 
     @Deprecated
     public ScriptedRestMonitorConfiguration(
-            Boolean isFailureRetried, NetworkConfiguration networkConfiguration) {
-        super(isFailureRetried);
+            Boolean isFailureRetried,
+            DnsConfiguration dnsConfiguration,
+            NetworkConfiguration networkConfiguration) {
+        super(isFailureRetried, dnsConfiguration);
         this.networkConfiguration = networkConfiguration;
     }
 
@@ -106,7 +126,6 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
         sb.append("ScriptedRestMonitorConfiguration(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,8 +141,7 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
 
         ScriptedRestMonitorConfiguration other = (ScriptedRestMonitorConfiguration) o;
         return java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -135,16 +153,6 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
                         + (this.networkConfiguration == null
                                 ? 43
                                 : this.networkConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

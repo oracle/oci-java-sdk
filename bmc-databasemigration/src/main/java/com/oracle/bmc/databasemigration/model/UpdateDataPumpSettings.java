@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateDataPumpSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDataPumpSettings {
+public final class UpdateDataPumpSettings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jobMode",
@@ -131,30 +132,41 @@ public final class UpdateDataPumpSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDataPumpSettings build() {
-            UpdateDataPumpSettings __instance__ =
+            UpdateDataPumpSettings model =
                     new UpdateDataPumpSettings(
-                            jobMode,
-                            dataPumpParameters,
-                            metadataRemaps,
-                            tablespaceDetails,
-                            exportDirectoryObject,
-                            importDirectoryObject);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.jobMode,
+                            this.dataPumpParameters,
+                            this.metadataRemaps,
+                            this.tablespaceDetails,
+                            this.exportDirectoryObject,
+                            this.importDirectoryObject);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDataPumpSettings o) {
-            Builder copiedBuilder =
-                    jobMode(o.getJobMode())
-                            .dataPumpParameters(o.getDataPumpParameters())
-                            .metadataRemaps(o.getMetadataRemaps())
-                            .tablespaceDetails(o.getTablespaceDetails())
-                            .exportDirectoryObject(o.getExportDirectoryObject())
-                            .importDirectoryObject(o.getImportDirectoryObject());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDataPumpSettings model) {
+            if (model.wasPropertyExplicitlySet("jobMode")) {
+                this.jobMode(model.getJobMode());
+            }
+            if (model.wasPropertyExplicitlySet("dataPumpParameters")) {
+                this.dataPumpParameters(model.getDataPumpParameters());
+            }
+            if (model.wasPropertyExplicitlySet("metadataRemaps")) {
+                this.metadataRemaps(model.getMetadataRemaps());
+            }
+            if (model.wasPropertyExplicitlySet("tablespaceDetails")) {
+                this.tablespaceDetails(model.getTablespaceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exportDirectoryObject")) {
+                this.exportDirectoryObject(model.getExportDirectoryObject());
+            }
+            if (model.wasPropertyExplicitlySet("importDirectoryObject")) {
+                this.importDirectoryObject(model.getImportDirectoryObject());
+            }
+            return this;
         }
     }
 
@@ -248,13 +260,13 @@ public final class UpdateDataPumpSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDataPumpSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("jobMode=").append(String.valueOf(this.jobMode));
         sb.append(", dataPumpParameters=").append(String.valueOf(this.dataPumpParameters));
         sb.append(", metadataRemaps=").append(String.valueOf(this.metadataRemaps));
         sb.append(", tablespaceDetails=").append(String.valueOf(this.tablespaceDetails));
         sb.append(", exportDirectoryObject=").append(String.valueOf(this.exportDirectoryObject));
         sb.append(", importDirectoryObject=").append(String.valueOf(this.importDirectoryObject));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +287,7 @@ public final class UpdateDataPumpSettings {
                 && java.util.Objects.equals(this.tablespaceDetails, other.tablespaceDetails)
                 && java.util.Objects.equals(this.exportDirectoryObject, other.exportDirectoryObject)
                 && java.util.Objects.equals(this.importDirectoryObject, other.importDirectoryObject)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -304,16 +316,7 @@ public final class UpdateDataPumpSettings {
                         + (this.importDirectoryObject == null
                                 ? 43
                                 : this.importDirectoryObject.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

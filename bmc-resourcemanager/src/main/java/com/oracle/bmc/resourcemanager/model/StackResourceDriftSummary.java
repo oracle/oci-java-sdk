@@ -20,7 +20,8 @@ package com.oracle.bmc.resourcemanager.model;
     builder = StackResourceDriftSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StackResourceDriftSummary {
+public final class StackResourceDriftSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stackId",
@@ -238,36 +239,53 @@ public final class StackResourceDriftSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StackResourceDriftSummary build() {
-            StackResourceDriftSummary __instance__ =
+            StackResourceDriftSummary model =
                     new StackResourceDriftSummary(
-                            stackId,
-                            compartmentId,
-                            resourceName,
-                            resourceId,
-                            resourceType,
-                            resourceDriftStatus,
-                            actualProperties,
-                            expectedProperties,
-                            timeDriftChecked);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.stackId,
+                            this.compartmentId,
+                            this.resourceName,
+                            this.resourceId,
+                            this.resourceType,
+                            this.resourceDriftStatus,
+                            this.actualProperties,
+                            this.expectedProperties,
+                            this.timeDriftChecked);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StackResourceDriftSummary o) {
-            Builder copiedBuilder =
-                    stackId(o.getStackId())
-                            .compartmentId(o.getCompartmentId())
-                            .resourceName(o.getResourceName())
-                            .resourceId(o.getResourceId())
-                            .resourceType(o.getResourceType())
-                            .resourceDriftStatus(o.getResourceDriftStatus())
-                            .actualProperties(o.getActualProperties())
-                            .expectedProperties(o.getExpectedProperties())
-                            .timeDriftChecked(o.getTimeDriftChecked());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StackResourceDriftSummary model) {
+            if (model.wasPropertyExplicitlySet("stackId")) {
+                this.stackId(model.getStackId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceDriftStatus")) {
+                this.resourceDriftStatus(model.getResourceDriftStatus());
+            }
+            if (model.wasPropertyExplicitlySet("actualProperties")) {
+                this.actualProperties(model.getActualProperties());
+            }
+            if (model.wasPropertyExplicitlySet("expectedProperties")) {
+                this.expectedProperties(model.getExpectedProperties());
+            }
+            if (model.wasPropertyExplicitlySet("timeDriftChecked")) {
+                this.timeDriftChecked(model.getTimeDriftChecked());
+            }
+            return this;
         }
     }
 
@@ -505,6 +523,7 @@ public final class StackResourceDriftSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StackResourceDriftSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("stackId=").append(String.valueOf(this.stackId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
@@ -514,7 +533,6 @@ public final class StackResourceDriftSummary {
         sb.append(", actualProperties=").append(String.valueOf(this.actualProperties));
         sb.append(", expectedProperties=").append(String.valueOf(this.expectedProperties));
         sb.append(", timeDriftChecked=").append(String.valueOf(this.timeDriftChecked));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -538,7 +556,7 @@ public final class StackResourceDriftSummary {
                 && java.util.Objects.equals(this.actualProperties, other.actualProperties)
                 && java.util.Objects.equals(this.expectedProperties, other.expectedProperties)
                 && java.util.Objects.equals(this.timeDriftChecked, other.timeDriftChecked)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -568,16 +586,7 @@ public final class StackResourceDriftSummary {
         result =
                 (result * PRIME)
                         + (this.timeDriftChecked == null ? 43 : this.timeDriftChecked.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -36,7 +36,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TopologyEntityRelationship {
+public class TopologyEntityRelationship extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id1", "id2"})
     protected TopologyEntityRelationship(String id1, String id2) {
@@ -86,6 +86,7 @@ public class TopologyEntityRelationship {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TopologyEntityRelationship(");
+        sb.append("super=").append(super.toString());
         sb.append("id1=").append(String.valueOf(this.id1));
         sb.append(", id2=").append(String.valueOf(this.id2));
         sb.append(")");
@@ -103,7 +104,8 @@ public class TopologyEntityRelationship {
 
         TopologyEntityRelationship other = (TopologyEntityRelationship) o;
         return java.util.Objects.equals(this.id1, other.id1)
-                && java.util.Objects.equals(this.id2, other.id2);
+                && java.util.Objects.equals(this.id2, other.id2)
+                && super.equals(other);
     }
 
     @Override
@@ -112,6 +114,7 @@ public class TopologyEntityRelationship {
         int result = 1;
         result = (result * PRIME) + (this.id1 == null ? 43 : this.id1.hashCode());
         result = (result * PRIME) + (this.id2 == null ? 43 : this.id2.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

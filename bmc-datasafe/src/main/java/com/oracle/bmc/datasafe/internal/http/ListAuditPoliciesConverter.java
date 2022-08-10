@@ -188,8 +188,8 @@ public class ListAuditPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAuditPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditPolicyCollection(response.getItem());
 

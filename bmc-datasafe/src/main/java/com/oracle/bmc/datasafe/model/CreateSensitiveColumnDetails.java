@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = CreateSensitiveColumnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSensitiveColumnDetails {
+public final class CreateSensitiveColumnDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "appName",
@@ -306,42 +307,65 @@ public final class CreateSensitiveColumnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSensitiveColumnDetails build() {
-            CreateSensitiveColumnDetails __instance__ =
+            CreateSensitiveColumnDetails model =
                     new CreateSensitiveColumnDetails(
-                            appName,
-                            schemaName,
-                            objectName,
-                            columnName,
-                            objectType,
-                            dataType,
-                            status,
-                            sensitiveTypeId,
-                            parentColumnKeys,
-                            relationType,
-                            appDefinedChildColumnKeys,
-                            dbDefinedChildColumnKeys);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.appName,
+                            this.schemaName,
+                            this.objectName,
+                            this.columnName,
+                            this.objectType,
+                            this.dataType,
+                            this.status,
+                            this.sensitiveTypeId,
+                            this.parentColumnKeys,
+                            this.relationType,
+                            this.appDefinedChildColumnKeys,
+                            this.dbDefinedChildColumnKeys);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSensitiveColumnDetails o) {
-            Builder copiedBuilder =
-                    appName(o.getAppName())
-                            .schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .columnName(o.getColumnName())
-                            .objectType(o.getObjectType())
-                            .dataType(o.getDataType())
-                            .status(o.getStatus())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .parentColumnKeys(o.getParentColumnKeys())
-                            .relationType(o.getRelationType())
-                            .appDefinedChildColumnKeys(o.getAppDefinedChildColumnKeys())
-                            .dbDefinedChildColumnKeys(o.getDbDefinedChildColumnKeys());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSensitiveColumnDetails model) {
+            if (model.wasPropertyExplicitlySet("appName")) {
+                this.appName(model.getAppName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("parentColumnKeys")) {
+                this.parentColumnKeys(model.getParentColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("relationType")) {
+                this.relationType(model.getRelationType());
+            }
+            if (model.wasPropertyExplicitlySet("appDefinedChildColumnKeys")) {
+                this.appDefinedChildColumnKeys(model.getAppDefinedChildColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("dbDefinedChildColumnKeys")) {
+                this.dbDefinedChildColumnKeys(model.getDbDefinedChildColumnKeys());
+            }
+            return this;
         }
     }
 
@@ -693,6 +717,7 @@ public final class CreateSensitiveColumnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSensitiveColumnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("appName=").append(String.valueOf(this.appName));
         sb.append(", schemaName=").append(String.valueOf(this.schemaName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
@@ -707,7 +732,6 @@ public final class CreateSensitiveColumnDetails {
                 .append(String.valueOf(this.appDefinedChildColumnKeys));
         sb.append(", dbDefinedChildColumnKeys=")
                 .append(String.valueOf(this.dbDefinedChildColumnKeys));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -736,7 +760,7 @@ public final class CreateSensitiveColumnDetails {
                         this.appDefinedChildColumnKeys, other.appDefinedChildColumnKeys)
                 && java.util.Objects.equals(
                         this.dbDefinedChildColumnKeys, other.dbDefinedChildColumnKeys)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -767,16 +791,7 @@ public final class CreateSensitiveColumnDetails {
                         + (this.dbDefinedChildColumnKeys == null
                                 ? 43
                                 : this.dbDefinedChildColumnKeys.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

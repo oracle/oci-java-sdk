@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateTargetDetectorRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTargetDetectorRuleDetails {
+public final class UpdateTargetDetectorRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"conditionGroups"})
     public UpdateTargetDetectorRuleDetails(java.util.List<ConditionGroup> conditionGroups) {
@@ -50,18 +51,20 @@ public final class UpdateTargetDetectorRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTargetDetectorRuleDetails build() {
-            UpdateTargetDetectorRuleDetails __instance__ =
-                    new UpdateTargetDetectorRuleDetails(conditionGroups);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateTargetDetectorRuleDetails model =
+                    new UpdateTargetDetectorRuleDetails(this.conditionGroups);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTargetDetectorRuleDetails o) {
-            Builder copiedBuilder = conditionGroups(o.getConditionGroups());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTargetDetectorRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("conditionGroups")) {
+                this.conditionGroups(model.getConditionGroups());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class UpdateTargetDetectorRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTargetDetectorRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("conditionGroups=").append(String.valueOf(this.conditionGroups));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class UpdateTargetDetectorRuleDetails {
 
         UpdateTargetDetectorRuleDetails other = (UpdateTargetDetectorRuleDetails) o;
         return java.util.Objects.equals(this.conditionGroups, other.conditionGroups)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -130,16 +133,7 @@ public final class UpdateTargetDetectorRuleDetails {
         result =
                 (result * PRIME)
                         + (this.conditionGroups == null ? 43 : this.conditionGroups.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

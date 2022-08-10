@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AwrDbSysstatSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDbSysstatSummary {
+public final class AwrDbSysstatSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -148,25 +148,41 @@ public final class AwrDbSysstatSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbSysstatSummary build() {
-            AwrDbSysstatSummary __instance__ =
+            AwrDbSysstatSummary model =
                     new AwrDbSysstatSummary(
-                            name, category, timeBegin, timeEnd, avgValue, currentValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.category,
+                            this.timeBegin,
+                            this.timeEnd,
+                            this.avgValue,
+                            this.currentValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbSysstatSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .category(o.getCategory())
-                            .timeBegin(o.getTimeBegin())
-                            .timeEnd(o.getTimeEnd())
-                            .avgValue(o.getAvgValue())
-                            .currentValue(o.getCurrentValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbSysstatSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("timeBegin")) {
+                this.timeBegin(model.getTimeBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("avgValue")) {
+                this.avgValue(model.getAvgValue());
+            }
+            if (model.wasPropertyExplicitlySet("currentValue")) {
+                this.currentValue(model.getCurrentValue());
+            }
+            return this;
         }
     }
 
@@ -278,13 +294,13 @@ public final class AwrDbSysstatSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDbSysstatSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", timeBegin=").append(String.valueOf(this.timeBegin));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", avgValue=").append(String.valueOf(this.avgValue));
         sb.append(", currentValue=").append(String.valueOf(this.currentValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -305,7 +321,7 @@ public final class AwrDbSysstatSummary {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.avgValue, other.avgValue)
                 && java.util.Objects.equals(this.currentValue, other.currentValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -318,16 +334,7 @@ public final class AwrDbSysstatSummary {
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.avgValue == null ? 43 : this.avgValue.hashCode());
         result = (result * PRIME) + (this.currentValue == null ? 43 : this.currentValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

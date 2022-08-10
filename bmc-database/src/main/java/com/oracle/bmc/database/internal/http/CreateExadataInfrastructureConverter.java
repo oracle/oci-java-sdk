@@ -113,8 +113,8 @@ public class CreateExadataInfrastructureConverter {
                                                 com.oracle.bmc.database.responses
                                                         .CreateExadataInfrastructureResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataInfrastructure(response.getItem());
 

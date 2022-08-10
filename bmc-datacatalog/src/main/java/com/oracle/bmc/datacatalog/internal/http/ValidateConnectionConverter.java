@@ -122,8 +122,8 @@ public class ValidateConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ValidateConnectionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.validateConnectionResult(response.getItem());
 

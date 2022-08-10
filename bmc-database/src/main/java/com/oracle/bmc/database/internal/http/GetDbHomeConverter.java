@@ -96,8 +96,8 @@ public class GetDbHomeConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses.GetDbHomeResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbHome(response.getItem());
 

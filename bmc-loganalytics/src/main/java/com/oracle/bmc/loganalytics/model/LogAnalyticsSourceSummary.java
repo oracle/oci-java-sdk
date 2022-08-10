@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourceSummary {
+public final class LogAnalyticsSourceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "labelConditions",
@@ -720,88 +721,157 @@ public final class LogAnalyticsSourceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourceSummary build() {
-            LogAnalyticsSourceSummary __instance__ =
+            LogAnalyticsSourceSummary model =
                     new LogAnalyticsSourceSummary(
-                            labelConditions,
-                            associationCount,
-                            associationEntity,
-                            dataFilterDefinitions,
-                            databaseCredential,
-                            extendedFieldDefinitions,
-                            isForCloud,
-                            labels,
-                            metricDefinitions,
-                            metrics,
-                            oobParsers,
-                            parameters,
-                            patternCount,
-                            patterns,
-                            description,
-                            displayName,
-                            editVersion,
-                            functions,
-                            sourceId,
-                            name,
-                            isSecureContent,
-                            isSystem,
-                            parsers,
-                            isAutoAssociationEnabled,
-                            isAutoAssociationOverride,
-                            ruleId,
-                            typeName,
-                            typeDisplayName,
-                            warningConfig,
-                            metadataFields,
-                            labelDefinitions,
-                            entityTypes,
-                            isTimezoneOverride,
-                            userParsers,
-                            timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.labelConditions,
+                            this.associationCount,
+                            this.associationEntity,
+                            this.dataFilterDefinitions,
+                            this.databaseCredential,
+                            this.extendedFieldDefinitions,
+                            this.isForCloud,
+                            this.labels,
+                            this.metricDefinitions,
+                            this.metrics,
+                            this.oobParsers,
+                            this.parameters,
+                            this.patternCount,
+                            this.patterns,
+                            this.description,
+                            this.displayName,
+                            this.editVersion,
+                            this.functions,
+                            this.sourceId,
+                            this.name,
+                            this.isSecureContent,
+                            this.isSystem,
+                            this.parsers,
+                            this.isAutoAssociationEnabled,
+                            this.isAutoAssociationOverride,
+                            this.ruleId,
+                            this.typeName,
+                            this.typeDisplayName,
+                            this.warningConfig,
+                            this.metadataFields,
+                            this.labelDefinitions,
+                            this.entityTypes,
+                            this.isTimezoneOverride,
+                            this.userParsers,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourceSummary o) {
-            Builder copiedBuilder =
-                    labelConditions(o.getLabelConditions())
-                            .associationCount(o.getAssociationCount())
-                            .associationEntity(o.getAssociationEntity())
-                            .dataFilterDefinitions(o.getDataFilterDefinitions())
-                            .databaseCredential(o.getDatabaseCredential())
-                            .extendedFieldDefinitions(o.getExtendedFieldDefinitions())
-                            .isForCloud(o.getIsForCloud())
-                            .labels(o.getLabels())
-                            .metricDefinitions(o.getMetricDefinitions())
-                            .metrics(o.getMetrics())
-                            .oobParsers(o.getOobParsers())
-                            .parameters(o.getParameters())
-                            .patternCount(o.getPatternCount())
-                            .patterns(o.getPatterns())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .editVersion(o.getEditVersion())
-                            .functions(o.getFunctions())
-                            .sourceId(o.getSourceId())
-                            .name(o.getName())
-                            .isSecureContent(o.getIsSecureContent())
-                            .isSystem(o.getIsSystem())
-                            .parsers(o.getParsers())
-                            .isAutoAssociationEnabled(o.getIsAutoAssociationEnabled())
-                            .isAutoAssociationOverride(o.getIsAutoAssociationOverride())
-                            .ruleId(o.getRuleId())
-                            .typeName(o.getTypeName())
-                            .typeDisplayName(o.getTypeDisplayName())
-                            .warningConfig(o.getWarningConfig())
-                            .metadataFields(o.getMetadataFields())
-                            .labelDefinitions(o.getLabelDefinitions())
-                            .entityTypes(o.getEntityTypes())
-                            .isTimezoneOverride(o.getIsTimezoneOverride())
-                            .userParsers(o.getUserParsers())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourceSummary model) {
+            if (model.wasPropertyExplicitlySet("labelConditions")) {
+                this.labelConditions(model.getLabelConditions());
+            }
+            if (model.wasPropertyExplicitlySet("associationCount")) {
+                this.associationCount(model.getAssociationCount());
+            }
+            if (model.wasPropertyExplicitlySet("associationEntity")) {
+                this.associationEntity(model.getAssociationEntity());
+            }
+            if (model.wasPropertyExplicitlySet("dataFilterDefinitions")) {
+                this.dataFilterDefinitions(model.getDataFilterDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
+            }
+            if (model.wasPropertyExplicitlySet("extendedFieldDefinitions")) {
+                this.extendedFieldDefinitions(model.getExtendedFieldDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("isForCloud")) {
+                this.isForCloud(model.getIsForCloud());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("metricDefinitions")) {
+                this.metricDefinitions(model.getMetricDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("metrics")) {
+                this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("oobParsers")) {
+                this.oobParsers(model.getOobParsers());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("patternCount")) {
+                this.patternCount(model.getPatternCount());
+            }
+            if (model.wasPropertyExplicitlySet("patterns")) {
+                this.patterns(model.getPatterns());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("functions")) {
+                this.functions(model.getFunctions());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isSecureContent")) {
+                this.isSecureContent(model.getIsSecureContent());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("parsers")) {
+                this.parsers(model.getParsers());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoAssociationEnabled")) {
+                this.isAutoAssociationEnabled(model.getIsAutoAssociationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoAssociationOverride")) {
+                this.isAutoAssociationOverride(model.getIsAutoAssociationOverride());
+            }
+            if (model.wasPropertyExplicitlySet("ruleId")) {
+                this.ruleId(model.getRuleId());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("typeDisplayName")) {
+                this.typeDisplayName(model.getTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("warningConfig")) {
+                this.warningConfig(model.getWarningConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadataFields")) {
+                this.metadataFields(model.getMetadataFields());
+            }
+            if (model.wasPropertyExplicitlySet("labelDefinitions")) {
+                this.labelDefinitions(model.getLabelDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypes")) {
+                this.entityTypes(model.getEntityTypes());
+            }
+            if (model.wasPropertyExplicitlySet("isTimezoneOverride")) {
+                this.isTimezoneOverride(model.getIsTimezoneOverride());
+            }
+            if (model.wasPropertyExplicitlySet("userParsers")) {
+                this.userParsers(model.getUserParsers());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -1334,6 +1404,7 @@ public final class LogAnalyticsSourceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("labelConditions=").append(String.valueOf(this.labelConditions));
         sb.append(", associationCount=").append(String.valueOf(this.associationCount));
         sb.append(", associationEntity=").append(String.valueOf(this.associationEntity));
@@ -1372,7 +1443,6 @@ public final class LogAnalyticsSourceSummary {
         sb.append(", isTimezoneOverride=").append(String.valueOf(this.isTimezoneOverride));
         sb.append(", userParsers=").append(String.valueOf(this.userParsers));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1425,7 +1495,7 @@ public final class LogAnalyticsSourceSummary {
                 && java.util.Objects.equals(this.isTimezoneOverride, other.isTimezoneOverride)
                 && java.util.Objects.equals(this.userParsers, other.userParsers)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1509,16 +1579,7 @@ public final class LogAnalyticsSourceSummary {
                                 : this.isTimezoneOverride.hashCode());
         result = (result * PRIME) + (this.userParsers == null ? 43 : this.userParsers.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

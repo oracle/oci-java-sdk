@@ -32,7 +32,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ImageSourceDetails {
+public class ImageSourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operatingSystem",
@@ -131,6 +131,7 @@ public class ImageSourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageSourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("operatingSystem=").append(String.valueOf(this.operatingSystem));
         sb.append(", operatingSystemVersion=").append(String.valueOf(this.operatingSystemVersion));
         sb.append(", sourceImageType=").append(String.valueOf(this.sourceImageType));
@@ -151,7 +152,8 @@ public class ImageSourceDetails {
         return java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
                 && java.util.Objects.equals(
                         this.operatingSystemVersion, other.operatingSystemVersion)
-                && java.util.Objects.equals(this.sourceImageType, other.sourceImageType);
+                && java.util.Objects.equals(this.sourceImageType, other.sourceImageType)
+                && super.equals(other);
     }
 
     @Override
@@ -169,6 +171,7 @@ public class ImageSourceDetails {
         result =
                 (result * PRIME)
                         + (this.sourceImageType == null ? 43 : this.sourceImageType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

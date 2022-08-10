@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = MetricBasedVerticalScaleDownConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricBasedVerticalScaleDownConfig {
+public final class MetricBasedVerticalScaleDownConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metric",
@@ -122,28 +123,37 @@ public final class MetricBasedVerticalScaleDownConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricBasedVerticalScaleDownConfig build() {
-            MetricBasedVerticalScaleDownConfig __instance__ =
+            MetricBasedVerticalScaleDownConfig model =
                     new MetricBasedVerticalScaleDownConfig(
-                            metric,
-                            minOcpusPerNode,
-                            minMemoryPerNode,
-                            ocpuStepSize,
-                            memoryStepSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.metric,
+                            this.minOcpusPerNode,
+                            this.minMemoryPerNode,
+                            this.ocpuStepSize,
+                            this.memoryStepSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricBasedVerticalScaleDownConfig o) {
-            Builder copiedBuilder =
-                    metric(o.getMetric())
-                            .minOcpusPerNode(o.getMinOcpusPerNode())
-                            .minMemoryPerNode(o.getMinMemoryPerNode())
-                            .ocpuStepSize(o.getOcpuStepSize())
-                            .memoryStepSize(o.getMemoryStepSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricBasedVerticalScaleDownConfig model) {
+            if (model.wasPropertyExplicitlySet("metric")) {
+                this.metric(model.getMetric());
+            }
+            if (model.wasPropertyExplicitlySet("minOcpusPerNode")) {
+                this.minOcpusPerNode(model.getMinOcpusPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("minMemoryPerNode")) {
+                this.minMemoryPerNode(model.getMinMemoryPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuStepSize")) {
+                this.ocpuStepSize(model.getOcpuStepSize());
+            }
+            if (model.wasPropertyExplicitlySet("memoryStepSize")) {
+                this.memoryStepSize(model.getMemoryStepSize());
+            }
+            return this;
         }
     }
 
@@ -234,12 +244,12 @@ public final class MetricBasedVerticalScaleDownConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricBasedVerticalScaleDownConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("metric=").append(String.valueOf(this.metric));
         sb.append(", minOcpusPerNode=").append(String.valueOf(this.minOcpusPerNode));
         sb.append(", minMemoryPerNode=").append(String.valueOf(this.minMemoryPerNode));
         sb.append(", ocpuStepSize=").append(String.valueOf(this.ocpuStepSize));
         sb.append(", memoryStepSize=").append(String.valueOf(this.memoryStepSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,7 +269,7 @@ public final class MetricBasedVerticalScaleDownConfig {
                 && java.util.Objects.equals(this.minMemoryPerNode, other.minMemoryPerNode)
                 && java.util.Objects.equals(this.ocpuStepSize, other.ocpuStepSize)
                 && java.util.Objects.equals(this.memoryStepSize, other.memoryStepSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -277,16 +287,7 @@ public final class MetricBasedVerticalScaleDownConfig {
         result =
                 (result * PRIME)
                         + (this.memoryStepSize == null ? 43 : this.memoryStepSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = ObjectRelationship.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectRelationship {
+public final class ObjectRelationship extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "relationshipType",
@@ -230,38 +230,57 @@ public final class ObjectRelationship {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectRelationship build() {
-            ObjectRelationship __instance__ =
+            ObjectRelationship model =
                     new ObjectRelationship(
-                            relationshipType,
-                            key,
-                            name,
-                            typeName,
-                            typeKey,
-                            timeCreated,
-                            timeUpdated,
-                            path,
-                            parentKey,
-                            parentPath);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.relationshipType,
+                            this.key,
+                            this.name,
+                            this.typeName,
+                            this.typeKey,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.path,
+                            this.parentKey,
+                            this.parentPath);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectRelationship o) {
-            Builder copiedBuilder =
-                    relationshipType(o.getRelationshipType())
-                            .key(o.getKey())
-                            .name(o.getName())
-                            .typeName(o.getTypeName())
-                            .typeKey(o.getTypeKey())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .path(o.getPath())
-                            .parentKey(o.getParentKey())
-                            .parentPath(o.getParentPath());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectRelationship model) {
+            if (model.wasPropertyExplicitlySet("relationshipType")) {
+                this.relationshipType(model.getRelationshipType());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("typeKey")) {
+                this.typeKey(model.getTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("parentKey")) {
+                this.parentKey(model.getParentKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentPath")) {
+                this.parentPath(model.getParentPath());
+            }
+            return this;
         }
     }
 
@@ -435,6 +454,7 @@ public final class ObjectRelationship {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectRelationship(");
+        sb.append("super=").append(super.toString());
         sb.append("relationshipType=").append(String.valueOf(this.relationshipType));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -445,7 +465,6 @@ public final class ObjectRelationship {
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", parentKey=").append(String.valueOf(this.parentKey));
         sb.append(", parentPath=").append(String.valueOf(this.parentPath));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -470,7 +489,7 @@ public final class ObjectRelationship {
                 && java.util.Objects.equals(this.path, other.path)
                 && java.util.Objects.equals(this.parentKey, other.parentKey)
                 && java.util.Objects.equals(this.parentPath, other.parentPath)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -489,16 +508,7 @@ public final class ObjectRelationship {
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
         result = (result * PRIME) + (this.parentKey == null ? 43 : this.parentKey.hashCode());
         result = (result * PRIME) + (this.parentPath == null ? 43 : this.parentPath.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

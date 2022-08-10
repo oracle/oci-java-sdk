@@ -87,6 +87,7 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -95,12 +96,13 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateAnalyticsInstanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             String location,
             com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -113,6 +115,13 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -210,6 +219,7 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(CreateAnalyticsInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -226,6 +236,7 @@ public class CreateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
         public CreateAnalyticsInstanceResponse build() {
             return new CreateAnalyticsInstanceResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     opcWorkRequestId,

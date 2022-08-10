@@ -19,7 +19,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = CreateIPSecConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIPSecConnectionDetails {
+public final class CreateIPSecConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -192,32 +193,45 @@ public final class CreateIPSecConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIPSecConnectionDetails build() {
-            CreateIPSecConnectionDetails __instance__ =
+            CreateIPSecConnectionDetails model =
                     new CreateIPSecConnectionDetails(
-                            compartmentId,
-                            cpeId,
-                            definedTags,
-                            displayName,
-                            drgId,
-                            freeformTags,
-                            staticRoutes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.cpeId,
+                            this.definedTags,
+                            this.displayName,
+                            this.drgId,
+                            this.freeformTags,
+                            this.staticRoutes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateIPSecConnectionDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .cpeId(o.getCpeId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .drgId(o.getDrgId())
-                            .freeformTags(o.getFreeformTags())
-                            .staticRoutes(o.getStaticRoutes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateIPSecConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("cpeId")) {
+                this.cpeId(model.getCpeId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("drgId")) {
+                this.drgId(model.getDrgId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("staticRoutes")) {
+                this.staticRoutes(model.getStaticRoutes());
+            }
+            return this;
         }
     }
 
@@ -367,6 +381,7 @@ public final class CreateIPSecConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateIPSecConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", cpeId=").append(String.valueOf(this.cpeId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -374,7 +389,6 @@ public final class CreateIPSecConnectionDetails {
         sb.append(", drgId=").append(String.valueOf(this.drgId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -396,7 +410,7 @@ public final class CreateIPSecConnectionDetails {
                 && java.util.Objects.equals(this.drgId, other.drgId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -412,16 +426,7 @@ public final class CreateIPSecConnectionDetails {
         result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.staticRoutes == null ? 43 : this.staticRoutes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

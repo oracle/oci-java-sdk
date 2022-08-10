@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourceEntityType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourceEntityType {
+public final class LogAnalyticsSourceEntityType
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceId",
@@ -110,23 +111,33 @@ public final class LogAnalyticsSourceEntityType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourceEntityType build() {
-            LogAnalyticsSourceEntityType __instance__ =
+            LogAnalyticsSourceEntityType model =
                     new LogAnalyticsSourceEntityType(
-                            sourceId, entityType, entityTypeCategory, entityTypeDisplayName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sourceId,
+                            this.entityType,
+                            this.entityTypeCategory,
+                            this.entityTypeDisplayName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourceEntityType o) {
-            Builder copiedBuilder =
-                    sourceId(o.getSourceId())
-                            .entityType(o.getEntityType())
-                            .entityTypeCategory(o.getEntityTypeCategory())
-                            .entityTypeDisplayName(o.getEntityTypeDisplayName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourceEntityType model) {
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeCategory")) {
+                this.entityTypeCategory(model.getEntityTypeCategory());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeDisplayName")) {
+                this.entityTypeDisplayName(model.getEntityTypeDisplayName());
+            }
+            return this;
         }
     }
 
@@ -210,11 +221,11 @@ public final class LogAnalyticsSourceEntityType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceEntityType(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", entityTypeCategory=").append(String.valueOf(this.entityTypeCategory));
         sb.append(", entityTypeDisplayName=").append(String.valueOf(this.entityTypeDisplayName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +244,7 @@ public final class LogAnalyticsSourceEntityType {
                 && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.entityTypeCategory, other.entityTypeCategory)
                 && java.util.Objects.equals(this.entityTypeDisplayName, other.entityTypeDisplayName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -252,16 +263,7 @@ public final class LogAnalyticsSourceEntityType {
                         + (this.entityTypeDisplayName == null
                                 ? 43
                                 : this.entityTypeDisplayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

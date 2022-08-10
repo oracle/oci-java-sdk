@@ -55,16 +55,18 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "customPropertyCollection"
     })
     private ListCustomPropertiesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.CustomPropertyCollection customPropertyCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.customPropertyCollection = customPropertyCollection;
@@ -75,6 +77,13 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -137,6 +146,7 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListCustomPropertiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             customPropertyCollection(o.getCustomPropertyCollection());
@@ -150,7 +160,11 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public ListCustomPropertiesResponse build() {
             return new ListCustomPropertiesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, customPropertyCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    customPropertyCollection);
         }
     }
 

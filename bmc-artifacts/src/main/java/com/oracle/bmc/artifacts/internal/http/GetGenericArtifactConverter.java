@@ -107,8 +107,8 @@ public class GetGenericArtifactConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .GetGenericArtifactResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.genericArtifact(response.getItem());
 

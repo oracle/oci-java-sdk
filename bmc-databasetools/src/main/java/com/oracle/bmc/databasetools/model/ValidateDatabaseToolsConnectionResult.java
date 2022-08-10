@@ -32,7 +32,8 @@ package com.oracle.bmc.databasetools.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ValidateDatabaseToolsConnectionResult {
+public class ValidateDatabaseToolsConnectionResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message", "cause", "action"})
     protected ValidateDatabaseToolsConnectionResult(
@@ -113,6 +114,7 @@ public class ValidateDatabaseToolsConnectionResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ValidateDatabaseToolsConnectionResult(");
+        sb.append("super=").append(super.toString());
         sb.append("code=").append(String.valueOf(this.code));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", cause=").append(String.valueOf(this.cause));
@@ -134,7 +136,8 @@ public class ValidateDatabaseToolsConnectionResult {
         return java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.cause, other.cause)
-                && java.util.Objects.equals(this.action, other.action);
+                && java.util.Objects.equals(this.action, other.action)
+                && super.equals(other);
     }
 
     @Override
@@ -145,6 +148,7 @@ public class ValidateDatabaseToolsConnectionResult {
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.cause == null ? 43 : this.cause.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

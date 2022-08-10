@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostInstanceMap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostInstanceMap {
+public final class HostInstanceMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostName", "instanceName"})
     public HostInstanceMap(String hostName, String instanceName) {
@@ -65,17 +65,22 @@ public final class HostInstanceMap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostInstanceMap build() {
-            HostInstanceMap __instance__ = new HostInstanceMap(hostName, instanceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostInstanceMap model = new HostInstanceMap(this.hostName, this.instanceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostInstanceMap o) {
-            Builder copiedBuilder = hostName(o.getHostName()).instanceName(o.getInstanceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostInstanceMap model) {
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceName")) {
+                this.instanceName(model.getInstanceName());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class HostInstanceMap {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostInstanceMap(");
+        sb.append("super=").append(super.toString());
         sb.append("hostName=").append(String.valueOf(this.hostName));
         sb.append(", instanceName=").append(String.valueOf(this.instanceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class HostInstanceMap {
         HostInstanceMap other = (HostInstanceMap) o;
         return java.util.Objects.equals(this.hostName, other.hostName)
                 && java.util.Objects.equals(this.instanceName, other.instanceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class HostInstanceMap {
         int result = 1;
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
         result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

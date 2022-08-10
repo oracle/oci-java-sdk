@@ -112,8 +112,8 @@ public class GetManagementAgentConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .GetManagementAgentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementAgent(response.getItem());
 

@@ -40,7 +40,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DatabaseInsightSummary {
+public class DatabaseInsightSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -379,6 +379,7 @@ public class DatabaseInsightSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseInsightSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -430,8 +431,8 @@ public class DatabaseInsightSummary {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
-                        this.databaseConnectionStatusDetails,
-                        other.databaseConnectionStatusDetails);
+                        this.databaseConnectionStatusDetails, other.databaseConnectionStatusDetails)
+                && super.equals(other);
     }
 
     @Override
@@ -476,6 +477,7 @@ public class DatabaseInsightSummary {
                         + (this.databaseConnectionStatusDetails == null
                                 ? 43
                                 : this.databaseConnectionStatusDetails.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

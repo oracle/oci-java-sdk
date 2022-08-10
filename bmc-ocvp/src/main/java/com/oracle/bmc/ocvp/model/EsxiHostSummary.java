@@ -17,7 +17,7 @@ package com.oracle.bmc.ocvp.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EsxiHostSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EsxiHostSummary {
+public final class EsxiHostSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -478,56 +478,93 @@ public final class EsxiHostSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EsxiHostSummary build() {
-            EsxiHostSummary __instance__ =
+            EsxiHostSummary model =
                     new EsxiHostSummary(
-                            id,
-                            displayName,
-                            sddcId,
-                            compartmentId,
-                            computeInstanceId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            currentSku,
-                            nextSku,
-                            billingContractEndDate,
-                            failedEsxiHostId,
-                            replacementEsxiHostId,
-                            gracePeriodEndDate,
-                            computeAvailabilityDomain,
-                            hostShapeName,
-                            hostOcpuCount,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.sddcId,
+                            this.compartmentId,
+                            this.computeInstanceId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.currentSku,
+                            this.nextSku,
+                            this.billingContractEndDate,
+                            this.failedEsxiHostId,
+                            this.replacementEsxiHostId,
+                            this.gracePeriodEndDate,
+                            this.computeAvailabilityDomain,
+                            this.hostShapeName,
+                            this.hostOcpuCount,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EsxiHostSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .sddcId(o.getSddcId())
-                            .compartmentId(o.getCompartmentId())
-                            .computeInstanceId(o.getComputeInstanceId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .currentSku(o.getCurrentSku())
-                            .nextSku(o.getNextSku())
-                            .billingContractEndDate(o.getBillingContractEndDate())
-                            .failedEsxiHostId(o.getFailedEsxiHostId())
-                            .replacementEsxiHostId(o.getReplacementEsxiHostId())
-                            .gracePeriodEndDate(o.getGracePeriodEndDate())
-                            .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
-                            .hostShapeName(o.getHostShapeName())
-                            .hostOcpuCount(o.getHostOcpuCount())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EsxiHostSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("sddcId")) {
+                this.sddcId(model.getSddcId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("computeInstanceId")) {
+                this.computeInstanceId(model.getComputeInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("currentSku")) {
+                this.currentSku(model.getCurrentSku());
+            }
+            if (model.wasPropertyExplicitlySet("nextSku")) {
+                this.nextSku(model.getNextSku());
+            }
+            if (model.wasPropertyExplicitlySet("billingContractEndDate")) {
+                this.billingContractEndDate(model.getBillingContractEndDate());
+            }
+            if (model.wasPropertyExplicitlySet("failedEsxiHostId")) {
+                this.failedEsxiHostId(model.getFailedEsxiHostId());
+            }
+            if (model.wasPropertyExplicitlySet("replacementEsxiHostId")) {
+                this.replacementEsxiHostId(model.getReplacementEsxiHostId());
+            }
+            if (model.wasPropertyExplicitlySet("gracePeriodEndDate")) {
+                this.gracePeriodEndDate(model.getGracePeriodEndDate());
+            }
+            if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
+                this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("hostShapeName")) {
+                this.hostShapeName(model.getHostShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("hostOcpuCount")) {
+                this.hostOcpuCount(model.getHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -905,6 +942,7 @@ public final class EsxiHostSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EsxiHostSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", sddcId=").append(String.valueOf(this.sddcId));
@@ -925,7 +963,6 @@ public final class EsxiHostSummary {
         sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -961,7 +998,7 @@ public final class EsxiHostSummary {
                 && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1015,16 +1052,7 @@ public final class EsxiHostSummary {
                         + (this.hostOcpuCount == null ? 43 : this.hostOcpuCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

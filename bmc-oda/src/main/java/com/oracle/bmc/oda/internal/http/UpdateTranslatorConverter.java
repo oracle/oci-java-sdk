@@ -113,8 +113,8 @@ public class UpdateTranslatorConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .UpdateTranslatorResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.translator(response.getItem());
 

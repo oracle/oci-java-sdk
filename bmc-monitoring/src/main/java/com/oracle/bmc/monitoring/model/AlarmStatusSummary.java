@@ -29,7 +29,7 @@ package com.oracle.bmc.monitoring.model;
     builder = AlarmStatusSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlarmStatusSummary {
+public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -188,25 +188,41 @@ public final class AlarmStatusSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AlarmStatusSummary build() {
-            AlarmStatusSummary __instance__ =
+            AlarmStatusSummary model =
                     new AlarmStatusSummary(
-                            id, displayName, severity, timestampTriggered, status, suppression);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.severity,
+                            this.timestampTriggered,
+                            this.status,
+                            this.suppression);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AlarmStatusSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .severity(o.getSeverity())
-                            .timestampTriggered(o.getTimestampTriggered())
-                            .status(o.getStatus())
-                            .suppression(o.getSuppression());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AlarmStatusSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("timestampTriggered")) {
+                this.timestampTriggered(model.getTimestampTriggered());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("suppression")) {
+                this.suppression(model.getSuppression());
+            }
+            return this;
         }
     }
 
@@ -452,13 +468,13 @@ public final class AlarmStatusSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlarmStatusSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", suppression=").append(String.valueOf(this.suppression));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -479,7 +495,7 @@ public final class AlarmStatusSummary {
                 && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.suppression, other.suppression)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -496,16 +512,7 @@ public final class AlarmStatusSummary {
                                 : this.timestampTriggered.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.suppression == null ? 43 : this.suppression.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

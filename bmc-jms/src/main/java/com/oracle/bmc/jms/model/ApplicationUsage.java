@@ -20,7 +20,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApplicationUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplicationUsage {
+public final class ApplicationUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -262,40 +262,61 @@ public final class ApplicationUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplicationUsage build() {
-            ApplicationUsage __instance__ =
+            ApplicationUsage model =
                     new ApplicationUsage(
-                            applicationId,
-                            displayName,
-                            applicationType,
-                            operatingSystems,
-                            approximateInstallationCount,
-                            approximateJreCount,
-                            approximateManagedInstanceCount,
-                            timeStart,
-                            timeEnd,
-                            timeFirstSeen,
-                            timeLastSeen);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.applicationId,
+                            this.displayName,
+                            this.applicationType,
+                            this.operatingSystems,
+                            this.approximateInstallationCount,
+                            this.approximateJreCount,
+                            this.approximateManagedInstanceCount,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.timeFirstSeen,
+                            this.timeLastSeen);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplicationUsage o) {
-            Builder copiedBuilder =
-                    applicationId(o.getApplicationId())
-                            .displayName(o.getDisplayName())
-                            .applicationType(o.getApplicationType())
-                            .operatingSystems(o.getOperatingSystems())
-                            .approximateInstallationCount(o.getApproximateInstallationCount())
-                            .approximateJreCount(o.getApproximateJreCount())
-                            .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .timeFirstSeen(o.getTimeFirstSeen())
-                            .timeLastSeen(o.getTimeLastSeen());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplicationUsage model) {
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("applicationType")) {
+                this.applicationType(model.getApplicationType());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystems")) {
+                this.operatingSystems(model.getOperatingSystems());
+            }
+            if (model.wasPropertyExplicitlySet("approximateInstallationCount")) {
+                this.approximateInstallationCount(model.getApproximateInstallationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateJreCount")) {
+                this.approximateJreCount(model.getApproximateJreCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
+                this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSeen")) {
+                this.timeFirstSeen(model.getTimeFirstSeen());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            return this;
         }
     }
 
@@ -495,6 +516,7 @@ public final class ApplicationUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplicationUsage(");
+        sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", applicationType=").append(String.valueOf(this.applicationType));
@@ -508,7 +530,6 @@ public final class ApplicationUsage {
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -536,7 +557,7 @@ public final class ApplicationUsage {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -574,16 +595,7 @@ public final class ApplicationUsage {
                 (result * PRIME)
                         + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
         result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

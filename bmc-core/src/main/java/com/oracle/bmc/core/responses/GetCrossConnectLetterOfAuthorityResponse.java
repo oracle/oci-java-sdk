@@ -38,12 +38,18 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
         return letterOfAuthority;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "letterOfAuthority"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "letterOfAuthority"
+    })
     private GetCrossConnectLetterOfAuthorityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.LetterOfAuthority letterOfAuthority) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.letterOfAuthority = letterOfAuthority;
     }
@@ -53,6 +59,13 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
          */
         public Builder copy(GetCrossConnectLetterOfAuthorityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             letterOfAuthority(o.getLetterOfAuthority());
 
@@ -109,7 +123,7 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
          */
         public GetCrossConnectLetterOfAuthorityResponse build() {
             return new GetCrossConnectLetterOfAuthorityResponse(
-                    __httpStatusCode__, opcRequestId, letterOfAuthority);
+                    __httpStatusCode__, headers, opcRequestId, letterOfAuthority);
         }
     }
 

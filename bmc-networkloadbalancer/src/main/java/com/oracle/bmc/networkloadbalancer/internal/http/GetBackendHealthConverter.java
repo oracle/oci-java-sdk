@@ -124,8 +124,8 @@ public class GetBackendHealthConverter {
                                         builder =
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .GetBackendHealthResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.backendHealth(response.getItem());
 

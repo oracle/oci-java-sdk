@@ -104,8 +104,8 @@ public class UploadApiKeyConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UploadApiKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.apiKey(response.getItem());
 

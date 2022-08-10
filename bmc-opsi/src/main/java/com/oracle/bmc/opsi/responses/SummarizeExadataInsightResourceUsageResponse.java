@@ -62,17 +62,19 @@ public class SummarizeExadataInsightResourceUsageResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "summarizeExadataInsightResourceUsageCollection"
     })
     private SummarizeExadataInsightResourceUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageCollection
                     summarizeExadataInsightResourceUsageCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.summarizeExadataInsightResourceUsageCollection =
@@ -84,6 +86,13 @@ public class SummarizeExadataInsightResourceUsageResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -152,6 +161,7 @@ public class SummarizeExadataInsightResourceUsageResponse
          */
         public Builder copy(SummarizeExadataInsightResourceUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             summarizeExadataInsightResourceUsageCollection(
@@ -167,6 +177,7 @@ public class SummarizeExadataInsightResourceUsageResponse
         public SummarizeExadataInsightResourceUsageResponse build() {
             return new SummarizeExadataInsightResourceUsageResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     summarizeExadataInsightResourceUsageCollection);

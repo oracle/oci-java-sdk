@@ -99,8 +99,8 @@ public class CreateCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .CreateCompartmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.compartment(response.getItem());
 

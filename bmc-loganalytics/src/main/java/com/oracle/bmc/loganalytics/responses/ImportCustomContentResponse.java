@@ -40,15 +40,17 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "logAnalyticsImportCustomContent"
     })
     private ImportCustomContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
                     logAnalyticsImportCustomContent) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.logAnalyticsImportCustomContent = logAnalyticsImportCustomContent;
     }
@@ -58,6 +60,13 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +111,7 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ImportCustomContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsImportCustomContent(o.getLogAnalyticsImportCustomContent());
 
@@ -114,7 +124,7 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ImportCustomContentResponse build() {
             return new ImportCustomContentResponse(
-                    __httpStatusCode__, opcRequestId, logAnalyticsImportCustomContent);
+                    __httpStatusCode__, headers, opcRequestId, logAnalyticsImportCustomContent);
         }
     }
 

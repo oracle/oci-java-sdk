@@ -53,13 +53,20 @@ public class GetAnnotationResponse extends com.oracle.bmc.responses.BmcResponse 
         return annotation;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "annotation"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "annotation"
+    })
     private GetAnnotationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.annotation = annotation;
@@ -70,6 +77,13 @@ public class GetAnnotationResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +145,7 @@ public class GetAnnotationResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(GetAnnotationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             annotation(o.getAnnotation());
@@ -143,7 +158,8 @@ public class GetAnnotationResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public GetAnnotationResponse build() {
-            return new GetAnnotationResponse(__httpStatusCode__, etag, opcRequestId, annotation);
+            return new GetAnnotationResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, annotation);
         }
     }
 

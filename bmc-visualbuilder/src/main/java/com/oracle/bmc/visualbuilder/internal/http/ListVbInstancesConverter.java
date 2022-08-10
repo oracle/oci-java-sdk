@@ -158,8 +158,8 @@ public class ListVbInstancesConverter {
                                         builder =
                                                 com.oracle.bmc.visualbuilder.responses
                                                         .ListVbInstancesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vbInstanceSummaryCollection(response.getItem());
 

@@ -182,8 +182,8 @@ public class ListBuildRunsConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListBuildRunsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.buildRunSummaryCollection(response.getItem());
 

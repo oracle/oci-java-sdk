@@ -167,8 +167,8 @@ public class ListSecurityPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListSecurityPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityPolicyCollection(response.getItem());
 

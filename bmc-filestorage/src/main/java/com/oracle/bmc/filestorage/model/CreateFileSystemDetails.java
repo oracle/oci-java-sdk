@@ -19,7 +19,8 @@ package com.oracle.bmc.filestorage.model;
     builder = CreateFileSystemDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateFileSystemDetails {
+public final class CreateFileSystemDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -202,32 +203,45 @@ public final class CreateFileSystemDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateFileSystemDetails build() {
-            CreateFileSystemDetails __instance__ =
+            CreateFileSystemDetails model =
                     new CreateFileSystemDetails(
-                            availabilityDomain,
-                            compartmentId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            kmsKeyId,
-                            sourceSnapshotId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kmsKeyId,
+                            this.sourceSnapshotId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateFileSystemDetails o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .sourceSnapshotId(o.getSourceSnapshotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateFileSystemDetails model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceSnapshotId")) {
+                this.sourceSnapshotId(model.getSourceSnapshotId());
+            }
+            return this;
         }
     }
 
@@ -387,6 +401,7 @@ public final class CreateFileSystemDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFileSystemDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -394,7 +409,6 @@ public final class CreateFileSystemDetails {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -416,7 +430,7 @@ public final class CreateFileSystemDetails {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -438,16 +452,7 @@ public final class CreateFileSystemDetails {
         result =
                 (result * PRIME)
                         + (this.sourceSnapshotId == null ? 43 : this.sourceSnapshotId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

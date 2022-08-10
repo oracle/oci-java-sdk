@@ -112,8 +112,8 @@ public class AddPublicIpPoolCapacityConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .AddPublicIpPoolCapacityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publicIpPool(response.getItem());
 

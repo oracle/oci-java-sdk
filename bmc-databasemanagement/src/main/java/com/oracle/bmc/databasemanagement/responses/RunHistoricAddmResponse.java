@@ -38,12 +38,18 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
         return historicAddmResult;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "historicAddmResult"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "historicAddmResult"
+    })
     private RunHistoricAddmResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.HistoricAddmResult historicAddmResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.historicAddmResult = historicAddmResult;
     }
@@ -53,6 +59,13 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(RunHistoricAddmResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             historicAddmResult(o.getHistoricAddmResult());
 
@@ -109,7 +123,7 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public RunHistoricAddmResponse build() {
             return new RunHistoricAddmResponse(
-                    __httpStatusCode__, opcRequestId, historicAddmResult);
+                    __httpStatusCode__, headers, opcRequestId, historicAddmResult);
         }
     }
 

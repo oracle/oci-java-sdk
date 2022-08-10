@@ -27,12 +27,16 @@ package com.oracle.bmc.opsi.model;
         name = "MACS_MANAGED_EXTERNAL_HOST"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EnableMacsManagedCloudHostInsightDetails.class,
+        name = "MACS_MANAGED_CLOUD_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EnableEmManagedExternalHostInsightDetails.class,
         name = "EM_MANAGED_EXTERNAL_HOST"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class EnableHostInsightDetails {
+public class EnableHostInsightDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected EnableHostInsightDetails() {
@@ -52,6 +56,7 @@ public class EnableHostInsightDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EnableHostInsightDetails(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -66,13 +71,14 @@ public class EnableHostInsightDetails {
         }
 
         EnableHostInsightDetails other = (EnableHostInsightDetails) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

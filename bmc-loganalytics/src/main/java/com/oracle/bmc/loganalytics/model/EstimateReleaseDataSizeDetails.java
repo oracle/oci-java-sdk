@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = EstimateReleaseDataSizeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EstimateReleaseDataSizeDetails {
+public final class EstimateReleaseDataSizeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeDataStarted", "timeDataEnded"})
     public EstimateReleaseDataSizeDetails(
@@ -69,19 +70,23 @@ public final class EstimateReleaseDataSizeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EstimateReleaseDataSizeDetails build() {
-            EstimateReleaseDataSizeDetails __instance__ =
-                    new EstimateReleaseDataSizeDetails(timeDataStarted, timeDataEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EstimateReleaseDataSizeDetails model =
+                    new EstimateReleaseDataSizeDetails(this.timeDataStarted, this.timeDataEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EstimateReleaseDataSizeDetails o) {
-            Builder copiedBuilder =
-                    timeDataStarted(o.getTimeDataStarted()).timeDataEnded(o.getTimeDataEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EstimateReleaseDataSizeDetails model) {
+            if (model.wasPropertyExplicitlySet("timeDataStarted")) {
+                this.timeDataStarted(model.getTimeDataStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataEnded")) {
+                this.timeDataEnded(model.getTimeDataEnded());
+            }
+            return this;
         }
     }
 
@@ -137,9 +142,9 @@ public final class EstimateReleaseDataSizeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EstimateReleaseDataSizeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeDataStarted=").append(String.valueOf(this.timeDataStarted));
         sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,7 +161,7 @@ public final class EstimateReleaseDataSizeDetails {
         EstimateReleaseDataSizeDetails other = (EstimateReleaseDataSizeDetails) o;
         return java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
                 && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -169,16 +174,7 @@ public final class EstimateReleaseDataSizeDetails {
         result =
                 (result * PRIME)
                         + (this.timeDataEnded == null ? 43 : this.timeDataEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

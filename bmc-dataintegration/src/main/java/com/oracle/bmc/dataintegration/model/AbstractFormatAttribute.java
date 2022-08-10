@@ -40,7 +40,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractFormatAttribute {
+public class AbstractFormatAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isFilePattern"})
     protected AbstractFormatAttribute(Boolean isFilePattern) {
@@ -75,6 +75,7 @@ public class AbstractFormatAttribute {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractFormatAttribute(");
+        sb.append("super=").append(super.toString());
         sb.append("isFilePattern=").append(String.valueOf(this.isFilePattern));
         sb.append(")");
         return sb.toString();
@@ -90,7 +91,8 @@ public class AbstractFormatAttribute {
         }
 
         AbstractFormatAttribute other = (AbstractFormatAttribute) o;
-        return java.util.Objects.equals(this.isFilePattern, other.isFilePattern);
+        return java.util.Objects.equals(this.isFilePattern, other.isFilePattern)
+                && super.equals(other);
     }
 
     @Override
@@ -100,6 +102,7 @@ public class AbstractFormatAttribute {
         result =
                 (result * PRIME)
                         + (this.isFilePattern == null ? 43 : this.isFilePattern.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

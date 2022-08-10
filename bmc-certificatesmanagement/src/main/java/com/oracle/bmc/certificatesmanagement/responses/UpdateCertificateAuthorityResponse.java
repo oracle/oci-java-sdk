@@ -54,16 +54,18 @@ public class UpdateCertificateAuthorityResponse extends com.oracle.bmc.responses
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "certificateAuthority"
     })
     private UpdateCertificateAuthorityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.certificatesmanagement.model.CertificateAuthority certificateAuthority) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.certificateAuthority = certificateAuthority;
@@ -74,6 +76,13 @@ public class UpdateCertificateAuthorityResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class UpdateCertificateAuthorityResponse extends com.oracle.bmc.responses
          */
         public Builder copy(UpdateCertificateAuthorityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             certificateAuthority(o.getCertificateAuthority());
@@ -148,7 +158,7 @@ public class UpdateCertificateAuthorityResponse extends com.oracle.bmc.responses
          */
         public UpdateCertificateAuthorityResponse build() {
             return new UpdateCertificateAuthorityResponse(
-                    __httpStatusCode__, etag, opcRequestId, certificateAuthority);
+                    __httpStatusCode__, headers, etag, opcRequestId, certificateAuthority);
         }
     }
 

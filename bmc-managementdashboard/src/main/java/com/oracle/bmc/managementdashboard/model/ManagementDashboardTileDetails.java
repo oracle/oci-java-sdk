@@ -21,7 +21,8 @@ package com.oracle.bmc.managementdashboard.model;
     builder = ManagementDashboardTileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagementDashboardTileDetails {
+public final class ManagementDashboardTileDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -264,42 +265,65 @@ public final class ManagementDashboardTileDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementDashboardTileDetails build() {
-            ManagementDashboardTileDetails __instance__ =
+            ManagementDashboardTileDetails model =
                     new ManagementDashboardTileDetails(
-                            displayName,
-                            savedSearchId,
-                            row,
-                            column,
-                            height,
-                            width,
-                            nls,
-                            uiConfig,
-                            dataConfig,
-                            state,
-                            drilldownConfig,
-                            parametersMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.savedSearchId,
+                            this.row,
+                            this.column,
+                            this.height,
+                            this.width,
+                            this.nls,
+                            this.uiConfig,
+                            this.dataConfig,
+                            this.state,
+                            this.drilldownConfig,
+                            this.parametersMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagementDashboardTileDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .savedSearchId(o.getSavedSearchId())
-                            .row(o.getRow())
-                            .column(o.getColumn())
-                            .height(o.getHeight())
-                            .width(o.getWidth())
-                            .nls(o.getNls())
-                            .uiConfig(o.getUiConfig())
-                            .dataConfig(o.getDataConfig())
-                            .state(o.getState())
-                            .drilldownConfig(o.getDrilldownConfig())
-                            .parametersMap(o.getParametersMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagementDashboardTileDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("savedSearchId")) {
+                this.savedSearchId(model.getSavedSearchId());
+            }
+            if (model.wasPropertyExplicitlySet("row")) {
+                this.row(model.getRow());
+            }
+            if (model.wasPropertyExplicitlySet("column")) {
+                this.column(model.getColumn());
+            }
+            if (model.wasPropertyExplicitlySet("height")) {
+                this.height(model.getHeight());
+            }
+            if (model.wasPropertyExplicitlySet("width")) {
+                this.width(model.getWidth());
+            }
+            if (model.wasPropertyExplicitlySet("nls")) {
+                this.nls(model.getNls());
+            }
+            if (model.wasPropertyExplicitlySet("uiConfig")) {
+                this.uiConfig(model.getUiConfig());
+            }
+            if (model.wasPropertyExplicitlySet("dataConfig")) {
+                this.dataConfig(model.getDataConfig());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("drilldownConfig")) {
+                this.drilldownConfig(model.getDrilldownConfig());
+            }
+            if (model.wasPropertyExplicitlySet("parametersMap")) {
+                this.parametersMap(model.getParametersMap());
+            }
+            return this;
         }
     }
 
@@ -543,6 +567,7 @@ public final class ManagementDashboardTileDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagementDashboardTileDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", savedSearchId=").append(String.valueOf(this.savedSearchId));
         sb.append(", row=").append(String.valueOf(this.row));
@@ -555,7 +580,6 @@ public final class ManagementDashboardTileDetails {
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
         sb.append(", parametersMap=").append(String.valueOf(this.parametersMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -582,7 +606,7 @@ public final class ManagementDashboardTileDetails {
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
                 && java.util.Objects.equals(this.parametersMap, other.parametersMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -607,16 +631,7 @@ public final class ManagementDashboardTileDetails {
         result =
                 (result * PRIME)
                         + (this.parametersMap == null ? 43 : this.parametersMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

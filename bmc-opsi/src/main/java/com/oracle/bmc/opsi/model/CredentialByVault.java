@@ -88,22 +88,33 @@ public final class CredentialByVault extends CredentialDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CredentialByVault build() {
-            CredentialByVault __instance__ =
-                    new CredentialByVault(credentialSourceName, userName, passwordSecretId, role);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CredentialByVault model =
+                    new CredentialByVault(
+                            this.credentialSourceName,
+                            this.userName,
+                            this.passwordSecretId,
+                            this.role);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CredentialByVault o) {
-            Builder copiedBuilder =
-                    credentialSourceName(o.getCredentialSourceName())
-                            .userName(o.getUserName())
-                            .passwordSecretId(o.getPasswordSecretId())
-                            .role(o.getRole());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CredentialByVault model) {
+            if (model.wasPropertyExplicitlySet("credentialSourceName")) {
+                this.credentialSourceName(model.getCredentialSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            return this;
         }
     }
 
@@ -231,7 +242,6 @@ public final class CredentialByVault extends CredentialDetails {
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", role=").append(String.valueOf(this.role));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,8 +259,7 @@ public final class CredentialByVault extends CredentialDetails {
         return java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.role, other.role)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -262,16 +271,6 @@ public final class CredentialByVault extends CredentialDetails {
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

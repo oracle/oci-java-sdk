@@ -184,40 +184,61 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePeComanagedDatabaseInsightDetails build() {
-            CreatePeComanagedDatabaseInsightDetails __instance__ =
+            CreatePeComanagedDatabaseInsightDetails model =
                     new CreatePeComanagedDatabaseInsightDetails(
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            databaseId,
-                            databaseResourceType,
-                            opsiPrivateEndpointId,
-                            dbmPrivateEndpointId,
-                            serviceName,
-                            credentialDetails,
-                            deploymentType,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.databaseId,
+                            this.databaseResourceType,
+                            this.opsiPrivateEndpointId,
+                            this.dbmPrivateEndpointId,
+                            this.serviceName,
+                            this.credentialDetails,
+                            this.deploymentType,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreatePeComanagedDatabaseInsightDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .databaseId(o.getDatabaseId())
-                            .databaseResourceType(o.getDatabaseResourceType())
-                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
-                            .dbmPrivateEndpointId(o.getDbmPrivateEndpointId())
-                            .serviceName(o.getServiceName())
-                            .credentialDetails(o.getCredentialDetails())
-                            .deploymentType(o.getDeploymentType())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreatePeComanagedDatabaseInsightDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseResourceType")) {
+                this.databaseResourceType(model.getDatabaseResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
+                this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("dbmPrivateEndpointId")) {
+                this.dbmPrivateEndpointId(model.getDbmPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -423,7 +444,6 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -446,8 +466,7 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -478,16 +497,6 @@ public final class CreatePeComanagedDatabaseInsightDetails extends CreateDatabas
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

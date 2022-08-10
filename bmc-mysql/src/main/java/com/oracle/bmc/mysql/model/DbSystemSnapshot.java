@@ -18,7 +18,7 @@ package com.oracle.bmc.mysql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSnapshot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystemSnapshot {
+public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -521,66 +521,113 @@ public final class DbSystemSnapshot {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemSnapshot build() {
-            DbSystemSnapshot __instance__ =
+            DbSystemSnapshot model =
                     new DbSystemSnapshot(
-                            id,
-                            displayName,
-                            description,
-                            compartmentId,
-                            subnetId,
-                            availabilityDomain,
-                            faultDomain,
-                            shapeName,
-                            mysqlVersion,
-                            adminUsername,
-                            backupPolicy,
-                            configurationId,
-                            dataStorageSizeInGBs,
-                            hostnameLabel,
-                            ipAddress,
-                            port,
-                            portX,
-                            isHighlyAvailable,
-                            endpoints,
-                            maintenance,
-                            deletionPolicy,
-                            freeformTags,
-                            definedTags,
-                            crashRecovery);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.subnetId,
+                            this.availabilityDomain,
+                            this.faultDomain,
+                            this.shapeName,
+                            this.mysqlVersion,
+                            this.adminUsername,
+                            this.backupPolicy,
+                            this.configurationId,
+                            this.dataStorageSizeInGBs,
+                            this.hostnameLabel,
+                            this.ipAddress,
+                            this.port,
+                            this.portX,
+                            this.isHighlyAvailable,
+                            this.endpoints,
+                            this.maintenance,
+                            this.deletionPolicy,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.crashRecovery);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemSnapshot o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .subnetId(o.getSubnetId())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .faultDomain(o.getFaultDomain())
-                            .shapeName(o.getShapeName())
-                            .mysqlVersion(o.getMysqlVersion())
-                            .adminUsername(o.getAdminUsername())
-                            .backupPolicy(o.getBackupPolicy())
-                            .configurationId(o.getConfigurationId())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .hostnameLabel(o.getHostnameLabel())
-                            .ipAddress(o.getIpAddress())
-                            .port(o.getPort())
-                            .portX(o.getPortX())
-                            .isHighlyAvailable(o.getIsHighlyAvailable())
-                            .endpoints(o.getEndpoints())
-                            .maintenance(o.getMaintenance())
-                            .deletionPolicy(o.getDeletionPolicy())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .crashRecovery(o.getCrashRecovery());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemSnapshot model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlVersion")) {
+                this.mysqlVersion(model.getMysqlVersion());
+            }
+            if (model.wasPropertyExplicitlySet("adminUsername")) {
+                this.adminUsername(model.getAdminUsername());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicy")) {
+                this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("configurationId")) {
+                this.configurationId(model.getConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("hostnameLabel")) {
+                this.hostnameLabel(model.getHostnameLabel());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("portX")) {
+                this.portX(model.getPortX());
+            }
+            if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
+                this.isHighlyAvailable(model.getIsHighlyAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("endpoints")) {
+                this.endpoints(model.getEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("maintenance")) {
+                this.maintenance(model.getMaintenance());
+            }
+            if (model.wasPropertyExplicitlySet("deletionPolicy")) {
+                this.deletionPolicy(model.getDeletionPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("crashRecovery")) {
+                this.crashRecovery(model.getCrashRecovery());
+            }
+            return this;
         }
     }
 
@@ -975,6 +1022,7 @@ public final class DbSystemSnapshot {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemSnapshot(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -999,7 +1047,6 @@ public final class DbSystemSnapshot {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1038,7 +1085,7 @@ public final class DbSystemSnapshot {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1091,16 +1138,7 @@ public final class DbSystemSnapshot {
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

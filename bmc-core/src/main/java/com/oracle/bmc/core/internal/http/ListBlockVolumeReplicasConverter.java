@@ -175,8 +175,8 @@ public class ListBlockVolumeReplicasConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListBlockVolumeReplicasResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

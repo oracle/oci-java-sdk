@@ -201,40 +201,61 @@ public final class HostCpuHardwareConfiguration extends HostConfigurationMetricG
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostCpuHardwareConfiguration build() {
-            HostCpuHardwareConfiguration __instance__ =
+            HostCpuHardwareConfiguration model =
                     new HostCpuHardwareConfiguration(
-                            timeCollected,
-                            totalSockets,
-                            vendorName,
-                            frequencyInMhz,
-                            cacheInMB,
-                            cpuImplementation,
-                            model,
-                            cpuFamily,
-                            coresPerSocket,
-                            threadsPerSocket,
-                            hyperThreadingEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.totalSockets,
+                            this.vendorName,
+                            this.frequencyInMhz,
+                            this.cacheInMB,
+                            this.cpuImplementation,
+                            this.model,
+                            this.cpuFamily,
+                            this.coresPerSocket,
+                            this.threadsPerSocket,
+                            this.hyperThreadingEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostCpuHardwareConfiguration o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .totalSockets(o.getTotalSockets())
-                            .vendorName(o.getVendorName())
-                            .frequencyInMhz(o.getFrequencyInMhz())
-                            .cacheInMB(o.getCacheInMB())
-                            .cpuImplementation(o.getCpuImplementation())
-                            .model(o.getModel())
-                            .cpuFamily(o.getCpuFamily())
-                            .coresPerSocket(o.getCoresPerSocket())
-                            .threadsPerSocket(o.getThreadsPerSocket())
-                            .hyperThreadingEnabled(o.getHyperThreadingEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostCpuHardwareConfiguration model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("totalSockets")) {
+                this.totalSockets(model.getTotalSockets());
+            }
+            if (model.wasPropertyExplicitlySet("vendorName")) {
+                this.vendorName(model.getVendorName());
+            }
+            if (model.wasPropertyExplicitlySet("frequencyInMhz")) {
+                this.frequencyInMhz(model.getFrequencyInMhz());
+            }
+            if (model.wasPropertyExplicitlySet("cacheInMB")) {
+                this.cacheInMB(model.getCacheInMB());
+            }
+            if (model.wasPropertyExplicitlySet("cpuImplementation")) {
+                this.cpuImplementation(model.getCpuImplementation());
+            }
+            if (model.wasPropertyExplicitlySet("model")) {
+                this.model(model.getModel());
+            }
+            if (model.wasPropertyExplicitlySet("cpuFamily")) {
+                this.cpuFamily(model.getCpuFamily());
+            }
+            if (model.wasPropertyExplicitlySet("coresPerSocket")) {
+                this.coresPerSocket(model.getCoresPerSocket());
+            }
+            if (model.wasPropertyExplicitlySet("threadsPerSocket")) {
+                this.threadsPerSocket(model.getThreadsPerSocket());
+            }
+            if (model.wasPropertyExplicitlySet("hyperThreadingEnabled")) {
+                this.hyperThreadingEnabled(model.getHyperThreadingEnabled());
+            }
+            return this;
         }
     }
 
@@ -439,7 +460,6 @@ public final class HostCpuHardwareConfiguration extends HostConfigurationMetricG
         sb.append(", coresPerSocket=").append(String.valueOf(this.coresPerSocket));
         sb.append(", threadsPerSocket=").append(String.valueOf(this.threadsPerSocket));
         sb.append(", hyperThreadingEnabled=").append(String.valueOf(this.hyperThreadingEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -464,8 +484,7 @@ public final class HostCpuHardwareConfiguration extends HostConfigurationMetricG
                 && java.util.Objects.equals(this.coresPerSocket, other.coresPerSocket)
                 && java.util.Objects.equals(this.threadsPerSocket, other.threadsPerSocket)
                 && java.util.Objects.equals(this.hyperThreadingEnabled, other.hyperThreadingEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -494,16 +513,6 @@ public final class HostCpuHardwareConfiguration extends HostConfigurationMetricG
                         + (this.hyperThreadingEnabled == null
                                 ? 43
                                 : this.hyperThreadingEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

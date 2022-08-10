@@ -23,7 +23,8 @@ package com.oracle.bmc.core.model;
     builder = InstanceConsoleConnection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceConsoleConnection {
+public final class InstanceConsoleConnection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -249,38 +250,57 @@ public final class InstanceConsoleConnection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConsoleConnection build() {
-            InstanceConsoleConnection __instance__ =
+            InstanceConsoleConnection model =
                     new InstanceConsoleConnection(
-                            compartmentId,
-                            connectionString,
-                            definedTags,
-                            fingerprint,
-                            freeformTags,
-                            id,
-                            instanceId,
-                            lifecycleState,
-                            serviceHostKeyFingerprint,
-                            vncConnectionString);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.connectionString,
+                            this.definedTags,
+                            this.fingerprint,
+                            this.freeformTags,
+                            this.id,
+                            this.instanceId,
+                            this.lifecycleState,
+                            this.serviceHostKeyFingerprint,
+                            this.vncConnectionString);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceConsoleConnection o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .connectionString(o.getConnectionString())
-                            .definedTags(o.getDefinedTags())
-                            .fingerprint(o.getFingerprint())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .instanceId(o.getInstanceId())
-                            .lifecycleState(o.getLifecycleState())
-                            .serviceHostKeyFingerprint(o.getServiceHostKeyFingerprint())
-                            .vncConnectionString(o.getVncConnectionString());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceConsoleConnection model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("fingerprint")) {
+                this.fingerprint(model.getFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("serviceHostKeyFingerprint")) {
+                this.serviceHostKeyFingerprint(model.getServiceHostKeyFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("vncConnectionString")) {
+                this.vncConnectionString(model.getVncConnectionString());
+            }
+            return this;
         }
     }
 
@@ -519,6 +539,7 @@ public final class InstanceConsoleConnection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConsoleConnection(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -530,7 +551,6 @@ public final class InstanceConsoleConnection {
         sb.append(", serviceHostKeyFingerprint=")
                 .append(String.valueOf(this.serviceHostKeyFingerprint));
         sb.append(", vncConnectionString=").append(String.valueOf(this.vncConnectionString));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -556,7 +576,7 @@ public final class InstanceConsoleConnection {
                 && java.util.Objects.equals(
                         this.serviceHostKeyFingerprint, other.serviceHostKeyFingerprint)
                 && java.util.Objects.equals(this.vncConnectionString, other.vncConnectionString)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -587,16 +607,7 @@ public final class InstanceConsoleConnection {
                         + (this.vncConnectionString == null
                                 ? 43
                                 : this.vncConnectionString.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

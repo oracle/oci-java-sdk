@@ -20,7 +20,7 @@ package com.oracle.bmc.opsi.model;
     builder = HostedEntitySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostedEntitySummary {
+public final class HostedEntitySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entityIdentifier", "entityName", "entityType"})
     public HostedEntitySummary(String entityIdentifier, String entityName, String entityType) {
@@ -85,21 +85,27 @@ public final class HostedEntitySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostedEntitySummary build() {
-            HostedEntitySummary __instance__ =
-                    new HostedEntitySummary(entityIdentifier, entityName, entityType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostedEntitySummary model =
+                    new HostedEntitySummary(
+                            this.entityIdentifier, this.entityName, this.entityType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostedEntitySummary o) {
-            Builder copiedBuilder =
-                    entityIdentifier(o.getEntityIdentifier())
-                            .entityName(o.getEntityName())
-                            .entityType(o.getEntityType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostedEntitySummary model) {
+            if (model.wasPropertyExplicitlySet("entityIdentifier")) {
+                this.entityIdentifier(model.getEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class HostedEntitySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostedEntitySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("entityIdentifier=").append(String.valueOf(this.entityIdentifier));
         sb.append(", entityName=").append(String.valueOf(this.entityName));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class HostedEntitySummary {
         return java.util.Objects.equals(this.entityIdentifier, other.entityIdentifier)
                 && java.util.Objects.equals(this.entityName, other.entityName)
                 && java.util.Objects.equals(this.entityType, other.entityType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +208,7 @@ public final class HostedEntitySummary {
                         + (this.entityIdentifier == null ? 43 : this.entityIdentifier.hashCode());
         result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

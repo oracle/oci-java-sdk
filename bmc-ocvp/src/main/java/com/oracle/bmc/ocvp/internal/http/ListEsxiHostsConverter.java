@@ -161,8 +161,8 @@ public class ListEsxiHostsConverter {
                                         builder =
                                                 com.oracle.bmc.ocvp.responses.ListEsxiHostsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.esxiHostCollection(response.getItem());
 

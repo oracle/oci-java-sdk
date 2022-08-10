@@ -113,8 +113,8 @@ public class GetCategoryConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetCategoryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsCategory(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReferenceUsedBy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReferenceUsedBy {
+public final class ReferenceUsedBy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "name", "namePath"})
     public ReferenceUsedBy(String key, String name, String namePath) {
@@ -82,17 +82,25 @@ public final class ReferenceUsedBy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReferenceUsedBy build() {
-            ReferenceUsedBy __instance__ = new ReferenceUsedBy(key, name, namePath);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ReferenceUsedBy model = new ReferenceUsedBy(this.key, this.name, this.namePath);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReferenceUsedBy o) {
-            Builder copiedBuilder = key(o.getKey()).name(o.getName()).namePath(o.getNamePath());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReferenceUsedBy model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("namePath")) {
+                this.namePath(model.getNamePath());
+            }
+            return this;
         }
     }
 
@@ -162,10 +170,10 @@ public final class ReferenceUsedBy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReferenceUsedBy(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", namePath=").append(String.valueOf(this.namePath));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -183,7 +191,7 @@ public final class ReferenceUsedBy {
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.namePath, other.namePath)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -193,16 +201,7 @@ public final class ReferenceUsedBy {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.namePath == null ? 43 : this.namePath.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

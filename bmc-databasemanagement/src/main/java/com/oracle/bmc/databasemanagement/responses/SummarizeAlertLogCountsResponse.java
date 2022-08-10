@@ -61,17 +61,19 @@ public class SummarizeAlertLogCountsResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "alertLogCountsCollection"
     })
     private SummarizeAlertLogCountsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AlertLogCountsCollection
                     alertLogCountsCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.alertLogCountsCollection = alertLogCountsCollection;
@@ -82,6 +84,13 @@ public class SummarizeAlertLogCountsResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class SummarizeAlertLogCountsResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(SummarizeAlertLogCountsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             alertLogCountsCollection(o.getAlertLogCountsCollection());
@@ -162,7 +172,11 @@ public class SummarizeAlertLogCountsResponse extends com.oracle.bmc.responses.Bm
          */
         public SummarizeAlertLogCountsResponse build() {
             return new SummarizeAlertLogCountsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, alertLogCountsCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    alertLogCountsCollection);
         }
     }
 

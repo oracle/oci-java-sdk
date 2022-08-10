@@ -20,7 +20,7 @@ package com.oracle.bmc.opsi.model;
     builder = SummaryStatistics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummaryStatistics {
+public final class SummaryStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "minimum",
@@ -149,25 +149,41 @@ public final class SummaryStatistics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummaryStatistics build() {
-            SummaryStatistics __instance__ =
+            SummaryStatistics model =
                     new SummaryStatistics(
-                            minimum, maximum, average, median, lowerQuartile, upperQuartile);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.minimum,
+                            this.maximum,
+                            this.average,
+                            this.median,
+                            this.lowerQuartile,
+                            this.upperQuartile);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummaryStatistics o) {
-            Builder copiedBuilder =
-                    minimum(o.getMinimum())
-                            .maximum(o.getMaximum())
-                            .average(o.getAverage())
-                            .median(o.getMedian())
-                            .lowerQuartile(o.getLowerQuartile())
-                            .upperQuartile(o.getUpperQuartile());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummaryStatistics model) {
+            if (model.wasPropertyExplicitlySet("minimum")) {
+                this.minimum(model.getMinimum());
+            }
+            if (model.wasPropertyExplicitlySet("maximum")) {
+                this.maximum(model.getMaximum());
+            }
+            if (model.wasPropertyExplicitlySet("average")) {
+                this.average(model.getAverage());
+            }
+            if (model.wasPropertyExplicitlySet("median")) {
+                this.median(model.getMedian());
+            }
+            if (model.wasPropertyExplicitlySet("lowerQuartile")) {
+                this.lowerQuartile(model.getLowerQuartile());
+            }
+            if (model.wasPropertyExplicitlySet("upperQuartile")) {
+                this.upperQuartile(model.getUpperQuartile());
+            }
+            return this;
         }
     }
 
@@ -279,13 +295,13 @@ public final class SummaryStatistics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummaryStatistics(");
+        sb.append("super=").append(super.toString());
         sb.append("minimum=").append(String.valueOf(this.minimum));
         sb.append(", maximum=").append(String.valueOf(this.maximum));
         sb.append(", average=").append(String.valueOf(this.average));
         sb.append(", median=").append(String.valueOf(this.median));
         sb.append(", lowerQuartile=").append(String.valueOf(this.lowerQuartile));
         sb.append(", upperQuartile=").append(String.valueOf(this.upperQuartile));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -306,7 +322,7 @@ public final class SummaryStatistics {
                 && java.util.Objects.equals(this.median, other.median)
                 && java.util.Objects.equals(this.lowerQuartile, other.lowerQuartile)
                 && java.util.Objects.equals(this.upperQuartile, other.upperQuartile)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -323,16 +339,7 @@ public final class SummaryStatistics {
         result =
                 (result * PRIME)
                         + (this.upperQuartile == null ? 43 : this.upperQuartile.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

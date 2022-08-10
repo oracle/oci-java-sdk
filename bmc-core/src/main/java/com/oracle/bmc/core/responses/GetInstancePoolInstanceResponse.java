@@ -55,16 +55,18 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "instancePoolInstance"
     })
     private GetInstancePoolInstanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.instancePoolInstance = instancePoolInstance;
@@ -75,6 +77,13 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetInstancePoolInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             instancePoolInstance(o.getInstancePoolInstance());
@@ -149,7 +159,7 @@ public class GetInstancePoolInstanceResponse extends com.oracle.bmc.responses.Bm
          */
         public GetInstancePoolInstanceResponse build() {
             return new GetInstancePoolInstanceResponse(
-                    __httpStatusCode__, etag, opcRequestId, instancePoolInstance);
+                    __httpStatusCode__, headers, etag, opcRequestId, instancePoolInstance);
         }
     }
 

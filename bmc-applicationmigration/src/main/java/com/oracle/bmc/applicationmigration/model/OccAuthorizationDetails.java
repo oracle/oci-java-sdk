@@ -65,17 +65,23 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OccAuthorizationDetails build() {
-            OccAuthorizationDetails __instance__ = new OccAuthorizationDetails(username, password);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OccAuthorizationDetails model =
+                    new OccAuthorizationDetails(this.username, this.password);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OccAuthorizationDetails o) {
-            Builder copiedBuilder = username(o.getUsername()).password(o.getPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OccAuthorizationDetails model) {
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            return this;
         }
     }
 
@@ -141,7 +147,6 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append(String.valueOf(this.password));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -158,8 +163,7 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
         OccAuthorizationDetails other = (OccAuthorizationDetails) o;
         return java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +172,6 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

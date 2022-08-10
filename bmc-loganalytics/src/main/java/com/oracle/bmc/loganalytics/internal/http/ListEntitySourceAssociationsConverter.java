@@ -194,8 +194,8 @@ public class ListEntitySourceAssociationsConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListEntitySourceAssociationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsAssociationCollection(response.getItem());
 

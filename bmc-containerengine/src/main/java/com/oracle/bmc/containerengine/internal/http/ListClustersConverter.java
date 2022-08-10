@@ -165,8 +165,8 @@ public class ListClustersConverter {
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
                                                         .ListClustersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = AttachInstancePoolInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttachInstancePoolInstanceDetails {
+public final class AttachInstancePoolInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"instanceId"})
     public AttachInstancePoolInstanceDetails(String instanceId) {
@@ -51,18 +52,20 @@ public final class AttachInstancePoolInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachInstancePoolInstanceDetails build() {
-            AttachInstancePoolInstanceDetails __instance__ =
-                    new AttachInstancePoolInstanceDetails(instanceId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AttachInstancePoolInstanceDetails model =
+                    new AttachInstancePoolInstanceDetails(this.instanceId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachInstancePoolInstanceDetails o) {
-            Builder copiedBuilder = instanceId(o.getInstanceId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachInstancePoolInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            return this;
         }
     }
 
@@ -104,8 +107,8 @@ public final class AttachInstancePoolInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttachInstancePoolInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("instanceId=").append(String.valueOf(this.instanceId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,8 +123,7 @@ public final class AttachInstancePoolInstanceDetails {
         }
 
         AttachInstancePoolInstanceDetails other = (AttachInstancePoolInstanceDetails) o;
-        return java.util.Objects.equals(this.instanceId, other.instanceId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.instanceId, other.instanceId) && super.equals(other);
     }
 
     @Override
@@ -129,16 +131,7 @@ public final class AttachInstancePoolInstanceDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

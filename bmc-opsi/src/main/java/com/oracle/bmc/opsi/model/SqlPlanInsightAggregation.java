@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = SqlPlanInsightAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlPlanInsightAggregation {
+public final class SqlPlanInsightAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "planHash",
@@ -129,28 +130,37 @@ public final class SqlPlanInsightAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlPlanInsightAggregation build() {
-            SqlPlanInsightAggregation __instance__ =
+            SqlPlanInsightAggregation model =
                     new SqlPlanInsightAggregation(
-                            planHash,
-                            ioTimeInSec,
-                            cpuTimeInSec,
-                            inefficientWaitTimeInSec,
-                            executionsCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.planHash,
+                            this.ioTimeInSec,
+                            this.cpuTimeInSec,
+                            this.inefficientWaitTimeInSec,
+                            this.executionsCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlPlanInsightAggregation o) {
-            Builder copiedBuilder =
-                    planHash(o.getPlanHash())
-                            .ioTimeInSec(o.getIoTimeInSec())
-                            .cpuTimeInSec(o.getCpuTimeInSec())
-                            .inefficientWaitTimeInSec(o.getInefficientWaitTimeInSec())
-                            .executionsCount(o.getExecutionsCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlPlanInsightAggregation model) {
+            if (model.wasPropertyExplicitlySet("planHash")) {
+                this.planHash(model.getPlanHash());
+            }
+            if (model.wasPropertyExplicitlySet("ioTimeInSec")) {
+                this.ioTimeInSec(model.getIoTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("cpuTimeInSec")) {
+                this.cpuTimeInSec(model.getCpuTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("inefficientWaitTimeInSec")) {
+                this.inefficientWaitTimeInSec(model.getInefficientWaitTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("executionsCount")) {
+                this.executionsCount(model.getExecutionsCount());
+            }
+            return this;
         }
     }
 
@@ -248,13 +258,13 @@ public final class SqlPlanInsightAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlPlanInsightAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("planHash=").append(String.valueOf(this.planHash));
         sb.append(", ioTimeInSec=").append(String.valueOf(this.ioTimeInSec));
         sb.append(", cpuTimeInSec=").append(String.valueOf(this.cpuTimeInSec));
         sb.append(", inefficientWaitTimeInSec=")
                 .append(String.valueOf(this.inefficientWaitTimeInSec));
         sb.append(", executionsCount=").append(String.valueOf(this.executionsCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +285,7 @@ public final class SqlPlanInsightAggregation {
                 && java.util.Objects.equals(
                         this.inefficientWaitTimeInSec, other.inefficientWaitTimeInSec)
                 && java.util.Objects.equals(this.executionsCount, other.executionsCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -293,16 +303,7 @@ public final class SqlPlanInsightAggregation {
         result =
                 (result * PRIME)
                         + (this.executionsCount == null ? 43 : this.executionsCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

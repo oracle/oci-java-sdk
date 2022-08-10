@@ -19,7 +19,8 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
     builder = UpdateOrganizationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateOrganizationDetails {
+public final class UpdateOrganizationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"defaultUcmSubscriptionId"})
     public UpdateOrganizationDetails(String defaultUcmSubscriptionId) {
@@ -50,18 +51,20 @@ public final class UpdateOrganizationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOrganizationDetails build() {
-            UpdateOrganizationDetails __instance__ =
-                    new UpdateOrganizationDetails(defaultUcmSubscriptionId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateOrganizationDetails model =
+                    new UpdateOrganizationDetails(this.defaultUcmSubscriptionId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOrganizationDetails o) {
-            Builder copiedBuilder = defaultUcmSubscriptionId(o.getDefaultUcmSubscriptionId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOrganizationDetails model) {
+            if (model.wasPropertyExplicitlySet("defaultUcmSubscriptionId")) {
+                this.defaultUcmSubscriptionId(model.getDefaultUcmSubscriptionId());
+            }
+            return this;
         }
     }
 
@@ -103,9 +106,9 @@ public final class UpdateOrganizationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOrganizationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("defaultUcmSubscriptionId=")
                 .append(String.valueOf(this.defaultUcmSubscriptionId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +125,7 @@ public final class UpdateOrganizationDetails {
         UpdateOrganizationDetails other = (UpdateOrganizationDetails) o;
         return java.util.Objects.equals(
                         this.defaultUcmSubscriptionId, other.defaultUcmSubscriptionId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -134,16 +137,7 @@ public final class UpdateOrganizationDetails {
                         + (this.defaultUcmSubscriptionId == null
                                 ? 43
                                 : this.defaultUcmSubscriptionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

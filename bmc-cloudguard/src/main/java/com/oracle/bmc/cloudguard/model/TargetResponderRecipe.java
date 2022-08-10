@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = TargetResponderRecipe.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TargetResponderRecipe {
+public final class TargetResponderRecipe
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -226,38 +227,57 @@ public final class TargetResponderRecipe {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TargetResponderRecipe build() {
-            TargetResponderRecipe __instance__ =
+            TargetResponderRecipe model =
                     new TargetResponderRecipe(
-                            id,
-                            responderRecipeId,
-                            compartmentId,
-                            displayName,
-                            description,
-                            owner,
-                            timeCreated,
-                            timeUpdated,
-                            responderRules,
-                            effectiveResponderRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.responderRecipeId,
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.owner,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.responderRules,
+                            this.effectiveResponderRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TargetResponderRecipe o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .responderRecipeId(o.getResponderRecipeId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .owner(o.getOwner())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .responderRules(o.getResponderRules())
-                            .effectiveResponderRules(o.getEffectiveResponderRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TargetResponderRecipe model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("responderRecipeId")) {
+                this.responderRecipeId(model.getResponderRecipeId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("responderRules")) {
+                this.responderRules(model.getResponderRules());
+            }
+            if (model.wasPropertyExplicitlySet("effectiveResponderRules")) {
+                this.effectiveResponderRules(model.getEffectiveResponderRules());
+            }
+            return this;
         }
     }
 
@@ -425,6 +445,7 @@ public final class TargetResponderRecipe {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TargetResponderRecipe(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", responderRecipeId=").append(String.valueOf(this.responderRecipeId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -436,7 +457,6 @@ public final class TargetResponderRecipe {
         sb.append(", responderRules=").append(String.valueOf(this.responderRules));
         sb.append(", effectiveResponderRules=")
                 .append(String.valueOf(this.effectiveResponderRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -462,7 +482,7 @@ public final class TargetResponderRecipe {
                 && java.util.Objects.equals(this.responderRules, other.responderRules)
                 && java.util.Objects.equals(
                         this.effectiveResponderRules, other.effectiveResponderRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -489,16 +509,7 @@ public final class TargetResponderRecipe {
                         + (this.effectiveResponderRules == null
                                 ? 43
                                 : this.effectiveResponderRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

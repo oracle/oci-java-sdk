@@ -103,8 +103,8 @@ public class UpdateDbSystemConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpdateDbSystemResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbSystem(response.getItem());
 

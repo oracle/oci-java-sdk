@@ -17,7 +17,7 @@ package com.oracle.bmc.apmsynthetics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Script.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Script {
+public final class Script extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -313,44 +313,69 @@ public final class Script {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Script build() {
-            Script __instance__ =
+            Script model =
                     new Script(
-                            id,
-                            displayName,
-                            contentType,
-                            content,
-                            timeUploaded,
-                            contentSizeInBytes,
-                            contentFileName,
-                            parameters,
-                            monitorStatusCountMap,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.contentType,
+                            this.content,
+                            this.timeUploaded,
+                            this.contentSizeInBytes,
+                            this.contentFileName,
+                            this.parameters,
+                            this.monitorStatusCountMap,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Script o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .contentType(o.getContentType())
-                            .content(o.getContent())
-                            .timeUploaded(o.getTimeUploaded())
-                            .contentSizeInBytes(o.getContentSizeInBytes())
-                            .contentFileName(o.getContentFileName())
-                            .parameters(o.getParameters())
-                            .monitorStatusCountMap(o.getMonitorStatusCountMap())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Script model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("contentType")) {
+                this.contentType(model.getContentType());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            if (model.wasPropertyExplicitlySet("timeUploaded")) {
+                this.timeUploaded(model.getTimeUploaded());
+            }
+            if (model.wasPropertyExplicitlySet("contentSizeInBytes")) {
+                this.contentSizeInBytes(model.getContentSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("contentFileName")) {
+                this.contentFileName(model.getContentFileName());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("monitorStatusCountMap")) {
+                this.monitorStatusCountMap(model.getMonitorStatusCountMap());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -593,6 +618,7 @@ public final class Script {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Script(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", contentType=").append(String.valueOf(this.contentType));
@@ -606,7 +632,6 @@ public final class Script {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -634,7 +659,7 @@ public final class Script {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -664,16 +689,7 @@ public final class Script {
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

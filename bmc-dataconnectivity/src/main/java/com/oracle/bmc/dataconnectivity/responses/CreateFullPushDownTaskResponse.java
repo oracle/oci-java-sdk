@@ -56,17 +56,19 @@ public class CreateFullPushDownTaskResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "fullPushDownTaskResponse"
     })
     private CreateFullPushDownTaskResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.FullPushDownTaskResponse
                     fullPushDownTaskResponse) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.fullPushDownTaskResponse = fullPushDownTaskResponse;
@@ -77,6 +79,13 @@ public class CreateFullPushDownTaskResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class CreateFullPushDownTaskResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(CreateFullPushDownTaskResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             fullPushDownTaskResponse(o.getFullPushDownTaskResponse());
@@ -153,7 +163,7 @@ public class CreateFullPushDownTaskResponse extends com.oracle.bmc.responses.Bmc
          */
         public CreateFullPushDownTaskResponse build() {
             return new CreateFullPushDownTaskResponse(
-                    __httpStatusCode__, etag, opcRequestId, fullPushDownTaskResponse);
+                    __httpStatusCode__, headers, etag, opcRequestId, fullPushDownTaskResponse);
         }
     }
 

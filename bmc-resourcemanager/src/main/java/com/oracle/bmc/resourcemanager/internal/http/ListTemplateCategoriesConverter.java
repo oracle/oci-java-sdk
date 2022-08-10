@@ -106,8 +106,8 @@ public class ListTemplateCategoriesConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListTemplateCategoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.templateCategorySummaryCollection(response.getItem());
 

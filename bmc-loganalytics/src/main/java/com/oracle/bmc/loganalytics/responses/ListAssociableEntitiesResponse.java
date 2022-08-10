@@ -77,6 +77,7 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcPrevPage",
         "opcNextPage",
         "opcRequestId",
@@ -84,12 +85,13 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListAssociableEntitiesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcPrevPage,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.AssociableEntityCollection
                     associableEntityCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcPrevPage = opcPrevPage;
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
@@ -101,6 +103,13 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -187,6 +196,7 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListAssociableEntitiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcPrevPage(o.getOpcPrevPage());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
@@ -202,6 +212,7 @@ public class ListAssociableEntitiesResponse extends com.oracle.bmc.responses.Bmc
         public ListAssociableEntitiesResponse build() {
             return new ListAssociableEntitiesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcPrevPage,
                     opcNextPage,
                     opcRequestId,

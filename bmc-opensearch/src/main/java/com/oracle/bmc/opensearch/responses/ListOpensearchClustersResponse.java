@@ -60,17 +60,19 @@ public class ListOpensearchClustersResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opensearchClusterCollection"
     })
     private ListOpensearchClustersResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opensearch.model.OpensearchClusterCollection
                     opensearchClusterCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opensearchClusterCollection = opensearchClusterCollection;
@@ -81,6 +83,13 @@ public class ListOpensearchClustersResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class ListOpensearchClustersResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListOpensearchClustersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opensearchClusterCollection(o.getOpensearchClusterCollection());
@@ -161,7 +171,11 @@ public class ListOpensearchClustersResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListOpensearchClustersResponse build() {
             return new ListOpensearchClustersResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, opensearchClusterCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    opensearchClusterCollection);
         }
     }
 

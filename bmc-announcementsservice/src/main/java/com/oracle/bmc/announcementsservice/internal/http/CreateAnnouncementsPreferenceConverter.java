@@ -120,8 +120,8 @@ public class CreateAnnouncementsPreferenceConverter {
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .CreateAnnouncementsPreferenceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcementsPreferencesSummary(response.getItem());
 

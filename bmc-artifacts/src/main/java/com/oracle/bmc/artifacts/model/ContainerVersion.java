@@ -17,7 +17,7 @@ package com.oracle.bmc.artifacts.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContainerVersion.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerVersion {
+public final class ContainerVersion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"createdBy", "timeCreated", "version"})
     public ContainerVersion(String createdBy, java.util.Date timeCreated, String version) {
@@ -82,20 +82,26 @@ public final class ContainerVersion {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerVersion build() {
-            ContainerVersion __instance__ = new ContainerVersion(createdBy, timeCreated, version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ContainerVersion model =
+                    new ContainerVersion(this.createdBy, this.timeCreated, this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerVersion o) {
-            Builder copiedBuilder =
-                    createdBy(o.getCreatedBy())
-                            .timeCreated(o.getTimeCreated())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerVersion model) {
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -165,10 +171,10 @@ public final class ContainerVersion {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerVersion(");
+        sb.append("super=").append(super.toString());
         sb.append("createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +192,7 @@ public final class ContainerVersion {
         return java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +202,7 @@ public final class ContainerVersion {
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

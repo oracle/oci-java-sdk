@@ -64,6 +64,7 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcContentMd5",
         "opcObjectId",
@@ -71,11 +72,12 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private UploadLogFileResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcContentMd5,
             String opcObjectId,
             com.oracle.bmc.loganalytics.model.Upload upload) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcContentMd5 = opcContentMd5;
         this.opcObjectId = opcObjectId;
@@ -87,6 +89,13 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -158,6 +167,7 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(UploadLogFileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcContentMd5(o.getOpcContentMd5());
             opcObjectId(o.getOpcObjectId());
@@ -172,7 +182,7 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public UploadLogFileResponse build() {
             return new UploadLogFileResponse(
-                    __httpStatusCode__, opcRequestId, opcContentMd5, opcObjectId, upload);
+                    __httpStatusCode__, headers, opcRequestId, opcContentMd5, opcObjectId, upload);
         }
     }
 

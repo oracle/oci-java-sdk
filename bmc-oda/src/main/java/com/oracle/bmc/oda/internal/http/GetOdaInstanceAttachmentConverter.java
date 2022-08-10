@@ -119,8 +119,8 @@ public class GetOdaInstanceAttachmentConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .GetOdaInstanceAttachmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.odaInstanceAttachment(response.getItem());
 

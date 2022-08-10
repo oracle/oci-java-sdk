@@ -22,7 +22,7 @@ package com.oracle.bmc.datasafe.model;
     builder = SecurityAssessment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityAssessment {
+public final class SecurityAssessment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -557,66 +557,113 @@ public final class SecurityAssessment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityAssessment build() {
-            SecurityAssessment __instance__ =
+            SecurityAssessment model =
                     new SecurityAssessment(
-                            id,
-                            timeCreated,
-                            timeUpdated,
-                            compartmentId,
-                            displayName,
-                            targetIds,
-                            ignoredTargets,
-                            ignoredAssessmentIds,
-                            targetVersion,
-                            isBaseline,
-                            isDeviatedFromBaseline,
-                            lastComparedBaselineId,
-                            lifecycleState,
-                            lifecycleDetails,
-                            scheduleSecurityAssessmentId,
-                            triggeredBy,
-                            description,
-                            schedule,
-                            link,
-                            type,
-                            statistics,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.compartmentId,
+                            this.displayName,
+                            this.targetIds,
+                            this.ignoredTargets,
+                            this.ignoredAssessmentIds,
+                            this.targetVersion,
+                            this.isBaseline,
+                            this.isDeviatedFromBaseline,
+                            this.lastComparedBaselineId,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.scheduleSecurityAssessmentId,
+                            this.triggeredBy,
+                            this.description,
+                            this.schedule,
+                            this.link,
+                            this.type,
+                            this.statistics,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityAssessment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .targetIds(o.getTargetIds())
-                            .ignoredTargets(o.getIgnoredTargets())
-                            .ignoredAssessmentIds(o.getIgnoredAssessmentIds())
-                            .targetVersion(o.getTargetVersion())
-                            .isBaseline(o.getIsBaseline())
-                            .isDeviatedFromBaseline(o.getIsDeviatedFromBaseline())
-                            .lastComparedBaselineId(o.getLastComparedBaselineId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .scheduleSecurityAssessmentId(o.getScheduleSecurityAssessmentId())
-                            .triggeredBy(o.getTriggeredBy())
-                            .description(o.getDescription())
-                            .schedule(o.getSchedule())
-                            .link(o.getLink())
-                            .type(o.getType())
-                            .statistics(o.getStatistics())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityAssessment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("targetIds")) {
+                this.targetIds(model.getTargetIds());
+            }
+            if (model.wasPropertyExplicitlySet("ignoredTargets")) {
+                this.ignoredTargets(model.getIgnoredTargets());
+            }
+            if (model.wasPropertyExplicitlySet("ignoredAssessmentIds")) {
+                this.ignoredAssessmentIds(model.getIgnoredAssessmentIds());
+            }
+            if (model.wasPropertyExplicitlySet("targetVersion")) {
+                this.targetVersion(model.getTargetVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isBaseline")) {
+                this.isBaseline(model.getIsBaseline());
+            }
+            if (model.wasPropertyExplicitlySet("isDeviatedFromBaseline")) {
+                this.isDeviatedFromBaseline(model.getIsDeviatedFromBaseline());
+            }
+            if (model.wasPropertyExplicitlySet("lastComparedBaselineId")) {
+                this.lastComparedBaselineId(model.getLastComparedBaselineId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleSecurityAssessmentId")) {
+                this.scheduleSecurityAssessmentId(model.getScheduleSecurityAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("triggeredBy")) {
+                this.triggeredBy(model.getTriggeredBy());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("schedule")) {
+                this.schedule(model.getSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("link")) {
+                this.link(model.getLink());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("statistics")) {
+                this.statistics(model.getStatistics());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -1147,6 +1194,7 @@ public final class SecurityAssessment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityAssessment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -1172,7 +1220,6 @@ public final class SecurityAssessment {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1214,7 +1261,7 @@ public final class SecurityAssessment {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1271,16 +1318,7 @@ public final class SecurityAssessment {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

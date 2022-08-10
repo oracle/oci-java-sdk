@@ -70,21 +70,27 @@ public final class SimpleLookupPolicy extends ResponseCacheLookupPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SimpleLookupPolicy build() {
-            SimpleLookupPolicy __instance__ =
-                    new SimpleLookupPolicy(isEnabled, isPrivateCachingEnabled, cacheKeyAdditions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SimpleLookupPolicy model =
+                    new SimpleLookupPolicy(
+                            this.isEnabled, this.isPrivateCachingEnabled, this.cacheKeyAdditions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SimpleLookupPolicy o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .isPrivateCachingEnabled(o.getIsPrivateCachingEnabled())
-                            .cacheKeyAdditions(o.getCacheKeyAdditions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SimpleLookupPolicy model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivateCachingEnabled")) {
+                this.isPrivateCachingEnabled(model.getIsPrivateCachingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("cacheKeyAdditions")) {
+                this.cacheKeyAdditions(model.getCacheKeyAdditions());
+            }
+            return this;
         }
     }
 
@@ -141,7 +147,6 @@ public final class SimpleLookupPolicy extends ResponseCacheLookupPolicy {
         sb.append("SimpleLookupPolicy(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", cacheKeyAdditions=").append(String.valueOf(this.cacheKeyAdditions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,8 +162,7 @@ public final class SimpleLookupPolicy extends ResponseCacheLookupPolicy {
 
         SimpleLookupPolicy other = (SimpleLookupPolicy) o;
         return java.util.Objects.equals(this.cacheKeyAdditions, other.cacheKeyAdditions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +172,6 @@ public final class SimpleLookupPolicy extends ResponseCacheLookupPolicy {
         result =
                 (result * PRIME)
                         + (this.cacheKeyAdditions == null ? 43 : this.cacheKeyAdditions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

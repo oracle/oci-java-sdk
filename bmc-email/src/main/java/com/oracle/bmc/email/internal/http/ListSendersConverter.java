@@ -164,7 +164,8 @@ public class ListSendersConverter {
 
                                 com.oracle.bmc.email.responses.ListSendersResponse.Builder builder =
                                         com.oracle.bmc.email.responses.ListSendersResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

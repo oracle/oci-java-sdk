@@ -107,8 +107,8 @@ public class GetVaultUsageConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .GetVaultUsageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vaultUsage(response.getItem());
 

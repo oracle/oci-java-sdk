@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = WorkRequestErrorSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestErrorSummary {
+public final class WorkRequestErrorSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message", "timestamp"})
     public WorkRequestErrorSummary(String code, String message, java.util.Date timestamp) {
@@ -88,19 +89,26 @@ public final class WorkRequestErrorSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestErrorSummary build() {
-            WorkRequestErrorSummary __instance__ =
-                    new WorkRequestErrorSummary(code, message, timestamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkRequestErrorSummary model =
+                    new WorkRequestErrorSummary(this.code, this.message, this.timestamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestErrorSummary o) {
-            Builder copiedBuilder =
-                    code(o.getCode()).message(o.getMessage()).timestamp(o.getTimestamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestErrorSummary model) {
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            return this;
         }
     }
 
@@ -174,10 +182,10 @@ public final class WorkRequestErrorSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestErrorSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("code=").append(String.valueOf(this.code));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -195,7 +203,7 @@ public final class WorkRequestErrorSummary {
         return java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -205,16 +213,7 @@ public final class WorkRequestErrorSummary {
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

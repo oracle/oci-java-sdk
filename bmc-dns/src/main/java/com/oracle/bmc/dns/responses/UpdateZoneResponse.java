@@ -76,6 +76,7 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "eTag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -83,11 +84,12 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private UpdateZoneResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String eTag,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.dns.model.Zone zone) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.eTag = eTag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -99,6 +101,13 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -182,6 +191,7 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateZoneResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             eTag(o.getETag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -196,7 +206,7 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public UpdateZoneResponse build() {
             return new UpdateZoneResponse(
-                    __httpStatusCode__, eTag, opcRequestId, opcWorkRequestId, zone);
+                    __httpStatusCode__, headers, eTag, opcRequestId, opcWorkRequestId, zone);
         }
     }
 

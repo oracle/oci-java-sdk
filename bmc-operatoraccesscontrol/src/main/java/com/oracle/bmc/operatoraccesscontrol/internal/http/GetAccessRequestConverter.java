@@ -112,8 +112,8 @@ public class GetAccessRequestConverter {
                                         builder =
                                                 com.oracle.bmc.operatoraccesscontrol.responses
                                                         .GetAccessRequestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.accessRequest(response.getItem());
 

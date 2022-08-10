@@ -38,12 +38,18 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
         return softwarePackage;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "softwarePackage"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "softwarePackage"
+    })
     private GetSoftwarePackageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.softwarePackage = softwarePackage;
     }
@@ -53,6 +59,13 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetSoftwarePackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             softwarePackage(o.getSoftwarePackage());
 
@@ -109,7 +123,7 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetSoftwarePackageResponse build() {
             return new GetSoftwarePackageResponse(
-                    __httpStatusCode__, opcRequestId, softwarePackage);
+                    __httpStatusCode__, headers, opcRequestId, softwarePackage);
         }
     }
 

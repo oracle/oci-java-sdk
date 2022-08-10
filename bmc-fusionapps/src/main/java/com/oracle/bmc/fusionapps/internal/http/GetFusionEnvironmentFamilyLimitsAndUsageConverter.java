@@ -124,8 +124,8 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageConverter {
                                                 com.oracle.bmc.fusionapps.responses
                                                         .GetFusionEnvironmentFamilyLimitsAndUsageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fusionEnvironmentFamilyLimitsAndUsage(response.getItem());
 

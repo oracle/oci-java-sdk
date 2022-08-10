@@ -159,8 +159,8 @@ public class ListStorageWorkRequestErrorsConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListStorageWorkRequestErrorsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequestErrorCollection(response.getItem());
 

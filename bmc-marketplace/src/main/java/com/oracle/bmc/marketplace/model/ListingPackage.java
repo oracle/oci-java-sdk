@@ -32,7 +32,7 @@ package com.oracle.bmc.marketplace.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ListingPackage {
+public class ListingPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -166,6 +166,7 @@ public class ListingPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ListingPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", version=").append(String.valueOf(this.version));
@@ -193,7 +194,8 @@ public class ListingPackage {
                 && java.util.Objects.equals(this.pricing, other.pricing)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem);
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && super.equals(other);
     }
 
     @Override
@@ -209,6 +211,7 @@ public class ListingPackage {
         result =
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

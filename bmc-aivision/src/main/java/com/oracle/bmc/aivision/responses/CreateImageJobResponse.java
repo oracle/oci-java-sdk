@@ -53,13 +53,20 @@ public class CreateImageJobResponse extends com.oracle.bmc.responses.BmcResponse
         return imageJob;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "imageJob"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "imageJob"
+    })
     private CreateImageJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.aivision.model.ImageJob imageJob) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.imageJob = imageJob;
@@ -70,6 +77,13 @@ public class CreateImageJobResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateImageJobResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(CreateImageJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             imageJob(o.getImageJob());
@@ -142,7 +157,8 @@ public class CreateImageJobResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public CreateImageJobResponse build() {
-            return new CreateImageJobResponse(__httpStatusCode__, etag, opcRequestId, imageJob);
+            return new CreateImageJobResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, imageJob);
         }
     }
 

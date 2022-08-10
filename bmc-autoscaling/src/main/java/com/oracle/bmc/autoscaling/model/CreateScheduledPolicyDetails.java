@@ -79,24 +79,37 @@ public final class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyD
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateScheduledPolicyDetails build() {
-            CreateScheduledPolicyDetails __instance__ =
+            CreateScheduledPolicyDetails model =
                     new CreateScheduledPolicyDetails(
-                            capacity, displayName, isEnabled, executionSchedule, resourceAction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.capacity,
+                            this.displayName,
+                            this.isEnabled,
+                            this.executionSchedule,
+                            this.resourceAction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateScheduledPolicyDetails o) {
-            Builder copiedBuilder =
-                    capacity(o.getCapacity())
-                            .displayName(o.getDisplayName())
-                            .isEnabled(o.getIsEnabled())
-                            .executionSchedule(o.getExecutionSchedule())
-                            .resourceAction(o.getResourceAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateScheduledPolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("executionSchedule")) {
+                this.executionSchedule(model.getExecutionSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("resourceAction")) {
+                this.resourceAction(model.getResourceAction());
+            }
+            return this;
         }
     }
 
@@ -153,7 +166,6 @@ public final class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyD
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", executionSchedule=").append(String.valueOf(this.executionSchedule));
         sb.append(", resourceAction=").append(String.valueOf(this.resourceAction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -170,8 +182,7 @@ public final class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyD
         CreateScheduledPolicyDetails other = (CreateScheduledPolicyDetails) o;
         return java.util.Objects.equals(this.executionSchedule, other.executionSchedule)
                 && java.util.Objects.equals(this.resourceAction, other.resourceAction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -184,16 +195,6 @@ public final class CreateScheduledPolicyDetails extends CreateAutoScalingPolicyD
         result =
                 (result * PRIME)
                         + (this.resourceAction == null ? 43 : this.resourceAction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

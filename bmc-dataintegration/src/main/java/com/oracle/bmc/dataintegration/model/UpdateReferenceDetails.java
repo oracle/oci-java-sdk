@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = UpdateReferenceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateReferenceDetails {
+public final class UpdateReferenceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"options", "targetObject", "childReferences"})
     public UpdateReferenceDetails(
@@ -87,21 +88,27 @@ public final class UpdateReferenceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateReferenceDetails build() {
-            UpdateReferenceDetails __instance__ =
-                    new UpdateReferenceDetails(options, targetObject, childReferences);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateReferenceDetails model =
+                    new UpdateReferenceDetails(
+                            this.options, this.targetObject, this.childReferences);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateReferenceDetails o) {
-            Builder copiedBuilder =
-                    options(o.getOptions())
-                            .targetObject(o.getTargetObject())
-                            .childReferences(o.getChildReferences());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateReferenceDetails model) {
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("targetObject")) {
+                this.targetObject(model.getTargetObject());
+            }
+            if (model.wasPropertyExplicitlySet("childReferences")) {
+                this.childReferences(model.getChildReferences());
+            }
+            return this;
         }
     }
 
@@ -171,10 +178,10 @@ public final class UpdateReferenceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateReferenceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("options=").append(String.valueOf(this.options));
         sb.append(", targetObject=").append(String.valueOf(this.targetObject));
         sb.append(", childReferences=").append(String.valueOf(this.childReferences));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +199,7 @@ public final class UpdateReferenceDetails {
         return java.util.Objects.equals(this.options, other.options)
                 && java.util.Objects.equals(this.targetObject, other.targetObject)
                 && java.util.Objects.equals(this.childReferences, other.childReferences)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +211,7 @@ public final class UpdateReferenceDetails {
         result =
                 (result * PRIME)
                         + (this.childReferences == null ? 43 : this.childReferences.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

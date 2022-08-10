@@ -42,15 +42,17 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "batchDetectLanguageEntitiesResult"
     })
     private BatchDetectLanguageEntitiesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.ailanguage.model.BatchDetectLanguageEntitiesResult
                     batchDetectLanguageEntitiesResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.batchDetectLanguageEntitiesResult = batchDetectLanguageEntitiesResult;
     }
@@ -60,6 +62,13 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
          */
         public Builder copy(BatchDetectLanguageEntitiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             batchDetectLanguageEntitiesResult(o.getBatchDetectLanguageEntitiesResult());
 
@@ -118,7 +128,7 @@ public class BatchDetectLanguageEntitiesResponse extends com.oracle.bmc.response
          */
         public BatchDetectLanguageEntitiesResponse build() {
             return new BatchDetectLanguageEntitiesResponse(
-                    __httpStatusCode__, opcRequestId, batchDetectLanguageEntitiesResult);
+                    __httpStatusCode__, headers, opcRequestId, batchDetectLanguageEntitiesResult);
         }
     }
 

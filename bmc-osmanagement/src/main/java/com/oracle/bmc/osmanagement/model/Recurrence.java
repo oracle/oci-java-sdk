@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Recurrence.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Recurrence {
+public final class Recurrence extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"intervalType", "intervalValue"})
     public Recurrence(IntervalType intervalType, String intervalValue) {
@@ -65,18 +65,22 @@ public final class Recurrence {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Recurrence build() {
-            Recurrence __instance__ = new Recurrence(intervalType, intervalValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Recurrence model = new Recurrence(this.intervalType, this.intervalValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Recurrence o) {
-            Builder copiedBuilder =
-                    intervalType(o.getIntervalType()).intervalValue(o.getIntervalValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Recurrence model) {
+            if (model.wasPropertyExplicitlySet("intervalType")) {
+                this.intervalType(model.getIntervalType());
+            }
+            if (model.wasPropertyExplicitlySet("intervalValue")) {
+                this.intervalValue(model.getIntervalValue());
+            }
+            return this;
         }
     }
 
@@ -169,9 +173,9 @@ public final class Recurrence {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Recurrence(");
+        sb.append("super=").append(super.toString());
         sb.append("intervalType=").append(String.valueOf(this.intervalType));
         sb.append(", intervalValue=").append(String.valueOf(this.intervalValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +192,7 @@ public final class Recurrence {
         Recurrence other = (Recurrence) o;
         return java.util.Objects.equals(this.intervalType, other.intervalType)
                 && java.util.Objects.equals(this.intervalValue, other.intervalValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +203,7 @@ public final class Recurrence {
         result =
                 (result * PRIME)
                         + (this.intervalValue == null ? 43 : this.intervalValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

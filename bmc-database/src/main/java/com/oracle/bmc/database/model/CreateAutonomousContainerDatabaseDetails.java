@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = CreateAutonomousContainerDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAutonomousContainerDatabaseDetails {
+public final class CreateAutonomousContainerDatabaseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -564,75 +565,126 @@ public final class CreateAutonomousContainerDatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAutonomousContainerDatabaseDetails build() {
-            CreateAutonomousContainerDatabaseDetails __instance__ =
+            CreateAutonomousContainerDatabaseDetails model =
                     new CreateAutonomousContainerDatabaseDetails(
-                            displayName,
-                            dbUniqueName,
-                            serviceLevelAgreementType,
-                            autonomousExadataInfrastructureId,
-                            peerAutonomousExadataInfrastructureId,
-                            peerAutonomousContainerDatabaseDisplayName,
-                            protectionMode,
-                            isAutomaticFailoverEnabled,
-                            peerCloudAutonomousVmClusterId,
-                            peerAutonomousVmClusterId,
-                            peerAutonomousContainerDatabaseCompartmentId,
-                            peerAutonomousContainerDatabaseBackupConfig,
-                            peerDbUniqueName,
-                            autonomousVmClusterId,
-                            cloudAutonomousVmClusterId,
-                            compartmentId,
-                            patchModel,
-                            maintenanceWindowDetails,
-                            standbyMaintenanceBufferInDays,
-                            freeformTags,
-                            definedTags,
-                            backupConfig,
-                            kmsKeyId,
-                            kmsKeyVersionId,
-                            vaultId,
-                            keyStoreId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.dbUniqueName,
+                            this.serviceLevelAgreementType,
+                            this.autonomousExadataInfrastructureId,
+                            this.peerAutonomousExadataInfrastructureId,
+                            this.peerAutonomousContainerDatabaseDisplayName,
+                            this.protectionMode,
+                            this.isAutomaticFailoverEnabled,
+                            this.peerCloudAutonomousVmClusterId,
+                            this.peerAutonomousVmClusterId,
+                            this.peerAutonomousContainerDatabaseCompartmentId,
+                            this.peerAutonomousContainerDatabaseBackupConfig,
+                            this.peerDbUniqueName,
+                            this.autonomousVmClusterId,
+                            this.cloudAutonomousVmClusterId,
+                            this.compartmentId,
+                            this.patchModel,
+                            this.maintenanceWindowDetails,
+                            this.standbyMaintenanceBufferInDays,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.backupConfig,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.vaultId,
+                            this.keyStoreId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAutonomousContainerDatabaseDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .dbUniqueName(o.getDbUniqueName())
-                            .serviceLevelAgreementType(o.getServiceLevelAgreementType())
-                            .autonomousExadataInfrastructureId(
-                                    o.getAutonomousExadataInfrastructureId())
-                            .peerAutonomousExadataInfrastructureId(
-                                    o.getPeerAutonomousExadataInfrastructureId())
-                            .peerAutonomousContainerDatabaseDisplayName(
-                                    o.getPeerAutonomousContainerDatabaseDisplayName())
-                            .protectionMode(o.getProtectionMode())
-                            .isAutomaticFailoverEnabled(o.getIsAutomaticFailoverEnabled())
-                            .peerCloudAutonomousVmClusterId(o.getPeerCloudAutonomousVmClusterId())
-                            .peerAutonomousVmClusterId(o.getPeerAutonomousVmClusterId())
-                            .peerAutonomousContainerDatabaseCompartmentId(
-                                    o.getPeerAutonomousContainerDatabaseCompartmentId())
-                            .peerAutonomousContainerDatabaseBackupConfig(
-                                    o.getPeerAutonomousContainerDatabaseBackupConfig())
-                            .peerDbUniqueName(o.getPeerDbUniqueName())
-                            .autonomousVmClusterId(o.getAutonomousVmClusterId())
-                            .cloudAutonomousVmClusterId(o.getCloudAutonomousVmClusterId())
-                            .compartmentId(o.getCompartmentId())
-                            .patchModel(o.getPatchModel())
-                            .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
-                            .standbyMaintenanceBufferInDays(o.getStandbyMaintenanceBufferInDays())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .backupConfig(o.getBackupConfig())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .vaultId(o.getVaultId())
-                            .keyStoreId(o.getKeyStoreId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAutonomousContainerDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("serviceLevelAgreementType")) {
+                this.serviceLevelAgreementType(model.getServiceLevelAgreementType());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousExadataInfrastructureId")) {
+                this.autonomousExadataInfrastructureId(
+                        model.getAutonomousExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousExadataInfrastructureId")) {
+                this.peerAutonomousExadataInfrastructureId(
+                        model.getPeerAutonomousExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousContainerDatabaseDisplayName")) {
+                this.peerAutonomousContainerDatabaseDisplayName(
+                        model.getPeerAutonomousContainerDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("isAutomaticFailoverEnabled")) {
+                this.isAutomaticFailoverEnabled(model.getIsAutomaticFailoverEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("peerCloudAutonomousVmClusterId")) {
+                this.peerCloudAutonomousVmClusterId(model.getPeerCloudAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousVmClusterId")) {
+                this.peerAutonomousVmClusterId(model.getPeerAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousContainerDatabaseCompartmentId")) {
+                this.peerAutonomousContainerDatabaseCompartmentId(
+                        model.getPeerAutonomousContainerDatabaseCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousContainerDatabaseBackupConfig")) {
+                this.peerAutonomousContainerDatabaseBackupConfig(
+                        model.getPeerAutonomousContainerDatabaseBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbUniqueName")) {
+                this.peerDbUniqueName(model.getPeerDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousVmClusterId")) {
+                this.autonomousVmClusterId(model.getAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutonomousVmClusterId")) {
+                this.cloudAutonomousVmClusterId(model.getCloudAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("patchModel")) {
+                this.patchModel(model.getPatchModel());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
+                this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
+            }
+            if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
+                this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("backupConfig")) {
+                this.backupConfig(model.getBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            return this;
         }
     }
 
@@ -1153,6 +1205,7 @@ public final class CreateAutonomousContainerDatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutonomousContainerDatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", serviceLevelAgreementType=")
@@ -1191,7 +1244,6 @@ public final class CreateAutonomousContainerDatabaseDetails {
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1250,7 +1302,7 @@ public final class CreateAutonomousContainerDatabaseDetails {
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1343,16 +1395,7 @@ public final class CreateAutonomousContainerDatabaseDetails {
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

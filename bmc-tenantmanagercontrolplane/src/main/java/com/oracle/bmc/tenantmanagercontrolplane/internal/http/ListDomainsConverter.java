@@ -177,8 +177,8 @@ public class ListDomainsConverter {
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .ListDomainsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.domainCollection(response.getItem());
 

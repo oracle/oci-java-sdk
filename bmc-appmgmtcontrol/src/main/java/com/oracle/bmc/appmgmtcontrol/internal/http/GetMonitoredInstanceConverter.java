@@ -113,8 +113,8 @@ public class GetMonitoredInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.appmgmtcontrol.responses
                                                         .GetMonitoredInstanceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitoredInstance(response.getItem());
 

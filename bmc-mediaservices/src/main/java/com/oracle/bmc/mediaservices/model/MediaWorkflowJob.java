@@ -18,7 +18,7 @@ package com.oracle.bmc.mediaservices.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MediaWorkflowJob.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MediaWorkflowJob {
+public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mediaWorkflowConfigurationIds",
@@ -404,54 +404,89 @@ public final class MediaWorkflowJob {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MediaWorkflowJob build() {
-            MediaWorkflowJob __instance__ =
+            MediaWorkflowJob model =
                     new MediaWorkflowJob(
-                            mediaWorkflowConfigurationIds,
-                            mediaWorkflowId,
-                            id,
-                            compartmentId,
-                            displayName,
-                            lifecycleState,
-                            lifecycleDetails,
-                            taskLifecycleState,
-                            parameters,
-                            timeCreated,
-                            timeUpdated,
-                            runnable,
-                            outputs,
-                            timeStarted,
-                            timeEnded,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.mediaWorkflowConfigurationIds,
+                            this.mediaWorkflowId,
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.taskLifecycleState,
+                            this.parameters,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.runnable,
+                            this.outputs,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MediaWorkflowJob o) {
-            Builder copiedBuilder =
-                    mediaWorkflowConfigurationIds(o.getMediaWorkflowConfigurationIds())
-                            .mediaWorkflowId(o.getMediaWorkflowId())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .taskLifecycleState(o.getTaskLifecycleState())
-                            .parameters(o.getParameters())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .runnable(o.getRunnable())
-                            .outputs(o.getOutputs())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MediaWorkflowJob model) {
+            if (model.wasPropertyExplicitlySet("mediaWorkflowConfigurationIds")) {
+                this.mediaWorkflowConfigurationIds(model.getMediaWorkflowConfigurationIds());
+            }
+            if (model.wasPropertyExplicitlySet("mediaWorkflowId")) {
+                this.mediaWorkflowId(model.getMediaWorkflowId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("taskLifecycleState")) {
+                this.taskLifecycleState(model.getTaskLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("runnable")) {
+                this.runnable(model.getRunnable());
+            }
+            if (model.wasPropertyExplicitlySet("outputs")) {
+                this.outputs(model.getOutputs());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -810,6 +845,7 @@ public final class MediaWorkflowJob {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MediaWorkflowJob(");
+        sb.append("super=").append(super.toString());
         sb.append("mediaWorkflowConfigurationIds=")
                 .append(String.valueOf(this.mediaWorkflowConfigurationIds));
         sb.append(", mediaWorkflowId=").append(String.valueOf(this.mediaWorkflowId));
@@ -829,7 +865,6 @@ public final class MediaWorkflowJob {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -863,7 +898,7 @@ public final class MediaWorkflowJob {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -904,16 +939,7 @@ public final class MediaWorkflowJob {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

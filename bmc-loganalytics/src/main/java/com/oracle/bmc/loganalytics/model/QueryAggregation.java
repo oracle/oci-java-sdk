@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryAggregation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryAggregation {
+public final class QueryAggregation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalCount",
@@ -222,36 +222,53 @@ public final class QueryAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryAggregation build() {
-            QueryAggregation __instance__ =
+            QueryAggregation model =
                     new QueryAggregation(
-                            totalCount,
-                            totalMatchedCount,
-                            arePartialResults,
-                            partialResultReason,
-                            columns,
-                            fields,
-                            items,
-                            queryExecutionTimeInMs,
-                            percentComplete);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalCount,
+                            this.totalMatchedCount,
+                            this.arePartialResults,
+                            this.partialResultReason,
+                            this.columns,
+                            this.fields,
+                            this.items,
+                            this.queryExecutionTimeInMs,
+                            this.percentComplete);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryAggregation o) {
-            Builder copiedBuilder =
-                    totalCount(o.getTotalCount())
-                            .totalMatchedCount(o.getTotalMatchedCount())
-                            .arePartialResults(o.getArePartialResults())
-                            .partialResultReason(o.getPartialResultReason())
-                            .columns(o.getColumns())
-                            .fields(o.getFields())
-                            .items(o.getItems())
-                            .queryExecutionTimeInMs(o.getQueryExecutionTimeInMs())
-                            .percentComplete(o.getPercentComplete());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryAggregation model) {
+            if (model.wasPropertyExplicitlySet("totalCount")) {
+                this.totalCount(model.getTotalCount());
+            }
+            if (model.wasPropertyExplicitlySet("totalMatchedCount")) {
+                this.totalMatchedCount(model.getTotalMatchedCount());
+            }
+            if (model.wasPropertyExplicitlySet("arePartialResults")) {
+                this.arePartialResults(model.getArePartialResults());
+            }
+            if (model.wasPropertyExplicitlySet("partialResultReason")) {
+                this.partialResultReason(model.getPartialResultReason());
+            }
+            if (model.wasPropertyExplicitlySet("columns")) {
+                this.columns(model.getColumns());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("queryExecutionTimeInMs")) {
+                this.queryExecutionTimeInMs(model.getQueryExecutionTimeInMs());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            return this;
         }
     }
 
@@ -423,6 +440,7 @@ public final class QueryAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("totalCount=").append(String.valueOf(this.totalCount));
         sb.append(", totalMatchedCount=").append(String.valueOf(this.totalMatchedCount));
         sb.append(", arePartialResults=").append(String.valueOf(this.arePartialResults));
@@ -432,7 +450,6 @@ public final class QueryAggregation {
         sb.append(", items=").append(String.valueOf(this.items));
         sb.append(", queryExecutionTimeInMs=").append(String.valueOf(this.queryExecutionTimeInMs));
         sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -457,7 +474,7 @@ public final class QueryAggregation {
                 && java.util.Objects.equals(
                         this.queryExecutionTimeInMs, other.queryExecutionTimeInMs)
                 && java.util.Objects.equals(this.percentComplete, other.percentComplete)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -487,16 +504,7 @@ public final class QueryAggregation {
         result =
                 (result * PRIME)
                         + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

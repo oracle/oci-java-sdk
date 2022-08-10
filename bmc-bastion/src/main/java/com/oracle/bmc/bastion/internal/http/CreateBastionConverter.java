@@ -101,8 +101,8 @@ public class CreateBastionConverter {
                                         builder =
                                                 com.oracle.bmc.bastion.responses
                                                         .CreateBastionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bastion(response.getItem());
 

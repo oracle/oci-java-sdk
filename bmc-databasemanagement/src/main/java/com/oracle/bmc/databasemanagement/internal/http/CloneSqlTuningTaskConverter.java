@@ -120,8 +120,8 @@ public class CloneSqlTuningTaskConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .CloneSqlTuningTaskResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlTuningTaskReturn(response.getItem());
 

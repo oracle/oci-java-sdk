@@ -19,7 +19,8 @@ package com.oracle.bmc.jms.model;
     builder = ExistingInstallationSiteId.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExistingInstallationSiteId {
+public final class ExistingInstallationSiteId
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"managedInstanceId", "installationKey"})
     public ExistingInstallationSiteId(String managedInstanceId, String installationKey) {
@@ -69,20 +70,23 @@ public final class ExistingInstallationSiteId {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExistingInstallationSiteId build() {
-            ExistingInstallationSiteId __instance__ =
-                    new ExistingInstallationSiteId(managedInstanceId, installationKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExistingInstallationSiteId model =
+                    new ExistingInstallationSiteId(this.managedInstanceId, this.installationKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExistingInstallationSiteId o) {
-            Builder copiedBuilder =
-                    managedInstanceId(o.getManagedInstanceId())
-                            .installationKey(o.getInstallationKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExistingInstallationSiteId model) {
+            if (model.wasPropertyExplicitlySet("managedInstanceId")) {
+                this.managedInstanceId(model.getManagedInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("installationKey")) {
+                this.installationKey(model.getInstallationKey());
+            }
+            return this;
         }
     }
 
@@ -140,9 +144,9 @@ public final class ExistingInstallationSiteId {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExistingInstallationSiteId(");
+        sb.append("super=").append(super.toString());
         sb.append("managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(", installationKey=").append(String.valueOf(this.installationKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +163,7 @@ public final class ExistingInstallationSiteId {
         ExistingInstallationSiteId other = (ExistingInstallationSiteId) o;
         return java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
                 && java.util.Objects.equals(this.installationKey, other.installationKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -172,16 +176,7 @@ public final class ExistingInstallationSiteId {
         result =
                 (result * PRIME)
                         + (this.installationKey == null ? 43 : this.installationKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

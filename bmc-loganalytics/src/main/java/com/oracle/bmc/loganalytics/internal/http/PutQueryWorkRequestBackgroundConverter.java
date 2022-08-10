@@ -124,8 +124,8 @@ public class PutQueryWorkRequestBackgroundConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .PutQueryWorkRequestBackgroundResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.queryWorkRequest(response.getItem());

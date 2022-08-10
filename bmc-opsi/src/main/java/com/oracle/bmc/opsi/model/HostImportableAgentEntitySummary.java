@@ -87,23 +87,33 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostImportableAgentEntitySummary build() {
-            HostImportableAgentEntitySummary __instance__ =
+            HostImportableAgentEntitySummary model =
                     new HostImportableAgentEntitySummary(
-                            managementAgentId, managementAgentDisplayName, hostName, platformType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.managementAgentId,
+                            this.managementAgentDisplayName,
+                            this.hostName,
+                            this.platformType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostImportableAgentEntitySummary o) {
-            Builder copiedBuilder =
-                    managementAgentId(o.getManagementAgentId())
-                            .managementAgentDisplayName(o.getManagementAgentDisplayName())
-                            .hostName(o.getHostName())
-                            .platformType(o.getPlatformType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostImportableAgentEntitySummary model) {
+            if (model.wasPropertyExplicitlySet("managementAgentId")) {
+                this.managementAgentId(model.getManagementAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentDisplayName")) {
+                this.managementAgentDisplayName(model.getManagementAgentDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            return this;
         }
     }
 
@@ -232,7 +242,6 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
         sb.append(", platformType=").append(String.valueOf(this.platformType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,8 +258,7 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         HostImportableAgentEntitySummary other = (HostImportableAgentEntitySummary) o;
         return java.util.Objects.equals(this.hostName, other.hostName)
                 && java.util.Objects.equals(this.platformType, other.platformType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +267,6 @@ public final class HostImportableAgentEntitySummary extends ImportableAgentEntit
         int result = super.hashCode();
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
         result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

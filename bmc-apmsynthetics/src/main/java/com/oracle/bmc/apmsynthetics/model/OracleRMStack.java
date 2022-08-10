@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * DVP details of Oracle RM stack.
+ * Details of the Oracle Resource Manager stack, which is a subtype of the Dedicated Vantage Point stack.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,13 +34,13 @@ public final class OracleRMStack extends DvpStackDetails {
             return this;
         }
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
         private String dvpStackId;
 
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * @param dvpStackId the value to set
          * @return this builder
          **/
@@ -50,13 +50,13 @@ public final class OracleRMStack extends DvpStackDetails {
             return this;
         }
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
         private String dvpStreamId;
 
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * @param dvpStreamId the value to set
          * @return this builder
          **/
@@ -70,20 +70,26 @@ public final class OracleRMStack extends DvpStackDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OracleRMStack build() {
-            OracleRMStack __instance__ = new OracleRMStack(dvpVersion, dvpStackId, dvpStreamId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OracleRMStack model =
+                    new OracleRMStack(this.dvpVersion, this.dvpStackId, this.dvpStreamId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OracleRMStack o) {
-            Builder copiedBuilder =
-                    dvpVersion(o.getDvpVersion())
-                            .dvpStackId(o.getDvpStackId())
-                            .dvpStreamId(o.getDvpStreamId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OracleRMStack model) {
+            if (model.wasPropertyExplicitlySet("dvpVersion")) {
+                this.dvpVersion(model.getDvpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dvpStackId")) {
+                this.dvpStackId(model.getDvpStackId());
+            }
+            if (model.wasPropertyExplicitlySet("dvpStreamId")) {
+                this.dvpStreamId(model.getDvpStreamId());
+            }
+            return this;
         }
     }
 
@@ -106,13 +112,13 @@ public final class OracleRMStack extends DvpStackDetails {
     }
 
     /**
-     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
     private final String dvpStackId;
 
     /**
-     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * @return the value
      **/
     public String getDvpStackId() {
@@ -120,13 +126,13 @@ public final class OracleRMStack extends DvpStackDetails {
     }
 
     /**
-     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
     private final String dvpStreamId;
 
     /**
-     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of DVP RM stack.
+     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * @return the value
      **/
     public String getDvpStreamId() {
@@ -149,7 +155,6 @@ public final class OracleRMStack extends DvpStackDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dvpStackId=").append(String.valueOf(this.dvpStackId));
         sb.append(", dvpStreamId=").append(String.valueOf(this.dvpStreamId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -166,8 +171,7 @@ public final class OracleRMStack extends DvpStackDetails {
         OracleRMStack other = (OracleRMStack) o;
         return java.util.Objects.equals(this.dvpStackId, other.dvpStackId)
                 && java.util.Objects.equals(this.dvpStreamId, other.dvpStreamId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -176,16 +180,6 @@ public final class OracleRMStack extends DvpStackDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.dvpStackId == null ? 43 : this.dvpStackId.hashCode());
         result = (result * PRIME) + (this.dvpStreamId == null ? 43 : this.dvpStreamId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

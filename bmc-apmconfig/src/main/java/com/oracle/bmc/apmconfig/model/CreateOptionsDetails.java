@@ -116,25 +116,41 @@ public final class CreateOptionsDetails extends CreateConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOptionsDetails build() {
-            CreateOptionsDetails __instance__ =
+            CreateOptionsDetails model =
                     new CreateOptionsDetails(
-                            freeformTags, definedTags, displayName, options, group, description);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.freeformTags,
+                            this.definedTags,
+                            this.displayName,
+                            this.options,
+                            this.group,
+                            this.description);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOptionsDetails o) {
-            Builder copiedBuilder =
-                    freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .options(o.getOptions())
-                            .group(o.getGroup())
-                            .description(o.getDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOptionsDetails model) {
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("group")) {
+                this.group(model.getGroup());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            return this;
         }
     }
 
@@ -240,7 +256,6 @@ public final class CreateOptionsDetails extends CreateConfigDetails {
         sb.append(", options=").append(String.valueOf(this.options));
         sb.append(", group=").append(String.valueOf(this.group));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,8 +274,7 @@ public final class CreateOptionsDetails extends CreateConfigDetails {
                 && java.util.Objects.equals(this.options, other.options)
                 && java.util.Objects.equals(this.group, other.group)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -271,16 +285,6 @@ public final class CreateOptionsDetails extends CreateConfigDetails {
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
         result = (result * PRIME) + (this.group == null ? 43 : this.group.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

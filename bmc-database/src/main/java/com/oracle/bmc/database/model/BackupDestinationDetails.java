@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = BackupDestinationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BackupDestinationDetails {
+public final class BackupDestinationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "id", "vpcUser", "vpcPassword", "internetProxy"})
     public BackupDestinationDetails(
@@ -119,23 +120,33 @@ public final class BackupDestinationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackupDestinationDetails build() {
-            BackupDestinationDetails __instance__ =
-                    new BackupDestinationDetails(type, id, vpcUser, vpcPassword, internetProxy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BackupDestinationDetails model =
+                    new BackupDestinationDetails(
+                            this.type, this.id, this.vpcUser, this.vpcPassword, this.internetProxy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BackupDestinationDetails o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .id(o.getId())
-                            .vpcUser(o.getVpcUser())
-                            .vpcPassword(o.getVpcPassword())
-                            .internetProxy(o.getInternetProxy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BackupDestinationDetails model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("vpcUser")) {
+                this.vpcUser(model.getVpcUser());
+            }
+            if (model.wasPropertyExplicitlySet("vpcPassword")) {
+                this.vpcPassword(model.getVpcPassword());
+            }
+            if (model.wasPropertyExplicitlySet("internetProxy")) {
+                this.internetProxy(model.getInternetProxy());
+            }
+            return this;
         }
     }
 
@@ -281,12 +292,12 @@ public final class BackupDestinationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BackupDestinationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", vpcUser=").append(String.valueOf(this.vpcUser));
         sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -306,7 +317,7 @@ public final class BackupDestinationDetails {
                 && java.util.Objects.equals(this.vpcUser, other.vpcUser)
                 && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -320,16 +331,7 @@ public final class BackupDestinationDetails {
         result =
                 (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

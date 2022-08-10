@@ -19,7 +19,8 @@ package com.oracle.bmc.waf.model;
     builder = ResponseAccessControl.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResponseAccessControl {
+public final class ResponseAccessControl
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rules"})
     public ResponseAccessControl(java.util.List<AccessControlRule> rules) {
@@ -50,17 +51,19 @@ public final class ResponseAccessControl {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResponseAccessControl build() {
-            ResponseAccessControl __instance__ = new ResponseAccessControl(rules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResponseAccessControl model = new ResponseAccessControl(this.rules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResponseAccessControl o) {
-            Builder copiedBuilder = rules(o.getRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResponseAccessControl model) {
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class ResponseAccessControl {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResponseAccessControl(");
+        sb.append("super=").append(super.toString());
         sb.append("rules=").append(String.valueOf(this.rules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +121,7 @@ public final class ResponseAccessControl {
         }
 
         ResponseAccessControl other = (ResponseAccessControl) o;
-        return java.util.Objects.equals(this.rules, other.rules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.rules, other.rules) && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class ResponseAccessControl {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

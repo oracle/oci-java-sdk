@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = GlossaryPermissionsSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GlossaryPermissionsSummary {
+public final class GlossaryPermissionsSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"glossaryKey", "userPermissions"})
     public GlossaryPermissionsSummary(String glossaryKey, java.util.List<String> userPermissions) {
@@ -67,19 +68,23 @@ public final class GlossaryPermissionsSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GlossaryPermissionsSummary build() {
-            GlossaryPermissionsSummary __instance__ =
-                    new GlossaryPermissionsSummary(glossaryKey, userPermissions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GlossaryPermissionsSummary model =
+                    new GlossaryPermissionsSummary(this.glossaryKey, this.userPermissions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GlossaryPermissionsSummary o) {
-            Builder copiedBuilder =
-                    glossaryKey(o.getGlossaryKey()).userPermissions(o.getUserPermissions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GlossaryPermissionsSummary model) {
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("userPermissions")) {
+                this.userPermissions(model.getUserPermissions());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class GlossaryPermissionsSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GlossaryPermissionsSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(", userPermissions=").append(String.valueOf(this.userPermissions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class GlossaryPermissionsSummary {
         GlossaryPermissionsSummary other = (GlossaryPermissionsSummary) o;
         return java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(this.userPermissions, other.userPermissions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +170,7 @@ public final class GlossaryPermissionsSummary {
         result =
                 (result * PRIME)
                         + (this.userPermissions == null ? 43 : this.userPermissions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -100,8 +100,8 @@ public class DecryptConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .DecryptResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.decryptedData(response.getItem());
 

@@ -55,16 +55,18 @@ public class GetKnowledgeBaseResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "knowledgeBase"
     })
     private GetKnowledgeBaseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.adm.model.KnowledgeBase knowledgeBase) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.knowledgeBase = knowledgeBase;
@@ -75,6 +77,13 @@ public class GetKnowledgeBaseResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetKnowledgeBaseResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetKnowledgeBaseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             knowledgeBase(o.getKnowledgeBase());
@@ -148,7 +158,7 @@ public class GetKnowledgeBaseResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetKnowledgeBaseResponse build() {
             return new GetKnowledgeBaseResponse(
-                    __httpStatusCode__, opcRequestId, etag, knowledgeBase);
+                    __httpStatusCode__, headers, opcRequestId, etag, knowledgeBase);
         }
     }
 

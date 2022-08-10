@@ -187,52 +187,83 @@ public final class ComputeInstanceGroupCanaryApprovalDeployStage extends DeployS
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceGroupCanaryApprovalDeployStage build() {
-            ComputeInstanceGroupCanaryApprovalDeployStage __instance__ =
+            ComputeInstanceGroupCanaryApprovalDeployStage model =
                     new ComputeInstanceGroupCanaryApprovalDeployStage(
-                            id,
-                            description,
-                            displayName,
-                            projectId,
-                            deployPipelineId,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            computeInstanceGroupCanaryTrafficShiftDeployStageId,
-                            approvalPolicy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.description,
+                            this.displayName,
+                            this.projectId,
+                            this.deployPipelineId,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.computeInstanceGroupCanaryTrafficShiftDeployStageId,
+                            this.approvalPolicy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceGroupCanaryApprovalDeployStage o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .computeInstanceGroupCanaryTrafficShiftDeployStageId(
-                                    o.getComputeInstanceGroupCanaryTrafficShiftDeployStageId())
-                            .approvalPolicy(o.getApprovalPolicy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceGroupCanaryApprovalDeployStage model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "computeInstanceGroupCanaryTrafficShiftDeployStageId")) {
+                this.computeInstanceGroupCanaryTrafficShiftDeployStageId(
+                        model.getComputeInstanceGroupCanaryTrafficShiftDeployStageId());
+            }
+            if (model.wasPropertyExplicitlySet("approvalPolicy")) {
+                this.approvalPolicy(model.getApprovalPolicy());
+            }
+            return this;
         }
     }
 
@@ -324,7 +355,6 @@ public final class ComputeInstanceGroupCanaryApprovalDeployStage extends DeployS
         sb.append(", computeInstanceGroupCanaryTrafficShiftDeployStageId=")
                 .append(String.valueOf(this.computeInstanceGroupCanaryTrafficShiftDeployStageId));
         sb.append(", approvalPolicy=").append(String.valueOf(this.approvalPolicy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,8 +374,7 @@ public final class ComputeInstanceGroupCanaryApprovalDeployStage extends DeployS
                         this.computeInstanceGroupCanaryTrafficShiftDeployStageId,
                         other.computeInstanceGroupCanaryTrafficShiftDeployStageId)
                 && java.util.Objects.equals(this.approvalPolicy, other.approvalPolicy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -361,16 +390,6 @@ public final class ComputeInstanceGroupCanaryApprovalDeployStage extends DeployS
         result =
                 (result * PRIME)
                         + (this.approvalPolicy == null ? 43 : this.approvalPolicy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

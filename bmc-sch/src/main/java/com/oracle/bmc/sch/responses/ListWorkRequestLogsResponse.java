@@ -83,6 +83,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "opcPrevPage",
@@ -90,11 +91,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             String opcPrevPage,
             com.oracle.bmc.sch.model.WorkRequestLogEntryCollection workRequestLogEntryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.opcPrevPage = opcPrevPage;
@@ -106,6 +108,13 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -198,6 +207,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListWorkRequestLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             opcPrevPage(o.getOpcPrevPage());
@@ -213,6 +223,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcRequestId,
                     opcPrevPage,

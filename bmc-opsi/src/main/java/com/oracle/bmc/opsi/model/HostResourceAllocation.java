@@ -73,21 +73,27 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostResourceAllocation build() {
-            HostResourceAllocation __instance__ =
-                    new HostResourceAllocation(timeCollected, totalCpus, totalMemoryInGB);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostResourceAllocation model =
+                    new HostResourceAllocation(
+                            this.timeCollected, this.totalCpus, this.totalMemoryInGB);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostResourceAllocation o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .totalCpus(o.getTotalCpus())
-                            .totalMemoryInGB(o.getTotalMemoryInGB());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostResourceAllocation model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("totalCpus")) {
+                this.totalCpus(model.getTotalCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalMemoryInGB")) {
+                this.totalMemoryInGB(model.getTotalMemoryInGB());
+            }
+            return this;
         }
     }
 
@@ -154,7 +160,6 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
         sb.append(", totalMemoryInGB=").append(String.valueOf(this.totalMemoryInGB));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -171,8 +176,7 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
         HostResourceAllocation other = (HostResourceAllocation) o;
         return java.util.Objects.equals(this.totalCpus, other.totalCpus)
                 && java.util.Objects.equals(this.totalMemoryInGB, other.totalMemoryInGB)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -183,16 +187,6 @@ public final class HostResourceAllocation extends HostConfigurationMetricGroup {
         result =
                 (result * PRIME)
                         + (this.totalMemoryInGB == null ? 43 : this.totalMemoryInGB.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

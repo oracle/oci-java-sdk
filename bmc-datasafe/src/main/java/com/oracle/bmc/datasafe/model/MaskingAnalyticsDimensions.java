@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = MaskingAnalyticsDimensions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaskingAnalyticsDimensions {
+public final class MaskingAnalyticsDimensions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetId", "policyId"})
     public MaskingAnalyticsDimensions(String targetId, String policyId) {
@@ -67,18 +68,23 @@ public final class MaskingAnalyticsDimensions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaskingAnalyticsDimensions build() {
-            MaskingAnalyticsDimensions __instance__ =
-                    new MaskingAnalyticsDimensions(targetId, policyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MaskingAnalyticsDimensions model =
+                    new MaskingAnalyticsDimensions(this.targetId, this.policyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaskingAnalyticsDimensions o) {
-            Builder copiedBuilder = targetId(o.getTargetId()).policyId(o.getPolicyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaskingAnalyticsDimensions model) {
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("policyId")) {
+                this.policyId(model.getPolicyId());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class MaskingAnalyticsDimensions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaskingAnalyticsDimensions(");
+        sb.append("super=").append(super.toString());
         sb.append("targetId=").append(String.valueOf(this.targetId));
         sb.append(", policyId=").append(String.valueOf(this.policyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class MaskingAnalyticsDimensions {
         MaskingAnalyticsDimensions other = (MaskingAnalyticsDimensions) o;
         return java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.policyId, other.policyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class MaskingAnalyticsDimensions {
         int result = 1;
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.policyId == null ? 43 : this.policyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

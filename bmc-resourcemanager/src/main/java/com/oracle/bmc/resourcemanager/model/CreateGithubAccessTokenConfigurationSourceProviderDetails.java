@@ -126,34 +126,49 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateGithubAccessTokenConfigurationSourceProviderDetails build() {
-            CreateGithubAccessTokenConfigurationSourceProviderDetails __instance__ =
+            CreateGithubAccessTokenConfigurationSourceProviderDetails model =
                     new CreateGithubAccessTokenConfigurationSourceProviderDetails(
-                            compartmentId,
-                            displayName,
-                            description,
-                            privateServerConfigDetails,
-                            freeformTags,
-                            definedTags,
-                            apiEndpoint,
-                            accessToken);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.privateServerConfigDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.apiEndpoint,
+                            this.accessToken);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateGithubAccessTokenConfigurationSourceProviderDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .privateServerConfigDetails(o.getPrivateServerConfigDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .apiEndpoint(o.getApiEndpoint())
-                            .accessToken(o.getAccessToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateGithubAccessTokenConfigurationSourceProviderDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("privateServerConfigDetails")) {
+                this.privateServerConfigDetails(model.getPrivateServerConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("apiEndpoint")) {
+                this.apiEndpoint(model.getApiEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("accessToken")) {
+                this.accessToken(model.getAccessToken());
+            }
+            return this;
         }
     }
 
@@ -237,7 +252,6 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", apiEndpoint=").append(String.valueOf(this.apiEndpoint));
         sb.append(", accessToken=").append(String.valueOf(this.accessToken));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -255,8 +269,7 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
                 (CreateGithubAccessTokenConfigurationSourceProviderDetails) o;
         return java.util.Objects.equals(this.apiEndpoint, other.apiEndpoint)
                 && java.util.Objects.equals(this.accessToken, other.accessToken)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -265,16 +278,6 @@ public final class CreateGithubAccessTokenConfigurationSourceProviderDetails
         int result = super.hashCode();
         result = (result * PRIME) + (this.apiEndpoint == null ? 43 : this.apiEndpoint.hashCode());
         result = (result * PRIME) + (this.accessToken == null ? 43 : this.accessToken.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -112,8 +112,8 @@ public class GenerateTotpSeedConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GenerateTotpSeedResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mfaTotpDevice(response.getItem());
 

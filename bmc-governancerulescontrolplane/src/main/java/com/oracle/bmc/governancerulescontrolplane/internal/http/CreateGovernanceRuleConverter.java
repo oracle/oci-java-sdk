@@ -118,8 +118,8 @@ public class CreateGovernanceRuleConverter {
                                         builder =
                                                 com.oracle.bmc.governancerulescontrolplane.responses
                                                         .CreateGovernanceRuleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.governanceRule(response.getItem());
 

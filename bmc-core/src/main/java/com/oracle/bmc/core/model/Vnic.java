@@ -38,7 +38,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vnic.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Vnic {
+public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -503,52 +503,85 @@ public final class Vnic {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Vnic build() {
-            Vnic __instance__ =
+            Vnic model =
                     new Vnic(
-                            availabilityDomain,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            hostnameLabel,
-                            id,
-                            isPrimary,
-                            lifecycleState,
-                            macAddress,
-                            nsgIds,
-                            vlanId,
-                            privateIp,
-                            publicIp,
-                            skipSourceDestCheck,
-                            subnetId,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.hostnameLabel,
+                            this.id,
+                            this.isPrimary,
+                            this.lifecycleState,
+                            this.macAddress,
+                            this.nsgIds,
+                            this.vlanId,
+                            this.privateIp,
+                            this.publicIp,
+                            this.skipSourceDestCheck,
+                            this.subnetId,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Vnic o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .hostnameLabel(o.getHostnameLabel())
-                            .id(o.getId())
-                            .isPrimary(o.getIsPrimary())
-                            .lifecycleState(o.getLifecycleState())
-                            .macAddress(o.getMacAddress())
-                            .nsgIds(o.getNsgIds())
-                            .vlanId(o.getVlanId())
-                            .privateIp(o.getPrivateIp())
-                            .publicIp(o.getPublicIp())
-                            .skipSourceDestCheck(o.getSkipSourceDestCheck())
-                            .subnetId(o.getSubnetId())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Vnic model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("hostnameLabel")) {
+                this.hostnameLabel(model.getHostnameLabel());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("macAddress")) {
+                this.macAddress(model.getMacAddress());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("vlanId")) {
+                this.vlanId(model.getVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("privateIp")) {
+                this.privateIp(model.getPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("publicIp")) {
+                this.publicIp(model.getPublicIp());
+            }
+            if (model.wasPropertyExplicitlySet("skipSourceDestCheck")) {
+                this.skipSourceDestCheck(model.getSkipSourceDestCheck());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -990,6 +1023,7 @@ public final class Vnic {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Vnic(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1007,7 +1041,6 @@ public final class Vnic {
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1039,7 +1072,7 @@ public final class Vnic {
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1077,16 +1110,7 @@ public final class Vnic {
                                 : this.skipSourceDestCheck.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

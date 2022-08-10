@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousContainerDatabase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousContainerDatabase {
+public final class AutonomousContainerDatabase
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -710,89 +711,158 @@ public final class AutonomousContainerDatabase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousContainerDatabase build() {
-            AutonomousContainerDatabase __instance__ =
+            AutonomousContainerDatabase model =
                     new AutonomousContainerDatabase(
-                            id,
-                            compartmentId,
-                            displayName,
-                            dbUniqueName,
-                            serviceLevelAgreementType,
-                            autonomousExadataInfrastructureId,
-                            autonomousVmClusterId,
-                            infrastructureType,
-                            cloudAutonomousVmClusterId,
-                            kmsKeyId,
-                            vaultId,
-                            kmsKeyVersionId,
-                            keyHistoryEntry,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated,
-                            patchModel,
-                            patchId,
-                            lastMaintenanceRunId,
-                            nextMaintenanceRunId,
-                            maintenanceWindow,
-                            standbyMaintenanceBufferInDays,
-                            freeformTags,
-                            definedTags,
-                            role,
-                            availabilityDomain,
-                            dbVersion,
-                            backupConfig,
-                            keyStoreId,
-                            keyStoreWalletName,
-                            memoryPerOracleComputeUnitInGBs,
-                            availableCpus,
-                            totalCpus,
-                            reclaimableCpus,
-                            provisionableCpus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.dbUniqueName,
+                            this.serviceLevelAgreementType,
+                            this.autonomousExadataInfrastructureId,
+                            this.autonomousVmClusterId,
+                            this.infrastructureType,
+                            this.cloudAutonomousVmClusterId,
+                            this.kmsKeyId,
+                            this.vaultId,
+                            this.kmsKeyVersionId,
+                            this.keyHistoryEntry,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated,
+                            this.patchModel,
+                            this.patchId,
+                            this.lastMaintenanceRunId,
+                            this.nextMaintenanceRunId,
+                            this.maintenanceWindow,
+                            this.standbyMaintenanceBufferInDays,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.role,
+                            this.availabilityDomain,
+                            this.dbVersion,
+                            this.backupConfig,
+                            this.keyStoreId,
+                            this.keyStoreWalletName,
+                            this.memoryPerOracleComputeUnitInGBs,
+                            this.availableCpus,
+                            this.totalCpus,
+                            this.reclaimableCpus,
+                            this.provisionableCpus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousContainerDatabase o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .dbUniqueName(o.getDbUniqueName())
-                            .serviceLevelAgreementType(o.getServiceLevelAgreementType())
-                            .autonomousExadataInfrastructureId(
-                                    o.getAutonomousExadataInfrastructureId())
-                            .autonomousVmClusterId(o.getAutonomousVmClusterId())
-                            .infrastructureType(o.getInfrastructureType())
-                            .cloudAutonomousVmClusterId(o.getCloudAutonomousVmClusterId())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .vaultId(o.getVaultId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .keyHistoryEntry(o.getKeyHistoryEntry())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .patchModel(o.getPatchModel())
-                            .patchId(o.getPatchId())
-                            .lastMaintenanceRunId(o.getLastMaintenanceRunId())
-                            .nextMaintenanceRunId(o.getNextMaintenanceRunId())
-                            .maintenanceWindow(o.getMaintenanceWindow())
-                            .standbyMaintenanceBufferInDays(o.getStandbyMaintenanceBufferInDays())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .role(o.getRole())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .dbVersion(o.getDbVersion())
-                            .backupConfig(o.getBackupConfig())
-                            .keyStoreId(o.getKeyStoreId())
-                            .keyStoreWalletName(o.getKeyStoreWalletName())
-                            .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
-                            .availableCpus(o.getAvailableCpus())
-                            .totalCpus(o.getTotalCpus())
-                            .reclaimableCpus(o.getReclaimableCpus())
-                            .provisionableCpus(o.getProvisionableCpus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousContainerDatabase model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("serviceLevelAgreementType")) {
+                this.serviceLevelAgreementType(model.getServiceLevelAgreementType());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousExadataInfrastructureId")) {
+                this.autonomousExadataInfrastructureId(
+                        model.getAutonomousExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousVmClusterId")) {
+                this.autonomousVmClusterId(model.getAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutonomousVmClusterId")) {
+                this.cloudAutonomousVmClusterId(model.getCloudAutonomousVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("keyHistoryEntry")) {
+                this.keyHistoryEntry(model.getKeyHistoryEntry());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("patchModel")) {
+                this.patchModel(model.getPatchModel());
+            }
+            if (model.wasPropertyExplicitlySet("patchId")) {
+                this.patchId(model.getPatchId());
+            }
+            if (model.wasPropertyExplicitlySet("lastMaintenanceRunId")) {
+                this.lastMaintenanceRunId(model.getLastMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
+                this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
+                this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("backupConfig")) {
+                this.backupConfig(model.getBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
+                this.keyStoreWalletName(model.getKeyStoreWalletName());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
+                this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableCpus")) {
+                this.availableCpus(model.getAvailableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalCpus")) {
+                this.totalCpus(model.getTotalCpus());
+            }
+            if (model.wasPropertyExplicitlySet("reclaimableCpus")) {
+                this.reclaimableCpus(model.getReclaimableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("provisionableCpus")) {
+                this.provisionableCpus(model.getProvisionableCpus());
+            }
+            return this;
         }
     }
 
@@ -1569,6 +1639,7 @@ public final class AutonomousContainerDatabase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousContainerDatabase(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1609,7 +1680,6 @@ public final class AutonomousContainerDatabase {
         sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1665,7 +1735,7 @@ public final class AutonomousContainerDatabase {
                 && java.util.Objects.equals(this.totalCpus, other.totalCpus)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1769,16 +1839,7 @@ public final class AutonomousContainerDatabase {
         result =
                 (result * PRIME)
                         + (this.provisionableCpus == null ? 43 : this.provisionableCpus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

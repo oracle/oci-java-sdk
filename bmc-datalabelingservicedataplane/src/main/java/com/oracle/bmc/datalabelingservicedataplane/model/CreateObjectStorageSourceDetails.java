@@ -80,19 +80,27 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateObjectStorageSourceDetails build() {
-            CreateObjectStorageSourceDetails __instance__ =
-                    new CreateObjectStorageSourceDetails(relativePath, offset, length);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateObjectStorageSourceDetails model =
+                    new CreateObjectStorageSourceDetails(
+                            this.relativePath, this.offset, this.length);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateObjectStorageSourceDetails o) {
-            Builder copiedBuilder =
-                    relativePath(o.getRelativePath()).offset(o.getOffset()).length(o.getLength());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateObjectStorageSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("relativePath")) {
+                this.relativePath(model.getRelativePath());
+            }
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            return this;
         }
     }
 
@@ -175,7 +183,6 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
         sb.append(", relativePath=").append(String.valueOf(this.relativePath));
         sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,8 +200,7 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
         return java.util.Objects.equals(this.relativePath, other.relativePath)
                 && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.length, other.length)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +210,6 @@ public final class CreateObjectStorageSourceDetails extends CreateSourceDetails 
         result = (result * PRIME) + (this.relativePath == null ? 43 : this.relativePath.hashCode());
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -175,45 +175,70 @@ public final class ApplicationChannel extends Channel {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplicationChannel build() {
-            ApplicationChannel __instance__ =
+            ApplicationChannel model =
                     new ApplicationChannel(
-                            id,
-                            name,
-                            description,
-                            category,
-                            sessionExpiryDurationInMilliseconds,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            outboundUrl,
-                            isAuthenticatedUserId,
-                            webhookUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.description,
+                            this.category,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.outboundUrl,
+                            this.isAuthenticatedUserId,
+                            this.webhookUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplicationChannel o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .category(o.getCategory())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .outboundUrl(o.getOutboundUrl())
-                            .isAuthenticatedUserId(o.getIsAuthenticatedUserId())
-                            .webhookUrl(o.getWebhookUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplicationChannel model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("outboundUrl")) {
+                this.outboundUrl(model.getOutboundUrl());
+            }
+            if (model.wasPropertyExplicitlySet("isAuthenticatedUserId")) {
+                this.isAuthenticatedUserId(model.getIsAuthenticatedUserId());
+            }
+            if (model.wasPropertyExplicitlySet("webhookUrl")) {
+                this.webhookUrl(model.getWebhookUrl());
+            }
+            return this;
         }
     }
 
@@ -322,7 +347,6 @@ public final class ApplicationChannel extends Channel {
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", isAuthenticatedUserId=").append(String.valueOf(this.isAuthenticatedUserId));
         sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -340,8 +364,7 @@ public final class ApplicationChannel extends Channel {
         return java.util.Objects.equals(this.outboundUrl, other.outboundUrl)
                 && java.util.Objects.equals(this.isAuthenticatedUserId, other.isAuthenticatedUserId)
                 && java.util.Objects.equals(this.webhookUrl, other.webhookUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -355,16 +378,6 @@ public final class ApplicationChannel extends Channel {
                                 ? 43
                                 : this.isAuthenticatedUserId.hashCode());
         result = (result * PRIME) + (this.webhookUrl == null ? 43 : this.webhookUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

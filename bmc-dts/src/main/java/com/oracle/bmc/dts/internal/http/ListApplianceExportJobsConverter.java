@@ -145,8 +145,8 @@ public class ListApplianceExportJobsConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .ListApplianceExportJobsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

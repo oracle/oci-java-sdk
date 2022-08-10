@@ -47,13 +47,20 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
         return jsChallenge;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "jsChallenge"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "jsChallenge"
+    })
     private GetJsChallengeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waas.model.JsChallenge jsChallenge) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.jsChallenge = jsChallenge;
@@ -64,6 +71,13 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetJsChallengeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             jsChallenge(o.getJsChallenge());
@@ -130,7 +145,8 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetJsChallengeResponse build() {
-            return new GetJsChallengeResponse(__httpStatusCode__, etag, opcRequestId, jsChallenge);
+            return new GetJsChallengeResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, jsChallenge);
         }
     }
 

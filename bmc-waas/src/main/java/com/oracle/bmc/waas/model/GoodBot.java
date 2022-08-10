@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GoodBot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GoodBot {
+public final class GoodBot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "name", "isEnabled", "description"})
     public GoodBot(String key, String name, Boolean isEnabled, String description) {
@@ -99,21 +99,28 @@ public final class GoodBot {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GoodBot build() {
-            GoodBot __instance__ = new GoodBot(key, name, isEnabled, description);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GoodBot model = new GoodBot(this.key, this.name, this.isEnabled, this.description);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GoodBot o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .isEnabled(o.getIsEnabled())
-                            .description(o.getDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GoodBot model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            return this;
         }
     }
 
@@ -197,11 +204,11 @@ public final class GoodBot {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GoodBot(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +227,7 @@ public final class GoodBot {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +238,7 @@ public final class GoodBot {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

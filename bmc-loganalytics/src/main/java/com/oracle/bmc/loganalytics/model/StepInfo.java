@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StepInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StepInfo {
+public final class StepInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inputSequenceCurrentMatch",
@@ -87,21 +87,29 @@ public final class StepInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StepInfo build() {
-            StepInfo __instance__ =
-                    new StepInfo(inputSequenceCurrentMatch, regexEngineClassName, stepCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StepInfo model =
+                    new StepInfo(
+                            this.inputSequenceCurrentMatch,
+                            this.regexEngineClassName,
+                            this.stepCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StepInfo o) {
-            Builder copiedBuilder =
-                    inputSequenceCurrentMatch(o.getInputSequenceCurrentMatch())
-                            .regexEngineClassName(o.getRegexEngineClassName())
-                            .stepCount(o.getStepCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StepInfo model) {
+            if (model.wasPropertyExplicitlySet("inputSequenceCurrentMatch")) {
+                this.inputSequenceCurrentMatch(model.getInputSequenceCurrentMatch());
+            }
+            if (model.wasPropertyExplicitlySet("regexEngineClassName")) {
+                this.regexEngineClassName(model.getRegexEngineClassName());
+            }
+            if (model.wasPropertyExplicitlySet("stepCount")) {
+                this.stepCount(model.getStepCount());
+            }
+            return this;
         }
     }
 
@@ -171,11 +179,11 @@ public final class StepInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StepInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("inputSequenceCurrentMatch=")
                 .append(String.valueOf(this.inputSequenceCurrentMatch));
         sb.append(", regexEngineClassName=").append(String.valueOf(this.regexEngineClassName));
         sb.append(", stepCount=").append(String.valueOf(this.stepCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +202,7 @@ public final class StepInfo {
                         this.inputSequenceCurrentMatch, other.inputSequenceCurrentMatch)
                 && java.util.Objects.equals(this.regexEngineClassName, other.regexEngineClassName)
                 && java.util.Objects.equals(this.stepCount, other.stepCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +220,7 @@ public final class StepInfo {
                                 ? 43
                                 : this.regexEngineClassName.hashCode());
         result = (result * PRIME) + (this.stepCount == null ? 43 : this.stepCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = CreateScheduledJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateScheduledJobDetails {
+public final class CreateScheduledJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -367,50 +368,81 @@ public final class CreateScheduledJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateScheduledJobDetails build() {
-            CreateScheduledJobDetails __instance__ =
+            CreateScheduledJobDetails model =
                     new CreateScheduledJobDetails(
-                            compartmentId,
-                            displayName,
-                            description,
-                            scheduleType,
-                            timeNextExecution,
-                            intervalType,
-                            intervalValue,
-                            managedInstances,
-                            managedInstanceGroups,
-                            operationType,
-                            updateType,
-                            packageNames,
-                            freeformTags,
-                            definedTags,
-                            updateNames,
-                            osFamily);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.scheduleType,
+                            this.timeNextExecution,
+                            this.intervalType,
+                            this.intervalValue,
+                            this.managedInstances,
+                            this.managedInstanceGroups,
+                            this.operationType,
+                            this.updateType,
+                            this.packageNames,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.updateNames,
+                            this.osFamily);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateScheduledJobDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .scheduleType(o.getScheduleType())
-                            .timeNextExecution(o.getTimeNextExecution())
-                            .intervalType(o.getIntervalType())
-                            .intervalValue(o.getIntervalValue())
-                            .managedInstances(o.getManagedInstances())
-                            .managedInstanceGroups(o.getManagedInstanceGroups())
-                            .operationType(o.getOperationType())
-                            .updateType(o.getUpdateType())
-                            .packageNames(o.getPackageNames())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .updateNames(o.getUpdateNames())
-                            .osFamily(o.getOsFamily());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateScheduledJobDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleType")) {
+                this.scheduleType(model.getScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("timeNextExecution")) {
+                this.timeNextExecution(model.getTimeNextExecution());
+            }
+            if (model.wasPropertyExplicitlySet("intervalType")) {
+                this.intervalType(model.getIntervalType());
+            }
+            if (model.wasPropertyExplicitlySet("intervalValue")) {
+                this.intervalValue(model.getIntervalValue());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstances")) {
+                this.managedInstances(model.getManagedInstances());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceGroups")) {
+                this.managedInstanceGroups(model.getManagedInstanceGroups());
+            }
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("updateType")) {
+                this.updateType(model.getUpdateType());
+            }
+            if (model.wasPropertyExplicitlySet("packageNames")) {
+                this.packageNames(model.getPackageNames());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("updateNames")) {
+                this.updateNames(model.getUpdateNames());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            return this;
         }
     }
 
@@ -690,6 +722,7 @@ public final class CreateScheduledJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateScheduledJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -706,7 +739,6 @@ public final class CreateScheduledJobDetails {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", updateNames=").append(String.valueOf(this.updateNames));
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -737,7 +769,7 @@ public final class CreateScheduledJobDetails {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.updateNames, other.updateNames)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -774,16 +806,7 @@ public final class CreateScheduledJobDetails {
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.updateNames == null ? 43 : this.updateNames.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

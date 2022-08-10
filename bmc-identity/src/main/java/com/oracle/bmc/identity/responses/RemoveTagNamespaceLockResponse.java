@@ -49,16 +49,18 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "tagNamespace"
     })
     private RemoveTagNamespaceLockResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.TagNamespace tagNamespace) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.tagNamespace = tagNamespace;
@@ -69,6 +71,13 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(RemoveTagNamespaceLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             tagNamespace(o.getTagNamespace());
@@ -136,7 +146,7 @@ public class RemoveTagNamespaceLockResponse extends com.oracle.bmc.responses.Bmc
          */
         public RemoveTagNamespaceLockResponse build() {
             return new RemoveTagNamespaceLockResponse(
-                    __httpStatusCode__, opcRequestId, etag, tagNamespace);
+                    __httpStatusCode__, headers, opcRequestId, etag, tagNamespace);
         }
     }
 

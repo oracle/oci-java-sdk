@@ -62,17 +62,19 @@ public class RequestSummarizedActivityProblemsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "activityProblemAggregationCollection"
     })
     private RequestSummarizedActivityProblemsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ActivityProblemAggregationCollection
                     activityProblemAggregationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.activityProblemAggregationCollection = activityProblemAggregationCollection;
@@ -83,6 +85,13 @@ public class RequestSummarizedActivityProblemsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -150,6 +159,7 @@ public class RequestSummarizedActivityProblemsResponse
          */
         public Builder copy(RequestSummarizedActivityProblemsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             activityProblemAggregationCollection(o.getActivityProblemAggregationCollection());
@@ -164,6 +174,7 @@ public class RequestSummarizedActivityProblemsResponse
         public RequestSummarizedActivityProblemsResponse build() {
             return new RequestSummarizedActivityProblemsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     activityProblemAggregationCollection);

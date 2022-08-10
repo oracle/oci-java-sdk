@@ -21,7 +21,8 @@ package com.oracle.bmc.mysql.model;
     builder = UpdateAnalyticsClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAnalyticsClusterDetails {
+public final class UpdateAnalyticsClusterDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName", "clusterSize"})
     public UpdateAnalyticsClusterDetails(String shapeName, Integer clusterSize) {
@@ -89,18 +90,23 @@ public final class UpdateAnalyticsClusterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAnalyticsClusterDetails build() {
-            UpdateAnalyticsClusterDetails __instance__ =
-                    new UpdateAnalyticsClusterDetails(shapeName, clusterSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateAnalyticsClusterDetails model =
+                    new UpdateAnalyticsClusterDetails(this.shapeName, this.clusterSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAnalyticsClusterDetails o) {
-            Builder copiedBuilder = shapeName(o.getShapeName()).clusterSize(o.getClusterSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAnalyticsClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("clusterSize")) {
+                this.clusterSize(model.getClusterSize());
+            }
+            return this;
         }
     }
 
@@ -176,9 +182,9 @@ public final class UpdateAnalyticsClusterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAnalyticsClusterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -195,7 +201,7 @@ public final class UpdateAnalyticsClusterDetails {
         UpdateAnalyticsClusterDetails other = (UpdateAnalyticsClusterDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.clusterSize, other.clusterSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +210,7 @@ public final class UpdateAnalyticsClusterDetails {
         int result = 1;
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

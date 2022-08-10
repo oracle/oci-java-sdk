@@ -172,8 +172,8 @@ public class ListLoadBalancersConverter {
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .ListLoadBalancersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

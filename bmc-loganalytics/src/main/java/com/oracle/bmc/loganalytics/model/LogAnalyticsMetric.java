@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsMetric.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsMetric {
+public final class LogAnalyticsMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "aggregationField",
@@ -447,60 +447,101 @@ public final class LogAnalyticsMetric {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsMetric build() {
-            LogAnalyticsMetric __instance__ =
+            LogAnalyticsMetric model =
                     new LogAnalyticsMetric(
-                            aggregationField,
-                            bucketMetadata,
-                            clockPeriod,
-                            description,
-                            editVersion,
-                            fieldName,
-                            fieldValues,
-                            groupingField,
-                            isEnabled,
-                            isSystem,
-                            displayName,
-                            metricReference,
-                            name,
-                            metricType,
-                            isMetricSourceEnabled,
-                            operator,
-                            sources,
-                            entityType,
-                            timeUpdated,
-                            unitType,
-                            isUserCustomized);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.aggregationField,
+                            this.bucketMetadata,
+                            this.clockPeriod,
+                            this.description,
+                            this.editVersion,
+                            this.fieldName,
+                            this.fieldValues,
+                            this.groupingField,
+                            this.isEnabled,
+                            this.isSystem,
+                            this.displayName,
+                            this.metricReference,
+                            this.name,
+                            this.metricType,
+                            this.isMetricSourceEnabled,
+                            this.operator,
+                            this.sources,
+                            this.entityType,
+                            this.timeUpdated,
+                            this.unitType,
+                            this.isUserCustomized);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsMetric o) {
-            Builder copiedBuilder =
-                    aggregationField(o.getAggregationField())
-                            .bucketMetadata(o.getBucketMetadata())
-                            .clockPeriod(o.getClockPeriod())
-                            .description(o.getDescription())
-                            .editVersion(o.getEditVersion())
-                            .fieldName(o.getFieldName())
-                            .fieldValues(o.getFieldValues())
-                            .groupingField(o.getGroupingField())
-                            .isEnabled(o.getIsEnabled())
-                            .isSystem(o.getIsSystem())
-                            .displayName(o.getDisplayName())
-                            .metricReference(o.getMetricReference())
-                            .name(o.getName())
-                            .metricType(o.getMetricType())
-                            .isMetricSourceEnabled(o.getIsMetricSourceEnabled())
-                            .operator(o.getOperator())
-                            .sources(o.getSources())
-                            .entityType(o.getEntityType())
-                            .timeUpdated(o.getTimeUpdated())
-                            .unitType(o.getUnitType())
-                            .isUserCustomized(o.getIsUserCustomized());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsMetric model) {
+            if (model.wasPropertyExplicitlySet("aggregationField")) {
+                this.aggregationField(model.getAggregationField());
+            }
+            if (model.wasPropertyExplicitlySet("bucketMetadata")) {
+                this.bucketMetadata(model.getBucketMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("clockPeriod")) {
+                this.clockPeriod(model.getClockPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("fieldValues")) {
+                this.fieldValues(model.getFieldValues());
+            }
+            if (model.wasPropertyExplicitlySet("groupingField")) {
+                this.groupingField(model.getGroupingField());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("metricReference")) {
+                this.metricReference(model.getMetricReference());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("metricType")) {
+                this.metricType(model.getMetricType());
+            }
+            if (model.wasPropertyExplicitlySet("isMetricSourceEnabled")) {
+                this.isMetricSourceEnabled(model.getIsMetricSourceEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("operator")) {
+                this.operator(model.getOperator());
+            }
+            if (model.wasPropertyExplicitlySet("sources")) {
+                this.sources(model.getSources());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("unitType")) {
+                this.unitType(model.getUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("isUserCustomized")) {
+                this.isUserCustomized(model.getIsUserCustomized());
+            }
+            return this;
         }
     }
 
@@ -940,6 +981,7 @@ public final class LogAnalyticsMetric {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsMetric(");
+        sb.append("super=").append(super.toString());
         sb.append("aggregationField=").append(String.valueOf(this.aggregationField));
         sb.append(", bucketMetadata=").append(String.valueOf(this.bucketMetadata));
         sb.append(", clockPeriod=").append(String.valueOf(this.clockPeriod));
@@ -961,7 +1003,6 @@ public final class LogAnalyticsMetric {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", unitType=").append(String.valueOf(this.unitType));
         sb.append(", isUserCustomized=").append(String.valueOf(this.isUserCustomized));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -997,7 +1038,7 @@ public final class LogAnalyticsMetric {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.unitType, other.unitType)
                 && java.util.Objects.equals(this.isUserCustomized, other.isUserCustomized)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1039,16 +1080,7 @@ public final class LogAnalyticsMetric {
         result =
                 (result * PRIME)
                         + (this.isUserCustomized == null ? 43 : this.isUserCustomized.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

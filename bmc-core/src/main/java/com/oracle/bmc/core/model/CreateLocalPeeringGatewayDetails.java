@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = CreateLocalPeeringGatewayDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateLocalPeeringGatewayDetails {
+public final class CreateLocalPeeringGatewayDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -187,30 +188,41 @@ public final class CreateLocalPeeringGatewayDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateLocalPeeringGatewayDetails build() {
-            CreateLocalPeeringGatewayDetails __instance__ =
+            CreateLocalPeeringGatewayDetails model =
                     new CreateLocalPeeringGatewayDetails(
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            routeTableId,
-                            vcnId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.routeTableId,
+                            this.vcnId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateLocalPeeringGatewayDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .routeTableId(o.getRouteTableId())
-                            .vcnId(o.getVcnId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateLocalPeeringGatewayDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            return this;
         }
     }
 
@@ -360,13 +372,13 @@ public final class CreateLocalPeeringGatewayDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateLocalPeeringGatewayDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -387,7 +399,7 @@ public final class CreateLocalPeeringGatewayDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -402,16 +414,7 @@ public final class CreateLocalPeeringGatewayDetails {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

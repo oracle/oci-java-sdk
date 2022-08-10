@@ -17,7 +17,7 @@ package com.oracle.bmc.aispeech.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TranscriptionJob.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TranscriptionJob {
+public final class TranscriptionJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -455,64 +455,109 @@ public final class TranscriptionJob {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionJob build() {
-            TranscriptionJob __instance__ =
+            TranscriptionJob model =
                     new TranscriptionJob(
-                            id,
-                            displayName,
-                            compartmentId,
-                            description,
-                            modelDetails,
-                            normalization,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished,
-                            totalTasks,
-                            outstandingTasks,
-                            successfulTasks,
-                            ttlInDays,
-                            percentComplete,
-                            inputLocation,
-                            outputLocation,
-                            createdBy,
-                            additionalTranscriptionFormats,
-                            lifecycleState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.modelDetails,
+                            this.normalization,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.totalTasks,
+                            this.outstandingTasks,
+                            this.successfulTasks,
+                            this.ttlInDays,
+                            this.percentComplete,
+                            this.inputLocation,
+                            this.outputLocation,
+                            this.createdBy,
+                            this.additionalTranscriptionFormats,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TranscriptionJob o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .modelDetails(o.getModelDetails())
-                            .normalization(o.getNormalization())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .totalTasks(o.getTotalTasks())
-                            .outstandingTasks(o.getOutstandingTasks())
-                            .successfulTasks(o.getSuccessfulTasks())
-                            .ttlInDays(o.getTtlInDays())
-                            .percentComplete(o.getPercentComplete())
-                            .inputLocation(o.getInputLocation())
-                            .outputLocation(o.getOutputLocation())
-                            .createdBy(o.getCreatedBy())
-                            .additionalTranscriptionFormats(o.getAdditionalTranscriptionFormats())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TranscriptionJob model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("modelDetails")) {
+                this.modelDetails(model.getModelDetails());
+            }
+            if (model.wasPropertyExplicitlySet("normalization")) {
+                this.normalization(model.getNormalization());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("totalTasks")) {
+                this.totalTasks(model.getTotalTasks());
+            }
+            if (model.wasPropertyExplicitlySet("outstandingTasks")) {
+                this.outstandingTasks(model.getOutstandingTasks());
+            }
+            if (model.wasPropertyExplicitlySet("successfulTasks")) {
+                this.successfulTasks(model.getSuccessfulTasks());
+            }
+            if (model.wasPropertyExplicitlySet("ttlInDays")) {
+                this.ttlInDays(model.getTtlInDays());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("inputLocation")) {
+                this.inputLocation(model.getInputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("outputLocation")) {
+                this.outputLocation(model.getOutputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("additionalTranscriptionFormats")) {
+                this.additionalTranscriptionFormats(model.getAdditionalTranscriptionFormats());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -944,6 +989,7 @@ public final class TranscriptionJob {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TranscriptionJob(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -968,7 +1014,6 @@ public final class TranscriptionJob {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1007,7 +1052,7 @@ public final class TranscriptionJob {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1059,16 +1104,7 @@ public final class TranscriptionJob {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

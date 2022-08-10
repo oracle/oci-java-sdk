@@ -61,17 +61,19 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "networkLoadBalancerHealthCollection"
     })
     private ListNetworkLoadBalancerHealthsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
                     networkLoadBalancerHealthCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.networkLoadBalancerHealthCollection = networkLoadBalancerHealthCollection;
@@ -82,6 +84,13 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
          */
         public Builder copy(ListNetworkLoadBalancerHealthsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             networkLoadBalancerHealthCollection(o.getNetworkLoadBalancerHealthCollection());
@@ -163,6 +173,7 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
         public ListNetworkLoadBalancerHealthsResponse build() {
             return new ListNetworkLoadBalancerHealthsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcRequestId,
                     networkLoadBalancerHealthCollection);

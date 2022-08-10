@@ -148,8 +148,8 @@ public class GetPdbMetricsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .GetPdbMetricsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pdbMetrics(response.getItem());
 

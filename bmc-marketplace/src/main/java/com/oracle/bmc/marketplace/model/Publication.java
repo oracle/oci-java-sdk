@@ -17,7 +17,7 @@ package com.oracle.bmc.marketplace.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Publication.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Publication {
+public final class Publication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -313,46 +313,73 @@ public final class Publication {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Publication build() {
-            Publication __instance__ =
+            Publication model =
                     new Publication(
-                            lifecycleState,
-                            compartmentId,
-                            id,
-                            name,
-                            shortDescription,
-                            longDescription,
-                            supportContacts,
-                            icon,
-                            packageType,
-                            listingType,
-                            supportedOperatingSystems,
-                            timeCreated,
-                            definedTags,
-                            freeformTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.lifecycleState,
+                            this.compartmentId,
+                            this.id,
+                            this.name,
+                            this.shortDescription,
+                            this.longDescription,
+                            this.supportContacts,
+                            this.icon,
+                            this.packageType,
+                            this.listingType,
+                            this.supportedOperatingSystems,
+                            this.timeCreated,
+                            this.definedTags,
+                            this.freeformTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Publication o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState())
-                            .compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .name(o.getName())
-                            .shortDescription(o.getShortDescription())
-                            .longDescription(o.getLongDescription())
-                            .supportContacts(o.getSupportContacts())
-                            .icon(o.getIcon())
-                            .packageType(o.getPackageType())
-                            .listingType(o.getListingType())
-                            .supportedOperatingSystems(o.getSupportedOperatingSystems())
-                            .timeCreated(o.getTimeCreated())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Publication model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("shortDescription")) {
+                this.shortDescription(model.getShortDescription());
+            }
+            if (model.wasPropertyExplicitlySet("longDescription")) {
+                this.longDescription(model.getLongDescription());
+            }
+            if (model.wasPropertyExplicitlySet("supportContacts")) {
+                this.supportContacts(model.getSupportContacts());
+            }
+            if (model.wasPropertyExplicitlySet("icon")) {
+                this.icon(model.getIcon());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("listingType")) {
+                this.listingType(model.getListingType());
+            }
+            if (model.wasPropertyExplicitlySet("supportedOperatingSystems")) {
+                this.supportedOperatingSystems(model.getSupportedOperatingSystems());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            return this;
         }
     }
 
@@ -640,6 +667,7 @@ public final class Publication {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Publication(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -655,7 +683,6 @@ public final class Publication {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -685,7 +712,7 @@ public final class Publication {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -720,16 +747,7 @@ public final class Publication {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

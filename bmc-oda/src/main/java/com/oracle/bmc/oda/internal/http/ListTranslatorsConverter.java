@@ -168,8 +168,8 @@ public class ListTranslatorsConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses.ListTranslatorsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.translatorCollection(response.getItem());
 

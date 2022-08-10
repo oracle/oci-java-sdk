@@ -20,7 +20,7 @@ package com.oracle.bmc.analytics.model;
     builder = PrivateAccessChannel.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PrivateAccessChannel {
+public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -189,32 +189,45 @@ public final class PrivateAccessChannel {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateAccessChannel build() {
-            PrivateAccessChannel __instance__ =
+            PrivateAccessChannel model =
                     new PrivateAccessChannel(
-                            key,
-                            displayName,
-                            vcnId,
-                            subnetId,
-                            ipAddress,
-                            egressSourceIpAddresses,
-                            privateSourceDnsZones);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.vcnId,
+                            this.subnetId,
+                            this.ipAddress,
+                            this.egressSourceIpAddresses,
+                            this.privateSourceDnsZones);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PrivateAccessChannel o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .ipAddress(o.getIpAddress())
-                            .egressSourceIpAddresses(o.getEgressSourceIpAddresses())
-                            .privateSourceDnsZones(o.getPrivateSourceDnsZones());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PrivateAccessChannel model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("egressSourceIpAddresses")) {
+                this.egressSourceIpAddresses(model.getEgressSourceIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("privateSourceDnsZones")) {
+                this.privateSourceDnsZones(model.getPrivateSourceDnsZones());
+            }
+            return this;
         }
     }
 
@@ -360,6 +373,7 @@ public final class PrivateAccessChannel {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PrivateAccessChannel(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
@@ -368,7 +382,6 @@ public final class PrivateAccessChannel {
         sb.append(", egressSourceIpAddresses=")
                 .append(String.valueOf(this.egressSourceIpAddresses));
         sb.append(", privateSourceDnsZones=").append(String.valueOf(this.privateSourceDnsZones));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -391,7 +404,7 @@ public final class PrivateAccessChannel {
                 && java.util.Objects.equals(
                         this.egressSourceIpAddresses, other.egressSourceIpAddresses)
                 && java.util.Objects.equals(this.privateSourceDnsZones, other.privateSourceDnsZones)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -413,16 +426,7 @@ public final class PrivateAccessChannel {
                         + (this.privateSourceDnsZones == null
                                 ? 43
                                 : this.privateSourceDnsZones.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

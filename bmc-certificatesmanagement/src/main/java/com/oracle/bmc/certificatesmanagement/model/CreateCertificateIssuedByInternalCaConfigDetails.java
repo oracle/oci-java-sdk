@@ -140,34 +140,49 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCertificateIssuedByInternalCaConfigDetails build() {
-            CreateCertificateIssuedByInternalCaConfigDetails __instance__ =
+            CreateCertificateIssuedByInternalCaConfigDetails model =
                     new CreateCertificateIssuedByInternalCaConfigDetails(
-                            versionName,
-                            certificateProfileType,
-                            issuerCertificateAuthorityId,
-                            validity,
-                            subject,
-                            subjectAlternativeNames,
-                            keyAlgorithm,
-                            signatureAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.versionName,
+                            this.certificateProfileType,
+                            this.issuerCertificateAuthorityId,
+                            this.validity,
+                            this.subject,
+                            this.subjectAlternativeNames,
+                            this.keyAlgorithm,
+                            this.signatureAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCertificateIssuedByInternalCaConfigDetails o) {
-            Builder copiedBuilder =
-                    versionName(o.getVersionName())
-                            .certificateProfileType(o.getCertificateProfileType())
-                            .issuerCertificateAuthorityId(o.getIssuerCertificateAuthorityId())
-                            .validity(o.getValidity())
-                            .subject(o.getSubject())
-                            .subjectAlternativeNames(o.getSubjectAlternativeNames())
-                            .keyAlgorithm(o.getKeyAlgorithm())
-                            .signatureAlgorithm(o.getSignatureAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateCertificateIssuedByInternalCaConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("certificateProfileType")) {
+                this.certificateProfileType(model.getCertificateProfileType());
+            }
+            if (model.wasPropertyExplicitlySet("issuerCertificateAuthorityId")) {
+                this.issuerCertificateAuthorityId(model.getIssuerCertificateAuthorityId());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            if (model.wasPropertyExplicitlySet("subject")) {
+                this.subject(model.getSubject());
+            }
+            if (model.wasPropertyExplicitlySet("subjectAlternativeNames")) {
+                this.subjectAlternativeNames(model.getSubjectAlternativeNames());
+            }
+            if (model.wasPropertyExplicitlySet("keyAlgorithm")) {
+                this.keyAlgorithm(model.getKeyAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("signatureAlgorithm")) {
+                this.signatureAlgorithm(model.getSignatureAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -309,7 +324,6 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
                 .append(String.valueOf(this.subjectAlternativeNames));
         sb.append(", keyAlgorithm=").append(String.valueOf(this.keyAlgorithm));
         sb.append(", signatureAlgorithm=").append(String.valueOf(this.signatureAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -334,8 +348,7 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
                         this.subjectAlternativeNames, other.subjectAlternativeNames)
                 && java.util.Objects.equals(this.keyAlgorithm, other.keyAlgorithm)
                 && java.util.Objects.equals(this.signatureAlgorithm, other.signatureAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -365,16 +378,6 @@ public final class CreateCertificateIssuedByInternalCaConfigDetails
                         + (this.signatureAlgorithm == null
                                 ? 43
                                 : this.signatureAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

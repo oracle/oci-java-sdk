@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageObject.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageObject {
+public final class ImageObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "confidence", "boundingPolygon"})
     public ImageObject(String name, Float confidence, BoundingPolygon boundingPolygon) {
@@ -75,20 +75,25 @@ public final class ImageObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageObject build() {
-            ImageObject __instance__ = new ImageObject(name, confidence, boundingPolygon);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageObject model = new ImageObject(this.name, this.confidence, this.boundingPolygon);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageObject o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .confidence(o.getConfidence())
-                            .boundingPolygon(o.getBoundingPolygon());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageObject model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("boundingPolygon")) {
+                this.boundingPolygon(model.getBoundingPolygon());
+            }
+            return this;
         }
     }
 
@@ -151,10 +156,10 @@ public final class ImageObject {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageObject(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -172,7 +177,7 @@ public final class ImageObject {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -184,16 +189,7 @@ public final class ImageObject {
         result =
                 (result * PRIME)
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

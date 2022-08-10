@@ -55,16 +55,18 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "backendSetHealth"
     })
     private GetBackendSetHealthResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.networkloadbalancer.model.BackendSetHealth backendSetHealth) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.backendSetHealth = backendSetHealth;
@@ -75,6 +77,13 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GetBackendSetHealthResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             backendSetHealth(o.getBackendSetHealth());
@@ -149,7 +159,7 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GetBackendSetHealthResponse build() {
             return new GetBackendSetHealthResponse(
-                    __httpStatusCode__, opcRequestId, etag, backendSetHealth);
+                    __httpStatusCode__, headers, opcRequestId, etag, backendSetHealth);
         }
     }
 

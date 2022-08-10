@@ -175,8 +175,8 @@ public class ListVirtualServicesConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .ListVirtualServicesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualServiceCollection(response.getItem());
 

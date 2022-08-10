@@ -18,7 +18,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SearchCriteria.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchCriteria {
+public final class SearchCriteria extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"query", "facetedQuery", "dimensions", "sort", "filters"})
     public SearchCriteria(
@@ -115,23 +115,37 @@ public final class SearchCriteria {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchCriteria build() {
-            SearchCriteria __instance__ =
-                    new SearchCriteria(query, facetedQuery, dimensions, sort, filters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SearchCriteria model =
+                    new SearchCriteria(
+                            this.query,
+                            this.facetedQuery,
+                            this.dimensions,
+                            this.sort,
+                            this.filters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchCriteria o) {
-            Builder copiedBuilder =
-                    query(o.getQuery())
-                            .facetedQuery(o.getFacetedQuery())
-                            .dimensions(o.getDimensions())
-                            .sort(o.getSort())
-                            .filters(o.getFilters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchCriteria model) {
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("facetedQuery")) {
+                this.facetedQuery(model.getFacetedQuery());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            if (model.wasPropertyExplicitlySet("sort")) {
+                this.sort(model.getSort());
+            }
+            if (model.wasPropertyExplicitlySet("filters")) {
+                this.filters(model.getFilters());
+            }
+            return this;
         }
     }
 
@@ -222,12 +236,12 @@ public final class SearchCriteria {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchCriteria(");
+        sb.append("super=").append(super.toString());
         sb.append("query=").append(String.valueOf(this.query));
         sb.append(", facetedQuery=").append(String.valueOf(this.facetedQuery));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", sort=").append(String.valueOf(this.sort));
         sb.append(", filters=").append(String.valueOf(this.filters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -247,7 +261,7 @@ public final class SearchCriteria {
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.sort, other.sort)
                 && java.util.Objects.equals(this.filters, other.filters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +273,7 @@ public final class SearchCriteria {
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + (this.sort == null ? 43 : this.sort.hashCode());
         result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

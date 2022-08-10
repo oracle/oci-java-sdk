@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryDetails {
+public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -326,48 +326,77 @@ public final class QueryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryDetails build() {
-            QueryDetails __instance__ =
+            QueryDetails model =
                     new QueryDetails(
-                            compartmentId,
-                            compartmentIdInSubtree,
-                            savedSearchId,
-                            queryString,
-                            subSystem,
-                            maxTotalCount,
-                            timeFilter,
-                            scopeFilters,
-                            queryTimeoutInSeconds,
-                            shouldRunAsync,
-                            asyncMode,
-                            shouldIncludeTotalCount,
-                            shouldIncludeColumns,
-                            shouldIncludeFields,
-                            shouldUseAcceleration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.compartmentIdInSubtree,
+                            this.savedSearchId,
+                            this.queryString,
+                            this.subSystem,
+                            this.maxTotalCount,
+                            this.timeFilter,
+                            this.scopeFilters,
+                            this.queryTimeoutInSeconds,
+                            this.shouldRunAsync,
+                            this.asyncMode,
+                            this.shouldIncludeTotalCount,
+                            this.shouldIncludeColumns,
+                            this.shouldIncludeFields,
+                            this.shouldUseAcceleration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .compartmentIdInSubtree(o.getCompartmentIdInSubtree())
-                            .savedSearchId(o.getSavedSearchId())
-                            .queryString(o.getQueryString())
-                            .subSystem(o.getSubSystem())
-                            .maxTotalCount(o.getMaxTotalCount())
-                            .timeFilter(o.getTimeFilter())
-                            .scopeFilters(o.getScopeFilters())
-                            .queryTimeoutInSeconds(o.getQueryTimeoutInSeconds())
-                            .shouldRunAsync(o.getShouldRunAsync())
-                            .asyncMode(o.getAsyncMode())
-                            .shouldIncludeTotalCount(o.getShouldIncludeTotalCount())
-                            .shouldIncludeColumns(o.getShouldIncludeColumns())
-                            .shouldIncludeFields(o.getShouldIncludeFields())
-                            .shouldUseAcceleration(o.getShouldUseAcceleration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentIdInSubtree")) {
+                this.compartmentIdInSubtree(model.getCompartmentIdInSubtree());
+            }
+            if (model.wasPropertyExplicitlySet("savedSearchId")) {
+                this.savedSearchId(model.getSavedSearchId());
+            }
+            if (model.wasPropertyExplicitlySet("queryString")) {
+                this.queryString(model.getQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("subSystem")) {
+                this.subSystem(model.getSubSystem());
+            }
+            if (model.wasPropertyExplicitlySet("maxTotalCount")) {
+                this.maxTotalCount(model.getMaxTotalCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeFilter")) {
+                this.timeFilter(model.getTimeFilter());
+            }
+            if (model.wasPropertyExplicitlySet("scopeFilters")) {
+                this.scopeFilters(model.getScopeFilters());
+            }
+            if (model.wasPropertyExplicitlySet("queryTimeoutInSeconds")) {
+                this.queryTimeoutInSeconds(model.getQueryTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("shouldRunAsync")) {
+                this.shouldRunAsync(model.getShouldRunAsync());
+            }
+            if (model.wasPropertyExplicitlySet("asyncMode")) {
+                this.asyncMode(model.getAsyncMode());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeTotalCount")) {
+                this.shouldIncludeTotalCount(model.getShouldIncludeTotalCount());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeColumns")) {
+                this.shouldIncludeColumns(model.getShouldIncludeColumns());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeFields")) {
+                this.shouldIncludeFields(model.getShouldIncludeFields());
+            }
+            if (model.wasPropertyExplicitlySet("shouldUseAcceleration")) {
+                this.shouldUseAcceleration(model.getShouldUseAcceleration());
+            }
+            return this;
         }
     }
 
@@ -612,6 +641,7 @@ public final class QueryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(", savedSearchId=").append(String.valueOf(this.savedSearchId));
@@ -628,7 +658,6 @@ public final class QueryDetails {
         sb.append(", shouldIncludeColumns=").append(String.valueOf(this.shouldIncludeColumns));
         sb.append(", shouldIncludeFields=").append(String.valueOf(this.shouldIncludeFields));
         sb.append(", shouldUseAcceleration=").append(String.valueOf(this.shouldUseAcceleration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -660,7 +689,7 @@ public final class QueryDetails {
                 && java.util.Objects.equals(this.shouldIncludeColumns, other.shouldIncludeColumns)
                 && java.util.Objects.equals(this.shouldIncludeFields, other.shouldIncludeFields)
                 && java.util.Objects.equals(this.shouldUseAcceleration, other.shouldUseAcceleration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -714,16 +743,7 @@ public final class QueryDetails {
                         + (this.shouldUseAcceleration == null
                                 ? 43
                                 : this.shouldUseAcceleration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

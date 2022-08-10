@@ -28,7 +28,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExadataInsightSummary {
+public class ExadataInsightSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -299,6 +299,7 @@ public class ExadataInsightSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataInsightSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", exadataName=").append(String.valueOf(this.exadataName));
@@ -340,7 +341,8 @@ public class ExadataInsightSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails);
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && super.equals(other);
     }
 
     @Override
@@ -373,6 +375,7 @@ public class ExadataInsightSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

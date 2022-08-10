@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ValidateConnectionResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ValidateConnectionResult {
+public final class ValidateConnectionResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"message", "status"})
     public ValidateConnectionResult(String message, ConnectionResult status) {
@@ -67,17 +68,23 @@ public final class ValidateConnectionResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidateConnectionResult build() {
-            ValidateConnectionResult __instance__ = new ValidateConnectionResult(message, status);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ValidateConnectionResult model =
+                    new ValidateConnectionResult(this.message, this.status);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValidateConnectionResult o) {
-            Builder copiedBuilder = message(o.getMessage()).status(o.getStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValidateConnectionResult model) {
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            return this;
         }
     }
 
@@ -133,9 +140,9 @@ public final class ValidateConnectionResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ValidateConnectionResult(");
+        sb.append("super=").append(super.toString());
         sb.append("message=").append(String.valueOf(this.message));
         sb.append(", status=").append(String.valueOf(this.status));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +159,7 @@ public final class ValidateConnectionResult {
         ValidateConnectionResult other = (ValidateConnectionResult) o;
         return java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.status, other.status)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +168,7 @@ public final class ValidateConnectionResult {
         int result = 1;
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = ExtractLogHeaderDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExtractLogHeaderDetails {
+public final class ExtractLogHeaderDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logKey", "headerValues"})
     public ExtractLogHeaderDetails(String logKey, java.util.List<String> headerValues) {
@@ -67,18 +68,23 @@ public final class ExtractLogHeaderDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExtractLogHeaderDetails build() {
-            ExtractLogHeaderDetails __instance__ =
-                    new ExtractLogHeaderDetails(logKey, headerValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExtractLogHeaderDetails model =
+                    new ExtractLogHeaderDetails(this.logKey, this.headerValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExtractLogHeaderDetails o) {
-            Builder copiedBuilder = logKey(o.getLogKey()).headerValues(o.getHeaderValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExtractLogHeaderDetails model) {
+            if (model.wasPropertyExplicitlySet("logKey")) {
+                this.logKey(model.getLogKey());
+            }
+            if (model.wasPropertyExplicitlySet("headerValues")) {
+                this.headerValues(model.getHeaderValues());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class ExtractLogHeaderDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExtractLogHeaderDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("logKey=").append(String.valueOf(this.logKey));
         sb.append(", headerValues=").append(String.valueOf(this.headerValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class ExtractLogHeaderDetails {
         ExtractLogHeaderDetails other = (ExtractLogHeaderDetails) o;
         return java.util.Objects.equals(this.logKey, other.logKey)
                 && java.util.Objects.equals(this.headerValues, other.headerValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class ExtractLogHeaderDetails {
         int result = 1;
         result = (result * PRIME) + (this.logKey == null ? 43 : this.logKey.hashCode());
         result = (result * PRIME) + (this.headerValues == null ? 43 : this.headerValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

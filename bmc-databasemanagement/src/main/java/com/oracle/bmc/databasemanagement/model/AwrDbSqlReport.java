@@ -97,24 +97,41 @@ public final class AwrDbSqlReport extends AwrQueryResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbSqlReport build() {
-            AwrDbSqlReport __instance__ =
-                    new AwrDbSqlReport(name, version, queryKey, dbQueryTimeInSecs, content, format);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AwrDbSqlReport model =
+                    new AwrDbSqlReport(
+                            this.name,
+                            this.version,
+                            this.queryKey,
+                            this.dbQueryTimeInSecs,
+                            this.content,
+                            this.format);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbSqlReport o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .version(o.getVersion())
-                            .queryKey(o.getQueryKey())
-                            .dbQueryTimeInSecs(o.getDbQueryTimeInSecs())
-                            .content(o.getContent())
-                            .format(o.getFormat());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbSqlReport model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("queryKey")) {
+                this.queryKey(model.getQueryKey());
+            }
+            if (model.wasPropertyExplicitlySet("dbQueryTimeInSecs")) {
+                this.dbQueryTimeInSecs(model.getDbQueryTimeInSecs());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            if (model.wasPropertyExplicitlySet("format")) {
+                this.format(model.getFormat());
+            }
+            return this;
         }
     }
 
@@ -233,7 +250,6 @@ public final class AwrDbSqlReport extends AwrQueryResult {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", content=").append(String.valueOf(this.content));
         sb.append(", format=").append(String.valueOf(this.format));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -250,8 +266,7 @@ public final class AwrDbSqlReport extends AwrQueryResult {
         AwrDbSqlReport other = (AwrDbSqlReport) o;
         return java.util.Objects.equals(this.content, other.content)
                 && java.util.Objects.equals(this.format, other.format)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -260,16 +275,6 @@ public final class AwrDbSqlReport extends AwrQueryResult {
         int result = super.hashCode();
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
         result = (result * PRIME) + (this.format == null ? 43 : this.format.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

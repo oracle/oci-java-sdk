@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = GithubFilterAttributes.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GithubFilterAttributes {
+public final class GithubFilterAttributes
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headRef", "baseRef"})
     public GithubFilterAttributes(String headRef, String baseRef) {
@@ -67,17 +68,22 @@ public final class GithubFilterAttributes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GithubFilterAttributes build() {
-            GithubFilterAttributes __instance__ = new GithubFilterAttributes(headRef, baseRef);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GithubFilterAttributes model = new GithubFilterAttributes(this.headRef, this.baseRef);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GithubFilterAttributes o) {
-            Builder copiedBuilder = headRef(o.getHeadRef()).baseRef(o.getBaseRef());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GithubFilterAttributes model) {
+            if (model.wasPropertyExplicitlySet("headRef")) {
+                this.headRef(model.getHeadRef());
+            }
+            if (model.wasPropertyExplicitlySet("baseRef")) {
+                this.baseRef(model.getBaseRef());
+            }
+            return this;
         }
     }
 
@@ -133,9 +139,9 @@ public final class GithubFilterAttributes {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GithubFilterAttributes(");
+        sb.append("super=").append(super.toString());
         sb.append("headRef=").append(String.valueOf(this.headRef));
         sb.append(", baseRef=").append(String.valueOf(this.baseRef));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +158,7 @@ public final class GithubFilterAttributes {
         GithubFilterAttributes other = (GithubFilterAttributes) o;
         return java.util.Objects.equals(this.headRef, other.headRef)
                 && java.util.Objects.equals(this.baseRef, other.baseRef)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +167,7 @@ public final class GithubFilterAttributes {
         int result = 1;
         result = (result * PRIME) + (this.headRef == null ? 43 : this.headRef.hashCode());
         result = (result * PRIME) + (this.baseRef == null ? 43 : this.baseRef.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

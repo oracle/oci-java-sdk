@@ -101,8 +101,8 @@ public class CreateProfileConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .CreateProfileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.profile(response.getItem());
 

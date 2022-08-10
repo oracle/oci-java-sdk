@@ -120,8 +120,8 @@ public class DownloadOperationsInsightsWarehouseWalletConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .DownloadOperationsInsightsWarehouseWalletResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

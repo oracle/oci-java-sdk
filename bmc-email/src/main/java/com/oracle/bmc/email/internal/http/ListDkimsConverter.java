@@ -155,7 +155,8 @@ public class ListDkimsConverter {
 
                                 com.oracle.bmc.email.responses.ListDkimsResponse.Builder builder =
                                         com.oracle.bmc.email.responses.ListDkimsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.dkimCollection(response.getItem());
 

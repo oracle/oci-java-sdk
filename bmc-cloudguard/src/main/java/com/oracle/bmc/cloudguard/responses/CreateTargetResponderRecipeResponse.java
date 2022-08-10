@@ -55,16 +55,18 @@ public class CreateTargetResponderRecipeResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "targetResponderRecipe"
     })
     private CreateTargetResponderRecipeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.TargetResponderRecipe targetResponderRecipe) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.targetResponderRecipe = targetResponderRecipe;
@@ -75,6 +77,13 @@ public class CreateTargetResponderRecipeResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateTargetResponderRecipeResponse extends com.oracle.bmc.response
          */
         public Builder copy(CreateTargetResponderRecipeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             targetResponderRecipe(o.getTargetResponderRecipe());
@@ -149,7 +159,7 @@ public class CreateTargetResponderRecipeResponse extends com.oracle.bmc.response
          */
         public CreateTargetResponderRecipeResponse build() {
             return new CreateTargetResponderRecipeResponse(
-                    __httpStatusCode__, etag, opcRequestId, targetResponderRecipe);
+                    __httpStatusCode__, headers, etag, opcRequestId, targetResponderRecipe);
         }
     }
 

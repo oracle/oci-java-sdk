@@ -28,7 +28,7 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TriggerAction {
+public class TriggerAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"filter"})
     protected TriggerAction(Filter filter) {
@@ -56,6 +56,7 @@ public class TriggerAction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TriggerAction(");
+        sb.append("super=").append(super.toString());
         sb.append("filter=").append(String.valueOf(this.filter));
         sb.append(")");
         return sb.toString();
@@ -71,7 +72,7 @@ public class TriggerAction {
         }
 
         TriggerAction other = (TriggerAction) o;
-        return java.util.Objects.equals(this.filter, other.filter);
+        return java.util.Objects.equals(this.filter, other.filter) && super.equals(other);
     }
 
     @Override
@@ -79,6 +80,7 @@ public class TriggerAction {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

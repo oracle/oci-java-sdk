@@ -130,8 +130,8 @@ public class SuggestMatchesConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .SuggestMatchesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.suggestResults(response.getItem());
 

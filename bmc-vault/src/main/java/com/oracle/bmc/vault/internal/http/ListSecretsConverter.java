@@ -164,7 +164,8 @@ public class ListSecretsConverter {
 
                                 com.oracle.bmc.vault.responses.ListSecretsResponse.Builder builder =
                                         com.oracle.bmc.vault.responses.ListSecretsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

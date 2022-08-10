@@ -21,7 +21,8 @@ package com.oracle.bmc.mysql.model;
     builder = HeatWaveClusterTableMemoryEstimate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HeatWaveClusterTableMemoryEstimate {
+public final class HeatWaveClusterTableMemoryEstimate
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tableName",
@@ -170,30 +171,41 @@ public final class HeatWaveClusterTableMemoryEstimate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HeatWaveClusterTableMemoryEstimate build() {
-            HeatWaveClusterTableMemoryEstimate __instance__ =
+            HeatWaveClusterTableMemoryEstimate model =
                     new HeatWaveClusterTableMemoryEstimate(
-                            tableName,
-                            toLoadColumnCount,
-                            varlenColumnCount,
-                            estimatedRowCount,
-                            analyticalFootprintInMbs,
-                            errorComment);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tableName,
+                            this.toLoadColumnCount,
+                            this.varlenColumnCount,
+                            this.estimatedRowCount,
+                            this.analyticalFootprintInMbs,
+                            this.errorComment);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HeatWaveClusterTableMemoryEstimate o) {
-            Builder copiedBuilder =
-                    tableName(o.getTableName())
-                            .toLoadColumnCount(o.getToLoadColumnCount())
-                            .varlenColumnCount(o.getVarlenColumnCount())
-                            .estimatedRowCount(o.getEstimatedRowCount())
-                            .analyticalFootprintInMbs(o.getAnalyticalFootprintInMbs())
-                            .errorComment(o.getErrorComment());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HeatWaveClusterTableMemoryEstimate model) {
+            if (model.wasPropertyExplicitlySet("tableName")) {
+                this.tableName(model.getTableName());
+            }
+            if (model.wasPropertyExplicitlySet("toLoadColumnCount")) {
+                this.toLoadColumnCount(model.getToLoadColumnCount());
+            }
+            if (model.wasPropertyExplicitlySet("varlenColumnCount")) {
+                this.varlenColumnCount(model.getVarlenColumnCount());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedRowCount")) {
+                this.estimatedRowCount(model.getEstimatedRowCount());
+            }
+            if (model.wasPropertyExplicitlySet("analyticalFootprintInMbs")) {
+                this.analyticalFootprintInMbs(model.getAnalyticalFootprintInMbs());
+            }
+            if (model.wasPropertyExplicitlySet("errorComment")) {
+                this.errorComment(model.getErrorComment());
+            }
+            return this;
         }
     }
 
@@ -325,6 +337,7 @@ public final class HeatWaveClusterTableMemoryEstimate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HeatWaveClusterTableMemoryEstimate(");
+        sb.append("super=").append(super.toString());
         sb.append("tableName=").append(String.valueOf(this.tableName));
         sb.append(", toLoadColumnCount=").append(String.valueOf(this.toLoadColumnCount));
         sb.append(", varlenColumnCount=").append(String.valueOf(this.varlenColumnCount));
@@ -332,7 +345,6 @@ public final class HeatWaveClusterTableMemoryEstimate {
         sb.append(", analyticalFootprintInMbs=")
                 .append(String.valueOf(this.analyticalFootprintInMbs));
         sb.append(", errorComment=").append(String.valueOf(this.errorComment));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -354,7 +366,7 @@ public final class HeatWaveClusterTableMemoryEstimate {
                 && java.util.Objects.equals(
                         this.analyticalFootprintInMbs, other.analyticalFootprintInMbs)
                 && java.util.Objects.equals(this.errorComment, other.errorComment)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -377,16 +389,7 @@ public final class HeatWaveClusterTableMemoryEstimate {
                                 ? 43
                                 : this.analyticalFootprintInMbs.hashCode());
         result = (result * PRIME) + (this.errorComment == null ? 43 : this.errorComment.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

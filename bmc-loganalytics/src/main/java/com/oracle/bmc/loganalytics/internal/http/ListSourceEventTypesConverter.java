@@ -173,8 +173,8 @@ public class ListSourceEventTypesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListSourceEventTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.eventTypeCollection(response.getItem());
 

@@ -149,8 +149,8 @@ public class ListAutoAssociationsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListAutoAssociationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autoAssociationCollection(response.getItem());
 

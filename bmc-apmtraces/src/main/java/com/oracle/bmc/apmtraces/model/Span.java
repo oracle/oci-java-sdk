@@ -18,7 +18,7 @@ package com.oracle.bmc.apmtraces.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Span.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Span {
+public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -289,42 +289,65 @@ public final class Span {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Span build() {
-            Span __instance__ =
+            Span model =
                     new Span(
-                            key,
-                            parentSpanKey,
-                            traceKey,
-                            timeStarted,
-                            timeEnded,
-                            durationInMs,
-                            operationName,
-                            serviceName,
-                            kind,
-                            tags,
-                            logs,
-                            isError);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.parentSpanKey,
+                            this.traceKey,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.durationInMs,
+                            this.operationName,
+                            this.serviceName,
+                            this.kind,
+                            this.tags,
+                            this.logs,
+                            this.isError);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Span o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .parentSpanKey(o.getParentSpanKey())
-                            .traceKey(o.getTraceKey())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .durationInMs(o.getDurationInMs())
-                            .operationName(o.getOperationName())
-                            .serviceName(o.getServiceName())
-                            .kind(o.getKind())
-                            .tags(o.getTags())
-                            .logs(o.getLogs())
-                            .isError(o.getIsError());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Span model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentSpanKey")) {
+                this.parentSpanKey(model.getParentSpanKey());
+            }
+            if (model.wasPropertyExplicitlySet("traceKey")) {
+                this.traceKey(model.getTraceKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("durationInMs")) {
+                this.durationInMs(model.getDurationInMs());
+            }
+            if (model.wasPropertyExplicitlySet("operationName")) {
+                this.operationName(model.getOperationName());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("kind")) {
+                this.kind(model.getKind());
+            }
+            if (model.wasPropertyExplicitlySet("tags")) {
+                this.tags(model.getTags());
+            }
+            if (model.wasPropertyExplicitlySet("logs")) {
+                this.logs(model.getLogs());
+            }
+            if (model.wasPropertyExplicitlySet("isError")) {
+                this.isError(model.getIsError());
+            }
+            return this;
         }
     }
 
@@ -548,6 +571,7 @@ public final class Span {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Span(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", parentSpanKey=").append(String.valueOf(this.parentSpanKey));
         sb.append(", traceKey=").append(String.valueOf(this.traceKey));
@@ -560,7 +584,6 @@ public final class Span {
         sb.append(", tags=").append(String.valueOf(this.tags));
         sb.append(", logs=").append(String.valueOf(this.logs));
         sb.append(", isError=").append(String.valueOf(this.isError));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -587,7 +610,7 @@ public final class Span {
                 && java.util.Objects.equals(this.tags, other.tags)
                 && java.util.Objects.equals(this.logs, other.logs)
                 && java.util.Objects.equals(this.isError, other.isError)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -610,16 +633,7 @@ public final class Span {
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
         result = (result * PRIME) + (this.logs == null ? 43 : this.logs.hashCode());
         result = (result * PRIME) + (this.isError == null ? 43 : this.isError.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

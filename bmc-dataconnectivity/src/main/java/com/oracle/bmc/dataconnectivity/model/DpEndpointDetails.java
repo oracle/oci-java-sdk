@@ -32,7 +32,7 @@ package com.oracle.bmc.dataconnectivity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DpEndpointDetails {
+public class DpEndpointDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -199,6 +199,7 @@ public class DpEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DpEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -230,7 +231,8 @@ public class DpEndpointDetails {
                 && java.util.Objects.equals(this.objectVersion, other.objectVersion)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
-                && java.util.Objects.equals(this.dataAssets, other.dataAssets);
+                && java.util.Objects.equals(this.dataAssets, other.dataAssets)
+                && super.equals(other);
     }
 
     @Override
@@ -248,6 +250,7 @@ public class DpEndpointDetails {
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.dataAssets == null ? 43 : this.dataAssets.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

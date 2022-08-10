@@ -105,8 +105,8 @@ public class UpdateRunConverter {
                                         builder =
                                                 com.oracle.bmc.dataflow.responses.UpdateRunResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.run(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsAssociationParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsAssociationParameter {
+public final class LogAnalyticsAssociationParameter
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "agentId",
@@ -205,36 +206,53 @@ public final class LogAnalyticsAssociationParameter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsAssociationParameter build() {
-            LogAnalyticsAssociationParameter __instance__ =
+            LogAnalyticsAssociationParameter model =
                     new LogAnalyticsAssociationParameter(
-                            agentId,
-                            entityType,
-                            entityId,
-                            sourceId,
-                            sourceDisplayName,
-                            sourceType,
-                            status,
-                            missingProperties,
-                            requiredProperties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.agentId,
+                            this.entityType,
+                            this.entityId,
+                            this.sourceId,
+                            this.sourceDisplayName,
+                            this.sourceType,
+                            this.status,
+                            this.missingProperties,
+                            this.requiredProperties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsAssociationParameter o) {
-            Builder copiedBuilder =
-                    agentId(o.getAgentId())
-                            .entityType(o.getEntityType())
-                            .entityId(o.getEntityId())
-                            .sourceId(o.getSourceId())
-                            .sourceDisplayName(o.getSourceDisplayName())
-                            .sourceType(o.getSourceType())
-                            .status(o.getStatus())
-                            .missingProperties(o.getMissingProperties())
-                            .requiredProperties(o.getRequiredProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsAssociationParameter model) {
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDisplayName")) {
+                this.sourceDisplayName(model.getSourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("missingProperties")) {
+                this.missingProperties(model.getMissingProperties());
+            }
+            if (model.wasPropertyExplicitlySet("requiredProperties")) {
+                this.requiredProperties(model.getRequiredProperties());
+            }
+            return this;
         }
     }
 
@@ -435,6 +453,7 @@ public final class LogAnalyticsAssociationParameter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsAssociationParameter(");
+        sb.append("super=").append(super.toString());
         sb.append("agentId=").append(String.valueOf(this.agentId));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", entityId=").append(String.valueOf(this.entityId));
@@ -444,7 +463,6 @@ public final class LogAnalyticsAssociationParameter {
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", missingProperties=").append(String.valueOf(this.missingProperties));
         sb.append(", requiredProperties=").append(String.valueOf(this.requiredProperties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -468,7 +486,7 @@ public final class LogAnalyticsAssociationParameter {
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.missingProperties, other.missingProperties)
                 && java.util.Objects.equals(this.requiredProperties, other.requiredProperties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -492,16 +510,7 @@ public final class LogAnalyticsAssociationParameter {
                         + (this.requiredProperties == null
                                 ? 43
                                 : this.requiredProperties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

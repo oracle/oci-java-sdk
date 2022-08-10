@@ -39,12 +39,13 @@ public class UpdateDrgRouteDistributionStatementsResponse
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "items"})
     private UpdateDrgRouteDistributionStatementsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.items = items;
     }
@@ -54,6 +55,13 @@ public class UpdateDrgRouteDistributionStatementsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -98,6 +106,7 @@ public class UpdateDrgRouteDistributionStatementsResponse
          */
         public Builder copy(UpdateDrgRouteDistributionStatementsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 
@@ -110,7 +119,7 @@ public class UpdateDrgRouteDistributionStatementsResponse
          */
         public UpdateDrgRouteDistributionStatementsResponse build() {
             return new UpdateDrgRouteDistributionStatementsResponse(
-                    __httpStatusCode__, opcRequestId, items);
+                    __httpStatusCode__, headers, opcRequestId, items);
         }
     }
 

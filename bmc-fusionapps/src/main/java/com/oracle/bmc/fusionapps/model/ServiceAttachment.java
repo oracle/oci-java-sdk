@@ -19,7 +19,7 @@ package com.oracle.bmc.fusionapps.model;
     builder = ServiceAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ServiceAttachment {
+public final class ServiceAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -290,44 +290,69 @@ public final class ServiceAttachment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ServiceAttachment build() {
-            ServiceAttachment __instance__ =
+            ServiceAttachment model =
                     new ServiceAttachment(
-                            id,
-                            action,
-                            compartmentId,
-                            serviceInstanceId,
-                            displayName,
-                            serviceInstanceType,
-                            serviceUrl,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            isSkuBased,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.action,
+                            this.compartmentId,
+                            this.serviceInstanceId,
+                            this.displayName,
+                            this.serviceInstanceType,
+                            this.serviceUrl,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.isSkuBased,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ServiceAttachment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .action(o.getAction())
-                            .compartmentId(o.getCompartmentId())
-                            .serviceInstanceId(o.getServiceInstanceId())
-                            .displayName(o.getDisplayName())
-                            .serviceInstanceType(o.getServiceInstanceType())
-                            .serviceUrl(o.getServiceUrl())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .isSkuBased(o.getIsSkuBased())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ServiceAttachment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceInstanceId")) {
+                this.serviceInstanceId(model.getServiceInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("serviceInstanceType")) {
+                this.serviceInstanceType(model.getServiceInstanceType());
+            }
+            if (model.wasPropertyExplicitlySet("serviceUrl")) {
+                this.serviceUrl(model.getServiceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isSkuBased")) {
+                this.isSkuBased(model.getIsSkuBased());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -648,6 +673,7 @@ public final class ServiceAttachment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ServiceAttachment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -661,7 +687,6 @@ public final class ServiceAttachment {
         sb.append(", isSkuBased=").append(String.valueOf(this.isSkuBased));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -689,7 +714,7 @@ public final class ServiceAttachment {
                 && java.util.Objects.equals(this.isSkuBased, other.isSkuBased)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -719,16 +744,7 @@ public final class ServiceAttachment {
         result = (result * PRIME) + (this.isSkuBased == null ? 43 : this.isSkuBased.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

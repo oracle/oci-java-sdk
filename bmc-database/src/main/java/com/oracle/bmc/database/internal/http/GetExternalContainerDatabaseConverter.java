@@ -115,8 +115,8 @@ public class GetExternalContainerDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetExternalContainerDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalContainerDatabase(response.getItem());
 

@@ -177,35 +177,50 @@ public final class ExternalRespCache extends ResponseCacheDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalRespCache build() {
-            ExternalRespCache __instance__ =
+            ExternalRespCache model =
                     new ExternalRespCache(
-                            servers,
-                            authenticationSecretId,
-                            authenticationSecretVersionNumber,
-                            isSslEnabled,
-                            isSslVerifyDisabled,
-                            connectTimeoutInMs,
-                            readTimeoutInMs,
-                            sendTimeoutInMs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.servers,
+                            this.authenticationSecretId,
+                            this.authenticationSecretVersionNumber,
+                            this.isSslEnabled,
+                            this.isSslVerifyDisabled,
+                            this.connectTimeoutInMs,
+                            this.readTimeoutInMs,
+                            this.sendTimeoutInMs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalRespCache o) {
-            Builder copiedBuilder =
-                    servers(o.getServers())
-                            .authenticationSecretId(o.getAuthenticationSecretId())
-                            .authenticationSecretVersionNumber(
-                                    o.getAuthenticationSecretVersionNumber())
-                            .isSslEnabled(o.getIsSslEnabled())
-                            .isSslVerifyDisabled(o.getIsSslVerifyDisabled())
-                            .connectTimeoutInMs(o.getConnectTimeoutInMs())
-                            .readTimeoutInMs(o.getReadTimeoutInMs())
-                            .sendTimeoutInMs(o.getSendTimeoutInMs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalRespCache model) {
+            if (model.wasPropertyExplicitlySet("servers")) {
+                this.servers(model.getServers());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationSecretId")) {
+                this.authenticationSecretId(model.getAuthenticationSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationSecretVersionNumber")) {
+                this.authenticationSecretVersionNumber(
+                        model.getAuthenticationSecretVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("isSslEnabled")) {
+                this.isSslEnabled(model.getIsSslEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isSslVerifyDisabled")) {
+                this.isSslVerifyDisabled(model.getIsSslVerifyDisabled());
+            }
+            if (model.wasPropertyExplicitlySet("connectTimeoutInMs")) {
+                this.connectTimeoutInMs(model.getConnectTimeoutInMs());
+            }
+            if (model.wasPropertyExplicitlySet("readTimeoutInMs")) {
+                this.readTimeoutInMs(model.getReadTimeoutInMs());
+            }
+            if (model.wasPropertyExplicitlySet("sendTimeoutInMs")) {
+                this.sendTimeoutInMs(model.getSendTimeoutInMs());
+            }
+            return this;
         }
     }
 
@@ -392,7 +407,6 @@ public final class ExternalRespCache extends ResponseCacheDetails {
         sb.append(", connectTimeoutInMs=").append(String.valueOf(this.connectTimeoutInMs));
         sb.append(", readTimeoutInMs=").append(String.valueOf(this.readTimeoutInMs));
         sb.append(", sendTimeoutInMs=").append(String.valueOf(this.sendTimeoutInMs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -418,8 +432,7 @@ public final class ExternalRespCache extends ResponseCacheDetails {
                 && java.util.Objects.equals(this.connectTimeoutInMs, other.connectTimeoutInMs)
                 && java.util.Objects.equals(this.readTimeoutInMs, other.readTimeoutInMs)
                 && java.util.Objects.equals(this.sendTimeoutInMs, other.sendTimeoutInMs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -454,16 +467,6 @@ public final class ExternalRespCache extends ResponseCacheDetails {
         result =
                 (result * PRIME)
                         + (this.sendTimeoutInMs == null ? 43 : this.sendTimeoutInMs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

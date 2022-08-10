@@ -20,7 +20,7 @@ package com.oracle.bmc.monitoring.model;
     builder = CreateAlarmDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAlarmDetails {
+public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -572,54 +572,89 @@ public final class CreateAlarmDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAlarmDetails build() {
-            CreateAlarmDetails __instance__ =
+            CreateAlarmDetails model =
                     new CreateAlarmDetails(
-                            displayName,
-                            compartmentId,
-                            metricCompartmentId,
-                            metricCompartmentIdInSubtree,
-                            namespace,
-                            resourceGroup,
-                            query,
-                            resolution,
-                            pendingDuration,
-                            severity,
-                            body,
-                            messageFormat,
-                            destinations,
-                            repeatNotificationDuration,
-                            suppression,
-                            isEnabled,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.metricCompartmentId,
+                            this.metricCompartmentIdInSubtree,
+                            this.namespace,
+                            this.resourceGroup,
+                            this.query,
+                            this.resolution,
+                            this.pendingDuration,
+                            this.severity,
+                            this.body,
+                            this.messageFormat,
+                            this.destinations,
+                            this.repeatNotificationDuration,
+                            this.suppression,
+                            this.isEnabled,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAlarmDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .metricCompartmentId(o.getMetricCompartmentId())
-                            .metricCompartmentIdInSubtree(o.getMetricCompartmentIdInSubtree())
-                            .namespace(o.getNamespace())
-                            .resourceGroup(o.getResourceGroup())
-                            .query(o.getQuery())
-                            .resolution(o.getResolution())
-                            .pendingDuration(o.getPendingDuration())
-                            .severity(o.getSeverity())
-                            .body(o.getBody())
-                            .messageFormat(o.getMessageFormat())
-                            .destinations(o.getDestinations())
-                            .repeatNotificationDuration(o.getRepeatNotificationDuration())
-                            .suppression(o.getSuppression())
-                            .isEnabled(o.getIsEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAlarmDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("metricCompartmentId")) {
+                this.metricCompartmentId(model.getMetricCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("metricCompartmentIdInSubtree")) {
+                this.metricCompartmentIdInSubtree(model.getMetricCompartmentIdInSubtree());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("resourceGroup")) {
+                this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("resolution")) {
+                this.resolution(model.getResolution());
+            }
+            if (model.wasPropertyExplicitlySet("pendingDuration")) {
+                this.pendingDuration(model.getPendingDuration());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("body")) {
+                this.body(model.getBody());
+            }
+            if (model.wasPropertyExplicitlySet("messageFormat")) {
+                this.messageFormat(model.getMessageFormat());
+            }
+            if (model.wasPropertyExplicitlySet("destinations")) {
+                this.destinations(model.getDestinations());
+            }
+            if (model.wasPropertyExplicitlySet("repeatNotificationDuration")) {
+                this.repeatNotificationDuration(model.getRepeatNotificationDuration());
+            }
+            if (model.wasPropertyExplicitlySet("suppression")) {
+                this.suppression(model.getSuppression());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1133,6 +1168,7 @@ public final class CreateAlarmDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAlarmDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", metricCompartmentId=").append(String.valueOf(this.metricCompartmentId));
@@ -1153,7 +1189,6 @@ public final class CreateAlarmDetails {
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1188,7 +1223,7 @@ public final class CreateAlarmDetails {
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1233,16 +1268,7 @@ public final class CreateAlarmDetails {
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

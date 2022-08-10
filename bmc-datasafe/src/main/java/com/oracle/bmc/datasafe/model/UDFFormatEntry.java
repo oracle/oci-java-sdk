@@ -63,18 +63,22 @@ public final class UDFFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UDFFormatEntry build() {
-            UDFFormatEntry __instance__ = new UDFFormatEntry(description, userDefinedFunction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UDFFormatEntry model = new UDFFormatEntry(this.description, this.userDefinedFunction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UDFFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription()).userDefinedFunction(o.getUserDefinedFunction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UDFFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("userDefinedFunction")) {
+                this.userDefinedFunction(model.getUserDefinedFunction());
+            }
+            return this;
         }
     }
 
@@ -128,7 +132,6 @@ public final class UDFFormatEntry extends FormatEntry {
         sb.append("UDFFormatEntry(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", userDefinedFunction=").append(String.valueOf(this.userDefinedFunction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -144,8 +147,7 @@ public final class UDFFormatEntry extends FormatEntry {
 
         UDFFormatEntry other = (UDFFormatEntry) o;
         return java.util.Objects.equals(this.userDefinedFunction, other.userDefinedFunction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -157,16 +159,6 @@ public final class UDFFormatEntry extends FormatEntry {
                         + (this.userDefinedFunction == null
                                 ? 43
                                 : this.userDefinedFunction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -168,8 +168,8 @@ public class ListMediaWorkflowsConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .ListMediaWorkflowsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaWorkflowCollection(response.getItem());
 

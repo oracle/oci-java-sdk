@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = AwrDatabaseSnapshotRangeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDatabaseSnapshotRangeSummary {
+public final class AwrDatabaseSnapshotRangeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "awrSourceDatabaseIdentifier",
@@ -280,42 +281,65 @@ public final class AwrDatabaseSnapshotRangeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDatabaseSnapshotRangeSummary build() {
-            AwrDatabaseSnapshotRangeSummary __instance__ =
+            AwrDatabaseSnapshotRangeSummary model =
                     new AwrDatabaseSnapshotRangeSummary(
-                            awrSourceDatabaseIdentifier,
-                            dbName,
-                            instanceList,
-                            timeDbStartup,
-                            timeFirstSnapshotBegin,
-                            timeLatestSnapshotEnd,
-                            firstSnapshotIdentifier,
-                            latestSnapshotIdentifier,
-                            snapshotCount,
-                            snapshotIntervalInMin,
-                            dbVersion,
-                            snapshotTimezone);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.awrSourceDatabaseIdentifier,
+                            this.dbName,
+                            this.instanceList,
+                            this.timeDbStartup,
+                            this.timeFirstSnapshotBegin,
+                            this.timeLatestSnapshotEnd,
+                            this.firstSnapshotIdentifier,
+                            this.latestSnapshotIdentifier,
+                            this.snapshotCount,
+                            this.snapshotIntervalInMin,
+                            this.dbVersion,
+                            this.snapshotTimezone);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDatabaseSnapshotRangeSummary o) {
-            Builder copiedBuilder =
-                    awrSourceDatabaseIdentifier(o.getAwrSourceDatabaseIdentifier())
-                            .dbName(o.getDbName())
-                            .instanceList(o.getInstanceList())
-                            .timeDbStartup(o.getTimeDbStartup())
-                            .timeFirstSnapshotBegin(o.getTimeFirstSnapshotBegin())
-                            .timeLatestSnapshotEnd(o.getTimeLatestSnapshotEnd())
-                            .firstSnapshotIdentifier(o.getFirstSnapshotIdentifier())
-                            .latestSnapshotIdentifier(o.getLatestSnapshotIdentifier())
-                            .snapshotCount(o.getSnapshotCount())
-                            .snapshotIntervalInMin(o.getSnapshotIntervalInMin())
-                            .dbVersion(o.getDbVersion())
-                            .snapshotTimezone(o.getSnapshotTimezone());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDatabaseSnapshotRangeSummary model) {
+            if (model.wasPropertyExplicitlySet("awrSourceDatabaseIdentifier")) {
+                this.awrSourceDatabaseIdentifier(model.getAwrSourceDatabaseIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceList")) {
+                this.instanceList(model.getInstanceList());
+            }
+            if (model.wasPropertyExplicitlySet("timeDbStartup")) {
+                this.timeDbStartup(model.getTimeDbStartup());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSnapshotBegin")) {
+                this.timeFirstSnapshotBegin(model.getTimeFirstSnapshotBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestSnapshotEnd")) {
+                this.timeLatestSnapshotEnd(model.getTimeLatestSnapshotEnd());
+            }
+            if (model.wasPropertyExplicitlySet("firstSnapshotIdentifier")) {
+                this.firstSnapshotIdentifier(model.getFirstSnapshotIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("latestSnapshotIdentifier")) {
+                this.latestSnapshotIdentifier(model.getLatestSnapshotIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotCount")) {
+                this.snapshotCount(model.getSnapshotCount());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotIntervalInMin")) {
+                this.snapshotIntervalInMin(model.getSnapshotIntervalInMin());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotTimezone")) {
+                this.snapshotTimezone(model.getSnapshotTimezone());
+            }
+            return this;
         }
     }
 
@@ -529,6 +553,7 @@ public final class AwrDatabaseSnapshotRangeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDatabaseSnapshotRangeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("awrSourceDatabaseIdentifier=")
                 .append(String.valueOf(this.awrSourceDatabaseIdentifier));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
@@ -544,7 +569,6 @@ public final class AwrDatabaseSnapshotRangeSummary {
         sb.append(", snapshotIntervalInMin=").append(String.valueOf(this.snapshotIntervalInMin));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", snapshotTimezone=").append(String.valueOf(this.snapshotTimezone));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -575,7 +599,7 @@ public final class AwrDatabaseSnapshotRangeSummary {
                 && java.util.Objects.equals(this.snapshotIntervalInMin, other.snapshotIntervalInMin)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.snapshotTimezone, other.snapshotTimezone)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -624,16 +648,7 @@ public final class AwrDatabaseSnapshotRangeSummary {
         result =
                 (result * PRIME)
                         + (this.snapshotTimezone == null ? 43 : this.snapshotTimezone.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

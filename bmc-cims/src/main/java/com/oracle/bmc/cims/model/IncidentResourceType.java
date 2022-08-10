@@ -19,7 +19,7 @@ package com.oracle.bmc.cims.model;
     builder = IncidentResourceType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IncidentResourceType {
+public final class IncidentResourceType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceTypeKey",
@@ -129,24 +129,37 @@ public final class IncidentResourceType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IncidentResourceType build() {
-            IncidentResourceType __instance__ =
+            IncidentResourceType model =
                     new IncidentResourceType(
-                            resourceTypeKey, name, label, description, serviceCategoryList);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceTypeKey,
+                            this.name,
+                            this.label,
+                            this.description,
+                            this.serviceCategoryList);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IncidentResourceType o) {
-            Builder copiedBuilder =
-                    resourceTypeKey(o.getResourceTypeKey())
-                            .name(o.getName())
-                            .label(o.getLabel())
-                            .description(o.getDescription())
-                            .serviceCategoryList(o.getServiceCategoryList());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IncidentResourceType model) {
+            if (model.wasPropertyExplicitlySet("resourceTypeKey")) {
+                this.resourceTypeKey(model.getResourceTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("serviceCategoryList")) {
+                this.serviceCategoryList(model.getServiceCategoryList());
+            }
+            return this;
         }
     }
 
@@ -244,12 +257,12 @@ public final class IncidentResourceType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IncidentResourceType(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceTypeKey=").append(String.valueOf(this.resourceTypeKey));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", label=").append(String.valueOf(this.label));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", serviceCategoryList=").append(String.valueOf(this.serviceCategoryList));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -269,7 +282,7 @@ public final class IncidentResourceType {
                 && java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.serviceCategoryList, other.serviceCategoryList)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -287,16 +300,7 @@ public final class IncidentResourceType {
                         + (this.serviceCategoryList == null
                                 ? 43
                                 : this.serviceCategoryList.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

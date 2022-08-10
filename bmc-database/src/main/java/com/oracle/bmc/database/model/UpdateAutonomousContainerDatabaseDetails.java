@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateAutonomousContainerDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAutonomousContainerDatabaseDetails {
+public final class UpdateAutonomousContainerDatabaseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -171,32 +172,45 @@ public final class UpdateAutonomousContainerDatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutonomousContainerDatabaseDetails build() {
-            UpdateAutonomousContainerDatabaseDetails __instance__ =
+            UpdateAutonomousContainerDatabaseDetails model =
                     new UpdateAutonomousContainerDatabaseDetails(
-                            displayName,
-                            patchModel,
-                            maintenanceWindowDetails,
-                            standbyMaintenanceBufferInDays,
-                            freeformTags,
-                            definedTags,
-                            backupConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.patchModel,
+                            this.maintenanceWindowDetails,
+                            this.standbyMaintenanceBufferInDays,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.backupConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAutonomousContainerDatabaseDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .patchModel(o.getPatchModel())
-                            .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
-                            .standbyMaintenanceBufferInDays(o.getStandbyMaintenanceBufferInDays())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .backupConfig(o.getBackupConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAutonomousContainerDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("patchModel")) {
+                this.patchModel(model.getPatchModel());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
+                this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
+            }
+            if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
+                this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("backupConfig")) {
+                this.backupConfig(model.getBackupConfig());
+            }
+            return this;
         }
     }
 
@@ -359,6 +373,7 @@ public final class UpdateAutonomousContainerDatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAutonomousContainerDatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", patchModel=").append(String.valueOf(this.patchModel));
         sb.append(", maintenanceWindowDetails=")
@@ -368,7 +383,6 @@ public final class UpdateAutonomousContainerDatabaseDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -393,7 +407,7 @@ public final class UpdateAutonomousContainerDatabaseDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -415,16 +429,7 @@ public final class UpdateAutonomousContainerDatabaseDetails {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

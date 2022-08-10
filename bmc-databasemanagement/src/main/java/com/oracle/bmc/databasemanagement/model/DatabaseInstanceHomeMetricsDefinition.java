@@ -22,7 +22,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseInstanceHomeMetricsDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseInstanceHomeMetricsDefinition {
+public final class DatabaseInstanceHomeMetricsDefinition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceName",
@@ -158,32 +159,45 @@ public final class DatabaseInstanceHomeMetricsDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseInstanceHomeMetricsDefinition build() {
-            DatabaseInstanceHomeMetricsDefinition __instance__ =
+            DatabaseInstanceHomeMetricsDefinition model =
                     new DatabaseInstanceHomeMetricsDefinition(
-                            instanceName,
-                            instanceNumber,
-                            activityTimeSeriesMetrics,
-                            dbTimeAggregateMetrics,
-                            ioAggregateMetrics,
-                            memoryAggregateMetrics,
-                            cpuUtilizationAggregateMetrics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.instanceName,
+                            this.instanceNumber,
+                            this.activityTimeSeriesMetrics,
+                            this.dbTimeAggregateMetrics,
+                            this.ioAggregateMetrics,
+                            this.memoryAggregateMetrics,
+                            this.cpuUtilizationAggregateMetrics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseInstanceHomeMetricsDefinition o) {
-            Builder copiedBuilder =
-                    instanceName(o.getInstanceName())
-                            .instanceNumber(o.getInstanceNumber())
-                            .activityTimeSeriesMetrics(o.getActivityTimeSeriesMetrics())
-                            .dbTimeAggregateMetrics(o.getDbTimeAggregateMetrics())
-                            .ioAggregateMetrics(o.getIoAggregateMetrics())
-                            .memoryAggregateMetrics(o.getMemoryAggregateMetrics())
-                            .cpuUtilizationAggregateMetrics(o.getCpuUtilizationAggregateMetrics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseInstanceHomeMetricsDefinition model) {
+            if (model.wasPropertyExplicitlySet("instanceName")) {
+                this.instanceName(model.getInstanceName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceNumber")) {
+                this.instanceNumber(model.getInstanceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("activityTimeSeriesMetrics")) {
+                this.activityTimeSeriesMetrics(model.getActivityTimeSeriesMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("dbTimeAggregateMetrics")) {
+                this.dbTimeAggregateMetrics(model.getDbTimeAggregateMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("ioAggregateMetrics")) {
+                this.ioAggregateMetrics(model.getIoAggregateMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("memoryAggregateMetrics")) {
+                this.memoryAggregateMetrics(model.getMemoryAggregateMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUtilizationAggregateMetrics")) {
+                this.cpuUtilizationAggregateMetrics(model.getCpuUtilizationAggregateMetrics());
+            }
+            return this;
         }
     }
 
@@ -295,6 +309,7 @@ public final class DatabaseInstanceHomeMetricsDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseInstanceHomeMetricsDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("instanceName=").append(String.valueOf(this.instanceName));
         sb.append(", instanceNumber=").append(String.valueOf(this.instanceNumber));
         sb.append(", activityTimeSeriesMetrics=")
@@ -304,7 +319,6 @@ public final class DatabaseInstanceHomeMetricsDefinition {
         sb.append(", memoryAggregateMetrics=").append(String.valueOf(this.memoryAggregateMetrics));
         sb.append(", cpuUtilizationAggregateMetrics=")
                 .append(String.valueOf(this.cpuUtilizationAggregateMetrics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -330,7 +344,7 @@ public final class DatabaseInstanceHomeMetricsDefinition {
                         this.memoryAggregateMetrics, other.memoryAggregateMetrics)
                 && java.util.Objects.equals(
                         this.cpuUtilizationAggregateMetrics, other.cpuUtilizationAggregateMetrics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -366,16 +380,7 @@ public final class DatabaseInstanceHomeMetricsDefinition {
                         + (this.cpuUtilizationAggregateMetrics == null
                                 ? 43
                                 : this.cpuUtilizationAggregateMetrics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

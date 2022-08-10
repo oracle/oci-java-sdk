@@ -117,8 +117,8 @@ public class GetIPSecConnectionTunnelSharedSecretConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetIPSecConnectionTunnelSharedSecretResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.iPSecConnectionTunnelSharedSecret(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.resourcemanager.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LogEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogEntry {
+public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "level", "timestamp", "message"})
     public LogEntry(Type type, Level level, java.util.Date timestamp, String message) {
@@ -105,21 +105,28 @@ public final class LogEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogEntry build() {
-            LogEntry __instance__ = new LogEntry(type, level, timestamp, message);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogEntry model = new LogEntry(this.type, this.level, this.timestamp, this.message);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogEntry o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .level(o.getLevel())
-                            .timestamp(o.getTimestamp())
-                            .message(o.getMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogEntry model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("level")) {
+                this.level(model.getLevel());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            return this;
         }
     }
 
@@ -305,11 +312,11 @@ public final class LogEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", level=").append(String.valueOf(this.level));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", message=").append(String.valueOf(this.message));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -328,7 +335,7 @@ public final class LogEntry {
                 && java.util.Objects.equals(this.level, other.level)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.message, other.message)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -339,16 +346,7 @@ public final class LogEntry {
         result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

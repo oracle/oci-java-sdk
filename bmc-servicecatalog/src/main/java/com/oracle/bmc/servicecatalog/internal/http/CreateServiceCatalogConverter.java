@@ -112,8 +112,8 @@ public class CreateServiceCatalogConverter {
                                         builder =
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .CreateServiceCatalogResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceCatalog(response.getItem());
 

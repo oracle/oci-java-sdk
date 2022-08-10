@@ -112,8 +112,8 @@ public class UpdateWorkspaceConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateWorkspaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workspace(response.getItem());
 

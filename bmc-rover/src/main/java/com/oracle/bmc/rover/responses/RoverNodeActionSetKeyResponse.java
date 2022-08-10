@@ -55,16 +55,18 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "roverNodeSetKey"
     })
     private RoverNodeActionSetKeyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.rover.model.RoverNodeSetKey roverNodeSetKey) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.roverNodeSetKey = roverNodeSetKey;
@@ -75,6 +77,13 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(RoverNodeActionSetKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             roverNodeSetKey(o.getRoverNodeSetKey());
@@ -148,7 +158,7 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
          */
         public RoverNodeActionSetKeyResponse build() {
             return new RoverNodeActionSetKeyResponse(
-                    __httpStatusCode__, etag, opcRequestId, roverNodeSetKey);
+                    __httpStatusCode__, headers, etag, opcRequestId, roverNodeSetKey);
         }
     }
 

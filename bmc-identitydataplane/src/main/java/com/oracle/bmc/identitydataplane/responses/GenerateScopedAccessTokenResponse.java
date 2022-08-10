@@ -38,12 +38,18 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
         return securityToken;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "securityToken"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "securityToken"
+    })
     private GenerateScopedAccessTokenResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identitydataplane.model.SecurityToken securityToken) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.securityToken = securityToken;
     }
@@ -53,6 +59,13 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
          */
         public Builder copy(GenerateScopedAccessTokenResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             securityToken(o.getSecurityToken());
 
@@ -109,7 +123,7 @@ public class GenerateScopedAccessTokenResponse extends com.oracle.bmc.responses.
          */
         public GenerateScopedAccessTokenResponse build() {
             return new GenerateScopedAccessTokenResponse(
-                    __httpStatusCode__, opcRequestId, securityToken);
+                    __httpStatusCode__, headers, opcRequestId, securityToken);
         }
     }
 

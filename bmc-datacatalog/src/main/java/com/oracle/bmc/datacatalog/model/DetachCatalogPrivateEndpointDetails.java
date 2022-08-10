@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = DetachCatalogPrivateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetachCatalogPrivateEndpointDetails {
+public final class DetachCatalogPrivateEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"catalogPrivateEndpointId"})
     public DetachCatalogPrivateEndpointDetails(String catalogPrivateEndpointId) {
@@ -50,18 +51,20 @@ public final class DetachCatalogPrivateEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetachCatalogPrivateEndpointDetails build() {
-            DetachCatalogPrivateEndpointDetails __instance__ =
-                    new DetachCatalogPrivateEndpointDetails(catalogPrivateEndpointId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetachCatalogPrivateEndpointDetails model =
+                    new DetachCatalogPrivateEndpointDetails(this.catalogPrivateEndpointId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetachCatalogPrivateEndpointDetails o) {
-            Builder copiedBuilder = catalogPrivateEndpointId(o.getCatalogPrivateEndpointId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetachCatalogPrivateEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("catalogPrivateEndpointId")) {
+                this.catalogPrivateEndpointId(model.getCatalogPrivateEndpointId());
+            }
+            return this;
         }
     }
 
@@ -103,9 +106,9 @@ public final class DetachCatalogPrivateEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetachCatalogPrivateEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("catalogPrivateEndpointId=")
                 .append(String.valueOf(this.catalogPrivateEndpointId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +125,7 @@ public final class DetachCatalogPrivateEndpointDetails {
         DetachCatalogPrivateEndpointDetails other = (DetachCatalogPrivateEndpointDetails) o;
         return java.util.Objects.equals(
                         this.catalogPrivateEndpointId, other.catalogPrivateEndpointId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -134,16 +137,7 @@ public final class DetachCatalogPrivateEndpointDetails {
                         + (this.catalogPrivateEndpointId == null
                                 ? 43
                                 : this.catalogPrivateEndpointId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

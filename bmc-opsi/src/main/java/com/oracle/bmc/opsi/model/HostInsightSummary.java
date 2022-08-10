@@ -29,10 +29,14 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EmManagedExternalHostInsightSummary.class,
         name = "EM_MANAGED_EXTERNAL_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacsManagedCloudHostInsightSummary.class,
+        name = "MACS_MANAGED_CLOUD_HOST"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class HostInsightSummary {
+public class HostInsightSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -320,6 +324,7 @@ public class HostInsightSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostInsightSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
@@ -363,7 +368,8 @@ public class HostInsightSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails);
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && super.equals(other);
     }
 
     @Override
@@ -399,6 +405,7 @@ public class HostInsightSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

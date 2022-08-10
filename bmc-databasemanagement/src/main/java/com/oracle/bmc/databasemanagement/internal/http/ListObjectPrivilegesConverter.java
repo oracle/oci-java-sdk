@@ -159,8 +159,8 @@ public class ListObjectPrivilegesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListObjectPrivilegesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.objectPrivilegeCollection(response.getItem());
 

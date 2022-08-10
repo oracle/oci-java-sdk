@@ -127,8 +127,8 @@ public class GetModuleStreamProfileConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .GetModuleStreamProfileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.moduleStreamProfile(response.getItem());
 

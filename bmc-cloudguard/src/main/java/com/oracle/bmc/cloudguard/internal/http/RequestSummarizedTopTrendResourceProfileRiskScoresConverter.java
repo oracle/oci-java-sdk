@@ -192,8 +192,8 @@ public class RequestSummarizedTopTrendResourceProfileRiskScoresConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedTopTrendResourceProfileRiskScoresResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceProfileRiskScoreAggregationSummaryCollection(
                                         response.getItem());

@@ -155,8 +155,8 @@ public class ListCertificateVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .ListCertificateVersionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateVersionCollection(response.getItem());
 

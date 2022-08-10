@@ -18,7 +18,7 @@ package com.oracle.bmc.audit.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditEvent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditEvent {
+public final class AuditEvent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "eventType",
@@ -234,34 +234,49 @@ public final class AuditEvent {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditEvent build() {
-            AuditEvent __instance__ =
+            AuditEvent model =
                     new AuditEvent(
-                            eventType,
-                            cloudEventsVersion,
-                            eventTypeVersion,
-                            source,
-                            eventId,
-                            eventTime,
-                            contentType,
-                            data);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.eventType,
+                            this.cloudEventsVersion,
+                            this.eventTypeVersion,
+                            this.source,
+                            this.eventId,
+                            this.eventTime,
+                            this.contentType,
+                            this.data);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuditEvent o) {
-            Builder copiedBuilder =
-                    eventType(o.getEventType())
-                            .cloudEventsVersion(o.getCloudEventsVersion())
-                            .eventTypeVersion(o.getEventTypeVersion())
-                            .source(o.getSource())
-                            .eventId(o.getEventId())
-                            .eventTime(o.getEventTime())
-                            .contentType(o.getContentType())
-                            .data(o.getData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuditEvent model) {
+            if (model.wasPropertyExplicitlySet("eventType")) {
+                this.eventType(model.getEventType());
+            }
+            if (model.wasPropertyExplicitlySet("cloudEventsVersion")) {
+                this.cloudEventsVersion(model.getCloudEventsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("eventTypeVersion")) {
+                this.eventTypeVersion(model.getEventTypeVersion());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("eventId")) {
+                this.eventId(model.getEventId());
+            }
+            if (model.wasPropertyExplicitlySet("eventTime")) {
+                this.eventTime(model.getEventTime());
+            }
+            if (model.wasPropertyExplicitlySet("contentType")) {
+                this.contentType(model.getContentType());
+            }
+            if (model.wasPropertyExplicitlySet("data")) {
+                this.data(model.getData());
+            }
+            return this;
         }
     }
 
@@ -450,6 +465,7 @@ public final class AuditEvent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditEvent(");
+        sb.append("super=").append(super.toString());
         sb.append("eventType=").append(String.valueOf(this.eventType));
         sb.append(", cloudEventsVersion=").append(String.valueOf(this.cloudEventsVersion));
         sb.append(", eventTypeVersion=").append(String.valueOf(this.eventTypeVersion));
@@ -458,7 +474,6 @@ public final class AuditEvent {
         sb.append(", eventTime=").append(String.valueOf(this.eventTime));
         sb.append(", contentType=").append(String.valueOf(this.contentType));
         sb.append(", data=").append(String.valueOf(this.data));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -481,7 +496,7 @@ public final class AuditEvent {
                 && java.util.Objects.equals(this.eventTime, other.eventTime)
                 && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.data, other.data)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -502,16 +517,7 @@ public final class AuditEvent {
         result = (result * PRIME) + (this.eventTime == null ? 43 : this.eventTime.hashCode());
         result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
         result = (result * PRIME) + (this.data == null ? 43 : this.data.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

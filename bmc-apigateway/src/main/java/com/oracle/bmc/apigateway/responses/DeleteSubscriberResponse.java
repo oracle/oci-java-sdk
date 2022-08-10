@@ -48,10 +48,18 @@ public class DeleteSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private DeleteSubscriberResponse(
-            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcWorkRequestId,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
     }
@@ -61,6 +69,13 @@ public class DeleteSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -114,6 +129,7 @@ public class DeleteSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(DeleteSubscriberResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 
@@ -125,7 +141,8 @@ public class DeleteSubscriberResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public DeleteSubscriberResponse build() {
-            return new DeleteSubscriberResponse(__httpStatusCode__, opcWorkRequestId, opcRequestId);
+            return new DeleteSubscriberResponse(
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
         }
     }
 

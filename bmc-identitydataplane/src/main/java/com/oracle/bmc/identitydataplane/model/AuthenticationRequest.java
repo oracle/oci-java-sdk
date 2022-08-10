@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = AuthenticationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthenticationRequest {
+public final class AuthenticationRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userName", "password", "tenantName"})
     public AuthenticationRequest(String userName, String password, String tenantName) {
@@ -84,21 +85,26 @@ public final class AuthenticationRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuthenticationRequest build() {
-            AuthenticationRequest __instance__ =
-                    new AuthenticationRequest(userName, password, tenantName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AuthenticationRequest model =
+                    new AuthenticationRequest(this.userName, this.password, this.tenantName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuthenticationRequest o) {
-            Builder copiedBuilder =
-                    userName(o.getUserName())
-                            .password(o.getPassword())
-                            .tenantName(o.getTenantName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuthenticationRequest model) {
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("tenantName")) {
+                this.tenantName(model.getTenantName());
+            }
+            return this;
         }
     }
 
@@ -168,10 +174,10 @@ public final class AuthenticationRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthenticationRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("userName=").append(String.valueOf(this.userName));
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", tenantName=").append(String.valueOf(this.tenantName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +195,7 @@ public final class AuthenticationRequest {
         return java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.tenantName, other.tenantName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +205,7 @@ public final class AuthenticationRequest {
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.tenantName == null ? 43 : this.tenantName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

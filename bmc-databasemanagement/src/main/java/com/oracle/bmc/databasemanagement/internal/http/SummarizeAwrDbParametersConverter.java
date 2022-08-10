@@ -245,8 +245,8 @@ public class SummarizeAwrDbParametersConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAwrDbParametersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbParameterCollection(response.getItem());
 

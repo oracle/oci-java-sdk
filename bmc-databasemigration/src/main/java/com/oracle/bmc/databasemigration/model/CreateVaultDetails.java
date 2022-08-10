@@ -20,7 +20,7 @@ package com.oracle.bmc.databasemigration.model;
     builder = CreateVaultDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVaultDetails {
+public final class CreateVaultDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "vaultId", "keyId"})
     public CreateVaultDetails(String compartmentId, String vaultId, String keyId) {
@@ -91,18 +91,26 @@ public final class CreateVaultDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVaultDetails build() {
-            CreateVaultDetails __instance__ = new CreateVaultDetails(compartmentId, vaultId, keyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateVaultDetails model =
+                    new CreateVaultDetails(this.compartmentId, this.vaultId, this.keyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateVaultDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId()).vaultId(o.getVaultId()).keyId(o.getKeyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateVaultDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            return this;
         }
     }
 
@@ -178,10 +186,10 @@ public final class CreateVaultDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVaultDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +207,7 @@ public final class CreateVaultDetails {
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -211,16 +219,7 @@ public final class CreateVaultDetails {
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

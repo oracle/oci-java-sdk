@@ -114,8 +114,8 @@ public class UpdateQuotaConverter {
                                         builder =
                                                 com.oracle.bmc.limits.responses.UpdateQuotaResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.quota(response.getItem());
 

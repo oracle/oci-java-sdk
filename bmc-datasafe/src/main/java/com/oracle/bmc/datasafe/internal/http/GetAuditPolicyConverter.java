@@ -103,8 +103,8 @@ public class GetAuditPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetAuditPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditPolicy(response.getItem());
 

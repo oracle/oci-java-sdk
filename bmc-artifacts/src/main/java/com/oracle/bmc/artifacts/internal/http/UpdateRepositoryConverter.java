@@ -109,8 +109,8 @@ public class UpdateRepositoryConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .UpdateRepositoryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repository(response.getItem());
 

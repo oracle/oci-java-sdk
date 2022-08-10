@@ -98,8 +98,8 @@ public class CreateDrgRouteTableConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateDrgRouteTableResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.drgRouteTable(response.getItem());
 

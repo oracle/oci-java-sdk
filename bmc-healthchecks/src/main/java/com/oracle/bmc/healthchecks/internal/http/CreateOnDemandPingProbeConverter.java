@@ -106,8 +106,8 @@ public class CreateOnDemandPingProbeConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .CreateOnDemandPingProbeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pingProbe(response.getItem());
 

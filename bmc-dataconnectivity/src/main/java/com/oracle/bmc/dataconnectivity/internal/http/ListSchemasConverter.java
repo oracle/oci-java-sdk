@@ -189,8 +189,8 @@ public class ListSchemasConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListSchemasResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.schemaSummaryCollection(response.getItem());
 

@@ -135,38 +135,57 @@ public final class ConditionalOutputPort extends TypedObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConditionalOutputPort build() {
-            ConditionalOutputPort __instance__ =
+            ConditionalOutputPort model =
                     new ConditionalOutputPort(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            objectStatus,
-                            name,
-                            description,
-                            portType,
-                            fields,
-                            splitCondition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.objectStatus,
+                            this.name,
+                            this.description,
+                            this.portType,
+                            this.fields,
+                            this.splitCondition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConditionalOutputPort o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .portType(o.getPortType())
-                            .fields(o.getFields())
-                            .splitCondition(o.getSplitCondition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConditionalOutputPort model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("portType")) {
+                this.portType(model.getPortType());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("splitCondition")) {
+                this.splitCondition(model.getSplitCondition());
+            }
+            return this;
         }
     }
 
@@ -300,7 +319,6 @@ public final class ConditionalOutputPort extends TypedObject {
         sb.append(", portType=").append(String.valueOf(this.portType));
         sb.append(", fields=").append(String.valueOf(this.fields));
         sb.append(", splitCondition=").append(String.valueOf(this.splitCondition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -318,8 +336,7 @@ public final class ConditionalOutputPort extends TypedObject {
         return java.util.Objects.equals(this.portType, other.portType)
                 && java.util.Objects.equals(this.fields, other.fields)
                 && java.util.Objects.equals(this.splitCondition, other.splitCondition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -331,16 +348,6 @@ public final class ConditionalOutputPort extends TypedObject {
         result =
                 (result * PRIME)
                         + (this.splitCondition == null ? 43 : this.splitCondition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

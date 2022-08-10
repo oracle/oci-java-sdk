@@ -89,24 +89,37 @@ public final class UpdateNetworkAddressListAddressesDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateNetworkAddressListAddressesDetails build() {
-            UpdateNetworkAddressListAddressesDetails __instance__ =
+            UpdateNetworkAddressListAddressesDetails model =
                     new UpdateNetworkAddressListAddressesDetails(
-                            displayName, freeformTags, definedTags, systemTags, addresses);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.addresses);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateNetworkAddressListAddressesDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .addresses(o.getAddresses());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateNetworkAddressListAddressesDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("addresses")) {
+                this.addresses(model.getAddresses());
+            }
+            return this;
         }
     }
 
@@ -165,7 +178,6 @@ public final class UpdateNetworkAddressListAddressesDetails
         sb.append("UpdateNetworkAddressListAddressesDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", addresses=").append(String.valueOf(this.addresses));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -181,9 +193,7 @@ public final class UpdateNetworkAddressListAddressesDetails
 
         UpdateNetworkAddressListAddressesDetails other =
                 (UpdateNetworkAddressListAddressesDetails) o;
-        return java.util.Objects.equals(this.addresses, other.addresses)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.addresses, other.addresses) && super.equals(other);
     }
 
     @Override
@@ -191,16 +201,6 @@ public final class UpdateNetworkAddressListAddressesDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.addresses == null ? 43 : this.addresses.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

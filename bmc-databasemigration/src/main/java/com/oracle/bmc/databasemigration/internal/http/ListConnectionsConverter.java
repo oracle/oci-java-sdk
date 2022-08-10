@@ -160,8 +160,8 @@ public class ListConnectionsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListConnectionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connectionCollection(response.getItem());
 

@@ -91,6 +91,7 @@ public class CreateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "eTag",
         "location",
         "opcRequestId",
@@ -99,12 +100,13 @@ public class CreateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private CreateTsigKeyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String eTag,
             String location,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.dns.model.TsigKey tsigKey) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.eTag = eTag;
         this.location = location;
         this.opcRequestId = opcRequestId;
@@ -117,6 +119,13 @@ public class CreateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -217,6 +226,7 @@ public class CreateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(CreateTsigKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             eTag(o.getETag());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
@@ -232,7 +242,13 @@ public class CreateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public CreateTsigKeyResponse build() {
             return new CreateTsigKeyResponse(
-                    __httpStatusCode__, eTag, location, opcRequestId, opcWorkRequestId, tsigKey);
+                    __httpStatusCode__,
+                    headers,
+                    eTag,
+                    location,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    tsigKey);
         }
     }
 

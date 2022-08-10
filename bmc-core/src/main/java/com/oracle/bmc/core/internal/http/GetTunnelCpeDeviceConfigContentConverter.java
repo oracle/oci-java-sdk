@@ -112,8 +112,8 @@ public class GetTunnelCpeDeviceConfigContentConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetTunnelCpeDeviceConfigContentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

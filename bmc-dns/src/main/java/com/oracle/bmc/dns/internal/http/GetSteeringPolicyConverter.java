@@ -118,8 +118,8 @@ public class GetSteeringPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .GetSteeringPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.steeringPolicy(response.getItem());

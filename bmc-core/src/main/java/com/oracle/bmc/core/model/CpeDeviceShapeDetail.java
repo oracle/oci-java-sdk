@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
     builder = CpeDeviceShapeDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CpeDeviceShapeDetail {
+public final class CpeDeviceShapeDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpeDeviceShapeId",
@@ -133,22 +133,33 @@ public final class CpeDeviceShapeDetail {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CpeDeviceShapeDetail build() {
-            CpeDeviceShapeDetail __instance__ =
-                    new CpeDeviceShapeDetail(cpeDeviceShapeId, cpeDeviceInfo, parameters, template);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CpeDeviceShapeDetail model =
+                    new CpeDeviceShapeDetail(
+                            this.cpeDeviceShapeId,
+                            this.cpeDeviceInfo,
+                            this.parameters,
+                            this.template);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CpeDeviceShapeDetail o) {
-            Builder copiedBuilder =
-                    cpeDeviceShapeId(o.getCpeDeviceShapeId())
-                            .cpeDeviceInfo(o.getCpeDeviceInfo())
-                            .parameters(o.getParameters())
-                            .template(o.getTemplate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CpeDeviceShapeDetail model) {
+            if (model.wasPropertyExplicitlySet("cpeDeviceShapeId")) {
+                this.cpeDeviceShapeId(model.getCpeDeviceShapeId());
+            }
+            if (model.wasPropertyExplicitlySet("cpeDeviceInfo")) {
+                this.cpeDeviceInfo(model.getCpeDeviceInfo());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("template")) {
+                this.template(model.getTemplate());
+            }
+            return this;
         }
     }
 
@@ -253,11 +264,11 @@ public final class CpeDeviceShapeDetail {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CpeDeviceShapeDetail(");
+        sb.append("super=").append(super.toString());
         sb.append("cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
         sb.append(", cpeDeviceInfo=").append(String.valueOf(this.cpeDeviceInfo));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", template=").append(String.valueOf(this.template));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -276,7 +287,7 @@ public final class CpeDeviceShapeDetail {
                 && java.util.Objects.equals(this.cpeDeviceInfo, other.cpeDeviceInfo)
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.template, other.template)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +302,7 @@ public final class CpeDeviceShapeDetail {
                         + (this.cpeDeviceInfo == null ? 43 : this.cpeDeviceInfo.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.template == null ? 43 : this.template.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

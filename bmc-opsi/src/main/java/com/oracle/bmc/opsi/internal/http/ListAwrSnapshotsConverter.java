@@ -163,8 +163,8 @@ public class ListAwrSnapshotsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListAwrSnapshotsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrSnapshotCollection(response.getItem());
 

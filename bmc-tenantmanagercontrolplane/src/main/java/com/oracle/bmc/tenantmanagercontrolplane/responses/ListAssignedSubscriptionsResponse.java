@@ -61,17 +61,19 @@ public class ListAssignedSubscriptionsResponse extends com.oracle.bmc.responses.
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "assignedSubscriptionCollection"
     })
     private ListAssignedSubscriptionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionCollection
                     assignedSubscriptionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.assignedSubscriptionCollection = assignedSubscriptionCollection;
@@ -82,6 +84,13 @@ public class ListAssignedSubscriptionsResponse extends com.oracle.bmc.responses.
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListAssignedSubscriptionsResponse extends com.oracle.bmc.responses.
          */
         public Builder copy(ListAssignedSubscriptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             assignedSubscriptionCollection(o.getAssignedSubscriptionCollection());
@@ -162,7 +172,11 @@ public class ListAssignedSubscriptionsResponse extends com.oracle.bmc.responses.
          */
         public ListAssignedSubscriptionsResponse build() {
             return new ListAssignedSubscriptionsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, assignedSubscriptionCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcRequestId,
+                    assignedSubscriptionCollection);
         }
     }
 

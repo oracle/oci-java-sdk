@@ -117,6 +117,7 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "contentLength",
@@ -127,6 +128,7 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
     })
     private GetModelArtifactContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
@@ -134,7 +136,7 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
             String contentMd5,
             java.util.Date lastModified,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
@@ -149,6 +151,13 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -279,6 +288,7 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetModelArtifactContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
@@ -297,6 +307,7 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
         public GetModelArtifactContentResponse build() {
             return new GetModelArtifactContentResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     contentLength,

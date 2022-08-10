@@ -24,7 +24,7 @@ package com.oracle.bmc.database.model;
     builder = DbSystemShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystemShapeSummary {
+public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -458,63 +458,106 @@ public final class DbSystemShapeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemShapeSummary build() {
-            DbSystemShapeSummary __instance__ =
+            DbSystemShapeSummary model =
                     new DbSystemShapeSummary(
-                            name,
-                            shapeFamily,
-                            shapeType,
-                            shape,
-                            availableCoreCount,
-                            minimumCoreCount,
-                            coreCountIncrement,
-                            minStorageCount,
-                            maxStorageCount,
-                            availableDataStoragePerServerInTBs,
-                            availableMemoryPerNodeInGBs,
-                            availableDbNodePerNodeInGBs,
-                            minCoreCountPerNode,
-                            availableMemoryInGBs,
-                            minMemoryPerNodeInGBs,
-                            availableDbNodeStorageInGBs,
-                            minDbNodeStoragePerNodeInGBs,
-                            availableDataStorageInTBs,
-                            minDataStorageInTBs,
-                            minimumNodeCount,
-                            maximumNodeCount,
-                            availableCoreCountPerNode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.shapeFamily,
+                            this.shapeType,
+                            this.shape,
+                            this.availableCoreCount,
+                            this.minimumCoreCount,
+                            this.coreCountIncrement,
+                            this.minStorageCount,
+                            this.maxStorageCount,
+                            this.availableDataStoragePerServerInTBs,
+                            this.availableMemoryPerNodeInGBs,
+                            this.availableDbNodePerNodeInGBs,
+                            this.minCoreCountPerNode,
+                            this.availableMemoryInGBs,
+                            this.minMemoryPerNodeInGBs,
+                            this.availableDbNodeStorageInGBs,
+                            this.minDbNodeStoragePerNodeInGBs,
+                            this.availableDataStorageInTBs,
+                            this.minDataStorageInTBs,
+                            this.minimumNodeCount,
+                            this.maximumNodeCount,
+                            this.availableCoreCountPerNode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemShapeSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .shapeFamily(o.getShapeFamily())
-                            .shapeType(o.getShapeType())
-                            .shape(o.getShape())
-                            .availableCoreCount(o.getAvailableCoreCount())
-                            .minimumCoreCount(o.getMinimumCoreCount())
-                            .coreCountIncrement(o.getCoreCountIncrement())
-                            .minStorageCount(o.getMinStorageCount())
-                            .maxStorageCount(o.getMaxStorageCount())
-                            .availableDataStoragePerServerInTBs(
-                                    o.getAvailableDataStoragePerServerInTBs())
-                            .availableMemoryPerNodeInGBs(o.getAvailableMemoryPerNodeInGBs())
-                            .availableDbNodePerNodeInGBs(o.getAvailableDbNodePerNodeInGBs())
-                            .minCoreCountPerNode(o.getMinCoreCountPerNode())
-                            .availableMemoryInGBs(o.getAvailableMemoryInGBs())
-                            .minMemoryPerNodeInGBs(o.getMinMemoryPerNodeInGBs())
-                            .availableDbNodeStorageInGBs(o.getAvailableDbNodeStorageInGBs())
-                            .minDbNodeStoragePerNodeInGBs(o.getMinDbNodeStoragePerNodeInGBs())
-                            .availableDataStorageInTBs(o.getAvailableDataStorageInTBs())
-                            .minDataStorageInTBs(o.getMinDataStorageInTBs())
-                            .minimumNodeCount(o.getMinimumNodeCount())
-                            .maximumNodeCount(o.getMaximumNodeCount())
-                            .availableCoreCountPerNode(o.getAvailableCoreCountPerNode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemShapeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("shapeFamily")) {
+                this.shapeFamily(model.getShapeFamily());
+            }
+            if (model.wasPropertyExplicitlySet("shapeType")) {
+                this.shapeType(model.getShapeType());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("availableCoreCount")) {
+                this.availableCoreCount(model.getAvailableCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("minimumCoreCount")) {
+                this.minimumCoreCount(model.getMinimumCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("coreCountIncrement")) {
+                this.coreCountIncrement(model.getCoreCountIncrement());
+            }
+            if (model.wasPropertyExplicitlySet("minStorageCount")) {
+                this.minStorageCount(model.getMinStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxStorageCount")) {
+                this.maxStorageCount(model.getMaxStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("availableDataStoragePerServerInTBs")) {
+                this.availableDataStoragePerServerInTBs(
+                        model.getAvailableDataStoragePerServerInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableMemoryPerNodeInGBs")) {
+                this.availableMemoryPerNodeInGBs(model.getAvailableMemoryPerNodeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableDbNodePerNodeInGBs")) {
+                this.availableDbNodePerNodeInGBs(model.getAvailableDbNodePerNodeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("minCoreCountPerNode")) {
+                this.minCoreCountPerNode(model.getMinCoreCountPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("availableMemoryInGBs")) {
+                this.availableMemoryInGBs(model.getAvailableMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("minMemoryPerNodeInGBs")) {
+                this.minMemoryPerNodeInGBs(model.getMinMemoryPerNodeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableDbNodeStorageInGBs")) {
+                this.availableDbNodeStorageInGBs(model.getAvailableDbNodeStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("minDbNodeStoragePerNodeInGBs")) {
+                this.minDbNodeStoragePerNodeInGBs(model.getMinDbNodeStoragePerNodeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("availableDataStorageInTBs")) {
+                this.availableDataStorageInTBs(model.getAvailableDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("minDataStorageInTBs")) {
+                this.minDataStorageInTBs(model.getMinDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("minimumNodeCount")) {
+                this.minimumNodeCount(model.getMinimumNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("maximumNodeCount")) {
+                this.maximumNodeCount(model.getMaximumNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("availableCoreCountPerNode")) {
+                this.availableCoreCountPerNode(model.getAvailableCoreCountPerNode());
+            }
+            return this;
         }
     }
 
@@ -898,6 +941,7 @@ public final class DbSystemShapeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemShapeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", shapeFamily=").append(String.valueOf(this.shapeFamily));
         sb.append(", shapeType=").append(String.valueOf(this.shapeType));
@@ -927,7 +971,6 @@ public final class DbSystemShapeSummary {
         sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
         sb.append(", availableCoreCountPerNode=")
                 .append(String.valueOf(this.availableCoreCountPerNode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -972,7 +1015,7 @@ public final class DbSystemShapeSummary {
                 && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
                 && java.util.Objects.equals(
                         this.availableCoreCountPerNode, other.availableCoreCountPerNode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1063,16 +1106,7 @@ public final class DbSystemShapeSummary {
                         + (this.availableCoreCountPerNode == null
                                 ? 43
                                 : this.availableCoreCountPerNode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

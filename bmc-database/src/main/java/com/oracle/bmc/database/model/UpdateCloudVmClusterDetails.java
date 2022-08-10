@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateCloudVmClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateCloudVmClusterDetails {
+public final class UpdateCloudVmClusterDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -293,44 +294,69 @@ public final class UpdateCloudVmClusterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCloudVmClusterDetails build() {
-            UpdateCloudVmClusterDetails __instance__ =
+            UpdateCloudVmClusterDetails model =
                     new UpdateCloudVmClusterDetails(
-                            displayName,
-                            cpuCoreCount,
-                            ocpuCount,
-                            licenseModel,
-                            sshPublicKeys,
-                            updateDetails,
-                            nsgIds,
-                            backupNetworkNsgIds,
-                            computeNodes,
-                            storageSizeInGBs,
-                            freeformTags,
-                            definedTags,
-                            dataCollectionOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.licenseModel,
+                            this.sshPublicKeys,
+                            this.updateDetails,
+                            this.nsgIds,
+                            this.backupNetworkNsgIds,
+                            this.computeNodes,
+                            this.storageSizeInGBs,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.dataCollectionOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateCloudVmClusterDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .licenseModel(o.getLicenseModel())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .updateDetails(o.getUpdateDetails())
-                            .nsgIds(o.getNsgIds())
-                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
-                            .computeNodes(o.getComputeNodes())
-                            .storageSizeInGBs(o.getStorageSizeInGBs())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .dataCollectionOptions(o.getDataCollectionOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateCloudVmClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKeys")) {
+                this.sshPublicKeys(model.getSshPublicKeys());
+            }
+            if (model.wasPropertyExplicitlySet("updateDetails")) {
+                this.updateDetails(model.getUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
+                this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("computeNodes")) {
+                this.computeNodes(model.getComputeNodes());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeInGBs")) {
+                this.storageSizeInGBs(model.getStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
+                this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            return this;
         }
     }
 
@@ -586,6 +612,7 @@ public final class UpdateCloudVmClusterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateCloudVmClusterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
@@ -599,7 +626,6 @@ public final class UpdateCloudVmClusterDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -627,7 +653,7 @@ public final class UpdateCloudVmClusterDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -661,16 +687,7 @@ public final class UpdateCloudVmClusterDetails {
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -64,18 +64,23 @@ public final class ComputeInstanceGroupByQuerySelector extends ComputeInstanceGr
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceGroupByQuerySelector build() {
-            ComputeInstanceGroupByQuerySelector __instance__ =
-                    new ComputeInstanceGroupByQuerySelector(region, query);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ComputeInstanceGroupByQuerySelector model =
+                    new ComputeInstanceGroupByQuerySelector(this.region, this.query);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceGroupByQuerySelector o) {
-            Builder copiedBuilder = region(o.getRegion()).query(o.getQuery());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceGroupByQuerySelector model) {
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            return this;
         }
     }
 
@@ -141,7 +146,6 @@ public final class ComputeInstanceGroupByQuerySelector extends ComputeInstanceGr
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", query=").append(String.valueOf(this.query));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -158,8 +162,7 @@ public final class ComputeInstanceGroupByQuerySelector extends ComputeInstanceGr
         ComputeInstanceGroupByQuerySelector other = (ComputeInstanceGroupByQuerySelector) o;
         return java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.query, other.query)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +171,6 @@ public final class ComputeInstanceGroupByQuerySelector extends ComputeInstanceGr
         int result = super.hashCode();
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

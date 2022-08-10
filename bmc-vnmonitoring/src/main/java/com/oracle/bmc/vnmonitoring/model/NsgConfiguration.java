@@ -60,17 +60,22 @@ public final class NsgConfiguration extends AllowedSecurityConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NsgConfiguration build() {
-            NsgConfiguration __instance__ = new NsgConfiguration(nsgId, securityRule);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NsgConfiguration model = new NsgConfiguration(this.nsgId, this.securityRule);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NsgConfiguration o) {
-            Builder copiedBuilder = nsgId(o.getNsgId()).securityRule(o.getSecurityRule());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NsgConfiguration model) {
+            if (model.wasPropertyExplicitlySet("nsgId")) {
+                this.nsgId(model.getNsgId());
+            }
+            if (model.wasPropertyExplicitlySet("securityRule")) {
+                this.securityRule(model.getSecurityRule());
+            }
+            return this;
         }
     }
 
@@ -133,7 +138,6 @@ public final class NsgConfiguration extends AllowedSecurityConfiguration {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", nsgId=").append(String.valueOf(this.nsgId));
         sb.append(", securityRule=").append(String.valueOf(this.securityRule));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,8 +154,7 @@ public final class NsgConfiguration extends AllowedSecurityConfiguration {
         NsgConfiguration other = (NsgConfiguration) o;
         return java.util.Objects.equals(this.nsgId, other.nsgId)
                 && java.util.Objects.equals(this.securityRule, other.securityRule)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -160,16 +163,6 @@ public final class NsgConfiguration extends AllowedSecurityConfiguration {
         int result = super.hashCode();
         result = (result * PRIME) + (this.nsgId == null ? 43 : this.nsgId.hashCode());
         result = (result * PRIME) + (this.securityRule == null ? 43 : this.securityRule.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

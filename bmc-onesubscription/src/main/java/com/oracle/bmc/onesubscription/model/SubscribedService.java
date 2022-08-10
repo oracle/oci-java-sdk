@@ -20,7 +20,7 @@ package com.oracle.bmc.onesubscription.model;
     builder = SubscribedService.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SubscribedService {
+public final class SubscribedService extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -2227,241 +2227,462 @@ public final class SubscribedService {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SubscribedService build() {
-            SubscribedService __instance__ =
+            SubscribedService model =
                     new SubscribedService(
-                            id,
-                            type,
-                            serialNumber,
-                            subscriptionId,
-                            product,
-                            timeStart,
-                            timeEnd,
-                            quantity,
-                            status,
-                            operationType,
-                            netUnitPrice,
-                            pricePeriod,
-                            lineNetAmount,
-                            isVariableCommitment,
-                            isAllowance,
-                            usedAmount,
-                            availableAmount,
-                            fundedAllocationValue,
-                            isHavingUsage,
-                            isCapToPriceList,
-                            creditPercentage,
-                            partnerTransactionType,
-                            isCreditEnabled,
-                            overagePolicy,
-                            overageBillTo,
-                            paygPolicy,
-                            promoOrderLineId,
-                            promotionPricingType,
-                            rateCardDiscountPercentage,
-                            overageDiscountPercentage,
-                            billToCustomer,
-                            billToContact,
-                            billToAddress,
-                            paymentNumber,
-                            timePaymentExpiry,
-                            paymentTerm,
-                            paymentMethod,
-                            transactionExtensionId,
-                            salesChannel,
-                            eligibleToRenew,
-                            renewedSubscribedServiceId,
-                            termValue,
-                            termValueUom,
-                            renewalOptyId,
-                            renewalOptyNumber,
-                            renewalOptyType,
-                            bookingOptyNumber,
-                            revenueLineId,
-                            revenueLineNumber,
-                            majorSet,
-                            timeMajorsetStart,
-                            timeMajorsetEnd,
-                            systemArrInLc,
-                            systemArrInSc,
-                            systemAtrArrInLc,
-                            systemAtrArrInSc,
-                            revisedArrInLc,
-                            revisedArrInSc,
-                            totalValue,
-                            originalPromoAmount,
-                            orderHeaderId,
-                            orderNumber,
-                            orderType,
-                            orderLineId,
-                            orderLineNumber,
-                            commitmentScheduleId,
-                            salesAccountPartyId,
-                            dataCenter,
-                            dataCenterRegion,
-                            adminEmail,
-                            buyerEmail,
-                            subscriptionSource,
-                            provisioningSource,
-                            fulfillmentSet,
-                            isIntentToPay,
-                            isPayg,
-                            pricingModel,
-                            programType,
-                            startDateType,
-                            timeProvisioned,
-                            promoType,
-                            serviceToCustomer,
-                            serviceToContact,
-                            serviceToAddress,
-                            soldToCustomer,
-                            soldToContact,
-                            endUserCustomer,
-                            endUserContact,
-                            endUserAddress,
-                            resellerCustomer,
-                            resellerContact,
-                            resellerAddress,
-                            csi,
-                            customerTransactionReference,
-                            partnerCreditAmount,
-                            isSingleRateCard,
-                            agreementId,
-                            agreementName,
-                            agreementType,
-                            billingFrequency,
-                            timeWelcomeEmailSent,
-                            timeServiceConfigurationEmailSent,
-                            timeCustomerConfig,
-                            timeAgreementEnd,
-                            commitmentServices,
-                            rateCards,
-                            timeCreated,
-                            createdBy,
-                            timeUpdated,
-                            updatedBy,
-                            ratecardType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.type,
+                            this.serialNumber,
+                            this.subscriptionId,
+                            this.product,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.quantity,
+                            this.status,
+                            this.operationType,
+                            this.netUnitPrice,
+                            this.pricePeriod,
+                            this.lineNetAmount,
+                            this.isVariableCommitment,
+                            this.isAllowance,
+                            this.usedAmount,
+                            this.availableAmount,
+                            this.fundedAllocationValue,
+                            this.isHavingUsage,
+                            this.isCapToPriceList,
+                            this.creditPercentage,
+                            this.partnerTransactionType,
+                            this.isCreditEnabled,
+                            this.overagePolicy,
+                            this.overageBillTo,
+                            this.paygPolicy,
+                            this.promoOrderLineId,
+                            this.promotionPricingType,
+                            this.rateCardDiscountPercentage,
+                            this.overageDiscountPercentage,
+                            this.billToCustomer,
+                            this.billToContact,
+                            this.billToAddress,
+                            this.paymentNumber,
+                            this.timePaymentExpiry,
+                            this.paymentTerm,
+                            this.paymentMethod,
+                            this.transactionExtensionId,
+                            this.salesChannel,
+                            this.eligibleToRenew,
+                            this.renewedSubscribedServiceId,
+                            this.termValue,
+                            this.termValueUom,
+                            this.renewalOptyId,
+                            this.renewalOptyNumber,
+                            this.renewalOptyType,
+                            this.bookingOptyNumber,
+                            this.revenueLineId,
+                            this.revenueLineNumber,
+                            this.majorSet,
+                            this.timeMajorsetStart,
+                            this.timeMajorsetEnd,
+                            this.systemArrInLc,
+                            this.systemArrInSc,
+                            this.systemAtrArrInLc,
+                            this.systemAtrArrInSc,
+                            this.revisedArrInLc,
+                            this.revisedArrInSc,
+                            this.totalValue,
+                            this.originalPromoAmount,
+                            this.orderHeaderId,
+                            this.orderNumber,
+                            this.orderType,
+                            this.orderLineId,
+                            this.orderLineNumber,
+                            this.commitmentScheduleId,
+                            this.salesAccountPartyId,
+                            this.dataCenter,
+                            this.dataCenterRegion,
+                            this.adminEmail,
+                            this.buyerEmail,
+                            this.subscriptionSource,
+                            this.provisioningSource,
+                            this.fulfillmentSet,
+                            this.isIntentToPay,
+                            this.isPayg,
+                            this.pricingModel,
+                            this.programType,
+                            this.startDateType,
+                            this.timeProvisioned,
+                            this.promoType,
+                            this.serviceToCustomer,
+                            this.serviceToContact,
+                            this.serviceToAddress,
+                            this.soldToCustomer,
+                            this.soldToContact,
+                            this.endUserCustomer,
+                            this.endUserContact,
+                            this.endUserAddress,
+                            this.resellerCustomer,
+                            this.resellerContact,
+                            this.resellerAddress,
+                            this.csi,
+                            this.customerTransactionReference,
+                            this.partnerCreditAmount,
+                            this.isSingleRateCard,
+                            this.agreementId,
+                            this.agreementName,
+                            this.agreementType,
+                            this.billingFrequency,
+                            this.timeWelcomeEmailSent,
+                            this.timeServiceConfigurationEmailSent,
+                            this.timeCustomerConfig,
+                            this.timeAgreementEnd,
+                            this.commitmentServices,
+                            this.rateCards,
+                            this.timeCreated,
+                            this.createdBy,
+                            this.timeUpdated,
+                            this.updatedBy,
+                            this.ratecardType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SubscribedService o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .type(o.getType())
-                            .serialNumber(o.getSerialNumber())
-                            .subscriptionId(o.getSubscriptionId())
-                            .product(o.getProduct())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .quantity(o.getQuantity())
-                            .status(o.getStatus())
-                            .operationType(o.getOperationType())
-                            .netUnitPrice(o.getNetUnitPrice())
-                            .pricePeriod(o.getPricePeriod())
-                            .lineNetAmount(o.getLineNetAmount())
-                            .isVariableCommitment(o.getIsVariableCommitment())
-                            .isAllowance(o.getIsAllowance())
-                            .usedAmount(o.getUsedAmount())
-                            .availableAmount(o.getAvailableAmount())
-                            .fundedAllocationValue(o.getFundedAllocationValue())
-                            .isHavingUsage(o.getIsHavingUsage())
-                            .isCapToPriceList(o.getIsCapToPriceList())
-                            .creditPercentage(o.getCreditPercentage())
-                            .partnerTransactionType(o.getPartnerTransactionType())
-                            .isCreditEnabled(o.getIsCreditEnabled())
-                            .overagePolicy(o.getOveragePolicy())
-                            .overageBillTo(o.getOverageBillTo())
-                            .paygPolicy(o.getPaygPolicy())
-                            .promoOrderLineId(o.getPromoOrderLineId())
-                            .promotionPricingType(o.getPromotionPricingType())
-                            .rateCardDiscountPercentage(o.getRateCardDiscountPercentage())
-                            .overageDiscountPercentage(o.getOverageDiscountPercentage())
-                            .billToCustomer(o.getBillToCustomer())
-                            .billToContact(o.getBillToContact())
-                            .billToAddress(o.getBillToAddress())
-                            .paymentNumber(o.getPaymentNumber())
-                            .timePaymentExpiry(o.getTimePaymentExpiry())
-                            .paymentTerm(o.getPaymentTerm())
-                            .paymentMethod(o.getPaymentMethod())
-                            .transactionExtensionId(o.getTransactionExtensionId())
-                            .salesChannel(o.getSalesChannel())
-                            .eligibleToRenew(o.getEligibleToRenew())
-                            .renewedSubscribedServiceId(o.getRenewedSubscribedServiceId())
-                            .termValue(o.getTermValue())
-                            .termValueUom(o.getTermValueUom())
-                            .renewalOptyId(o.getRenewalOptyId())
-                            .renewalOptyNumber(o.getRenewalOptyNumber())
-                            .renewalOptyType(o.getRenewalOptyType())
-                            .bookingOptyNumber(o.getBookingOptyNumber())
-                            .revenueLineId(o.getRevenueLineId())
-                            .revenueLineNumber(o.getRevenueLineNumber())
-                            .majorSet(o.getMajorSet())
-                            .timeMajorsetStart(o.getTimeMajorsetStart())
-                            .timeMajorsetEnd(o.getTimeMajorsetEnd())
-                            .systemArrInLc(o.getSystemArrInLc())
-                            .systemArrInSc(o.getSystemArrInSc())
-                            .systemAtrArrInLc(o.getSystemAtrArrInLc())
-                            .systemAtrArrInSc(o.getSystemAtrArrInSc())
-                            .revisedArrInLc(o.getRevisedArrInLc())
-                            .revisedArrInSc(o.getRevisedArrInSc())
-                            .totalValue(o.getTotalValue())
-                            .originalPromoAmount(o.getOriginalPromoAmount())
-                            .orderHeaderId(o.getOrderHeaderId())
-                            .orderNumber(o.getOrderNumber())
-                            .orderType(o.getOrderType())
-                            .orderLineId(o.getOrderLineId())
-                            .orderLineNumber(o.getOrderLineNumber())
-                            .commitmentScheduleId(o.getCommitmentScheduleId())
-                            .salesAccountPartyId(o.getSalesAccountPartyId())
-                            .dataCenter(o.getDataCenter())
-                            .dataCenterRegion(o.getDataCenterRegion())
-                            .adminEmail(o.getAdminEmail())
-                            .buyerEmail(o.getBuyerEmail())
-                            .subscriptionSource(o.getSubscriptionSource())
-                            .provisioningSource(o.getProvisioningSource())
-                            .fulfillmentSet(o.getFulfillmentSet())
-                            .isIntentToPay(o.getIsIntentToPay())
-                            .isPayg(o.getIsPayg())
-                            .pricingModel(o.getPricingModel())
-                            .programType(o.getProgramType())
-                            .startDateType(o.getStartDateType())
-                            .timeProvisioned(o.getTimeProvisioned())
-                            .promoType(o.getPromoType())
-                            .serviceToCustomer(o.getServiceToCustomer())
-                            .serviceToContact(o.getServiceToContact())
-                            .serviceToAddress(o.getServiceToAddress())
-                            .soldToCustomer(o.getSoldToCustomer())
-                            .soldToContact(o.getSoldToContact())
-                            .endUserCustomer(o.getEndUserCustomer())
-                            .endUserContact(o.getEndUserContact())
-                            .endUserAddress(o.getEndUserAddress())
-                            .resellerCustomer(o.getResellerCustomer())
-                            .resellerContact(o.getResellerContact())
-                            .resellerAddress(o.getResellerAddress())
-                            .csi(o.getCsi())
-                            .customerTransactionReference(o.getCustomerTransactionReference())
-                            .partnerCreditAmount(o.getPartnerCreditAmount())
-                            .isSingleRateCard(o.getIsSingleRateCard())
-                            .agreementId(o.getAgreementId())
-                            .agreementName(o.getAgreementName())
-                            .agreementType(o.getAgreementType())
-                            .billingFrequency(o.getBillingFrequency())
-                            .timeWelcomeEmailSent(o.getTimeWelcomeEmailSent())
-                            .timeServiceConfigurationEmailSent(
-                                    o.getTimeServiceConfigurationEmailSent())
-                            .timeCustomerConfig(o.getTimeCustomerConfig())
-                            .timeAgreementEnd(o.getTimeAgreementEnd())
-                            .commitmentServices(o.getCommitmentServices())
-                            .rateCards(o.getRateCards())
-                            .timeCreated(o.getTimeCreated())
-                            .createdBy(o.getCreatedBy())
-                            .timeUpdated(o.getTimeUpdated())
-                            .updatedBy(o.getUpdatedBy())
-                            .ratecardType(o.getRatecardType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SubscribedService model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("netUnitPrice")) {
+                this.netUnitPrice(model.getNetUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("pricePeriod")) {
+                this.pricePeriod(model.getPricePeriod());
+            }
+            if (model.wasPropertyExplicitlySet("lineNetAmount")) {
+                this.lineNetAmount(model.getLineNetAmount());
+            }
+            if (model.wasPropertyExplicitlySet("isVariableCommitment")) {
+                this.isVariableCommitment(model.getIsVariableCommitment());
+            }
+            if (model.wasPropertyExplicitlySet("isAllowance")) {
+                this.isAllowance(model.getIsAllowance());
+            }
+            if (model.wasPropertyExplicitlySet("usedAmount")) {
+                this.usedAmount(model.getUsedAmount());
+            }
+            if (model.wasPropertyExplicitlySet("availableAmount")) {
+                this.availableAmount(model.getAvailableAmount());
+            }
+            if (model.wasPropertyExplicitlySet("fundedAllocationValue")) {
+                this.fundedAllocationValue(model.getFundedAllocationValue());
+            }
+            if (model.wasPropertyExplicitlySet("isHavingUsage")) {
+                this.isHavingUsage(model.getIsHavingUsage());
+            }
+            if (model.wasPropertyExplicitlySet("isCapToPriceList")) {
+                this.isCapToPriceList(model.getIsCapToPriceList());
+            }
+            if (model.wasPropertyExplicitlySet("creditPercentage")) {
+                this.creditPercentage(model.getCreditPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("partnerTransactionType")) {
+                this.partnerTransactionType(model.getPartnerTransactionType());
+            }
+            if (model.wasPropertyExplicitlySet("isCreditEnabled")) {
+                this.isCreditEnabled(model.getIsCreditEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("overagePolicy")) {
+                this.overagePolicy(model.getOveragePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("overageBillTo")) {
+                this.overageBillTo(model.getOverageBillTo());
+            }
+            if (model.wasPropertyExplicitlySet("paygPolicy")) {
+                this.paygPolicy(model.getPaygPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("promoOrderLineId")) {
+                this.promoOrderLineId(model.getPromoOrderLineId());
+            }
+            if (model.wasPropertyExplicitlySet("promotionPricingType")) {
+                this.promotionPricingType(model.getPromotionPricingType());
+            }
+            if (model.wasPropertyExplicitlySet("rateCardDiscountPercentage")) {
+                this.rateCardDiscountPercentage(model.getRateCardDiscountPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("overageDiscountPercentage")) {
+                this.overageDiscountPercentage(model.getOverageDiscountPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("billToCustomer")) {
+                this.billToCustomer(model.getBillToCustomer());
+            }
+            if (model.wasPropertyExplicitlySet("billToContact")) {
+                this.billToContact(model.getBillToContact());
+            }
+            if (model.wasPropertyExplicitlySet("billToAddress")) {
+                this.billToAddress(model.getBillToAddress());
+            }
+            if (model.wasPropertyExplicitlySet("paymentNumber")) {
+                this.paymentNumber(model.getPaymentNumber());
+            }
+            if (model.wasPropertyExplicitlySet("timePaymentExpiry")) {
+                this.timePaymentExpiry(model.getTimePaymentExpiry());
+            }
+            if (model.wasPropertyExplicitlySet("paymentTerm")) {
+                this.paymentTerm(model.getPaymentTerm());
+            }
+            if (model.wasPropertyExplicitlySet("paymentMethod")) {
+                this.paymentMethod(model.getPaymentMethod());
+            }
+            if (model.wasPropertyExplicitlySet("transactionExtensionId")) {
+                this.transactionExtensionId(model.getTransactionExtensionId());
+            }
+            if (model.wasPropertyExplicitlySet("salesChannel")) {
+                this.salesChannel(model.getSalesChannel());
+            }
+            if (model.wasPropertyExplicitlySet("eligibleToRenew")) {
+                this.eligibleToRenew(model.getEligibleToRenew());
+            }
+            if (model.wasPropertyExplicitlySet("renewedSubscribedServiceId")) {
+                this.renewedSubscribedServiceId(model.getRenewedSubscribedServiceId());
+            }
+            if (model.wasPropertyExplicitlySet("termValue")) {
+                this.termValue(model.getTermValue());
+            }
+            if (model.wasPropertyExplicitlySet("termValueUom")) {
+                this.termValueUom(model.getTermValueUom());
+            }
+            if (model.wasPropertyExplicitlySet("renewalOptyId")) {
+                this.renewalOptyId(model.getRenewalOptyId());
+            }
+            if (model.wasPropertyExplicitlySet("renewalOptyNumber")) {
+                this.renewalOptyNumber(model.getRenewalOptyNumber());
+            }
+            if (model.wasPropertyExplicitlySet("renewalOptyType")) {
+                this.renewalOptyType(model.getRenewalOptyType());
+            }
+            if (model.wasPropertyExplicitlySet("bookingOptyNumber")) {
+                this.bookingOptyNumber(model.getBookingOptyNumber());
+            }
+            if (model.wasPropertyExplicitlySet("revenueLineId")) {
+                this.revenueLineId(model.getRevenueLineId());
+            }
+            if (model.wasPropertyExplicitlySet("revenueLineNumber")) {
+                this.revenueLineNumber(model.getRevenueLineNumber());
+            }
+            if (model.wasPropertyExplicitlySet("majorSet")) {
+                this.majorSet(model.getMajorSet());
+            }
+            if (model.wasPropertyExplicitlySet("timeMajorsetStart")) {
+                this.timeMajorsetStart(model.getTimeMajorsetStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeMajorsetEnd")) {
+                this.timeMajorsetEnd(model.getTimeMajorsetEnd());
+            }
+            if (model.wasPropertyExplicitlySet("systemArrInLc")) {
+                this.systemArrInLc(model.getSystemArrInLc());
+            }
+            if (model.wasPropertyExplicitlySet("systemArrInSc")) {
+                this.systemArrInSc(model.getSystemArrInSc());
+            }
+            if (model.wasPropertyExplicitlySet("systemAtrArrInLc")) {
+                this.systemAtrArrInLc(model.getSystemAtrArrInLc());
+            }
+            if (model.wasPropertyExplicitlySet("systemAtrArrInSc")) {
+                this.systemAtrArrInSc(model.getSystemAtrArrInSc());
+            }
+            if (model.wasPropertyExplicitlySet("revisedArrInLc")) {
+                this.revisedArrInLc(model.getRevisedArrInLc());
+            }
+            if (model.wasPropertyExplicitlySet("revisedArrInSc")) {
+                this.revisedArrInSc(model.getRevisedArrInSc());
+            }
+            if (model.wasPropertyExplicitlySet("totalValue")) {
+                this.totalValue(model.getTotalValue());
+            }
+            if (model.wasPropertyExplicitlySet("originalPromoAmount")) {
+                this.originalPromoAmount(model.getOriginalPromoAmount());
+            }
+            if (model.wasPropertyExplicitlySet("orderHeaderId")) {
+                this.orderHeaderId(model.getOrderHeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("orderNumber")) {
+                this.orderNumber(model.getOrderNumber());
+            }
+            if (model.wasPropertyExplicitlySet("orderType")) {
+                this.orderType(model.getOrderType());
+            }
+            if (model.wasPropertyExplicitlySet("orderLineId")) {
+                this.orderLineId(model.getOrderLineId());
+            }
+            if (model.wasPropertyExplicitlySet("orderLineNumber")) {
+                this.orderLineNumber(model.getOrderLineNumber());
+            }
+            if (model.wasPropertyExplicitlySet("commitmentScheduleId")) {
+                this.commitmentScheduleId(model.getCommitmentScheduleId());
+            }
+            if (model.wasPropertyExplicitlySet("salesAccountPartyId")) {
+                this.salesAccountPartyId(model.getSalesAccountPartyId());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenter")) {
+                this.dataCenter(model.getDataCenter());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenterRegion")) {
+                this.dataCenterRegion(model.getDataCenterRegion());
+            }
+            if (model.wasPropertyExplicitlySet("adminEmail")) {
+                this.adminEmail(model.getAdminEmail());
+            }
+            if (model.wasPropertyExplicitlySet("buyerEmail")) {
+                this.buyerEmail(model.getBuyerEmail());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionSource")) {
+                this.subscriptionSource(model.getSubscriptionSource());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningSource")) {
+                this.provisioningSource(model.getProvisioningSource());
+            }
+            if (model.wasPropertyExplicitlySet("fulfillmentSet")) {
+                this.fulfillmentSet(model.getFulfillmentSet());
+            }
+            if (model.wasPropertyExplicitlySet("isIntentToPay")) {
+                this.isIntentToPay(model.getIsIntentToPay());
+            }
+            if (model.wasPropertyExplicitlySet("isPayg")) {
+                this.isPayg(model.getIsPayg());
+            }
+            if (model.wasPropertyExplicitlySet("pricingModel")) {
+                this.pricingModel(model.getPricingModel());
+            }
+            if (model.wasPropertyExplicitlySet("programType")) {
+                this.programType(model.getProgramType());
+            }
+            if (model.wasPropertyExplicitlySet("startDateType")) {
+                this.startDateType(model.getStartDateType());
+            }
+            if (model.wasPropertyExplicitlySet("timeProvisioned")) {
+                this.timeProvisioned(model.getTimeProvisioned());
+            }
+            if (model.wasPropertyExplicitlySet("promoType")) {
+                this.promoType(model.getPromoType());
+            }
+            if (model.wasPropertyExplicitlySet("serviceToCustomer")) {
+                this.serviceToCustomer(model.getServiceToCustomer());
+            }
+            if (model.wasPropertyExplicitlySet("serviceToContact")) {
+                this.serviceToContact(model.getServiceToContact());
+            }
+            if (model.wasPropertyExplicitlySet("serviceToAddress")) {
+                this.serviceToAddress(model.getServiceToAddress());
+            }
+            if (model.wasPropertyExplicitlySet("soldToCustomer")) {
+                this.soldToCustomer(model.getSoldToCustomer());
+            }
+            if (model.wasPropertyExplicitlySet("soldToContact")) {
+                this.soldToContact(model.getSoldToContact());
+            }
+            if (model.wasPropertyExplicitlySet("endUserCustomer")) {
+                this.endUserCustomer(model.getEndUserCustomer());
+            }
+            if (model.wasPropertyExplicitlySet("endUserContact")) {
+                this.endUserContact(model.getEndUserContact());
+            }
+            if (model.wasPropertyExplicitlySet("endUserAddress")) {
+                this.endUserAddress(model.getEndUserAddress());
+            }
+            if (model.wasPropertyExplicitlySet("resellerCustomer")) {
+                this.resellerCustomer(model.getResellerCustomer());
+            }
+            if (model.wasPropertyExplicitlySet("resellerContact")) {
+                this.resellerContact(model.getResellerContact());
+            }
+            if (model.wasPropertyExplicitlySet("resellerAddress")) {
+                this.resellerAddress(model.getResellerAddress());
+            }
+            if (model.wasPropertyExplicitlySet("csi")) {
+                this.csi(model.getCsi());
+            }
+            if (model.wasPropertyExplicitlySet("customerTransactionReference")) {
+                this.customerTransactionReference(model.getCustomerTransactionReference());
+            }
+            if (model.wasPropertyExplicitlySet("partnerCreditAmount")) {
+                this.partnerCreditAmount(model.getPartnerCreditAmount());
+            }
+            if (model.wasPropertyExplicitlySet("isSingleRateCard")) {
+                this.isSingleRateCard(model.getIsSingleRateCard());
+            }
+            if (model.wasPropertyExplicitlySet("agreementId")) {
+                this.agreementId(model.getAgreementId());
+            }
+            if (model.wasPropertyExplicitlySet("agreementName")) {
+                this.agreementName(model.getAgreementName());
+            }
+            if (model.wasPropertyExplicitlySet("agreementType")) {
+                this.agreementType(model.getAgreementType());
+            }
+            if (model.wasPropertyExplicitlySet("billingFrequency")) {
+                this.billingFrequency(model.getBillingFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("timeWelcomeEmailSent")) {
+                this.timeWelcomeEmailSent(model.getTimeWelcomeEmailSent());
+            }
+            if (model.wasPropertyExplicitlySet("timeServiceConfigurationEmailSent")) {
+                this.timeServiceConfigurationEmailSent(
+                        model.getTimeServiceConfigurationEmailSent());
+            }
+            if (model.wasPropertyExplicitlySet("timeCustomerConfig")) {
+                this.timeCustomerConfig(model.getTimeCustomerConfig());
+            }
+            if (model.wasPropertyExplicitlySet("timeAgreementEnd")) {
+                this.timeAgreementEnd(model.getTimeAgreementEnd());
+            }
+            if (model.wasPropertyExplicitlySet("commitmentServices")) {
+                this.commitmentServices(model.getCommitmentServices());
+            }
+            if (model.wasPropertyExplicitlySet("rateCards")) {
+                this.rateCards(model.getRateCards());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("updatedBy")) {
+                this.updatedBy(model.getUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("ratecardType")) {
+                this.ratecardType(model.getRatecardType());
+            }
+            return this;
         }
     }
 
@@ -4125,6 +4346,7 @@ public final class SubscribedService {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SubscribedService(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
@@ -4241,7 +4463,6 @@ public final class SubscribedService {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
         sb.append(", ratecardType=").append(String.valueOf(this.ratecardType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -4375,7 +4596,7 @@ public final class SubscribedService {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.updatedBy, other.updatedBy)
                 && java.util.Objects.equals(this.ratecardType, other.ratecardType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -4679,16 +4900,7 @@ public final class SubscribedService {
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
         result = (result * PRIME) + (this.ratecardType == null ? 43 : this.ratecardType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

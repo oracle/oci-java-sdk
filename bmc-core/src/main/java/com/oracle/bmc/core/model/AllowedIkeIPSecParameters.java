@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AllowedIkeIPSecParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AllowedIkeIPSecParameters {
+public final class AllowedIkeIPSecParameters
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "allowedPhaseOneParameters",
@@ -86,26 +87,33 @@ public final class AllowedIkeIPSecParameters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AllowedIkeIPSecParameters build() {
-            AllowedIkeIPSecParameters __instance__ =
+            AllowedIkeIPSecParameters model =
                     new AllowedIkeIPSecParameters(
-                            allowedPhaseOneParameters,
-                            allowedPhaseTwoParameters,
-                            defaultPhaseOneParameters,
-                            defaultPhaseTwoParameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.allowedPhaseOneParameters,
+                            this.allowedPhaseTwoParameters,
+                            this.defaultPhaseOneParameters,
+                            this.defaultPhaseTwoParameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AllowedIkeIPSecParameters o) {
-            Builder copiedBuilder =
-                    allowedPhaseOneParameters(o.getAllowedPhaseOneParameters())
-                            .allowedPhaseTwoParameters(o.getAllowedPhaseTwoParameters())
-                            .defaultPhaseOneParameters(o.getDefaultPhaseOneParameters())
-                            .defaultPhaseTwoParameters(o.getDefaultPhaseTwoParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AllowedIkeIPSecParameters model) {
+            if (model.wasPropertyExplicitlySet("allowedPhaseOneParameters")) {
+                this.allowedPhaseOneParameters(model.getAllowedPhaseOneParameters());
+            }
+            if (model.wasPropertyExplicitlySet("allowedPhaseTwoParameters")) {
+                this.allowedPhaseTwoParameters(model.getAllowedPhaseTwoParameters());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPhaseOneParameters")) {
+                this.defaultPhaseOneParameters(model.getDefaultPhaseOneParameters());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPhaseTwoParameters")) {
+                this.defaultPhaseTwoParameters(model.getDefaultPhaseTwoParameters());
+            }
+            return this;
         }
     }
 
@@ -161,6 +169,7 @@ public final class AllowedIkeIPSecParameters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AllowedIkeIPSecParameters(");
+        sb.append("super=").append(super.toString());
         sb.append("allowedPhaseOneParameters=")
                 .append(String.valueOf(this.allowedPhaseOneParameters));
         sb.append(", allowedPhaseTwoParameters=")
@@ -169,7 +178,6 @@ public final class AllowedIkeIPSecParameters {
                 .append(String.valueOf(this.defaultPhaseOneParameters));
         sb.append(", defaultPhaseTwoParameters=")
                 .append(String.valueOf(this.defaultPhaseTwoParameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +200,7 @@ public final class AllowedIkeIPSecParameters {
                         this.defaultPhaseOneParameters, other.defaultPhaseOneParameters)
                 && java.util.Objects.equals(
                         this.defaultPhaseTwoParameters, other.defaultPhaseTwoParameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +227,7 @@ public final class AllowedIkeIPSecParameters {
                         + (this.defaultPhaseTwoParameters == null
                                 ? 43
                                 : this.defaultPhaseTwoParameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

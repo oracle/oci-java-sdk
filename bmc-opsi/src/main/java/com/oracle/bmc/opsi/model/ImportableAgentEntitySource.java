@@ -10,6 +10,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum ImportableAgentEntitySource {
     MacsManagedExternalHost("MACS_MANAGED_EXTERNAL_HOST"),
+    MacsManagedCloudHost("MACS_MANAGED_CLOUD_HOST"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

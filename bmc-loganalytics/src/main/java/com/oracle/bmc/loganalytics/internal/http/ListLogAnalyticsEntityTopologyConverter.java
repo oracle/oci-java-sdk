@@ -162,8 +162,8 @@ public class ListLogAnalyticsEntityTopologyConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListLogAnalyticsEntityTopologyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsEntityTopologyCollection(response.getItem());
 

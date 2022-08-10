@@ -102,7 +102,8 @@ public class UpdateIpv6Converter {
 
                                 com.oracle.bmc.core.responses.UpdateIpv6Response.Builder builder =
                                         com.oracle.bmc.core.responses.UpdateIpv6Response.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.ipv6(response.getItem());
 

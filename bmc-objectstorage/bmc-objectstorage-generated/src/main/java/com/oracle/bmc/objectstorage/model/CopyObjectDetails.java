@@ -24,7 +24,7 @@ package com.oracle.bmc.objectstorage.model;
     builder = CopyObjectDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CopyObjectDetails {
+public final class CopyObjectDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceObjectName",
@@ -275,41 +275,61 @@ public final class CopyObjectDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CopyObjectDetails build() {
-            CopyObjectDetails __instance__ =
+            CopyObjectDetails model =
                     new CopyObjectDetails(
-                            sourceObjectName,
-                            sourceObjectIfMatchETag,
-                            sourceVersionId,
-                            destinationRegion,
-                            destinationNamespace,
-                            destinationBucket,
-                            destinationObjectName,
-                            destinationObjectIfMatchETag,
-                            destinationObjectIfNoneMatchETag,
-                            destinationObjectMetadata,
-                            destinationObjectStorageTier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sourceObjectName,
+                            this.sourceObjectIfMatchETag,
+                            this.sourceVersionId,
+                            this.destinationRegion,
+                            this.destinationNamespace,
+                            this.destinationBucket,
+                            this.destinationObjectName,
+                            this.destinationObjectIfMatchETag,
+                            this.destinationObjectIfNoneMatchETag,
+                            this.destinationObjectMetadata,
+                            this.destinationObjectStorageTier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CopyObjectDetails o) {
-            Builder copiedBuilder =
-                    sourceObjectName(o.getSourceObjectName())
-                            .sourceObjectIfMatchETag(o.getSourceObjectIfMatchETag())
-                            .sourceVersionId(o.getSourceVersionId())
-                            .destinationRegion(o.getDestinationRegion())
-                            .destinationNamespace(o.getDestinationNamespace())
-                            .destinationBucket(o.getDestinationBucket())
-                            .destinationObjectName(o.getDestinationObjectName())
-                            .destinationObjectIfMatchETag(o.getDestinationObjectIfMatchETag())
-                            .destinationObjectIfNoneMatchETag(
-                                    o.getDestinationObjectIfNoneMatchETag())
-                            .destinationObjectMetadata(o.getDestinationObjectMetadata())
-                            .destinationObjectStorageTier(o.getDestinationObjectStorageTier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CopyObjectDetails model) {
+            if (model.wasPropertyExplicitlySet("sourceObjectName")) {
+                this.sourceObjectName(model.getSourceObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceObjectIfMatchETag")) {
+                this.sourceObjectIfMatchETag(model.getSourceObjectIfMatchETag());
+            }
+            if (model.wasPropertyExplicitlySet("sourceVersionId")) {
+                this.sourceVersionId(model.getSourceVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationRegion")) {
+                this.destinationRegion(model.getDestinationRegion());
+            }
+            if (model.wasPropertyExplicitlySet("destinationNamespace")) {
+                this.destinationNamespace(model.getDestinationNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("destinationBucket")) {
+                this.destinationBucket(model.getDestinationBucket());
+            }
+            if (model.wasPropertyExplicitlySet("destinationObjectName")) {
+                this.destinationObjectName(model.getDestinationObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("destinationObjectIfMatchETag")) {
+                this.destinationObjectIfMatchETag(model.getDestinationObjectIfMatchETag());
+            }
+            if (model.wasPropertyExplicitlySet("destinationObjectIfNoneMatchETag")) {
+                this.destinationObjectIfNoneMatchETag(model.getDestinationObjectIfNoneMatchETag());
+            }
+            if (model.wasPropertyExplicitlySet("destinationObjectMetadata")) {
+                this.destinationObjectMetadata(model.getDestinationObjectMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("destinationObjectStorageTier")) {
+                this.destinationObjectStorageTier(model.getDestinationObjectStorageTier());
+            }
+            return this;
         }
     }
 
@@ -517,6 +537,7 @@ public final class CopyObjectDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CopyObjectDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceObjectName=").append(String.valueOf(this.sourceObjectName));
         sb.append(", sourceObjectIfMatchETag=")
                 .append(String.valueOf(this.sourceObjectIfMatchETag));
@@ -533,7 +554,6 @@ public final class CopyObjectDetails {
                 .append(String.valueOf(this.destinationObjectMetadata));
         sb.append(", destinationObjectStorageTier=")
                 .append(String.valueOf(this.destinationObjectStorageTier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -565,7 +585,7 @@ public final class CopyObjectDetails {
                         this.destinationObjectMetadata, other.destinationObjectMetadata)
                 && java.util.Objects.equals(
                         this.destinationObjectStorageTier, other.destinationObjectStorageTier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -619,16 +639,7 @@ public final class CopyObjectDetails {
                         + (this.destinationObjectStorageTier == null
                                 ? 43
                                 : this.destinationObjectStorageTier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

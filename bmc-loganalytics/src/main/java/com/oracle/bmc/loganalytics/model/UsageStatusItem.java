@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsageStatusItem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UsageStatusItem {
+public final class UsageStatusItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataType", "isMultiValued", "currentUsage", "maxAvailable"})
     public UsageStatusItem(
@@ -102,22 +102,33 @@ public final class UsageStatusItem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UsageStatusItem build() {
-            UsageStatusItem __instance__ =
-                    new UsageStatusItem(dataType, isMultiValued, currentUsage, maxAvailable);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UsageStatusItem model =
+                    new UsageStatusItem(
+                            this.dataType,
+                            this.isMultiValued,
+                            this.currentUsage,
+                            this.maxAvailable);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UsageStatusItem o) {
-            Builder copiedBuilder =
-                    dataType(o.getDataType())
-                            .isMultiValued(o.getIsMultiValued())
-                            .currentUsage(o.getCurrentUsage())
-                            .maxAvailable(o.getMaxAvailable());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UsageStatusItem model) {
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiValued")) {
+                this.isMultiValued(model.getIsMultiValued());
+            }
+            if (model.wasPropertyExplicitlySet("currentUsage")) {
+                this.currentUsage(model.getCurrentUsage());
+            }
+            if (model.wasPropertyExplicitlySet("maxAvailable")) {
+                this.maxAvailable(model.getMaxAvailable());
+            }
+            return this;
         }
     }
 
@@ -203,11 +214,11 @@ public final class UsageStatusItem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UsageStatusItem(");
+        sb.append("super=").append(super.toString());
         sb.append("dataType=").append(String.valueOf(this.dataType));
         sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
         sb.append(", currentUsage=").append(String.valueOf(this.currentUsage));
         sb.append(", maxAvailable=").append(String.valueOf(this.maxAvailable));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +237,7 @@ public final class UsageStatusItem {
                 && java.util.Objects.equals(this.isMultiValued, other.isMultiValued)
                 && java.util.Objects.equals(this.currentUsage, other.currentUsage)
                 && java.util.Objects.equals(this.maxAvailable, other.maxAvailable)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +250,7 @@ public final class UsageStatusItem {
                         + (this.isMultiValued == null ? 43 : this.isMultiValued.hashCode());
         result = (result * PRIME) + (this.currentUsage == null ? 43 : this.currentUsage.hashCode());
         result = (result * PRIME) + (this.maxAvailable == null ? 43 : this.maxAvailable.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

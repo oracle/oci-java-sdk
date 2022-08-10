@@ -19,7 +19,7 @@ package com.oracle.bmc.dataintegration.model;
     builder = ConfigParameterValue.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfigParameterValue {
+public final class ConfigParameterValue extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stringValue",
@@ -148,30 +148,41 @@ public final class ConfigParameterValue {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigParameterValue build() {
-            ConfigParameterValue __instance__ =
+            ConfigParameterValue model =
                     new ConfigParameterValue(
-                            stringValue,
-                            intValue,
-                            objectValue,
-                            refValue,
-                            parameterValue,
-                            rootObjectValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.stringValue,
+                            this.intValue,
+                            this.objectValue,
+                            this.refValue,
+                            this.parameterValue,
+                            this.rootObjectValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConfigParameterValue o) {
-            Builder copiedBuilder =
-                    stringValue(o.getStringValue())
-                            .intValue(o.getIntValue())
-                            .objectValue(o.getObjectValue())
-                            .refValue(o.getRefValue())
-                            .parameterValue(o.getParameterValue())
-                            .rootObjectValue(o.getRootObjectValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConfigParameterValue model) {
+            if (model.wasPropertyExplicitlySet("stringValue")) {
+                this.stringValue(model.getStringValue());
+            }
+            if (model.wasPropertyExplicitlySet("intValue")) {
+                this.intValue(model.getIntValue());
+            }
+            if (model.wasPropertyExplicitlySet("objectValue")) {
+                this.objectValue(model.getObjectValue());
+            }
+            if (model.wasPropertyExplicitlySet("refValue")) {
+                this.refValue(model.getRefValue());
+            }
+            if (model.wasPropertyExplicitlySet("parameterValue")) {
+                this.parameterValue(model.getParameterValue());
+            }
+            if (model.wasPropertyExplicitlySet("rootObjectValue")) {
+                this.rootObjectValue(model.getRootObjectValue());
+            }
+            return this;
         }
     }
 
@@ -283,13 +294,13 @@ public final class ConfigParameterValue {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfigParameterValue(");
+        sb.append("super=").append(super.toString());
         sb.append("stringValue=").append(String.valueOf(this.stringValue));
         sb.append(", intValue=").append(String.valueOf(this.intValue));
         sb.append(", objectValue=").append(String.valueOf(this.objectValue));
         sb.append(", refValue=").append(String.valueOf(this.refValue));
         sb.append(", parameterValue=").append(String.valueOf(this.parameterValue));
         sb.append(", rootObjectValue=").append(String.valueOf(this.rootObjectValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,7 +321,7 @@ public final class ConfigParameterValue {
                 && java.util.Objects.equals(this.refValue, other.refValue)
                 && java.util.Objects.equals(this.parameterValue, other.parameterValue)
                 && java.util.Objects.equals(this.rootObjectValue, other.rootObjectValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -327,16 +338,7 @@ public final class ConfigParameterValue {
         result =
                 (result * PRIME)
                         + (this.rootObjectValue == null ? 43 : this.rootObjectValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

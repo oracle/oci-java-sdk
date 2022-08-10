@@ -64,19 +64,24 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExportImageViaObjectStorageUriDetails build() {
-            ExportImageViaObjectStorageUriDetails __instance__ =
-                    new ExportImageViaObjectStorageUriDetails(exportFormat, destinationUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExportImageViaObjectStorageUriDetails model =
+                    new ExportImageViaObjectStorageUriDetails(
+                            this.exportFormat, this.destinationUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExportImageViaObjectStorageUriDetails o) {
-            Builder copiedBuilder =
-                    exportFormat(o.getExportFormat()).destinationUri(o.getDestinationUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExportImageViaObjectStorageUriDetails model) {
+            if (model.wasPropertyExplicitlySet("exportFormat")) {
+                this.exportFormat(model.getExportFormat());
+            }
+            if (model.wasPropertyExplicitlySet("destinationUri")) {
+                this.destinationUri(model.getDestinationUri());
+            }
+            return this;
         }
     }
 
@@ -134,7 +139,6 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
         sb.append("ExportImageViaObjectStorageUriDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", destinationUri=").append(String.valueOf(this.destinationUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,8 +154,7 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
 
         ExportImageViaObjectStorageUriDetails other = (ExportImageViaObjectStorageUriDetails) o;
         return java.util.Objects.equals(this.destinationUri, other.destinationUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +164,6 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
         result =
                 (result * PRIME)
                         + (this.destinationUri == null ? 43 : this.destinationUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

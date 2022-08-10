@@ -138,8 +138,8 @@ public class ListAnnotationFormatsConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservice.responses
                                                         .ListAnnotationFormatsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.annotationFormatCollection(response.getItem());
 

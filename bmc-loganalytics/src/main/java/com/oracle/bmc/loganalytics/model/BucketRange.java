@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BucketRange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BucketRange {
+public final class BucketRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lower", "upper", "alias"})
     public BucketRange(java.math.BigDecimal lower, java.math.BigDecimal upper, String alias) {
@@ -89,17 +89,25 @@ public final class BucketRange {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BucketRange build() {
-            BucketRange __instance__ = new BucketRange(lower, upper, alias);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BucketRange model = new BucketRange(this.lower, this.upper, this.alias);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BucketRange o) {
-            Builder copiedBuilder = lower(o.getLower()).upper(o.getUpper()).alias(o.getAlias());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BucketRange model) {
+            if (model.wasPropertyExplicitlySet("lower")) {
+                this.lower(model.getLower());
+            }
+            if (model.wasPropertyExplicitlySet("upper")) {
+                this.upper(model.getUpper());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            return this;
         }
     }
 
@@ -175,10 +183,10 @@ public final class BucketRange {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BucketRange(");
+        sb.append("super=").append(super.toString());
         sb.append("lower=").append(String.valueOf(this.lower));
         sb.append(", upper=").append(String.valueOf(this.upper));
         sb.append(", alias=").append(String.valueOf(this.alias));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -196,7 +204,7 @@ public final class BucketRange {
         return java.util.Objects.equals(this.lower, other.lower)
                 && java.util.Objects.equals(this.upper, other.upper)
                 && java.util.Objects.equals(this.alias, other.alias)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +214,7 @@ public final class BucketRange {
         result = (result * PRIME) + (this.lower == null ? 43 : this.lower.hashCode());
         result = (result * PRIME) + (this.upper == null ? 43 : this.upper.hashCode());
         result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

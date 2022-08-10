@@ -163,8 +163,8 @@ public class ListKnowledgeBasesConverter {
                                         builder =
                                                 com.oracle.bmc.adm.responses
                                                         .ListKnowledgeBasesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.knowledgeBaseCollection(response.getItem());
 

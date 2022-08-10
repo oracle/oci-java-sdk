@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = ConnectionValidationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectionValidationSummary {
+public final class ConnectionValidationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "validationMessage",
@@ -258,46 +259,73 @@ public final class ConnectionValidationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectionValidationSummary build() {
-            ConnectionValidationSummary __instance__ =
+            ConnectionValidationSummary model =
                     new ConnectionValidationSummary(
-                            validationMessage,
-                            key,
-                            modelType,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            registryMetadata,
-                            connection,
-                            dataAsset,
-                            identifier,
-                            metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.validationMessage,
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.registryMetadata,
+                            this.connection,
+                            this.dataAsset,
+                            this.identifier,
+                            this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectionValidationSummary o) {
-            Builder copiedBuilder =
-                    validationMessage(o.getValidationMessage())
-                            .key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .connection(o.getConnection())
-                            .dataAsset(o.getDataAsset())
-                            .identifier(o.getIdentifier())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConnectionValidationSummary model) {
+            if (model.wasPropertyExplicitlySet("validationMessage")) {
+                this.validationMessage(model.getValidationMessage());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("connection")) {
+                this.connection(model.getConnection());
+            }
+            if (model.wasPropertyExplicitlySet("dataAsset")) {
+                this.dataAsset(model.getDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -479,6 +507,7 @@ public final class ConnectionValidationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConnectionValidationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("validationMessage=").append(String.valueOf(this.validationMessage));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
@@ -493,7 +522,6 @@ public final class ConnectionValidationSummary {
         sb.append(", dataAsset=").append(String.valueOf(this.dataAsset));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -522,7 +550,7 @@ public final class ConnectionValidationSummary {
                 && java.util.Objects.equals(this.dataAsset, other.dataAsset)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -549,16 +577,7 @@ public final class ConnectionValidationSummary {
         result = (result * PRIME) + (this.dataAsset == null ? 43 : this.dataAsset.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

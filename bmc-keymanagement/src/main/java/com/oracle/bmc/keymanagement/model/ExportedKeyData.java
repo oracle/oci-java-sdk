@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportedKeyData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExportedKeyData {
+public final class ExportedKeyData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "keyVersionId",
@@ -164,25 +164,41 @@ public final class ExportedKeyData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExportedKeyData build() {
-            ExportedKeyData __instance__ =
+            ExportedKeyData model =
                     new ExportedKeyData(
-                            keyVersionId, keyId, timeCreated, vaultId, encryptedKey, algorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.keyVersionId,
+                            this.keyId,
+                            this.timeCreated,
+                            this.vaultId,
+                            this.encryptedKey,
+                            this.algorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExportedKeyData o) {
-            Builder copiedBuilder =
-                    keyVersionId(o.getKeyVersionId())
-                            .keyId(o.getKeyId())
-                            .timeCreated(o.getTimeCreated())
-                            .vaultId(o.getVaultId())
-                            .encryptedKey(o.getEncryptedKey())
-                            .algorithm(o.getAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExportedKeyData model) {
+            if (model.wasPropertyExplicitlySet("keyVersionId")) {
+                this.keyVersionId(model.getKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptedKey")) {
+                this.encryptedKey(model.getEncryptedKey());
+            }
+            if (model.wasPropertyExplicitlySet("algorithm")) {
+                this.algorithm(model.getAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -367,13 +383,13 @@ public final class ExportedKeyData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExportedKeyData(");
+        sb.append("super=").append(super.toString());
         sb.append("keyVersionId=").append(String.valueOf(this.keyVersionId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", encryptedKey=").append(String.valueOf(this.encryptedKey));
         sb.append(", algorithm=").append(String.valueOf(this.algorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -394,7 +410,7 @@ public final class ExportedKeyData {
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.encryptedKey, other.encryptedKey)
                 && java.util.Objects.equals(this.algorithm, other.algorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -407,16 +423,7 @@ public final class ExportedKeyData {
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.encryptedKey == null ? 43 : this.encryptedKey.hashCode());
         result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

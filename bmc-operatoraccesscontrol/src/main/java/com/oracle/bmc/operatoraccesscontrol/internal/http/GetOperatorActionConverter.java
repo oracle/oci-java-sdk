@@ -113,8 +113,8 @@ public class GetOperatorActionConverter {
                                         builder =
                                                 com.oracle.bmc.operatoraccesscontrol.responses
                                                         .GetOperatorActionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operatorAction(response.getItem());
 

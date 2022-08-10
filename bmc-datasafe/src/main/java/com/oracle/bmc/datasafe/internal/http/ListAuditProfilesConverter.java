@@ -213,8 +213,8 @@ public class ListAuditProfilesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAuditProfilesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditProfileCollection(response.getItem());
 

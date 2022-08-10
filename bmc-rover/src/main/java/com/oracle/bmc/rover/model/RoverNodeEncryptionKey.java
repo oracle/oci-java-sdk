@@ -19,7 +19,8 @@ package com.oracle.bmc.rover.model;
     builder = RoverNodeEncryptionKey.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoverNodeEncryptionKey {
+public final class RoverNodeEncryptionKey
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"encryptionKey"})
     public RoverNodeEncryptionKey(String encryptionKey) {
@@ -50,17 +51,19 @@ public final class RoverNodeEncryptionKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoverNodeEncryptionKey build() {
-            RoverNodeEncryptionKey __instance__ = new RoverNodeEncryptionKey(encryptionKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RoverNodeEncryptionKey model = new RoverNodeEncryptionKey(this.encryptionKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoverNodeEncryptionKey o) {
-            Builder copiedBuilder = encryptionKey(o.getEncryptionKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoverNodeEncryptionKey model) {
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class RoverNodeEncryptionKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoverNodeEncryptionKey(");
+        sb.append("super=").append(super.toString());
         sb.append("encryptionKey=").append(String.valueOf(this.encryptionKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +122,7 @@ public final class RoverNodeEncryptionKey {
 
         RoverNodeEncryptionKey other = (RoverNodeEncryptionKey) o;
         return java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +132,7 @@ public final class RoverNodeEncryptionKey {
         result =
                 (result * PRIME)
                         + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -128,8 +128,8 @@ public class UpdateAnnouncementSubscriptionConverter {
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .UpdateAnnouncementSubscriptionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcementSubscription(response.getItem());
 

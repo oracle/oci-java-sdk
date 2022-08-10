@@ -25,7 +25,7 @@ package com.oracle.bmc.databasemanagement.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SqlJob.class, name = "SQL")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Job {
+public class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -400,6 +400,7 @@ public class Job {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Job(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -449,7 +450,8 @@ public class Job {
                 && java.util.Objects.equals(
                         this.submissionErrorMessage, other.submissionErrorMessage)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated);
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && super.equals(other);
     }
 
     @Override
@@ -496,6 +498,7 @@ public class Job {
                                 : this.submissionErrorMessage.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

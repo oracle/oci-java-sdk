@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataFlowDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataFlowDetails {
+public final class DataFlowDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -258,44 +258,69 @@ public final class DataFlowDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataFlowDetails build() {
-            DataFlowDetails __instance__ =
+            DataFlowDetails model =
                     new DataFlowDetails(
-                            key,
-                            modelType,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            identifier,
-                            objectVersion,
-                            nodes,
-                            parameters,
-                            description,
-                            flowConfigValues,
-                            objectStatus,
-                            registryMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.identifier,
+                            this.objectVersion,
+                            this.nodes,
+                            this.parameters,
+                            this.description,
+                            this.flowConfigValues,
+                            this.objectStatus,
+                            this.registryMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataFlowDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .identifier(o.getIdentifier())
-                            .objectVersion(o.getObjectVersion())
-                            .nodes(o.getNodes())
-                            .parameters(o.getParameters())
-                            .description(o.getDescription())
-                            .flowConfigValues(o.getFlowConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .registryMetadata(o.getRegistryMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataFlowDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("nodes")) {
+                this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("flowConfigValues")) {
+                this.flowConfigValues(model.getFlowConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            return this;
         }
     }
 
@@ -484,6 +509,7 @@ public final class DataFlowDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataFlowDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -497,7 +523,6 @@ public final class DataFlowDetails {
         sb.append(", flowConfigValues=").append(String.valueOf(this.flowConfigValues));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -525,7 +550,7 @@ public final class DataFlowDetails {
                 && java.util.Objects.equals(this.flowConfigValues, other.flowConfigValues)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -551,16 +576,7 @@ public final class DataFlowDetails {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

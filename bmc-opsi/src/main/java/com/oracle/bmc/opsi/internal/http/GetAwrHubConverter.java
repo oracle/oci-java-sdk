@@ -97,7 +97,8 @@ public class GetAwrHubConverter {
 
                                 com.oracle.bmc.opsi.responses.GetAwrHubResponse.Builder builder =
                                         com.oracle.bmc.opsi.responses.GetAwrHubResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.awrHub(response.getItem());
 

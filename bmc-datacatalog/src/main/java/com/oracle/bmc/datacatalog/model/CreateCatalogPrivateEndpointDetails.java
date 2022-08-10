@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CreateCatalogPrivateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateCatalogPrivateEndpointDetails {
+public final class CreateCatalogPrivateEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dnsZones",
@@ -163,30 +164,41 @@ public final class CreateCatalogPrivateEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCatalogPrivateEndpointDetails build() {
-            CreateCatalogPrivateEndpointDetails __instance__ =
+            CreateCatalogPrivateEndpointDetails model =
                     new CreateCatalogPrivateEndpointDetails(
-                            dnsZones,
-                            subnetId,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            displayName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dnsZones,
+                            this.subnetId,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.displayName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCatalogPrivateEndpointDetails o) {
-            Builder copiedBuilder =
-                    dnsZones(o.getDnsZones())
-                            .subnetId(o.getSubnetId())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateCatalogPrivateEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            return this;
         }
     }
 
@@ -312,13 +324,13 @@ public final class CreateCatalogPrivateEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateCatalogPrivateEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("dnsZones=").append(String.valueOf(this.dnsZones));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -339,7 +351,7 @@ public final class CreateCatalogPrivateEndpointDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -354,16 +366,7 @@ public final class CreateCatalogPrivateEndpointDetails {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

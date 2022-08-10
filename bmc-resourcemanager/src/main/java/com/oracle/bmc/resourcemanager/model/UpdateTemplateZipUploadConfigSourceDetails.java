@@ -42,18 +42,20 @@ public final class UpdateTemplateZipUploadConfigSourceDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTemplateZipUploadConfigSourceDetails build() {
-            UpdateTemplateZipUploadConfigSourceDetails __instance__ =
-                    new UpdateTemplateZipUploadConfigSourceDetails(zipFileBase64Encoded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateTemplateZipUploadConfigSourceDetails model =
+                    new UpdateTemplateZipUploadConfigSourceDetails(this.zipFileBase64Encoded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTemplateZipUploadConfigSourceDetails o) {
-            Builder copiedBuilder = zipFileBase64Encoded(o.getZipFileBase64Encoded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTemplateZipUploadConfigSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("zipFileBase64Encoded")) {
+                this.zipFileBase64Encoded(model.getZipFileBase64Encoded());
+            }
+            return this;
         }
     }
 
@@ -96,7 +98,6 @@ public final class UpdateTemplateZipUploadConfigSourceDetails
         sb.append("UpdateTemplateZipUploadConfigSourceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", zipFileBase64Encoded=").append(String.valueOf(this.zipFileBase64Encoded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -113,8 +114,7 @@ public final class UpdateTemplateZipUploadConfigSourceDetails
         UpdateTemplateZipUploadConfigSourceDetails other =
                 (UpdateTemplateZipUploadConfigSourceDetails) o;
         return java.util.Objects.equals(this.zipFileBase64Encoded, other.zipFileBase64Encoded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -126,16 +126,6 @@ public final class UpdateTemplateZipUploadConfigSourceDetails
                         + (this.zipFileBase64Encoded == null
                                 ? 43
                                 : this.zipFileBase64Encoded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

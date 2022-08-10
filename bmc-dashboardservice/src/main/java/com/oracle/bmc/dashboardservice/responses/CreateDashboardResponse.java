@@ -53,13 +53,20 @@ public class CreateDashboardResponse extends com.oracle.bmc.responses.BmcRespons
         return dashboard;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dashboard"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "dashboard"
+    })
     private CreateDashboardResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dashboardservice.model.Dashboard dashboard) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dashboard = dashboard;
@@ -70,6 +77,13 @@ public class CreateDashboardResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateDashboardResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(CreateDashboardResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dashboard(o.getDashboard());
@@ -142,7 +157,8 @@ public class CreateDashboardResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public CreateDashboardResponse build() {
-            return new CreateDashboardResponse(__httpStatusCode__, etag, opcRequestId, dashboard);
+            return new CreateDashboardResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, dashboard);
         }
     }
 

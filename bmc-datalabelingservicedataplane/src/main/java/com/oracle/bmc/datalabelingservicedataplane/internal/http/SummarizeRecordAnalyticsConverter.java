@@ -179,8 +179,8 @@ public class SummarizeRecordAnalyticsConverter {
                                                 com.oracle.bmc.datalabelingservicedataplane
                                                         .responses.SummarizeRecordAnalyticsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recordAnalyticsAggregationCollection(response.getItem());
 

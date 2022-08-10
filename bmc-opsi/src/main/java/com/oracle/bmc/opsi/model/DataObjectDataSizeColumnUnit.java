@@ -56,18 +56,23 @@ public final class DataObjectDataSizeColumnUnit extends DataObjectColumnUnit {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataObjectDataSizeColumnUnit build() {
-            DataObjectDataSizeColumnUnit __instance__ =
-                    new DataObjectDataSizeColumnUnit(displayName, unit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataObjectDataSizeColumnUnit model =
+                    new DataObjectDataSizeColumnUnit(this.displayName, this.unit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataObjectDataSizeColumnUnit o) {
-            Builder copiedBuilder = displayName(o.getDisplayName()).unit(o.getUnit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataObjectDataSizeColumnUnit model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            return this;
         }
     }
 
@@ -173,7 +178,6 @@ public final class DataObjectDataSizeColumnUnit extends DataObjectColumnUnit {
         sb.append("DataObjectDataSizeColumnUnit(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", unit=").append(String.valueOf(this.unit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,9 +192,7 @@ public final class DataObjectDataSizeColumnUnit extends DataObjectColumnUnit {
         }
 
         DataObjectDataSizeColumnUnit other = (DataObjectDataSizeColumnUnit) o;
-        return java.util.Objects.equals(this.unit, other.unit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.unit, other.unit) && super.equals(other);
     }
 
     @Override
@@ -198,16 +200,6 @@ public final class DataObjectDataSizeColumnUnit extends DataObjectColumnUnit {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

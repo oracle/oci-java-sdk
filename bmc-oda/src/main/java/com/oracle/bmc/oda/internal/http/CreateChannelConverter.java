@@ -107,7 +107,8 @@ public class CreateChannelConverter {
 
                                 com.oracle.bmc.oda.responses.CreateChannelResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.CreateChannelResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.createChannelResult(response.getItem());
 

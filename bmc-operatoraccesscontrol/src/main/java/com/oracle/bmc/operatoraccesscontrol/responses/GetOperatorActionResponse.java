@@ -38,12 +38,18 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
         return operatorAction;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "operatorAction"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "operatorAction"
+    })
     private GetOperatorActionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.operatorAction = operatorAction;
     }
@@ -53,6 +59,13 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetOperatorActionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             operatorAction(o.getOperatorAction());
 
@@ -108,7 +122,8 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public GetOperatorActionResponse build() {
-            return new GetOperatorActionResponse(__httpStatusCode__, opcRequestId, operatorAction);
+            return new GetOperatorActionResponse(
+                    __httpStatusCode__, headers, opcRequestId, operatorAction);
         }
     }
 

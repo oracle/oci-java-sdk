@@ -109,7 +109,8 @@ public class PublishSkillConverter {
 
                                 com.oracle.bmc.oda.responses.PublishSkillResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.PublishSkillResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.skill(response.getItem());
 

@@ -162,8 +162,8 @@ public class ListEmailDomainsConverter {
                                         builder =
                                                 com.oracle.bmc.email.responses
                                                         .ListEmailDomainsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.emailDomainCollection(response.getItem());
 

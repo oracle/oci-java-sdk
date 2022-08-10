@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Filter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Filter {
+public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operator", "dimensions", "tags", "filters"})
     public Filter(
@@ -103,21 +103,28 @@ public final class Filter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Filter build() {
-            Filter __instance__ = new Filter(operator, dimensions, tags, filters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Filter model = new Filter(this.operator, this.dimensions, this.tags, this.filters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Filter o) {
-            Builder copiedBuilder =
-                    operator(o.getOperator())
-                            .dimensions(o.getDimensions())
-                            .tags(o.getTags())
-                            .filters(o.getFilters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Filter model) {
+            if (model.wasPropertyExplicitlySet("operator")) {
+                this.operator(model.getOperator());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            if (model.wasPropertyExplicitlySet("tags")) {
+                this.tags(model.getTags());
+            }
+            if (model.wasPropertyExplicitlySet("filters")) {
+                this.filters(model.getFilters());
+            }
+            return this;
         }
     }
 
@@ -250,11 +257,11 @@ public final class Filter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Filter(");
+        sb.append("super=").append(super.toString());
         sb.append("operator=").append(String.valueOf(this.operator));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", tags=").append(String.valueOf(this.tags));
         sb.append(", filters=").append(String.valueOf(this.filters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +280,7 @@ public final class Filter {
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.tags, other.tags)
                 && java.util.Objects.equals(this.filters, other.filters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -284,16 +291,7 @@ public final class Filter {
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
         result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

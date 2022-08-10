@@ -51,13 +51,20 @@ public class ImportKeyVersionResponse extends com.oracle.bmc.responses.BmcRespon
         return keyVersion;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "keyVersion"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "keyVersion"
+    })
     private ImportKeyVersionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.KeyVersion keyVersion) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.keyVersion = keyVersion;
@@ -68,6 +75,13 @@ public class ImportKeyVersionResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class ImportKeyVersionResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(ImportKeyVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             keyVersion(o.getKeyVersion());
@@ -138,7 +153,8 @@ public class ImportKeyVersionResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public ImportKeyVersionResponse build() {
-            return new ImportKeyVersionResponse(__httpStatusCode__, etag, opcRequestId, keyVersion);
+            return new ImportKeyVersionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, keyVersion);
         }
     }
 

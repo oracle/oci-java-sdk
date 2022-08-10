@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Summary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Summary {
+public final class Summary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -146,25 +146,41 @@ public final class Summary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Summary build() {
-            Summary __instance__ =
+            Summary model =
                     new Summary(
-                            name, isHidden, displayOrder, groupByFieldName, countOf, scimFilter);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.isHidden,
+                            this.displayOrder,
+                            this.groupByFieldName,
+                            this.countOf,
+                            this.scimFilter);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Summary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .isHidden(o.getIsHidden())
-                            .displayOrder(o.getDisplayOrder())
-                            .groupByFieldName(o.getGroupByFieldName())
-                            .countOf(o.getCountOf())
-                            .scimFilter(o.getScimFilter());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Summary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
+            if (model.wasPropertyExplicitlySet("displayOrder")) {
+                this.displayOrder(model.getDisplayOrder());
+            }
+            if (model.wasPropertyExplicitlySet("groupByFieldName")) {
+                this.groupByFieldName(model.getGroupByFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("countOf")) {
+                this.countOf(model.getCountOf());
+            }
+            if (model.wasPropertyExplicitlySet("scimFilter")) {
+                this.scimFilter(model.getScimFilter());
+            }
+            return this;
         }
     }
 
@@ -276,13 +292,13 @@ public final class Summary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Summary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", isHidden=").append(String.valueOf(this.isHidden));
         sb.append(", displayOrder=").append(String.valueOf(this.displayOrder));
         sb.append(", groupByFieldName=").append(String.valueOf(this.groupByFieldName));
         sb.append(", countOf=").append(String.valueOf(this.countOf));
         sb.append(", scimFilter=").append(String.valueOf(this.scimFilter));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -303,7 +319,7 @@ public final class Summary {
                 && java.util.Objects.equals(this.groupByFieldName, other.groupByFieldName)
                 && java.util.Objects.equals(this.countOf, other.countOf)
                 && java.util.Objects.equals(this.scimFilter, other.scimFilter)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -318,16 +334,7 @@ public final class Summary {
                         + (this.groupByFieldName == null ? 43 : this.groupByFieldName.hashCode());
         result = (result * PRIME) + (this.countOf == null ? 43 : this.countOf.hashCode());
         result = (result * PRIME) + (this.scimFilter == null ? 43 : this.scimFilter.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -106,8 +106,8 @@ public class GetSourceConverter {
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
                                                         .GetSourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.source(response.getItem());
 

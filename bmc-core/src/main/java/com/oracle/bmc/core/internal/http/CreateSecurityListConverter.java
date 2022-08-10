@@ -98,8 +98,8 @@ public class CreateSecurityListConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateSecurityListResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityList(response.getItem());
 

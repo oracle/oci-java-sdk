@@ -61,17 +61,19 @@ public class ListOrganizationsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "organizationCollection"
     })
     private ListOrganizationsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationCollection
                     organizationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.organizationCollection = organizationCollection;
@@ -82,6 +84,13 @@ public class ListOrganizationsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListOrganizationsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListOrganizationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             organizationCollection(o.getOrganizationCollection());
@@ -162,7 +172,7 @@ public class ListOrganizationsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListOrganizationsResponse build() {
             return new ListOrganizationsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, organizationCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, organizationCollection);
         }
     }
 

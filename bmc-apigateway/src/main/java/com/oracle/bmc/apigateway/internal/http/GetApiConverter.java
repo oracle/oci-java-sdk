@@ -98,7 +98,8 @@ public class GetApiConverter {
 
                                 com.oracle.bmc.apigateway.responses.GetApiResponse.Builder builder =
                                         com.oracle.bmc.apigateway.responses.GetApiResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.api(response.getItem());
 

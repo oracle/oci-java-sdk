@@ -105,28 +105,37 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataSourceDetailsInflux build() {
-            DataSourceDetailsInflux __instance__ =
+            DataSourceDetailsInflux model =
                     new DataSourceDetailsInflux(
-                            versionSpecificDetails,
-                            userName,
-                            passwordSecretId,
-                            measurementName,
-                            url);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.versionSpecificDetails,
+                            this.userName,
+                            this.passwordSecretId,
+                            this.measurementName,
+                            this.url);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataSourceDetailsInflux o) {
-            Builder copiedBuilder =
-                    versionSpecificDetails(o.getVersionSpecificDetails())
-                            .userName(o.getUserName())
-                            .passwordSecretId(o.getPasswordSecretId())
-                            .measurementName(o.getMeasurementName())
-                            .url(o.getUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataSourceDetailsInflux model) {
+            if (model.wasPropertyExplicitlySet("versionSpecificDetails")) {
+                this.versionSpecificDetails(model.getVersionSpecificDetails());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("measurementName")) {
+                this.measurementName(model.getMeasurementName());
+            }
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
+            }
+            return this;
         }
     }
 
@@ -238,7 +247,6 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", measurementName=").append(String.valueOf(this.measurementName));
         sb.append(", url=").append(String.valueOf(this.url));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -258,8 +266,7 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.measurementName, other.measurementName)
                 && java.util.Objects.equals(this.url, other.url)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -279,16 +286,6 @@ public final class DataSourceDetailsInflux extends DataSourceDetails {
                 (result * PRIME)
                         + (this.measurementName == null ? 43 : this.measurementName.hashCode());
         result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

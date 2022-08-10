@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VaultSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VaultSummary {
+public final class VaultSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -263,38 +263,57 @@ public final class VaultSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VaultSummary build() {
-            VaultSummary __instance__ =
+            VaultSummary model =
                     new VaultSummary(
-                            compartmentId,
-                            cryptoEndpoint,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            managementEndpoint,
-                            timeCreated,
-                            vaultType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.cryptoEndpoint,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.managementEndpoint,
+                            this.timeCreated,
+                            this.vaultType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VaultSummary o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .cryptoEndpoint(o.getCryptoEndpoint())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .managementEndpoint(o.getManagementEndpoint())
-                            .timeCreated(o.getTimeCreated())
-                            .vaultType(o.getVaultType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VaultSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("cryptoEndpoint")) {
+                this.cryptoEndpoint(model.getCryptoEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("managementEndpoint")) {
+                this.managementEndpoint(model.getManagementEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("vaultType")) {
+                this.vaultType(model.getVaultType());
+            }
+            return this;
         }
     }
 
@@ -611,6 +630,7 @@ public final class VaultSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VaultSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", cryptoEndpoint=").append(String.valueOf(this.cryptoEndpoint));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -621,7 +641,6 @@ public final class VaultSummary {
         sb.append(", managementEndpoint=").append(String.valueOf(this.managementEndpoint));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vaultType=").append(String.valueOf(this.vaultType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -646,7 +665,7 @@ public final class VaultSummary {
                 && java.util.Objects.equals(this.managementEndpoint, other.managementEndpoint)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vaultType, other.vaultType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -673,16 +692,7 @@ public final class VaultSummary {
                                 : this.managementEndpoint.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vaultType == null ? 43 : this.vaultType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

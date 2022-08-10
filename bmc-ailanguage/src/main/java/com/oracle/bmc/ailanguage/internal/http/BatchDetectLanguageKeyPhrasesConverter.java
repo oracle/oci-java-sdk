@@ -114,8 +114,8 @@ public class BatchDetectLanguageKeyPhrasesConverter {
                                                 com.oracle.bmc.ailanguage.responses
                                                         .BatchDetectLanguageKeyPhrasesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.batchDetectLanguageKeyPhrasesResult(response.getItem());
 

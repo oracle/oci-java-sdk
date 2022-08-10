@@ -17,7 +17,7 @@ package com.oracle.bmc.aianomalydetection.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Anomaly.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Anomaly {
+public final class Anomaly extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "signalName",
@@ -127,24 +127,37 @@ public final class Anomaly {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Anomaly build() {
-            Anomaly __instance__ =
+            Anomaly model =
                     new Anomaly(
-                            signalName, actualValue, estimatedValue, imputedValue, anomalyScore);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.signalName,
+                            this.actualValue,
+                            this.estimatedValue,
+                            this.imputedValue,
+                            this.anomalyScore);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Anomaly o) {
-            Builder copiedBuilder =
-                    signalName(o.getSignalName())
-                            .actualValue(o.getActualValue())
-                            .estimatedValue(o.getEstimatedValue())
-                            .imputedValue(o.getImputedValue())
-                            .anomalyScore(o.getAnomalyScore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Anomaly model) {
+            if (model.wasPropertyExplicitlySet("signalName")) {
+                this.signalName(model.getSignalName());
+            }
+            if (model.wasPropertyExplicitlySet("actualValue")) {
+                this.actualValue(model.getActualValue());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedValue")) {
+                this.estimatedValue(model.getEstimatedValue());
+            }
+            if (model.wasPropertyExplicitlySet("imputedValue")) {
+                this.imputedValue(model.getImputedValue());
+            }
+            if (model.wasPropertyExplicitlySet("anomalyScore")) {
+                this.anomalyScore(model.getAnomalyScore());
+            }
+            return this;
         }
     }
 
@@ -242,12 +255,12 @@ public final class Anomaly {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Anomaly(");
+        sb.append("super=").append(super.toString());
         sb.append("signalName=").append(String.valueOf(this.signalName));
         sb.append(", actualValue=").append(String.valueOf(this.actualValue));
         sb.append(", estimatedValue=").append(String.valueOf(this.estimatedValue));
         sb.append(", imputedValue=").append(String.valueOf(this.imputedValue));
         sb.append(", anomalyScore=").append(String.valueOf(this.anomalyScore));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +280,7 @@ public final class Anomaly {
                 && java.util.Objects.equals(this.estimatedValue, other.estimatedValue)
                 && java.util.Objects.equals(this.imputedValue, other.imputedValue)
                 && java.util.Objects.equals(this.anomalyScore, other.anomalyScore)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -281,16 +294,7 @@ public final class Anomaly {
                         + (this.estimatedValue == null ? 43 : this.estimatedValue.hashCode());
         result = (result * PRIME) + (this.imputedValue == null ? 43 : this.imputedValue.hashCode());
         result = (result * PRIME) + (this.anomalyScore == null ? 43 : this.anomalyScore.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

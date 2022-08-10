@@ -155,6 +155,14 @@ public class SummarizeInstallationUsageConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getPathContains() != null) {
+            target =
+                    target.queryParam(
+                            "pathContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPathContains()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -226,8 +234,8 @@ public class SummarizeInstallationUsageConverter {
                                                 com.oracle.bmc.jms.responses
                                                         .SummarizeInstallationUsageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.installationUsageCollection(response.getItem());
 

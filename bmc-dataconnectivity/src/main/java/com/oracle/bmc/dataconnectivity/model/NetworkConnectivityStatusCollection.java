@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = NetworkConnectivityStatusCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NetworkConnectivityStatusCollection {
+public final class NetworkConnectivityStatusCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"networkConnectivityStatusList"})
     public NetworkConnectivityStatusCollection(
@@ -52,19 +53,20 @@ public final class NetworkConnectivityStatusCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NetworkConnectivityStatusCollection build() {
-            NetworkConnectivityStatusCollection __instance__ =
-                    new NetworkConnectivityStatusCollection(networkConnectivityStatusList);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NetworkConnectivityStatusCollection model =
+                    new NetworkConnectivityStatusCollection(this.networkConnectivityStatusList);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NetworkConnectivityStatusCollection o) {
-            Builder copiedBuilder =
-                    networkConnectivityStatusList(o.getNetworkConnectivityStatusList());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NetworkConnectivityStatusCollection model) {
+            if (model.wasPropertyExplicitlySet("networkConnectivityStatusList")) {
+                this.networkConnectivityStatusList(model.getNetworkConnectivityStatusList());
+            }
+            return this;
         }
     }
 
@@ -106,9 +108,9 @@ public final class NetworkConnectivityStatusCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NetworkConnectivityStatusCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("networkConnectivityStatusList=")
                 .append(String.valueOf(this.networkConnectivityStatusList));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -125,7 +127,7 @@ public final class NetworkConnectivityStatusCollection {
         NetworkConnectivityStatusCollection other = (NetworkConnectivityStatusCollection) o;
         return java.util.Objects.equals(
                         this.networkConnectivityStatusList, other.networkConnectivityStatusList)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -137,16 +139,7 @@ public final class NetworkConnectivityStatusCollection {
                         + (this.networkConnectivityStatusList == null
                                 ? 43
                                 : this.networkConnectivityStatusList.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

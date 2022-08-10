@@ -218,8 +218,8 @@ public class ListAnnouncementsConverter {
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .ListAnnouncementsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcementsCollection(response.getItem());
 

@@ -185,8 +185,8 @@ public class ListJobRunsConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .ListJobRunsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

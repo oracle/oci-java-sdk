@@ -17,7 +17,7 @@ package com.oracle.bmc.usage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProductSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProductSummary {
+public final class ProductSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "productNumber",
@@ -127,28 +127,37 @@ public final class ProductSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProductSummary build() {
-            ProductSummary __instance__ =
+            ProductSummary model =
                     new ProductSummary(
-                            productNumber,
-                            productName,
-                            usageAmount,
-                            earnedRewards,
-                            isEligibleToEarnRewards);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.productNumber,
+                            this.productName,
+                            this.usageAmount,
+                            this.earnedRewards,
+                            this.isEligibleToEarnRewards);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProductSummary o) {
-            Builder copiedBuilder =
-                    productNumber(o.getProductNumber())
-                            .productName(o.getProductName())
-                            .usageAmount(o.getUsageAmount())
-                            .earnedRewards(o.getEarnedRewards())
-                            .isEligibleToEarnRewards(o.getIsEligibleToEarnRewards());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProductSummary model) {
+            if (model.wasPropertyExplicitlySet("productNumber")) {
+                this.productNumber(model.getProductNumber());
+            }
+            if (model.wasPropertyExplicitlySet("productName")) {
+                this.productName(model.getProductName());
+            }
+            if (model.wasPropertyExplicitlySet("usageAmount")) {
+                this.usageAmount(model.getUsageAmount());
+            }
+            if (model.wasPropertyExplicitlySet("earnedRewards")) {
+                this.earnedRewards(model.getEarnedRewards());
+            }
+            if (model.wasPropertyExplicitlySet("isEligibleToEarnRewards")) {
+                this.isEligibleToEarnRewards(model.getIsEligibleToEarnRewards());
+            }
+            return this;
         }
     }
 
@@ -246,13 +255,13 @@ public final class ProductSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProductSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("productNumber=").append(String.valueOf(this.productNumber));
         sb.append(", productName=").append(String.valueOf(this.productName));
         sb.append(", usageAmount=").append(String.valueOf(this.usageAmount));
         sb.append(", earnedRewards=").append(String.valueOf(this.earnedRewards));
         sb.append(", isEligibleToEarnRewards=")
                 .append(String.valueOf(this.isEligibleToEarnRewards));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +282,7 @@ public final class ProductSummary {
                 && java.util.Objects.equals(this.earnedRewards, other.earnedRewards)
                 && java.util.Objects.equals(
                         this.isEligibleToEarnRewards, other.isEligibleToEarnRewards)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -293,16 +302,7 @@ public final class ProductSummary {
                         + (this.isEligibleToEarnRewards == null
                                 ? 43
                                 : this.isEligibleToEarnRewards.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

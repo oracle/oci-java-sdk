@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = StartSqlTuningTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StartSqlTuningTaskDetails {
+public final class StartSqlTuningTaskDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskName",
@@ -226,38 +227,57 @@ public final class StartSqlTuningTaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StartSqlTuningTaskDetails build() {
-            StartSqlTuningTaskDetails __instance__ =
+            StartSqlTuningTaskDetails model =
                     new StartSqlTuningTaskDetails(
-                            taskName,
-                            taskDescription,
-                            credentialDetails,
-                            totalTimeLimitInMinutes,
-                            scope,
-                            statementTimeLimitInMinutes,
-                            sqlTuningSet,
-                            sqlDetails,
-                            timeStarted,
-                            timeEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.taskName,
+                            this.taskDescription,
+                            this.credentialDetails,
+                            this.totalTimeLimitInMinutes,
+                            this.scope,
+                            this.statementTimeLimitInMinutes,
+                            this.sqlTuningSet,
+                            this.sqlDetails,
+                            this.timeStarted,
+                            this.timeEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StartSqlTuningTaskDetails o) {
-            Builder copiedBuilder =
-                    taskName(o.getTaskName())
-                            .taskDescription(o.getTaskDescription())
-                            .credentialDetails(o.getCredentialDetails())
-                            .totalTimeLimitInMinutes(o.getTotalTimeLimitInMinutes())
-                            .scope(o.getScope())
-                            .statementTimeLimitInMinutes(o.getStatementTimeLimitInMinutes())
-                            .sqlTuningSet(o.getSqlTuningSet())
-                            .sqlDetails(o.getSqlDetails())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StartSqlTuningTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("taskName")) {
+                this.taskName(model.getTaskName());
+            }
+            if (model.wasPropertyExplicitlySet("taskDescription")) {
+                this.taskDescription(model.getTaskDescription());
+            }
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("totalTimeLimitInMinutes")) {
+                this.totalTimeLimitInMinutes(model.getTotalTimeLimitInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("statementTimeLimitInMinutes")) {
+                this.statementTimeLimitInMinutes(model.getStatementTimeLimitInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("sqlTuningSet")) {
+                this.sqlTuningSet(model.getSqlTuningSet());
+            }
+            if (model.wasPropertyExplicitlySet("sqlDetails")) {
+                this.sqlDetails(model.getSqlDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            return this;
         }
     }
 
@@ -465,6 +485,7 @@ public final class StartSqlTuningTaskDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StartSqlTuningTaskDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("taskName=").append(String.valueOf(this.taskName));
         sb.append(", taskDescription=").append(String.valueOf(this.taskDescription));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
@@ -477,7 +498,6 @@ public final class StartSqlTuningTaskDetails {
         sb.append(", sqlDetails=").append(String.valueOf(this.sqlDetails));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -504,7 +524,7 @@ public final class StartSqlTuningTaskDetails {
                 && java.util.Objects.equals(this.sqlDetails, other.sqlDetails)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -533,16 +553,7 @@ public final class StartSqlTuningTaskDetails {
         result = (result * PRIME) + (this.sqlDetails == null ? 43 : this.sqlDetails.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

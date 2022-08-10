@@ -19,7 +19,8 @@ package com.oracle.bmc.aivision.model;
     builder = AnalyzeDocumentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnalyzeDocumentDetails {
+public final class AnalyzeDocumentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "features",
@@ -134,30 +135,41 @@ public final class AnalyzeDocumentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnalyzeDocumentDetails build() {
-            AnalyzeDocumentDetails __instance__ =
+            AnalyzeDocumentDetails model =
                     new AnalyzeDocumentDetails(
-                            features,
-                            document,
-                            compartmentId,
-                            outputLocation,
-                            language,
-                            documentType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.features,
+                            this.document,
+                            this.compartmentId,
+                            this.outputLocation,
+                            this.language,
+                            this.documentType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnalyzeDocumentDetails o) {
-            Builder copiedBuilder =
-                    features(o.getFeatures())
-                            .document(o.getDocument())
-                            .compartmentId(o.getCompartmentId())
-                            .outputLocation(o.getOutputLocation())
-                            .language(o.getLanguage())
-                            .documentType(o.getDocumentType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnalyzeDocumentDetails model) {
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("document")) {
+                this.document(model.getDocument());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("outputLocation")) {
+                this.outputLocation(model.getOutputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("documentType")) {
+                this.documentType(model.getDocumentType());
+            }
+            return this;
         }
     }
 
@@ -255,13 +267,13 @@ public final class AnalyzeDocumentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnalyzeDocumentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("features=").append(String.valueOf(this.features));
         sb.append(", document=").append(String.valueOf(this.document));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
         sb.append(", language=").append(String.valueOf(this.language));
         sb.append(", documentType=").append(String.valueOf(this.documentType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -282,7 +294,7 @@ public final class AnalyzeDocumentDetails {
                 && java.util.Objects.equals(this.outputLocation, other.outputLocation)
                 && java.util.Objects.equals(this.language, other.language)
                 && java.util.Objects.equals(this.documentType, other.documentType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -299,16 +311,7 @@ public final class AnalyzeDocumentDetails {
                         + (this.outputLocation == null ? 43 : this.outputLocation.hashCode());
         result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
         result = (result * PRIME) + (this.documentType == null ? 43 : this.documentType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

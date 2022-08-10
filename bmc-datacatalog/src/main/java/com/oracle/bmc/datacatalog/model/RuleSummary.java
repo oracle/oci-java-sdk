@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RuleSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RuleSummary {
+public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -375,52 +375,85 @@ public final class RuleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RuleSummary build() {
-            RuleSummary __instance__ =
+            RuleSummary model =
                     new RuleSummary(
-                            key,
-                            displayName,
-                            description,
-                            ruleType,
-                            externalKey,
-                            attributes,
-                            referencedFolderKey,
-                            referencedFolderName,
-                            referencedEntityKey,
-                            referencedEntityName,
-                            referencedRuleKey,
-                            referencedRuleName,
-                            referencedAttributes,
-                            originType,
-                            uri,
-                            timeCreated,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.ruleType,
+                            this.externalKey,
+                            this.attributes,
+                            this.referencedFolderKey,
+                            this.referencedFolderName,
+                            this.referencedEntityKey,
+                            this.referencedEntityName,
+                            this.referencedRuleKey,
+                            this.referencedRuleName,
+                            this.referencedAttributes,
+                            this.originType,
+                            this.uri,
+                            this.timeCreated,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RuleSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .ruleType(o.getRuleType())
-                            .externalKey(o.getExternalKey())
-                            .attributes(o.getAttributes())
-                            .referencedFolderKey(o.getReferencedFolderKey())
-                            .referencedFolderName(o.getReferencedFolderName())
-                            .referencedEntityKey(o.getReferencedEntityKey())
-                            .referencedEntityName(o.getReferencedEntityName())
-                            .referencedRuleKey(o.getReferencedRuleKey())
-                            .referencedRuleName(o.getReferencedRuleName())
-                            .referencedAttributes(o.getReferencedAttributes())
-                            .originType(o.getOriginType())
-                            .uri(o.getUri())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RuleSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("ruleType")) {
+                this.ruleType(model.getRuleType());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("attributes")) {
+                this.attributes(model.getAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFolderKey")) {
+                this.referencedFolderKey(model.getReferencedFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFolderName")) {
+                this.referencedFolderName(model.getReferencedFolderName());
+            }
+            if (model.wasPropertyExplicitlySet("referencedEntityKey")) {
+                this.referencedEntityKey(model.getReferencedEntityKey());
+            }
+            if (model.wasPropertyExplicitlySet("referencedEntityName")) {
+                this.referencedEntityName(model.getReferencedEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("referencedRuleKey")) {
+                this.referencedRuleKey(model.getReferencedRuleKey());
+            }
+            if (model.wasPropertyExplicitlySet("referencedRuleName")) {
+                this.referencedRuleName(model.getReferencedRuleName());
+            }
+            if (model.wasPropertyExplicitlySet("referencedAttributes")) {
+                this.referencedAttributes(model.getReferencedAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("originType")) {
+                this.originType(model.getOriginType());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -704,6 +737,7 @@ public final class RuleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RuleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -721,7 +755,6 @@ public final class RuleSummary {
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -753,7 +786,7 @@ public final class RuleSummary {
                 && java.util.Objects.equals(this.uri, other.uri)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -805,16 +838,7 @@ public final class RuleSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = RunHistoricAddmDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RunHistoricAddmDetails {
+public final class RunHistoricAddmDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"startSnapshotId", "endSnapshotId"})
     public RunHistoricAddmDetails(Long startSnapshotId, Long endSnapshotId) {
@@ -68,19 +69,23 @@ public final class RunHistoricAddmDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RunHistoricAddmDetails build() {
-            RunHistoricAddmDetails __instance__ =
-                    new RunHistoricAddmDetails(startSnapshotId, endSnapshotId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RunHistoricAddmDetails model =
+                    new RunHistoricAddmDetails(this.startSnapshotId, this.endSnapshotId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RunHistoricAddmDetails o) {
-            Builder copiedBuilder =
-                    startSnapshotId(o.getStartSnapshotId()).endSnapshotId(o.getEndSnapshotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RunHistoricAddmDetails model) {
+            if (model.wasPropertyExplicitlySet("startSnapshotId")) {
+                this.startSnapshotId(model.getStartSnapshotId());
+            }
+            if (model.wasPropertyExplicitlySet("endSnapshotId")) {
+                this.endSnapshotId(model.getEndSnapshotId());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class RunHistoricAddmDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RunHistoricAddmDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("startSnapshotId=").append(String.valueOf(this.startSnapshotId));
         sb.append(", endSnapshotId=").append(String.valueOf(this.endSnapshotId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class RunHistoricAddmDetails {
         RunHistoricAddmDetails other = (RunHistoricAddmDetails) o;
         return java.util.Objects.equals(this.startSnapshotId, other.startSnapshotId)
                 && java.util.Objects.equals(this.endSnapshotId, other.endSnapshotId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class RunHistoricAddmDetails {
         result =
                 (result * PRIME)
                         + (this.endSnapshotId == null ? 43 : this.endSnapshotId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

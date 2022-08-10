@@ -17,7 +17,7 @@ package com.oracle.bmc.rover.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoverCluster {
+public final class RoverCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -787,96 +787,173 @@ public final class RoverCluster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoverCluster build() {
-            RoverCluster __instance__ =
+            RoverCluster model =
                     new RoverCluster(
-                            id,
-                            compartmentId,
-                            displayName,
-                            clusterSize,
-                            timeCreated,
-                            lifecycleState,
-                            lifecycleStateDetails,
-                            customerShippingAddress,
-                            nodes,
-                            enclosureType,
-                            timeCustomerReceived,
-                            timeCustomerReturned,
-                            deliveryTrackingInfo,
-                            clusterWorkloads,
-                            clusterType,
-                            subscriptionId,
-                            exteriorDoorCode,
-                            interiorAlarmDisarmCode,
-                            superUserPassword,
-                            unlockPassphrase,
-                            pointOfContact,
-                            pointOfContactPhoneNumber,
-                            shippingPreference,
-                            oracleShippingTrackingUrl,
-                            shippingVendor,
-                            timePickupExpected,
-                            timeReturnWindowStarts,
-                            timeReturnWindowEnds,
-                            returnShippingLabelUri,
-                            isImportRequested,
-                            importCompartmentId,
-                            importFileBucket,
-                            dataValidationCode,
-                            imageExportPar,
-                            masterKeyId,
-                            tags,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.clusterSize,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.lifecycleStateDetails,
+                            this.customerShippingAddress,
+                            this.nodes,
+                            this.enclosureType,
+                            this.timeCustomerReceived,
+                            this.timeCustomerReturned,
+                            this.deliveryTrackingInfo,
+                            this.clusterWorkloads,
+                            this.clusterType,
+                            this.subscriptionId,
+                            this.exteriorDoorCode,
+                            this.interiorAlarmDisarmCode,
+                            this.superUserPassword,
+                            this.unlockPassphrase,
+                            this.pointOfContact,
+                            this.pointOfContactPhoneNumber,
+                            this.shippingPreference,
+                            this.oracleShippingTrackingUrl,
+                            this.shippingVendor,
+                            this.timePickupExpected,
+                            this.timeReturnWindowStarts,
+                            this.timeReturnWindowEnds,
+                            this.returnShippingLabelUri,
+                            this.isImportRequested,
+                            this.importCompartmentId,
+                            this.importFileBucket,
+                            this.dataValidationCode,
+                            this.imageExportPar,
+                            this.masterKeyId,
+                            this.tags,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoverCluster o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .clusterSize(o.getClusterSize())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleStateDetails(o.getLifecycleStateDetails())
-                            .customerShippingAddress(o.getCustomerShippingAddress())
-                            .nodes(o.getNodes())
-                            .enclosureType(o.getEnclosureType())
-                            .timeCustomerReceived(o.getTimeCustomerReceived())
-                            .timeCustomerReturned(o.getTimeCustomerReturned())
-                            .deliveryTrackingInfo(o.getDeliveryTrackingInfo())
-                            .clusterWorkloads(o.getClusterWorkloads())
-                            .clusterType(o.getClusterType())
-                            .subscriptionId(o.getSubscriptionId())
-                            .exteriorDoorCode(o.getExteriorDoorCode())
-                            .interiorAlarmDisarmCode(o.getInteriorAlarmDisarmCode())
-                            .superUserPassword(o.getSuperUserPassword())
-                            .unlockPassphrase(o.getUnlockPassphrase())
-                            .pointOfContact(o.getPointOfContact())
-                            .pointOfContactPhoneNumber(o.getPointOfContactPhoneNumber())
-                            .shippingPreference(o.getShippingPreference())
-                            .oracleShippingTrackingUrl(o.getOracleShippingTrackingUrl())
-                            .shippingVendor(o.getShippingVendor())
-                            .timePickupExpected(o.getTimePickupExpected())
-                            .timeReturnWindowStarts(o.getTimeReturnWindowStarts())
-                            .timeReturnWindowEnds(o.getTimeReturnWindowEnds())
-                            .returnShippingLabelUri(o.getReturnShippingLabelUri())
-                            .isImportRequested(o.getIsImportRequested())
-                            .importCompartmentId(o.getImportCompartmentId())
-                            .importFileBucket(o.getImportFileBucket())
-                            .dataValidationCode(o.getDataValidationCode())
-                            .imageExportPar(o.getImageExportPar())
-                            .masterKeyId(o.getMasterKeyId())
-                            .tags(o.getTags())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoverCluster model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("clusterSize")) {
+                this.clusterSize(model.getClusterSize());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
+                this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("customerShippingAddress")) {
+                this.customerShippingAddress(model.getCustomerShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("nodes")) {
+                this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("enclosureType")) {
+                this.enclosureType(model.getEnclosureType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCustomerReceived")) {
+                this.timeCustomerReceived(model.getTimeCustomerReceived());
+            }
+            if (model.wasPropertyExplicitlySet("timeCustomerReturned")) {
+                this.timeCustomerReturned(model.getTimeCustomerReturned());
+            }
+            if (model.wasPropertyExplicitlySet("deliveryTrackingInfo")) {
+                this.deliveryTrackingInfo(model.getDeliveryTrackingInfo());
+            }
+            if (model.wasPropertyExplicitlySet("clusterWorkloads")) {
+                this.clusterWorkloads(model.getClusterWorkloads());
+            }
+            if (model.wasPropertyExplicitlySet("clusterType")) {
+                this.clusterType(model.getClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("exteriorDoorCode")) {
+                this.exteriorDoorCode(model.getExteriorDoorCode());
+            }
+            if (model.wasPropertyExplicitlySet("interiorAlarmDisarmCode")) {
+                this.interiorAlarmDisarmCode(model.getInteriorAlarmDisarmCode());
+            }
+            if (model.wasPropertyExplicitlySet("superUserPassword")) {
+                this.superUserPassword(model.getSuperUserPassword());
+            }
+            if (model.wasPropertyExplicitlySet("unlockPassphrase")) {
+                this.unlockPassphrase(model.getUnlockPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("pointOfContact")) {
+                this.pointOfContact(model.getPointOfContact());
+            }
+            if (model.wasPropertyExplicitlySet("pointOfContactPhoneNumber")) {
+                this.pointOfContactPhoneNumber(model.getPointOfContactPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("shippingPreference")) {
+                this.shippingPreference(model.getShippingPreference());
+            }
+            if (model.wasPropertyExplicitlySet("oracleShippingTrackingUrl")) {
+                this.oracleShippingTrackingUrl(model.getOracleShippingTrackingUrl());
+            }
+            if (model.wasPropertyExplicitlySet("shippingVendor")) {
+                this.shippingVendor(model.getShippingVendor());
+            }
+            if (model.wasPropertyExplicitlySet("timePickupExpected")) {
+                this.timePickupExpected(model.getTimePickupExpected());
+            }
+            if (model.wasPropertyExplicitlySet("timeReturnWindowStarts")) {
+                this.timeReturnWindowStarts(model.getTimeReturnWindowStarts());
+            }
+            if (model.wasPropertyExplicitlySet("timeReturnWindowEnds")) {
+                this.timeReturnWindowEnds(model.getTimeReturnWindowEnds());
+            }
+            if (model.wasPropertyExplicitlySet("returnShippingLabelUri")) {
+                this.returnShippingLabelUri(model.getReturnShippingLabelUri());
+            }
+            if (model.wasPropertyExplicitlySet("isImportRequested")) {
+                this.isImportRequested(model.getIsImportRequested());
+            }
+            if (model.wasPropertyExplicitlySet("importCompartmentId")) {
+                this.importCompartmentId(model.getImportCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("importFileBucket")) {
+                this.importFileBucket(model.getImportFileBucket());
+            }
+            if (model.wasPropertyExplicitlySet("dataValidationCode")) {
+                this.dataValidationCode(model.getDataValidationCode());
+            }
+            if (model.wasPropertyExplicitlySet("imageExportPar")) {
+                this.imageExportPar(model.getImageExportPar());
+            }
+            if (model.wasPropertyExplicitlySet("masterKeyId")) {
+                this.masterKeyId(model.getMasterKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("tags")) {
+                this.tags(model.getTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -1511,6 +1588,7 @@ public final class RoverCluster {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoverCluster(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1554,7 +1632,6 @@ public final class RoverCluster {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1614,7 +1691,7 @@ public final class RoverCluster {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1746,16 +1823,7 @@ public final class RoverCluster {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

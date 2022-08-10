@@ -164,44 +164,69 @@ public final class V1Dashboard extends Dashboard {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public V1Dashboard build() {
-            V1Dashboard __instance__ =
+            V1Dashboard model =
                     new V1Dashboard(
-                            id,
-                            dashboardGroupId,
-                            displayName,
-                            description,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            config,
-                            widgets);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.dashboardGroupId,
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.config,
+                            this.widgets);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(V1Dashboard o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .dashboardGroupId(o.getDashboardGroupId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .config(o.getConfig())
-                            .widgets(o.getWidgets());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(V1Dashboard model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("dashboardGroupId")) {
+                this.dashboardGroupId(model.getDashboardGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("config")) {
+                this.config(model.getConfig());
+            }
+            if (model.wasPropertyExplicitlySet("widgets")) {
+                this.widgets(model.getWidgets());
+            }
+            return this;
         }
     }
 
@@ -291,7 +316,6 @@ public final class V1Dashboard extends Dashboard {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", config=").append(String.valueOf(this.config));
         sb.append(", widgets=").append(String.valueOf(this.widgets));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -308,8 +332,7 @@ public final class V1Dashboard extends Dashboard {
         V1Dashboard other = (V1Dashboard) o;
         return java.util.Objects.equals(this.config, other.config)
                 && java.util.Objects.equals(this.widgets, other.widgets)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -318,16 +341,6 @@ public final class V1Dashboard extends Dashboard {
         int result = super.hashCode();
         result = (result * PRIME) + (this.config == null ? 43 : this.config.hashCode());
         result = (result * PRIME) + (this.widgets == null ? 43 : this.widgets.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -177,8 +177,8 @@ public class RequestSummarizedTrendResourceRiskScoresConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedTrendResourceRiskScoresResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceRiskScoreAggregationCollection(response.getItem());
 

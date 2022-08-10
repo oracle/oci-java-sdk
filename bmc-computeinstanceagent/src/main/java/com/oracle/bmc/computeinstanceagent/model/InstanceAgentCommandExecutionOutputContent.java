@@ -36,7 +36,8 @@ package com.oracle.bmc.computeinstanceagent.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class InstanceAgentCommandExecutionOutputContent {
+public class InstanceAgentCommandExecutionOutputContent
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"exitCode", "message"})
     protected InstanceAgentCommandExecutionOutputContent(Integer exitCode, String message) {
@@ -88,6 +89,7 @@ public class InstanceAgentCommandExecutionOutputContent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceAgentCommandExecutionOutputContent(");
+        sb.append("super=").append(super.toString());
         sb.append("exitCode=").append(String.valueOf(this.exitCode));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(")");
@@ -106,7 +108,8 @@ public class InstanceAgentCommandExecutionOutputContent {
         InstanceAgentCommandExecutionOutputContent other =
                 (InstanceAgentCommandExecutionOutputContent) o;
         return java.util.Objects.equals(this.exitCode, other.exitCode)
-                && java.util.Objects.equals(this.message, other.message);
+                && java.util.Objects.equals(this.message, other.message)
+                && super.equals(other);
     }
 
     @Override
@@ -115,6 +118,7 @@ public class InstanceAgentCommandExecutionOutputContent {
         int result = 1;
         result = (result * PRIME) + (this.exitCode == null ? 43 : this.exitCode.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

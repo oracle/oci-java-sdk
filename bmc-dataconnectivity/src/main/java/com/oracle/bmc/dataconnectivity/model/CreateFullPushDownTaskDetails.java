@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CreateFullPushDownTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateFullPushDownTaskDetails {
+public final class CreateFullPushDownTaskDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelType", "source", "target"})
     public CreateFullPushDownTaskDetails(String modelType, Source source, Target target) {
@@ -70,19 +71,26 @@ public final class CreateFullPushDownTaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateFullPushDownTaskDetails build() {
-            CreateFullPushDownTaskDetails __instance__ =
-                    new CreateFullPushDownTaskDetails(modelType, source, target);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateFullPushDownTaskDetails model =
+                    new CreateFullPushDownTaskDetails(this.modelType, this.source, this.target);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateFullPushDownTaskDetails o) {
-            Builder copiedBuilder =
-                    modelType(o.getModelType()).source(o.getSource()).target(o.getTarget());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateFullPushDownTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            return this;
         }
     }
 
@@ -138,10 +146,10 @@ public final class CreateFullPushDownTaskDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFullPushDownTaskDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("modelType=").append(String.valueOf(this.modelType));
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", target=").append(String.valueOf(this.target));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +167,7 @@ public final class CreateFullPushDownTaskDetails {
         return java.util.Objects.equals(this.modelType, other.modelType)
                 && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.target, other.target)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -169,16 +177,7 @@ public final class CreateFullPushDownTaskDetails {
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

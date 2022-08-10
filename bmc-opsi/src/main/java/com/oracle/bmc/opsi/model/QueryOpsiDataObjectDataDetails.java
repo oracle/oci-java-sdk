@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = QueryOpsiDataObjectDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryOpsiDataObjectDataDetails {
+public final class QueryOpsiDataObjectDataDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataObjectIdentifier", "query", "resourceFilters"})
     public QueryOpsiDataObjectDataDetails(
@@ -71,22 +72,27 @@ public final class QueryOpsiDataObjectDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryOpsiDataObjectDataDetails build() {
-            QueryOpsiDataObjectDataDetails __instance__ =
+            QueryOpsiDataObjectDataDetails model =
                     new QueryOpsiDataObjectDataDetails(
-                            dataObjectIdentifier, query, resourceFilters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dataObjectIdentifier, this.query, this.resourceFilters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryOpsiDataObjectDataDetails o) {
-            Builder copiedBuilder =
-                    dataObjectIdentifier(o.getDataObjectIdentifier())
-                            .query(o.getQuery())
-                            .resourceFilters(o.getResourceFilters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryOpsiDataObjectDataDetails model) {
+            if (model.wasPropertyExplicitlySet("dataObjectIdentifier")) {
+                this.dataObjectIdentifier(model.getDataObjectIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("resourceFilters")) {
+                this.resourceFilters(model.getResourceFilters());
+            }
+            return this;
         }
     }
 
@@ -142,10 +148,10 @@ public final class QueryOpsiDataObjectDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryOpsiDataObjectDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("dataObjectIdentifier=").append(String.valueOf(this.dataObjectIdentifier));
         sb.append(", query=").append(String.valueOf(this.query));
         sb.append(", resourceFilters=").append(String.valueOf(this.resourceFilters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -163,7 +169,7 @@ public final class QueryOpsiDataObjectDataDetails {
         return java.util.Objects.equals(this.dataObjectIdentifier, other.dataObjectIdentifier)
                 && java.util.Objects.equals(this.query, other.query)
                 && java.util.Objects.equals(this.resourceFilters, other.resourceFilters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -179,16 +185,7 @@ public final class QueryOpsiDataObjectDataDetails {
         result =
                 (result * PRIME)
                         + (this.resourceFilters == null ? 43 : this.resourceFilters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

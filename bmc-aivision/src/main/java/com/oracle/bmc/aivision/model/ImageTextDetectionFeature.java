@@ -48,17 +48,19 @@ public final class ImageTextDetectionFeature extends ImageFeature {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageTextDetectionFeature build() {
-            ImageTextDetectionFeature __instance__ = new ImageTextDetectionFeature(language);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageTextDetectionFeature model = new ImageTextDetectionFeature(this.language);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageTextDetectionFeature o) {
-            Builder copiedBuilder = language(o.getLanguage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageTextDetectionFeature model) {
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
+            }
+            return this;
         }
     }
 
@@ -108,7 +110,6 @@ public final class ImageTextDetectionFeature extends ImageFeature {
         sb.append("ImageTextDetectionFeature(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", language=").append(String.valueOf(this.language));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -123,9 +124,7 @@ public final class ImageTextDetectionFeature extends ImageFeature {
         }
 
         ImageTextDetectionFeature other = (ImageTextDetectionFeature) o;
-        return java.util.Objects.equals(this.language, other.language)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.language, other.language) && super.equals(other);
     }
 
     @Override
@@ -133,16 +132,6 @@ public final class ImageTextDetectionFeature extends ImageFeature {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

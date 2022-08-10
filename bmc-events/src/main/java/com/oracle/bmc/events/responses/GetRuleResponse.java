@@ -57,13 +57,20 @@ public class GetRuleResponse extends com.oracle.bmc.responses.BmcResponse {
         return rule;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "rule"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "rule"
+    })
     private GetRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.events.model.Rule rule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.rule = rule;
@@ -74,6 +81,13 @@ public class GetRuleResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -138,6 +152,7 @@ public class GetRuleResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             rule(o.getRule());
@@ -150,7 +165,7 @@ public class GetRuleResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetRuleResponse build() {
-            return new GetRuleResponse(__httpStatusCode__, etag, opcRequestId, rule);
+            return new GetRuleResponse(__httpStatusCode__, headers, etag, opcRequestId, rule);
         }
     }
 

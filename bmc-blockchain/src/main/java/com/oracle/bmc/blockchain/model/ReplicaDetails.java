@@ -17,7 +17,7 @@ package com.oracle.bmc.blockchain.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReplicaDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicaDetails {
+public final class ReplicaDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"proxyCount", "caCount", "consoleCount"})
     public ReplicaDetails(Integer proxyCount, Integer caCount, Integer consoleCount) {
@@ -82,20 +82,26 @@ public final class ReplicaDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReplicaDetails build() {
-            ReplicaDetails __instance__ = new ReplicaDetails(proxyCount, caCount, consoleCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ReplicaDetails model =
+                    new ReplicaDetails(this.proxyCount, this.caCount, this.consoleCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReplicaDetails o) {
-            Builder copiedBuilder =
-                    proxyCount(o.getProxyCount())
-                            .caCount(o.getCaCount())
-                            .consoleCount(o.getConsoleCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReplicaDetails model) {
+            if (model.wasPropertyExplicitlySet("proxyCount")) {
+                this.proxyCount(model.getProxyCount());
+            }
+            if (model.wasPropertyExplicitlySet("caCount")) {
+                this.caCount(model.getCaCount());
+            }
+            if (model.wasPropertyExplicitlySet("consoleCount")) {
+                this.consoleCount(model.getConsoleCount());
+            }
+            return this;
         }
     }
 
@@ -165,10 +171,10 @@ public final class ReplicaDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReplicaDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("proxyCount=").append(String.valueOf(this.proxyCount));
         sb.append(", caCount=").append(String.valueOf(this.caCount));
         sb.append(", consoleCount=").append(String.valueOf(this.consoleCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +192,7 @@ public final class ReplicaDetails {
         return java.util.Objects.equals(this.proxyCount, other.proxyCount)
                 && java.util.Objects.equals(this.caCount, other.caCount)
                 && java.util.Objects.equals(this.consoleCount, other.consoleCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +202,7 @@ public final class ReplicaDetails {
         result = (result * PRIME) + (this.proxyCount == null ? 43 : this.proxyCount.hashCode());
         result = (result * PRIME) + (this.caCount == null ? 43 : this.caCount.hashCode());
         result = (result * PRIME) + (this.consoleCount == null ? 43 : this.consoleCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

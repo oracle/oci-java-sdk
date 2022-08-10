@@ -19,7 +19,7 @@ package com.oracle.bmc.artifacts.model;
     builder = ContainerRepository.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerRepository {
+public final class ContainerRepository extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -299,46 +299,73 @@ public final class ContainerRepository {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerRepository build() {
-            ContainerRepository __instance__ =
+            ContainerRepository model =
                     new ContainerRepository(
-                            compartmentId,
-                            createdBy,
-                            displayName,
-                            id,
-                            imageCount,
-                            isImmutable,
-                            isPublic,
-                            layerCount,
-                            layersSizeInBytes,
-                            lifecycleState,
-                            readme,
-                            timeCreated,
-                            timeLastPushed,
-                            billableSizeInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.createdBy,
+                            this.displayName,
+                            this.id,
+                            this.imageCount,
+                            this.isImmutable,
+                            this.isPublic,
+                            this.layerCount,
+                            this.layersSizeInBytes,
+                            this.lifecycleState,
+                            this.readme,
+                            this.timeCreated,
+                            this.timeLastPushed,
+                            this.billableSizeInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerRepository o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .createdBy(o.getCreatedBy())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .imageCount(o.getImageCount())
-                            .isImmutable(o.getIsImmutable())
-                            .isPublic(o.getIsPublic())
-                            .layerCount(o.getLayerCount())
-                            .layersSizeInBytes(o.getLayersSizeInBytes())
-                            .lifecycleState(o.getLifecycleState())
-                            .readme(o.getReadme())
-                            .timeCreated(o.getTimeCreated())
-                            .timeLastPushed(o.getTimeLastPushed())
-                            .billableSizeInGBs(o.getBillableSizeInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerRepository model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("imageCount")) {
+                this.imageCount(model.getImageCount());
+            }
+            if (model.wasPropertyExplicitlySet("isImmutable")) {
+                this.isImmutable(model.getIsImmutable());
+            }
+            if (model.wasPropertyExplicitlySet("isPublic")) {
+                this.isPublic(model.getIsPublic());
+            }
+            if (model.wasPropertyExplicitlySet("layerCount")) {
+                this.layerCount(model.getLayerCount());
+            }
+            if (model.wasPropertyExplicitlySet("layersSizeInBytes")) {
+                this.layersSizeInBytes(model.getLayersSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("readme")) {
+                this.readme(model.getReadme());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastPushed")) {
+                this.timeLastPushed(model.getTimeLastPushed());
+            }
+            if (model.wasPropertyExplicitlySet("billableSizeInGBs")) {
+                this.billableSizeInGBs(model.getBillableSizeInGBs());
+            }
+            return this;
         }
     }
 
@@ -610,6 +637,7 @@ public final class ContainerRepository {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerRepository(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -624,7 +652,6 @@ public final class ContainerRepository {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeLastPushed=").append(String.valueOf(this.timeLastPushed));
         sb.append(", billableSizeInGBs=").append(String.valueOf(this.billableSizeInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -653,7 +680,7 @@ public final class ContainerRepository {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeLastPushed, other.timeLastPushed)
                 && java.util.Objects.equals(this.billableSizeInGBs, other.billableSizeInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -684,16 +711,7 @@ public final class ContainerRepository {
         result =
                 (result * PRIME)
                         + (this.billableSizeInGBs == null ? 43 : this.billableSizeInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

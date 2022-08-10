@@ -20,7 +20,7 @@ package com.oracle.bmc.onesubscription.model;
     builder = InvoiceLineSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoiceLineSummary {
+public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -152,25 +152,41 @@ public final class InvoiceLineSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InvoiceLineSummary build() {
-            InvoiceLineSummary __instance__ =
+            InvoiceLineSummary model =
                     new InvoiceLineSummary(
-                            id, product, arInvoiceNumber, dataCenter, timeStart, timeEnd);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.product,
+                            this.arInvoiceNumber,
+                            this.dataCenter,
+                            this.timeStart,
+                            this.timeEnd);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InvoiceLineSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .product(o.getProduct())
-                            .arInvoiceNumber(o.getArInvoiceNumber())
-                            .dataCenter(o.getDataCenter())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InvoiceLineSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            if (model.wasPropertyExplicitlySet("arInvoiceNumber")) {
+                this.arInvoiceNumber(model.getArInvoiceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenter")) {
+                this.dataCenter(model.getDataCenter());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            return this;
         }
     }
 
@@ -285,13 +301,13 @@ public final class InvoiceLineSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InvoiceLineSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", arInvoiceNumber=").append(String.valueOf(this.arInvoiceNumber));
         sb.append(", dataCenter=").append(String.valueOf(this.dataCenter));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -312,7 +328,7 @@ public final class InvoiceLineSummary {
                 && java.util.Objects.equals(this.dataCenter, other.dataCenter)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -327,16 +343,7 @@ public final class InvoiceLineSummary {
         result = (result * PRIME) + (this.dataCenter == null ? 43 : this.dataCenter.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

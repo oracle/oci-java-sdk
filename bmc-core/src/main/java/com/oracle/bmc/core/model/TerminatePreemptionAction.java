@@ -51,18 +51,20 @@ public final class TerminatePreemptionAction extends PreemptionAction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TerminatePreemptionAction build() {
-            TerminatePreemptionAction __instance__ =
-                    new TerminatePreemptionAction(preserveBootVolume);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TerminatePreemptionAction model =
+                    new TerminatePreemptionAction(this.preserveBootVolume);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TerminatePreemptionAction o) {
-            Builder copiedBuilder = preserveBootVolume(o.getPreserveBootVolume());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TerminatePreemptionAction model) {
+            if (model.wasPropertyExplicitlySet("preserveBootVolume")) {
+                this.preserveBootVolume(model.getPreserveBootVolume());
+            }
+            return this;
         }
     }
 
@@ -114,7 +116,6 @@ public final class TerminatePreemptionAction extends PreemptionAction {
         sb.append("TerminatePreemptionAction(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", preserveBootVolume=").append(String.valueOf(this.preserveBootVolume));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -130,8 +131,7 @@ public final class TerminatePreemptionAction extends PreemptionAction {
 
         TerminatePreemptionAction other = (TerminatePreemptionAction) o;
         return java.util.Objects.equals(this.preserveBootVolume, other.preserveBootVolume)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -143,16 +143,6 @@ public final class TerminatePreemptionAction extends PreemptionAction {
                         + (this.preserveBootVolume == null
                                 ? 43
                                 : this.preserveBootVolume.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

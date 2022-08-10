@@ -169,8 +169,8 @@ public class ListServiceAttachmentsConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListServiceAttachmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceAttachmentCollection(response.getItem());
 

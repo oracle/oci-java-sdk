@@ -20,7 +20,8 @@ package com.oracle.bmc.logging.model;
     builder = LogIncludedSearchSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogIncludedSearchSummary {
+public final class LogIncludedSearchSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "displayName", "timeCreated", "timeLastModified"})
     public LogIncludedSearchSummary(
@@ -110,22 +111,30 @@ public final class LogIncludedSearchSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogIncludedSearchSummary build() {
-            LogIncludedSearchSummary __instance__ =
-                    new LogIncludedSearchSummary(id, displayName, timeCreated, timeLastModified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogIncludedSearchSummary model =
+                    new LogIncludedSearchSummary(
+                            this.id, this.displayName, this.timeCreated, this.timeLastModified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogIncludedSearchSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeLastModified(o.getTimeLastModified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogIncludedSearchSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastModified")) {
+                this.timeLastModified(model.getTimeLastModified());
+            }
+            return this;
         }
     }
 
@@ -213,11 +222,11 @@ public final class LogIncludedSearchSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogIncludedSearchSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeLastModified=").append(String.valueOf(this.timeLastModified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -236,7 +245,7 @@ public final class LogIncludedSearchSummary {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeLastModified, other.timeLastModified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +258,7 @@ public final class LogIncludedSearchSummary {
         result =
                 (result * PRIME)
                         + (this.timeLastModified == null ? 43 : this.timeLastModified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

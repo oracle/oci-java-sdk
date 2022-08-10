@@ -41,18 +41,20 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TextDatasetFormatDetails build() {
-            TextDatasetFormatDetails __instance__ =
-                    new TextDatasetFormatDetails(textFileTypeMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TextDatasetFormatDetails model =
+                    new TextDatasetFormatDetails(this.textFileTypeMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TextDatasetFormatDetails o) {
-            Builder copiedBuilder = textFileTypeMetadata(o.getTextFileTypeMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TextDatasetFormatDetails model) {
+            if (model.wasPropertyExplicitlySet("textFileTypeMetadata")) {
+                this.textFileTypeMetadata(model.getTextFileTypeMetadata());
+            }
+            return this;
         }
     }
 
@@ -95,7 +97,6 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
         sb.append("TextDatasetFormatDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", textFileTypeMetadata=").append(String.valueOf(this.textFileTypeMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -111,8 +112,7 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
 
         TextDatasetFormatDetails other = (TextDatasetFormatDetails) o;
         return java.util.Objects.equals(this.textFileTypeMetadata, other.textFileTypeMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -124,16 +124,6 @@ public final class TextDatasetFormatDetails extends DatasetFormatDetails {
                         + (this.textFileTypeMetadata == null
                                 ? 43
                                 : this.textFileTypeMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

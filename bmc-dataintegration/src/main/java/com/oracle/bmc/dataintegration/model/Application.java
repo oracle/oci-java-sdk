@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Application.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Application {
+public final class Application extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -486,66 +486,113 @@ public final class Application {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Application build() {
-            Application __instance__ =
+            Application model =
                     new Application(
-                            key,
-                            modelType,
-                            modelVersion,
-                            name,
-                            description,
-                            applicationVersion,
-                            objectStatus,
-                            identifier,
-                            parentRef,
-                            objectVersion,
-                            dependentObjectMetadata,
-                            publishedObjectMetadata,
-                            sourceApplicationInfo,
-                            timePatched,
-                            id,
-                            compartmentId,
-                            displayName,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            lifecycleState,
-                            metadata,
-                            keyMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.applicationVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parentRef,
+                            this.objectVersion,
+                            this.dependentObjectMetadata,
+                            this.publishedObjectMetadata,
+                            this.sourceApplicationInfo,
+                            this.timePatched,
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lifecycleState,
+                            this.metadata,
+                            this.keyMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Application o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .applicationVersion(o.getApplicationVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parentRef(o.getParentRef())
-                            .objectVersion(o.getObjectVersion())
-                            .dependentObjectMetadata(o.getDependentObjectMetadata())
-                            .publishedObjectMetadata(o.getPublishedObjectMetadata())
-                            .sourceApplicationInfo(o.getSourceApplicationInfo())
-                            .timePatched(o.getTimePatched())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .lifecycleState(o.getLifecycleState())
-                            .metadata(o.getMetadata())
-                            .keyMap(o.getKeyMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Application model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("applicationVersion")) {
+                this.applicationVersion(model.getApplicationVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dependentObjectMetadata")) {
+                this.dependentObjectMetadata(model.getDependentObjectMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("publishedObjectMetadata")) {
+                this.publishedObjectMetadata(model.getPublishedObjectMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("sourceApplicationInfo")) {
+                this.sourceApplicationInfo(model.getSourceApplicationInfo());
+            }
+            if (model.wasPropertyExplicitlySet("timePatched")) {
+                this.timePatched(model.getTimePatched());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("keyMap")) {
+                this.keyMap(model.getKeyMap());
+            }
+            return this;
         }
     }
 
@@ -956,6 +1003,7 @@ public final class Application {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Application(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -982,7 +1030,6 @@ public final class Application {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1023,7 +1070,7 @@ public final class Application {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1076,16 +1123,7 @@ public final class Application {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

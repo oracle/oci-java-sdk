@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LastRunDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LastRunDetails {
+public final class LastRunDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -215,38 +215,57 @@ public final class LastRunDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LastRunDetails build() {
-            LastRunDetails __instance__ =
+            LastRunDetails model =
                     new LastRunDetails(
-                            key,
-                            modelVersion,
-                            modelType,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            lastRunTimeMillis);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.modelType,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.lastRunTimeMillis);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LastRunDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .modelType(o.getModelType())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .lastRunTimeMillis(o.getLastRunTimeMillis());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LastRunDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("lastRunTimeMillis")) {
+                this.lastRunTimeMillis(model.getLastRunTimeMillis());
+            }
+            return this;
         }
     }
 
@@ -407,6 +426,7 @@ public final class LastRunDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LastRunDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
@@ -417,7 +437,6 @@ public final class LastRunDetails {
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", lastRunTimeMillis=").append(String.valueOf(this.lastRunTimeMillis));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -442,7 +461,7 @@ public final class LastRunDetails {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.lastRunTimeMillis, other.lastRunTimeMillis)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -463,16 +482,7 @@ public final class LastRunDetails {
         result =
                 (result * PRIME)
                         + (this.lastRunTimeMillis == null ? 43 : this.lastRunTimeMillis.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

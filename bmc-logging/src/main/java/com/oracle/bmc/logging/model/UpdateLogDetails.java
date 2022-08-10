@@ -17,7 +17,7 @@ package com.oracle.bmc.logging.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateLogDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateLogDetails {
+public final class UpdateLogDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -158,30 +158,41 @@ public final class UpdateLogDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLogDetails build() {
-            UpdateLogDetails __instance__ =
+            UpdateLogDetails model =
                     new UpdateLogDetails(
-                            displayName,
-                            isEnabled,
-                            definedTags,
-                            freeformTags,
-                            retentionDuration,
-                            configuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isEnabled,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.retentionDuration,
+                            this.configuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateLogDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isEnabled(o.getIsEnabled())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .retentionDuration(o.getRetentionDuration())
-                            .configuration(o.getConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateLogDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("retentionDuration")) {
+                this.retentionDuration(model.getRetentionDuration());
+            }
+            if (model.wasPropertyExplicitlySet("configuration")) {
+                this.configuration(model.getConfiguration());
+            }
+            return this;
         }
     }
 
@@ -304,13 +315,13 @@ public final class UpdateLogDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateLogDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", retentionDuration=").append(String.valueOf(this.retentionDuration));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -331,7 +342,7 @@ public final class UpdateLogDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.retentionDuration, other.retentionDuration)
                 && java.util.Objects.equals(this.configuration, other.configuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -348,16 +359,7 @@ public final class UpdateLogDetails {
         result =
                 (result * PRIME)
                         + (this.configuration == null ? 43 : this.configuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

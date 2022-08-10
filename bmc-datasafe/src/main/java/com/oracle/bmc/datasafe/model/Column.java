@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Column.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Column {
+public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -127,23 +127,37 @@ public final class Column {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Column build() {
-            Column __instance__ =
-                    new Column(displayName, fieldName, dataType, isHidden, displayOrder);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Column model =
+                    new Column(
+                            this.displayName,
+                            this.fieldName,
+                            this.dataType,
+                            this.isHidden,
+                            this.displayOrder);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Column o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .fieldName(o.getFieldName())
-                            .dataType(o.getDataType())
-                            .isHidden(o.getIsHidden())
-                            .displayOrder(o.getDisplayOrder());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Column model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
+            if (model.wasPropertyExplicitlySet("displayOrder")) {
+                this.displayOrder(model.getDisplayOrder());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class Column {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Column(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", isHidden=").append(String.valueOf(this.isHidden));
         sb.append(", displayOrder=").append(String.valueOf(this.displayOrder));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class Column {
                 && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.isHidden, other.isHidden)
                 && java.util.Objects.equals(this.displayOrder, other.displayOrder)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -278,16 +292,7 @@ public final class Column {
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
         result = (result * PRIME) + (this.displayOrder == null ? 43 : this.displayOrder.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

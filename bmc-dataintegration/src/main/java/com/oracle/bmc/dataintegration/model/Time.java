@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Time.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Time {
+public final class Time extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hour", "minute", "second"})
     public Time(Integer hour, Integer minute, Integer second) {
@@ -82,17 +82,25 @@ public final class Time {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Time build() {
-            Time __instance__ = new Time(hour, minute, second);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Time model = new Time(this.hour, this.minute, this.second);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Time o) {
-            Builder copiedBuilder = hour(o.getHour()).minute(o.getMinute()).second(o.getSecond());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Time model) {
+            if (model.wasPropertyExplicitlySet("hour")) {
+                this.hour(model.getHour());
+            }
+            if (model.wasPropertyExplicitlySet("minute")) {
+                this.minute(model.getMinute());
+            }
+            if (model.wasPropertyExplicitlySet("second")) {
+                this.second(model.getSecond());
+            }
+            return this;
         }
     }
 
@@ -162,10 +170,10 @@ public final class Time {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Time(");
+        sb.append("super=").append(super.toString());
         sb.append("hour=").append(String.valueOf(this.hour));
         sb.append(", minute=").append(String.valueOf(this.minute));
         sb.append(", second=").append(String.valueOf(this.second));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -183,7 +191,7 @@ public final class Time {
         return java.util.Objects.equals(this.hour, other.hour)
                 && java.util.Objects.equals(this.minute, other.minute)
                 && java.util.Objects.equals(this.second, other.second)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -193,16 +201,7 @@ public final class Time {
         result = (result * PRIME) + (this.hour == null ? 43 : this.hour.hashCode());
         result = (result * PRIME) + (this.minute == null ? 43 : this.minute.hashCode());
         result = (result * PRIME) + (this.second == null ? 43 : this.second.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

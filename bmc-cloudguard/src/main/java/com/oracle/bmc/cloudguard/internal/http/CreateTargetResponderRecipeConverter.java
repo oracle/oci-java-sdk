@@ -121,8 +121,8 @@ public class CreateTargetResponderRecipeConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .CreateTargetResponderRecipeResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.targetResponderRecipe(response.getItem());
 

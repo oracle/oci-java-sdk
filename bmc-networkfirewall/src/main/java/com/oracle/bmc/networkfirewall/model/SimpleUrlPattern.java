@@ -87,17 +87,19 @@ public final class SimpleUrlPattern extends UrlPattern {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SimpleUrlPattern build() {
-            SimpleUrlPattern __instance__ = new SimpleUrlPattern(pattern);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SimpleUrlPattern model = new SimpleUrlPattern(this.pattern);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SimpleUrlPattern o) {
-            Builder copiedBuilder = pattern(o.getPattern());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SimpleUrlPattern model) {
+            if (model.wasPropertyExplicitlySet("pattern")) {
+                this.pattern(model.getPattern());
+            }
+            return this;
         }
     }
 
@@ -157,7 +159,6 @@ public final class SimpleUrlPattern extends UrlPattern {
         sb.append("SimpleUrlPattern(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", pattern=").append(String.valueOf(this.pattern));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -172,9 +173,7 @@ public final class SimpleUrlPattern extends UrlPattern {
         }
 
         SimpleUrlPattern other = (SimpleUrlPattern) o;
-        return java.util.Objects.equals(this.pattern, other.pattern)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.pattern, other.pattern) && super.equals(other);
     }
 
     @Override
@@ -182,16 +181,6 @@ public final class SimpleUrlPattern extends UrlPattern {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -103,8 +103,8 @@ public class GetDedicatedVmHostConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetDedicatedVmHostResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dedicatedVmHost(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffChunk.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiffChunk {
+public final class DiffChunk extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baseLine",
@@ -127,23 +127,37 @@ public final class DiffChunk {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiffChunk build() {
-            DiffChunk __instance__ =
-                    new DiffChunk(baseLine, baseSpan, targetLine, targetSpan, diffSections);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DiffChunk model =
+                    new DiffChunk(
+                            this.baseLine,
+                            this.baseSpan,
+                            this.targetLine,
+                            this.targetSpan,
+                            this.diffSections);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiffChunk o) {
-            Builder copiedBuilder =
-                    baseLine(o.getBaseLine())
-                            .baseSpan(o.getBaseSpan())
-                            .targetLine(o.getTargetLine())
-                            .targetSpan(o.getTargetSpan())
-                            .diffSections(o.getDiffSections());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiffChunk model) {
+            if (model.wasPropertyExplicitlySet("baseLine")) {
+                this.baseLine(model.getBaseLine());
+            }
+            if (model.wasPropertyExplicitlySet("baseSpan")) {
+                this.baseSpan(model.getBaseSpan());
+            }
+            if (model.wasPropertyExplicitlySet("targetLine")) {
+                this.targetLine(model.getTargetLine());
+            }
+            if (model.wasPropertyExplicitlySet("targetSpan")) {
+                this.targetSpan(model.getTargetSpan());
+            }
+            if (model.wasPropertyExplicitlySet("diffSections")) {
+                this.diffSections(model.getDiffSections());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class DiffChunk {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiffChunk(");
+        sb.append("super=").append(super.toString());
         sb.append("baseLine=").append(String.valueOf(this.baseLine));
         sb.append(", baseSpan=").append(String.valueOf(this.baseSpan));
         sb.append(", targetLine=").append(String.valueOf(this.targetLine));
         sb.append(", targetSpan=").append(String.valueOf(this.targetSpan));
         sb.append(", diffSections=").append(String.valueOf(this.diffSections));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class DiffChunk {
                 && java.util.Objects.equals(this.targetLine, other.targetLine)
                 && java.util.Objects.equals(this.targetSpan, other.targetSpan)
                 && java.util.Objects.equals(this.diffSections, other.diffSections)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -278,16 +292,7 @@ public final class DiffChunk {
         result = (result * PRIME) + (this.targetLine == null ? 43 : this.targetLine.hashCode());
         result = (result * PRIME) + (this.targetSpan == null ? 43 : this.targetSpan.hashCode());
         result = (result * PRIME) + (this.diffSections == null ? 43 : this.diffSections.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

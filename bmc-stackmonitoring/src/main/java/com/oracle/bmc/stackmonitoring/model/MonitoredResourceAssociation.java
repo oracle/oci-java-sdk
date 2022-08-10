@@ -19,7 +19,8 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = MonitoredResourceAssociation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitoredResourceAssociation {
+public final class MonitoredResourceAssociation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "associationType",
@@ -243,40 +244,61 @@ public final class MonitoredResourceAssociation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoredResourceAssociation build() {
-            MonitoredResourceAssociation __instance__ =
+            MonitoredResourceAssociation model =
                     new MonitoredResourceAssociation(
-                            associationType,
-                            compartmentId,
-                            tenantId,
-                            sourceResourceId,
-                            destinationResourceId,
-                            sourceResourceDetails,
-                            destinationResourceDetails,
-                            timeCreated,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.associationType,
+                            this.compartmentId,
+                            this.tenantId,
+                            this.sourceResourceId,
+                            this.destinationResourceId,
+                            this.sourceResourceDetails,
+                            this.destinationResourceDetails,
+                            this.timeCreated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoredResourceAssociation o) {
-            Builder copiedBuilder =
-                    associationType(o.getAssociationType())
-                            .compartmentId(o.getCompartmentId())
-                            .tenantId(o.getTenantId())
-                            .sourceResourceId(o.getSourceResourceId())
-                            .destinationResourceId(o.getDestinationResourceId())
-                            .sourceResourceDetails(o.getSourceResourceDetails())
-                            .destinationResourceDetails(o.getDestinationResourceDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoredResourceAssociation model) {
+            if (model.wasPropertyExplicitlySet("associationType")) {
+                this.associationType(model.getAssociationType());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceResourceId")) {
+                this.sourceResourceId(model.getSourceResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationResourceId")) {
+                this.destinationResourceId(model.getDestinationResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceResourceDetails")) {
+                this.sourceResourceDetails(model.getSourceResourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("destinationResourceDetails")) {
+                this.destinationResourceDetails(model.getDestinationResourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -456,6 +478,7 @@ public final class MonitoredResourceAssociation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitoredResourceAssociation(");
+        sb.append("super=").append(super.toString());
         sb.append("associationType=").append(String.valueOf(this.associationType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
@@ -468,7 +491,6 @@ public final class MonitoredResourceAssociation {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -495,7 +517,7 @@ public final class MonitoredResourceAssociation {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -531,16 +553,7 @@ public final class MonitoredResourceAssociation {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -170,8 +170,8 @@ public class ListDetectorRecipeDetectorRulesConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListDetectorRecipeDetectorRulesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectorRecipeDetectorRuleCollection(response.getItem());
 

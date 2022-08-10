@@ -45,7 +45,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class VolumeAttachment {
+public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -439,6 +439,7 @@ public class VolumeAttachment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeAttachment(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", device=").append(String.valueOf(this.device));
@@ -482,7 +483,8 @@ public class VolumeAttachment {
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.isMultipath, other.isMultipath)
-                && java.util.Objects.equals(this.iscsiLoginState, other.iscsiLoginState);
+                && java.util.Objects.equals(this.iscsiLoginState, other.iscsiLoginState)
+                && super.equals(other);
     }
 
     @Override
@@ -517,6 +519,7 @@ public class VolumeAttachment {
         result =
                 (result * PRIME)
                         + (this.iscsiLoginState == null ? 43 : this.iscsiLoginState.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

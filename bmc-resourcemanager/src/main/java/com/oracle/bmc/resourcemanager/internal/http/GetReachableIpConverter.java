@@ -118,8 +118,8 @@ public class GetReachableIpConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetReachableIpResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.reachableIp(response.getItem());
 

@@ -23,7 +23,7 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Tag.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Tag {
+public final class Tag extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -313,44 +313,69 @@ public final class Tag {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Tag build() {
-            Tag __instance__ =
+            Tag model =
                     new Tag(
-                            compartmentId,
-                            tagNamespaceId,
-                            tagNamespaceName,
-                            id,
-                            name,
-                            description,
-                            freeformTags,
-                            definedTags,
-                            isRetired,
-                            lifecycleState,
-                            timeCreated,
-                            isCostTracking,
-                            validator);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.tagNamespaceId,
+                            this.tagNamespaceName,
+                            this.id,
+                            this.name,
+                            this.description,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.isRetired,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.isCostTracking,
+                            this.validator);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Tag o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .tagNamespaceId(o.getTagNamespaceId())
-                            .tagNamespaceName(o.getTagNamespaceName())
-                            .id(o.getId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .isRetired(o.getIsRetired())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .isCostTracking(o.getIsCostTracking())
-                            .validator(o.getValidator());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Tag model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("tagNamespaceId")) {
+                this.tagNamespaceId(model.getTagNamespaceId());
+            }
+            if (model.wasPropertyExplicitlySet("tagNamespaceName")) {
+                this.tagNamespaceName(model.getTagNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isRetired")) {
+                this.isRetired(model.getIsRetired());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("isCostTracking")) {
+                this.isCostTracking(model.getIsCostTracking());
+            }
+            if (model.wasPropertyExplicitlySet("validator")) {
+                this.validator(model.getValidator());
+            }
+            return this;
         }
     }
 
@@ -637,6 +662,7 @@ public final class Tag {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Tag(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
         sb.append(", tagNamespaceName=").append(String.valueOf(this.tagNamespaceName));
@@ -650,7 +676,6 @@ public final class Tag {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", isCostTracking=").append(String.valueOf(this.isCostTracking));
         sb.append(", validator=").append(String.valueOf(this.validator));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -678,7 +703,7 @@ public final class Tag {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.isCostTracking, other.isCostTracking)
                 && java.util.Objects.equals(this.validator, other.validator)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -708,16 +733,7 @@ public final class Tag {
                 (result * PRIME)
                         + (this.isCostTracking == null ? 43 : this.isCostTracking.hashCode());
         result = (result * PRIME) + (this.validator == null ? 43 : this.validator.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

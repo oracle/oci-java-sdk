@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateAutonomousDatabaseWalletDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAutonomousDatabaseWalletDetails {
+public final class UpdateAutonomousDatabaseWalletDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shouldRotate", "gracePeriod"})
     public UpdateAutonomousDatabaseWalletDetails(Boolean shouldRotate, Integer gracePeriod) {
@@ -68,19 +69,23 @@ public final class UpdateAutonomousDatabaseWalletDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutonomousDatabaseWalletDetails build() {
-            UpdateAutonomousDatabaseWalletDetails __instance__ =
-                    new UpdateAutonomousDatabaseWalletDetails(shouldRotate, gracePeriod);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateAutonomousDatabaseWalletDetails model =
+                    new UpdateAutonomousDatabaseWalletDetails(this.shouldRotate, this.gracePeriod);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAutonomousDatabaseWalletDetails o) {
-            Builder copiedBuilder =
-                    shouldRotate(o.getShouldRotate()).gracePeriod(o.getGracePeriod());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAutonomousDatabaseWalletDetails model) {
+            if (model.wasPropertyExplicitlySet("shouldRotate")) {
+                this.shouldRotate(model.getShouldRotate());
+            }
+            if (model.wasPropertyExplicitlySet("gracePeriod")) {
+                this.gracePeriod(model.getGracePeriod());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class UpdateAutonomousDatabaseWalletDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAutonomousDatabaseWalletDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("shouldRotate=").append(String.valueOf(this.shouldRotate));
         sb.append(", gracePeriod=").append(String.valueOf(this.gracePeriod));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class UpdateAutonomousDatabaseWalletDetails {
         UpdateAutonomousDatabaseWalletDetails other = (UpdateAutonomousDatabaseWalletDetails) o;
         return java.util.Objects.equals(this.shouldRotate, other.shouldRotate)
                 && java.util.Objects.equals(this.gracePeriod, other.gracePeriod)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +169,7 @@ public final class UpdateAutonomousDatabaseWalletDetails {
         int result = 1;
         result = (result * PRIME) + (this.shouldRotate == null ? 43 : this.shouldRotate.hashCode());
         result = (result * PRIME) + (this.gracePeriod == null ? 43 : this.gracePeriod.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

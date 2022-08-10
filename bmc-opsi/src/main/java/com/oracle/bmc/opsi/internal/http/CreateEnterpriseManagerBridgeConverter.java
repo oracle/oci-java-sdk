@@ -113,8 +113,8 @@ public class CreateEnterpriseManagerBridgeConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .CreateEnterpriseManagerBridgeResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.enterpriseManagerBridge(response.getItem());
 

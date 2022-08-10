@@ -54,6 +54,10 @@ public class CreateCertificateConverter {
             ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }
@@ -105,8 +109,8 @@ public class CreateCertificateConverter {
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .CreateCertificateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

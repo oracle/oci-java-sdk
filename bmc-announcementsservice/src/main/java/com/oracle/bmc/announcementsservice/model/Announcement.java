@@ -250,60 +250,101 @@ public final class Announcement extends BaseAnnouncement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Announcement build() {
-            Announcement __instance__ =
+            Announcement model =
                     new Announcement(
-                            id,
-                            referenceTicketNumber,
-                            summary,
-                            timeOneTitle,
-                            timeOneType,
-                            timeOneValue,
-                            timeTwoTitle,
-                            timeTwoType,
-                            timeTwoValue,
-                            services,
-                            affectedRegions,
-                            announcementType,
-                            lifecycleState,
-                            isBanner,
-                            timeCreated,
-                            timeUpdated,
-                            environmentName,
-                            platformType,
-                            description,
-                            additionalInformation,
-                            affectedResources);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.referenceTicketNumber,
+                            this.summary,
+                            this.timeOneTitle,
+                            this.timeOneType,
+                            this.timeOneValue,
+                            this.timeTwoTitle,
+                            this.timeTwoType,
+                            this.timeTwoValue,
+                            this.services,
+                            this.affectedRegions,
+                            this.announcementType,
+                            this.lifecycleState,
+                            this.isBanner,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.environmentName,
+                            this.platformType,
+                            this.description,
+                            this.additionalInformation,
+                            this.affectedResources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Announcement o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .referenceTicketNumber(o.getReferenceTicketNumber())
-                            .summary(o.getSummary())
-                            .timeOneTitle(o.getTimeOneTitle())
-                            .timeOneType(o.getTimeOneType())
-                            .timeOneValue(o.getTimeOneValue())
-                            .timeTwoTitle(o.getTimeTwoTitle())
-                            .timeTwoType(o.getTimeTwoType())
-                            .timeTwoValue(o.getTimeTwoValue())
-                            .services(o.getServices())
-                            .affectedRegions(o.getAffectedRegions())
-                            .announcementType(o.getAnnouncementType())
-                            .lifecycleState(o.getLifecycleState())
-                            .isBanner(o.getIsBanner())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .environmentName(o.getEnvironmentName())
-                            .platformType(o.getPlatformType())
-                            .description(o.getDescription())
-                            .additionalInformation(o.getAdditionalInformation())
-                            .affectedResources(o.getAffectedResources());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Announcement model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("referenceTicketNumber")) {
+                this.referenceTicketNumber(model.getReferenceTicketNumber());
+            }
+            if (model.wasPropertyExplicitlySet("summary")) {
+                this.summary(model.getSummary());
+            }
+            if (model.wasPropertyExplicitlySet("timeOneTitle")) {
+                this.timeOneTitle(model.getTimeOneTitle());
+            }
+            if (model.wasPropertyExplicitlySet("timeOneType")) {
+                this.timeOneType(model.getTimeOneType());
+            }
+            if (model.wasPropertyExplicitlySet("timeOneValue")) {
+                this.timeOneValue(model.getTimeOneValue());
+            }
+            if (model.wasPropertyExplicitlySet("timeTwoTitle")) {
+                this.timeTwoTitle(model.getTimeTwoTitle());
+            }
+            if (model.wasPropertyExplicitlySet("timeTwoType")) {
+                this.timeTwoType(model.getTimeTwoType());
+            }
+            if (model.wasPropertyExplicitlySet("timeTwoValue")) {
+                this.timeTwoValue(model.getTimeTwoValue());
+            }
+            if (model.wasPropertyExplicitlySet("services")) {
+                this.services(model.getServices());
+            }
+            if (model.wasPropertyExplicitlySet("affectedRegions")) {
+                this.affectedRegions(model.getAffectedRegions());
+            }
+            if (model.wasPropertyExplicitlySet("announcementType")) {
+                this.announcementType(model.getAnnouncementType());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isBanner")) {
+                this.isBanner(model.getIsBanner());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("environmentName")) {
+                this.environmentName(model.getEnvironmentName());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("additionalInformation")) {
+                this.additionalInformation(model.getAdditionalInformation());
+            }
+            if (model.wasPropertyExplicitlySet("affectedResources")) {
+                this.affectedResources(model.getAffectedResources());
+            }
+            return this;
         }
     }
 
@@ -434,7 +475,6 @@ public final class Announcement extends BaseAnnouncement {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", additionalInformation=").append(String.valueOf(this.additionalInformation));
         sb.append(", affectedResources=").append(String.valueOf(this.affectedResources));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -452,8 +492,7 @@ public final class Announcement extends BaseAnnouncement {
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.additionalInformation, other.additionalInformation)
                 && java.util.Objects.equals(this.affectedResources, other.affectedResources)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -469,16 +508,6 @@ public final class Announcement extends BaseAnnouncement {
         result =
                 (result * PRIME)
                         + (this.affectedResources == null ? 43 : this.affectedResources.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

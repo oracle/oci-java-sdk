@@ -88,23 +88,37 @@ public final class UpgradeAction extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpgradeAction build() {
-            UpgradeAction __instance__ =
-                    new UpgradeAction(referenceKey, state, description, version, qualifier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpgradeAction model =
+                    new UpgradeAction(
+                            this.referenceKey,
+                            this.state,
+                            this.description,
+                            this.version,
+                            this.qualifier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpgradeAction o) {
-            Builder copiedBuilder =
-                    referenceKey(o.getReferenceKey())
-                            .state(o.getState())
-                            .description(o.getDescription())
-                            .version(o.getVersion())
-                            .qualifier(o.getQualifier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpgradeAction model) {
+            if (model.wasPropertyExplicitlySet("referenceKey")) {
+                this.referenceKey(model.getReferenceKey());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("qualifier")) {
+                this.qualifier(model.getQualifier());
+            }
+            return this;
         }
     }
 
@@ -175,7 +189,6 @@ public final class UpgradeAction extends Action {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", qualifier=").append(String.valueOf(this.qualifier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,8 +205,7 @@ public final class UpgradeAction extends Action {
         UpgradeAction other = (UpgradeAction) o;
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.qualifier, other.qualifier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +214,6 @@ public final class UpgradeAction extends Action {
         int result = super.hashCode();
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.qualifier == null ? 43 : this.qualifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

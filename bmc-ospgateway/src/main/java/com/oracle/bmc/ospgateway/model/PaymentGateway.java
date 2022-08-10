@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PaymentGateway.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PaymentGateway {
+public final class PaymentGateway extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"merchantDefinedData"})
     public PaymentGateway(MerchantDefinedData merchantDefinedData) {
@@ -41,17 +41,19 @@ public final class PaymentGateway {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PaymentGateway build() {
-            PaymentGateway __instance__ = new PaymentGateway(merchantDefinedData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PaymentGateway model = new PaymentGateway(this.merchantDefinedData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PaymentGateway o) {
-            Builder copiedBuilder = merchantDefinedData(o.getMerchantDefinedData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PaymentGateway model) {
+            if (model.wasPropertyExplicitlySet("merchantDefinedData")) {
+                this.merchantDefinedData(model.getMerchantDefinedData());
+            }
+            return this;
         }
     }
 
@@ -86,8 +88,8 @@ public final class PaymentGateway {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PaymentGateway(");
+        sb.append("super=").append(super.toString());
         sb.append("merchantDefinedData=").append(String.valueOf(this.merchantDefinedData));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -103,7 +105,7 @@ public final class PaymentGateway {
 
         PaymentGateway other = (PaymentGateway) o;
         return java.util.Objects.equals(this.merchantDefinedData, other.merchantDefinedData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -115,16 +117,7 @@ public final class PaymentGateway {
                         + (this.merchantDefinedData == null
                                 ? 43
                                 : this.merchantDefinedData.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

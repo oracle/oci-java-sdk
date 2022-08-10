@@ -140,8 +140,8 @@ public class ListMultipartUploadsConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .ListMultipartUploadsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

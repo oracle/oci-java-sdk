@@ -156,7 +156,8 @@ public class GetAwrReportConverter {
 
                                 com.oracle.bmc.opsi.responses.GetAwrReportResponse.Builder builder =
                                         com.oracle.bmc.opsi.responses.GetAwrReportResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.awrReport(response.getItem());
 

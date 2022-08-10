@@ -107,8 +107,8 @@ public class GetExadataIormConfigConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetExadataIormConfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataIormConfig(response.getItem());
 

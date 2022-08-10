@@ -19,7 +19,8 @@ package com.oracle.bmc.datalabelingservice.model;
     builder = SnapshotDatasetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SnapshotDatasetDetails {
+public final class SnapshotDatasetDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "areAnnotationsIncluded",
@@ -96,26 +97,33 @@ public final class SnapshotDatasetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SnapshotDatasetDetails build() {
-            SnapshotDatasetDetails __instance__ =
+            SnapshotDatasetDetails model =
                     new SnapshotDatasetDetails(
-                            areAnnotationsIncluded,
-                            areUnannotatedRecordsIncluded,
-                            exportDetails,
-                            exportFormat);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.areAnnotationsIncluded,
+                            this.areUnannotatedRecordsIncluded,
+                            this.exportDetails,
+                            this.exportFormat);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SnapshotDatasetDetails o) {
-            Builder copiedBuilder =
-                    areAnnotationsIncluded(o.getAreAnnotationsIncluded())
-                            .areUnannotatedRecordsIncluded(o.getAreUnannotatedRecordsIncluded())
-                            .exportDetails(o.getExportDetails())
-                            .exportFormat(o.getExportFormat());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SnapshotDatasetDetails model) {
+            if (model.wasPropertyExplicitlySet("areAnnotationsIncluded")) {
+                this.areAnnotationsIncluded(model.getAreAnnotationsIncluded());
+            }
+            if (model.wasPropertyExplicitlySet("areUnannotatedRecordsIncluded")) {
+                this.areUnannotatedRecordsIncluded(model.getAreUnannotatedRecordsIncluded());
+            }
+            if (model.wasPropertyExplicitlySet("exportDetails")) {
+                this.exportDetails(model.getExportDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exportFormat")) {
+                this.exportFormat(model.getExportFormat());
+            }
+            return this;
         }
     }
 
@@ -185,12 +193,12 @@ public final class SnapshotDatasetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SnapshotDatasetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("areAnnotationsIncluded=").append(String.valueOf(this.areAnnotationsIncluded));
         sb.append(", areUnannotatedRecordsIncluded=")
                 .append(String.valueOf(this.areUnannotatedRecordsIncluded));
         sb.append(", exportDetails=").append(String.valueOf(this.exportDetails));
         sb.append(", exportFormat=").append(String.valueOf(this.exportFormat));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -210,7 +218,7 @@ public final class SnapshotDatasetDetails {
                         this.areUnannotatedRecordsIncluded, other.areUnannotatedRecordsIncluded)
                 && java.util.Objects.equals(this.exportDetails, other.exportDetails)
                 && java.util.Objects.equals(this.exportFormat, other.exportFormat)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +239,7 @@ public final class SnapshotDatasetDetails {
                 (result * PRIME)
                         + (this.exportDetails == null ? 43 : this.exportDetails.hashCode());
         result = (result * PRIME) + (this.exportFormat == null ? 43 : this.exportFormat.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -148,8 +148,8 @@ public class ListDrgRouteDistributionStatementsConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ListDrgRouteDistributionStatementsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

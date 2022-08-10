@@ -167,8 +167,8 @@ public class ListDerivedLogicalEntitiesConverter {
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListDerivedLogicalEntitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.entityCollection(response.getItem());
 

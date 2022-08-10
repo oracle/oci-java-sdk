@@ -119,8 +119,8 @@ public class DownloadVmClusterNetworkConfigFileConverter {
                                                 com.oracle.bmc.database.responses
                                                         .DownloadVmClusterNetworkConfigFileResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

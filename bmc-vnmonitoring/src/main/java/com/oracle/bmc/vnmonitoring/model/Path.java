@@ -17,7 +17,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Path.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Path {
+public final class Path extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"forwardRoute", "returnRoute", "topology"})
     public Path(TrafficRoute forwardRoute, TrafficRoute returnRoute, PathTopology topology) {
@@ -61,20 +61,25 @@ public final class Path {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Path build() {
-            Path __instance__ = new Path(forwardRoute, returnRoute, topology);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Path model = new Path(this.forwardRoute, this.returnRoute, this.topology);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Path o) {
-            Builder copiedBuilder =
-                    forwardRoute(o.getForwardRoute())
-                            .returnRoute(o.getReturnRoute())
-                            .topology(o.getTopology());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Path model) {
+            if (model.wasPropertyExplicitlySet("forwardRoute")) {
+                this.forwardRoute(model.getForwardRoute());
+            }
+            if (model.wasPropertyExplicitlySet("returnRoute")) {
+                this.returnRoute(model.getReturnRoute());
+            }
+            if (model.wasPropertyExplicitlySet("topology")) {
+                this.topology(model.getTopology());
+            }
+            return this;
         }
     }
 
@@ -123,10 +128,10 @@ public final class Path {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Path(");
+        sb.append("super=").append(super.toString());
         sb.append("forwardRoute=").append(String.valueOf(this.forwardRoute));
         sb.append(", returnRoute=").append(String.valueOf(this.returnRoute));
         sb.append(", topology=").append(String.valueOf(this.topology));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -144,7 +149,7 @@ public final class Path {
         return java.util.Objects.equals(this.forwardRoute, other.forwardRoute)
                 && java.util.Objects.equals(this.returnRoute, other.returnRoute)
                 && java.util.Objects.equals(this.topology, other.topology)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -154,16 +159,7 @@ public final class Path {
         result = (result * PRIME) + (this.forwardRoute == null ? 43 : this.forwardRoute.hashCode());
         result = (result * PRIME) + (this.returnRoute == null ? 43 : this.returnRoute.hashCode());
         result = (result * PRIME) + (this.topology == null ? 43 : this.topology.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

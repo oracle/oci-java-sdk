@@ -55,17 +55,19 @@ public final class ForwardToBackendSet extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ForwardToBackendSet build() {
-            ForwardToBackendSet __instance__ = new ForwardToBackendSet(backendSetName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ForwardToBackendSet model = new ForwardToBackendSet(this.backendSetName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ForwardToBackendSet o) {
-            Builder copiedBuilder = backendSetName(o.getBackendSetName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ForwardToBackendSet model) {
+            if (model.wasPropertyExplicitlySet("backendSetName")) {
+                this.backendSetName(model.getBackendSetName());
+            }
+            return this;
         }
     }
 
@@ -121,7 +123,6 @@ public final class ForwardToBackendSet extends Action {
         sb.append("ForwardToBackendSet(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", backendSetName=").append(String.valueOf(this.backendSetName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -137,8 +138,7 @@ public final class ForwardToBackendSet extends Action {
 
         ForwardToBackendSet other = (ForwardToBackendSet) o;
         return java.util.Objects.equals(this.backendSetName, other.backendSetName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -148,16 +148,6 @@ public final class ForwardToBackendSet extends Action {
         result =
                 (result * PRIME)
                         + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

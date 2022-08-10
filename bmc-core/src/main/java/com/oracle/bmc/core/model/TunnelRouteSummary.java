@@ -20,7 +20,7 @@ package com.oracle.bmc.core.model;
     builder = TunnelRouteSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TunnelRouteSummary {
+public final class TunnelRouteSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"prefix", "age", "isBestPath", "asPath", "advertiser"})
     public TunnelRouteSummary(
@@ -124,23 +124,33 @@ public final class TunnelRouteSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TunnelRouteSummary build() {
-            TunnelRouteSummary __instance__ =
-                    new TunnelRouteSummary(prefix, age, isBestPath, asPath, advertiser);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TunnelRouteSummary model =
+                    new TunnelRouteSummary(
+                            this.prefix, this.age, this.isBestPath, this.asPath, this.advertiser);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TunnelRouteSummary o) {
-            Builder copiedBuilder =
-                    prefix(o.getPrefix())
-                            .age(o.getAge())
-                            .isBestPath(o.getIsBestPath())
-                            .asPath(o.getAsPath())
-                            .advertiser(o.getAdvertiser());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TunnelRouteSummary model) {
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("age")) {
+                this.age(model.getAge());
+            }
+            if (model.wasPropertyExplicitlySet("isBestPath")) {
+                this.isBestPath(model.getIsBestPath());
+            }
+            if (model.wasPropertyExplicitlySet("asPath")) {
+                this.asPath(model.getAsPath());
+            }
+            if (model.wasPropertyExplicitlySet("advertiser")) {
+                this.advertiser(model.getAdvertiser());
+            }
+            return this;
         }
     }
 
@@ -286,12 +296,12 @@ public final class TunnelRouteSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TunnelRouteSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("prefix=").append(String.valueOf(this.prefix));
         sb.append(", age=").append(String.valueOf(this.age));
         sb.append(", isBestPath=").append(String.valueOf(this.isBestPath));
         sb.append(", asPath=").append(String.valueOf(this.asPath));
         sb.append(", advertiser=").append(String.valueOf(this.advertiser));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -311,7 +321,7 @@ public final class TunnelRouteSummary {
                 && java.util.Objects.equals(this.isBestPath, other.isBestPath)
                 && java.util.Objects.equals(this.asPath, other.asPath)
                 && java.util.Objects.equals(this.advertiser, other.advertiser)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -323,16 +333,7 @@ public final class TunnelRouteSummary {
         result = (result * PRIME) + (this.isBestPath == null ? 43 : this.isBestPath.hashCode());
         result = (result * PRIME) + (this.asPath == null ? 43 : this.asPath.hashCode());
         result = (result * PRIME) + (this.advertiser == null ? 43 : this.advertiser.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

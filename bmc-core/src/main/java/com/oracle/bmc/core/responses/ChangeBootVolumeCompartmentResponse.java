@@ -40,10 +40,13 @@ public class ChangeBootVolumeCompartmentResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "opcRequestId"})
     private ChangeBootVolumeCompartmentResponse(
-            int __httpStatusCode__, String etag, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
     }
@@ -53,6 +56,13 @@ public class ChangeBootVolumeCompartmentResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -98,6 +108,7 @@ public class ChangeBootVolumeCompartmentResponse extends com.oracle.bmc.response
          */
         public Builder copy(ChangeBootVolumeCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
 
@@ -109,7 +120,8 @@ public class ChangeBootVolumeCompartmentResponse extends com.oracle.bmc.response
          * @return the response object
          */
         public ChangeBootVolumeCompartmentResponse build() {
-            return new ChangeBootVolumeCompartmentResponse(__httpStatusCode__, etag, opcRequestId);
+            return new ChangeBootVolumeCompartmentResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId);
         }
     }
 

@@ -111,8 +111,8 @@ public class ParseQueryConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ParseQueryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.parseQueryOutput(response.getItem());
 

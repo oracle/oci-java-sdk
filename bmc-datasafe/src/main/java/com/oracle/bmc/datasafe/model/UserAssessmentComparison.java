@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = UserAssessmentComparison.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UserAssessmentComparison {
+public final class UserAssessmentComparison
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lifecycleState", "timeCreated", "summary"})
     public UserAssessmentComparison(
@@ -91,21 +92,27 @@ public final class UserAssessmentComparison {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UserAssessmentComparison build() {
-            UserAssessmentComparison __instance__ =
-                    new UserAssessmentComparison(lifecycleState, timeCreated, summary);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UserAssessmentComparison model =
+                    new UserAssessmentComparison(
+                            this.lifecycleState, this.timeCreated, this.summary);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UserAssessmentComparison o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .summary(o.getSummary());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UserAssessmentComparison model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("summary")) {
+                this.summary(model.getSummary());
+            }
+            return this;
         }
     }
 
@@ -228,10 +235,10 @@ public final class UserAssessmentComparison {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UserAssessmentComparison(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", summary=").append(String.valueOf(this.summary));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,7 +256,7 @@ public final class UserAssessmentComparison {
         return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.summary, other.summary)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -261,16 +268,7 @@ public final class UserAssessmentComparison {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

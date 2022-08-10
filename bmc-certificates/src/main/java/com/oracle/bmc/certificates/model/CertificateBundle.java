@@ -33,7 +33,7 @@ package com.oracle.bmc.certificates.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CertificateBundle {
+public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateId",
@@ -235,6 +235,7 @@ public class CertificateBundle {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateBundle(");
+        sb.append("super=").append(super.toString());
         sb.append("certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", certificateName=").append(String.valueOf(this.certificateName));
         sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
@@ -270,7 +271,8 @@ public class CertificateBundle {
                 && java.util.Objects.equals(this.validity, other.validity)
                 && java.util.Objects.equals(this.versionName, other.versionName)
                 && java.util.Objects.equals(this.stages, other.stages)
-                && java.util.Objects.equals(this.revocationStatus, other.revocationStatus);
+                && java.util.Objects.equals(this.revocationStatus, other.revocationStatus)
+                && super.equals(other);
     }
 
     @Override
@@ -298,6 +300,7 @@ public class CertificateBundle {
         result =
                 (result * PRIME)
                         + (this.revocationStatus == null ? 43 : this.revocationStatus.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

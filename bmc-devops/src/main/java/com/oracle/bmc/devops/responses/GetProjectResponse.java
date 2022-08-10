@@ -47,13 +47,20 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
         return project;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "project"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "project"
+    })
     private GetProjectResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.Project project) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.project = project;
@@ -64,6 +71,13 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetProjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             project(o.getProject());
@@ -130,7 +145,7 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetProjectResponse build() {
-            return new GetProjectResponse(__httpStatusCode__, etag, opcRequestId, project);
+            return new GetProjectResponse(__httpStatusCode__, headers, etag, opcRequestId, project);
         }
     }
 

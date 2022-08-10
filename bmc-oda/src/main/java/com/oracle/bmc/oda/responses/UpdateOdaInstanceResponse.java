@@ -51,13 +51,20 @@ public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
         return odaInstance;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "odaInstance"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "odaInstance"
+    })
     private UpdateOdaInstanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.OdaInstance odaInstance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.odaInstance = odaInstance;
@@ -68,6 +75,13 @@ public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(UpdateOdaInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             odaInstance(o.getOdaInstance());
@@ -139,7 +154,7 @@ public class UpdateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public UpdateOdaInstanceResponse build() {
             return new UpdateOdaInstanceResponse(
-                    __httpStatusCode__, etag, opcRequestId, odaInstance);
+                    __httpStatusCode__, headers, etag, opcRequestId, odaInstance);
         }
     }
 

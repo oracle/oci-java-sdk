@@ -108,8 +108,8 @@ public class CreateTransferDeviceConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .CreateTransferDeviceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.newTransferDevice(response.getItem());
 

@@ -67,18 +67,20 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseConnectionCredentailsByName build() {
-            DatabaseConnectionCredentailsByName __instance__ =
-                    new DatabaseConnectionCredentailsByName(credentialName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DatabaseConnectionCredentailsByName model =
+                    new DatabaseConnectionCredentailsByName(this.credentialName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseConnectionCredentailsByName o) {
-            Builder copiedBuilder = credentialName(o.getCredentialName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseConnectionCredentailsByName model) {
+            if (model.wasPropertyExplicitlySet("credentialName")) {
+                this.credentialName(model.getCredentialName());
+            }
+            return this;
         }
     }
 
@@ -146,7 +148,6 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         sb.append("DatabaseConnectionCredentailsByName(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", credentialName=").append(String.valueOf(this.credentialName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -162,8 +163,7 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
 
         DatabaseConnectionCredentailsByName other = (DatabaseConnectionCredentailsByName) o;
         return java.util.Objects.equals(this.credentialName, other.credentialName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -173,16 +173,6 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         result =
                 (result * PRIME)
                         + (this.credentialName == null ? 43 : this.credentialName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

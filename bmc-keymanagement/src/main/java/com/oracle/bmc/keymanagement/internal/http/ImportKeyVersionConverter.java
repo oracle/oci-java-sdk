@@ -115,8 +115,8 @@ public class ImportKeyVersionConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ImportKeyVersionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.keyVersion(response.getItem());
 

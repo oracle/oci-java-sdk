@@ -150,8 +150,8 @@ public class ListStackResourceDriftDetailsConverter {
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListStackResourceDriftDetailsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.stackResourceDriftCollection(response.getItem());
 

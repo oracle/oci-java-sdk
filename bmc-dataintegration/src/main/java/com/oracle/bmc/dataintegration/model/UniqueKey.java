@@ -32,7 +32,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UniqueKey {
+public class UniqueKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -148,6 +148,7 @@ public class UniqueKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UniqueKey(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -173,7 +174,8 @@ public class UniqueKey {
                 && java.util.Objects.equals(this.parentRef, other.parentRef)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.attributeRefs, other.attributeRefs)
-                && java.util.Objects.equals(this.objectStatus, other.objectStatus);
+                && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && super.equals(other);
     }
 
     @Override
@@ -188,6 +190,7 @@ public class UniqueKey {
                 (result * PRIME)
                         + (this.attributeRefs == null ? 43 : this.attributeRefs.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

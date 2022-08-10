@@ -153,8 +153,8 @@ public class ListBackendsConverter {
                                         builder =
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .ListBackendsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.backendCollection(response.getItem());
 

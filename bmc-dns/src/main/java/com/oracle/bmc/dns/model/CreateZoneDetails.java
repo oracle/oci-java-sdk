@@ -145,34 +145,49 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateZoneDetails build() {
-            CreateZoneDetails __instance__ =
+            CreateZoneDetails model =
                     new CreateZoneDetails(
-                            name,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            zoneType,
-                            viewId,
-                            scope,
-                            externalMasters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.zoneType,
+                            this.viewId,
+                            this.scope,
+                            this.externalMasters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateZoneDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .zoneType(o.getZoneType())
-                            .viewId(o.getViewId())
-                            .scope(o.getScope())
-                            .externalMasters(o.getExternalMasters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateZoneDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("zoneType")) {
+                this.zoneType(model.getZoneType());
+            }
+            if (model.wasPropertyExplicitlySet("viewId")) {
+                this.viewId(model.getViewId());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("externalMasters")) {
+                this.externalMasters(model.getExternalMasters());
+            }
+            return this;
         }
     }
 
@@ -325,7 +340,6 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         sb.append(", viewId=").append(String.valueOf(this.viewId));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,8 +358,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
                 && java.util.Objects.equals(this.viewId, other.viewId)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.externalMasters, other.externalMasters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -358,16 +371,6 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         result =
                 (result * PRIME)
                         + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

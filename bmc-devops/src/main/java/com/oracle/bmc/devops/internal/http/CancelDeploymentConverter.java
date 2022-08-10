@@ -114,8 +114,8 @@ public class CancelDeploymentConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CancelDeploymentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployment(response.getItem());
 

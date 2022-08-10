@@ -70,19 +70,23 @@ public final class PPFFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PPFFormatEntry build() {
-            PPFFormatEntry __instance__ = new PPFFormatEntry(description, postProcessingFunction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PPFFormatEntry model =
+                    new PPFFormatEntry(this.description, this.postProcessingFunction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PPFFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .postProcessingFunction(o.getPostProcessingFunction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PPFFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("postProcessingFunction")) {
+                this.postProcessingFunction(model.getPostProcessingFunction());
+            }
+            return this;
         }
     }
 
@@ -138,7 +142,6 @@ public final class PPFFormatEntry extends FormatEntry {
         sb.append("PPFFormatEntry(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", postProcessingFunction=").append(String.valueOf(this.postProcessingFunction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,8 +157,7 @@ public final class PPFFormatEntry extends FormatEntry {
 
         PPFFormatEntry other = (PPFFormatEntry) o;
         return java.util.Objects.equals(this.postProcessingFunction, other.postProcessingFunction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +169,6 @@ public final class PPFFormatEntry extends FormatEntry {
                         + (this.postProcessingFunction == null
                                 ? 43
                                 : this.postProcessingFunction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -124,8 +124,8 @@ public class ListOpensearchVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.opensearch.responses
                                                         .ListOpensearchVersionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.opensearchVersionsCollection(response.getItem());
 

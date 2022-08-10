@@ -28,7 +28,7 @@ package com.oracle.bmc.marketplace.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreatePublicationPackage {
+public class CreatePublicationPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"packageVersion", "operatingSystem", "eula"})
     protected CreatePublicationPackage(
@@ -87,6 +87,7 @@ public class CreatePublicationPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePublicationPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("packageVersion=").append(String.valueOf(this.packageVersion));
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
         sb.append(", eula=").append(String.valueOf(this.eula));
@@ -106,7 +107,8 @@ public class CreatePublicationPackage {
         CreatePublicationPackage other = (CreatePublicationPackage) o;
         return java.util.Objects.equals(this.packageVersion, other.packageVersion)
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
-                && java.util.Objects.equals(this.eula, other.eula);
+                && java.util.Objects.equals(this.eula, other.eula)
+                && super.equals(other);
     }
 
     @Override
@@ -120,6 +122,7 @@ public class CreatePublicationPackage {
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
         result = (result * PRIME) + (this.eula == null ? 43 : this.eula.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

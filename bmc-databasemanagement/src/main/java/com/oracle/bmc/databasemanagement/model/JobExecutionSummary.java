@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = JobExecutionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobExecutionSummary {
+public final class JobExecutionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -338,50 +338,81 @@ public final class JobExecutionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobExecutionSummary build() {
-            JobExecutionSummary __instance__ =
+            JobExecutionSummary model =
                     new JobExecutionSummary(
-                            id,
-                            name,
-                            compartmentId,
-                            managedDatabaseGroupId,
-                            managedDatabaseId,
-                            managedDatabaseName,
-                            databaseType,
-                            databaseSubType,
-                            deploymentType,
-                            isCluster,
-                            workloadType,
-                            jobId,
-                            jobName,
-                            status,
-                            timeCreated,
-                            timeCompleted);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.compartmentId,
+                            this.managedDatabaseGroupId,
+                            this.managedDatabaseId,
+                            this.managedDatabaseName,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.deploymentType,
+                            this.isCluster,
+                            this.workloadType,
+                            this.jobId,
+                            this.jobName,
+                            this.status,
+                            this.timeCreated,
+                            this.timeCompleted);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobExecutionSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .managedDatabaseGroupId(o.getManagedDatabaseGroupId())
-                            .managedDatabaseId(o.getManagedDatabaseId())
-                            .managedDatabaseName(o.getManagedDatabaseName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .deploymentType(o.getDeploymentType())
-                            .isCluster(o.getIsCluster())
-                            .workloadType(o.getWorkloadType())
-                            .jobId(o.getJobId())
-                            .jobName(o.getJobName())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeCompleted(o.getTimeCompleted());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobExecutionSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseGroupId")) {
+                this.managedDatabaseGroupId(model.getManagedDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseId")) {
+                this.managedDatabaseId(model.getManagedDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseName")) {
+                this.managedDatabaseName(model.getManagedDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("isCluster")) {
+                this.isCluster(model.getIsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            if (model.wasPropertyExplicitlySet("jobId")) {
+                this.jobId(model.getJobId());
+            }
+            if (model.wasPropertyExplicitlySet("jobName")) {
+                this.jobName(model.getJobName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeCompleted")) {
+                this.timeCompleted(model.getTimeCompleted());
+            }
+            return this;
         }
     }
 
@@ -633,6 +664,7 @@ public final class JobExecutionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobExecutionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -649,7 +681,6 @@ public final class JobExecutionSummary {
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeCompleted=").append(String.valueOf(this.timeCompleted));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -681,7 +712,7 @@ public final class JobExecutionSummary {
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeCompleted, other.timeCompleted)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -722,16 +753,7 @@ public final class JobExecutionSummary {
         result =
                 (result * PRIME)
                         + (this.timeCompleted == null ? 43 : this.timeCompleted.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

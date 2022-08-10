@@ -18,7 +18,7 @@ package com.oracle.bmc.healthchecks.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HttpMonitor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HttpMonitor {
+public final class HttpMonitor extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -398,54 +398,89 @@ public final class HttpMonitor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HttpMonitor build() {
-            HttpMonitor __instance__ =
+            HttpMonitor model =
                     new HttpMonitor(
-                            id,
-                            resultsUrl,
-                            homeRegion,
-                            timeCreated,
-                            compartmentId,
-                            targets,
-                            vantagePointNames,
-                            port,
-                            timeoutInSeconds,
-                            protocol,
-                            method,
-                            path,
-                            headers,
-                            displayName,
-                            intervalInSeconds,
-                            isEnabled,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.resultsUrl,
+                            this.homeRegion,
+                            this.timeCreated,
+                            this.compartmentId,
+                            this.targets,
+                            this.vantagePointNames,
+                            this.port,
+                            this.timeoutInSeconds,
+                            this.protocol,
+                            this.method,
+                            this.path,
+                            this.headers,
+                            this.displayName,
+                            this.intervalInSeconds,
+                            this.isEnabled,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HttpMonitor o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .resultsUrl(o.getResultsUrl())
-                            .homeRegion(o.getHomeRegion())
-                            .timeCreated(o.getTimeCreated())
-                            .compartmentId(o.getCompartmentId())
-                            .targets(o.getTargets())
-                            .vantagePointNames(o.getVantagePointNames())
-                            .port(o.getPort())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .protocol(o.getProtocol())
-                            .method(o.getMethod())
-                            .path(o.getPath())
-                            .headers(o.getHeaders())
-                            .displayName(o.getDisplayName())
-                            .intervalInSeconds(o.getIntervalInSeconds())
-                            .isEnabled(o.getIsEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HttpMonitor model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resultsUrl")) {
+                this.resultsUrl(model.getResultsUrl());
+            }
+            if (model.wasPropertyExplicitlySet("homeRegion")) {
+                this.homeRegion(model.getHomeRegion());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("targets")) {
+                this.targets(model.getTargets());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePointNames")) {
+                this.vantagePointNames(model.getVantagePointNames());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("method")) {
+                this.method(model.getMethod());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("intervalInSeconds")) {
+                this.intervalInSeconds(model.getIntervalInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -747,6 +782,7 @@ public final class HttpMonitor {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HttpMonitor(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", resultsUrl=").append(String.valueOf(this.resultsUrl));
         sb.append(", homeRegion=").append(String.valueOf(this.homeRegion));
@@ -765,7 +801,6 @@ public final class HttpMonitor {
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -798,7 +833,7 @@ public final class HttpMonitor {
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -831,16 +866,7 @@ public final class HttpMonitor {
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "networkingTopology"
     })
     private GetNetworkingTopologyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.NetworkingTopology networkingTopology) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.networkingTopology = networkingTopology;
@@ -75,6 +77,13 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetNetworkingTopologyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             networkingTopology(o.getNetworkingTopology());
@@ -149,7 +159,7 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetNetworkingTopologyResponse build() {
             return new GetNetworkingTopologyResponse(
-                    __httpStatusCode__, etag, opcRequestId, networkingTopology);
+                    __httpStatusCode__, headers, etag, opcRequestId, networkingTopology);
         }
     }
 

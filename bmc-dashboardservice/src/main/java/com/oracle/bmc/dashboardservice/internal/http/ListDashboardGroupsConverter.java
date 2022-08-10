@@ -173,8 +173,8 @@ public class ListDashboardGroupsConverter {
                                         builder =
                                                 com.oracle.bmc.dashboardservice.responses
                                                         .ListDashboardGroupsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dashboardGroupCollection(response.getItem());
 

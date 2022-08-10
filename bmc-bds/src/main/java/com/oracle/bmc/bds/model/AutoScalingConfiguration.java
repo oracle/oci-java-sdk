@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = AutoScalingConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutoScalingConfiguration {
+public final class AutoScalingConfiguration
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -174,34 +175,49 @@ public final class AutoScalingConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutoScalingConfiguration build() {
-            AutoScalingConfiguration __instance__ =
+            AutoScalingConfiguration model =
                     new AutoScalingConfiguration(
-                            id,
-                            displayName,
-                            nodeType,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            policy,
-                            policyDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.nodeType,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.policy,
+                            this.policyDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutoScalingConfiguration o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .nodeType(o.getNodeType())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .policy(o.getPolicy())
-                            .policyDetails(o.getPolicyDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutoScalingConfiguration model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("nodeType")) {
+                this.nodeType(model.getNodeType());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("policyDetails")) {
+                this.policyDetails(model.getPolicyDetails());
+            }
+            return this;
         }
     }
 
@@ -382,6 +398,7 @@ public final class AutoScalingConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutoScalingConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
@@ -390,7 +407,6 @@ public final class AutoScalingConfiguration {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", policyDetails=").append(String.valueOf(this.policyDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -413,7 +429,7 @@ public final class AutoScalingConfiguration {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.policyDetails, other.policyDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -432,16 +448,7 @@ public final class AutoScalingConfiguration {
         result =
                 (result * PRIME)
                         + (this.policyDetails == null ? 43 : this.policyDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

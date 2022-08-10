@@ -66,6 +66,7 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "opcContentMd5",
@@ -73,11 +74,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private UploadPartResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcContentMd5,
             String eTag) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.opcContentMd5 = opcContentMd5;
@@ -89,6 +91,13 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -162,6 +171,7 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UploadPartResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcContentMd5(o.getOpcContentMd5());
@@ -176,7 +186,12 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public UploadPartResponse build() {
             return new UploadPartResponse(
-                    __httpStatusCode__, opcClientRequestId, opcRequestId, opcContentMd5, eTag);
+                    __httpStatusCode__,
+                    headers,
+                    opcClientRequestId,
+                    opcRequestId,
+                    opcContentMd5,
+                    eTag);
         }
     }
 

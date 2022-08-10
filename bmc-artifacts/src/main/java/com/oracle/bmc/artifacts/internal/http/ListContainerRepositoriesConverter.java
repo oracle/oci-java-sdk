@@ -185,8 +185,8 @@ public class ListContainerRepositoriesConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .ListContainerRepositoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerRepositoryCollection(response.getItem());
 

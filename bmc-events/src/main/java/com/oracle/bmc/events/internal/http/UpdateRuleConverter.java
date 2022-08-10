@@ -103,7 +103,8 @@ public class UpdateRuleConverter {
 
                                 com.oracle.bmc.events.responses.UpdateRuleResponse.Builder builder =
                                         com.oracle.bmc.events.responses.UpdateRuleResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.rule(response.getItem());
 

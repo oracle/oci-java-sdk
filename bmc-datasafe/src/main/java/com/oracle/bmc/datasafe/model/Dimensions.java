@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Dimensions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Dimensions {
+public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetId", "sensitiveDataModelId"})
     public Dimensions(String targetId, String sensitiveDataModelId) {
@@ -65,18 +65,22 @@ public final class Dimensions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Dimensions build() {
-            Dimensions __instance__ = new Dimensions(targetId, sensitiveDataModelId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Dimensions model = new Dimensions(this.targetId, this.sensitiveDataModelId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Dimensions o) {
-            Builder copiedBuilder =
-                    targetId(o.getTargetId()).sensitiveDataModelId(o.getSensitiveDataModelId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Dimensions model) {
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveDataModelId")) {
+                this.sensitiveDataModelId(model.getSensitiveDataModelId());
+            }
+            return this;
         }
     }
 
@@ -132,9 +136,9 @@ public final class Dimensions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Dimensions(");
+        sb.append("super=").append(super.toString());
         sb.append("targetId=").append(String.valueOf(this.targetId));
         sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,7 +155,7 @@ public final class Dimensions {
         Dimensions other = (Dimensions) o;
         return java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +168,7 @@ public final class Dimensions {
                         + (this.sensitiveDataModelId == null
                                 ? 43
                                 : this.sensitiveDataModelId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

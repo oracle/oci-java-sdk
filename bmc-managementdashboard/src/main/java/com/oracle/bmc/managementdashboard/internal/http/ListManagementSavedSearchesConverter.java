@@ -159,8 +159,8 @@ public class ListManagementSavedSearchesConverter {
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .ListManagementSavedSearchesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementSavedSearchCollection(response.getItem());
 

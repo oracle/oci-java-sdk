@@ -19,7 +19,8 @@ package com.oracle.bmc.optimizer.model;
     builder = BulkApplyRecommendationsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkApplyRecommendationsDetails {
+public final class BulkApplyRecommendationsDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceActionIds", "actions", "status", "timeStatusEnd"})
     public BulkApplyRecommendationsDetails(
@@ -119,23 +120,30 @@ public final class BulkApplyRecommendationsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkApplyRecommendationsDetails build() {
-            BulkApplyRecommendationsDetails __instance__ =
+            BulkApplyRecommendationsDetails model =
                     new BulkApplyRecommendationsDetails(
-                            resourceActionIds, actions, status, timeStatusEnd);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceActionIds, this.actions, this.status, this.timeStatusEnd);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkApplyRecommendationsDetails o) {
-            Builder copiedBuilder =
-                    resourceActionIds(o.getResourceActionIds())
-                            .actions(o.getActions())
-                            .status(o.getStatus())
-                            .timeStatusEnd(o.getTimeStatusEnd());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkApplyRecommendationsDetails model) {
+            if (model.wasPropertyExplicitlySet("resourceActionIds")) {
+                this.resourceActionIds(model.getResourceActionIds());
+            }
+            if (model.wasPropertyExplicitlySet("actions")) {
+                this.actions(model.getActions());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeStatusEnd")) {
+                this.timeStatusEnd(model.getTimeStatusEnd());
+            }
+            return this;
         }
     }
 
@@ -233,11 +241,11 @@ public final class BulkApplyRecommendationsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkApplyRecommendationsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceActionIds=").append(String.valueOf(this.resourceActionIds));
         sb.append(", actions=").append(String.valueOf(this.actions));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeStatusEnd=").append(String.valueOf(this.timeStatusEnd));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -256,7 +264,7 @@ public final class BulkApplyRecommendationsDetails {
                 && java.util.Objects.equals(this.actions, other.actions)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.timeStatusEnd, other.timeStatusEnd)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -271,16 +279,7 @@ public final class BulkApplyRecommendationsDetails {
         result =
                 (result * PRIME)
                         + (this.timeStatusEnd == null ? 43 : this.timeStatusEnd.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

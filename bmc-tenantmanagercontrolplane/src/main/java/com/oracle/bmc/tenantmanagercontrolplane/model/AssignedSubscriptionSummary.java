@@ -19,7 +19,8 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
     builder = AssignedSubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AssignedSubscriptionSummary {
+public final class AssignedSubscriptionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -243,40 +244,61 @@ public final class AssignedSubscriptionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssignedSubscriptionSummary build() {
-            AssignedSubscriptionSummary __instance__ =
+            AssignedSubscriptionSummary model =
                     new AssignedSubscriptionSummary(
-                            id,
-                            compartmentId,
-                            classicSubscriptionId,
-                            serviceName,
-                            isClassicSubscription,
-                            regionAssignment,
-                            lifecycleState,
-                            startDate,
-                            endDate,
-                            timeUpdated,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.classicSubscriptionId,
+                            this.serviceName,
+                            this.isClassicSubscription,
+                            this.regionAssignment,
+                            this.lifecycleState,
+                            this.startDate,
+                            this.endDate,
+                            this.timeUpdated,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AssignedSubscriptionSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .classicSubscriptionId(o.getClassicSubscriptionId())
-                            .serviceName(o.getServiceName())
-                            .isClassicSubscription(o.getIsClassicSubscription())
-                            .regionAssignment(o.getRegionAssignment())
-                            .lifecycleState(o.getLifecycleState())
-                            .startDate(o.getStartDate())
-                            .endDate(o.getEndDate())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AssignedSubscriptionSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("classicSubscriptionId")) {
+                this.classicSubscriptionId(model.getClassicSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("isClassicSubscription")) {
+                this.isClassicSubscription(model.getIsClassicSubscription());
+            }
+            if (model.wasPropertyExplicitlySet("regionAssignment")) {
+                this.regionAssignment(model.getRegionAssignment());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("startDate")) {
+                this.startDate(model.getStartDate());
+            }
+            if (model.wasPropertyExplicitlySet("endDate")) {
+                this.endDate(model.getEndDate());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -458,6 +480,7 @@ public final class AssignedSubscriptionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AssignedSubscriptionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", classicSubscriptionId=").append(String.valueOf(this.classicSubscriptionId));
@@ -469,7 +492,6 @@ public final class AssignedSubscriptionSummary {
         sb.append(", endDate=").append(String.valueOf(this.endDate));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -495,7 +517,7 @@ public final class AssignedSubscriptionSummary {
                 && java.util.Objects.equals(this.endDate, other.endDate)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -527,16 +549,7 @@ public final class AssignedSubscriptionSummary {
         result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

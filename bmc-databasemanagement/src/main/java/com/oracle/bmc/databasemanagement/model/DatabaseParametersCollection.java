@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseParametersCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseParametersCollection {
+public final class DatabaseParametersCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseName",
@@ -133,24 +134,37 @@ public final class DatabaseParametersCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseParametersCollection build() {
-            DatabaseParametersCollection __instance__ =
+            DatabaseParametersCollection model =
                     new DatabaseParametersCollection(
-                            databaseName, databaseType, databaseSubType, databaseVersion, items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseName,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.databaseVersion,
+                            this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseParametersCollection o) {
-            Builder copiedBuilder =
-                    databaseName(o.getDatabaseName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseParametersCollection model) {
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -252,12 +266,12 @@ public final class DatabaseParametersCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseParametersCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -277,7 +291,7 @@ public final class DatabaseParametersCollection {
                 && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -293,16 +307,7 @@ public final class DatabaseParametersCollection {
                 (result * PRIME)
                         + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -144,8 +144,8 @@ public class ListLicenseRecordsConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .ListLicenseRecordsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.licenseRecordCollection(response.getItem());
 

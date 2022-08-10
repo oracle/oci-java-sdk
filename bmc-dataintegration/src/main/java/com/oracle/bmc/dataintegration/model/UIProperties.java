@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UIProperties.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UIProperties {
+public final class UIProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"coordinateX", "coordinateY"})
     public UIProperties(java.math.BigDecimal coordinateX, java.math.BigDecimal coordinateY) {
@@ -65,17 +65,22 @@ public final class UIProperties {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UIProperties build() {
-            UIProperties __instance__ = new UIProperties(coordinateX, coordinateY);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UIProperties model = new UIProperties(this.coordinateX, this.coordinateY);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UIProperties o) {
-            Builder copiedBuilder = coordinateX(o.getCoordinateX()).coordinateY(o.getCoordinateY());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UIProperties model) {
+            if (model.wasPropertyExplicitlySet("coordinateX")) {
+                this.coordinateX(model.getCoordinateX());
+            }
+            if (model.wasPropertyExplicitlySet("coordinateY")) {
+                this.coordinateY(model.getCoordinateY());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class UIProperties {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UIProperties(");
+        sb.append("super=").append(super.toString());
         sb.append("coordinateX=").append(String.valueOf(this.coordinateX));
         sb.append(", coordinateY=").append(String.valueOf(this.coordinateY));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class UIProperties {
         UIProperties other = (UIProperties) o;
         return java.util.Objects.equals(this.coordinateX, other.coordinateX)
                 && java.util.Objects.equals(this.coordinateY, other.coordinateY)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class UIProperties {
         int result = 1;
         result = (result * PRIME) + (this.coordinateX == null ? 43 : this.coordinateX.hashCode());
         result = (result * PRIME) + (this.coordinateY == null ? 43 : this.coordinateY.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

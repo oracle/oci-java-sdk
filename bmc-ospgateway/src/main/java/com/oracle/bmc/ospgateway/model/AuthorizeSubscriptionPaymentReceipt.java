@@ -19,7 +19,8 @@ package com.oracle.bmc.ospgateway.model;
     builder = AuthorizeSubscriptionPaymentReceipt.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthorizeSubscriptionPaymentReceipt {
+public final class AuthorizeSubscriptionPaymentReceipt
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headerId", "apiToken", "userToken"})
     public AuthorizeSubscriptionPaymentReceipt(String headerId, String apiToken, String userToken) {
@@ -84,19 +85,27 @@ public final class AuthorizeSubscriptionPaymentReceipt {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuthorizeSubscriptionPaymentReceipt build() {
-            AuthorizeSubscriptionPaymentReceipt __instance__ =
-                    new AuthorizeSubscriptionPaymentReceipt(headerId, apiToken, userToken);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AuthorizeSubscriptionPaymentReceipt model =
+                    new AuthorizeSubscriptionPaymentReceipt(
+                            this.headerId, this.apiToken, this.userToken);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuthorizeSubscriptionPaymentReceipt o) {
-            Builder copiedBuilder =
-                    headerId(o.getHeaderId()).apiToken(o.getApiToken()).userToken(o.getUserToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuthorizeSubscriptionPaymentReceipt model) {
+            if (model.wasPropertyExplicitlySet("headerId")) {
+                this.headerId(model.getHeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("apiToken")) {
+                this.apiToken(model.getApiToken());
+            }
+            if (model.wasPropertyExplicitlySet("userToken")) {
+                this.userToken(model.getUserToken());
+            }
+            return this;
         }
     }
 
@@ -166,10 +175,10 @@ public final class AuthorizeSubscriptionPaymentReceipt {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthorizeSubscriptionPaymentReceipt(");
+        sb.append("super=").append(super.toString());
         sb.append("headerId=").append(String.valueOf(this.headerId));
         sb.append(", apiToken=").append(String.valueOf(this.apiToken));
         sb.append(", userToken=").append(String.valueOf(this.userToken));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +196,7 @@ public final class AuthorizeSubscriptionPaymentReceipt {
         return java.util.Objects.equals(this.headerId, other.headerId)
                 && java.util.Objects.equals(this.apiToken, other.apiToken)
                 && java.util.Objects.equals(this.userToken, other.userToken)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -197,16 +206,7 @@ public final class AuthorizeSubscriptionPaymentReceipt {
         result = (result * PRIME) + (this.headerId == null ? 43 : this.headerId.hashCode());
         result = (result * PRIME) + (this.apiToken == null ? 43 : this.apiToken.hashCode());
         result = (result * PRIME) + (this.userToken == null ? 43 : this.userToken.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

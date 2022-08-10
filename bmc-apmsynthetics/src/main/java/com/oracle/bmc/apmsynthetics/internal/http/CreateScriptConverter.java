@@ -109,8 +109,8 @@ public class CreateScriptConverter {
                                         builder =
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .CreateScriptResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.script(response.getItem());
 

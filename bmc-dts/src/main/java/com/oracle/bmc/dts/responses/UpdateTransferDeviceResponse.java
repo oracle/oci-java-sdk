@@ -49,16 +49,18 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "transferDevice"
     })
     private UpdateTransferDeviceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferDevice transferDevice) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.transferDevice = transferDevice;
@@ -69,6 +71,13 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(UpdateTransferDeviceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             transferDevice(o.getTransferDevice());
@@ -136,7 +146,7 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
          */
         public UpdateTransferDeviceResponse build() {
             return new UpdateTransferDeviceResponse(
-                    __httpStatusCode__, opcRequestId, etag, transferDevice);
+                    __httpStatusCode__, headers, opcRequestId, etag, transferDevice);
         }
     }
 

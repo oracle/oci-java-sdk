@@ -59,16 +59,18 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "eTag",
         "steeringPolicy"
     })
     private UpdateSteeringPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.eTag = eTag;
         this.steeringPolicy = steeringPolicy;
@@ -79,6 +81,13 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -143,6 +152,7 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(UpdateSteeringPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
             steeringPolicy(o.getSteeringPolicy());
@@ -156,7 +166,7 @@ public class UpdateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public UpdateSteeringPolicyResponse build() {
             return new UpdateSteeringPolicyResponse(
-                    __httpStatusCode__, opcRequestId, eTag, steeringPolicy);
+                    __httpStatusCode__, headers, opcRequestId, eTag, steeringPolicy);
         }
     }
 

@@ -171,48 +171,77 @@ public final class NumericAttribute extends AttributeProfileResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NumericAttribute build() {
-            NumericAttribute __instance__ =
+            NumericAttribute model =
                     new NumericAttribute(
-                            name,
-                            min,
-                            max,
-                            nullCount,
-                            distinctCount,
-                            uniqueCount,
-                            duplicateCount,
-                            valueFrequencies,
-                            mean,
-                            median,
-                            standardDeviation,
-                            variance,
-                            outlier,
-                            histogram,
-                            patternFrequencies);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.min,
+                            this.max,
+                            this.nullCount,
+                            this.distinctCount,
+                            this.uniqueCount,
+                            this.duplicateCount,
+                            this.valueFrequencies,
+                            this.mean,
+                            this.median,
+                            this.standardDeviation,
+                            this.variance,
+                            this.outlier,
+                            this.histogram,
+                            this.patternFrequencies);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NumericAttribute o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .min(o.getMin())
-                            .max(o.getMax())
-                            .nullCount(o.getNullCount())
-                            .distinctCount(o.getDistinctCount())
-                            .uniqueCount(o.getUniqueCount())
-                            .duplicateCount(o.getDuplicateCount())
-                            .valueFrequencies(o.getValueFrequencies())
-                            .mean(o.getMean())
-                            .median(o.getMedian())
-                            .standardDeviation(o.getStandardDeviation())
-                            .variance(o.getVariance())
-                            .outlier(o.getOutlier())
-                            .histogram(o.getHistogram())
-                            .patternFrequencies(o.getPatternFrequencies());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NumericAttribute model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("nullCount")) {
+                this.nullCount(model.getNullCount());
+            }
+            if (model.wasPropertyExplicitlySet("distinctCount")) {
+                this.distinctCount(model.getDistinctCount());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueCount")) {
+                this.uniqueCount(model.getUniqueCount());
+            }
+            if (model.wasPropertyExplicitlySet("duplicateCount")) {
+                this.duplicateCount(model.getDuplicateCount());
+            }
+            if (model.wasPropertyExplicitlySet("valueFrequencies")) {
+                this.valueFrequencies(model.getValueFrequencies());
+            }
+            if (model.wasPropertyExplicitlySet("mean")) {
+                this.mean(model.getMean());
+            }
+            if (model.wasPropertyExplicitlySet("median")) {
+                this.median(model.getMedian());
+            }
+            if (model.wasPropertyExplicitlySet("standardDeviation")) {
+                this.standardDeviation(model.getStandardDeviation());
+            }
+            if (model.wasPropertyExplicitlySet("variance")) {
+                this.variance(model.getVariance());
+            }
+            if (model.wasPropertyExplicitlySet("outlier")) {
+                this.outlier(model.getOutlier());
+            }
+            if (model.wasPropertyExplicitlySet("histogram")) {
+                this.histogram(model.getHistogram());
+            }
+            if (model.wasPropertyExplicitlySet("patternFrequencies")) {
+                this.patternFrequencies(model.getPatternFrequencies());
+            }
+            return this;
         }
     }
 
@@ -339,7 +368,6 @@ public final class NumericAttribute extends AttributeProfileResult {
         sb.append(", outlier=").append(String.valueOf(this.outlier));
         sb.append(", histogram=").append(String.valueOf(this.histogram));
         sb.append(", patternFrequencies=").append(String.valueOf(this.patternFrequencies));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -361,8 +389,7 @@ public final class NumericAttribute extends AttributeProfileResult {
                 && java.util.Objects.equals(this.outlier, other.outlier)
                 && java.util.Objects.equals(this.histogram, other.histogram)
                 && java.util.Objects.equals(this.patternFrequencies, other.patternFrequencies)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -382,16 +409,6 @@ public final class NumericAttribute extends AttributeProfileResult {
                         + (this.patternFrequencies == null
                                 ? 43
                                 : this.patternFrequencies.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

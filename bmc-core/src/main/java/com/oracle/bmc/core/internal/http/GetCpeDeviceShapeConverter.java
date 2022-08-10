@@ -105,8 +105,8 @@ public class GetCpeDeviceShapeConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetCpeDeviceShapeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.cpeDeviceShapeDetail(response.getItem());
 

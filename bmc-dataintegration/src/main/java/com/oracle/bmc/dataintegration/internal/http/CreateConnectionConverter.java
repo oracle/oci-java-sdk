@@ -114,8 +114,8 @@ public class CreateConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .CreateConnectionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connection(response.getItem());
 

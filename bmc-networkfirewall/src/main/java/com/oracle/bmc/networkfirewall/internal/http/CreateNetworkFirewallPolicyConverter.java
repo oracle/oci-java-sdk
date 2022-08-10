@@ -116,8 +116,8 @@ public class CreateNetworkFirewallPolicyConverter {
                                                 com.oracle.bmc.networkfirewall.responses
                                                         .CreateNetworkFirewallPolicyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkFirewallPolicy(response.getItem());
 

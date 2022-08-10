@@ -104,8 +104,8 @@ public class CreateDatabaseInsightConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .CreateDatabaseInsightResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseInsight(response.getItem());
 

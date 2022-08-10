@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningAdvisorTaskSummaryFindingBenefits.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
+public final class SqlTuningAdvisorTaskSummaryFindingBenefits
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbTimeBeforeRecommended",
@@ -110,26 +111,33 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningAdvisorTaskSummaryFindingBenefits build() {
-            SqlTuningAdvisorTaskSummaryFindingBenefits __instance__ =
+            SqlTuningAdvisorTaskSummaryFindingBenefits model =
                     new SqlTuningAdvisorTaskSummaryFindingBenefits(
-                            dbTimeBeforeRecommended,
-                            dbTimeAfterRecommended,
-                            dbTimeAfterImplemented,
-                            dbTimeBeforeImplemented);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dbTimeBeforeRecommended,
+                            this.dbTimeAfterRecommended,
+                            this.dbTimeAfterImplemented,
+                            this.dbTimeBeforeImplemented);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningAdvisorTaskSummaryFindingBenefits o) {
-            Builder copiedBuilder =
-                    dbTimeBeforeRecommended(o.getDbTimeBeforeRecommended())
-                            .dbTimeAfterRecommended(o.getDbTimeAfterRecommended())
-                            .dbTimeAfterImplemented(o.getDbTimeAfterImplemented())
-                            .dbTimeBeforeImplemented(o.getDbTimeBeforeImplemented());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningAdvisorTaskSummaryFindingBenefits model) {
+            if (model.wasPropertyExplicitlySet("dbTimeBeforeRecommended")) {
+                this.dbTimeBeforeRecommended(model.getDbTimeBeforeRecommended());
+            }
+            if (model.wasPropertyExplicitlySet("dbTimeAfterRecommended")) {
+                this.dbTimeAfterRecommended(model.getDbTimeAfterRecommended());
+            }
+            if (model.wasPropertyExplicitlySet("dbTimeAfterImplemented")) {
+                this.dbTimeAfterImplemented(model.getDbTimeAfterImplemented());
+            }
+            if (model.wasPropertyExplicitlySet("dbTimeBeforeImplemented")) {
+                this.dbTimeBeforeImplemented(model.getDbTimeBeforeImplemented());
+            }
+            return this;
         }
     }
 
@@ -213,12 +221,12 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningAdvisorTaskSummaryFindingBenefits(");
+        sb.append("super=").append(super.toString());
         sb.append("dbTimeBeforeRecommended=").append(String.valueOf(this.dbTimeBeforeRecommended));
         sb.append(", dbTimeAfterRecommended=").append(String.valueOf(this.dbTimeAfterRecommended));
         sb.append(", dbTimeAfterImplemented=").append(String.valueOf(this.dbTimeAfterImplemented));
         sb.append(", dbTimeBeforeImplemented=")
                 .append(String.valueOf(this.dbTimeBeforeImplemented));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,7 +249,7 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
                         this.dbTimeAfterImplemented, other.dbTimeAfterImplemented)
                 && java.util.Objects.equals(
                         this.dbTimeBeforeImplemented, other.dbTimeBeforeImplemented)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -268,16 +276,7 @@ public final class SqlTuningAdvisorTaskSummaryFindingBenefits {
                         + (this.dbTimeBeforeImplemented == null
                                 ? 43
                                 : this.dbTimeBeforeImplemented.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -173,8 +173,8 @@ public class ListPrivateApplicationPackagesConverter {
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .ListPrivateApplicationPackagesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateApplicationPackageCollection(response.getItem());
 

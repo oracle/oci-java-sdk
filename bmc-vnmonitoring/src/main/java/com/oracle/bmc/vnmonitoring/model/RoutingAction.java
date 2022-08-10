@@ -36,7 +36,7 @@ package com.oracle.bmc.vnmonitoring.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class RoutingAction {
+public class RoutingAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"actionType"})
     protected RoutingAction(ActionType actionType) {
@@ -120,6 +120,7 @@ public class RoutingAction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoutingAction(");
+        sb.append("super=").append(super.toString());
         sb.append("actionType=").append(String.valueOf(this.actionType));
         sb.append(")");
         return sb.toString();
@@ -135,7 +136,7 @@ public class RoutingAction {
         }
 
         RoutingAction other = (RoutingAction) o;
-        return java.util.Objects.equals(this.actionType, other.actionType);
+        return java.util.Objects.equals(this.actionType, other.actionType) && super.equals(other);
     }
 
     @Override
@@ -143,6 +144,7 @@ public class RoutingAction {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

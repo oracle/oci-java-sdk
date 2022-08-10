@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = PasswordResetAuthenticationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PasswordResetAuthenticationRequest {
+public final class PasswordResetAuthenticationRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userId", "passwordResetToken"})
     public PasswordResetAuthenticationRequest(String userId, String passwordResetToken) {
@@ -67,19 +68,23 @@ public final class PasswordResetAuthenticationRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PasswordResetAuthenticationRequest build() {
-            PasswordResetAuthenticationRequest __instance__ =
-                    new PasswordResetAuthenticationRequest(userId, passwordResetToken);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PasswordResetAuthenticationRequest model =
+                    new PasswordResetAuthenticationRequest(this.userId, this.passwordResetToken);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PasswordResetAuthenticationRequest o) {
-            Builder copiedBuilder =
-                    userId(o.getUserId()).passwordResetToken(o.getPasswordResetToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PasswordResetAuthenticationRequest model) {
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordResetToken")) {
+                this.passwordResetToken(model.getPasswordResetToken());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class PasswordResetAuthenticationRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PasswordResetAuthenticationRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("userId=").append(String.valueOf(this.userId));
         sb.append(", passwordResetToken=").append(String.valueOf(this.passwordResetToken));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class PasswordResetAuthenticationRequest {
         PasswordResetAuthenticationRequest other = (PasswordResetAuthenticationRequest) o;
         return java.util.Objects.equals(this.userId, other.userId)
                 && java.util.Objects.equals(this.passwordResetToken, other.passwordResetToken)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +172,7 @@ public final class PasswordResetAuthenticationRequest {
                         + (this.passwordResetToken == null
                                 ? 43
                                 : this.passwordResetToken.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

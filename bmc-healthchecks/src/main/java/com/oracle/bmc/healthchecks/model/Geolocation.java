@@ -17,7 +17,7 @@ package com.oracle.bmc.healthchecks.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Geolocation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Geolocation {
+public final class Geolocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "geoKey",
@@ -185,32 +185,45 @@ public final class Geolocation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Geolocation build() {
-            Geolocation __instance__ =
+            Geolocation model =
                     new Geolocation(
-                            geoKey,
-                            adminDivCode,
-                            cityName,
-                            countryCode,
-                            countryName,
-                            latitude,
-                            longitude);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.geoKey,
+                            this.adminDivCode,
+                            this.cityName,
+                            this.countryCode,
+                            this.countryName,
+                            this.latitude,
+                            this.longitude);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Geolocation o) {
-            Builder copiedBuilder =
-                    geoKey(o.getGeoKey())
-                            .adminDivCode(o.getAdminDivCode())
-                            .cityName(o.getCityName())
-                            .countryCode(o.getCountryCode())
-                            .countryName(o.getCountryName())
-                            .latitude(o.getLatitude())
-                            .longitude(o.getLongitude());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Geolocation model) {
+            if (model.wasPropertyExplicitlySet("geoKey")) {
+                this.geoKey(model.getGeoKey());
+            }
+            if (model.wasPropertyExplicitlySet("adminDivCode")) {
+                this.adminDivCode(model.getAdminDivCode());
+            }
+            if (model.wasPropertyExplicitlySet("cityName")) {
+                this.cityName(model.getCityName());
+            }
+            if (model.wasPropertyExplicitlySet("countryCode")) {
+                this.countryCode(model.getCountryCode());
+            }
+            if (model.wasPropertyExplicitlySet("countryName")) {
+                this.countryName(model.getCountryName());
+            }
+            if (model.wasPropertyExplicitlySet("latitude")) {
+                this.latitude(model.getLatitude());
+            }
+            if (model.wasPropertyExplicitlySet("longitude")) {
+                this.longitude(model.getLongitude());
+            }
+            return this;
         }
     }
 
@@ -356,6 +369,7 @@ public final class Geolocation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Geolocation(");
+        sb.append("super=").append(super.toString());
         sb.append("geoKey=").append(String.valueOf(this.geoKey));
         sb.append(", adminDivCode=").append(String.valueOf(this.adminDivCode));
         sb.append(", cityName=").append(String.valueOf(this.cityName));
@@ -363,7 +377,6 @@ public final class Geolocation {
         sb.append(", countryName=").append(String.valueOf(this.countryName));
         sb.append(", latitude=").append(String.valueOf(this.latitude));
         sb.append(", longitude=").append(String.valueOf(this.longitude));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -385,7 +398,7 @@ public final class Geolocation {
                 && java.util.Objects.equals(this.countryName, other.countryName)
                 && java.util.Objects.equals(this.latitude, other.latitude)
                 && java.util.Objects.equals(this.longitude, other.longitude)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -399,16 +412,7 @@ public final class Geolocation {
         result = (result * PRIME) + (this.countryName == null ? 43 : this.countryName.hashCode());
         result = (result * PRIME) + (this.latitude == null ? 43 : this.latitude.hashCode());
         result = (result * PRIME) + (this.longitude == null ? 43 : this.longitude.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

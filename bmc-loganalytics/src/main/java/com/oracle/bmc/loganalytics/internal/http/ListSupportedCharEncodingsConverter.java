@@ -131,8 +131,8 @@ public class ListSupportedCharEncodingsConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListSupportedCharEncodingsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.charEncodingCollection(response.getItem());
 

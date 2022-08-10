@@ -17,7 +17,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Link.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Link {
+public final class Link extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -165,32 +165,45 @@ public final class Link {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Link build() {
-            Link __instance__ =
+            Link model =
                     new Link(
-                            id,
-                            parentTenancyId,
-                            childTenancyId,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            timeTerminated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.parentTenancyId,
+                            this.childTenancyId,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.timeTerminated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Link o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .parentTenancyId(o.getParentTenancyId())
-                            .childTenancyId(o.getChildTenancyId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeTerminated(o.getTimeTerminated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Link model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("parentTenancyId")) {
+                this.parentTenancyId(model.getParentTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("childTenancyId")) {
+                this.childTenancyId(model.getChildTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeTerminated")) {
+                this.timeTerminated(model.getTimeTerminated());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class Link {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Link(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", parentTenancyId=").append(String.valueOf(this.parentTenancyId));
         sb.append(", childTenancyId=").append(String.valueOf(this.childTenancyId));
@@ -323,7 +337,6 @@ public final class Link {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeTerminated=").append(String.valueOf(this.timeTerminated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class Link {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeTerminated, other.timeTerminated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -367,16 +380,7 @@ public final class Link {
         result =
                 (result * PRIME)
                         + (this.timeTerminated == null ? 43 : this.timeTerminated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

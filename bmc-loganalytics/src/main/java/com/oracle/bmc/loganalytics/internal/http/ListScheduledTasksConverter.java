@@ -181,8 +181,8 @@ public class ListScheduledTasksConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListScheduledTasksResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scheduledTaskCollection(response.getItem());
 

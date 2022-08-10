@@ -136,8 +136,8 @@ public class IngestDatabaseConfigurationConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .IngestDatabaseConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingestDatabaseConfigurationResponseDetails(
                                         response.getItem());

@@ -136,32 +136,45 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DBOSConfigInstance build() {
-            DBOSConfigInstance __instance__ =
+            DBOSConfigInstance model =
                     new DBOSConfigInstance(
-                            timeCollected,
-                            instanceName,
-                            hostName,
-                            numCPUs,
-                            numCPUCores,
-                            numCPUSockets,
-                            physicalMemoryBytes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.instanceName,
+                            this.hostName,
+                            this.numCPUs,
+                            this.numCPUCores,
+                            this.numCPUSockets,
+                            this.physicalMemoryBytes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DBOSConfigInstance o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .instanceName(o.getInstanceName())
-                            .hostName(o.getHostName())
-                            .numCPUs(o.getNumCPUs())
-                            .numCPUCores(o.getNumCPUCores())
-                            .numCPUSockets(o.getNumCPUSockets())
-                            .physicalMemoryBytes(o.getPhysicalMemoryBytes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DBOSConfigInstance model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("instanceName")) {
+                this.instanceName(model.getInstanceName());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("numCPUs")) {
+                this.numCPUs(model.getNumCPUs());
+            }
+            if (model.wasPropertyExplicitlySet("numCPUCores")) {
+                this.numCPUCores(model.getNumCPUCores());
+            }
+            if (model.wasPropertyExplicitlySet("numCPUSockets")) {
+                this.numCPUSockets(model.getNumCPUSockets());
+            }
+            if (model.wasPropertyExplicitlySet("physicalMemoryBytes")) {
+                this.physicalMemoryBytes(model.getPhysicalMemoryBytes());
+            }
+            return this;
         }
     }
 
@@ -298,7 +311,6 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
         sb.append(", numCPUCores=").append(String.valueOf(this.numCPUCores));
         sb.append(", numCPUSockets=").append(String.valueOf(this.numCPUSockets));
         sb.append(", physicalMemoryBytes=").append(String.valueOf(this.physicalMemoryBytes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -319,8 +331,7 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
                 && java.util.Objects.equals(this.numCPUCores, other.numCPUCores)
                 && java.util.Objects.equals(this.numCPUSockets, other.numCPUSockets)
                 && java.util.Objects.equals(this.physicalMemoryBytes, other.physicalMemoryBytes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -339,16 +350,6 @@ public final class DBOSConfigInstance extends DatabaseConfigurationMetricGroup {
                         + (this.physicalMemoryBytes == null
                                 ? 43
                                 : this.physicalMemoryBytes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

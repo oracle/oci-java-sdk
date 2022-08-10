@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = CreateBootVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBootVolumeDetails {
+public final class CreateBootVolumeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -319,42 +320,65 @@ public final class CreateBootVolumeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBootVolumeDetails build() {
-            CreateBootVolumeDetails __instance__ =
+            CreateBootVolumeDetails model =
                     new CreateBootVolumeDetails(
-                            availabilityDomain,
-                            backupPolicyId,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            kmsKeyId,
-                            sizeInGBs,
-                            vpusPerGB,
-                            sourceDetails,
-                            isAutoTuneEnabled,
-                            bootVolumeReplicas);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.backupPolicyId,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.kmsKeyId,
+                            this.sizeInGBs,
+                            this.vpusPerGB,
+                            this.sourceDetails,
+                            this.isAutoTuneEnabled,
+                            this.bootVolumeReplicas);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBootVolumeDetails o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .backupPolicyId(o.getBackupPolicyId())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .vpusPerGB(o.getVpusPerGB())
-                            .sourceDetails(o.getSourceDetails())
-                            .isAutoTuneEnabled(o.getIsAutoTuneEnabled())
-                            .bootVolumeReplicas(o.getBootVolumeReplicas());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBootVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicyId")) {
+                this.backupPolicyId(model.getBackupPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("vpusPerGB")) {
+                this.vpusPerGB(model.getVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoTuneEnabled")) {
+                this.isAutoTuneEnabled(model.getIsAutoTuneEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("bootVolumeReplicas")) {
+                this.bootVolumeReplicas(model.getBootVolumeReplicas());
+            }
+            return this;
         }
     }
 
@@ -605,6 +629,7 @@ public final class CreateBootVolumeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBootVolumeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", backupPolicyId=").append(String.valueOf(this.backupPolicyId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -617,7 +642,6 @@ public final class CreateBootVolumeDetails {
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", bootVolumeReplicas=").append(String.valueOf(this.bootVolumeReplicas));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -644,7 +668,7 @@ public final class CreateBootVolumeDetails {
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.bootVolumeReplicas, other.bootVolumeReplicas)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -679,16 +703,7 @@ public final class CreateBootVolumeDetails {
                         + (this.bootVolumeReplicas == null
                                 ? 43
                                 : this.bootVolumeReplicas.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

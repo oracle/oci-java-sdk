@@ -19,7 +19,7 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = AssociationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AssociationSummary {
+public final class AssociationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -190,34 +190,49 @@ public final class AssociationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssociationSummary build() {
-            AssociationSummary __instance__ =
+            AssociationSummary model =
                     new AssociationSummary(
-                            id,
-                            name,
-                            timeCreated,
-                            lifecycleState,
-                            certificatesResourceId,
-                            associatedResourceId,
-                            compartmentId,
-                            associationType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.certificatesResourceId,
+                            this.associatedResourceId,
+                            this.compartmentId,
+                            this.associationType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AssociationSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .certificatesResourceId(o.getCertificatesResourceId())
-                            .associatedResourceId(o.getAssociatedResourceId())
-                            .compartmentId(o.getCompartmentId())
-                            .associationType(o.getAssociationType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AssociationSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("certificatesResourceId")) {
+                this.certificatesResourceId(model.getCertificatesResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("associatedResourceId")) {
+                this.associatedResourceId(model.getAssociatedResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("associationType")) {
+                this.associationType(model.getAssociationType());
+            }
+            return this;
         }
     }
 
@@ -361,6 +376,7 @@ public final class AssociationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AssociationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -369,7 +385,6 @@ public final class AssociationSummary {
         sb.append(", associatedResourceId=").append(String.valueOf(this.associatedResourceId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", associationType=").append(String.valueOf(this.associationType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -393,7 +408,7 @@ public final class AssociationSummary {
                 && java.util.Objects.equals(this.associatedResourceId, other.associatedResourceId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.associationType, other.associationType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -422,16 +437,7 @@ public final class AssociationSummary {
         result =
                 (result * PRIME)
                         + (this.associationType == null ? 43 : this.associationType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -60,17 +60,19 @@ public class ListServiceAttachmentsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "serviceAttachmentCollection"
     })
     private ListServiceAttachmentsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.fusionapps.model.ServiceAttachmentCollection
                     serviceAttachmentCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.serviceAttachmentCollection = serviceAttachmentCollection;
@@ -81,6 +83,13 @@ public class ListServiceAttachmentsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class ListServiceAttachmentsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListServiceAttachmentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             serviceAttachmentCollection(o.getServiceAttachmentCollection());
@@ -161,7 +171,11 @@ public class ListServiceAttachmentsResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListServiceAttachmentsResponse build() {
             return new ListServiceAttachmentsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, serviceAttachmentCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    serviceAttachmentCollection);
         }
     }
 

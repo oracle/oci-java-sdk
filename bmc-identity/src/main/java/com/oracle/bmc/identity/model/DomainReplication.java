@@ -19,7 +19,7 @@ package com.oracle.bmc.identity.model;
     builder = DomainReplication.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DomainReplication {
+public final class DomainReplication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"opcWaterMark", "txnSeqNumber", "domainReplicationStates"})
     public DomainReplication(
@@ -88,21 +88,27 @@ public final class DomainReplication {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DomainReplication build() {
-            DomainReplication __instance__ =
-                    new DomainReplication(opcWaterMark, txnSeqNumber, domainReplicationStates);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DomainReplication model =
+                    new DomainReplication(
+                            this.opcWaterMark, this.txnSeqNumber, this.domainReplicationStates);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DomainReplication o) {
-            Builder copiedBuilder =
-                    opcWaterMark(o.getOpcWaterMark())
-                            .txnSeqNumber(o.getTxnSeqNumber())
-                            .domainReplicationStates(o.getDomainReplicationStates());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DomainReplication model) {
+            if (model.wasPropertyExplicitlySet("opcWaterMark")) {
+                this.opcWaterMark(model.getOpcWaterMark());
+            }
+            if (model.wasPropertyExplicitlySet("txnSeqNumber")) {
+                this.txnSeqNumber(model.getTxnSeqNumber());
+            }
+            if (model.wasPropertyExplicitlySet("domainReplicationStates")) {
+                this.domainReplicationStates(model.getDomainReplicationStates());
+            }
+            return this;
         }
     }
 
@@ -172,11 +178,11 @@ public final class DomainReplication {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DomainReplication(");
+        sb.append("super=").append(super.toString());
         sb.append("opcWaterMark=").append(String.valueOf(this.opcWaterMark));
         sb.append(", txnSeqNumber=").append(String.valueOf(this.txnSeqNumber));
         sb.append(", domainReplicationStates=")
                 .append(String.valueOf(this.domainReplicationStates));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -195,7 +201,7 @@ public final class DomainReplication {
                 && java.util.Objects.equals(this.txnSeqNumber, other.txnSeqNumber)
                 && java.util.Objects.equals(
                         this.domainReplicationStates, other.domainReplicationStates)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +215,7 @@ public final class DomainReplication {
                         + (this.domainReplicationStates == null
                                 ? 43
                                 : this.domainReplicationStates.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

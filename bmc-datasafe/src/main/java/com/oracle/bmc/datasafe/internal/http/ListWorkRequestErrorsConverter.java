@@ -130,8 +130,8 @@ public class ListWorkRequestErrorsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListWorkRequestErrorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

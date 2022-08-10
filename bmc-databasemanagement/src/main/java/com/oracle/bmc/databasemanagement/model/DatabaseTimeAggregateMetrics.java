@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseTimeAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseTimeAggregateMetrics {
+public final class DatabaseTimeAggregateMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cpuCount", "cpuTime", "waitTime", "userIoTime", "cluster"})
     public DatabaseTimeAggregateMetrics(
@@ -88,24 +89,37 @@ public final class DatabaseTimeAggregateMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseTimeAggregateMetrics build() {
-            DatabaseTimeAggregateMetrics __instance__ =
+            DatabaseTimeAggregateMetrics model =
                     new DatabaseTimeAggregateMetrics(
-                            cpuCount, cpuTime, waitTime, userIoTime, cluster);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cpuCount,
+                            this.cpuTime,
+                            this.waitTime,
+                            this.userIoTime,
+                            this.cluster);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseTimeAggregateMetrics o) {
-            Builder copiedBuilder =
-                    cpuCount(o.getCpuCount())
-                            .cpuTime(o.getCpuTime())
-                            .waitTime(o.getWaitTime())
-                            .userIoTime(o.getUserIoTime())
-                            .cluster(o.getCluster());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseTimeAggregateMetrics model) {
+            if (model.wasPropertyExplicitlySet("cpuCount")) {
+                this.cpuCount(model.getCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("cpuTime")) {
+                this.cpuTime(model.getCpuTime());
+            }
+            if (model.wasPropertyExplicitlySet("waitTime")) {
+                this.waitTime(model.getWaitTime());
+            }
+            if (model.wasPropertyExplicitlySet("userIoTime")) {
+                this.userIoTime(model.getUserIoTime());
+            }
+            if (model.wasPropertyExplicitlySet("cluster")) {
+                this.cluster(model.getCluster());
+            }
+            return this;
         }
     }
 
@@ -168,12 +182,12 @@ public final class DatabaseTimeAggregateMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseTimeAggregateMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("cpuCount=").append(String.valueOf(this.cpuCount));
         sb.append(", cpuTime=").append(String.valueOf(this.cpuTime));
         sb.append(", waitTime=").append(String.valueOf(this.waitTime));
         sb.append(", userIoTime=").append(String.valueOf(this.userIoTime));
         sb.append(", cluster=").append(String.valueOf(this.cluster));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +207,7 @@ public final class DatabaseTimeAggregateMetrics {
                 && java.util.Objects.equals(this.waitTime, other.waitTime)
                 && java.util.Objects.equals(this.userIoTime, other.userIoTime)
                 && java.util.Objects.equals(this.cluster, other.cluster)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -205,16 +219,7 @@ public final class DatabaseTimeAggregateMetrics {
         result = (result * PRIME) + (this.waitTime == null ? 43 : this.waitTime.hashCode());
         result = (result * PRIME) + (this.userIoTime == null ? 43 : this.userIoTime.hashCode());
         result = (result * PRIME) + (this.cluster == null ? 43 : this.cluster.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

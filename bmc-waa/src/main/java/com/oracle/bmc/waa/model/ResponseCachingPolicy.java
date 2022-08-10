@@ -20,7 +20,8 @@ package com.oracle.bmc.waa.model;
     builder = ResponseCachingPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResponseCachingPolicy {
+public final class ResponseCachingPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isResponseHeaderBasedCachingEnabled"})
     public ResponseCachingPolicy(Boolean isResponseHeaderBasedCachingEnabled) {
@@ -86,19 +87,21 @@ public final class ResponseCachingPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResponseCachingPolicy build() {
-            ResponseCachingPolicy __instance__ =
-                    new ResponseCachingPolicy(isResponseHeaderBasedCachingEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResponseCachingPolicy model =
+                    new ResponseCachingPolicy(this.isResponseHeaderBasedCachingEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResponseCachingPolicy o) {
-            Builder copiedBuilder =
-                    isResponseHeaderBasedCachingEnabled(o.getIsResponseHeaderBasedCachingEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResponseCachingPolicy model) {
+            if (model.wasPropertyExplicitlySet("isResponseHeaderBasedCachingEnabled")) {
+                this.isResponseHeaderBasedCachingEnabled(
+                        model.getIsResponseHeaderBasedCachingEnabled());
+            }
+            return this;
         }
     }
 
@@ -174,9 +177,9 @@ public final class ResponseCachingPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResponseCachingPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("isResponseHeaderBasedCachingEnabled=")
                 .append(String.valueOf(this.isResponseHeaderBasedCachingEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +197,7 @@ public final class ResponseCachingPolicy {
         return java.util.Objects.equals(
                         this.isResponseHeaderBasedCachingEnabled,
                         other.isResponseHeaderBasedCachingEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +209,7 @@ public final class ResponseCachingPolicy {
                         + (this.isResponseHeaderBasedCachingEnabled == null
                                 ? 43
                                 : this.isResponseHeaderBasedCachingEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

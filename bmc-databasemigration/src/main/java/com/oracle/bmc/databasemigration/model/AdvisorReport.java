@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AdvisorReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AdvisorReport {
+public final class AdvisorReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "reportLocationDetails",
@@ -150,30 +150,41 @@ public final class AdvisorReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AdvisorReport build() {
-            AdvisorReport __instance__ =
+            AdvisorReport model =
                     new AdvisorReport(
-                            reportLocationDetails,
-                            result,
-                            numberOfFatal,
-                            numberOfFatalBlockers,
-                            numberOfWarnings,
-                            numberOfInformationalResults);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.reportLocationDetails,
+                            this.result,
+                            this.numberOfFatal,
+                            this.numberOfFatalBlockers,
+                            this.numberOfWarnings,
+                            this.numberOfInformationalResults);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AdvisorReport o) {
-            Builder copiedBuilder =
-                    reportLocationDetails(o.getReportLocationDetails())
-                            .result(o.getResult())
-                            .numberOfFatal(o.getNumberOfFatal())
-                            .numberOfFatalBlockers(o.getNumberOfFatalBlockers())
-                            .numberOfWarnings(o.getNumberOfWarnings())
-                            .numberOfInformationalResults(o.getNumberOfInformationalResults());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AdvisorReport model) {
+            if (model.wasPropertyExplicitlySet("reportLocationDetails")) {
+                this.reportLocationDetails(model.getReportLocationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("result")) {
+                this.result(model.getResult());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfFatal")) {
+                this.numberOfFatal(model.getNumberOfFatal());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfFatalBlockers")) {
+                this.numberOfFatalBlockers(model.getNumberOfFatalBlockers());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfWarnings")) {
+                this.numberOfWarnings(model.getNumberOfWarnings());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfInformationalResults")) {
+                this.numberOfInformationalResults(model.getNumberOfInformationalResults());
+            }
+            return this;
         }
     }
 
@@ -288,6 +299,7 @@ public final class AdvisorReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AdvisorReport(");
+        sb.append("super=").append(super.toString());
         sb.append("reportLocationDetails=").append(String.valueOf(this.reportLocationDetails));
         sb.append(", result=").append(String.valueOf(this.result));
         sb.append(", numberOfFatal=").append(String.valueOf(this.numberOfFatal));
@@ -295,7 +307,6 @@ public final class AdvisorReport {
         sb.append(", numberOfWarnings=").append(String.valueOf(this.numberOfWarnings));
         sb.append(", numberOfInformationalResults=")
                 .append(String.valueOf(this.numberOfInformationalResults));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -317,7 +328,7 @@ public final class AdvisorReport {
                 && java.util.Objects.equals(this.numberOfWarnings, other.numberOfWarnings)
                 && java.util.Objects.equals(
                         this.numberOfInformationalResults, other.numberOfInformationalResults)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -346,16 +357,7 @@ public final class AdvisorReport {
                         + (this.numberOfInformationalResults == null
                                 ? 43
                                 : this.numberOfInformationalResults.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

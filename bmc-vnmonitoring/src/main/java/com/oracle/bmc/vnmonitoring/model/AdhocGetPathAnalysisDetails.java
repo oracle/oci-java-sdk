@@ -100,30 +100,41 @@ public final class AdhocGetPathAnalysisDetails extends GetPathAnalysisDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AdhocGetPathAnalysisDetails build() {
-            AdhocGetPathAnalysisDetails __instance__ =
+            AdhocGetPathAnalysisDetails model =
                     new AdhocGetPathAnalysisDetails(
-                            compartmentId,
-                            protocol,
-                            sourceEndpoint,
-                            destinationEndpoint,
-                            protocolParameters,
-                            queryOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.protocol,
+                            this.sourceEndpoint,
+                            this.destinationEndpoint,
+                            this.protocolParameters,
+                            this.queryOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AdhocGetPathAnalysisDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .protocol(o.getProtocol())
-                            .sourceEndpoint(o.getSourceEndpoint())
-                            .destinationEndpoint(o.getDestinationEndpoint())
-                            .protocolParameters(o.getProtocolParameters())
-                            .queryOptions(o.getQueryOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AdhocGetPathAnalysisDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEndpoint")) {
+                this.sourceEndpoint(model.getSourceEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("destinationEndpoint")) {
+                this.destinationEndpoint(model.getDestinationEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("protocolParameters")) {
+                this.protocolParameters(model.getProtocolParameters());
+            }
+            if (model.wasPropertyExplicitlySet("queryOptions")) {
+                this.queryOptions(model.getQueryOptions());
+            }
+            return this;
         }
     }
 
@@ -231,7 +242,6 @@ public final class AdhocGetPathAnalysisDetails extends GetPathAnalysisDetails {
         sb.append(", destinationEndpoint=").append(String.valueOf(this.destinationEndpoint));
         sb.append(", protocolParameters=").append(String.valueOf(this.protocolParameters));
         sb.append(", queryOptions=").append(String.valueOf(this.queryOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -252,8 +262,7 @@ public final class AdhocGetPathAnalysisDetails extends GetPathAnalysisDetails {
                 && java.util.Objects.equals(this.destinationEndpoint, other.destinationEndpoint)
                 && java.util.Objects.equals(this.protocolParameters, other.protocolParameters)
                 && java.util.Objects.equals(this.queryOptions, other.queryOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -278,16 +287,6 @@ public final class AdhocGetPathAnalysisDetails extends GetPathAnalysisDetails {
                                 ? 43
                                 : this.protocolParameters.hashCode());
         result = (result * PRIME) + (this.queryOptions == null ? 43 : this.queryOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

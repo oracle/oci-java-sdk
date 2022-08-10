@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = DbSystemUpgradeHistoryEntrySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystemUpgradeHistoryEntrySummary {
+public final class DbSystemUpgradeHistoryEntrySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -210,36 +211,53 @@ public final class DbSystemUpgradeHistoryEntrySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemUpgradeHistoryEntrySummary build() {
-            DbSystemUpgradeHistoryEntrySummary __instance__ =
+            DbSystemUpgradeHistoryEntrySummary model =
                     new DbSystemUpgradeHistoryEntrySummary(
-                            id,
-                            action,
-                            newGiVersion,
-                            oldGiVersion,
-                            snapshotRetentionPeriodInDays,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeStarted,
-                            timeEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.action,
+                            this.newGiVersion,
+                            this.oldGiVersion,
+                            this.snapshotRetentionPeriodInDays,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeStarted,
+                            this.timeEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemUpgradeHistoryEntrySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .action(o.getAction())
-                            .newGiVersion(o.getNewGiVersion())
-                            .oldGiVersion(o.getOldGiVersion())
-                            .snapshotRetentionPeriodInDays(o.getSnapshotRetentionPeriodInDays())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemUpgradeHistoryEntrySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("newGiVersion")) {
+                this.newGiVersion(model.getNewGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("oldGiVersion")) {
+                this.oldGiVersion(model.getOldGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotRetentionPeriodInDays")) {
+                this.snapshotRetentionPeriodInDays(model.getSnapshotRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            return this;
         }
     }
 
@@ -496,6 +514,7 @@ public final class DbSystemUpgradeHistoryEntrySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemUpgradeHistoryEntrySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", newGiVersion=").append(String.valueOf(this.newGiVersion));
@@ -506,7 +525,6 @@ public final class DbSystemUpgradeHistoryEntrySummary {
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -531,7 +549,7 @@ public final class DbSystemUpgradeHistoryEntrySummary {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -555,16 +573,7 @@ public final class DbSystemUpgradeHistoryEntrySummary {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

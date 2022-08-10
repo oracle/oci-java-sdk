@@ -42,10 +42,18 @@ public class StopAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcR
         return opcWorkRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private StopAnalyticsInstanceResponse(
-            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
     }
@@ -55,6 +63,13 @@ public class StopAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +117,7 @@ public class StopAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(StopAnalyticsInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 
@@ -114,7 +130,7 @@ public class StopAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcR
          */
         public StopAnalyticsInstanceResponse build() {
             return new StopAnalyticsInstanceResponse(
-                    __httpStatusCode__, opcRequestId, opcWorkRequestId);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 

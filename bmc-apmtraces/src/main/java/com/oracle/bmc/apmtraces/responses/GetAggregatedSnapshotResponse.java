@@ -38,12 +38,18 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
         return aggregatedSnapshot;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "aggregatedSnapshot"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "aggregatedSnapshot"
+    })
     private GetAggregatedSnapshotResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.apmtraces.model.AggregatedSnapshot aggregatedSnapshot) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.aggregatedSnapshot = aggregatedSnapshot;
     }
@@ -53,6 +59,13 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetAggregatedSnapshotResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             aggregatedSnapshot(o.getAggregatedSnapshot());
 
@@ -109,7 +123,7 @@ public class GetAggregatedSnapshotResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetAggregatedSnapshotResponse build() {
             return new GetAggregatedSnapshotResponse(
-                    __httpStatusCode__, opcRequestId, aggregatedSnapshot);
+                    __httpStatusCode__, headers, opcRequestId, aggregatedSnapshot);
         }
     }
 

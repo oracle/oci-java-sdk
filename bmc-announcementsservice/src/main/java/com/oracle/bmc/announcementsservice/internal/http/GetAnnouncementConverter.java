@@ -112,8 +112,8 @@ public class GetAnnouncementConverter {
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .GetAnnouncementResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcement(response.getItem());
 

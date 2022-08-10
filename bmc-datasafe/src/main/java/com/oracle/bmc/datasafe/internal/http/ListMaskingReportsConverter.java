@@ -173,8 +173,8 @@ public class ListMaskingReportsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListMaskingReportsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.maskingReportCollection(response.getItem());
 

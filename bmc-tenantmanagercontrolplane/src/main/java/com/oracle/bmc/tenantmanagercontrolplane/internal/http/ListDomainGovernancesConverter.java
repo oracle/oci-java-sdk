@@ -182,8 +182,8 @@ public class ListDomainGovernancesConverter {
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .ListDomainGovernancesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.domainGovernanceCollection(response.getItem());
 

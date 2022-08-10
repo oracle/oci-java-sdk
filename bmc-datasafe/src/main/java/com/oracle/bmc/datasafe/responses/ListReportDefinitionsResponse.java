@@ -54,16 +54,18 @@ public class ListReportDefinitionsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "reportDefinitionCollection"
     })
     private ListReportDefinitionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datasafe.model.ReportDefinitionCollection reportDefinitionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.reportDefinitionCollection = reportDefinitionCollection;
@@ -74,6 +76,13 @@ public class ListReportDefinitionsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -134,6 +143,7 @@ public class ListReportDefinitionsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ListReportDefinitionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             reportDefinitionCollection(o.getReportDefinitionCollection());
@@ -147,7 +157,11 @@ public class ListReportDefinitionsResponse extends com.oracle.bmc.responses.BmcR
          */
         public ListReportDefinitionsResponse build() {
             return new ListReportDefinitionsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, reportDefinitionCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    reportDefinitionCollection);
         }
     }
 

@@ -59,17 +59,19 @@ public class ListLogAnalyticsEntitiesResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "logAnalyticsEntityCollection"
     })
     private ListLogAnalyticsEntitiesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.loganalytics.model.LogAnalyticsEntityCollection
                     logAnalyticsEntityCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.logAnalyticsEntityCollection = logAnalyticsEntityCollection;
@@ -80,6 +82,13 @@ public class ListLogAnalyticsEntitiesResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -145,6 +154,7 @@ public class ListLogAnalyticsEntitiesResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListLogAnalyticsEntitiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             logAnalyticsEntityCollection(o.getLogAnalyticsEntityCollection());
@@ -158,7 +168,11 @@ public class ListLogAnalyticsEntitiesResponse extends com.oracle.bmc.responses.B
          */
         public ListLogAnalyticsEntitiesResponse build() {
             return new ListLogAnalyticsEntitiesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, logAnalyticsEntityCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    logAnalyticsEntityCollection);
         }
     }
 

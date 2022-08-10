@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = MaintenanceRunSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaintenanceRunSummary {
+public final class MaintenanceRunSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -573,76 +574,130 @@ public final class MaintenanceRunSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaintenanceRunSummary build() {
-            MaintenanceRunSummary __instance__ =
+            MaintenanceRunSummary model =
                     new MaintenanceRunSummary(
-                            id,
-                            compartmentId,
-                            displayName,
-                            description,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeScheduled,
-                            timeStarted,
-                            timeEnded,
-                            targetResourceType,
-                            targetResourceId,
-                            maintenanceType,
-                            patchId,
-                            maintenanceSubtype,
-                            peerMaintenanceRunId,
-                            patchingMode,
-                            patchFailureCount,
-                            targetDbServerVersion,
-                            targetStorageServerVersion,
-                            isCustomActionTimeoutEnabled,
-                            customActionTimeoutInMins,
-                            currentCustomActionTimeoutInMins,
-                            patchingStatus,
-                            patchingStartTime,
-                            patchingEndTime,
-                            estimatedPatchingTime,
-                            currentPatchingComponent,
-                            estimatedComponentPatchingStartTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeScheduled,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.targetResourceType,
+                            this.targetResourceId,
+                            this.maintenanceType,
+                            this.patchId,
+                            this.maintenanceSubtype,
+                            this.peerMaintenanceRunId,
+                            this.patchingMode,
+                            this.patchFailureCount,
+                            this.targetDbServerVersion,
+                            this.targetStorageServerVersion,
+                            this.isCustomActionTimeoutEnabled,
+                            this.customActionTimeoutInMins,
+                            this.currentCustomActionTimeoutInMins,
+                            this.patchingStatus,
+                            this.patchingStartTime,
+                            this.patchingEndTime,
+                            this.estimatedPatchingTime,
+                            this.currentPatchingComponent,
+                            this.estimatedComponentPatchingStartTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaintenanceRunSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeScheduled(o.getTimeScheduled())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .targetResourceType(o.getTargetResourceType())
-                            .targetResourceId(o.getTargetResourceId())
-                            .maintenanceType(o.getMaintenanceType())
-                            .patchId(o.getPatchId())
-                            .maintenanceSubtype(o.getMaintenanceSubtype())
-                            .peerMaintenanceRunId(o.getPeerMaintenanceRunId())
-                            .patchingMode(o.getPatchingMode())
-                            .patchFailureCount(o.getPatchFailureCount())
-                            .targetDbServerVersion(o.getTargetDbServerVersion())
-                            .targetStorageServerVersion(o.getTargetStorageServerVersion())
-                            .isCustomActionTimeoutEnabled(o.getIsCustomActionTimeoutEnabled())
-                            .customActionTimeoutInMins(o.getCustomActionTimeoutInMins())
-                            .currentCustomActionTimeoutInMins(
-                                    o.getCurrentCustomActionTimeoutInMins())
-                            .patchingStatus(o.getPatchingStatus())
-                            .patchingStartTime(o.getPatchingStartTime())
-                            .patchingEndTime(o.getPatchingEndTime())
-                            .estimatedPatchingTime(o.getEstimatedPatchingTime())
-                            .currentPatchingComponent(o.getCurrentPatchingComponent())
-                            .estimatedComponentPatchingStartTime(
-                                    o.getEstimatedComponentPatchingStartTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaintenanceRunSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduled")) {
+                this.timeScheduled(model.getTimeScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceType")) {
+                this.targetResourceType(model.getTargetResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceId")) {
+                this.targetResourceId(model.getTargetResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceType")) {
+                this.maintenanceType(model.getMaintenanceType());
+            }
+            if (model.wasPropertyExplicitlySet("patchId")) {
+                this.patchId(model.getPatchId());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceSubtype")) {
+                this.maintenanceSubtype(model.getMaintenanceSubtype());
+            }
+            if (model.wasPropertyExplicitlySet("peerMaintenanceRunId")) {
+                this.peerMaintenanceRunId(model.getPeerMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("patchingMode")) {
+                this.patchingMode(model.getPatchingMode());
+            }
+            if (model.wasPropertyExplicitlySet("patchFailureCount")) {
+                this.patchFailureCount(model.getPatchFailureCount());
+            }
+            if (model.wasPropertyExplicitlySet("targetDbServerVersion")) {
+                this.targetDbServerVersion(model.getTargetDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("targetStorageServerVersion")) {
+                this.targetStorageServerVersion(model.getTargetStorageServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isCustomActionTimeoutEnabled")) {
+                this.isCustomActionTimeoutEnabled(model.getIsCustomActionTimeoutEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customActionTimeoutInMins")) {
+                this.customActionTimeoutInMins(model.getCustomActionTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("currentCustomActionTimeoutInMins")) {
+                this.currentCustomActionTimeoutInMins(model.getCurrentCustomActionTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("patchingStatus")) {
+                this.patchingStatus(model.getPatchingStatus());
+            }
+            if (model.wasPropertyExplicitlySet("patchingStartTime")) {
+                this.patchingStartTime(model.getPatchingStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("patchingEndTime")) {
+                this.patchingEndTime(model.getPatchingEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedPatchingTime")) {
+                this.estimatedPatchingTime(model.getEstimatedPatchingTime());
+            }
+            if (model.wasPropertyExplicitlySet("currentPatchingComponent")) {
+                this.currentPatchingComponent(model.getCurrentPatchingComponent());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedComponentPatchingStartTime")) {
+                this.estimatedComponentPatchingStartTime(
+                        model.getEstimatedComponentPatchingStartTime());
+            }
+            return this;
         }
     }
 
@@ -1377,6 +1432,7 @@ public final class MaintenanceRunSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaintenanceRunSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1411,7 +1467,6 @@ public final class MaintenanceRunSummary {
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1462,7 +1517,7 @@ public final class MaintenanceRunSummary {
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1561,16 +1616,7 @@ public final class MaintenanceRunSummary {
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChildReference.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ChildReference {
+public final class ChildReference extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -203,36 +203,53 @@ public final class ChildReference {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChildReference build() {
-            ChildReference __instance__ =
+            ChildReference model =
                     new ChildReference(
-                            key,
-                            name,
-                            identifier,
-                            identifierPath,
-                            description,
-                            type,
-                            targetObject,
-                            aggregatorKey,
-                            usedBy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.identifier,
+                            this.identifierPath,
+                            this.description,
+                            this.type,
+                            this.targetObject,
+                            this.aggregatorKey,
+                            this.usedBy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChildReference o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .identifier(o.getIdentifier())
-                            .identifierPath(o.getIdentifierPath())
-                            .description(o.getDescription())
-                            .type(o.getType())
-                            .targetObject(o.getTargetObject())
-                            .aggregatorKey(o.getAggregatorKey())
-                            .usedBy(o.getUsedBy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChildReference model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("identifierPath")) {
+                this.identifierPath(model.getIdentifierPath());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("targetObject")) {
+                this.targetObject(model.getTargetObject());
+            }
+            if (model.wasPropertyExplicitlySet("aggregatorKey")) {
+                this.aggregatorKey(model.getAggregatorKey());
+            }
+            if (model.wasPropertyExplicitlySet("usedBy")) {
+                this.usedBy(model.getUsedBy());
+            }
+            return this;
         }
     }
 
@@ -439,6 +456,7 @@ public final class ChildReference {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChildReference(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
@@ -448,7 +466,6 @@ public final class ChildReference {
         sb.append(", targetObject=").append(String.valueOf(this.targetObject));
         sb.append(", aggregatorKey=").append(String.valueOf(this.aggregatorKey));
         sb.append(", usedBy=").append(String.valueOf(this.usedBy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -472,7 +489,7 @@ public final class ChildReference {
                 && java.util.Objects.equals(this.targetObject, other.targetObject)
                 && java.util.Objects.equals(this.aggregatorKey, other.aggregatorKey)
                 && java.util.Objects.equals(this.usedBy, other.usedBy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -492,16 +509,7 @@ public final class ChildReference {
                 (result * PRIME)
                         + (this.aggregatorKey == null ? 43 : this.aggregatorKey.hashCode());
         result = (result * PRIME) + (this.usedBy == null ? 43 : this.usedBy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

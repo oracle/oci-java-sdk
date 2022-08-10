@@ -108,8 +108,8 @@ public class UpdateRoverClusterConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .UpdateRoverClusterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverCluster(response.getItem());
 

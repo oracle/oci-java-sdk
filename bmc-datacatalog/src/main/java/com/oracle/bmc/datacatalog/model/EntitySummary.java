@@ -20,7 +20,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntitySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EntitySummary {
+public final class EntitySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -458,60 +458,101 @@ public final class EntitySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EntitySummary build() {
-            EntitySummary __instance__ =
+            EntitySummary model =
                     new EntitySummary(
-                            key,
-                            displayName,
-                            businessName,
-                            description,
-                            isLogical,
-                            isPartition,
-                            dataAssetKey,
-                            folderKey,
-                            folderName,
-                            externalKey,
-                            patternKey,
-                            typeKey,
-                            realizedExpression,
-                            path,
-                            timeCreated,
-                            timeUpdated,
-                            updatedById,
-                            uri,
-                            objectStorageUrl,
-                            lifecycleState,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.businessName,
+                            this.description,
+                            this.isLogical,
+                            this.isPartition,
+                            this.dataAssetKey,
+                            this.folderKey,
+                            this.folderName,
+                            this.externalKey,
+                            this.patternKey,
+                            this.typeKey,
+                            this.realizedExpression,
+                            this.path,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.updatedById,
+                            this.uri,
+                            this.objectStorageUrl,
+                            this.lifecycleState,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EntitySummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .businessName(o.getBusinessName())
-                            .description(o.getDescription())
-                            .isLogical(o.getIsLogical())
-                            .isPartition(o.getIsPartition())
-                            .dataAssetKey(o.getDataAssetKey())
-                            .folderKey(o.getFolderKey())
-                            .folderName(o.getFolderName())
-                            .externalKey(o.getExternalKey())
-                            .patternKey(o.getPatternKey())
-                            .typeKey(o.getTypeKey())
-                            .realizedExpression(o.getRealizedExpression())
-                            .path(o.getPath())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .updatedById(o.getUpdatedById())
-                            .uri(o.getUri())
-                            .objectStorageUrl(o.getObjectStorageUrl())
-                            .lifecycleState(o.getLifecycleState())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EntitySummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isLogical")) {
+                this.isLogical(model.getIsLogical());
+            }
+            if (model.wasPropertyExplicitlySet("isPartition")) {
+                this.isPartition(model.getIsPartition());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("folderKey")) {
+                this.folderKey(model.getFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("folderName")) {
+                this.folderName(model.getFolderName());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("patternKey")) {
+                this.patternKey(model.getPatternKey());
+            }
+            if (model.wasPropertyExplicitlySet("typeKey")) {
+                this.typeKey(model.getTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("realizedExpression")) {
+                this.realizedExpression(model.getRealizedExpression());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("objectStorageUrl")) {
+                this.objectStorageUrl(model.getObjectStorageUrl());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -857,6 +898,7 @@ public final class EntitySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EntitySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", businessName=").append(String.valueOf(this.businessName));
@@ -878,7 +920,6 @@ public final class EntitySummary {
         sb.append(", objectStorageUrl=").append(String.valueOf(this.objectStorageUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -914,7 +955,7 @@ public final class EntitySummary {
                 && java.util.Objects.equals(this.objectStorageUrl, other.objectStorageUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -950,16 +991,7 @@ public final class EntitySummary {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

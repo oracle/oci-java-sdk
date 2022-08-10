@@ -113,32 +113,45 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HighlightRowsCommandDescriptor build() {
-            HighlightRowsCommandDescriptor __instance__ =
+            HighlightRowsCommandDescriptor model =
                     new HighlightRowsCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            color,
-                            keywords);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.color,
+                            this.keywords);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HighlightRowsCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .color(o.getColor())
-                            .keywords(o.getKeywords());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HighlightRowsCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("color")) {
+                this.color(model.getColor());
+            }
+            if (model.wasPropertyExplicitlySet("keywords")) {
+                this.keywords(model.getKeywords());
+            }
+            return this;
         }
     }
 
@@ -215,7 +228,6 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", color=").append(String.valueOf(this.color));
         sb.append(", keywords=").append(String.valueOf(this.keywords));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,8 +244,7 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
         HighlightRowsCommandDescriptor other = (HighlightRowsCommandDescriptor) o;
         return java.util.Objects.equals(this.color, other.color)
                 && java.util.Objects.equals(this.keywords, other.keywords)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -242,16 +253,6 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
         int result = super.hashCode();
         result = (result * PRIME) + (this.color == null ? 43 : this.color.hashCode());
         result = (result * PRIME) + (this.keywords == null ? 43 : this.keywords.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

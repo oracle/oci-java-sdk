@@ -38,12 +38,13 @@ public class GetJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
         return jobRun;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "jobRun"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "jobRun"})
     private GetJobRunResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.JobRun jobRun) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.jobRun = jobRun;
     }
@@ -53,6 +54,13 @@ public class GetJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class GetJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetJobRunResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             jobRun(o.getJobRun());
 
@@ -107,7 +116,7 @@ public class GetJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetJobRunResponse build() {
-            return new GetJobRunResponse(__httpStatusCode__, opcRequestId, jobRun);
+            return new GetJobRunResponse(__httpStatusCode__, headers, opcRequestId, jobRun);
         }
     }
 

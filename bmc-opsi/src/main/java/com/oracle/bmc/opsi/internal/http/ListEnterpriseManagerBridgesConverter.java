@@ -179,8 +179,8 @@ public class ListEnterpriseManagerBridgesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .ListEnterpriseManagerBridgesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.enterpriseManagerBridgeCollection(response.getItem());
 

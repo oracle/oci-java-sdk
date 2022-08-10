@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateResponderRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateResponderRuleDetails {
+public final class UpdateResponderRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled"})
     public UpdateResponderRuleDetails(Boolean isEnabled) {
@@ -50,17 +51,19 @@ public final class UpdateResponderRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateResponderRuleDetails build() {
-            UpdateResponderRuleDetails __instance__ = new UpdateResponderRuleDetails(isEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateResponderRuleDetails model = new UpdateResponderRuleDetails(this.isEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateResponderRuleDetails o) {
-            Builder copiedBuilder = isEnabled(o.getIsEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateResponderRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class UpdateResponderRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateResponderRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +121,7 @@ public final class UpdateResponderRuleDetails {
         }
 
         UpdateResponderRuleDetails other = (UpdateResponderRuleDetails) o;
-        return java.util.Objects.equals(this.isEnabled, other.isEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.isEnabled, other.isEnabled) && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class UpdateResponderRuleDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

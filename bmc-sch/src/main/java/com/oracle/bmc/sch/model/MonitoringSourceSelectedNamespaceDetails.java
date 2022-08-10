@@ -52,18 +52,20 @@ public final class MonitoringSourceSelectedNamespaceDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoringSourceSelectedNamespaceDetails build() {
-            MonitoringSourceSelectedNamespaceDetails __instance__ =
-                    new MonitoringSourceSelectedNamespaceDetails(namespaces);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitoringSourceSelectedNamespaceDetails model =
+                    new MonitoringSourceSelectedNamespaceDetails(this.namespaces);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoringSourceSelectedNamespaceDetails o) {
-            Builder copiedBuilder = namespaces(o.getNamespaces());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoringSourceSelectedNamespaceDetails model) {
+            if (model.wasPropertyExplicitlySet("namespaces")) {
+                this.namespaces(model.getNamespaces());
+            }
+            return this;
         }
     }
 
@@ -116,7 +118,6 @@ public final class MonitoringSourceSelectedNamespaceDetails
         sb.append("MonitoringSourceSelectedNamespaceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", namespaces=").append(String.valueOf(this.namespaces));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -132,9 +133,7 @@ public final class MonitoringSourceSelectedNamespaceDetails
 
         MonitoringSourceSelectedNamespaceDetails other =
                 (MonitoringSourceSelectedNamespaceDetails) o;
-        return java.util.Objects.equals(this.namespaces, other.namespaces)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.namespaces, other.namespaces) && super.equals(other);
     }
 
     @Override
@@ -142,16 +141,6 @@ public final class MonitoringSourceSelectedNamespaceDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.namespaces == null ? 43 : this.namespaces.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.nosql.model;
     builder = PreparedStatement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PreparedStatement {
+public final class PreparedStatement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"statement", "usage"})
     public PreparedStatement(String statement, RequestUsage usage) {
@@ -64,17 +64,22 @@ public final class PreparedStatement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PreparedStatement build() {
-            PreparedStatement __instance__ = new PreparedStatement(statement, usage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PreparedStatement model = new PreparedStatement(this.statement, this.usage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PreparedStatement o) {
-            Builder copiedBuilder = statement(o.getStatement()).usage(o.getUsage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PreparedStatement model) {
+            if (model.wasPropertyExplicitlySet("statement")) {
+                this.statement(model.getStatement());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            return this;
         }
     }
 
@@ -127,9 +132,9 @@ public final class PreparedStatement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PreparedStatement(");
+        sb.append("super=").append(super.toString());
         sb.append("statement=").append(String.valueOf(this.statement));
         sb.append(", usage=").append(String.valueOf(this.usage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -146,7 +151,7 @@ public final class PreparedStatement {
         PreparedStatement other = (PreparedStatement) o;
         return java.util.Objects.equals(this.statement, other.statement)
                 && java.util.Objects.equals(this.usage, other.usage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -155,16 +160,7 @@ public final class PreparedStatement {
         int result = 1;
         result = (result * PRIME) + (this.statement == null ? 43 : this.statement.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

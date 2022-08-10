@@ -202,8 +202,8 @@ public class SummarizeAwrDatabaseSysstatsConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeAwrDatabaseSysstatsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseSysstatCollection(response.getItem());
 

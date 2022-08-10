@@ -212,52 +212,85 @@ public final class TrendColumn extends AbstractColumn {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TrendColumn build() {
-            TrendColumn __instance__ =
+            TrendColumn model =
                     new TrendColumn(
-                            displayName,
-                            subSystem,
-                            values,
-                            isListOfValues,
-                            isMultiValued,
-                            isCaseSensitive,
-                            isGroupable,
-                            isEvaluable,
-                            valueType,
-                            originalDisplayName,
-                            internalName,
-                            intervalGap,
-                            intervals,
-                            totalIntervalCounts,
-                            totalIntervalCountsAfterFilter,
-                            intervalGroupCounts,
-                            intervalGroupCountsAfterFilter);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.subSystem,
+                            this.values,
+                            this.isListOfValues,
+                            this.isMultiValued,
+                            this.isCaseSensitive,
+                            this.isGroupable,
+                            this.isEvaluable,
+                            this.valueType,
+                            this.originalDisplayName,
+                            this.internalName,
+                            this.intervalGap,
+                            this.intervals,
+                            this.totalIntervalCounts,
+                            this.totalIntervalCountsAfterFilter,
+                            this.intervalGroupCounts,
+                            this.intervalGroupCountsAfterFilter);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TrendColumn o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .subSystem(o.getSubSystem())
-                            .values(o.getValues())
-                            .isListOfValues(o.getIsListOfValues())
-                            .isMultiValued(o.getIsMultiValued())
-                            .isCaseSensitive(o.getIsCaseSensitive())
-                            .isGroupable(o.getIsGroupable())
-                            .isEvaluable(o.getIsEvaluable())
-                            .valueType(o.getValueType())
-                            .originalDisplayName(o.getOriginalDisplayName())
-                            .internalName(o.getInternalName())
-                            .intervalGap(o.getIntervalGap())
-                            .intervals(o.getIntervals())
-                            .totalIntervalCounts(o.getTotalIntervalCounts())
-                            .totalIntervalCountsAfterFilter(o.getTotalIntervalCountsAfterFilter())
-                            .intervalGroupCounts(o.getIntervalGroupCounts())
-                            .intervalGroupCountsAfterFilter(o.getIntervalGroupCountsAfterFilter());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TrendColumn model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("subSystem")) {
+                this.subSystem(model.getSubSystem());
+            }
+            if (model.wasPropertyExplicitlySet("values")) {
+                this.values(model.getValues());
+            }
+            if (model.wasPropertyExplicitlySet("isListOfValues")) {
+                this.isListOfValues(model.getIsListOfValues());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiValued")) {
+                this.isMultiValued(model.getIsMultiValued());
+            }
+            if (model.wasPropertyExplicitlySet("isCaseSensitive")) {
+                this.isCaseSensitive(model.getIsCaseSensitive());
+            }
+            if (model.wasPropertyExplicitlySet("isGroupable")) {
+                this.isGroupable(model.getIsGroupable());
+            }
+            if (model.wasPropertyExplicitlySet("isEvaluable")) {
+                this.isEvaluable(model.getIsEvaluable());
+            }
+            if (model.wasPropertyExplicitlySet("valueType")) {
+                this.valueType(model.getValueType());
+            }
+            if (model.wasPropertyExplicitlySet("originalDisplayName")) {
+                this.originalDisplayName(model.getOriginalDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("internalName")) {
+                this.internalName(model.getInternalName());
+            }
+            if (model.wasPropertyExplicitlySet("intervalGap")) {
+                this.intervalGap(model.getIntervalGap());
+            }
+            if (model.wasPropertyExplicitlySet("intervals")) {
+                this.intervals(model.getIntervals());
+            }
+            if (model.wasPropertyExplicitlySet("totalIntervalCounts")) {
+                this.totalIntervalCounts(model.getTotalIntervalCounts());
+            }
+            if (model.wasPropertyExplicitlySet("totalIntervalCountsAfterFilter")) {
+                this.totalIntervalCountsAfterFilter(model.getTotalIntervalCountsAfterFilter());
+            }
+            if (model.wasPropertyExplicitlySet("intervalGroupCounts")) {
+                this.intervalGroupCounts(model.getIntervalGroupCounts());
+            }
+            if (model.wasPropertyExplicitlySet("intervalGroupCountsAfterFilter")) {
+                this.intervalGroupCountsAfterFilter(model.getIntervalGroupCountsAfterFilter());
+            }
+            return this;
         }
     }
 
@@ -402,7 +435,6 @@ public final class TrendColumn extends AbstractColumn {
         sb.append(", intervalGroupCounts=").append(String.valueOf(this.intervalGroupCounts));
         sb.append(", intervalGroupCountsAfterFilter=")
                 .append(String.valueOf(this.intervalGroupCountsAfterFilter));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -425,8 +457,7 @@ public final class TrendColumn extends AbstractColumn {
                 && java.util.Objects.equals(this.intervalGroupCounts, other.intervalGroupCounts)
                 && java.util.Objects.equals(
                         this.intervalGroupCountsAfterFilter, other.intervalGroupCountsAfterFilter)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -455,16 +486,6 @@ public final class TrendColumn extends AbstractColumn {
                         + (this.intervalGroupCountsAfterFilter == null
                                 ? 43
                                 : this.intervalGroupCountsAfterFilter.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

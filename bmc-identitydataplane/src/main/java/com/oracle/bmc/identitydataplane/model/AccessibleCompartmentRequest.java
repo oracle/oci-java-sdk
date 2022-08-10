@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = AccessibleCompartmentRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessibleCompartmentRequest {
+public final class AccessibleCompartmentRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"authorizationRequest", "compartmentIds"})
     public AccessibleCompartmentRequest(
@@ -68,20 +69,24 @@ public final class AccessibleCompartmentRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessibleCompartmentRequest build() {
-            AccessibleCompartmentRequest __instance__ =
-                    new AccessibleCompartmentRequest(authorizationRequest, compartmentIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AccessibleCompartmentRequest model =
+                    new AccessibleCompartmentRequest(
+                            this.authorizationRequest, this.compartmentIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessibleCompartmentRequest o) {
-            Builder copiedBuilder =
-                    authorizationRequest(o.getAuthorizationRequest())
-                            .compartmentIds(o.getCompartmentIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessibleCompartmentRequest model) {
+            if (model.wasPropertyExplicitlySet("authorizationRequest")) {
+                this.authorizationRequest(model.getAuthorizationRequest());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentIds")) {
+                this.compartmentIds(model.getCompartmentIds());
+            }
+            return this;
         }
     }
 
@@ -137,9 +142,9 @@ public final class AccessibleCompartmentRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessibleCompartmentRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("authorizationRequest=").append(String.valueOf(this.authorizationRequest));
         sb.append(", compartmentIds=").append(String.valueOf(this.compartmentIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,7 +161,7 @@ public final class AccessibleCompartmentRequest {
         AccessibleCompartmentRequest other = (AccessibleCompartmentRequest) o;
         return java.util.Objects.equals(this.authorizationRequest, other.authorizationRequest)
                 && java.util.Objects.equals(this.compartmentIds, other.compartmentIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -171,16 +176,7 @@ public final class AccessibleCompartmentRequest {
         result =
                 (result * PRIME)
                         + (this.compartmentIds == null ? 43 : this.compartmentIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

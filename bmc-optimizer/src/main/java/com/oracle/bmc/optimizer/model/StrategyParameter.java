@@ -20,7 +20,7 @@ package com.oracle.bmc.optimizer.model;
     builder = StrategyParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StrategyParameter {
+public final class StrategyParameter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -149,25 +149,41 @@ public final class StrategyParameter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StrategyParameter build() {
-            StrategyParameter __instance__ =
+            StrategyParameter model =
                     new StrategyParameter(
-                            name, type, description, isRequired, defaultValue, possibleValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.type,
+                            this.description,
+                            this.isRequired,
+                            this.defaultValue,
+                            this.possibleValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StrategyParameter o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .type(o.getType())
-                            .description(o.getDescription())
-                            .isRequired(o.getIsRequired())
-                            .defaultValue(o.getDefaultValue())
-                            .possibleValues(o.getPossibleValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StrategyParameter model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isRequired")) {
+                this.isRequired(model.getIsRequired());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            if (model.wasPropertyExplicitlySet("possibleValues")) {
+                this.possibleValues(model.getPossibleValues());
+            }
+            return this;
         }
     }
 
@@ -279,13 +295,13 @@ public final class StrategyParameter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StrategyParameter(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", isRequired=").append(String.valueOf(this.isRequired));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
         sb.append(", possibleValues=").append(String.valueOf(this.possibleValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -306,7 +322,7 @@ public final class StrategyParameter {
                 && java.util.Objects.equals(this.isRequired, other.isRequired)
                 && java.util.Objects.equals(this.defaultValue, other.defaultValue)
                 && java.util.Objects.equals(this.possibleValues, other.possibleValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -321,16 +337,7 @@ public final class StrategyParameter {
         result =
                 (result * PRIME)
                         + (this.possibleValues == null ? 43 : this.possibleValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

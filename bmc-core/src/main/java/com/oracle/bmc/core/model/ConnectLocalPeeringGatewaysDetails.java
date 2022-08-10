@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = ConnectLocalPeeringGatewaysDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectLocalPeeringGatewaysDetails {
+public final class ConnectLocalPeeringGatewaysDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerId"})
     public ConnectLocalPeeringGatewaysDetails(String peerId) {
@@ -50,18 +51,20 @@ public final class ConnectLocalPeeringGatewaysDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectLocalPeeringGatewaysDetails build() {
-            ConnectLocalPeeringGatewaysDetails __instance__ =
-                    new ConnectLocalPeeringGatewaysDetails(peerId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ConnectLocalPeeringGatewaysDetails model =
+                    new ConnectLocalPeeringGatewaysDetails(this.peerId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectLocalPeeringGatewaysDetails o) {
-            Builder copiedBuilder = peerId(o.getPeerId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConnectLocalPeeringGatewaysDetails model) {
+            if (model.wasPropertyExplicitlySet("peerId")) {
+                this.peerId(model.getPeerId());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class ConnectLocalPeeringGatewaysDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConnectLocalPeeringGatewaysDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("peerId=").append(String.valueOf(this.peerId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,8 +122,7 @@ public final class ConnectLocalPeeringGatewaysDetails {
         }
 
         ConnectLocalPeeringGatewaysDetails other = (ConnectLocalPeeringGatewaysDetails) o;
-        return java.util.Objects.equals(this.peerId, other.peerId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.peerId, other.peerId) && super.equals(other);
     }
 
     @Override
@@ -128,16 +130,7 @@ public final class ConnectLocalPeeringGatewaysDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.peerId == null ? 43 : this.peerId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

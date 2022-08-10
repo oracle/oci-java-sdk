@@ -100,8 +100,8 @@ public class GetReportConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses.GetReportResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.report(response.getItem());
 

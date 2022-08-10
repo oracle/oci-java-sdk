@@ -53,13 +53,20 @@ public class CreateEntityTagResponse extends com.oracle.bmc.responses.BmcRespons
         return entityTag;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "entityTag"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "entityTag"
+    })
     private CreateEntityTagResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.EntityTag entityTag) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.entityTag = entityTag;
@@ -70,6 +77,13 @@ public class CreateEntityTagResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateEntityTagResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(CreateEntityTagResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             entityTag(o.getEntityTag());
@@ -142,7 +157,8 @@ public class CreateEntityTagResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public CreateEntityTagResponse build() {
-            return new CreateEntityTagResponse(__httpStatusCode__, etag, opcRequestId, entityTag);
+            return new CreateEntityTagResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, entityTag);
         }
     }
 

@@ -117,8 +117,8 @@ public class UpdateCaBundleConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .UpdateCaBundleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.caBundle(response.getItem());
 

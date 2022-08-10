@@ -82,21 +82,26 @@ public final class AllowedRegionsTemplate extends Template {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AllowedRegionsTemplate build() {
-            AllowedRegionsTemplate __instance__ =
-                    new AllowedRegionsTemplate(displayName, description, regions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AllowedRegionsTemplate model =
+                    new AllowedRegionsTemplate(this.displayName, this.description, this.regions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AllowedRegionsTemplate o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .regions(o.getRegions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AllowedRegionsTemplate model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            return this;
         }
     }
 
@@ -181,7 +186,6 @@ public final class AllowedRegionsTemplate extends Template {
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", regions=").append(String.valueOf(this.regions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,8 +203,7 @@ public final class AllowedRegionsTemplate extends Template {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.regions, other.regions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -210,16 +213,6 @@ public final class AllowedRegionsTemplate extends Template {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

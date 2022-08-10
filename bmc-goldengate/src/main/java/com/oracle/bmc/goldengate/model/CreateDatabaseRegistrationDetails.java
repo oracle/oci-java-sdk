@@ -20,7 +20,8 @@ package com.oracle.bmc.goldengate.model;
     builder = CreateDatabaseRegistrationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDatabaseRegistrationDetails {
+public final class CreateDatabaseRegistrationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -418,54 +419,89 @@ public final class CreateDatabaseRegistrationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseRegistrationDetails build() {
-            CreateDatabaseRegistrationDetails __instance__ =
+            CreateDatabaseRegistrationDetails model =
                     new CreateDatabaseRegistrationDetails(
-                            displayName,
-                            description,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            fqdn,
-                            ipAddress,
-                            subnetId,
-                            databaseId,
-                            username,
-                            password,
-                            connectionString,
-                            sessionMode,
-                            wallet,
-                            aliasName,
-                            vaultId,
-                            keyId,
-                            secretCompartmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.fqdn,
+                            this.ipAddress,
+                            this.subnetId,
+                            this.databaseId,
+                            this.username,
+                            this.password,
+                            this.connectionString,
+                            this.sessionMode,
+                            this.wallet,
+                            this.aliasName,
+                            this.vaultId,
+                            this.keyId,
+                            this.secretCompartmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDatabaseRegistrationDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .fqdn(o.getFqdn())
-                            .ipAddress(o.getIpAddress())
-                            .subnetId(o.getSubnetId())
-                            .databaseId(o.getDatabaseId())
-                            .username(o.getUsername())
-                            .password(o.getPassword())
-                            .connectionString(o.getConnectionString())
-                            .sessionMode(o.getSessionMode())
-                            .wallet(o.getWallet())
-                            .aliasName(o.getAliasName())
-                            .vaultId(o.getVaultId())
-                            .keyId(o.getKeyId())
-                            .secretCompartmentId(o.getSecretCompartmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDatabaseRegistrationDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("fqdn")) {
+                this.fqdn(model.getFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("sessionMode")) {
+                this.sessionMode(model.getSessionMode());
+            }
+            if (model.wasPropertyExplicitlySet("wallet")) {
+                this.wallet(model.getWallet());
+            }
+            if (model.wasPropertyExplicitlySet("aliasName")) {
+                this.aliasName(model.getAliasName());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("secretCompartmentId")) {
+                this.secretCompartmentId(model.getSecretCompartmentId());
+            }
+            return this;
         }
     }
 
@@ -821,6 +857,7 @@ public final class CreateDatabaseRegistrationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDatabaseRegistrationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -839,7 +876,6 @@ public final class CreateDatabaseRegistrationDetails {
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", secretCompartmentId=").append(String.valueOf(this.secretCompartmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -872,7 +908,7 @@ public final class CreateDatabaseRegistrationDetails {
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.secretCompartmentId, other.secretCompartmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -905,16 +941,7 @@ public final class CreateDatabaseRegistrationDetails {
                         + (this.secretCompartmentId == null
                                 ? 43
                                 : this.secretCompartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

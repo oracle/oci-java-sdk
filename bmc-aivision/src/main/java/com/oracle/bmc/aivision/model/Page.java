@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Page.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Page {
+public final class Page extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pageNumber",
@@ -178,34 +178,49 @@ public final class Page {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Page build() {
-            Page __instance__ =
+            Page model =
                     new Page(
-                            pageNumber,
-                            dimensions,
-                            detectedDocumentTypes,
-                            detectedLanguages,
-                            words,
-                            lines,
-                            tables,
-                            documentFields);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.pageNumber,
+                            this.dimensions,
+                            this.detectedDocumentTypes,
+                            this.detectedLanguages,
+                            this.words,
+                            this.lines,
+                            this.tables,
+                            this.documentFields);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Page o) {
-            Builder copiedBuilder =
-                    pageNumber(o.getPageNumber())
-                            .dimensions(o.getDimensions())
-                            .detectedDocumentTypes(o.getDetectedDocumentTypes())
-                            .detectedLanguages(o.getDetectedLanguages())
-                            .words(o.getWords())
-                            .lines(o.getLines())
-                            .tables(o.getTables())
-                            .documentFields(o.getDocumentFields());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Page model) {
+            if (model.wasPropertyExplicitlySet("pageNumber")) {
+                this.pageNumber(model.getPageNumber());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            if (model.wasPropertyExplicitlySet("detectedDocumentTypes")) {
+                this.detectedDocumentTypes(model.getDetectedDocumentTypes());
+            }
+            if (model.wasPropertyExplicitlySet("detectedLanguages")) {
+                this.detectedLanguages(model.getDetectedLanguages());
+            }
+            if (model.wasPropertyExplicitlySet("words")) {
+                this.words(model.getWords());
+            }
+            if (model.wasPropertyExplicitlySet("lines")) {
+                this.lines(model.getLines());
+            }
+            if (model.wasPropertyExplicitlySet("tables")) {
+                this.tables(model.getTables());
+            }
+            if (model.wasPropertyExplicitlySet("documentFields")) {
+                this.documentFields(model.getDocumentFields());
+            }
+            return this;
         }
     }
 
@@ -338,6 +353,7 @@ public final class Page {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Page(");
+        sb.append("super=").append(super.toString());
         sb.append("pageNumber=").append(String.valueOf(this.pageNumber));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", detectedDocumentTypes=").append(String.valueOf(this.detectedDocumentTypes));
@@ -346,7 +362,6 @@ public final class Page {
         sb.append(", lines=").append(String.valueOf(this.lines));
         sb.append(", tables=").append(String.valueOf(this.tables));
         sb.append(", documentFields=").append(String.valueOf(this.documentFields));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -369,7 +384,7 @@ public final class Page {
                 && java.util.Objects.equals(this.lines, other.lines)
                 && java.util.Objects.equals(this.tables, other.tables)
                 && java.util.Objects.equals(this.documentFields, other.documentFields)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -392,16 +407,7 @@ public final class Page {
         result =
                 (result * PRIME)
                         + (this.documentFields == null ? 43 : this.documentFields.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

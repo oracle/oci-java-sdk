@@ -152,8 +152,8 @@ public class RequestSecurityScoreSummarizedTrendConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSecurityScoreSummarizedTrendResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityScoreTrendAggregationCollection(response.getItem());
 

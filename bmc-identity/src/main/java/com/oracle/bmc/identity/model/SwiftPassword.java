@@ -26,7 +26,7 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SwiftPassword.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SwiftPassword {
+public final class SwiftPassword extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "password",
@@ -215,34 +215,49 @@ public final class SwiftPassword {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SwiftPassword build() {
-            SwiftPassword __instance__ =
+            SwiftPassword model =
                     new SwiftPassword(
-                            password,
-                            id,
-                            userId,
-                            description,
-                            timeCreated,
-                            expiresOn,
-                            lifecycleState,
-                            inactiveStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.password,
+                            this.id,
+                            this.userId,
+                            this.description,
+                            this.timeCreated,
+                            this.expiresOn,
+                            this.lifecycleState,
+                            this.inactiveStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SwiftPassword o) {
-            Builder copiedBuilder =
-                    password(o.getPassword())
-                            .id(o.getId())
-                            .userId(o.getUserId())
-                            .description(o.getDescription())
-                            .timeCreated(o.getTimeCreated())
-                            .expiresOn(o.getExpiresOn())
-                            .lifecycleState(o.getLifecycleState())
-                            .inactiveStatus(o.getInactiveStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SwiftPassword model) {
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("expiresOn")) {
+                this.expiresOn(model.getExpiresOn());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("inactiveStatus")) {
+                this.inactiveStatus(model.getInactiveStatus());
+            }
+            return this;
         }
     }
 
@@ -457,6 +472,7 @@ public final class SwiftPassword {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SwiftPassword(");
+        sb.append("super=").append(super.toString());
         sb.append("password=").append(String.valueOf(this.password));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", userId=").append(String.valueOf(this.userId));
@@ -465,7 +481,6 @@ public final class SwiftPassword {
         sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -488,7 +503,7 @@ public final class SwiftPassword {
                 && java.util.Objects.equals(this.expiresOn, other.expiresOn)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -507,16 +522,7 @@ public final class SwiftPassword {
         result =
                 (result * PRIME)
                         + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

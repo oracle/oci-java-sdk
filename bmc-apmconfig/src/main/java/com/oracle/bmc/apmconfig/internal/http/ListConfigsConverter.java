@@ -198,8 +198,8 @@ public class ListConfigsConverter {
                                         builder =
                                                 com.oracle.bmc.apmconfig.responses
                                                         .ListConfigsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.configCollection(response.getItem());
 

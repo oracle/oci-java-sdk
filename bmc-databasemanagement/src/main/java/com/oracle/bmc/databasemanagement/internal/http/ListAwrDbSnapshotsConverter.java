@@ -202,8 +202,8 @@ public class ListAwrDbSnapshotsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListAwrDbSnapshotsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbSnapshotCollection(response.getItem());
 

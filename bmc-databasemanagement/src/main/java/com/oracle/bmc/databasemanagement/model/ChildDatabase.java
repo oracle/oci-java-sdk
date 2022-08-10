@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChildDatabase.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ChildDatabase {
+public final class ChildDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -188,34 +188,49 @@ public final class ChildDatabase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChildDatabase build() {
-            ChildDatabase __instance__ =
+            ChildDatabase model =
                     new ChildDatabase(
-                            id,
-                            name,
-                            compartmentId,
-                            deploymentType,
-                            workloadType,
-                            databaseType,
-                            databaseSubType,
-                            timeAdded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.compartmentId,
+                            this.deploymentType,
+                            this.workloadType,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.timeAdded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChildDatabase o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .deploymentType(o.getDeploymentType())
-                            .workloadType(o.getWorkloadType())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .timeAdded(o.getTimeAdded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChildDatabase model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("timeAdded")) {
+                this.timeAdded(model.getTimeAdded());
+            }
+            return this;
         }
     }
 
@@ -359,6 +374,7 @@ public final class ChildDatabase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChildDatabase(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -367,7 +383,6 @@ public final class ChildDatabase {
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
         sb.append(", timeAdded=").append(String.valueOf(this.timeAdded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -390,7 +405,7 @@ public final class ChildDatabase {
                 && java.util.Objects.equals(this.databaseType, other.databaseType)
                 && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
                 && java.util.Objects.equals(this.timeAdded, other.timeAdded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -411,16 +426,7 @@ public final class ChildDatabase {
                 (result * PRIME)
                         + (this.databaseSubType == null ? 43 : this.databaseSubType.hashCode());
         result = (result * PRIME) + (this.timeAdded == null ? 43 : this.timeAdded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

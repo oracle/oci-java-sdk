@@ -31,7 +31,8 @@ package com.oracle.bmc.dns.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateResolverEndpointDetails {
+public class CreateResolverEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -151,6 +152,7 @@ public class CreateResolverEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateResolverEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", forwardingAddress=").append(String.valueOf(this.forwardingAddress));
         sb.append(", isForwarding=").append(String.valueOf(this.isForwarding));
@@ -174,7 +176,8 @@ public class CreateResolverEndpointDetails {
                 && java.util.Objects.equals(this.forwardingAddress, other.forwardingAddress)
                 && java.util.Objects.equals(this.isForwarding, other.isForwarding)
                 && java.util.Objects.equals(this.isListening, other.isListening)
-                && java.util.Objects.equals(this.listeningAddress, other.listeningAddress);
+                && java.util.Objects.equals(this.listeningAddress, other.listeningAddress)
+                && super.equals(other);
     }
 
     @Override
@@ -190,6 +193,7 @@ public class CreateResolverEndpointDetails {
         result =
                 (result * PRIME)
                         + (this.listeningAddress == null ? 43 : this.listeningAddress.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

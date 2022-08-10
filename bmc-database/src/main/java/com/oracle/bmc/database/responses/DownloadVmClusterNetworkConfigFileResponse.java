@@ -80,6 +80,7 @@ public class DownloadVmClusterNetworkConfigFileResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "contentLength",
@@ -88,12 +89,13 @@ public class DownloadVmClusterNetworkConfigFileResponse
     })
     private DownloadVmClusterNetworkConfigFileResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
             java.util.Date lastModified,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
@@ -106,6 +108,13 @@ public class DownloadVmClusterNetworkConfigFileResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -194,6 +203,7 @@ public class DownloadVmClusterNetworkConfigFileResponse
          */
         public Builder copy(DownloadVmClusterNetworkConfigFileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
@@ -210,6 +220,7 @@ public class DownloadVmClusterNetworkConfigFileResponse
         public DownloadVmClusterNetworkConfigFileResponse build() {
             return new DownloadVmClusterNetworkConfigFileResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     contentLength,

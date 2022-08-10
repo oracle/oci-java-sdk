@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = CreateFolderDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateFolderDetails {
+public final class CreateFolderDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -245,38 +245,57 @@ public final class CreateFolderDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateFolderDetails build() {
-            CreateFolderDetails __instance__ =
+            CreateFolderDetails model =
                     new CreateFolderDetails(
-                            displayName,
-                            businessName,
-                            description,
-                            customPropertyMembers,
-                            properties,
-                            parentFolderKey,
-                            timeExternal,
-                            lastJobKey,
-                            harvestStatus,
-                            typeKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.businessName,
+                            this.description,
+                            this.customPropertyMembers,
+                            this.properties,
+                            this.parentFolderKey,
+                            this.timeExternal,
+                            this.lastJobKey,
+                            this.harvestStatus,
+                            this.typeKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateFolderDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .businessName(o.getBusinessName())
-                            .description(o.getDescription())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .properties(o.getProperties())
-                            .parentFolderKey(o.getParentFolderKey())
-                            .timeExternal(o.getTimeExternal())
-                            .lastJobKey(o.getLastJobKey())
-                            .harvestStatus(o.getHarvestStatus())
-                            .typeKey(o.getTypeKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateFolderDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("parentFolderKey")) {
+                this.parentFolderKey(model.getParentFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeExternal")) {
+                this.timeExternal(model.getTimeExternal());
+            }
+            if (model.wasPropertyExplicitlySet("lastJobKey")) {
+                this.lastJobKey(model.getLastJobKey());
+            }
+            if (model.wasPropertyExplicitlySet("harvestStatus")) {
+                this.harvestStatus(model.getHarvestStatus());
+            }
+            if (model.wasPropertyExplicitlySet("typeKey")) {
+                this.typeKey(model.getTypeKey());
+            }
+            return this;
         }
     }
 
@@ -464,6 +483,7 @@ public final class CreateFolderDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFolderDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", businessName=").append(String.valueOf(this.businessName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -474,7 +494,6 @@ public final class CreateFolderDetails {
         sb.append(", lastJobKey=").append(String.valueOf(this.lastJobKey));
         sb.append(", harvestStatus=").append(String.valueOf(this.harvestStatus));
         sb.append(", typeKey=").append(String.valueOf(this.typeKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -499,7 +518,7 @@ public final class CreateFolderDetails {
                 && java.util.Objects.equals(this.lastJobKey, other.lastJobKey)
                 && java.util.Objects.equals(this.harvestStatus, other.harvestStatus)
                 && java.util.Objects.equals(this.typeKey, other.typeKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -524,16 +543,7 @@ public final class CreateFolderDetails {
                 (result * PRIME)
                         + (this.harvestStatus == null ? 43 : this.harvestStatus.hashCode());
         result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

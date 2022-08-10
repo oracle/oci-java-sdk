@@ -105,28 +105,37 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BiccReadAttributes build() {
-            BiccReadAttributes __instance__ =
+            BiccReadAttributes model =
                     new BiccReadAttributes(
-                            fetchSize,
-                            extractStrategy,
-                            externalStorage,
-                            initialExtractDate,
-                            lastExtractDate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fetchSize,
+                            this.extractStrategy,
+                            this.externalStorage,
+                            this.initialExtractDate,
+                            this.lastExtractDate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BiccReadAttributes o) {
-            Builder copiedBuilder =
-                    fetchSize(o.getFetchSize())
-                            .extractStrategy(o.getExtractStrategy())
-                            .externalStorage(o.getExternalStorage())
-                            .initialExtractDate(o.getInitialExtractDate())
-                            .lastExtractDate(o.getLastExtractDate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BiccReadAttributes model) {
+            if (model.wasPropertyExplicitlySet("fetchSize")) {
+                this.fetchSize(model.getFetchSize());
+            }
+            if (model.wasPropertyExplicitlySet("extractStrategy")) {
+                this.extractStrategy(model.getExtractStrategy());
+            }
+            if (model.wasPropertyExplicitlySet("externalStorage")) {
+                this.externalStorage(model.getExternalStorage());
+            }
+            if (model.wasPropertyExplicitlySet("initialExtractDate")) {
+                this.initialExtractDate(model.getInitialExtractDate());
+            }
+            if (model.wasPropertyExplicitlySet("lastExtractDate")) {
+                this.lastExtractDate(model.getLastExtractDate());
+            }
+            return this;
         }
     }
 
@@ -273,7 +282,6 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
         sb.append(", externalStorage=").append(String.valueOf(this.externalStorage));
         sb.append(", initialExtractDate=").append(String.valueOf(this.initialExtractDate));
         sb.append(", lastExtractDate=").append(String.valueOf(this.lastExtractDate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -293,8 +301,7 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
                 && java.util.Objects.equals(this.externalStorage, other.externalStorage)
                 && java.util.Objects.equals(this.initialExtractDate, other.initialExtractDate)
                 && java.util.Objects.equals(this.lastExtractDate, other.lastExtractDate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -316,16 +323,6 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
         result =
                 (result * PRIME)
                         + (this.lastExtractDate == null ? 43 : this.lastExtractDate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

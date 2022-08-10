@@ -105,8 +105,8 @@ public class GenerateDataEncryptionKeyConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .GenerateDataEncryptionKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.generatedKey(response.getItem());
 

@@ -206,8 +206,8 @@ public class ListNamespacesConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListNamespacesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.namespaceCollection(response.getItem());
 

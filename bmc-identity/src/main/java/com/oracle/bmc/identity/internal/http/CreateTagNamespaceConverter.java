@@ -100,8 +100,8 @@ public class CreateTagNamespaceConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .CreateTagNamespaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tagNamespace(response.getItem());
 

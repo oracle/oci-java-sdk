@@ -144,8 +144,8 @@ public class ListAnnouncementsPreferencesConverter {
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .ListAnnouncementsPreferencesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

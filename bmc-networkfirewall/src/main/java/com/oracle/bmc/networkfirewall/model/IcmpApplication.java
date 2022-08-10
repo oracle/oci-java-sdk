@@ -62,17 +62,22 @@ public final class IcmpApplication extends Application {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IcmpApplication build() {
-            IcmpApplication __instance__ = new IcmpApplication(icmpType, icmpCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IcmpApplication model = new IcmpApplication(this.icmpType, this.icmpCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IcmpApplication o) {
-            Builder copiedBuilder = icmpType(o.getIcmpType()).icmpCode(o.getIcmpCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IcmpApplication model) {
+            if (model.wasPropertyExplicitlySet("icmpType")) {
+                this.icmpType(model.getIcmpType());
+            }
+            if (model.wasPropertyExplicitlySet("icmpCode")) {
+                this.icmpCode(model.getIcmpCode());
+            }
+            return this;
         }
     }
 
@@ -138,7 +143,6 @@ public final class IcmpApplication extends Application {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", icmpType=").append(String.valueOf(this.icmpType));
         sb.append(", icmpCode=").append(String.valueOf(this.icmpCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,8 +159,7 @@ public final class IcmpApplication extends Application {
         IcmpApplication other = (IcmpApplication) o;
         return java.util.Objects.equals(this.icmpType, other.icmpType)
                 && java.util.Objects.equals(this.icmpCode, other.icmpCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +168,6 @@ public final class IcmpApplication extends Application {
         int result = super.hashCode();
         result = (result * PRIME) + (this.icmpType == null ? 43 : this.icmpType.hashCode());
         result = (result * PRIME) + (this.icmpCode == null ? 43 : this.icmpCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

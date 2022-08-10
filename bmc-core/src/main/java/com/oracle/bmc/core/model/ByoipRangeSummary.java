@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = ByoipRangeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ByoipRangeSummary {
+public final class ByoipRangeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "byoipRangeVcnIpv6Allocations",
@@ -281,40 +281,61 @@ public final class ByoipRangeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ByoipRangeSummary build() {
-            ByoipRangeSummary __instance__ =
+            ByoipRangeSummary model =
                     new ByoipRangeSummary(
-                            byoipRangeVcnIpv6Allocations,
-                            cidrBlock,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            ipv6CidrBlock,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.byoipRangeVcnIpv6Allocations,
+                            this.cidrBlock,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.ipv6CidrBlock,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ByoipRangeSummary o) {
-            Builder copiedBuilder =
-                    byoipRangeVcnIpv6Allocations(o.getByoipRangeVcnIpv6Allocations())
-                            .cidrBlock(o.getCidrBlock())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ByoipRangeSummary model) {
+            if (model.wasPropertyExplicitlySet("byoipRangeVcnIpv6Allocations")) {
+                this.byoipRangeVcnIpv6Allocations(model.getByoipRangeVcnIpv6Allocations());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -532,6 +553,7 @@ public final class ByoipRangeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ByoipRangeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("byoipRangeVcnIpv6Allocations=")
                 .append(String.valueOf(this.byoipRangeVcnIpv6Allocations));
         sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
@@ -544,7 +566,6 @@ public final class ByoipRangeSummary {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -571,7 +592,7 @@ public final class ByoipRangeSummary {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -601,16 +622,7 @@ public final class ByoipRangeSummary {
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

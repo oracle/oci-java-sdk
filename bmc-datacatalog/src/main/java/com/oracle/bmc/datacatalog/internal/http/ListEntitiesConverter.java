@@ -314,8 +314,8 @@ public class ListEntitiesConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListEntitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.entityCollection(response.getItem());
 

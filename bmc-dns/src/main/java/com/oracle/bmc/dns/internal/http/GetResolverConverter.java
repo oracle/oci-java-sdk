@@ -113,7 +113,8 @@ public class GetResolverConverter {
 
                                 com.oracle.bmc.dns.responses.GetResolverResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.GetResolverResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.resolver(response.getItem());

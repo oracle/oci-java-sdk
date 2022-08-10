@@ -99,7 +99,8 @@ public class UpdateSubnetConverter {
 
                                 com.oracle.bmc.core.responses.UpdateSubnetResponse.Builder builder =
                                         com.oracle.bmc.core.responses.UpdateSubnetResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.subnet(response.getItem());
 

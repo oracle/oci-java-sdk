@@ -20,7 +20,8 @@ package com.oracle.bmc.apigateway.model;
     builder = ApiSpecificationLoggingPolicies.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiSpecificationLoggingPolicies {
+public final class ApiSpecificationLoggingPolicies
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"accessLog", "executionLog"})
     public ApiSpecificationLoggingPolicies(
@@ -55,18 +56,23 @@ public final class ApiSpecificationLoggingPolicies {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationLoggingPolicies build() {
-            ApiSpecificationLoggingPolicies __instance__ =
-                    new ApiSpecificationLoggingPolicies(accessLog, executionLog);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApiSpecificationLoggingPolicies model =
+                    new ApiSpecificationLoggingPolicies(this.accessLog, this.executionLog);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiSpecificationLoggingPolicies o) {
-            Builder copiedBuilder = accessLog(o.getAccessLog()).executionLog(o.getExecutionLog());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiSpecificationLoggingPolicies model) {
+            if (model.wasPropertyExplicitlySet("accessLog")) {
+                this.accessLog(model.getAccessLog());
+            }
+            if (model.wasPropertyExplicitlySet("executionLog")) {
+                this.executionLog(model.getExecutionLog());
+            }
+            return this;
         }
     }
 
@@ -108,9 +114,9 @@ public final class ApiSpecificationLoggingPolicies {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiSpecificationLoggingPolicies(");
+        sb.append("super=").append(super.toString());
         sb.append("accessLog=").append(String.valueOf(this.accessLog));
         sb.append(", executionLog=").append(String.valueOf(this.executionLog));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -127,7 +133,7 @@ public final class ApiSpecificationLoggingPolicies {
         ApiSpecificationLoggingPolicies other = (ApiSpecificationLoggingPolicies) o;
         return java.util.Objects.equals(this.accessLog, other.accessLog)
                 && java.util.Objects.equals(this.executionLog, other.executionLog)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -136,16 +142,7 @@ public final class ApiSpecificationLoggingPolicies {
         int result = 1;
         result = (result * PRIME) + (this.accessLog == null ? 43 : this.accessLog.hashCode());
         result = (result * PRIME) + (this.executionLog == null ? 43 : this.executionLog.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

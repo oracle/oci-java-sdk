@@ -53,10 +53,20 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
         return value;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "value"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "value"
+    })
     private ExportGlossaryResponse(
-            int __httpStatusCode__, String etag, String opcRequestId, String value) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcRequestId,
+            String value) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.value = value;
@@ -67,6 +77,13 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -127,6 +144,7 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(ExportGlossaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             value(o.getValue());
@@ -139,7 +157,8 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public ExportGlossaryResponse build() {
-            return new ExportGlossaryResponse(__httpStatusCode__, etag, opcRequestId, value);
+            return new ExportGlossaryResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, value);
         }
     }
 

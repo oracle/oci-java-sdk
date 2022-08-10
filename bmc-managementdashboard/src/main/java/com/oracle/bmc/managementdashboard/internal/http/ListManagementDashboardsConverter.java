@@ -155,8 +155,8 @@ public class ListManagementDashboardsConverter {
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .ListManagementDashboardsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementDashboardCollection(response.getItem());
 

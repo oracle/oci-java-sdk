@@ -95,30 +95,41 @@ public final class DeleteCommandDescriptor extends AbstractCommandDescriptor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeleteCommandDescriptor build() {
-            DeleteCommandDescriptor __instance__ =
+            DeleteCommandDescriptor model =
                     new DeleteCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            isDryRun);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.isDryRun);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeleteCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .isDryRun(o.getIsDryRun());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeleteCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isDryRun")) {
+                this.isDryRun(model.getIsDryRun());
+            }
+            return this;
         }
     }
 
@@ -176,7 +187,6 @@ public final class DeleteCommandDescriptor extends AbstractCommandDescriptor {
         sb.append("DeleteCommandDescriptor(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isDryRun=").append(String.valueOf(this.isDryRun));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,9 +201,7 @@ public final class DeleteCommandDescriptor extends AbstractCommandDescriptor {
         }
 
         DeleteCommandDescriptor other = (DeleteCommandDescriptor) o;
-        return java.util.Objects.equals(this.isDryRun, other.isDryRun)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.isDryRun, other.isDryRun) && super.equals(other);
     }
 
     @Override
@@ -201,16 +209,6 @@ public final class DeleteCommandDescriptor extends AbstractCommandDescriptor {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.isDryRun == null ? 43 : this.isDryRun.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

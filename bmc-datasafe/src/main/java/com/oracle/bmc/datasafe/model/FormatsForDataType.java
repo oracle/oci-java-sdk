@@ -19,7 +19,7 @@ package com.oracle.bmc.datasafe.model;
     builder = FormatsForDataType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FormatsForDataType {
+public final class FormatsForDataType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataType", "maskingFormats"})
     public FormatsForDataType(String dataType, java.util.List<FormatSummary> maskingFormats) {
@@ -79,17 +79,22 @@ public final class FormatsForDataType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FormatsForDataType build() {
-            FormatsForDataType __instance__ = new FormatsForDataType(dataType, maskingFormats);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FormatsForDataType model = new FormatsForDataType(this.dataType, this.maskingFormats);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FormatsForDataType o) {
-            Builder copiedBuilder = dataType(o.getDataType()).maskingFormats(o.getMaskingFormats());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FormatsForDataType model) {
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("maskingFormats")) {
+                this.maskingFormats(model.getMaskingFormats());
+            }
+            return this;
         }
     }
 
@@ -157,9 +162,9 @@ public final class FormatsForDataType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FormatsForDataType(");
+        sb.append("super=").append(super.toString());
         sb.append("dataType=").append(String.valueOf(this.dataType));
         sb.append(", maskingFormats=").append(String.valueOf(this.maskingFormats));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,7 +181,7 @@ public final class FormatsForDataType {
         FormatsForDataType other = (FormatsForDataType) o;
         return java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.maskingFormats, other.maskingFormats)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -187,16 +192,7 @@ public final class FormatsForDataType {
         result =
                 (result * PRIME)
                         + (this.maskingFormats == null ? 43 : this.maskingFormats.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

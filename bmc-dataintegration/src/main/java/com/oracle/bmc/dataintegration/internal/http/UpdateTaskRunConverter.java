@@ -123,8 +123,8 @@ public class UpdateTaskRunConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateTaskRunResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taskRunDetails(response.getItem());
 

@@ -111,8 +111,8 @@ public class UpdateTemplateConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .UpdateTemplateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.template(response.getItem());
 

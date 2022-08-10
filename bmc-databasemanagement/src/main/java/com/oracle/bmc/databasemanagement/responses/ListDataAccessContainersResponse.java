@@ -61,17 +61,19 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "dataAccessContainerCollection"
     })
     private ListDataAccessContainersResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection
                     dataAccessContainerCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.dataAccessContainerCollection = dataAccessContainerCollection;
@@ -82,6 +84,13 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListDataAccessContainersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             dataAccessContainerCollection(o.getDataAccessContainerCollection());
@@ -162,7 +172,11 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
          */
         public ListDataAccessContainersResponse build() {
             return new ListDataAccessContainersResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, dataAccessContainerCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcRequestId,
+                    dataAccessContainerCollection);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.streaming.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KafkaSettings.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KafkaSettings {
+public final class KafkaSettings extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bootstrapServers",
@@ -108,26 +108,33 @@ public final class KafkaSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KafkaSettings build() {
-            KafkaSettings __instance__ =
+            KafkaSettings model =
                     new KafkaSettings(
-                            bootstrapServers,
-                            autoCreateTopicsEnable,
-                            logRetentionHours,
-                            numPartitions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bootstrapServers,
+                            this.autoCreateTopicsEnable,
+                            this.logRetentionHours,
+                            this.numPartitions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KafkaSettings o) {
-            Builder copiedBuilder =
-                    bootstrapServers(o.getBootstrapServers())
-                            .autoCreateTopicsEnable(o.getAutoCreateTopicsEnable())
-                            .logRetentionHours(o.getLogRetentionHours())
-                            .numPartitions(o.getNumPartitions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KafkaSettings model) {
+            if (model.wasPropertyExplicitlySet("bootstrapServers")) {
+                this.bootstrapServers(model.getBootstrapServers());
+            }
+            if (model.wasPropertyExplicitlySet("autoCreateTopicsEnable")) {
+                this.autoCreateTopicsEnable(model.getAutoCreateTopicsEnable());
+            }
+            if (model.wasPropertyExplicitlySet("logRetentionHours")) {
+                this.logRetentionHours(model.getLogRetentionHours());
+            }
+            if (model.wasPropertyExplicitlySet("numPartitions")) {
+                this.numPartitions(model.getNumPartitions());
+            }
+            return this;
         }
     }
 
@@ -211,11 +218,11 @@ public final class KafkaSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KafkaSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("bootstrapServers=").append(String.valueOf(this.bootstrapServers));
         sb.append(", autoCreateTopicsEnable=").append(String.valueOf(this.autoCreateTopicsEnable));
         sb.append(", logRetentionHours=").append(String.valueOf(this.logRetentionHours));
         sb.append(", numPartitions=").append(String.valueOf(this.numPartitions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,7 +242,7 @@ public final class KafkaSettings {
                         this.autoCreateTopicsEnable, other.autoCreateTopicsEnable)
                 && java.util.Objects.equals(this.logRetentionHours, other.logRetentionHours)
                 && java.util.Objects.equals(this.numPartitions, other.numPartitions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -256,16 +263,7 @@ public final class KafkaSettings {
         result =
                 (result * PRIME)
                         + (this.numPartitions == null ? 43 : this.numPartitions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

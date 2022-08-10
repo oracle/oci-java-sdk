@@ -149,7 +149,8 @@ public class ListTablesConverter {
 
                                 com.oracle.bmc.nosql.responses.ListTablesResponse.Builder builder =
                                         com.oracle.bmc.nosql.responses.ListTablesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.tableCollection(response.getItem());
 

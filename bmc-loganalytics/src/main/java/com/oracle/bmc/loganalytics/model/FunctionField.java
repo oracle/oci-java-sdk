@@ -156,42 +156,65 @@ public final class FunctionField extends AbstractField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FunctionField build() {
-            FunctionField __instance__ =
+            FunctionField model =
                     new FunctionField(
-                            displayName,
-                            isDeclared,
-                            originalDisplayNames,
-                            internalName,
-                            valueType,
-                            isGroupable,
-                            isDuration,
-                            alias,
-                            filterQueryString,
-                            unitType,
-                            function,
-                            arguments);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isDeclared,
+                            this.originalDisplayNames,
+                            this.internalName,
+                            this.valueType,
+                            this.isGroupable,
+                            this.isDuration,
+                            this.alias,
+                            this.filterQueryString,
+                            this.unitType,
+                            this.function,
+                            this.arguments);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FunctionField o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isDeclared(o.getIsDeclared())
-                            .originalDisplayNames(o.getOriginalDisplayNames())
-                            .internalName(o.getInternalName())
-                            .valueType(o.getValueType())
-                            .isGroupable(o.getIsGroupable())
-                            .isDuration(o.getIsDuration())
-                            .alias(o.getAlias())
-                            .filterQueryString(o.getFilterQueryString())
-                            .unitType(o.getUnitType())
-                            .function(o.getFunction())
-                            .arguments(o.getArguments());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FunctionField model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isDeclared")) {
+                this.isDeclared(model.getIsDeclared());
+            }
+            if (model.wasPropertyExplicitlySet("originalDisplayNames")) {
+                this.originalDisplayNames(model.getOriginalDisplayNames());
+            }
+            if (model.wasPropertyExplicitlySet("internalName")) {
+                this.internalName(model.getInternalName());
+            }
+            if (model.wasPropertyExplicitlySet("valueType")) {
+                this.valueType(model.getValueType());
+            }
+            if (model.wasPropertyExplicitlySet("isGroupable")) {
+                this.isGroupable(model.getIsGroupable());
+            }
+            if (model.wasPropertyExplicitlySet("isDuration")) {
+                this.isDuration(model.getIsDuration());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            if (model.wasPropertyExplicitlySet("filterQueryString")) {
+                this.filterQueryString(model.getFilterQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("unitType")) {
+                this.unitType(model.getUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("function")) {
+                this.function(model.getFunction());
+            }
+            if (model.wasPropertyExplicitlySet("arguments")) {
+                this.arguments(model.getArguments());
+            }
+            return this;
         }
     }
 
@@ -283,7 +306,6 @@ public final class FunctionField extends AbstractField {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", function=").append(String.valueOf(this.function));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -300,8 +322,7 @@ public final class FunctionField extends AbstractField {
         FunctionField other = (FunctionField) o;
         return java.util.Objects.equals(this.function, other.function)
                 && java.util.Objects.equals(this.arguments, other.arguments)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -310,16 +331,6 @@ public final class FunctionField extends AbstractField {
         int result = super.hashCode();
         result = (result * PRIME) + (this.function == null ? 43 : this.function.hashCode());
         result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

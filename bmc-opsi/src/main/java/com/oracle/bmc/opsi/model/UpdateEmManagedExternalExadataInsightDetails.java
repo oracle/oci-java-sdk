@@ -67,22 +67,27 @@ public final class UpdateEmManagedExternalExadataInsightDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateEmManagedExternalExadataInsightDetails build() {
-            UpdateEmManagedExternalExadataInsightDetails __instance__ =
+            UpdateEmManagedExternalExadataInsightDetails model =
                     new UpdateEmManagedExternalExadataInsightDetails(
-                            freeformTags, definedTags, isAutoSyncEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.freeformTags, this.definedTags, this.isAutoSyncEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateEmManagedExternalExadataInsightDetails o) {
-            Builder copiedBuilder =
-                    freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .isAutoSyncEnabled(o.getIsAutoSyncEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateEmManagedExternalExadataInsightDetails model) {
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoSyncEnabled")) {
+                this.isAutoSyncEnabled(model.getIsAutoSyncEnabled());
+            }
+            return this;
         }
     }
 
@@ -135,7 +140,6 @@ public final class UpdateEmManagedExternalExadataInsightDetails
         sb.append("UpdateEmManagedExternalExadataInsightDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isAutoSyncEnabled=").append(String.valueOf(this.isAutoSyncEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,8 +156,7 @@ public final class UpdateEmManagedExternalExadataInsightDetails
         UpdateEmManagedExternalExadataInsightDetails other =
                 (UpdateEmManagedExternalExadataInsightDetails) o;
         return java.util.Objects.equals(this.isAutoSyncEnabled, other.isAutoSyncEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +166,6 @@ public final class UpdateEmManagedExternalExadataInsightDetails
         result =
                 (result * PRIME)
                         + (this.isAutoSyncEnabled == null ? 43 : this.isAutoSyncEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

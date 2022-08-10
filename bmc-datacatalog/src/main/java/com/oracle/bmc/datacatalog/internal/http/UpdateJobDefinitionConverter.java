@@ -118,8 +118,8 @@ public class UpdateJobDefinitionConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .UpdateJobDefinitionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobDefinition(response.getItem());
 

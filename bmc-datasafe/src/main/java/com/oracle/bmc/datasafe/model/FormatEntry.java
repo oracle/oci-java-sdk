@@ -120,7 +120,7 @@ package com.oracle.bmc.datasafe.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class FormatEntry {
+public class FormatEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description"})
     protected FormatEntry(String description) {
@@ -155,6 +155,7 @@ public class FormatEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FormatEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
@@ -170,7 +171,7 @@ public class FormatEntry {
         }
 
         FormatEntry other = (FormatEntry) o;
-        return java.util.Objects.equals(this.description, other.description);
+        return java.util.Objects.equals(this.description, other.description) && super.equals(other);
     }
 
     @Override
@@ -178,6 +179,7 @@ public class FormatEntry {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

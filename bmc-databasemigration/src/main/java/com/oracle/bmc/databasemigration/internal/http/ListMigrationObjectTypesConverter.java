@@ -139,8 +139,8 @@ public class ListMigrationObjectTypesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListMigrationObjectTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.migrationObjectTypeSummaryCollection(response.getItem());
 

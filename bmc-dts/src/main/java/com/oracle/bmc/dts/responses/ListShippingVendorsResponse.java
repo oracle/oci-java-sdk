@@ -34,12 +34,18 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
         return shippingVendors;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "shippingVendors"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "shippingVendors"
+    })
     private ListShippingVendorsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.ShippingVendors shippingVendors) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.shippingVendors = shippingVendors;
     }
@@ -49,6 +55,13 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -88,6 +101,7 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListShippingVendorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             shippingVendors(o.getShippingVendors());
 
@@ -100,7 +114,7 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListShippingVendorsResponse build() {
             return new ListShippingVendorsResponse(
-                    __httpStatusCode__, opcRequestId, shippingVendors);
+                    __httpStatusCode__, headers, opcRequestId, shippingVendors);
         }
     }
 

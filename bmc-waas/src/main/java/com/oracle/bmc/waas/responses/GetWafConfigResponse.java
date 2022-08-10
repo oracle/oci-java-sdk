@@ -47,13 +47,20 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
         return wafConfig;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "wafConfig"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "wafConfig"
+    })
     private GetWafConfigResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waas.model.WafConfig wafConfig) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.wafConfig = wafConfig;
@@ -64,6 +71,13 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetWafConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             wafConfig(o.getWafConfig());
@@ -130,7 +145,8 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetWafConfigResponse build() {
-            return new GetWafConfigResponse(__httpStatusCode__, etag, opcRequestId, wafConfig);
+            return new GetWafConfigResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, wafConfig);
         }
     }
 

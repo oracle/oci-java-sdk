@@ -55,16 +55,18 @@ public class CreateTranscriptionJobResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "transcriptionJob"
     })
     private CreateTranscriptionJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.aispeech.model.TranscriptionJob transcriptionJob) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.transcriptionJob = transcriptionJob;
@@ -75,6 +77,13 @@ public class CreateTranscriptionJobResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateTranscriptionJobResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(CreateTranscriptionJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             transcriptionJob(o.getTranscriptionJob());
@@ -149,7 +159,7 @@ public class CreateTranscriptionJobResponse extends com.oracle.bmc.responses.Bmc
          */
         public CreateTranscriptionJobResponse build() {
             return new CreateTranscriptionJobResponse(
-                    __httpStatusCode__, opcRequestId, etag, transcriptionJob);
+                    __httpStatusCode__, headers, opcRequestId, etag, transcriptionJob);
         }
     }
 

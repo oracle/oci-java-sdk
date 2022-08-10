@@ -53,13 +53,20 @@ public class GetIpv6Response extends com.oracle.bmc.responses.BmcResponse {
         return ipv6;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "ipv6"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "ipv6"
+    })
     private GetIpv6Response(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.Ipv6 ipv6) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.ipv6 = ipv6;
@@ -70,6 +77,13 @@ public class GetIpv6Response extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetIpv6Response extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetIpv6Response o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             ipv6(o.getIpv6());
@@ -142,7 +157,7 @@ public class GetIpv6Response extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetIpv6Response build() {
-            return new GetIpv6Response(__httpStatusCode__, etag, opcRequestId, ipv6);
+            return new GetIpv6Response(__httpStatusCode__, headers, etag, opcRequestId, ipv6);
         }
     }
 

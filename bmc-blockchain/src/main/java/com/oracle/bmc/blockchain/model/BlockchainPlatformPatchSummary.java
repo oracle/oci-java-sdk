@@ -19,7 +19,8 @@ package com.oracle.bmc.blockchain.model;
     builder = BlockchainPlatformPatchSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BlockchainPlatformPatchSummary {
+public final class BlockchainPlatformPatchSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "serviceVersion", "patchInfoUrl", "timePatchDue"})
     public BlockchainPlatformPatchSummary(
@@ -102,23 +103,30 @@ public final class BlockchainPlatformPatchSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BlockchainPlatformPatchSummary build() {
-            BlockchainPlatformPatchSummary __instance__ =
+            BlockchainPlatformPatchSummary model =
                     new BlockchainPlatformPatchSummary(
-                            id, serviceVersion, patchInfoUrl, timePatchDue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id, this.serviceVersion, this.patchInfoUrl, this.timePatchDue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BlockchainPlatformPatchSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .serviceVersion(o.getServiceVersion())
-                            .patchInfoUrl(o.getPatchInfoUrl())
-                            .timePatchDue(o.getTimePatchDue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BlockchainPlatformPatchSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceVersion")) {
+                this.serviceVersion(model.getServiceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("patchInfoUrl")) {
+                this.patchInfoUrl(model.getPatchInfoUrl());
+            }
+            if (model.wasPropertyExplicitlySet("timePatchDue")) {
+                this.timePatchDue(model.getTimePatchDue());
+            }
+            return this;
         }
     }
 
@@ -202,11 +210,11 @@ public final class BlockchainPlatformPatchSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BlockchainPlatformPatchSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", serviceVersion=").append(String.valueOf(this.serviceVersion));
         sb.append(", patchInfoUrl=").append(String.valueOf(this.patchInfoUrl));
         sb.append(", timePatchDue=").append(String.valueOf(this.timePatchDue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -225,7 +233,7 @@ public final class BlockchainPlatformPatchSummary {
                 && java.util.Objects.equals(this.serviceVersion, other.serviceVersion)
                 && java.util.Objects.equals(this.patchInfoUrl, other.patchInfoUrl)
                 && java.util.Objects.equals(this.timePatchDue, other.timePatchDue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -238,16 +246,7 @@ public final class BlockchainPlatformPatchSummary {
                         + (this.serviceVersion == null ? 43 : this.serviceVersion.hashCode());
         result = (result * PRIME) + (this.patchInfoUrl == null ? 43 : this.patchInfoUrl.hashCode());
         result = (result * PRIME) + (this.timePatchDue == null ? 43 : this.timePatchDue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

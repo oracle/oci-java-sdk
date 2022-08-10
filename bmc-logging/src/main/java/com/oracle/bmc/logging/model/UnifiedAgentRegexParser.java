@@ -112,36 +112,53 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentRegexParser build() {
-            UnifiedAgentRegexParser __instance__ =
+            UnifiedAgentRegexParser model =
                     new UnifiedAgentRegexParser(
-                            fieldTimeKey,
-                            types,
-                            nullValuePattern,
-                            isNullEmptyString,
-                            isEstimateCurrentEvent,
-                            isKeepTimeKey,
-                            timeoutInMilliseconds,
-                            expression,
-                            timeFormat);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldTimeKey,
+                            this.types,
+                            this.nullValuePattern,
+                            this.isNullEmptyString,
+                            this.isEstimateCurrentEvent,
+                            this.isKeepTimeKey,
+                            this.timeoutInMilliseconds,
+                            this.expression,
+                            this.timeFormat);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentRegexParser o) {
-            Builder copiedBuilder =
-                    fieldTimeKey(o.getFieldTimeKey())
-                            .types(o.getTypes())
-                            .nullValuePattern(o.getNullValuePattern())
-                            .isNullEmptyString(o.getIsNullEmptyString())
-                            .isEstimateCurrentEvent(o.getIsEstimateCurrentEvent())
-                            .isKeepTimeKey(o.getIsKeepTimeKey())
-                            .timeoutInMilliseconds(o.getTimeoutInMilliseconds())
-                            .expression(o.getExpression())
-                            .timeFormat(o.getTimeFormat());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentRegexParser model) {
+            if (model.wasPropertyExplicitlySet("fieldTimeKey")) {
+                this.fieldTimeKey(model.getFieldTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("nullValuePattern")) {
+                this.nullValuePattern(model.getNullValuePattern());
+            }
+            if (model.wasPropertyExplicitlySet("isNullEmptyString")) {
+                this.isNullEmptyString(model.getIsNullEmptyString());
+            }
+            if (model.wasPropertyExplicitlySet("isEstimateCurrentEvent")) {
+                this.isEstimateCurrentEvent(model.getIsEstimateCurrentEvent());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepTimeKey")) {
+                this.isKeepTimeKey(model.getIsKeepTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMilliseconds")) {
+                this.timeoutInMilliseconds(model.getTimeoutInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("timeFormat")) {
+                this.timeFormat(model.getTimeFormat());
+            }
+            return this;
         }
     }
 
@@ -209,7 +226,6 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", expression=").append(String.valueOf(this.expression));
         sb.append(", timeFormat=").append(String.valueOf(this.timeFormat));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,8 +242,7 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         UnifiedAgentRegexParser other = (UnifiedAgentRegexParser) o;
         return java.util.Objects.equals(this.expression, other.expression)
                 && java.util.Objects.equals(this.timeFormat, other.timeFormat)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -236,16 +251,6 @@ public final class UnifiedAgentRegexParser extends UnifiedAgentParser {
         int result = super.hashCode();
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
         result = (result * PRIME) + (this.timeFormat == null ? 43 : this.timeFormat.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

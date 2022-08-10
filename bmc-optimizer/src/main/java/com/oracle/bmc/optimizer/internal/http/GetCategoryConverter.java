@@ -102,8 +102,8 @@ public class GetCategoryConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .GetCategoryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.category(response.getItem());
 

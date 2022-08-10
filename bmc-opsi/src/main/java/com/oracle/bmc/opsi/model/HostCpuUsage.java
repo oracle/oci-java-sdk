@@ -183,38 +183,57 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostCpuUsage build() {
-            HostCpuUsage __instance__ =
+            HostCpuUsage model =
                     new HostCpuUsage(
-                            timeCollected,
-                            cpuUserModeInPercent,
-                            cpuSystemModeInPercent,
-                            cpuUsageInSec,
-                            cpuUtilizationInPercent,
-                            cpuStolenInPercent,
-                            cpuIdleInPercent,
-                            cpuLoad1min,
-                            cpuLoad5min,
-                            cpuLoad15min);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.cpuUserModeInPercent,
+                            this.cpuSystemModeInPercent,
+                            this.cpuUsageInSec,
+                            this.cpuUtilizationInPercent,
+                            this.cpuStolenInPercent,
+                            this.cpuIdleInPercent,
+                            this.cpuLoad1min,
+                            this.cpuLoad5min,
+                            this.cpuLoad15min);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostCpuUsage o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .cpuUserModeInPercent(o.getCpuUserModeInPercent())
-                            .cpuSystemModeInPercent(o.getCpuSystemModeInPercent())
-                            .cpuUsageInSec(o.getCpuUsageInSec())
-                            .cpuUtilizationInPercent(o.getCpuUtilizationInPercent())
-                            .cpuStolenInPercent(o.getCpuStolenInPercent())
-                            .cpuIdleInPercent(o.getCpuIdleInPercent())
-                            .cpuLoad1min(o.getCpuLoad1min())
-                            .cpuLoad5min(o.getCpuLoad5min())
-                            .cpuLoad15min(o.getCpuLoad15min());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostCpuUsage model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUserModeInPercent")) {
+                this.cpuUserModeInPercent(model.getCpuUserModeInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuSystemModeInPercent")) {
+                this.cpuSystemModeInPercent(model.getCpuSystemModeInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUsageInSec")) {
+                this.cpuUsageInSec(model.getCpuUsageInSec());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUtilizationInPercent")) {
+                this.cpuUtilizationInPercent(model.getCpuUtilizationInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuStolenInPercent")) {
+                this.cpuStolenInPercent(model.getCpuStolenInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuIdleInPercent")) {
+                this.cpuIdleInPercent(model.getCpuIdleInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuLoad1min")) {
+                this.cpuLoad1min(model.getCpuLoad1min());
+            }
+            if (model.wasPropertyExplicitlySet("cpuLoad5min")) {
+                this.cpuLoad5min(model.getCpuLoad5min());
+            }
+            if (model.wasPropertyExplicitlySet("cpuLoad15min")) {
+                this.cpuLoad15min(model.getCpuLoad15min());
+            }
+            return this;
         }
     }
 
@@ -403,7 +422,6 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
         sb.append(", cpuLoad1min=").append(String.valueOf(this.cpuLoad1min));
         sb.append(", cpuLoad5min=").append(String.valueOf(this.cpuLoad5min));
         sb.append(", cpuLoad15min=").append(String.valueOf(this.cpuLoad15min));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -429,8 +447,7 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
                 && java.util.Objects.equals(this.cpuLoad1min, other.cpuLoad1min)
                 && java.util.Objects.equals(this.cpuLoad5min, other.cpuLoad5min)
                 && java.util.Objects.equals(this.cpuLoad15min, other.cpuLoad15min)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -466,16 +483,6 @@ public final class HostCpuUsage extends HostPerformanceMetricGroup {
         result = (result * PRIME) + (this.cpuLoad1min == null ? 43 : this.cpuLoad1min.hashCode());
         result = (result * PRIME) + (this.cpuLoad5min == null ? 43 : this.cpuLoad5min.hashCode());
         result = (result * PRIME) + (this.cpuLoad15min == null ? 43 : this.cpuLoad15min.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

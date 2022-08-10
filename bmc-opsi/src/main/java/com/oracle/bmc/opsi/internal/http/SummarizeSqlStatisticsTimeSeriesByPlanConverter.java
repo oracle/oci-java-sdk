@@ -176,8 +176,8 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeSqlStatisticsTimeSeriesByPlanResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlStatisticsTimeSeriesByPlanAggregationCollection(
                                         response.getItem());

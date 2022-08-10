@@ -18,7 +18,7 @@ package com.oracle.bmc.dns.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExternalMaster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExternalMaster {
+public final class ExternalMaster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"address", "port", "tsigKeyId"})
     public ExternalMaster(String address, Integer port, String tsigKeyId) {
@@ -87,18 +87,25 @@ public final class ExternalMaster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalMaster build() {
-            ExternalMaster __instance__ = new ExternalMaster(address, port, tsigKeyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExternalMaster model = new ExternalMaster(this.address, this.port, this.tsigKeyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalMaster o) {
-            Builder copiedBuilder =
-                    address(o.getAddress()).port(o.getPort()).tsigKeyId(o.getTsigKeyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalMaster model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("tsigKeyId")) {
+                this.tsigKeyId(model.getTsigKeyId());
+            }
+            return this;
         }
     }
 
@@ -172,10 +179,10 @@ public final class ExternalMaster {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalMaster(");
+        sb.append("super=").append(super.toString());
         sb.append("address=").append(String.valueOf(this.address));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", tsigKeyId=").append(String.valueOf(this.tsigKeyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +200,7 @@ public final class ExternalMaster {
         return java.util.Objects.equals(this.address, other.address)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.tsigKeyId, other.tsigKeyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -203,16 +210,7 @@ public final class ExternalMaster {
         result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.tsigKeyId == null ? 43 : this.tsigKeyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

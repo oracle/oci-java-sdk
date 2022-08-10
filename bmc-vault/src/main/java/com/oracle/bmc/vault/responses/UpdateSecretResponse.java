@@ -51,13 +51,20 @@ public class UpdateSecretResponse extends com.oracle.bmc.responses.BmcResponse {
         return secret;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "secret"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "secret"
+    })
     private UpdateSecretResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.vault.model.Secret secret) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.secret = secret;
@@ -68,6 +75,13 @@ public class UpdateSecretResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class UpdateSecretResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateSecretResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             secret(o.getSecret());
@@ -138,7 +153,8 @@ public class UpdateSecretResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateSecretResponse build() {
-            return new UpdateSecretResponse(__httpStatusCode__, etag, opcRequestId, secret);
+            return new UpdateSecretResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, secret);
         }
     }
 

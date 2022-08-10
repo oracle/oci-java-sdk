@@ -55,16 +55,18 @@ public class GetDrgRouteDistributionResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "drgRouteDistribution"
     })
     private GetDrgRouteDistributionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.drgRouteDistribution = drgRouteDistribution;
@@ -75,6 +77,13 @@ public class GetDrgRouteDistributionResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetDrgRouteDistributionResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetDrgRouteDistributionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             drgRouteDistribution(o.getDrgRouteDistribution());
@@ -149,7 +159,7 @@ public class GetDrgRouteDistributionResponse extends com.oracle.bmc.responses.Bm
          */
         public GetDrgRouteDistributionResponse build() {
             return new GetDrgRouteDistributionResponse(
-                    __httpStatusCode__, etag, opcRequestId, drgRouteDistribution);
+                    __httpStatusCode__, headers, etag, opcRequestId, drgRouteDistribution);
         }
     }
 

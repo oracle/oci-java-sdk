@@ -20,7 +20,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SecurityRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityRule {
+public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -426,46 +426,73 @@ public final class SecurityRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityRule build() {
-            SecurityRule __instance__ =
+            SecurityRule model =
                     new SecurityRule(
-                            description,
-                            destination,
-                            destinationType,
-                            direction,
-                            icmpOptions,
-                            id,
-                            isStateless,
-                            isValid,
-                            protocol,
-                            source,
-                            sourceType,
-                            tcpOptions,
-                            timeCreated,
-                            udpOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.destination,
+                            this.destinationType,
+                            this.direction,
+                            this.icmpOptions,
+                            this.id,
+                            this.isStateless,
+                            this.isValid,
+                            this.protocol,
+                            this.source,
+                            this.sourceType,
+                            this.tcpOptions,
+                            this.timeCreated,
+                            this.udpOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityRule o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .destination(o.getDestination())
-                            .destinationType(o.getDestinationType())
-                            .direction(o.getDirection())
-                            .icmpOptions(o.getIcmpOptions())
-                            .id(o.getId())
-                            .isStateless(o.getIsStateless())
-                            .isValid(o.getIsValid())
-                            .protocol(o.getProtocol())
-                            .source(o.getSource())
-                            .sourceType(o.getSourceType())
-                            .tcpOptions(o.getTcpOptions())
-                            .timeCreated(o.getTimeCreated())
-                            .udpOptions(o.getUdpOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityRule model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            if (model.wasPropertyExplicitlySet("destinationType")) {
+                this.destinationType(model.getDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("direction")) {
+                this.direction(model.getDirection());
+            }
+            if (model.wasPropertyExplicitlySet("icmpOptions")) {
+                this.icmpOptions(model.getIcmpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("isStateless")) {
+                this.isStateless(model.getIsStateless());
+            }
+            if (model.wasPropertyExplicitlySet("isValid")) {
+                this.isValid(model.getIsValid());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("tcpOptions")) {
+                this.tcpOptions(model.getTcpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("udpOptions")) {
+                this.udpOptions(model.getUdpOptions());
+            }
+            return this;
         }
     }
 
@@ -984,6 +1011,7 @@ public final class SecurityRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityRule(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
@@ -998,7 +1026,6 @@ public final class SecurityRule {
         sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1027,7 +1054,7 @@ public final class SecurityRule {
                 && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.udpOptions, other.udpOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1050,16 +1077,7 @@ public final class SecurityRule {
         result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

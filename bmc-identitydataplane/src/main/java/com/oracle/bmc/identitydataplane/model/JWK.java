@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JWK.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JWK {
+public final class JWK extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"n", "e", "kid", "use", "alg", "kty"})
     public JWK(String n, String e, String kid, String use, String alg, String kty) {
@@ -133,23 +133,34 @@ public final class JWK {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JWK build() {
-            JWK __instance__ = new JWK(n, e, kid, use, alg, kty);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JWK model = new JWK(this.n, this.e, this.kid, this.use, this.alg, this.kty);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JWK o) {
-            Builder copiedBuilder =
-                    n(o.getN())
-                            .e(o.getE())
-                            .kid(o.getKid())
-                            .use(o.getUse())
-                            .alg(o.getAlg())
-                            .kty(o.getKty());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JWK model) {
+            if (model.wasPropertyExplicitlySet("n")) {
+                this.n(model.getN());
+            }
+            if (model.wasPropertyExplicitlySet("e")) {
+                this.e(model.getE());
+            }
+            if (model.wasPropertyExplicitlySet("kid")) {
+                this.kid(model.getKid());
+            }
+            if (model.wasPropertyExplicitlySet("use")) {
+                this.use(model.getUse());
+            }
+            if (model.wasPropertyExplicitlySet("alg")) {
+                this.alg(model.getAlg());
+            }
+            if (model.wasPropertyExplicitlySet("kty")) {
+                this.kty(model.getKty());
+            }
+            return this;
         }
     }
 
@@ -261,13 +272,13 @@ public final class JWK {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JWK(");
+        sb.append("super=").append(super.toString());
         sb.append("n=").append(String.valueOf(this.n));
         sb.append(", e=").append(String.valueOf(this.e));
         sb.append(", kid=").append(String.valueOf(this.kid));
         sb.append(", use=").append(String.valueOf(this.use));
         sb.append(", alg=").append(String.valueOf(this.alg));
         sb.append(", kty=").append(String.valueOf(this.kty));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -288,7 +299,7 @@ public final class JWK {
                 && java.util.Objects.equals(this.use, other.use)
                 && java.util.Objects.equals(this.alg, other.alg)
                 && java.util.Objects.equals(this.kty, other.kty)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -301,16 +312,7 @@ public final class JWK {
         result = (result * PRIME) + (this.use == null ? 43 : this.use.hashCode());
         result = (result * PRIME) + (this.alg == null ? 43 : this.alg.hashCode());
         result = (result * PRIME) + (this.kty == null ? 43 : this.kty.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

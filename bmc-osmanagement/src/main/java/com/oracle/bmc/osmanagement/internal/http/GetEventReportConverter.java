@@ -130,8 +130,8 @@ public class GetEventReportConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .GetEventReportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.eventReport(response.getItem());
 

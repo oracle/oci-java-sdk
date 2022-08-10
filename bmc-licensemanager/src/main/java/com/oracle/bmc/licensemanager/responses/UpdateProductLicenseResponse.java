@@ -55,16 +55,18 @@ public class UpdateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "productLicense"
     })
     private UpdateProductLicenseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.licensemanager.model.ProductLicense productLicense) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.productLicense = productLicense;
@@ -75,6 +77,13 @@ public class UpdateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(UpdateProductLicenseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             productLicense(o.getProductLicense());
@@ -149,7 +159,7 @@ public class UpdateProductLicenseResponse extends com.oracle.bmc.responses.BmcRe
          */
         public UpdateProductLicenseResponse build() {
             return new UpdateProductLicenseResponse(
-                    __httpStatusCode__, etag, opcRequestId, productLicense);
+                    __httpStatusCode__, headers, etag, opcRequestId, productLicense);
         }
     }
 

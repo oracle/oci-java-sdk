@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsCategory.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsCategory {
+public final class LogAnalyticsCategory extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "description", "displayName", "type", "isSystem"})
     public LogAnalyticsCategory(
@@ -123,23 +123,37 @@ public final class LogAnalyticsCategory {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsCategory build() {
-            LogAnalyticsCategory __instance__ =
-                    new LogAnalyticsCategory(name, description, displayName, type, isSystem);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogAnalyticsCategory model =
+                    new LogAnalyticsCategory(
+                            this.name,
+                            this.description,
+                            this.displayName,
+                            this.type,
+                            this.isSystem);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsCategory o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .type(o.getType())
-                            .isSystem(o.getIsSystem());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsCategory model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class LogAnalyticsCategory {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsCategory(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isSystem=").append(String.valueOf(this.isSystem));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class LogAnalyticsCategory {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -278,16 +292,7 @@ public final class LogAnalyticsCategory {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -107,8 +107,8 @@ public class UpdateTriggerConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .UpdateTriggerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.trigger(response.getItem());
 

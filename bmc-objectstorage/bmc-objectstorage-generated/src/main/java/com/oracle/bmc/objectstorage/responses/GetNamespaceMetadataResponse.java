@@ -53,16 +53,18 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "namespaceMetadata"
     })
     private GetNamespaceMetadataResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.namespaceMetadata = namespaceMetadata;
@@ -73,6 +75,13 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetNamespaceMetadataResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             namespaceMetadata(o.getNamespaceMetadata());
@@ -145,7 +155,11 @@ public class GetNamespaceMetadataResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetNamespaceMetadataResponse build() {
             return new GetNamespaceMetadataResponse(
-                    __httpStatusCode__, opcClientRequestId, opcRequestId, namespaceMetadata);
+                    __httpStatusCode__,
+                    headers,
+                    opcClientRequestId,
+                    opcRequestId,
+                    namespaceMetadata);
         }
     }
 

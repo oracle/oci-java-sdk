@@ -111,23 +111,37 @@ public final class ChannelSourceMysql extends ChannelSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChannelSourceMysql build() {
-            ChannelSourceMysql __instance__ =
-                    new ChannelSourceMysql(hostname, port, username, sslMode, sslCaCertificate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ChannelSourceMysql model =
+                    new ChannelSourceMysql(
+                            this.hostname,
+                            this.port,
+                            this.username,
+                            this.sslMode,
+                            this.sslCaCertificate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChannelSourceMysql o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname())
-                            .port(o.getPort())
-                            .username(o.getUsername())
-                            .sslMode(o.getSslMode())
-                            .sslCaCertificate(o.getSslCaCertificate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChannelSourceMysql model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("sslMode")) {
+                this.sslMode(model.getSslMode());
+            }
+            if (model.wasPropertyExplicitlySet("sslCaCertificate")) {
+                this.sslCaCertificate(model.getSslCaCertificate());
+            }
+            return this;
         }
     }
 
@@ -295,7 +309,6 @@ public final class ChannelSourceMysql extends ChannelSource {
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
         sb.append(", sslCaCertificate=").append(String.valueOf(this.sslCaCertificate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -315,8 +328,7 @@ public final class ChannelSourceMysql extends ChannelSource {
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.sslMode, other.sslMode)
                 && java.util.Objects.equals(this.sslCaCertificate, other.sslCaCertificate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -330,16 +342,6 @@ public final class ChannelSourceMysql extends ChannelSource {
         result =
                 (result * PRIME)
                         + (this.sslCaCertificate == null ? 43 : this.sslCaCertificate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

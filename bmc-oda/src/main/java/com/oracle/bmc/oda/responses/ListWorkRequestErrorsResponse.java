@@ -74,6 +74,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcTotalItems",
@@ -81,11 +82,12 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
     })
     private ListWorkRequestErrorsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             Integer opcTotalItems,
             java.util.List<com.oracle.bmc.oda.model.WorkRequestError> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcTotalItems = opcTotalItems;
@@ -97,6 +99,13 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -178,6 +187,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ListWorkRequestErrorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
@@ -192,7 +202,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
          */
         public ListWorkRequestErrorsResponse build() {
             return new ListWorkRequestErrorsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, opcTotalItems, items);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, opcTotalItems, items);
         }
     }
 

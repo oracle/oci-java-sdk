@@ -118,8 +118,8 @@ public class ExportDashboardConverter {
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .ExportDashboardResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementDashboardExportDetails(response.getItem());
 

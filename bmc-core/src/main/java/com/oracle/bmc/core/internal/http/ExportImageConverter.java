@@ -105,7 +105,8 @@ public class ExportImageConverter {
 
                                 com.oracle.bmc.core.responses.ExportImageResponse.Builder builder =
                                         com.oracle.bmc.core.responses.ExportImageResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.image(response.getItem());
 

@@ -55,16 +55,18 @@ public class CreatePipelineValidationResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "pipelineValidation"
     })
     private CreatePipelineValidationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.pipelineValidation = pipelineValidation;
@@ -75,6 +77,13 @@ public class CreatePipelineValidationResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreatePipelineValidationResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(CreatePipelineValidationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             pipelineValidation(o.getPipelineValidation());
@@ -149,7 +159,7 @@ public class CreatePipelineValidationResponse extends com.oracle.bmc.responses.B
          */
         public CreatePipelineValidationResponse build() {
             return new CreatePipelineValidationResponse(
-                    __httpStatusCode__, etag, opcRequestId, pipelineValidation);
+                    __httpStatusCode__, headers, etag, opcRequestId, pipelineValidation);
         }
     }
 

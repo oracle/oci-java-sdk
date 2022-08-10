@@ -20,7 +20,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobDefinition.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobDefinition {
+public final class JobDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -479,62 +479,105 @@ public final class JobDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobDefinition build() {
-            JobDefinition __instance__ =
+            JobDefinition model =
                     new JobDefinition(
-                            key,
-                            displayName,
-                            catalogId,
-                            jobType,
-                            isIncremental,
-                            dataAssetKey,
-                            description,
-                            connectionKey,
-                            internalVersion,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            createdById,
-                            updatedById,
-                            uri,
-                            isSampleDataExtracted,
-                            sampleDataSizeInMBs,
-                            timeLatestExecutionStarted,
-                            timeLatestExecutionEnded,
-                            jobExecutionState,
-                            scheduleType,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.catalogId,
+                            this.jobType,
+                            this.isIncremental,
+                            this.dataAssetKey,
+                            this.description,
+                            this.connectionKey,
+                            this.internalVersion,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.createdById,
+                            this.updatedById,
+                            this.uri,
+                            this.isSampleDataExtracted,
+                            this.sampleDataSizeInMBs,
+                            this.timeLatestExecutionStarted,
+                            this.timeLatestExecutionEnded,
+                            this.jobExecutionState,
+                            this.scheduleType,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobDefinition o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .catalogId(o.getCatalogId())
-                            .jobType(o.getJobType())
-                            .isIncremental(o.getIsIncremental())
-                            .dataAssetKey(o.getDataAssetKey())
-                            .description(o.getDescription())
-                            .connectionKey(o.getConnectionKey())
-                            .internalVersion(o.getInternalVersion())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .createdById(o.getCreatedById())
-                            .updatedById(o.getUpdatedById())
-                            .uri(o.getUri())
-                            .isSampleDataExtracted(o.getIsSampleDataExtracted())
-                            .sampleDataSizeInMBs(o.getSampleDataSizeInMBs())
-                            .timeLatestExecutionStarted(o.getTimeLatestExecutionStarted())
-                            .timeLatestExecutionEnded(o.getTimeLatestExecutionEnded())
-                            .jobExecutionState(o.getJobExecutionState())
-                            .scheduleType(o.getScheduleType())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobDefinition model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("jobType")) {
+                this.jobType(model.getJobType());
+            }
+            if (model.wasPropertyExplicitlySet("isIncremental")) {
+                this.isIncremental(model.getIsIncremental());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("connectionKey")) {
+                this.connectionKey(model.getConnectionKey());
+            }
+            if (model.wasPropertyExplicitlySet("internalVersion")) {
+                this.internalVersion(model.getInternalVersion());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("isSampleDataExtracted")) {
+                this.isSampleDataExtracted(model.getIsSampleDataExtracted());
+            }
+            if (model.wasPropertyExplicitlySet("sampleDataSizeInMBs")) {
+                this.sampleDataSizeInMBs(model.getSampleDataSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestExecutionStarted")) {
+                this.timeLatestExecutionStarted(model.getTimeLatestExecutionStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestExecutionEnded")) {
+                this.timeLatestExecutionEnded(model.getTimeLatestExecutionEnded());
+            }
+            if (model.wasPropertyExplicitlySet("jobExecutionState")) {
+                this.jobExecutionState(model.getJobExecutionState());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleType")) {
+                this.scheduleType(model.getScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -896,6 +939,7 @@ public final class JobDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", catalogId=").append(String.valueOf(this.catalogId));
@@ -920,7 +964,6 @@ public final class JobDefinition {
         sb.append(", jobExecutionState=").append(String.valueOf(this.jobExecutionState));
         sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -959,7 +1002,7 @@ public final class JobDefinition {
                 && java.util.Objects.equals(this.jobExecutionState, other.jobExecutionState)
                 && java.util.Objects.equals(this.scheduleType, other.scheduleType)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1014,16 +1057,7 @@ public final class JobDefinition {
                         + (this.jobExecutionState == null ? 43 : this.jobExecutionState.hashCode());
         result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

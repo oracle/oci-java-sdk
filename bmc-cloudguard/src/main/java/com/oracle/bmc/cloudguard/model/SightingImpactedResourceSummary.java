@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = SightingImpactedResourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SightingImpactedResourceSummary {
+public final class SightingImpactedResourceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -205,36 +206,53 @@ public final class SightingImpactedResourceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SightingImpactedResourceSummary build() {
-            SightingImpactedResourceSummary __instance__ =
+            SightingImpactedResourceSummary model =
                     new SightingImpactedResourceSummary(
-                            id,
-                            resourceId,
-                            sightingId,
-                            problemId,
-                            compartmentId,
-                            resourceName,
-                            resourceType,
-                            region,
-                            timeIdentified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.resourceId,
+                            this.sightingId,
+                            this.problemId,
+                            this.compartmentId,
+                            this.resourceName,
+                            this.resourceType,
+                            this.region,
+                            this.timeIdentified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SightingImpactedResourceSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .resourceId(o.getResourceId())
-                            .sightingId(o.getSightingId())
-                            .problemId(o.getProblemId())
-                            .compartmentId(o.getCompartmentId())
-                            .resourceName(o.getResourceName())
-                            .resourceType(o.getResourceType())
-                            .region(o.getRegion())
-                            .timeIdentified(o.getTimeIdentified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SightingImpactedResourceSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("sightingId")) {
+                this.sightingId(model.getSightingId());
+            }
+            if (model.wasPropertyExplicitlySet("problemId")) {
+                this.problemId(model.getProblemId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("timeIdentified")) {
+                this.timeIdentified(model.getTimeIdentified());
+            }
+            return this;
         }
     }
 
@@ -388,6 +406,7 @@ public final class SightingImpactedResourceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SightingImpactedResourceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", sightingId=").append(String.valueOf(this.sightingId));
@@ -397,7 +416,6 @@ public final class SightingImpactedResourceSummary {
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", timeIdentified=").append(String.valueOf(this.timeIdentified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -421,7 +439,7 @@ public final class SightingImpactedResourceSummary {
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.timeIdentified, other.timeIdentified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -441,16 +459,7 @@ public final class SightingImpactedResourceSummary {
         result =
                 (result * PRIME)
                         + (this.timeIdentified == null ? 43 : this.timeIdentified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

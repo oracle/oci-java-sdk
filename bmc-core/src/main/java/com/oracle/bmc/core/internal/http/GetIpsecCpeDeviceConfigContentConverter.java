@@ -106,8 +106,8 @@ public class GetIpsecCpeDeviceConfigContentConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetIpsecCpeDeviceConfigContentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

@@ -62,18 +62,22 @@ public final class StaticDateRange extends DateRange {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StaticDateRange build() {
-            StaticDateRange __instance__ = new StaticDateRange(timeUsageStarted, timeUsageEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StaticDateRange model = new StaticDateRange(this.timeUsageStarted, this.timeUsageEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StaticDateRange o) {
-            Builder copiedBuilder =
-                    timeUsageStarted(o.getTimeUsageStarted()).timeUsageEnded(o.getTimeUsageEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StaticDateRange model) {
+            if (model.wasPropertyExplicitlySet("timeUsageStarted")) {
+                this.timeUsageStarted(model.getTimeUsageStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageEnded")) {
+                this.timeUsageEnded(model.getTimeUsageEnded());
+            }
+            return this;
         }
     }
 
@@ -139,7 +143,6 @@ public final class StaticDateRange extends DateRange {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
         sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,8 +159,7 @@ public final class StaticDateRange extends DateRange {
         StaticDateRange other = (StaticDateRange) o;
         return java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
                 && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +172,6 @@ public final class StaticDateRange extends DateRange {
         result =
                 (result * PRIME)
                         + (this.timeUsageEnded == null ? 43 : this.timeUsageEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

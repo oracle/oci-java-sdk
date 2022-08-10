@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourceMetadataField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourceMetadataField {
+public final class LogAnalyticsSourceMetadataField
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldName", "isEnabled", "isSystem", "key", "sourceName"})
     public LogAnalyticsSourceMetadataField(
@@ -125,24 +126,37 @@ public final class LogAnalyticsSourceMetadataField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourceMetadataField build() {
-            LogAnalyticsSourceMetadataField __instance__ =
+            LogAnalyticsSourceMetadataField model =
                     new LogAnalyticsSourceMetadataField(
-                            fieldName, isEnabled, isSystem, key, sourceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldName,
+                            this.isEnabled,
+                            this.isSystem,
+                            this.key,
+                            this.sourceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourceMetadataField o) {
-            Builder copiedBuilder =
-                    fieldName(o.getFieldName())
-                            .isEnabled(o.getIsEnabled())
-                            .isSystem(o.getIsSystem())
-                            .key(o.getKey())
-                            .sourceName(o.getSourceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourceMetadataField model) {
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            return this;
         }
     }
 
@@ -246,12 +260,12 @@ public final class LogAnalyticsSourceMetadataField {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceMetadataField(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", isSystem=").append(String.valueOf(this.isSystem));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", sourceName=").append(String.valueOf(this.sourceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -271,7 +285,7 @@ public final class LogAnalyticsSourceMetadataField {
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
                 && java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.sourceName, other.sourceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -283,16 +297,7 @@ public final class LogAnalyticsSourceMetadataField {
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

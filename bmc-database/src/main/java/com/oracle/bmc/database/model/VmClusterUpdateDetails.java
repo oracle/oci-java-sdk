@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = VmClusterUpdateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VmClusterUpdateDetails {
+public final class VmClusterUpdateDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"updateId", "updateAction"})
     public VmClusterUpdateDetails(String updateId, UpdateAction updateAction) {
@@ -68,18 +69,23 @@ public final class VmClusterUpdateDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VmClusterUpdateDetails build() {
-            VmClusterUpdateDetails __instance__ =
-                    new VmClusterUpdateDetails(updateId, updateAction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VmClusterUpdateDetails model =
+                    new VmClusterUpdateDetails(this.updateId, this.updateAction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VmClusterUpdateDetails o) {
-            Builder copiedBuilder = updateId(o.getUpdateId()).updateAction(o.getUpdateAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VmClusterUpdateDetails model) {
+            if (model.wasPropertyExplicitlySet("updateId")) {
+                this.updateId(model.getUpdateId());
+            }
+            if (model.wasPropertyExplicitlySet("updateAction")) {
+                this.updateAction(model.getUpdateAction());
+            }
+            return this;
         }
     }
 
@@ -171,9 +177,9 @@ public final class VmClusterUpdateDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VmClusterUpdateDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("updateId=").append(String.valueOf(this.updateId));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class VmClusterUpdateDetails {
         VmClusterUpdateDetails other = (VmClusterUpdateDetails) o;
         return java.util.Objects.equals(this.updateId, other.updateId)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +205,7 @@ public final class VmClusterUpdateDetails {
         int result = 1;
         result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

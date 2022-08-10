@@ -169,46 +169,73 @@ public final class Intersect extends Operator {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Intersect build() {
-            Intersect __instance__ =
+            Intersect model =
                     new Intersect(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            inputPorts,
-                            outputPorts,
-                            objectStatus,
-                            identifier,
-                            parameters,
-                            opConfigValues,
-                            intersectType,
-                            isAll);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.intersectType,
+                            this.isAll);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Intersect o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .intersectType(o.getIntersectType())
-                            .isAll(o.getIsAll());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Intersect model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("intersectType")) {
+                this.intersectType(model.getIntersectType());
+            }
+            if (model.wasPropertyExplicitlySet("isAll")) {
+                this.isAll(model.getIsAll());
+            }
+            return this;
         }
     }
 
@@ -348,7 +375,6 @@ public final class Intersect extends Operator {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", intersectType=").append(String.valueOf(this.intersectType));
         sb.append(", isAll=").append(String.valueOf(this.isAll));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -365,8 +391,7 @@ public final class Intersect extends Operator {
         Intersect other = (Intersect) o;
         return java.util.Objects.equals(this.intersectType, other.intersectType)
                 && java.util.Objects.equals(this.isAll, other.isAll)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -377,16 +402,6 @@ public final class Intersect extends Operator {
                 (result * PRIME)
                         + (this.intersectType == null ? 43 : this.intersectType.hashCode());
         result = (result * PRIME) + (this.isAll == null ? 43 : this.isAll.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

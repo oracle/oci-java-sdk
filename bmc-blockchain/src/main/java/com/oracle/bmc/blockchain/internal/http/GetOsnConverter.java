@@ -104,7 +104,8 @@ public class GetOsnConverter {
 
                                 com.oracle.bmc.blockchain.responses.GetOsnResponse.Builder builder =
                                         com.oracle.bmc.blockchain.responses.GetOsnResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.osn(response.getItem());
 

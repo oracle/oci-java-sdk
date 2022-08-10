@@ -33,7 +33,7 @@ package com.oracle.bmc.waf.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CheckAction.class, name = "CHECK")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Action {
+public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name"})
     protected Action(String name) {
@@ -68,6 +68,7 @@ public class Action {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Action(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(")");
         return sb.toString();
@@ -83,7 +84,7 @@ public class Action {
         }
 
         Action other = (Action) o;
-        return java.util.Objects.equals(this.name, other.name);
+        return java.util.Objects.equals(this.name, other.name) && super.equals(other);
     }
 
     @Override
@@ -91,6 +92,7 @@ public class Action {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

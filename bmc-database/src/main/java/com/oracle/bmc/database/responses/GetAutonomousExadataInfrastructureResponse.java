@@ -56,17 +56,19 @@ public class GetAutonomousExadataInfrastructureResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "autonomousExadataInfrastructure"
     })
     private GetAutonomousExadataInfrastructureResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.AutonomousExadataInfrastructure
                     autonomousExadataInfrastructure) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.autonomousExadataInfrastructure = autonomousExadataInfrastructure;
@@ -77,6 +79,13 @@ public class GetAutonomousExadataInfrastructureResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -138,6 +147,7 @@ public class GetAutonomousExadataInfrastructureResponse
          */
         public Builder copy(GetAutonomousExadataInfrastructureResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             autonomousExadataInfrastructure(o.getAutonomousExadataInfrastructure());
@@ -151,7 +161,11 @@ public class GetAutonomousExadataInfrastructureResponse
          */
         public GetAutonomousExadataInfrastructureResponse build() {
             return new GetAutonomousExadataInfrastructureResponse(
-                    __httpStatusCode__, etag, opcRequestId, autonomousExadataInfrastructure);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    autonomousExadataInfrastructure);
         }
     }
 

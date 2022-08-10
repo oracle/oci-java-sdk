@@ -144,38 +144,57 @@ public final class OrchestrationListingPackage extends ListingPackage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OrchestrationListingPackage build() {
-            OrchestrationListingPackage __instance__ =
+            OrchestrationListingPackage model =
                     new OrchestrationListingPackage(
-                            description,
-                            listingId,
-                            version,
-                            pricing,
-                            resourceId,
-                            timeCreated,
-                            operatingSystem,
-                            resourceLink,
-                            variables,
-                            regions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.listingId,
+                            this.version,
+                            this.pricing,
+                            this.resourceId,
+                            this.timeCreated,
+                            this.operatingSystem,
+                            this.resourceLink,
+                            this.variables,
+                            this.regions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OrchestrationListingPackage o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .listingId(o.getListingId())
-                            .version(o.getVersion())
-                            .pricing(o.getPricing())
-                            .resourceId(o.getResourceId())
-                            .timeCreated(o.getTimeCreated())
-                            .operatingSystem(o.getOperatingSystem())
-                            .resourceLink(o.getResourceLink())
-                            .variables(o.getVariables())
-                            .regions(o.getRegions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OrchestrationListingPackage model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("pricing")) {
+                this.pricing(model.getPricing());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("resourceLink")) {
+                this.resourceLink(model.getResourceLink());
+            }
+            if (model.wasPropertyExplicitlySet("variables")) {
+                this.variables(model.getVariables());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            return this;
         }
     }
 
@@ -269,7 +288,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
         sb.append(", resourceLink=").append(String.valueOf(this.resourceLink));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", regions=").append(String.valueOf(this.regions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -287,8 +305,7 @@ public final class OrchestrationListingPackage extends ListingPackage {
         return java.util.Objects.equals(this.resourceLink, other.resourceLink)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.regions, other.regions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -298,16 +315,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
         result = (result * PRIME) + (this.resourceLink == null ? 43 : this.resourceLink.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

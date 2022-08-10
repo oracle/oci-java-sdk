@@ -64,20 +64,23 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InfluxDetailsV1v8 build() {
-            InfluxDetailsV1v8 __instance__ =
-                    new InfluxDetailsV1v8(databaseName, retentionPolicyName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InfluxDetailsV1v8 model =
+                    new InfluxDetailsV1v8(this.databaseName, this.retentionPolicyName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InfluxDetailsV1v8 o) {
-            Builder copiedBuilder =
-                    databaseName(o.getDatabaseName())
-                            .retentionPolicyName(o.getRetentionPolicyName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InfluxDetailsV1v8 model) {
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPolicyName")) {
+                this.retentionPolicyName(model.getRetentionPolicyName());
+            }
+            return this;
         }
     }
 
@@ -143,7 +146,6 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", retentionPolicyName=").append(String.valueOf(this.retentionPolicyName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -160,8 +162,7 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
         InfluxDetailsV1v8 other = (InfluxDetailsV1v8) o;
         return java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.retentionPolicyName, other.retentionPolicyName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +175,6 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
                         + (this.retentionPolicyName == null
                                 ? 43
                                 : this.retentionPolicyName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

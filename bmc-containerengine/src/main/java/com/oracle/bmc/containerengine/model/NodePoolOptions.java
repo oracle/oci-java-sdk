@@ -17,7 +17,7 @@ package com.oracle.bmc.containerengine.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodePoolOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NodePoolOptions {
+public final class NodePoolOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"kubernetesVersions", "shapes", "images", "sources"})
     public NodePoolOptions(
@@ -109,22 +109,30 @@ public final class NodePoolOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodePoolOptions build() {
-            NodePoolOptions __instance__ =
-                    new NodePoolOptions(kubernetesVersions, shapes, images, sources);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NodePoolOptions model =
+                    new NodePoolOptions(
+                            this.kubernetesVersions, this.shapes, this.images, this.sources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NodePoolOptions o) {
-            Builder copiedBuilder =
-                    kubernetesVersions(o.getKubernetesVersions())
-                            .shapes(o.getShapes())
-                            .images(o.getImages())
-                            .sources(o.getSources());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NodePoolOptions model) {
+            if (model.wasPropertyExplicitlySet("kubernetesVersions")) {
+                this.kubernetesVersions(model.getKubernetesVersions());
+            }
+            if (model.wasPropertyExplicitlySet("shapes")) {
+                this.shapes(model.getShapes());
+            }
+            if (model.wasPropertyExplicitlySet("images")) {
+                this.images(model.getImages());
+            }
+            if (model.wasPropertyExplicitlySet("sources")) {
+                this.sources(model.getSources());
+            }
+            return this;
         }
     }
 
@@ -214,11 +222,11 @@ public final class NodePoolOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NodePoolOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("kubernetesVersions=").append(String.valueOf(this.kubernetesVersions));
         sb.append(", shapes=").append(String.valueOf(this.shapes));
         sb.append(", images=").append(String.valueOf(this.images));
         sb.append(", sources=").append(String.valueOf(this.sources));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -237,7 +245,7 @@ public final class NodePoolOptions {
                 && java.util.Objects.equals(this.shapes, other.shapes)
                 && java.util.Objects.equals(this.images, other.images)
                 && java.util.Objects.equals(this.sources, other.sources)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -252,16 +260,7 @@ public final class NodePoolOptions {
         result = (result * PRIME) + (this.shapes == null ? 43 : this.shapes.hashCode());
         result = (result * PRIME) + (this.images == null ? 43 : this.images.hashCode());
         result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

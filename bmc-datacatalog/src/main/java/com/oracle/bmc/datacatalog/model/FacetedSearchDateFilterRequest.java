@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = FacetedSearchDateFilterRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FacetedSearchDateFilterRequest {
+public final class FacetedSearchDateFilterRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldName", "timeAfter", "timeBefore"})
     public FacetedSearchDateFilterRequest(
@@ -93,21 +94,27 @@ public final class FacetedSearchDateFilterRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FacetedSearchDateFilterRequest build() {
-            FacetedSearchDateFilterRequest __instance__ =
-                    new FacetedSearchDateFilterRequest(fieldName, timeAfter, timeBefore);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FacetedSearchDateFilterRequest model =
+                    new FacetedSearchDateFilterRequest(
+                            this.fieldName, this.timeAfter, this.timeBefore);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FacetedSearchDateFilterRequest o) {
-            Builder copiedBuilder =
-                    fieldName(o.getFieldName())
-                            .timeAfter(o.getTimeAfter())
-                            .timeBefore(o.getTimeBefore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FacetedSearchDateFilterRequest model) {
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("timeAfter")) {
+                this.timeAfter(model.getTimeAfter());
+            }
+            if (model.wasPropertyExplicitlySet("timeBefore")) {
+                this.timeBefore(model.getTimeBefore());
+            }
+            return this;
         }
     }
 
@@ -185,10 +192,10 @@ public final class FacetedSearchDateFilterRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FacetedSearchDateFilterRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", timeAfter=").append(String.valueOf(this.timeAfter));
         sb.append(", timeBefore=").append(String.valueOf(this.timeBefore));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,7 +213,7 @@ public final class FacetedSearchDateFilterRequest {
         return java.util.Objects.equals(this.fieldName, other.fieldName)
                 && java.util.Objects.equals(this.timeAfter, other.timeAfter)
                 && java.util.Objects.equals(this.timeBefore, other.timeBefore)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -216,16 +223,7 @@ public final class FacetedSearchDateFilterRequest {
         result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
         result = (result * PRIME) + (this.timeAfter == null ? 43 : this.timeAfter.hashCode());
         result = (result * PRIME) + (this.timeBefore == null ? 43 : this.timeBefore.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

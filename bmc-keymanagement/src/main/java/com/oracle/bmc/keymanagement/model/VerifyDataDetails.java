@@ -19,7 +19,7 @@ package com.oracle.bmc.keymanagement.model;
     builder = VerifyDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VerifyDataDetails {
+public final class VerifyDataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "keyId",
@@ -166,25 +166,41 @@ public final class VerifyDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VerifyDataDetails build() {
-            VerifyDataDetails __instance__ =
+            VerifyDataDetails model =
                     new VerifyDataDetails(
-                            keyId, keyVersionId, signature, messageType, message, signingAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.keyId,
+                            this.keyVersionId,
+                            this.signature,
+                            this.messageType,
+                            this.message,
+                            this.signingAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VerifyDataDetails o) {
-            Builder copiedBuilder =
-                    keyId(o.getKeyId())
-                            .keyVersionId(o.getKeyVersionId())
-                            .signature(o.getSignature())
-                            .messageType(o.getMessageType())
-                            .message(o.getMessage())
-                            .signingAlgorithm(o.getSigningAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VerifyDataDetails model) {
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("keyVersionId")) {
+                this.keyVersionId(model.getKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("signature")) {
+                this.signature(model.getSignature());
+            }
+            if (model.wasPropertyExplicitlySet("messageType")) {
+                this.messageType(model.getMessageType());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("signingAlgorithm")) {
+                this.signingAlgorithm(model.getSigningAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -401,13 +417,13 @@ public final class VerifyDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VerifyDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("keyId=").append(String.valueOf(this.keyId));
         sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
         sb.append(", signature=").append(String.valueOf(this.signature));
         sb.append(", messageType=").append(String.valueOf(this.messageType));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -428,7 +444,7 @@ public final class VerifyDataDetails {
                 && java.util.Objects.equals(this.messageType, other.messageType)
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -443,16 +459,7 @@ public final class VerifyDataDetails {
         result =
                 (result * PRIME)
                         + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

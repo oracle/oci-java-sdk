@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateMaintenanceRunDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateMaintenanceRunDetails {
+public final class UpdateMaintenanceRunDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -216,37 +217,53 @@ public final class UpdateMaintenanceRunDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaintenanceRunDetails build() {
-            UpdateMaintenanceRunDetails __instance__ =
+            UpdateMaintenanceRunDetails model =
                     new UpdateMaintenanceRunDetails(
-                            isEnabled,
-                            timeScheduled,
-                            isPatchNowEnabled,
-                            patchId,
-                            patchingMode,
-                            isCustomActionTimeoutEnabled,
-                            customActionTimeoutInMins,
-                            currentCustomActionTimeoutInMins,
-                            isResumePatching);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.timeScheduled,
+                            this.isPatchNowEnabled,
+                            this.patchId,
+                            this.patchingMode,
+                            this.isCustomActionTimeoutEnabled,
+                            this.customActionTimeoutInMins,
+                            this.currentCustomActionTimeoutInMins,
+                            this.isResumePatching);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateMaintenanceRunDetails o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .timeScheduled(o.getTimeScheduled())
-                            .isPatchNowEnabled(o.getIsPatchNowEnabled())
-                            .patchId(o.getPatchId())
-                            .patchingMode(o.getPatchingMode())
-                            .isCustomActionTimeoutEnabled(o.getIsCustomActionTimeoutEnabled())
-                            .customActionTimeoutInMins(o.getCustomActionTimeoutInMins())
-                            .currentCustomActionTimeoutInMins(
-                                    o.getCurrentCustomActionTimeoutInMins())
-                            .isResumePatching(o.getIsResumePatching());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateMaintenanceRunDetails model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduled")) {
+                this.timeScheduled(model.getTimeScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("isPatchNowEnabled")) {
+                this.isPatchNowEnabled(model.getIsPatchNowEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("patchId")) {
+                this.patchId(model.getPatchId());
+            }
+            if (model.wasPropertyExplicitlySet("patchingMode")) {
+                this.patchingMode(model.getPatchingMode());
+            }
+            if (model.wasPropertyExplicitlySet("isCustomActionTimeoutEnabled")) {
+                this.isCustomActionTimeoutEnabled(model.getIsCustomActionTimeoutEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customActionTimeoutInMins")) {
+                this.customActionTimeoutInMins(model.getCustomActionTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("currentCustomActionTimeoutInMins")) {
+                this.currentCustomActionTimeoutInMins(model.getCurrentCustomActionTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("isResumePatching")) {
+                this.isResumePatching(model.getIsResumePatching());
+            }
+            return this;
         }
     }
 
@@ -448,6 +465,7 @@ public final class UpdateMaintenanceRunDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateMaintenanceRunDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
         sb.append(", isPatchNowEnabled=").append(String.valueOf(this.isPatchNowEnabled));
@@ -460,7 +478,6 @@ public final class UpdateMaintenanceRunDetails {
         sb.append(", currentCustomActionTimeoutInMins=")
                 .append(String.valueOf(this.currentCustomActionTimeoutInMins));
         sb.append(", isResumePatching=").append(String.valueOf(this.isResumePatching));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -488,7 +505,7 @@ public final class UpdateMaintenanceRunDetails {
                         this.currentCustomActionTimeoutInMins,
                         other.currentCustomActionTimeoutInMins)
                 && java.util.Objects.equals(this.isResumePatching, other.isResumePatching)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -522,16 +539,7 @@ public final class UpdateMaintenanceRunDetails {
         result =
                 (result * PRIME)
                         + (this.isResumePatching == null ? 43 : this.isResumePatching.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

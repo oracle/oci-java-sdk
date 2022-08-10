@@ -38,12 +38,18 @@ public class GetAwrDatabaseReportResponse extends com.oracle.bmc.responses.BmcRe
         return awrDatabaseReport;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "awrDatabaseReport"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "awrDatabaseReport"
+    })
     private GetAwrDatabaseReportResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.opsi.model.AwrDatabaseReport awrDatabaseReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.awrDatabaseReport = awrDatabaseReport;
     }
@@ -53,6 +59,13 @@ public class GetAwrDatabaseReportResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetAwrDatabaseReportResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetAwrDatabaseReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             awrDatabaseReport(o.getAwrDatabaseReport());
 
@@ -109,7 +123,7 @@ public class GetAwrDatabaseReportResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetAwrDatabaseReportResponse build() {
             return new GetAwrDatabaseReportResponse(
-                    __httpStatusCode__, opcRequestId, awrDatabaseReport);
+                    __httpStatusCode__, headers, opcRequestId, awrDatabaseReport);
         }
     }
 

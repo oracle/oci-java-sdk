@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ValidateConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ValidateConnectionDetails {
+public final class ValidateConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"connectionDetail", "connectionPayload"})
     public ValidateConnectionDetails(
@@ -61,20 +62,23 @@ public final class ValidateConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidateConnectionDetails build() {
-            ValidateConnectionDetails __instance__ =
-                    new ValidateConnectionDetails(connectionDetail, connectionPayload);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ValidateConnectionDetails model =
+                    new ValidateConnectionDetails(this.connectionDetail, this.connectionPayload);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValidateConnectionDetails o) {
-            Builder copiedBuilder =
-                    connectionDetail(o.getConnectionDetail())
-                            .connectionPayload(o.getConnectionPayload());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValidateConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("connectionDetail")) {
+                this.connectionDetail(model.getConnectionDetail());
+            }
+            if (model.wasPropertyExplicitlySet("connectionPayload")) {
+                this.connectionPayload(model.getConnectionPayload());
+            }
+            return this;
         }
     }
 
@@ -123,6 +127,7 @@ public final class ValidateConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ValidateConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("connectionDetail=").append(String.valueOf(this.connectionDetail));
         sb.append(", connectionPayload=")
                 .append(
@@ -132,7 +137,6 @@ public final class ValidateConnectionDetails {
                                         + (this.connectionPayload != null
                                                 ? " (byte[" + this.connectionPayload.length + "])"
                                                 : ""))));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -149,7 +153,7 @@ public final class ValidateConnectionDetails {
         ValidateConnectionDetails other = (ValidateConnectionDetails) o;
         return java.util.Objects.equals(this.connectionDetail, other.connectionDetail)
                 && java.util.Arrays.equals(this.connectionPayload, other.connectionPayload)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -160,16 +164,7 @@ public final class ValidateConnectionDetails {
                 (result * PRIME)
                         + (this.connectionDetail == null ? 43 : this.connectionDetail.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.connectionPayload);
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

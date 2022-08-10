@@ -115,21 +115,27 @@ public final class StreamAction extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StreamAction build() {
-            StreamAction __instance__ =
-                    new StreamAction(savedSearchId, metricExtraction, savedSearchDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StreamAction model =
+                    new StreamAction(
+                            this.savedSearchId, this.metricExtraction, this.savedSearchDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StreamAction o) {
-            Builder copiedBuilder =
-                    savedSearchId(o.getSavedSearchId())
-                            .metricExtraction(o.getMetricExtraction())
-                            .savedSearchDuration(o.getSavedSearchDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StreamAction model) {
+            if (model.wasPropertyExplicitlySet("savedSearchId")) {
+                this.savedSearchId(model.getSavedSearchId());
+            }
+            if (model.wasPropertyExplicitlySet("metricExtraction")) {
+                this.metricExtraction(model.getMetricExtraction());
+            }
+            if (model.wasPropertyExplicitlySet("savedSearchDuration")) {
+                this.savedSearchDuration(model.getSavedSearchDuration());
+            }
+            return this;
         }
     }
 
@@ -249,7 +255,6 @@ public final class StreamAction extends Action {
         sb.append(", savedSearchId=").append(String.valueOf(this.savedSearchId));
         sb.append(", metricExtraction=").append(String.valueOf(this.metricExtraction));
         sb.append(", savedSearchDuration=").append(String.valueOf(this.savedSearchDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -267,8 +272,7 @@ public final class StreamAction extends Action {
         return java.util.Objects.equals(this.savedSearchId, other.savedSearchId)
                 && java.util.Objects.equals(this.metricExtraction, other.metricExtraction)
                 && java.util.Objects.equals(this.savedSearchDuration, other.savedSearchDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -286,16 +290,6 @@ public final class StreamAction extends Action {
                         + (this.savedSearchDuration == null
                                 ? 43
                                 : this.savedSearchDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

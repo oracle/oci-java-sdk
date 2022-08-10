@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParseQueryOutput.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParseQueryOutput {
+public final class ParseQueryOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayQueryString",
@@ -138,28 +138,37 @@ public final class ParseQueryOutput {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParseQueryOutput build() {
-            ParseQueryOutput __instance__ =
+            ParseQueryOutput model =
                     new ParseQueryOutput(
-                            displayQueryString,
-                            internalQueryString,
-                            columns,
-                            responseTimeInMs,
-                            commands);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.columns,
+                            this.responseTimeInMs,
+                            this.commands);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ParseQueryOutput o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .columns(o.getColumns())
-                            .responseTimeInMs(o.getResponseTimeInMs())
-                            .commands(o.getCommands());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ParseQueryOutput model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("columns")) {
+                this.columns(model.getColumns());
+            }
+            if (model.wasPropertyExplicitlySet("responseTimeInMs")) {
+                this.responseTimeInMs(model.getResponseTimeInMs());
+            }
+            if (model.wasPropertyExplicitlySet("commands")) {
+                this.commands(model.getCommands());
+            }
+            return this;
         }
     }
 
@@ -267,12 +276,12 @@ public final class ParseQueryOutput {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ParseQueryOutput(");
+        sb.append("super=").append(super.toString());
         sb.append("displayQueryString=").append(String.valueOf(this.displayQueryString));
         sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
         sb.append(", columns=").append(String.valueOf(this.columns));
         sb.append(", responseTimeInMs=").append(String.valueOf(this.responseTimeInMs));
         sb.append(", commands=").append(String.valueOf(this.commands));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -292,7 +301,7 @@ public final class ParseQueryOutput {
                 && java.util.Objects.equals(this.columns, other.columns)
                 && java.util.Objects.equals(this.responseTimeInMs, other.responseTimeInMs)
                 && java.util.Objects.equals(this.commands, other.commands)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -314,16 +323,7 @@ public final class ParseQueryOutput {
                 (result * PRIME)
                         + (this.responseTimeInMs == null ? 43 : this.responseTimeInMs.hashCode());
         result = (result * PRIME) + (this.commands == null ? 43 : this.commands.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

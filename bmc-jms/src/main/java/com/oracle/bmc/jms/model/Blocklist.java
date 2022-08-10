@@ -17,7 +17,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Blocklist.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Blocklist {
+public final class Blocklist extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "target", "operation", "reason"})
     public Blocklist(String key, BlocklistTarget target, OperationType operation, String reason) {
@@ -92,21 +92,28 @@ public final class Blocklist {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Blocklist build() {
-            Blocklist __instance__ = new Blocklist(key, target, operation, reason);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Blocklist model = new Blocklist(this.key, this.target, this.operation, this.reason);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Blocklist o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .target(o.getTarget())
-                            .operation(o.getOperation())
-                            .reason(o.getReason());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Blocklist model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("reason")) {
+                this.reason(model.getReason());
+            }
+            return this;
         }
     }
 
@@ -183,11 +190,11 @@ public final class Blocklist {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Blocklist(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", target=").append(String.valueOf(this.target));
         sb.append(", operation=").append(String.valueOf(this.operation));
         sb.append(", reason=").append(String.valueOf(this.reason));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,7 +213,7 @@ public final class Blocklist {
                 && java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.reason, other.reason)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -217,16 +224,7 @@ public final class Blocklist {
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
         result = (result * PRIME) + (this.reason == null ? 43 : this.reason.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

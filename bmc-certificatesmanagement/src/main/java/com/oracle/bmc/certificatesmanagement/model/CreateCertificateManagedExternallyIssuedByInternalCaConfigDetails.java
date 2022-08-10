@@ -82,23 +82,34 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails build() {
-            CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails __instance__ =
+            CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails model =
                     new CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails(
-                            versionName, issuerCertificateAuthorityId, validity, csrPem);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.versionName,
+                            this.issuerCertificateAuthorityId,
+                            this.validity,
+                            this.csrPem);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails o) {
-            Builder copiedBuilder =
-                    versionName(o.getVersionName())
-                            .issuerCertificateAuthorityId(o.getIssuerCertificateAuthorityId())
-                            .validity(o.getValidity())
-                            .csrPem(o.getCsrPem());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(
+                CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("issuerCertificateAuthorityId")) {
+                this.issuerCertificateAuthorityId(model.getIssuerCertificateAuthorityId());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            if (model.wasPropertyExplicitlySet("csrPem")) {
+                this.csrPem(model.getCsrPem());
+            }
+            return this;
         }
     }
 
@@ -178,7 +189,6 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
                 .append(String.valueOf(this.issuerCertificateAuthorityId));
         sb.append(", validity=").append(String.valueOf(this.validity));
         sb.append(", csrPem=").append(String.valueOf(this.csrPem));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,8 +208,7 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
                         this.issuerCertificateAuthorityId, other.issuerCertificateAuthorityId)
                 && java.util.Objects.equals(this.validity, other.validity)
                 && java.util.Objects.equals(this.csrPem, other.csrPem)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -213,16 +222,6 @@ public final class CreateCertificateManagedExternallyIssuedByInternalCaConfigDet
                                 : this.issuerCertificateAuthorityId.hashCode());
         result = (result * PRIME) + (this.validity == null ? 43 : this.validity.hashCode());
         result = (result * PRIME) + (this.csrPem == null ? 43 : this.csrPem.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

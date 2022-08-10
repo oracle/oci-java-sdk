@@ -104,8 +104,8 @@ public class GetAccessRequestConverter {
                                         builder =
                                                 com.oracle.bmc.lockbox.responses
                                                         .GetAccessRequestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.accessRequest(response.getItem());
 

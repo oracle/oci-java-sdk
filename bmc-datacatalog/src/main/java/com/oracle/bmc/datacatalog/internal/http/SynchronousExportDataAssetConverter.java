@@ -127,8 +127,8 @@ public class SynchronousExportDataAssetConverter {
                                                 com.oracle.bmc.datacatalog.responses
                                                         .SynchronousExportDataAssetResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

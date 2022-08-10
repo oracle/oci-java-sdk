@@ -100,6 +100,7 @@ public class CreateWebAppAccelerationPolicyResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
@@ -109,13 +110,14 @@ public class CreateWebAppAccelerationPolicyResponse extends com.oracle.bmc.respo
     })
     private CreateWebAppAccelerationPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
             String contentLocation,
             com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -129,6 +131,13 @@ public class CreateWebAppAccelerationPolicyResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -241,6 +250,7 @@ public class CreateWebAppAccelerationPolicyResponse extends com.oracle.bmc.respo
          */
         public Builder copy(CreateWebAppAccelerationPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -258,6 +268,7 @@ public class CreateWebAppAccelerationPolicyResponse extends com.oracle.bmc.respo
         public CreateWebAppAccelerationPolicyResponse build() {
             return new CreateWebAppAccelerationPolicyResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcWorkRequestId,
                     opcRequestId,

@@ -44,7 +44,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ProjectionRule {
+public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -170,6 +170,7 @@ public class ProjectionRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProjectionRule(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -197,7 +198,8 @@ public class ProjectionRule {
                 && java.util.Objects.equals(this.isJavaRegexSyntax, other.isJavaRegexSyntax)
                 && java.util.Objects.equals(this.configValues, other.configValues)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.description, other.description);
+                && java.util.Objects.equals(this.description, other.description)
+                && super.equals(other);
     }
 
     @Override
@@ -213,6 +215,7 @@ public class ProjectionRule {
         result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

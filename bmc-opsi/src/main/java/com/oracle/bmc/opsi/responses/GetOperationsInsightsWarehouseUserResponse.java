@@ -58,17 +58,19 @@ public class GetOperationsInsightsWarehouseUserResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "operationsInsightsWarehouseUser"
     })
     private GetOperationsInsightsWarehouseUserResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                     operationsInsightsWarehouseUser) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.operationsInsightsWarehouseUser = operationsInsightsWarehouseUser;
@@ -79,6 +81,13 @@ public class GetOperationsInsightsWarehouseUserResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class GetOperationsInsightsWarehouseUserResponse
          */
         public Builder copy(GetOperationsInsightsWarehouseUserResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             operationsInsightsWarehouseUser(o.getOperationsInsightsWarehouseUser());
@@ -155,7 +165,11 @@ public class GetOperationsInsightsWarehouseUserResponse
          */
         public GetOperationsInsightsWarehouseUserResponse build() {
             return new GetOperationsInsightsWarehouseUserResponse(
-                    __httpStatusCode__, etag, opcRequestId, operationsInsightsWarehouseUser);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    operationsInsightsWarehouseUser);
         }
     }
 

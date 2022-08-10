@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FilterOutput.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FilterOutput {
+public final class FilterOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayQueryString",
@@ -94,21 +94,29 @@ public final class FilterOutput {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FilterOutput build() {
-            FilterOutput __instance__ =
-                    new FilterOutput(displayQueryString, internalQueryString, responseTimeInMs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FilterOutput model =
+                    new FilterOutput(
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.responseTimeInMs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FilterOutput o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .responseTimeInMs(o.getResponseTimeInMs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FilterOutput model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("responseTimeInMs")) {
+                this.responseTimeInMs(model.getResponseTimeInMs());
+            }
+            return this;
         }
     }
 
@@ -184,10 +192,10 @@ public final class FilterOutput {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FilterOutput(");
+        sb.append("super=").append(super.toString());
         sb.append("displayQueryString=").append(String.valueOf(this.displayQueryString));
         sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
         sb.append(", responseTimeInMs=").append(String.valueOf(this.responseTimeInMs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +213,7 @@ public final class FilterOutput {
         return java.util.Objects.equals(this.displayQueryString, other.displayQueryString)
                 && java.util.Objects.equals(this.internalQueryString, other.internalQueryString)
                 && java.util.Objects.equals(this.responseTimeInMs, other.responseTimeInMs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -225,16 +233,7 @@ public final class FilterOutput {
         result =
                 (result * PRIME)
                         + (this.responseTimeInMs == null ? 43 : this.responseTimeInMs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

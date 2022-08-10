@@ -32,7 +32,8 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ComputeInstanceGroupRolloutPolicy {
+public class ComputeInstanceGroupRolloutPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"batchDelayInSeconds"})
     protected ComputeInstanceGroupRolloutPolicy(Integer batchDelayInSeconds) {
@@ -67,6 +68,7 @@ public class ComputeInstanceGroupRolloutPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputeInstanceGroupRolloutPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("batchDelayInSeconds=").append(String.valueOf(this.batchDelayInSeconds));
         sb.append(")");
         return sb.toString();
@@ -82,7 +84,8 @@ public class ComputeInstanceGroupRolloutPolicy {
         }
 
         ComputeInstanceGroupRolloutPolicy other = (ComputeInstanceGroupRolloutPolicy) o;
-        return java.util.Objects.equals(this.batchDelayInSeconds, other.batchDelayInSeconds);
+        return java.util.Objects.equals(this.batchDelayInSeconds, other.batchDelayInSeconds)
+                && super.equals(other);
     }
 
     @Override
@@ -94,6 +97,7 @@ public class ComputeInstanceGroupRolloutPolicy {
                         + (this.batchDelayInSeconds == null
                                 ? 43
                                 : this.batchDelayInSeconds.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

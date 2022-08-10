@@ -95,23 +95,33 @@ public final class FixedFrequencySchedule extends Schedule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FixedFrequencySchedule build() {
-            FixedFrequencySchedule __instance__ =
+            FixedFrequencySchedule model =
                     new FixedFrequencySchedule(
-                            misfirePolicy, timeOfFirstExecution, recurringInterval, repeatCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.misfirePolicy,
+                            this.timeOfFirstExecution,
+                            this.recurringInterval,
+                            this.repeatCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FixedFrequencySchedule o) {
-            Builder copiedBuilder =
-                    misfirePolicy(o.getMisfirePolicy())
-                            .timeOfFirstExecution(o.getTimeOfFirstExecution())
-                            .recurringInterval(o.getRecurringInterval())
-                            .repeatCount(o.getRepeatCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FixedFrequencySchedule model) {
+            if (model.wasPropertyExplicitlySet("misfirePolicy")) {
+                this.misfirePolicy(model.getMisfirePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfFirstExecution")) {
+                this.timeOfFirstExecution(model.getTimeOfFirstExecution());
+            }
+            if (model.wasPropertyExplicitlySet("recurringInterval")) {
+                this.recurringInterval(model.getRecurringInterval());
+            }
+            if (model.wasPropertyExplicitlySet("repeatCount")) {
+                this.repeatCount(model.getRepeatCount());
+            }
+            return this;
         }
     }
 
@@ -195,7 +205,6 @@ public final class FixedFrequencySchedule extends Schedule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", recurringInterval=").append(String.valueOf(this.recurringInterval));
         sb.append(", repeatCount=").append(String.valueOf(this.repeatCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,8 +221,7 @@ public final class FixedFrequencySchedule extends Schedule {
         FixedFrequencySchedule other = (FixedFrequencySchedule) o;
         return java.util.Objects.equals(this.recurringInterval, other.recurringInterval)
                 && java.util.Objects.equals(this.repeatCount, other.repeatCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +232,6 @@ public final class FixedFrequencySchedule extends Schedule {
                 (result * PRIME)
                         + (this.recurringInterval == null ? 43 : this.recurringInterval.hashCode());
         result = (result * PRIME) + (this.repeatCount == null ? 43 : this.repeatCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = UpdateTransferApplianceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTransferApplianceDetails {
+public final class UpdateTransferApplianceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -135,31 +136,42 @@ public final class UpdateTransferApplianceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTransferApplianceDetails build() {
-            UpdateTransferApplianceDetails __instance__ =
+            UpdateTransferApplianceDetails model =
                     new UpdateTransferApplianceDetails(
-                            lifecycleState,
-                            customerShippingAddress,
-                            expectedReturnDate,
-                            pickupWindowStartTime,
-                            pickupWindowEndTime,
-                            minimumStorageCapacityInTerabytes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.lifecycleState,
+                            this.customerShippingAddress,
+                            this.expectedReturnDate,
+                            this.pickupWindowStartTime,
+                            this.pickupWindowEndTime,
+                            this.minimumStorageCapacityInTerabytes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTransferApplianceDetails o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState())
-                            .customerShippingAddress(o.getCustomerShippingAddress())
-                            .expectedReturnDate(o.getExpectedReturnDate())
-                            .pickupWindowStartTime(o.getPickupWindowStartTime())
-                            .pickupWindowEndTime(o.getPickupWindowEndTime())
-                            .minimumStorageCapacityInTerabytes(
-                                    o.getMinimumStorageCapacityInTerabytes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTransferApplianceDetails model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("customerShippingAddress")) {
+                this.customerShippingAddress(model.getCustomerShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("expectedReturnDate")) {
+                this.expectedReturnDate(model.getExpectedReturnDate());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowStartTime")) {
+                this.pickupWindowStartTime(model.getPickupWindowStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowEndTime")) {
+                this.pickupWindowEndTime(model.getPickupWindowEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("minimumStorageCapacityInTerabytes")) {
+                this.minimumStorageCapacityInTerabytes(
+                        model.getMinimumStorageCapacityInTerabytes());
+            }
+            return this;
         }
     }
 
@@ -298,6 +310,7 @@ public final class UpdateTransferApplianceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTransferApplianceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", customerShippingAddress=")
                 .append(String.valueOf(this.customerShippingAddress));
@@ -306,7 +319,6 @@ public final class UpdateTransferApplianceDetails {
         sb.append(", pickupWindowEndTime=").append(String.valueOf(this.pickupWindowEndTime));
         sb.append(", minimumStorageCapacityInTerabytes=")
                 .append(String.valueOf(this.minimumStorageCapacityInTerabytes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -330,7 +342,7 @@ public final class UpdateTransferApplianceDetails {
                 && java.util.Objects.equals(
                         this.minimumStorageCapacityInTerabytes,
                         other.minimumStorageCapacityInTerabytes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -365,16 +377,7 @@ public final class UpdateTransferApplianceDetails {
                         + (this.minimumStorageCapacityInTerabytes == null
                                 ? 43
                                 : this.minimumStorageCapacityInTerabytes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

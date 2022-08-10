@@ -59,16 +59,18 @@ public class ListProblemsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "problemCollection"
     })
     private ListProblemsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ProblemCollection problemCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.problemCollection = problemCollection;
@@ -79,6 +81,13 @@ public class ListProblemsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListProblemsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListProblemsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             problemCollection(o.getProblemCollection());
@@ -157,7 +167,7 @@ public class ListProblemsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListProblemsResponse build() {
             return new ListProblemsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, problemCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, problemCollection);
         }
     }
 

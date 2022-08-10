@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AwrDbSnapshotSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDbSnapshotSummary {
+public final class AwrDbSnapshotSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "awrDbId",
@@ -179,32 +179,45 @@ public final class AwrDbSnapshotSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbSnapshotSummary build() {
-            AwrDbSnapshotSummary __instance__ =
+            AwrDbSnapshotSummary model =
                     new AwrDbSnapshotSummary(
-                            awrDbId,
-                            instanceNumber,
-                            timeDbStartup,
-                            timeBegin,
-                            timeEnd,
-                            snapshotId,
-                            errorCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.awrDbId,
+                            this.instanceNumber,
+                            this.timeDbStartup,
+                            this.timeBegin,
+                            this.timeEnd,
+                            this.snapshotId,
+                            this.errorCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbSnapshotSummary o) {
-            Builder copiedBuilder =
-                    awrDbId(o.getAwrDbId())
-                            .instanceNumber(o.getInstanceNumber())
-                            .timeDbStartup(o.getTimeDbStartup())
-                            .timeBegin(o.getTimeBegin())
-                            .timeEnd(o.getTimeEnd())
-                            .snapshotId(o.getSnapshotId())
-                            .errorCount(o.getErrorCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbSnapshotSummary model) {
+            if (model.wasPropertyExplicitlySet("awrDbId")) {
+                this.awrDbId(model.getAwrDbId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceNumber")) {
+                this.instanceNumber(model.getInstanceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("timeDbStartup")) {
+                this.timeDbStartup(model.getTimeDbStartup());
+            }
+            if (model.wasPropertyExplicitlySet("timeBegin")) {
+                this.timeBegin(model.getTimeBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotId")) {
+                this.snapshotId(model.getSnapshotId());
+            }
+            if (model.wasPropertyExplicitlySet("errorCount")) {
+                this.errorCount(model.getErrorCount());
+            }
+            return this;
         }
     }
 
@@ -342,6 +355,7 @@ public final class AwrDbSnapshotSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDbSnapshotSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("awrDbId=").append(String.valueOf(this.awrDbId));
         sb.append(", instanceNumber=").append(String.valueOf(this.instanceNumber));
         sb.append(", timeDbStartup=").append(String.valueOf(this.timeDbStartup));
@@ -349,7 +363,6 @@ public final class AwrDbSnapshotSummary {
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", snapshotId=").append(String.valueOf(this.snapshotId));
         sb.append(", errorCount=").append(String.valueOf(this.errorCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -371,7 +384,7 @@ public final class AwrDbSnapshotSummary {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.snapshotId, other.snapshotId)
                 && java.util.Objects.equals(this.errorCount, other.errorCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -389,16 +402,7 @@ public final class AwrDbSnapshotSummary {
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.snapshotId == null ? 43 : this.snapshotId.hashCode());
         result = (result * PRIME) + (this.errorCount == null ? 43 : this.errorCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

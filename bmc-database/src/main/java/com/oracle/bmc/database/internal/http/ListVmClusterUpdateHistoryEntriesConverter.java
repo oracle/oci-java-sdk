@@ -151,8 +151,8 @@ public class ListVmClusterUpdateHistoryEntriesConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListVmClusterUpdateHistoryEntriesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -116,8 +116,8 @@ public class GetStreamDistributionChannelConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .GetStreamDistributionChannelResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamDistributionChannel(response.getItem());
 

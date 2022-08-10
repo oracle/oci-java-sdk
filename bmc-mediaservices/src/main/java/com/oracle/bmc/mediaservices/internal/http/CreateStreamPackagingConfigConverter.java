@@ -115,8 +115,8 @@ public class CreateStreamPackagingConfigConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .CreateStreamPackagingConfigResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamPackagingConfig(response.getItem());
 

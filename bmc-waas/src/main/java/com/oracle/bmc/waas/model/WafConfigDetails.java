@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafConfigDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WafConfigDetails {
+public final class WafConfigDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "accessRules",
@@ -265,42 +265,65 @@ public final class WafConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WafConfigDetails build() {
-            WafConfigDetails __instance__ =
+            WafConfigDetails model =
                     new WafConfigDetails(
-                            accessRules,
-                            addressRateLimiting,
-                            captchas,
-                            deviceFingerprintChallenge,
-                            humanInteractionChallenge,
-                            jsChallenge,
-                            origin,
-                            cachingRules,
-                            customProtectionRules,
-                            originGroups,
-                            protectionSettings,
-                            whitelists);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.accessRules,
+                            this.addressRateLimiting,
+                            this.captchas,
+                            this.deviceFingerprintChallenge,
+                            this.humanInteractionChallenge,
+                            this.jsChallenge,
+                            this.origin,
+                            this.cachingRules,
+                            this.customProtectionRules,
+                            this.originGroups,
+                            this.protectionSettings,
+                            this.whitelists);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WafConfigDetails o) {
-            Builder copiedBuilder =
-                    accessRules(o.getAccessRules())
-                            .addressRateLimiting(o.getAddressRateLimiting())
-                            .captchas(o.getCaptchas())
-                            .deviceFingerprintChallenge(o.getDeviceFingerprintChallenge())
-                            .humanInteractionChallenge(o.getHumanInteractionChallenge())
-                            .jsChallenge(o.getJsChallenge())
-                            .origin(o.getOrigin())
-                            .cachingRules(o.getCachingRules())
-                            .customProtectionRules(o.getCustomProtectionRules())
-                            .originGroups(o.getOriginGroups())
-                            .protectionSettings(o.getProtectionSettings())
-                            .whitelists(o.getWhitelists());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WafConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("accessRules")) {
+                this.accessRules(model.getAccessRules());
+            }
+            if (model.wasPropertyExplicitlySet("addressRateLimiting")) {
+                this.addressRateLimiting(model.getAddressRateLimiting());
+            }
+            if (model.wasPropertyExplicitlySet("captchas")) {
+                this.captchas(model.getCaptchas());
+            }
+            if (model.wasPropertyExplicitlySet("deviceFingerprintChallenge")) {
+                this.deviceFingerprintChallenge(model.getDeviceFingerprintChallenge());
+            }
+            if (model.wasPropertyExplicitlySet("humanInteractionChallenge")) {
+                this.humanInteractionChallenge(model.getHumanInteractionChallenge());
+            }
+            if (model.wasPropertyExplicitlySet("jsChallenge")) {
+                this.jsChallenge(model.getJsChallenge());
+            }
+            if (model.wasPropertyExplicitlySet("origin")) {
+                this.origin(model.getOrigin());
+            }
+            if (model.wasPropertyExplicitlySet("cachingRules")) {
+                this.cachingRules(model.getCachingRules());
+            }
+            if (model.wasPropertyExplicitlySet("customProtectionRules")) {
+                this.customProtectionRules(model.getCustomProtectionRules());
+            }
+            if (model.wasPropertyExplicitlySet("originGroups")) {
+                this.originGroups(model.getOriginGroups());
+            }
+            if (model.wasPropertyExplicitlySet("protectionSettings")) {
+                this.protectionSettings(model.getProtectionSettings());
+            }
+            if (model.wasPropertyExplicitlySet("whitelists")) {
+                this.whitelists(model.getWhitelists());
+            }
+            return this;
         }
     }
 
@@ -498,6 +521,7 @@ public final class WafConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WafConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("accessRules=").append(String.valueOf(this.accessRules));
         sb.append(", addressRateLimiting=").append(String.valueOf(this.addressRateLimiting));
         sb.append(", captchas=").append(String.valueOf(this.captchas));
@@ -512,7 +536,6 @@ public final class WafConfigDetails {
         sb.append(", originGroups=").append(String.valueOf(this.originGroups));
         sb.append(", protectionSettings=").append(String.valueOf(this.protectionSettings));
         sb.append(", whitelists=").append(String.valueOf(this.whitelists));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -541,7 +564,7 @@ public final class WafConfigDetails {
                 && java.util.Objects.equals(this.originGroups, other.originGroups)
                 && java.util.Objects.equals(this.protectionSettings, other.protectionSettings)
                 && java.util.Objects.equals(this.whitelists, other.whitelists)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -580,16 +603,7 @@ public final class WafConfigDetails {
                                 ? 43
                                 : this.protectionSettings.hashCode());
         result = (result * PRIME) + (this.whitelists == null ? 43 : this.whitelists.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

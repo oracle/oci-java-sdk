@@ -19,7 +19,8 @@ package com.oracle.bmc.operatoraccesscontrol.model;
     builder = ApproveAccessRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApproveAccessRequestDetails {
+public final class ApproveAccessRequestDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "approverComment",
@@ -118,23 +119,33 @@ public final class ApproveAccessRequestDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApproveAccessRequestDetails build() {
-            ApproveAccessRequestDetails __instance__ =
+            ApproveAccessRequestDetails model =
                     new ApproveAccessRequestDetails(
-                            approverComment, auditType, additionalMessage, timeOfUserCreation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.approverComment,
+                            this.auditType,
+                            this.additionalMessage,
+                            this.timeOfUserCreation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApproveAccessRequestDetails o) {
-            Builder copiedBuilder =
-                    approverComment(o.getApproverComment())
-                            .auditType(o.getAuditType())
-                            .additionalMessage(o.getAdditionalMessage())
-                            .timeOfUserCreation(o.getTimeOfUserCreation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApproveAccessRequestDetails model) {
+            if (model.wasPropertyExplicitlySet("approverComment")) {
+                this.approverComment(model.getApproverComment());
+            }
+            if (model.wasPropertyExplicitlySet("auditType")) {
+                this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("additionalMessage")) {
+                this.additionalMessage(model.getAdditionalMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfUserCreation")) {
+                this.timeOfUserCreation(model.getTimeOfUserCreation());
+            }
+            return this;
         }
     }
 
@@ -226,11 +237,11 @@ public final class ApproveAccessRequestDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApproveAccessRequestDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("approverComment=").append(String.valueOf(this.approverComment));
         sb.append(", auditType=").append(String.valueOf(this.auditType));
         sb.append(", additionalMessage=").append(String.valueOf(this.additionalMessage));
         sb.append(", timeOfUserCreation=").append(String.valueOf(this.timeOfUserCreation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,7 +260,7 @@ public final class ApproveAccessRequestDetails {
                 && java.util.Objects.equals(this.auditType, other.auditType)
                 && java.util.Objects.equals(this.additionalMessage, other.additionalMessage)
                 && java.util.Objects.equals(this.timeOfUserCreation, other.timeOfUserCreation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -268,16 +279,7 @@ public final class ApproveAccessRequestDetails {
                         + (this.timeOfUserCreation == null
                                 ? 43
                                 : this.timeOfUserCreation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.aianomalydetection.model;
     builder = ModelTrainingResults.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModelTrainingResults {
+public final class ModelTrainingResults extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fap",
@@ -141,30 +141,41 @@ public final class ModelTrainingResults {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModelTrainingResults build() {
-            ModelTrainingResults __instance__ =
+            ModelTrainingResults model =
                     new ModelTrainingResults(
-                            fap,
-                            multivariateFap,
-                            isTrainingGoalAchieved,
-                            warning,
-                            signalDetails,
-                            rowReductionDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fap,
+                            this.multivariateFap,
+                            this.isTrainingGoalAchieved,
+                            this.warning,
+                            this.signalDetails,
+                            this.rowReductionDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModelTrainingResults o) {
-            Builder copiedBuilder =
-                    fap(o.getFap())
-                            .multivariateFap(o.getMultivariateFap())
-                            .isTrainingGoalAchieved(o.getIsTrainingGoalAchieved())
-                            .warning(o.getWarning())
-                            .signalDetails(o.getSignalDetails())
-                            .rowReductionDetails(o.getRowReductionDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModelTrainingResults model) {
+            if (model.wasPropertyExplicitlySet("fap")) {
+                this.fap(model.getFap());
+            }
+            if (model.wasPropertyExplicitlySet("multivariateFap")) {
+                this.multivariateFap(model.getMultivariateFap());
+            }
+            if (model.wasPropertyExplicitlySet("isTrainingGoalAchieved")) {
+                this.isTrainingGoalAchieved(model.getIsTrainingGoalAchieved());
+            }
+            if (model.wasPropertyExplicitlySet("warning")) {
+                this.warning(model.getWarning());
+            }
+            if (model.wasPropertyExplicitlySet("signalDetails")) {
+                this.signalDetails(model.getSignalDetails());
+            }
+            if (model.wasPropertyExplicitlySet("rowReductionDetails")) {
+                this.rowReductionDetails(model.getRowReductionDetails());
+            }
+            return this;
         }
     }
 
@@ -269,13 +280,13 @@ public final class ModelTrainingResults {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModelTrainingResults(");
+        sb.append("super=").append(super.toString());
         sb.append("fap=").append(String.valueOf(this.fap));
         sb.append(", multivariateFap=").append(String.valueOf(this.multivariateFap));
         sb.append(", isTrainingGoalAchieved=").append(String.valueOf(this.isTrainingGoalAchieved));
         sb.append(", warning=").append(String.valueOf(this.warning));
         sb.append(", signalDetails=").append(String.valueOf(this.signalDetails));
         sb.append(", rowReductionDetails=").append(String.valueOf(this.rowReductionDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -297,7 +308,7 @@ public final class ModelTrainingResults {
                 && java.util.Objects.equals(this.warning, other.warning)
                 && java.util.Objects.equals(this.signalDetails, other.signalDetails)
                 && java.util.Objects.equals(this.rowReductionDetails, other.rowReductionDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -322,16 +333,7 @@ public final class ModelTrainingResults {
                         + (this.rowReductionDetails == null
                                 ? 43
                                 : this.rowReductionDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

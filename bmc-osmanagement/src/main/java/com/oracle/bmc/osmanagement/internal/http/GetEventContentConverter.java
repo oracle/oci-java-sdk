@@ -114,8 +114,8 @@ public class GetEventContentConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .GetEventContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

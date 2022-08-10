@@ -20,7 +20,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = AddDrgRouteDistributionStatementDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddDrgRouteDistributionStatementDetails {
+public final class AddDrgRouteDistributionStatementDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchCriteria", "action", "priority"})
     public AddDrgRouteDistributionStatementDetails(
@@ -103,21 +104,27 @@ public final class AddDrgRouteDistributionStatementDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddDrgRouteDistributionStatementDetails build() {
-            AddDrgRouteDistributionStatementDetails __instance__ =
-                    new AddDrgRouteDistributionStatementDetails(matchCriteria, action, priority);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddDrgRouteDistributionStatementDetails model =
+                    new AddDrgRouteDistributionStatementDetails(
+                            this.matchCriteria, this.action, this.priority);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddDrgRouteDistributionStatementDetails o) {
-            Builder copiedBuilder =
-                    matchCriteria(o.getMatchCriteria())
-                            .action(o.getAction())
-                            .priority(o.getPriority());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddDrgRouteDistributionStatementDetails model) {
+            if (model.wasPropertyExplicitlySet("matchCriteria")) {
+                this.matchCriteria(model.getMatchCriteria());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("priority")) {
+                this.priority(model.getPriority());
+            }
+            return this;
         }
     }
 
@@ -236,10 +243,10 @@ public final class AddDrgRouteDistributionStatementDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddDrgRouteDistributionStatementDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("matchCriteria=").append(String.valueOf(this.matchCriteria));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", priority=").append(String.valueOf(this.priority));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -257,7 +264,7 @@ public final class AddDrgRouteDistributionStatementDetails {
         return java.util.Objects.equals(this.matchCriteria, other.matchCriteria)
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.priority, other.priority)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -269,16 +276,7 @@ public final class AddDrgRouteDistributionStatementDetails {
                         + (this.matchCriteria == null ? 43 : this.matchCriteria.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

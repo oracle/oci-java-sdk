@@ -19,7 +19,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
     builder = OrganizationTenancy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OrganizationTenancy {
+public final class OrganizationTenancy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenancyId",
@@ -167,32 +167,45 @@ public final class OrganizationTenancy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OrganizationTenancy build() {
-            OrganizationTenancy __instance__ =
+            OrganizationTenancy model =
                     new OrganizationTenancy(
-                            tenancyId,
-                            name,
-                            lifecycleState,
-                            role,
-                            timeJoined,
-                            timeLeft,
-                            isApprovedForTransfer);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tenancyId,
+                            this.name,
+                            this.lifecycleState,
+                            this.role,
+                            this.timeJoined,
+                            this.timeLeft,
+                            this.isApprovedForTransfer);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OrganizationTenancy o) {
-            Builder copiedBuilder =
-                    tenancyId(o.getTenancyId())
-                            .name(o.getName())
-                            .lifecycleState(o.getLifecycleState())
-                            .role(o.getRole())
-                            .timeJoined(o.getTimeJoined())
-                            .timeLeft(o.getTimeLeft())
-                            .isApprovedForTransfer(o.getIsApprovedForTransfer());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OrganizationTenancy model) {
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("timeJoined")) {
+                this.timeJoined(model.getTimeJoined());
+            }
+            if (model.wasPropertyExplicitlySet("timeLeft")) {
+                this.timeLeft(model.getTimeLeft());
+            }
+            if (model.wasPropertyExplicitlySet("isApprovedForTransfer")) {
+                this.isApprovedForTransfer(model.getIsApprovedForTransfer());
+            }
+            return this;
         }
     }
 
@@ -318,6 +331,7 @@ public final class OrganizationTenancy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OrganizationTenancy(");
+        sb.append("super=").append(super.toString());
         sb.append("tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -325,7 +339,6 @@ public final class OrganizationTenancy {
         sb.append(", timeJoined=").append(String.valueOf(this.timeJoined));
         sb.append(", timeLeft=").append(String.valueOf(this.timeLeft));
         sb.append(", isApprovedForTransfer=").append(String.valueOf(this.isApprovedForTransfer));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -347,7 +360,7 @@ public final class OrganizationTenancy {
                 && java.util.Objects.equals(this.timeJoined, other.timeJoined)
                 && java.util.Objects.equals(this.timeLeft, other.timeLeft)
                 && java.util.Objects.equals(this.isApprovedForTransfer, other.isApprovedForTransfer)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -367,16 +380,7 @@ public final class OrganizationTenancy {
                         + (this.isApprovedForTransfer == null
                                 ? 43
                                 : this.isApprovedForTransfer.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

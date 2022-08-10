@@ -19,7 +19,8 @@ package com.oracle.bmc.opa.model;
     builder = CreateOpaInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateOpaInstanceDetails {
+public final class CreateOpaInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -233,38 +234,57 @@ public final class CreateOpaInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOpaInstanceDetails build() {
-            CreateOpaInstanceDetails __instance__ =
+            CreateOpaInstanceDetails model =
                     new CreateOpaInstanceDetails(
-                            displayName,
-                            description,
-                            compartmentId,
-                            consumptionModel,
-                            shapeName,
-                            meteringType,
-                            idcsAt,
-                            isBreakglassEnabled,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.consumptionModel,
+                            this.shapeName,
+                            this.meteringType,
+                            this.idcsAt,
+                            this.isBreakglassEnabled,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOpaInstanceDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .consumptionModel(o.getConsumptionModel())
-                            .shapeName(o.getShapeName())
-                            .meteringType(o.getMeteringType())
-                            .idcsAt(o.getIdcsAt())
-                            .isBreakglassEnabled(o.getIsBreakglassEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOpaInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("consumptionModel")) {
+                this.consumptionModel(model.getConsumptionModel());
+            }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("meteringType")) {
+                this.meteringType(model.getMeteringType());
+            }
+            if (model.wasPropertyExplicitlySet("idcsAt")) {
+                this.idcsAt(model.getIdcsAt());
+            }
+            if (model.wasPropertyExplicitlySet("isBreakglassEnabled")) {
+                this.isBreakglassEnabled(model.getIsBreakglassEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -440,6 +460,7 @@ public final class CreateOpaInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateOpaInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -450,7 +471,6 @@ public final class CreateOpaInstanceDetails {
         sb.append(", isBreakglassEnabled=").append(String.valueOf(this.isBreakglassEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -475,7 +495,7 @@ public final class CreateOpaInstanceDetails {
                 && java.util.Objects.equals(this.isBreakglassEnabled, other.isBreakglassEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -500,16 +520,7 @@ public final class CreateOpaInstanceDetails {
                                 : this.isBreakglassEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

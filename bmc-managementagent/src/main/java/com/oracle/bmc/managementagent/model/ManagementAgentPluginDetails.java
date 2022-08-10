@@ -19,7 +19,8 @@ package com.oracle.bmc.managementagent.model;
     builder = ManagementAgentPluginDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagementAgentPluginDetails {
+public final class ManagementAgentPluginDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pluginId",
@@ -167,32 +168,45 @@ public final class ManagementAgentPluginDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementAgentPluginDetails build() {
-            ManagementAgentPluginDetails __instance__ =
+            ManagementAgentPluginDetails model =
                     new ManagementAgentPluginDetails(
-                            pluginId,
-                            pluginName,
-                            pluginDisplayName,
-                            pluginVersion,
-                            pluginStatus,
-                            pluginStatusMessage,
-                            isEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.pluginId,
+                            this.pluginName,
+                            this.pluginDisplayName,
+                            this.pluginVersion,
+                            this.pluginStatus,
+                            this.pluginStatusMessage,
+                            this.isEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagementAgentPluginDetails o) {
-            Builder copiedBuilder =
-                    pluginId(o.getPluginId())
-                            .pluginName(o.getPluginName())
-                            .pluginDisplayName(o.getPluginDisplayName())
-                            .pluginVersion(o.getPluginVersion())
-                            .pluginStatus(o.getPluginStatus())
-                            .pluginStatusMessage(o.getPluginStatusMessage())
-                            .isEnabled(o.getIsEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagementAgentPluginDetails model) {
+            if (model.wasPropertyExplicitlySet("pluginId")) {
+                this.pluginId(model.getPluginId());
+            }
+            if (model.wasPropertyExplicitlySet("pluginName")) {
+                this.pluginName(model.getPluginName());
+            }
+            if (model.wasPropertyExplicitlySet("pluginDisplayName")) {
+                this.pluginDisplayName(model.getPluginDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("pluginVersion")) {
+                this.pluginVersion(model.getPluginVersion());
+            }
+            if (model.wasPropertyExplicitlySet("pluginStatus")) {
+                this.pluginStatus(model.getPluginStatus());
+            }
+            if (model.wasPropertyExplicitlySet("pluginStatusMessage")) {
+                this.pluginStatusMessage(model.getPluginStatusMessage());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            return this;
         }
     }
 
@@ -318,6 +332,7 @@ public final class ManagementAgentPluginDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagementAgentPluginDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("pluginId=").append(String.valueOf(this.pluginId));
         sb.append(", pluginName=").append(String.valueOf(this.pluginName));
         sb.append(", pluginDisplayName=").append(String.valueOf(this.pluginDisplayName));
@@ -325,7 +340,6 @@ public final class ManagementAgentPluginDetails {
         sb.append(", pluginStatus=").append(String.valueOf(this.pluginStatus));
         sb.append(", pluginStatusMessage=").append(String.valueOf(this.pluginStatusMessage));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -347,7 +361,7 @@ public final class ManagementAgentPluginDetails {
                 && java.util.Objects.equals(this.pluginStatus, other.pluginStatus)
                 && java.util.Objects.equals(this.pluginStatusMessage, other.pluginStatusMessage)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -369,16 +383,7 @@ public final class ManagementAgentPluginDetails {
                                 ? 43
                                 : this.pluginStatusMessage.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

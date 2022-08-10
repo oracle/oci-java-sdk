@@ -120,8 +120,8 @@ public class DownloadSecurityAssessmentReportConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadSecurityAssessmentReportResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

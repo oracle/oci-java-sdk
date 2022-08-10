@@ -123,8 +123,8 @@ public class RestartAutonomousContainerDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .RestartAutonomousContainerDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousContainerDatabase(response.getItem());
 

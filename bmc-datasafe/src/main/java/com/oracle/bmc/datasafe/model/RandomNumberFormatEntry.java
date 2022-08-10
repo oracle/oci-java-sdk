@@ -90,21 +90,26 @@ public final class RandomNumberFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RandomNumberFormatEntry build() {
-            RandomNumberFormatEntry __instance__ =
-                    new RandomNumberFormatEntry(description, startValue, endValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RandomNumberFormatEntry model =
+                    new RandomNumberFormatEntry(this.description, this.startValue, this.endValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RandomNumberFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .startValue(o.getStartValue())
-                            .endValue(o.getEndValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RandomNumberFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("startValue")) {
+                this.startValue(model.getStartValue());
+            }
+            if (model.wasPropertyExplicitlySet("endValue")) {
+                this.endValue(model.getEndValue());
+            }
+            return this;
         }
     }
 
@@ -182,7 +187,6 @@ public final class RandomNumberFormatEntry extends FormatEntry {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", startValue=").append(String.valueOf(this.startValue));
         sb.append(", endValue=").append(String.valueOf(this.endValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,8 +203,7 @@ public final class RandomNumberFormatEntry extends FormatEntry {
         RandomNumberFormatEntry other = (RandomNumberFormatEntry) o;
         return java.util.Objects.equals(this.startValue, other.startValue)
                 && java.util.Objects.equals(this.endValue, other.endValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +212,6 @@ public final class RandomNumberFormatEntry extends FormatEntry {
         int result = super.hashCode();
         result = (result * PRIME) + (this.startValue == null ? 43 : this.startValue.hashCode());
         result = (result * PRIME) + (this.endValue == null ? 43 : this.endValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

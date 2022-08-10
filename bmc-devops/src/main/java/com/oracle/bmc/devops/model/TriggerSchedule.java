@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TriggerSchedule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TriggerSchedule {
+public final class TriggerSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"scheduleType", "customSchedule"})
     public TriggerSchedule(ScheduleType scheduleType, String customSchedule) {
@@ -79,18 +79,22 @@ public final class TriggerSchedule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TriggerSchedule build() {
-            TriggerSchedule __instance__ = new TriggerSchedule(scheduleType, customSchedule);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TriggerSchedule model = new TriggerSchedule(this.scheduleType, this.customSchedule);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TriggerSchedule o) {
-            Builder copiedBuilder =
-                    scheduleType(o.getScheduleType()).customSchedule(o.getCustomSchedule());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TriggerSchedule model) {
+            if (model.wasPropertyExplicitlySet("scheduleType")) {
+                this.scheduleType(model.getScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("customSchedule")) {
+                this.customSchedule(model.getCustomSchedule());
+            }
+            return this;
         }
     }
 
@@ -213,9 +217,9 @@ public final class TriggerSchedule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TriggerSchedule(");
+        sb.append("super=").append(super.toString());
         sb.append("scheduleType=").append(String.valueOf(this.scheduleType));
         sb.append(", customSchedule=").append(String.valueOf(this.customSchedule));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +236,7 @@ public final class TriggerSchedule {
         TriggerSchedule other = (TriggerSchedule) o;
         return java.util.Objects.equals(this.scheduleType, other.scheduleType)
                 && java.util.Objects.equals(this.customSchedule, other.customSchedule)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -243,16 +247,7 @@ public final class TriggerSchedule {
         result =
                 (result * PRIME)
                         + (this.customSchedule == null ? 43 : this.customSchedule.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

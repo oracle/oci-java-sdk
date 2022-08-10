@@ -19,7 +19,8 @@ package com.oracle.bmc.aispeech.model;
     builder = CreateTranscriptionJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTranscriptionJobDetails {
+public final class CreateTranscriptionJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -108,13 +109,13 @@ public final class CreateTranscriptionJobDetails {
             return this;
         }
         /**
-         * Transcription Format. By default JSON format will be considered.
+         * Transcription Format. By default, the JSON format is used.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalTranscriptionFormats")
         private java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats;
 
         /**
-         * Transcription Format. By default JSON format will be considered.
+         * Transcription Format. By default, the JSON format is used.
          * @param additionalTranscriptionFormats the value to set
          * @return this builder
          **/
@@ -206,38 +207,57 @@ public final class CreateTranscriptionJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTranscriptionJobDetails build() {
-            CreateTranscriptionJobDetails __instance__ =
+            CreateTranscriptionJobDetails model =
                     new CreateTranscriptionJobDetails(
-                            displayName,
-                            compartmentId,
-                            description,
-                            additionalTranscriptionFormats,
-                            modelDetails,
-                            normalization,
-                            inputLocation,
-                            outputLocation,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.additionalTranscriptionFormats,
+                            this.modelDetails,
+                            this.normalization,
+                            this.inputLocation,
+                            this.outputLocation,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTranscriptionJobDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .additionalTranscriptionFormats(o.getAdditionalTranscriptionFormats())
-                            .modelDetails(o.getModelDetails())
-                            .normalization(o.getNormalization())
-                            .inputLocation(o.getInputLocation())
-                            .outputLocation(o.getOutputLocation())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTranscriptionJobDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("additionalTranscriptionFormats")) {
+                this.additionalTranscriptionFormats(model.getAdditionalTranscriptionFormats());
+            }
+            if (model.wasPropertyExplicitlySet("modelDetails")) {
+                this.modelDetails(model.getModelDetails());
+            }
+            if (model.wasPropertyExplicitlySet("normalization")) {
+                this.normalization(model.getNormalization());
+            }
+            if (model.wasPropertyExplicitlySet("inputLocation")) {
+                this.inputLocation(model.getInputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("outputLocation")) {
+                this.outputLocation(model.getOutputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -328,13 +348,13 @@ public final class CreateTranscriptionJobDetails {
         }
     };
     /**
-     * Transcription Format. By default JSON format will be considered.
+     * Transcription Format. By default, the JSON format is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalTranscriptionFormats")
     private final java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats;
 
     /**
-     * Transcription Format. By default JSON format will be considered.
+     * Transcription Format. By default, the JSON format is used.
      * @return the value
      **/
     public java.util.List<AdditionalTranscriptionFormats> getAdditionalTranscriptionFormats() {
@@ -418,6 +438,7 @@ public final class CreateTranscriptionJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTranscriptionJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -429,7 +450,6 @@ public final class CreateTranscriptionJobDetails {
         sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -455,7 +475,7 @@ public final class CreateTranscriptionJobDetails {
                 && java.util.Objects.equals(this.outputLocation, other.outputLocation)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -484,16 +504,7 @@ public final class CreateTranscriptionJobDetails {
                         + (this.outputLocation == null ? 43 : this.outputLocation.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -27,7 +27,8 @@ package com.oracle.bmc.core.model;
     builder = CrossConnectMappingDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CrossConnectMappingDetails {
+public final class CrossConnectMappingDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bgpMd5AuthKey",
@@ -328,39 +329,58 @@ public final class CrossConnectMappingDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CrossConnectMappingDetails build() {
-            CrossConnectMappingDetails __instance__ =
+            CrossConnectMappingDetails model =
                     new CrossConnectMappingDetails(
-                            bgpMd5AuthKey,
-                            crossConnectOrCrossConnectGroupId,
-                            customerBgpPeeringIp,
-                            oracleBgpPeeringIp,
-                            customerBgpPeeringIpv6,
-                            oracleBgpPeeringIpv6,
-                            vlan,
-                            ipv4BgpStatus,
-                            ipv6BgpStatus,
-                            ociLogicalDeviceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bgpMd5AuthKey,
+                            this.crossConnectOrCrossConnectGroupId,
+                            this.customerBgpPeeringIp,
+                            this.oracleBgpPeeringIp,
+                            this.customerBgpPeeringIpv6,
+                            this.oracleBgpPeeringIpv6,
+                            this.vlan,
+                            this.ipv4BgpStatus,
+                            this.ipv6BgpStatus,
+                            this.ociLogicalDeviceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CrossConnectMappingDetails o) {
-            Builder copiedBuilder =
-                    bgpMd5AuthKey(o.getBgpMd5AuthKey())
-                            .crossConnectOrCrossConnectGroupId(
-                                    o.getCrossConnectOrCrossConnectGroupId())
-                            .customerBgpPeeringIp(o.getCustomerBgpPeeringIp())
-                            .oracleBgpPeeringIp(o.getOracleBgpPeeringIp())
-                            .customerBgpPeeringIpv6(o.getCustomerBgpPeeringIpv6())
-                            .oracleBgpPeeringIpv6(o.getOracleBgpPeeringIpv6())
-                            .vlan(o.getVlan())
-                            .ipv4BgpStatus(o.getIpv4BgpStatus())
-                            .ipv6BgpStatus(o.getIpv6BgpStatus())
-                            .ociLogicalDeviceName(o.getOciLogicalDeviceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CrossConnectMappingDetails model) {
+            if (model.wasPropertyExplicitlySet("bgpMd5AuthKey")) {
+                this.bgpMd5AuthKey(model.getBgpMd5AuthKey());
+            }
+            if (model.wasPropertyExplicitlySet("crossConnectOrCrossConnectGroupId")) {
+                this.crossConnectOrCrossConnectGroupId(
+                        model.getCrossConnectOrCrossConnectGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("customerBgpPeeringIp")) {
+                this.customerBgpPeeringIp(model.getCustomerBgpPeeringIp());
+            }
+            if (model.wasPropertyExplicitlySet("oracleBgpPeeringIp")) {
+                this.oracleBgpPeeringIp(model.getOracleBgpPeeringIp());
+            }
+            if (model.wasPropertyExplicitlySet("customerBgpPeeringIpv6")) {
+                this.customerBgpPeeringIpv6(model.getCustomerBgpPeeringIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("oracleBgpPeeringIpv6")) {
+                this.oracleBgpPeeringIpv6(model.getOracleBgpPeeringIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("vlan")) {
+                this.vlan(model.getVlan());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4BgpStatus")) {
+                this.ipv4BgpStatus(model.getIpv4BgpStatus());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6BgpStatus")) {
+                this.ipv6BgpStatus(model.getIpv6BgpStatus());
+            }
+            if (model.wasPropertyExplicitlySet("ociLogicalDeviceName")) {
+                this.ociLogicalDeviceName(model.getOciLogicalDeviceName());
+            }
+            return this;
         }
     }
 
@@ -720,6 +740,7 @@ public final class CrossConnectMappingDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CrossConnectMappingDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("bgpMd5AuthKey=").append(String.valueOf(this.bgpMd5AuthKey));
         sb.append(", crossConnectOrCrossConnectGroupId=")
                 .append(String.valueOf(this.crossConnectOrCrossConnectGroupId));
@@ -731,7 +752,6 @@ public final class CrossConnectMappingDetails {
         sb.append(", ipv4BgpStatus=").append(String.valueOf(this.ipv4BgpStatus));
         sb.append(", ipv6BgpStatus=").append(String.valueOf(this.ipv6BgpStatus));
         sb.append(", ociLogicalDeviceName=").append(String.valueOf(this.ociLogicalDeviceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -759,7 +779,7 @@ public final class CrossConnectMappingDetails {
                 && java.util.Objects.equals(this.ipv4BgpStatus, other.ipv4BgpStatus)
                 && java.util.Objects.equals(this.ipv6BgpStatus, other.ipv6BgpStatus)
                 && java.util.Objects.equals(this.ociLogicalDeviceName, other.ociLogicalDeviceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -806,16 +826,7 @@ public final class CrossConnectMappingDetails {
                         + (this.ociLogicalDeviceName == null
                                 ? 43
                                 : this.ociLogicalDeviceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

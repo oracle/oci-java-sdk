@@ -36,14 +36,16 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "transferApplianceEntitlement"
     })
     private GetTransferApplianceEntitlementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.transferApplianceEntitlement = transferApplianceEntitlement;
     }
@@ -53,6 +55,13 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -94,6 +103,7 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
          */
         public Builder copy(GetTransferApplianceEntitlementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             transferApplianceEntitlement(o.getTransferApplianceEntitlement());
 
@@ -106,7 +116,7 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
          */
         public GetTransferApplianceEntitlementResponse build() {
             return new GetTransferApplianceEntitlementResponse(
-                    __httpStatusCode__, opcRequestId, transferApplianceEntitlement);
+                    __httpStatusCode__, headers, opcRequestId, transferApplianceEntitlement);
         }
     }
 

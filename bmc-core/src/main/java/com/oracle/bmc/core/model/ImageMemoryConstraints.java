@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = ImageMemoryConstraints.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageMemoryConstraints {
+public final class ImageMemoryConstraints
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"minInGBs", "maxInGBs"})
     public ImageMemoryConstraints(Integer minInGBs, Integer maxInGBs) {
@@ -67,17 +68,22 @@ public final class ImageMemoryConstraints {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageMemoryConstraints build() {
-            ImageMemoryConstraints __instance__ = new ImageMemoryConstraints(minInGBs, maxInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageMemoryConstraints model = new ImageMemoryConstraints(this.minInGBs, this.maxInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageMemoryConstraints o) {
-            Builder copiedBuilder = minInGBs(o.getMinInGBs()).maxInGBs(o.getMaxInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageMemoryConstraints model) {
+            if (model.wasPropertyExplicitlySet("minInGBs")) {
+                this.minInGBs(model.getMinInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxInGBs")) {
+                this.maxInGBs(model.getMaxInGBs());
+            }
+            return this;
         }
     }
 
@@ -133,9 +139,9 @@ public final class ImageMemoryConstraints {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageMemoryConstraints(");
+        sb.append("super=").append(super.toString());
         sb.append("minInGBs=").append(String.valueOf(this.minInGBs));
         sb.append(", maxInGBs=").append(String.valueOf(this.maxInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +158,7 @@ public final class ImageMemoryConstraints {
         ImageMemoryConstraints other = (ImageMemoryConstraints) o;
         return java.util.Objects.equals(this.minInGBs, other.minInGBs)
                 && java.util.Objects.equals(this.maxInGBs, other.maxInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +167,7 @@ public final class ImageMemoryConstraints {
         int result = 1;
         result = (result * PRIME) + (this.minInGBs == null ? 43 : this.minInGBs.hashCode());
         result = (result * PRIME) + (this.maxInGBs == null ? 43 : this.maxInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

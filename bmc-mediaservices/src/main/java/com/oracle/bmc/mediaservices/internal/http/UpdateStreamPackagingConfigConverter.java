@@ -122,8 +122,8 @@ public class UpdateStreamPackagingConfigConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .UpdateStreamPackagingConfigResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamPackagingConfig(response.getItem());
 

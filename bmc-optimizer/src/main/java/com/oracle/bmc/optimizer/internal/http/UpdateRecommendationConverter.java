@@ -113,8 +113,8 @@ public class UpdateRecommendationConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .UpdateRecommendationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recommendation(response.getItem());
 

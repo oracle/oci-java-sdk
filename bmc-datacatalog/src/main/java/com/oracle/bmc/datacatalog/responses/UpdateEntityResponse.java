@@ -53,13 +53,20 @@ public class UpdateEntityResponse extends com.oracle.bmc.responses.BmcResponse {
         return entity;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "entity"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "entity"
+    })
     private UpdateEntityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.Entity entity) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.entity = entity;
@@ -70,6 +77,13 @@ public class UpdateEntityResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateEntityResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateEntityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             entity(o.getEntity());
@@ -142,7 +157,8 @@ public class UpdateEntityResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateEntityResponse build() {
-            return new UpdateEntityResponse(__httpStatusCode__, etag, opcRequestId, entity);
+            return new UpdateEntityResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, entity);
         }
     }
 

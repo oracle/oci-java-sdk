@@ -102,8 +102,8 @@ public class GetModelConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .GetModelResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.model(response.getItem());
 

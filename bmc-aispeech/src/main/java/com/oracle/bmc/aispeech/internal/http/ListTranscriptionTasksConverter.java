@@ -167,8 +167,8 @@ public class ListTranscriptionTasksConverter {
                                         builder =
                                                 com.oracle.bmc.aispeech.responses
                                                         .ListTranscriptionTasksResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transcriptionTaskCollection(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = ActivityProblemAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ActivityProblemAggregation {
+public final class ActivityProblemAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dimensionsMap",
@@ -96,23 +97,33 @@ public final class ActivityProblemAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivityProblemAggregation build() {
-            ActivityProblemAggregation __instance__ =
+            ActivityProblemAggregation model =
                     new ActivityProblemAggregation(
-                            dimensionsMap, politicalLocation, geographicalLocation, count);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dimensionsMap,
+                            this.politicalLocation,
+                            this.geographicalLocation,
+                            this.count);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ActivityProblemAggregation o) {
-            Builder copiedBuilder =
-                    dimensionsMap(o.getDimensionsMap())
-                            .politicalLocation(o.getPoliticalLocation())
-                            .geographicalLocation(o.getGeographicalLocation())
-                            .count(o.getCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ActivityProblemAggregation model) {
+            if (model.wasPropertyExplicitlySet("dimensionsMap")) {
+                this.dimensionsMap(model.getDimensionsMap());
+            }
+            if (model.wasPropertyExplicitlySet("politicalLocation")) {
+                this.politicalLocation(model.getPoliticalLocation());
+            }
+            if (model.wasPropertyExplicitlySet("geographicalLocation")) {
+                this.geographicalLocation(model.getGeographicalLocation());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            return this;
         }
     }
 
@@ -182,11 +193,11 @@ public final class ActivityProblemAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActivityProblemAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("dimensionsMap=").append(String.valueOf(this.dimensionsMap));
         sb.append(", politicalLocation=").append(String.valueOf(this.politicalLocation));
         sb.append(", geographicalLocation=").append(String.valueOf(this.geographicalLocation));
         sb.append(", count=").append(String.valueOf(this.count));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +216,7 @@ public final class ActivityProblemAggregation {
                 && java.util.Objects.equals(this.politicalLocation, other.politicalLocation)
                 && java.util.Objects.equals(this.geographicalLocation, other.geographicalLocation)
                 && java.util.Objects.equals(this.count, other.count)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +235,7 @@ public final class ActivityProblemAggregation {
                                 ? 43
                                 : this.geographicalLocation.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

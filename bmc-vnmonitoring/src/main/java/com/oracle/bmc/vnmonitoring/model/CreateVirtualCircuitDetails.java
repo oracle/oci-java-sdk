@@ -19,7 +19,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = CreateVirtualCircuitDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVirtualCircuitDetails {
+public final class CreateVirtualCircuitDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bandwidthShapeName",
@@ -328,42 +329,65 @@ public final class CreateVirtualCircuitDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVirtualCircuitDetails build() {
-            CreateVirtualCircuitDetails __instance__ =
+            CreateVirtualCircuitDetails model =
                     new CreateVirtualCircuitDetails(
-                            bandwidthShapeName,
-                            compartmentId,
-                            crossConnectMappings,
-                            customerBgpAsn,
-                            displayName,
-                            gatewayId,
-                            providerName,
-                            providerServiceId,
-                            providerServiceName,
-                            publicPrefixes,
-                            region,
-                            type);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bandwidthShapeName,
+                            this.compartmentId,
+                            this.crossConnectMappings,
+                            this.customerBgpAsn,
+                            this.displayName,
+                            this.gatewayId,
+                            this.providerName,
+                            this.providerServiceId,
+                            this.providerServiceName,
+                            this.publicPrefixes,
+                            this.region,
+                            this.type);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateVirtualCircuitDetails o) {
-            Builder copiedBuilder =
-                    bandwidthShapeName(o.getBandwidthShapeName())
-                            .compartmentId(o.getCompartmentId())
-                            .crossConnectMappings(o.getCrossConnectMappings())
-                            .customerBgpAsn(o.getCustomerBgpAsn())
-                            .displayName(o.getDisplayName())
-                            .gatewayId(o.getGatewayId())
-                            .providerName(o.getProviderName())
-                            .providerServiceId(o.getProviderServiceId())
-                            .providerServiceName(o.getProviderServiceName())
-                            .publicPrefixes(o.getPublicPrefixes())
-                            .region(o.getRegion())
-                            .type(o.getType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateVirtualCircuitDetails model) {
+            if (model.wasPropertyExplicitlySet("bandwidthShapeName")) {
+                this.bandwidthShapeName(model.getBandwidthShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("crossConnectMappings")) {
+                this.crossConnectMappings(model.getCrossConnectMappings());
+            }
+            if (model.wasPropertyExplicitlySet("customerBgpAsn")) {
+                this.customerBgpAsn(model.getCustomerBgpAsn());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("gatewayId")) {
+                this.gatewayId(model.getGatewayId());
+            }
+            if (model.wasPropertyExplicitlySet("providerName")) {
+                this.providerName(model.getProviderName());
+            }
+            if (model.wasPropertyExplicitlySet("providerServiceId")) {
+                this.providerServiceId(model.getProviderServiceId());
+            }
+            if (model.wasPropertyExplicitlySet("providerServiceName")) {
+                this.providerServiceName(model.getProviderServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("publicPrefixes")) {
+                this.publicPrefixes(model.getPublicPrefixes());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            return this;
         }
     }
 
@@ -661,6 +685,7 @@ public final class CreateVirtualCircuitDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVirtualCircuitDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("bandwidthShapeName=").append(String.valueOf(this.bandwidthShapeName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", crossConnectMappings=").append(String.valueOf(this.crossConnectMappings));
@@ -673,7 +698,6 @@ public final class CreateVirtualCircuitDetails {
         sb.append(", publicPrefixes=").append(String.valueOf(this.publicPrefixes));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -700,7 +724,7 @@ public final class CreateVirtualCircuitDetails {
                 && java.util.Objects.equals(this.publicPrefixes, other.publicPrefixes)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -739,16 +763,7 @@ public final class CreateVirtualCircuitDetails {
                         + (this.publicPrefixes == null ? 43 : this.publicPrefixes.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

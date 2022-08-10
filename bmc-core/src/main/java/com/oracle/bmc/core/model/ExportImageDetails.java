@@ -41,7 +41,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExportImageDetails {
+public class ExportImageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"exportFormat"})
     protected ExportImageDetails(ExportFormat exportFormat) {
@@ -144,6 +144,7 @@ public class ExportImageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExportImageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("exportFormat=").append(String.valueOf(this.exportFormat));
         sb.append(")");
         return sb.toString();
@@ -159,7 +160,8 @@ public class ExportImageDetails {
         }
 
         ExportImageDetails other = (ExportImageDetails) o;
-        return java.util.Objects.equals(this.exportFormat, other.exportFormat);
+        return java.util.Objects.equals(this.exportFormat, other.exportFormat)
+                && super.equals(other);
     }
 
     @Override
@@ -167,6 +169,7 @@ public class ExportImageDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.exportFormat == null ? 43 : this.exportFormat.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

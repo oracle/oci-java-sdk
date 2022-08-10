@@ -30,7 +30,7 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = FieldArgument.class, name = "FIELD")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Argument {
+public class Argument extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected Argument() {
@@ -50,6 +50,7 @@ public class Argument {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Argument(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -64,13 +65,14 @@ public class Argument {
         }
 
         Argument other = (Argument) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

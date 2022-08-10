@@ -103,32 +103,45 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateWebAppAccelerationLoadBalancerDetails build() {
-            CreateWebAppAccelerationLoadBalancerDetails __instance__ =
+            CreateWebAppAccelerationLoadBalancerDetails model =
                     new CreateWebAppAccelerationLoadBalancerDetails(
-                            displayName,
-                            compartmentId,
-                            webAppAccelerationPolicyId,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            loadBalancerId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.webAppAccelerationPolicyId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.loadBalancerId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateWebAppAccelerationLoadBalancerDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .webAppAccelerationPolicyId(o.getWebAppAccelerationPolicyId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .loadBalancerId(o.getLoadBalancerId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateWebAppAccelerationLoadBalancerDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("webAppAccelerationPolicyId")) {
+                this.webAppAccelerationPolicyId(model.getWebAppAccelerationPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
+            return this;
         }
     }
 
@@ -191,7 +204,6 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
         sb.append("CreateWebAppAccelerationLoadBalancerDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -208,8 +220,7 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
         CreateWebAppAccelerationLoadBalancerDetails other =
                 (CreateWebAppAccelerationLoadBalancerDetails) o;
         return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +230,6 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
         result =
                 (result * PRIME)
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

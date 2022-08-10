@@ -129,8 +129,8 @@ public class UpdateOperatorControlAssignmentConverter {
                                                 com.oracle.bmc.operatoraccesscontrol.responses
                                                         .UpdateOperatorControlAssignmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operatorControlAssignment(response.getItem());
 

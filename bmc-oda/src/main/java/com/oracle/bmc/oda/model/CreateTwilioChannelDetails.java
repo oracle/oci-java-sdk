@@ -174,41 +174,62 @@ public final class CreateTwilioChannelDetails extends CreateChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTwilioChannelDetails build() {
-            CreateTwilioChannelDetails __instance__ =
+            CreateTwilioChannelDetails model =
                     new CreateTwilioChannelDetails(
-                            name,
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            accountSID,
-                            phoneNumber,
-                            authToken,
-                            isMmsEnabled,
-                            originalConnectorsUrl,
-                            botId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.accountSID,
+                            this.phoneNumber,
+                            this.authToken,
+                            this.isMmsEnabled,
+                            this.originalConnectorsUrl,
+                            this.botId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTwilioChannelDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .accountSID(o.getAccountSID())
-                            .phoneNumber(o.getPhoneNumber())
-                            .authToken(o.getAuthToken())
-                            .isMmsEnabled(o.getIsMmsEnabled())
-                            .originalConnectorsUrl(o.getOriginalConnectorsUrl())
-                            .botId(o.getBotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTwilioChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("accountSID")) {
+                this.accountSID(model.getAccountSID());
+            }
+            if (model.wasPropertyExplicitlySet("phoneNumber")) {
+                this.phoneNumber(model.getPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("authToken")) {
+                this.authToken(model.getAuthToken());
+            }
+            if (model.wasPropertyExplicitlySet("isMmsEnabled")) {
+                this.isMmsEnabled(model.getIsMmsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("originalConnectorsUrl")) {
+                this.originalConnectorsUrl(model.getOriginalConnectorsUrl());
+            }
+            if (model.wasPropertyExplicitlySet("botId")) {
+                this.botId(model.getBotId());
+            }
+            return this;
         }
     }
 
@@ -349,7 +370,6 @@ public final class CreateTwilioChannelDetails extends CreateChannelDetails {
         sb.append(", isMmsEnabled=").append(String.valueOf(this.isMmsEnabled));
         sb.append(", originalConnectorsUrl=").append(String.valueOf(this.originalConnectorsUrl));
         sb.append(", botId=").append(String.valueOf(this.botId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -370,8 +390,7 @@ public final class CreateTwilioChannelDetails extends CreateChannelDetails {
                 && java.util.Objects.equals(this.isMmsEnabled, other.isMmsEnabled)
                 && java.util.Objects.equals(this.originalConnectorsUrl, other.originalConnectorsUrl)
                 && java.util.Objects.equals(this.botId, other.botId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -388,16 +407,6 @@ public final class CreateTwilioChannelDetails extends CreateChannelDetails {
                                 ? 43
                                 : this.originalConnectorsUrl.hashCode());
         result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

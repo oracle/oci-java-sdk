@@ -19,7 +19,7 @@ package com.oracle.bmc.bastion.model;
     builder = CreateSessionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSessionDetails {
+public final class CreateSessionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -135,30 +135,41 @@ public final class CreateSessionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSessionDetails build() {
-            CreateSessionDetails __instance__ =
+            CreateSessionDetails model =
                     new CreateSessionDetails(
-                            displayName,
-                            bastionId,
-                            targetResourceDetails,
-                            keyType,
-                            keyDetails,
-                            sessionTtlInSeconds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.bastionId,
+                            this.targetResourceDetails,
+                            this.keyType,
+                            this.keyDetails,
+                            this.sessionTtlInSeconds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSessionDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .bastionId(o.getBastionId())
-                            .targetResourceDetails(o.getTargetResourceDetails())
-                            .keyType(o.getKeyType())
-                            .keyDetails(o.getKeyDetails())
-                            .sessionTtlInSeconds(o.getSessionTtlInSeconds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSessionDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("bastionId")) {
+                this.bastionId(model.getBastionId());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceDetails")) {
+                this.targetResourceDetails(model.getTargetResourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("keyType")) {
+                this.keyType(model.getKeyType());
+            }
+            if (model.wasPropertyExplicitlySet("keyDetails")) {
+                this.keyDetails(model.getKeyDetails());
+            }
+            if (model.wasPropertyExplicitlySet("sessionTtlInSeconds")) {
+                this.sessionTtlInSeconds(model.getSessionTtlInSeconds());
+            }
+            return this;
         }
     }
 
@@ -290,13 +301,13 @@ public final class CreateSessionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSessionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", bastionId=").append(String.valueOf(this.bastionId));
         sb.append(", targetResourceDetails=").append(String.valueOf(this.targetResourceDetails));
         sb.append(", keyType=").append(String.valueOf(this.keyType));
         sb.append(", keyDetails=").append(String.valueOf(this.keyDetails));
         sb.append(", sessionTtlInSeconds=").append(String.valueOf(this.sessionTtlInSeconds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -317,7 +328,7 @@ public final class CreateSessionDetails {
                 && java.util.Objects.equals(this.keyType, other.keyType)
                 && java.util.Objects.equals(this.keyDetails, other.keyDetails)
                 && java.util.Objects.equals(this.sessionTtlInSeconds, other.sessionTtlInSeconds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -338,16 +349,7 @@ public final class CreateSessionDetails {
                         + (this.sessionTtlInSeconds == null
                                 ? 43
                                 : this.sessionTtlInSeconds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

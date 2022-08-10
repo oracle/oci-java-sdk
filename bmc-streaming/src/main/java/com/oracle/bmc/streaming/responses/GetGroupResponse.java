@@ -38,12 +38,13 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
         return group;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "group"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "group"})
     private GetGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.streaming.model.Group group) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.group = group;
     }
@@ -53,6 +54,13 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             group(o.getGroup());
 
@@ -107,7 +116,7 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetGroupResponse build() {
-            return new GetGroupResponse(__httpStatusCode__, opcRequestId, group);
+            return new GetGroupResponse(__httpStatusCode__, headers, opcRequestId, group);
         }
     }
 

@@ -123,8 +123,8 @@ public class BatchDetectLanguageSentimentsConverter {
                                                 com.oracle.bmc.ailanguage.responses
                                                         .BatchDetectLanguageSentimentsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.batchDetectLanguageSentimentsResult(response.getItem());
 

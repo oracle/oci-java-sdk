@@ -211,8 +211,8 @@ public class ListTargetAlertPolicyAssociationsConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListTargetAlertPolicyAssociationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.targetAlertPolicyAssociationCollection(response.getItem());
 

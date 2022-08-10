@@ -19,7 +19,7 @@ package com.oracle.bmc.streaming.model;
     builder = PutMessagesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PutMessagesDetails {
+public final class PutMessagesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"messages"})
     public PutMessagesDetails(java.util.List<PutMessagesDetailsEntry> messages) {
@@ -50,17 +50,19 @@ public final class PutMessagesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PutMessagesDetails build() {
-            PutMessagesDetails __instance__ = new PutMessagesDetails(messages);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PutMessagesDetails model = new PutMessagesDetails(this.messages);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PutMessagesDetails o) {
-            Builder copiedBuilder = messages(o.getMessages());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PutMessagesDetails model) {
+            if (model.wasPropertyExplicitlySet("messages")) {
+                this.messages(model.getMessages());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class PutMessagesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PutMessagesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("messages=").append(String.valueOf(this.messages));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +120,7 @@ public final class PutMessagesDetails {
         }
 
         PutMessagesDetails other = (PutMessagesDetails) o;
-        return java.util.Objects.equals(this.messages, other.messages)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.messages, other.messages) && super.equals(other);
     }
 
     @Override
@@ -127,16 +128,7 @@ public final class PutMessagesDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.messages == null ? 43 : this.messages.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

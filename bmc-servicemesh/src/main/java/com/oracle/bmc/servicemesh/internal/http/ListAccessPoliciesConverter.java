@@ -174,8 +174,8 @@ public class ListAccessPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .ListAccessPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.accessPolicyCollection(response.getItem());
 

@@ -40,17 +40,19 @@ public final class FieldArgument extends Argument {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FieldArgument build() {
-            FieldArgument __instance__ = new FieldArgument(value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FieldArgument model = new FieldArgument(this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FieldArgument o) {
-            Builder copiedBuilder = value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FieldArgument model) {
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -93,7 +95,6 @@ public final class FieldArgument extends Argument {
         sb.append("FieldArgument(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -108,9 +109,7 @@ public final class FieldArgument extends Argument {
         }
 
         FieldArgument other = (FieldArgument) o;
-        return java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.value, other.value) && super.equals(other);
     }
 
     @Override
@@ -118,16 +117,6 @@ public final class FieldArgument extends Argument {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

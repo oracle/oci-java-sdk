@@ -17,7 +17,7 @@ package com.oracle.bmc.dts.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShippingVendors.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShippingVendors {
+public final class ShippingVendors extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vendors"})
     public ShippingVendors(java.util.List<String> vendors) {
@@ -48,17 +48,19 @@ public final class ShippingVendors {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShippingVendors build() {
-            ShippingVendors __instance__ = new ShippingVendors(vendors);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShippingVendors model = new ShippingVendors(this.vendors);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShippingVendors o) {
-            Builder copiedBuilder = vendors(o.getVendors());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShippingVendors model) {
+            if (model.wasPropertyExplicitlySet("vendors")) {
+                this.vendors(model.getVendors());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class ShippingVendors {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShippingVendors(");
+        sb.append("super=").append(super.toString());
         sb.append("vendors=").append(String.valueOf(this.vendors));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class ShippingVendors {
         }
 
         ShippingVendors other = (ShippingVendors) o;
-        return java.util.Objects.equals(this.vendors, other.vendors)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.vendors, other.vendors) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class ShippingVendors {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.vendors == null ? 43 : this.vendors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

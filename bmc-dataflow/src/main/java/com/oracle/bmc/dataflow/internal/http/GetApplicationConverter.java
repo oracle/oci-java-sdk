@@ -103,8 +103,8 @@ public class GetApplicationConverter {
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
                                                         .GetApplicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.application(response.getItem());
 

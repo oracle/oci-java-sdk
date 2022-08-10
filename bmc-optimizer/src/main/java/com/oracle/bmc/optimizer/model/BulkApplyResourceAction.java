@@ -19,7 +19,8 @@ package com.oracle.bmc.optimizer.model;
     builder = BulkApplyResourceAction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkApplyResourceAction {
+public final class BulkApplyResourceAction
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceActionId",
@@ -145,24 +146,37 @@ public final class BulkApplyResourceAction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkApplyResourceAction build() {
-            BulkApplyResourceAction __instance__ =
+            BulkApplyResourceAction model =
                     new BulkApplyResourceAction(
-                            resourceActionId, status, timeStatusEnd, parameters, strategyName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceActionId,
+                            this.status,
+                            this.timeStatusEnd,
+                            this.parameters,
+                            this.strategyName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkApplyResourceAction o) {
-            Builder copiedBuilder =
-                    resourceActionId(o.getResourceActionId())
-                            .status(o.getStatus())
-                            .timeStatusEnd(o.getTimeStatusEnd())
-                            .parameters(o.getParameters())
-                            .strategyName(o.getStrategyName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkApplyResourceAction model) {
+            if (model.wasPropertyExplicitlySet("resourceActionId")) {
+                this.resourceActionId(model.getResourceActionId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeStatusEnd")) {
+                this.timeStatusEnd(model.getTimeStatusEnd());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("strategyName")) {
+                this.strategyName(model.getStrategyName());
+            }
+            return this;
         }
     }
 
@@ -276,12 +290,12 @@ public final class BulkApplyResourceAction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkApplyResourceAction(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceActionId=").append(String.valueOf(this.resourceActionId));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeStatusEnd=").append(String.valueOf(this.timeStatusEnd));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", strategyName=").append(String.valueOf(this.strategyName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -301,7 +315,7 @@ public final class BulkApplyResourceAction {
                 && java.util.Objects.equals(this.timeStatusEnd, other.timeStatusEnd)
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.strategyName, other.strategyName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -317,16 +331,7 @@ public final class BulkApplyResourceAction {
                         + (this.timeStatusEnd == null ? 43 : this.timeStatusEnd.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.strategyName == null ? 43 : this.strategyName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

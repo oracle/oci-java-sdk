@@ -20,7 +20,8 @@ package com.oracle.bmc.optimizer.model;
     builder = QueryableFieldSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryableFieldSummary {
+public final class QueryableFieldSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldType", "fieldName", "objectProperties"})
     public QueryableFieldSummary(
@@ -94,21 +95,27 @@ public final class QueryableFieldSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryableFieldSummary build() {
-            QueryableFieldSummary __instance__ =
-                    new QueryableFieldSummary(fieldType, fieldName, objectProperties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            QueryableFieldSummary model =
+                    new QueryableFieldSummary(
+                            this.fieldType, this.fieldName, this.objectProperties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryableFieldSummary o) {
-            Builder copiedBuilder =
-                    fieldType(o.getFieldType())
-                            .fieldName(o.getFieldName())
-                            .objectProperties(o.getObjectProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryableFieldSummary model) {
+            if (model.wasPropertyExplicitlySet("fieldType")) {
+                this.fieldType(model.getFieldType());
+            }
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("objectProperties")) {
+                this.objectProperties(model.getObjectProperties());
+            }
+            return this;
         }
     }
 
@@ -236,10 +243,10 @@ public final class QueryableFieldSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryableFieldSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldType=").append(String.valueOf(this.fieldType));
         sb.append(", fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", objectProperties=").append(String.valueOf(this.objectProperties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -257,7 +264,7 @@ public final class QueryableFieldSummary {
         return java.util.Objects.equals(this.fieldType, other.fieldType)
                 && java.util.Objects.equals(this.fieldName, other.fieldName)
                 && java.util.Objects.equals(this.objectProperties, other.objectProperties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -269,16 +276,7 @@ public final class QueryableFieldSummary {
         result =
                 (result * PRIME)
                         + (this.objectProperties == null ? 43 : this.objectProperties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

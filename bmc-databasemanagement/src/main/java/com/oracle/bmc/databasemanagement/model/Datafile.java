@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Datafile.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Datafile {
+public final class Datafile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -317,48 +317,77 @@ public final class Datafile {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Datafile build() {
-            Datafile __instance__ =
+            Datafile model =
                     new Datafile(
-                            name,
-                            status,
-                            onlineStatus,
-                            isAutoExtensible,
-                            lostWriteProtect,
-                            shared,
-                            instanceId,
-                            maxSizeKB,
-                            allocatedSizeKB,
-                            userSizeKB,
-                            incrementBy,
-                            freeSpaceKB,
-                            usedSpaceKB,
-                            usedPercentAvailable,
-                            usedPercentAllocated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.status,
+                            this.onlineStatus,
+                            this.isAutoExtensible,
+                            this.lostWriteProtect,
+                            this.shared,
+                            this.instanceId,
+                            this.maxSizeKB,
+                            this.allocatedSizeKB,
+                            this.userSizeKB,
+                            this.incrementBy,
+                            this.freeSpaceKB,
+                            this.usedSpaceKB,
+                            this.usedPercentAvailable,
+                            this.usedPercentAllocated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Datafile o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .status(o.getStatus())
-                            .onlineStatus(o.getOnlineStatus())
-                            .isAutoExtensible(o.getIsAutoExtensible())
-                            .lostWriteProtect(o.getLostWriteProtect())
-                            .shared(o.getShared())
-                            .instanceId(o.getInstanceId())
-                            .maxSizeKB(o.getMaxSizeKB())
-                            .allocatedSizeKB(o.getAllocatedSizeKB())
-                            .userSizeKB(o.getUserSizeKB())
-                            .incrementBy(o.getIncrementBy())
-                            .freeSpaceKB(o.getFreeSpaceKB())
-                            .usedSpaceKB(o.getUsedSpaceKB())
-                            .usedPercentAvailable(o.getUsedPercentAvailable())
-                            .usedPercentAllocated(o.getUsedPercentAllocated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Datafile model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("onlineStatus")) {
+                this.onlineStatus(model.getOnlineStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoExtensible")) {
+                this.isAutoExtensible(model.getIsAutoExtensible());
+            }
+            if (model.wasPropertyExplicitlySet("lostWriteProtect")) {
+                this.lostWriteProtect(model.getLostWriteProtect());
+            }
+            if (model.wasPropertyExplicitlySet("shared")) {
+                this.shared(model.getShared());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("maxSizeKB")) {
+                this.maxSizeKB(model.getMaxSizeKB());
+            }
+            if (model.wasPropertyExplicitlySet("allocatedSizeKB")) {
+                this.allocatedSizeKB(model.getAllocatedSizeKB());
+            }
+            if (model.wasPropertyExplicitlySet("userSizeKB")) {
+                this.userSizeKB(model.getUserSizeKB());
+            }
+            if (model.wasPropertyExplicitlySet("incrementBy")) {
+                this.incrementBy(model.getIncrementBy());
+            }
+            if (model.wasPropertyExplicitlySet("freeSpaceKB")) {
+                this.freeSpaceKB(model.getFreeSpaceKB());
+            }
+            if (model.wasPropertyExplicitlySet("usedSpaceKB")) {
+                this.usedSpaceKB(model.getUsedSpaceKB());
+            }
+            if (model.wasPropertyExplicitlySet("usedPercentAvailable")) {
+                this.usedPercentAvailable(model.getUsedPercentAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("usedPercentAllocated")) {
+                this.usedPercentAllocated(model.getUsedPercentAllocated());
+            }
+            return this;
         }
     }
 
@@ -794,6 +823,7 @@ public final class Datafile {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Datafile(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", onlineStatus=").append(String.valueOf(this.onlineStatus));
@@ -809,7 +839,6 @@ public final class Datafile {
         sb.append(", usedSpaceKB=").append(String.valueOf(this.usedSpaceKB));
         sb.append(", usedPercentAvailable=").append(String.valueOf(this.usedPercentAvailable));
         sb.append(", usedPercentAllocated=").append(String.valueOf(this.usedPercentAllocated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -839,7 +868,7 @@ public final class Datafile {
                 && java.util.Objects.equals(this.usedSpaceKB, other.usedSpaceKB)
                 && java.util.Objects.equals(this.usedPercentAvailable, other.usedPercentAvailable)
                 && java.util.Objects.equals(this.usedPercentAllocated, other.usedPercentAllocated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -875,16 +904,7 @@ public final class Datafile {
                         + (this.usedPercentAllocated == null
                                 ? 43
                                 : this.usedPercentAllocated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -160,8 +160,8 @@ public class ListAssignedSubscriptionsConverter {
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .ListAssignedSubscriptionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.assignedSubscriptionCollection(response.getItem());
 

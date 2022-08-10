@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = LoadBalancerTrafficShiftRolloutPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LoadBalancerTrafficShiftRolloutPolicy {
+public final class LoadBalancerTrafficShiftRolloutPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"batchCount", "batchDelayInSeconds", "rampLimitPercent"})
     public LoadBalancerTrafficShiftRolloutPolicy(
@@ -85,22 +86,27 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoadBalancerTrafficShiftRolloutPolicy build() {
-            LoadBalancerTrafficShiftRolloutPolicy __instance__ =
+            LoadBalancerTrafficShiftRolloutPolicy model =
                     new LoadBalancerTrafficShiftRolloutPolicy(
-                            batchCount, batchDelayInSeconds, rampLimitPercent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.batchCount, this.batchDelayInSeconds, this.rampLimitPercent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LoadBalancerTrafficShiftRolloutPolicy o) {
-            Builder copiedBuilder =
-                    batchCount(o.getBatchCount())
-                            .batchDelayInSeconds(o.getBatchDelayInSeconds())
-                            .rampLimitPercent(o.getRampLimitPercent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LoadBalancerTrafficShiftRolloutPolicy model) {
+            if (model.wasPropertyExplicitlySet("batchCount")) {
+                this.batchCount(model.getBatchCount());
+            }
+            if (model.wasPropertyExplicitlySet("batchDelayInSeconds")) {
+                this.batchDelayInSeconds(model.getBatchDelayInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("rampLimitPercent")) {
+                this.rampLimitPercent(model.getRampLimitPercent());
+            }
+            return this;
         }
     }
 
@@ -170,10 +176,10 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LoadBalancerTrafficShiftRolloutPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("batchCount=").append(String.valueOf(this.batchCount));
         sb.append(", batchDelayInSeconds=").append(String.valueOf(this.batchDelayInSeconds));
         sb.append(", rampLimitPercent=").append(String.valueOf(this.rampLimitPercent));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,7 +197,7 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
         return java.util.Objects.equals(this.batchCount, other.batchCount)
                 && java.util.Objects.equals(this.batchDelayInSeconds, other.batchDelayInSeconds)
                 && java.util.Objects.equals(this.rampLimitPercent, other.rampLimitPercent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +213,7 @@ public final class LoadBalancerTrafficShiftRolloutPolicy {
         result =
                 (result * PRIME)
                         + (this.rampLimitPercent == null ? 43 : this.rampLimitPercent.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

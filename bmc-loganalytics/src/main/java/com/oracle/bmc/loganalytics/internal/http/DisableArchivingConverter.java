@@ -111,8 +111,8 @@ public class DisableArchivingConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .DisableArchivingResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.success(response.getItem());
 

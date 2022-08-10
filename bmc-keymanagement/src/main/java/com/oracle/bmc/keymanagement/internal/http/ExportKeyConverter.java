@@ -98,8 +98,8 @@ public class ExportKeyConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ExportKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exportedKeyData(response.getItem());
 

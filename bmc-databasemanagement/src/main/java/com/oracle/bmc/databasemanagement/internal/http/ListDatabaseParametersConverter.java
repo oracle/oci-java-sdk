@@ -154,8 +154,8 @@ public class ListDatabaseParametersConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListDatabaseParametersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseParametersCollection(response.getItem());
 

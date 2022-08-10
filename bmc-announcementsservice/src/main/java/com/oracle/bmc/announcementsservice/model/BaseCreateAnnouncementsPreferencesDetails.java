@@ -32,7 +32,8 @@ package com.oracle.bmc.announcementsservice.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BaseCreateAnnouncementsPreferencesDetails {
+public class BaseCreateAnnouncementsPreferencesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isUnsubscribed", "compartmentId", "preferenceType"})
     protected BaseCreateAnnouncementsPreferencesDetails(
@@ -142,6 +143,7 @@ public class BaseCreateAnnouncementsPreferencesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BaseCreateAnnouncementsPreferencesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isUnsubscribed=").append(String.valueOf(this.isUnsubscribed));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", preferenceType=").append(String.valueOf(this.preferenceType));
@@ -162,7 +164,8 @@ public class BaseCreateAnnouncementsPreferencesDetails {
                 (BaseCreateAnnouncementsPreferencesDetails) o;
         return java.util.Objects.equals(this.isUnsubscribed, other.isUnsubscribed)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.preferenceType, other.preferenceType);
+                && java.util.Objects.equals(this.preferenceType, other.preferenceType)
+                && super.equals(other);
     }
 
     @Override
@@ -178,6 +181,7 @@ public class BaseCreateAnnouncementsPreferencesDetails {
         result =
                 (result * PRIME)
                         + (this.preferenceType == null ? 43 : this.preferenceType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

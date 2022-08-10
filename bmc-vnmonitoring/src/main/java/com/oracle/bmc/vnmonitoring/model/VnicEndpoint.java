@@ -67,17 +67,22 @@ public final class VnicEndpoint extends Endpoint {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VnicEndpoint build() {
-            VnicEndpoint __instance__ = new VnicEndpoint(address, vnicId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VnicEndpoint model = new VnicEndpoint(this.address, this.vnicId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VnicEndpoint o) {
-            Builder copiedBuilder = address(o.getAddress()).vnicId(o.getVnicId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VnicEndpoint model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            if (model.wasPropertyExplicitlySet("vnicId")) {
+                this.vnicId(model.getVnicId());
+            }
+            return this;
         }
     }
 
@@ -147,7 +152,6 @@ public final class VnicEndpoint extends Endpoint {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", address=").append(String.valueOf(this.address));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -164,8 +168,7 @@ public final class VnicEndpoint extends Endpoint {
         VnicEndpoint other = (VnicEndpoint) o;
         return java.util.Objects.equals(this.address, other.address)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +177,6 @@ public final class VnicEndpoint extends Endpoint {
         int result = super.hashCode();
         result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

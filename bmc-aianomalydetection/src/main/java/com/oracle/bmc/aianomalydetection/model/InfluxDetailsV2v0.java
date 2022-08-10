@@ -64,18 +64,22 @@ public final class InfluxDetailsV2v0 extends InfluxDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InfluxDetailsV2v0 build() {
-            InfluxDetailsV2v0 __instance__ = new InfluxDetailsV2v0(bucketName, organizationName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InfluxDetailsV2v0 model = new InfluxDetailsV2v0(this.bucketName, this.organizationName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InfluxDetailsV2v0 o) {
-            Builder copiedBuilder =
-                    bucketName(o.getBucketName()).organizationName(o.getOrganizationName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InfluxDetailsV2v0 model) {
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("organizationName")) {
+                this.organizationName(model.getOrganizationName());
+            }
+            return this;
         }
     }
 
@@ -141,7 +145,6 @@ public final class InfluxDetailsV2v0 extends InfluxDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -158,8 +161,7 @@ public final class InfluxDetailsV2v0 extends InfluxDetails {
         InfluxDetailsV2v0 other = (InfluxDetailsV2v0) o;
         return java.util.Objects.equals(this.bucketName, other.bucketName)
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +172,6 @@ public final class InfluxDetailsV2v0 extends InfluxDetails {
         result =
                 (result * PRIME)
                         + (this.organizationName == null ? 43 : this.organizationName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = MetricStatisticsDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricStatisticsDefinition {
+public final class MetricStatisticsDefinition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "min",
@@ -167,26 +168,45 @@ public final class MetricStatisticsDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricStatisticsDefinition build() {
-            MetricStatisticsDefinition __instance__ =
+            MetricStatisticsDefinition model =
                     new MetricStatisticsDefinition(
-                            min, max, median, lowerQuartile, upperQuartile, unit, dimensions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.min,
+                            this.max,
+                            this.median,
+                            this.lowerQuartile,
+                            this.upperQuartile,
+                            this.unit,
+                            this.dimensions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricStatisticsDefinition o) {
-            Builder copiedBuilder =
-                    min(o.getMin())
-                            .max(o.getMax())
-                            .median(o.getMedian())
-                            .lowerQuartile(o.getLowerQuartile())
-                            .upperQuartile(o.getUpperQuartile())
-                            .unit(o.getUnit())
-                            .dimensions(o.getDimensions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricStatisticsDefinition model) {
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("median")) {
+                this.median(model.getMedian());
+            }
+            if (model.wasPropertyExplicitlySet("lowerQuartile")) {
+                this.lowerQuartile(model.getLowerQuartile());
+            }
+            if (model.wasPropertyExplicitlySet("upperQuartile")) {
+                this.upperQuartile(model.getUpperQuartile());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            return this;
         }
     }
 
@@ -312,6 +332,7 @@ public final class MetricStatisticsDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricStatisticsDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("min=").append(String.valueOf(this.min));
         sb.append(", max=").append(String.valueOf(this.max));
         sb.append(", median=").append(String.valueOf(this.median));
@@ -319,7 +340,6 @@ public final class MetricStatisticsDefinition {
         sb.append(", upperQuartile=").append(String.valueOf(this.upperQuartile));
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -341,7 +361,7 @@ public final class MetricStatisticsDefinition {
                 && java.util.Objects.equals(this.upperQuartile, other.upperQuartile)
                 && java.util.Objects.equals(this.unit, other.unit)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -359,16 +379,7 @@ public final class MetricStatisticsDefinition {
                         + (this.upperQuartile == null ? 43 : this.upperQuartile.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -105,8 +105,8 @@ public class UpdateServiceGatewayConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateServiceGatewayResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceGateway(response.getItem());
 

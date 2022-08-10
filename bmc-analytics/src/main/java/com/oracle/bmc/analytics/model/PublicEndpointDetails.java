@@ -69,19 +69,23 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublicEndpointDetails build() {
-            PublicEndpointDetails __instance__ =
-                    new PublicEndpointDetails(whitelistedIps, whitelistedVcns);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PublicEndpointDetails model =
+                    new PublicEndpointDetails(this.whitelistedIps, this.whitelistedVcns);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PublicEndpointDetails o) {
-            Builder copiedBuilder =
-                    whitelistedIps(o.getWhitelistedIps()).whitelistedVcns(o.getWhitelistedVcns());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PublicEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("whitelistedIps")) {
+                this.whitelistedIps(model.getWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("whitelistedVcns")) {
+                this.whitelistedVcns(model.getWhitelistedVcns());
+            }
+            return this;
         }
     }
 
@@ -153,7 +157,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
         sb.append(", whitelistedVcns=").append(String.valueOf(this.whitelistedVcns));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -170,8 +173,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         PublicEndpointDetails other = (PublicEndpointDetails) o;
         return java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
                 && java.util.Objects.equals(this.whitelistedVcns, other.whitelistedVcns)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -184,16 +186,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         result =
                 (result * PRIME)
                         + (this.whitelistedVcns == null ? 43 : this.whitelistedVcns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

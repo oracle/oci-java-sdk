@@ -155,8 +155,8 @@ public class ListNetworkLoadBalancerHealthsConverter {
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .ListNetworkLoadBalancerHealthsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkLoadBalancerHealthCollection(response.getItem());
 

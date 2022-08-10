@@ -22,7 +22,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Certificate {
+public final class Certificate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"certificateName", "publicCertificate", "caCertificate"})
     public Certificate(String certificateName, String publicCertificate, String caCertificate) {
@@ -141,21 +141,27 @@ public final class Certificate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Certificate build() {
-            Certificate __instance__ =
-                    new Certificate(certificateName, publicCertificate, caCertificate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Certificate model =
+                    new Certificate(
+                            this.certificateName, this.publicCertificate, this.caCertificate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Certificate o) {
-            Builder copiedBuilder =
-                    certificateName(o.getCertificateName())
-                            .publicCertificate(o.getPublicCertificate())
-                            .caCertificate(o.getCaCertificate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Certificate model) {
+            if (model.wasPropertyExplicitlySet("certificateName")) {
+                this.certificateName(model.getCertificateName());
+            }
+            if (model.wasPropertyExplicitlySet("publicCertificate")) {
+                this.publicCertificate(model.getPublicCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("caCertificate")) {
+                this.caCertificate(model.getCaCertificate());
+            }
+            return this;
         }
     }
 
@@ -279,10 +285,10 @@ public final class Certificate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Certificate(");
+        sb.append("super=").append(super.toString());
         sb.append("certificateName=").append(String.valueOf(this.certificateName));
         sb.append(", publicCertificate=").append(String.valueOf(this.publicCertificate));
         sb.append(", caCertificate=").append(String.valueOf(this.caCertificate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -300,7 +306,7 @@ public final class Certificate {
         return java.util.Objects.equals(this.certificateName, other.certificateName)
                 && java.util.Objects.equals(this.publicCertificate, other.publicCertificate)
                 && java.util.Objects.equals(this.caCertificate, other.caCertificate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -316,16 +322,7 @@ public final class Certificate {
         result =
                 (result * PRIME)
                         + (this.caCertificate == null ? 43 : this.caCertificate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -98,7 +98,8 @@ public class GetSdkConverter {
 
                                 com.oracle.bmc.apigateway.responses.GetSdkResponse.Builder builder =
                                         com.oracle.bmc.apigateway.responses.GetSdkResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.sdk(response.getItem());
 

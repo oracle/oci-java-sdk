@@ -138,8 +138,8 @@ public class UpdateZoneRecordsConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .UpdateZoneRecordsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recordCollection(response.getItem());
 

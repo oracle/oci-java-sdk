@@ -19,7 +19,8 @@ package com.oracle.bmc.streaming.model;
     builder = PrivateEndpointSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PrivateEndpointSettings {
+public final class PrivateEndpointSettings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subnetId", "privateEndpointIp", "nsgIds"})
     public PrivateEndpointSettings(
@@ -93,21 +94,26 @@ public final class PrivateEndpointSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateEndpointSettings build() {
-            PrivateEndpointSettings __instance__ =
-                    new PrivateEndpointSettings(subnetId, privateEndpointIp, nsgIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PrivateEndpointSettings model =
+                    new PrivateEndpointSettings(this.subnetId, this.privateEndpointIp, this.nsgIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PrivateEndpointSettings o) {
-            Builder copiedBuilder =
-                    subnetId(o.getSubnetId())
-                            .privateEndpointIp(o.getPrivateEndpointIp())
-                            .nsgIds(o.getNsgIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PrivateEndpointSettings model) {
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
+                this.privateEndpointIp(model.getPrivateEndpointIp());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            return this;
         }
     }
 
@@ -185,10 +191,10 @@ public final class PrivateEndpointSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PrivateEndpointSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,7 +212,7 @@ public final class PrivateEndpointSettings {
         return java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -218,16 +224,7 @@ public final class PrivateEndpointSettings {
                 (result * PRIME)
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

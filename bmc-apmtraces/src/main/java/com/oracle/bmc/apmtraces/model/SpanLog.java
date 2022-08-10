@@ -18,7 +18,7 @@ package com.oracle.bmc.apmtraces.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SpanLog.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SpanLog {
+public final class SpanLog extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logKey", "logValue"})
     public SpanLog(String logKey, String logValue) {
@@ -70,17 +70,22 @@ public final class SpanLog {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SpanLog build() {
-            SpanLog __instance__ = new SpanLog(logKey, logValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SpanLog model = new SpanLog(this.logKey, this.logValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SpanLog o) {
-            Builder copiedBuilder = logKey(o.getLogKey()).logValue(o.getLogValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SpanLog model) {
+            if (model.wasPropertyExplicitlySet("logKey")) {
+                this.logKey(model.getLogKey());
+            }
+            if (model.wasPropertyExplicitlySet("logValue")) {
+                this.logValue(model.getLogValue());
+            }
+            return this;
         }
     }
 
@@ -140,9 +145,9 @@ public final class SpanLog {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SpanLog(");
+        sb.append("super=").append(super.toString());
         sb.append("logKey=").append(String.valueOf(this.logKey));
         sb.append(", logValue=").append(String.valueOf(this.logValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +164,7 @@ public final class SpanLog {
         SpanLog other = (SpanLog) o;
         return java.util.Objects.equals(this.logKey, other.logKey)
                 && java.util.Objects.equals(this.logValue, other.logValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class SpanLog {
         int result = 1;
         result = (result * PRIME) + (this.logKey == null ? 43 : this.logKey.hashCode());
         result = (result * PRIME) + (this.logValue == null ? 43 : this.logValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

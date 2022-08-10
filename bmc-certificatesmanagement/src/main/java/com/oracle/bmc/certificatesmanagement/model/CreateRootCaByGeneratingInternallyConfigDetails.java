@@ -75,23 +75,30 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateRootCaByGeneratingInternallyConfigDetails build() {
-            CreateRootCaByGeneratingInternallyConfigDetails __instance__ =
+            CreateRootCaByGeneratingInternallyConfigDetails model =
                     new CreateRootCaByGeneratingInternallyConfigDetails(
-                            versionName, validity, signingAlgorithm, subject);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.versionName, this.validity, this.signingAlgorithm, this.subject);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateRootCaByGeneratingInternallyConfigDetails o) {
-            Builder copiedBuilder =
-                    versionName(o.getVersionName())
-                            .validity(o.getValidity())
-                            .signingAlgorithm(o.getSigningAlgorithm())
-                            .subject(o.getSubject());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateRootCaByGeneratingInternallyConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            if (model.wasPropertyExplicitlySet("signingAlgorithm")) {
+                this.signingAlgorithm(model.getSigningAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("subject")) {
+                this.subject(model.getSubject());
+            }
+            return this;
         }
     }
 
@@ -163,7 +170,6 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
         sb.append(", validity=").append(String.valueOf(this.validity));
         sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
         sb.append(", subject=").append(String.valueOf(this.subject));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -182,8 +188,7 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
         return java.util.Objects.equals(this.validity, other.validity)
                 && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
                 && java.util.Objects.equals(this.subject, other.subject)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +200,6 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
                 (result * PRIME)
                         + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
         result = (result * PRIME) + (this.subject == null ? 43 : this.subject.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

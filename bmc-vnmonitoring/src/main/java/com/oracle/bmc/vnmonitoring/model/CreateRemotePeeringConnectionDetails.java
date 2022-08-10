@@ -19,7 +19,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = CreateRemotePeeringConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateRemotePeeringConnectionDetails {
+public final class CreateRemotePeeringConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "displayName", "drgId"})
     public CreateRemotePeeringConnectionDetails(
@@ -89,21 +90,27 @@ public final class CreateRemotePeeringConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateRemotePeeringConnectionDetails build() {
-            CreateRemotePeeringConnectionDetails __instance__ =
-                    new CreateRemotePeeringConnectionDetails(compartmentId, displayName, drgId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateRemotePeeringConnectionDetails model =
+                    new CreateRemotePeeringConnectionDetails(
+                            this.compartmentId, this.displayName, this.drgId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateRemotePeeringConnectionDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .drgId(o.getDrgId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateRemotePeeringConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("drgId")) {
+                this.drgId(model.getDrgId());
+            }
+            return this;
         }
     }
 
@@ -177,10 +184,10 @@ public final class CreateRemotePeeringConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRemotePeeringConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", drgId=").append(String.valueOf(this.drgId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +205,7 @@ public final class CreateRemotePeeringConnectionDetails {
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.drgId, other.drgId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -210,16 +217,7 @@ public final class CreateRemotePeeringConnectionDetails {
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -21,7 +21,7 @@ package com.oracle.bmc.opensearch.model;
     builder = OpensearchCluster.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OpensearchCluster {
+public final class OpensearchCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -752,92 +752,165 @@ public final class OpensearchCluster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OpensearchCluster build() {
-            OpensearchCluster __instance__ =
+            OpensearchCluster model =
                     new OpensearchCluster(
-                            id,
-                            displayName,
-                            compartmentId,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            timeDeleted,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            softwareVersion,
-                            totalStorageGB,
-                            opensearchFqdn,
-                            opensearchPrivateIp,
-                            opendashboardFqdn,
-                            opendashboardPrivateIp,
-                            masterNodeCount,
-                            masterNodeHostType,
-                            masterNodeHostBareMetalShape,
-                            masterNodeHostOcpuCount,
-                            masterNodeHostMemoryGB,
-                            dataNodeCount,
-                            dataNodeHostType,
-                            dataNodeHostBareMetalShape,
-                            dataNodeHostOcpuCount,
-                            dataNodeHostMemoryGB,
-                            dataNodeStorageGB,
-                            opendashboardNodeCount,
-                            opendashboardNodeHostOcpuCount,
-                            opendashboardNodeHostMemoryGB,
-                            vcnId,
-                            subnetId,
-                            vcnCompartmentId,
-                            subnetCompartmentId,
-                            fqdn,
-                            availabilityDomains);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.timeDeleted,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.softwareVersion,
+                            this.totalStorageGB,
+                            this.opensearchFqdn,
+                            this.opensearchPrivateIp,
+                            this.opendashboardFqdn,
+                            this.opendashboardPrivateIp,
+                            this.masterNodeCount,
+                            this.masterNodeHostType,
+                            this.masterNodeHostBareMetalShape,
+                            this.masterNodeHostOcpuCount,
+                            this.masterNodeHostMemoryGB,
+                            this.dataNodeCount,
+                            this.dataNodeHostType,
+                            this.dataNodeHostBareMetalShape,
+                            this.dataNodeHostOcpuCount,
+                            this.dataNodeHostMemoryGB,
+                            this.dataNodeStorageGB,
+                            this.opendashboardNodeCount,
+                            this.opendashboardNodeHostOcpuCount,
+                            this.opendashboardNodeHostMemoryGB,
+                            this.vcnId,
+                            this.subnetId,
+                            this.vcnCompartmentId,
+                            this.subnetCompartmentId,
+                            this.fqdn,
+                            this.availabilityDomains);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OpensearchCluster o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeDeleted(o.getTimeDeleted())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .softwareVersion(o.getSoftwareVersion())
-                            .totalStorageGB(o.getTotalStorageGB())
-                            .opensearchFqdn(o.getOpensearchFqdn())
-                            .opensearchPrivateIp(o.getOpensearchPrivateIp())
-                            .opendashboardFqdn(o.getOpendashboardFqdn())
-                            .opendashboardPrivateIp(o.getOpendashboardPrivateIp())
-                            .masterNodeCount(o.getMasterNodeCount())
-                            .masterNodeHostType(o.getMasterNodeHostType())
-                            .masterNodeHostBareMetalShape(o.getMasterNodeHostBareMetalShape())
-                            .masterNodeHostOcpuCount(o.getMasterNodeHostOcpuCount())
-                            .masterNodeHostMemoryGB(o.getMasterNodeHostMemoryGB())
-                            .dataNodeCount(o.getDataNodeCount())
-                            .dataNodeHostType(o.getDataNodeHostType())
-                            .dataNodeHostBareMetalShape(o.getDataNodeHostBareMetalShape())
-                            .dataNodeHostOcpuCount(o.getDataNodeHostOcpuCount())
-                            .dataNodeHostMemoryGB(o.getDataNodeHostMemoryGB())
-                            .dataNodeStorageGB(o.getDataNodeStorageGB())
-                            .opendashboardNodeCount(o.getOpendashboardNodeCount())
-                            .opendashboardNodeHostOcpuCount(o.getOpendashboardNodeHostOcpuCount())
-                            .opendashboardNodeHostMemoryGB(o.getOpendashboardNodeHostMemoryGB())
-                            .vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .vcnCompartmentId(o.getVcnCompartmentId())
-                            .subnetCompartmentId(o.getSubnetCompartmentId())
-                            .fqdn(o.getFqdn())
-                            .availabilityDomains(o.getAvailabilityDomains());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OpensearchCluster model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeDeleted")) {
+                this.timeDeleted(model.getTimeDeleted());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("softwareVersion")) {
+                this.softwareVersion(model.getSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("totalStorageGB")) {
+                this.totalStorageGB(model.getTotalStorageGB());
+            }
+            if (model.wasPropertyExplicitlySet("opensearchFqdn")) {
+                this.opensearchFqdn(model.getOpensearchFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("opensearchPrivateIp")) {
+                this.opensearchPrivateIp(model.getOpensearchPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("opendashboardFqdn")) {
+                this.opendashboardFqdn(model.getOpendashboardFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("opendashboardPrivateIp")) {
+                this.opendashboardPrivateIp(model.getOpendashboardPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("masterNodeCount")) {
+                this.masterNodeCount(model.getMasterNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("masterNodeHostType")) {
+                this.masterNodeHostType(model.getMasterNodeHostType());
+            }
+            if (model.wasPropertyExplicitlySet("masterNodeHostBareMetalShape")) {
+                this.masterNodeHostBareMetalShape(model.getMasterNodeHostBareMetalShape());
+            }
+            if (model.wasPropertyExplicitlySet("masterNodeHostOcpuCount")) {
+                this.masterNodeHostOcpuCount(model.getMasterNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("masterNodeHostMemoryGB")) {
+                this.masterNodeHostMemoryGB(model.getMasterNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("dataNodeCount")) {
+                this.dataNodeCount(model.getDataNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("dataNodeHostType")) {
+                this.dataNodeHostType(model.getDataNodeHostType());
+            }
+            if (model.wasPropertyExplicitlySet("dataNodeHostBareMetalShape")) {
+                this.dataNodeHostBareMetalShape(model.getDataNodeHostBareMetalShape());
+            }
+            if (model.wasPropertyExplicitlySet("dataNodeHostOcpuCount")) {
+                this.dataNodeHostOcpuCount(model.getDataNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("dataNodeHostMemoryGB")) {
+                this.dataNodeHostMemoryGB(model.getDataNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("dataNodeStorageGB")) {
+                this.dataNodeStorageGB(model.getDataNodeStorageGB());
+            }
+            if (model.wasPropertyExplicitlySet("opendashboardNodeCount")) {
+                this.opendashboardNodeCount(model.getOpendashboardNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("opendashboardNodeHostOcpuCount")) {
+                this.opendashboardNodeHostOcpuCount(model.getOpendashboardNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("opendashboardNodeHostMemoryGB")) {
+                this.opendashboardNodeHostMemoryGB(model.getOpendashboardNodeHostMemoryGB());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnCompartmentId")) {
+                this.vcnCompartmentId(model.getVcnCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetCompartmentId")) {
+                this.subnetCompartmentId(model.getSubnetCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("fqdn")) {
+                this.fqdn(model.getFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomains")) {
+                this.availabilityDomains(model.getAvailabilityDomains());
+            }
+            return this;
         }
     }
 
@@ -1447,6 +1520,7 @@ public final class OpensearchCluster {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OpensearchCluster(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1489,7 +1563,6 @@ public final class OpensearchCluster {
         sb.append(", subnetCompartmentId=").append(String.valueOf(this.subnetCompartmentId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", availabilityDomains=").append(String.valueOf(this.availabilityDomains));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1549,7 +1622,7 @@ public final class OpensearchCluster {
                 && java.util.Objects.equals(this.subnetCompartmentId, other.subnetCompartmentId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.availabilityDomains, other.availabilityDomains)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1673,16 +1746,7 @@ public final class OpensearchCluster {
                         + (this.availabilityDomains == null
                                 ? 43
                                 : this.availabilityDomains.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

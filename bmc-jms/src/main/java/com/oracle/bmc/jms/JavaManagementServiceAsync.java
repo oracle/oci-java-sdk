@@ -52,6 +52,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add Java installation sites in a Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddFleetInstallationSitesResponse> addFleetInstallationSites(
+            AddFleetInstallationSitesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddFleetInstallationSitesRequest, AddFleetInstallationSitesResponse>
+                    handler);
+
+    /**
      * Deletes the work request specified by an identifier.
      *
      * @param request The request object containing the details to send
@@ -102,6 +118,12 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
 
     /**
      * Create a new Fleet using the information provided.
+     * <p>
+     * `inventoryLog` is now a required parameter for CreateFleet API.
+     * Update existing applications using this API
+     * before July 15, 2022 to ensure the applications continue to work.
+     * See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+     * Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
      *
      *
      * @param request The request object containing the details to send
@@ -145,6 +167,23 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteFleetRequest, DeleteFleetResponse> handler);
 
     /**
+     * Generates Agent Deploy Script for Fleet using the information provided.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateAgentDeployScriptResponse> generateAgentDeployScript(
+            GenerateAgentDeployScriptRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateAgentDeployScriptRequest, GenerateAgentDeployScriptResponse>
+                    handler);
+
+    /**
      * Retrieve a Fleet with the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -172,6 +211,37 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             GetFleetAgentConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetFleetAgentConfigurationRequest, GetFleetAgentConfigurationResponse>
+                    handler);
+
+    /**
+     * Returns details of a Java release family based on specified version.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetJavaFamilyResponse> getJavaFamily(
+            GetJavaFamilyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetJavaFamilyRequest, GetJavaFamilyResponse>
+                    handler);
+
+    /**
+     * Returns detail of a Java release.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetJavaReleaseResponse> getJavaRelease(
+            GetJavaReleaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetJavaReleaseRequest, GetJavaReleaseResponse>
                     handler);
 
     /**
@@ -235,6 +305,39 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             ListInstallationSitesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListInstallationSitesRequest, ListInstallationSitesResponse>
+                    handler);
+
+    /**
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJavaFamiliesResponse> listJavaFamilies(
+            ListJavaFamiliesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListJavaFamiliesRequest, ListJavaFamiliesResponse>
+                    handler);
+
+    /**
+     * Returns a list of Java releases.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJavaReleasesResponse> listJavaReleases(
+            ListJavaReleasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListJavaReleasesRequest, ListJavaReleasesResponse>
                     handler);
 
     /**

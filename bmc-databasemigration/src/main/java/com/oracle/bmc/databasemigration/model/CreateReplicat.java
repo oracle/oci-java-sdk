@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateReplicat.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateReplicat {
+public final class CreateReplicat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mapParallelism",
@@ -94,21 +94,29 @@ public final class CreateReplicat {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateReplicat build() {
-            CreateReplicat __instance__ =
-                    new CreateReplicat(mapParallelism, minApplyParallelism, maxApplyParallelism);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateReplicat model =
+                    new CreateReplicat(
+                            this.mapParallelism,
+                            this.minApplyParallelism,
+                            this.maxApplyParallelism);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateReplicat o) {
-            Builder copiedBuilder =
-                    mapParallelism(o.getMapParallelism())
-                            .minApplyParallelism(o.getMinApplyParallelism())
-                            .maxApplyParallelism(o.getMaxApplyParallelism());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateReplicat model) {
+            if (model.wasPropertyExplicitlySet("mapParallelism")) {
+                this.mapParallelism(model.getMapParallelism());
+            }
+            if (model.wasPropertyExplicitlySet("minApplyParallelism")) {
+                this.minApplyParallelism(model.getMinApplyParallelism());
+            }
+            if (model.wasPropertyExplicitlySet("maxApplyParallelism")) {
+                this.maxApplyParallelism(model.getMaxApplyParallelism());
+            }
+            return this;
         }
     }
 
@@ -184,10 +192,10 @@ public final class CreateReplicat {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateReplicat(");
+        sb.append("super=").append(super.toString());
         sb.append("mapParallelism=").append(String.valueOf(this.mapParallelism));
         sb.append(", minApplyParallelism=").append(String.valueOf(this.minApplyParallelism));
         sb.append(", maxApplyParallelism=").append(String.valueOf(this.maxApplyParallelism));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +213,7 @@ public final class CreateReplicat {
         return java.util.Objects.equals(this.mapParallelism, other.mapParallelism)
                 && java.util.Objects.equals(this.minApplyParallelism, other.minApplyParallelism)
                 && java.util.Objects.equals(this.maxApplyParallelism, other.maxApplyParallelism)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -225,16 +233,7 @@ public final class CreateReplicat {
                         + (this.maxApplyParallelism == null
                                 ? 43
                                 : this.maxApplyParallelism.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

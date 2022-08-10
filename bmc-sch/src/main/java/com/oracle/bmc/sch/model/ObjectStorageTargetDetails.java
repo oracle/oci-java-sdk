@@ -125,28 +125,37 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectStorageTargetDetails build() {
-            ObjectStorageTargetDetails __instance__ =
+            ObjectStorageTargetDetails model =
                     new ObjectStorageTargetDetails(
-                            namespace,
-                            bucketName,
-                            objectNamePrefix,
-                            batchRolloverSizeInMBs,
-                            batchRolloverTimeInMs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.namespace,
+                            this.bucketName,
+                            this.objectNamePrefix,
+                            this.batchRolloverSizeInMBs,
+                            this.batchRolloverTimeInMs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectStorageTargetDetails o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .bucketName(o.getBucketName())
-                            .objectNamePrefix(o.getObjectNamePrefix())
-                            .batchRolloverSizeInMBs(o.getBatchRolloverSizeInMBs())
-                            .batchRolloverTimeInMs(o.getBatchRolloverTimeInMs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectStorageTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("objectNamePrefix")) {
+                this.objectNamePrefix(model.getObjectNamePrefix());
+            }
+            if (model.wasPropertyExplicitlySet("batchRolloverSizeInMBs")) {
+                this.batchRolloverSizeInMBs(model.getBatchRolloverSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("batchRolloverTimeInMs")) {
+                this.batchRolloverTimeInMs(model.getBatchRolloverTimeInMs());
+            }
+            return this;
         }
     }
 
@@ -275,7 +284,6 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
         sb.append(", objectNamePrefix=").append(String.valueOf(this.objectNamePrefix));
         sb.append(", batchRolloverSizeInMBs=").append(String.valueOf(this.batchRolloverSizeInMBs));
         sb.append(", batchRolloverTimeInMs=").append(String.valueOf(this.batchRolloverTimeInMs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -296,8 +304,7 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
                 && java.util.Objects.equals(
                         this.batchRolloverSizeInMBs, other.batchRolloverSizeInMBs)
                 && java.util.Objects.equals(this.batchRolloverTimeInMs, other.batchRolloverTimeInMs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -319,16 +326,6 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
                         + (this.batchRolloverTimeInMs == null
                                 ? 43
                                 : this.batchRolloverTimeInMs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

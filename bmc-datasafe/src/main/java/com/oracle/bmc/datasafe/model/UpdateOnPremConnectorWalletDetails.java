@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = UpdateOnPremConnectorWalletDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateOnPremConnectorWalletDetails {
+public final class UpdateOnPremConnectorWalletDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isUpdate"})
     public UpdateOnPremConnectorWalletDetails(Boolean isUpdate) {
@@ -50,18 +51,20 @@ public final class UpdateOnPremConnectorWalletDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOnPremConnectorWalletDetails build() {
-            UpdateOnPremConnectorWalletDetails __instance__ =
-                    new UpdateOnPremConnectorWalletDetails(isUpdate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateOnPremConnectorWalletDetails model =
+                    new UpdateOnPremConnectorWalletDetails(this.isUpdate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOnPremConnectorWalletDetails o) {
-            Builder copiedBuilder = isUpdate(o.getIsUpdate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOnPremConnectorWalletDetails model) {
+            if (model.wasPropertyExplicitlySet("isUpdate")) {
+                this.isUpdate(model.getIsUpdate());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class UpdateOnPremConnectorWalletDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOnPremConnectorWalletDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isUpdate=").append(String.valueOf(this.isUpdate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,8 +122,7 @@ public final class UpdateOnPremConnectorWalletDetails {
         }
 
         UpdateOnPremConnectorWalletDetails other = (UpdateOnPremConnectorWalletDetails) o;
-        return java.util.Objects.equals(this.isUpdate, other.isUpdate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.isUpdate, other.isUpdate) && super.equals(other);
     }
 
     @Override
@@ -128,16 +130,7 @@ public final class UpdateOnPremConnectorWalletDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isUpdate == null ? 43 : this.isUpdate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

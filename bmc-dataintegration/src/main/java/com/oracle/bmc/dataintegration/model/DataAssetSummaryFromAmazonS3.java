@@ -164,46 +164,73 @@ public final class DataAssetSummaryFromAmazonS3 extends DataAssetSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataAssetSummaryFromAmazonS3 build() {
-            DataAssetSummaryFromAmazonS3 __instance__ =
+            DataAssetSummaryFromAmazonS3 model =
                     new DataAssetSummaryFromAmazonS3(
-                            key,
-                            modelVersion,
-                            name,
-                            description,
-                            objectStatus,
-                            identifier,
-                            externalKey,
-                            assetProperties,
-                            nativeTypeSystem,
-                            objectVersion,
-                            parentRef,
-                            metadata,
-                            region,
-                            defaultConnection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.identifier,
+                            this.externalKey,
+                            this.assetProperties,
+                            this.nativeTypeSystem,
+                            this.objectVersion,
+                            this.parentRef,
+                            this.metadata,
+                            this.region,
+                            this.defaultConnection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataAssetSummaryFromAmazonS3 o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .externalKey(o.getExternalKey())
-                            .assetProperties(o.getAssetProperties())
-                            .nativeTypeSystem(o.getNativeTypeSystem())
-                            .objectVersion(o.getObjectVersion())
-                            .parentRef(o.getParentRef())
-                            .metadata(o.getMetadata())
-                            .region(o.getRegion())
-                            .defaultConnection(o.getDefaultConnection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataAssetSummaryFromAmazonS3 model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("assetProperties")) {
+                this.assetProperties(model.getAssetProperties());
+            }
+            if (model.wasPropertyExplicitlySet("nativeTypeSystem")) {
+                this.nativeTypeSystem(model.getNativeTypeSystem());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("defaultConnection")) {
+                this.defaultConnection(model.getDefaultConnection());
+            }
+            return this;
         }
     }
 
@@ -288,7 +315,6 @@ public final class DataAssetSummaryFromAmazonS3 extends DataAssetSummary {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -305,8 +331,7 @@ public final class DataAssetSummaryFromAmazonS3 extends DataAssetSummary {
         DataAssetSummaryFromAmazonS3 other = (DataAssetSummaryFromAmazonS3) o;
         return java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -317,16 +342,6 @@ public final class DataAssetSummaryFromAmazonS3 extends DataAssetSummary {
         result =
                 (result * PRIME)
                         + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -163,8 +163,8 @@ public class ListNetworkLoadBalancersConverter {
                                         builder =
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .ListNetworkLoadBalancersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkLoadBalancerCollection(response.getItem());
 

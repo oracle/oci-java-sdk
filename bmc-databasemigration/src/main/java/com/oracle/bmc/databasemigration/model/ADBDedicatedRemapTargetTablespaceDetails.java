@@ -51,18 +51,20 @@ public final class ADBDedicatedRemapTargetTablespaceDetails extends TargetTypeTa
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ADBDedicatedRemapTargetTablespaceDetails build() {
-            ADBDedicatedRemapTargetTablespaceDetails __instance__ =
-                    new ADBDedicatedRemapTargetTablespaceDetails(remapTarget);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ADBDedicatedRemapTargetTablespaceDetails model =
+                    new ADBDedicatedRemapTargetTablespaceDetails(this.remapTarget);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ADBDedicatedRemapTargetTablespaceDetails o) {
-            Builder copiedBuilder = remapTarget(o.getRemapTarget());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ADBDedicatedRemapTargetTablespaceDetails model) {
+            if (model.wasPropertyExplicitlySet("remapTarget")) {
+                this.remapTarget(model.getRemapTarget());
+            }
+            return this;
         }
     }
 
@@ -114,7 +116,6 @@ public final class ADBDedicatedRemapTargetTablespaceDetails extends TargetTypeTa
         sb.append("ADBDedicatedRemapTargetTablespaceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", remapTarget=").append(String.valueOf(this.remapTarget));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -130,9 +131,7 @@ public final class ADBDedicatedRemapTargetTablespaceDetails extends TargetTypeTa
 
         ADBDedicatedRemapTargetTablespaceDetails other =
                 (ADBDedicatedRemapTargetTablespaceDetails) o;
-        return java.util.Objects.equals(this.remapTarget, other.remapTarget)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.remapTarget, other.remapTarget) && super.equals(other);
     }
 
     @Override
@@ -140,16 +139,6 @@ public final class ADBDedicatedRemapTargetTablespaceDetails extends TargetTypeTa
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.remapTarget == null ? 43 : this.remapTarget.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

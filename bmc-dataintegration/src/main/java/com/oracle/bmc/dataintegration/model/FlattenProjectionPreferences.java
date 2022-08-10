@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = FlattenProjectionPreferences.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FlattenProjectionPreferences {
+public final class FlattenProjectionPreferences
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "createArrayIndex",
@@ -110,26 +111,33 @@ public final class FlattenProjectionPreferences {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FlattenProjectionPreferences build() {
-            FlattenProjectionPreferences __instance__ =
+            FlattenProjectionPreferences model =
                     new FlattenProjectionPreferences(
-                            createArrayIndex,
-                            retainAllAttributes,
-                            ignoreNullValues,
-                            retainParentNameLineage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.createArrayIndex,
+                            this.retainAllAttributes,
+                            this.ignoreNullValues,
+                            this.retainParentNameLineage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FlattenProjectionPreferences o) {
-            Builder copiedBuilder =
-                    createArrayIndex(o.getCreateArrayIndex())
-                            .retainAllAttributes(o.getRetainAllAttributes())
-                            .ignoreNullValues(o.getIgnoreNullValues())
-                            .retainParentNameLineage(o.getRetainParentNameLineage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FlattenProjectionPreferences model) {
+            if (model.wasPropertyExplicitlySet("createArrayIndex")) {
+                this.createArrayIndex(model.getCreateArrayIndex());
+            }
+            if (model.wasPropertyExplicitlySet("retainAllAttributes")) {
+                this.retainAllAttributes(model.getRetainAllAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("ignoreNullValues")) {
+                this.ignoreNullValues(model.getIgnoreNullValues());
+            }
+            if (model.wasPropertyExplicitlySet("retainParentNameLineage")) {
+                this.retainParentNameLineage(model.getRetainParentNameLineage());
+            }
+            return this;
         }
     }
 
@@ -405,12 +413,12 @@ public final class FlattenProjectionPreferences {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FlattenProjectionPreferences(");
+        sb.append("super=").append(super.toString());
         sb.append("createArrayIndex=").append(String.valueOf(this.createArrayIndex));
         sb.append(", retainAllAttributes=").append(String.valueOf(this.retainAllAttributes));
         sb.append(", ignoreNullValues=").append(String.valueOf(this.ignoreNullValues));
         sb.append(", retainParentNameLineage=")
                 .append(String.valueOf(this.retainParentNameLineage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -430,7 +438,7 @@ public final class FlattenProjectionPreferences {
                 && java.util.Objects.equals(this.ignoreNullValues, other.ignoreNullValues)
                 && java.util.Objects.equals(
                         this.retainParentNameLineage, other.retainParentNameLineage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -453,16 +461,7 @@ public final class FlattenProjectionPreferences {
                         + (this.retainParentNameLineage == null
                                 ? 43
                                 : this.retainParentNameLineage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

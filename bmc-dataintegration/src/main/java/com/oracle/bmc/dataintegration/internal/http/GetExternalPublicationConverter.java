@@ -123,8 +123,8 @@ public class GetExternalPublicationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetExternalPublicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalPublication(response.getItem());
 

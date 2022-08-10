@@ -119,8 +119,8 @@ public class GetComputeImageCapabilitySchemaConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetComputeImageCapabilitySchemaResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.computeImageCapabilitySchema(response.getItem());
 

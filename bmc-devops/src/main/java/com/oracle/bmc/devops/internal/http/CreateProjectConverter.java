@@ -101,8 +101,8 @@ public class CreateProjectConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CreateProjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.project(response.getItem());
 

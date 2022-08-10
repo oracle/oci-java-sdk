@@ -123,8 +123,8 @@ public class GenerateHeatWaveClusterMemoryEstimateConverter {
                                                 com.oracle.bmc.mysql.responses
                                                         .GenerateHeatWaveClusterMemoryEstimateResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.heatWaveClusterMemoryEstimate(response.getItem());
 

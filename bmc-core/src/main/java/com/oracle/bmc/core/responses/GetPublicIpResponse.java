@@ -53,13 +53,20 @@ public class GetPublicIpResponse extends com.oracle.bmc.responses.BmcResponse {
         return publicIp;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "publicIp"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "publicIp"
+    })
     private GetPublicIpResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.PublicIp publicIp) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.publicIp = publicIp;
@@ -70,6 +77,13 @@ public class GetPublicIpResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetPublicIpResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetPublicIpResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             publicIp(o.getPublicIp());
@@ -142,7 +157,8 @@ public class GetPublicIpResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetPublicIpResponse build() {
-            return new GetPublicIpResponse(__httpStatusCode__, etag, opcRequestId, publicIp);
+            return new GetPublicIpResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, publicIp);
         }
     }
 

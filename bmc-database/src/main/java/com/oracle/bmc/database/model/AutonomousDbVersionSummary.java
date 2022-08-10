@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDbVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDbVersionSummary {
+public final class AutonomousDbVersionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -201,34 +202,49 @@ public final class AutonomousDbVersionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDbVersionSummary build() {
-            AutonomousDbVersionSummary __instance__ =
+            AutonomousDbVersionSummary model =
                     new AutonomousDbVersionSummary(
-                            version,
-                            dbWorkload,
-                            isDedicated,
-                            details,
-                            isFreeTierEnabled,
-                            isPaidEnabled,
-                            isDefaultForFree,
-                            isDefaultForPaid);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.version,
+                            this.dbWorkload,
+                            this.isDedicated,
+                            this.details,
+                            this.isFreeTierEnabled,
+                            this.isPaidEnabled,
+                            this.isDefaultForFree,
+                            this.isDefaultForPaid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDbVersionSummary o) {
-            Builder copiedBuilder =
-                    version(o.getVersion())
-                            .dbWorkload(o.getDbWorkload())
-                            .isDedicated(o.getIsDedicated())
-                            .details(o.getDetails())
-                            .isFreeTierEnabled(o.getIsFreeTierEnabled())
-                            .isPaidEnabled(o.getIsPaidEnabled())
-                            .isDefaultForFree(o.getIsDefaultForFree())
-                            .isDefaultForPaid(o.getIsDefaultForPaid());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDbVersionSummary model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dbWorkload")) {
+                this.dbWorkload(model.getDbWorkload());
+            }
+            if (model.wasPropertyExplicitlySet("isDedicated")) {
+                this.isDedicated(model.getIsDedicated());
+            }
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isFreeTierEnabled")) {
+                this.isFreeTierEnabled(model.getIsFreeTierEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isPaidEnabled")) {
+                this.isPaidEnabled(model.getIsPaidEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultForFree")) {
+                this.isDefaultForFree(model.getIsDefaultForFree());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultForPaid")) {
+                this.isDefaultForPaid(model.getIsDefaultForPaid());
+            }
+            return this;
         }
     }
 
@@ -438,6 +454,7 @@ public final class AutonomousDbVersionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDbVersionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
@@ -446,7 +463,6 @@ public final class AutonomousDbVersionSummary {
         sb.append(", isPaidEnabled=").append(String.valueOf(this.isPaidEnabled));
         sb.append(", isDefaultForFree=").append(String.valueOf(this.isDefaultForFree));
         sb.append(", isDefaultForPaid=").append(String.valueOf(this.isDefaultForPaid));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -469,7 +485,7 @@ public final class AutonomousDbVersionSummary {
                 && java.util.Objects.equals(this.isPaidEnabled, other.isPaidEnabled)
                 && java.util.Objects.equals(this.isDefaultForFree, other.isDefaultForFree)
                 && java.util.Objects.equals(this.isDefaultForPaid, other.isDefaultForPaid)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -492,16 +508,7 @@ public final class AutonomousDbVersionSummary {
         result =
                 (result * PRIME)
                         + (this.isDefaultForPaid == null ? 43 : this.isDefaultForPaid.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

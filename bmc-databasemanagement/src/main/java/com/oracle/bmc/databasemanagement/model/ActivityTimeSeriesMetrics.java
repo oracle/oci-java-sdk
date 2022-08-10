@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = ActivityTimeSeriesMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ActivityTimeSeriesMetrics {
+public final class ActivityTimeSeriesMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timestamp",
@@ -113,25 +114,41 @@ public final class ActivityTimeSeriesMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivityTimeSeriesMetrics build() {
-            ActivityTimeSeriesMetrics __instance__ =
+            ActivityTimeSeriesMetrics model =
                     new ActivityTimeSeriesMetrics(
-                            timestamp, cpuTime, waitTime, userIoTime, cpuCount, cluster);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timestamp,
+                            this.cpuTime,
+                            this.waitTime,
+                            this.userIoTime,
+                            this.cpuCount,
+                            this.cluster);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ActivityTimeSeriesMetrics o) {
-            Builder copiedBuilder =
-                    timestamp(o.getTimestamp())
-                            .cpuTime(o.getCpuTime())
-                            .waitTime(o.getWaitTime())
-                            .userIoTime(o.getUserIoTime())
-                            .cpuCount(o.getCpuCount())
-                            .cluster(o.getCluster());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ActivityTimeSeriesMetrics model) {
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("cpuTime")) {
+                this.cpuTime(model.getCpuTime());
+            }
+            if (model.wasPropertyExplicitlySet("waitTime")) {
+                this.waitTime(model.getWaitTime());
+            }
+            if (model.wasPropertyExplicitlySet("userIoTime")) {
+                this.userIoTime(model.getUserIoTime());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCount")) {
+                this.cpuCount(model.getCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("cluster")) {
+                this.cluster(model.getCluster());
+            }
+            return this;
         }
     }
 
@@ -208,13 +225,13 @@ public final class ActivityTimeSeriesMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActivityTimeSeriesMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", cpuTime=").append(String.valueOf(this.cpuTime));
         sb.append(", waitTime=").append(String.valueOf(this.waitTime));
         sb.append(", userIoTime=").append(String.valueOf(this.userIoTime));
         sb.append(", cpuCount=").append(String.valueOf(this.cpuCount));
         sb.append(", cluster=").append(String.valueOf(this.cluster));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,7 +252,7 @@ public final class ActivityTimeSeriesMetrics {
                 && java.util.Objects.equals(this.userIoTime, other.userIoTime)
                 && java.util.Objects.equals(this.cpuCount, other.cpuCount)
                 && java.util.Objects.equals(this.cluster, other.cluster)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -248,16 +265,7 @@ public final class ActivityTimeSeriesMetrics {
         result = (result * PRIME) + (this.userIoTime == null ? 43 : this.userIoTime.hashCode());
         result = (result * PRIME) + (this.cpuCount == null ? 43 : this.cpuCount.hashCode());
         result = (result * PRIME) + (this.cluster == null ? 43 : this.cluster.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

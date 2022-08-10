@@ -153,8 +153,8 @@ public class ListAsmPropertiesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListAsmPropertiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.asmPropertyCollection(response.getItem());
 

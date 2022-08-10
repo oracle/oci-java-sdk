@@ -61,16 +61,18 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "searchResponse"
     })
     private SearchLogsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.loggingsearch.model.SearchResponse searchResponse) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.searchResponse = searchResponse;
@@ -81,6 +83,13 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(SearchLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             searchResponse(o.getSearchResponse());
@@ -161,7 +171,7 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public SearchLogsResponse build() {
             return new SearchLogsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, searchResponse);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, searchResponse);
         }
     }
 

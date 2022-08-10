@@ -113,8 +113,8 @@ public class UpdateTransferApplianceConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .UpdateTransferApplianceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transferAppliance(response.getItem());
 

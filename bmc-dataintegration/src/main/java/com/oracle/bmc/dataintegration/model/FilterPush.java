@@ -46,17 +46,19 @@ public final class FilterPush extends PushDownOperation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FilterPush build() {
-            FilterPush __instance__ = new FilterPush(filterCondition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FilterPush model = new FilterPush(this.filterCondition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FilterPush o) {
-            Builder copiedBuilder = filterCondition(o.getFilterCondition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FilterPush model) {
+            if (model.wasPropertyExplicitlySet("filterCondition")) {
+                this.filterCondition(model.getFilterCondition());
+            }
+            return this;
         }
     }
 
@@ -106,7 +108,6 @@ public final class FilterPush extends PushDownOperation {
         sb.append("FilterPush(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", filterCondition=").append(String.valueOf(this.filterCondition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,8 +123,7 @@ public final class FilterPush extends PushDownOperation {
 
         FilterPush other = (FilterPush) o;
         return java.util.Objects.equals(this.filterCondition, other.filterCondition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -133,16 +133,6 @@ public final class FilterPush extends PushDownOperation {
         result =
                 (result * PRIME)
                         + (this.filterCondition == null ? 43 : this.filterCondition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -105,8 +105,8 @@ public class GetNamespaceConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetNamespaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.namespace(response.getItem());
 

@@ -107,8 +107,8 @@ public class CreateConnectHarnessConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .CreateConnectHarnessResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connectHarness(response.getItem());
 

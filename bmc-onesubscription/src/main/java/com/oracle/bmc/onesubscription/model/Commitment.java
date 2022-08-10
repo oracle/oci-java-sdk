@@ -18,7 +18,7 @@ package com.oracle.bmc.onesubscription.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Commitment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Commitment {
+public final class Commitment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -203,34 +203,49 @@ public final class Commitment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Commitment build() {
-            Commitment __instance__ =
+            Commitment model =
                     new Commitment(
-                            id,
-                            subscribedServiceId,
-                            timeStart,
-                            timeEnd,
-                            quantity,
-                            usedAmount,
-                            availableAmount,
-                            fundedAllocationValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.subscribedServiceId,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.quantity,
+                            this.usedAmount,
+                            this.availableAmount,
+                            this.fundedAllocationValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Commitment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .subscribedServiceId(o.getSubscribedServiceId())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .quantity(o.getQuantity())
-                            .usedAmount(o.getUsedAmount())
-                            .availableAmount(o.getAvailableAmount())
-                            .fundedAllocationValue(o.getFundedAllocationValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Commitment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("subscribedServiceId")) {
+                this.subscribedServiceId(model.getSubscribedServiceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("usedAmount")) {
+                this.usedAmount(model.getUsedAmount());
+            }
+            if (model.wasPropertyExplicitlySet("availableAmount")) {
+                this.availableAmount(model.getAvailableAmount());
+            }
+            if (model.wasPropertyExplicitlySet("fundedAllocationValue")) {
+                this.fundedAllocationValue(model.getFundedAllocationValue());
+            }
+            return this;
         }
     }
 
@@ -388,6 +403,7 @@ public final class Commitment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Commitment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", subscribedServiceId=").append(String.valueOf(this.subscribedServiceId));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
@@ -396,7 +412,6 @@ public final class Commitment {
         sb.append(", usedAmount=").append(String.valueOf(this.usedAmount));
         sb.append(", availableAmount=").append(String.valueOf(this.availableAmount));
         sb.append(", fundedAllocationValue=").append(String.valueOf(this.fundedAllocationValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -419,7 +434,7 @@ public final class Commitment {
                 && java.util.Objects.equals(this.usedAmount, other.usedAmount)
                 && java.util.Objects.equals(this.availableAmount, other.availableAmount)
                 && java.util.Objects.equals(this.fundedAllocationValue, other.fundedAllocationValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -444,16 +459,7 @@ public final class Commitment {
                         + (this.fundedAllocationValue == null
                                 ? 43
                                 : this.fundedAllocationValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

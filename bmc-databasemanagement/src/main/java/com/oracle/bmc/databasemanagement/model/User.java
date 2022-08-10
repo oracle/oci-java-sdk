@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class User {
+public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -500,66 +500,113 @@ public final class User {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public User build() {
-            User __instance__ =
+            User model =
                     new User(
-                            name,
-                            status,
-                            timeLocked,
-                            timeExpiring,
-                            defaultTablespace,
-                            tempTablespace,
-                            localTempTablespace,
-                            timeCreated,
-                            profile,
-                            consumerGroup,
-                            externalName,
-                            passwordVersions,
-                            editionsEnabled,
-                            authentication,
-                            proxyConnect,
-                            common,
-                            timeLastLogin,
-                            oracleMaintained,
-                            inherited,
-                            defaultCollation,
-                            implicit,
-                            allShared,
-                            externalShared,
-                            timePasswordChanged);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.status,
+                            this.timeLocked,
+                            this.timeExpiring,
+                            this.defaultTablespace,
+                            this.tempTablespace,
+                            this.localTempTablespace,
+                            this.timeCreated,
+                            this.profile,
+                            this.consumerGroup,
+                            this.externalName,
+                            this.passwordVersions,
+                            this.editionsEnabled,
+                            this.authentication,
+                            this.proxyConnect,
+                            this.common,
+                            this.timeLastLogin,
+                            this.oracleMaintained,
+                            this.inherited,
+                            this.defaultCollation,
+                            this.implicit,
+                            this.allShared,
+                            this.externalShared,
+                            this.timePasswordChanged);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(User o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .status(o.getStatus())
-                            .timeLocked(o.getTimeLocked())
-                            .timeExpiring(o.getTimeExpiring())
-                            .defaultTablespace(o.getDefaultTablespace())
-                            .tempTablespace(o.getTempTablespace())
-                            .localTempTablespace(o.getLocalTempTablespace())
-                            .timeCreated(o.getTimeCreated())
-                            .profile(o.getProfile())
-                            .consumerGroup(o.getConsumerGroup())
-                            .externalName(o.getExternalName())
-                            .passwordVersions(o.getPasswordVersions())
-                            .editionsEnabled(o.getEditionsEnabled())
-                            .authentication(o.getAuthentication())
-                            .proxyConnect(o.getProxyConnect())
-                            .common(o.getCommon())
-                            .timeLastLogin(o.getTimeLastLogin())
-                            .oracleMaintained(o.getOracleMaintained())
-                            .inherited(o.getInherited())
-                            .defaultCollation(o.getDefaultCollation())
-                            .implicit(o.getImplicit())
-                            .allShared(o.getAllShared())
-                            .externalShared(o.getExternalShared())
-                            .timePasswordChanged(o.getTimePasswordChanged());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(User model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeLocked")) {
+                this.timeLocked(model.getTimeLocked());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpiring")) {
+                this.timeExpiring(model.getTimeExpiring());
+            }
+            if (model.wasPropertyExplicitlySet("defaultTablespace")) {
+                this.defaultTablespace(model.getDefaultTablespace());
+            }
+            if (model.wasPropertyExplicitlySet("tempTablespace")) {
+                this.tempTablespace(model.getTempTablespace());
+            }
+            if (model.wasPropertyExplicitlySet("localTempTablespace")) {
+                this.localTempTablespace(model.getLocalTempTablespace());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("profile")) {
+                this.profile(model.getProfile());
+            }
+            if (model.wasPropertyExplicitlySet("consumerGroup")) {
+                this.consumerGroup(model.getConsumerGroup());
+            }
+            if (model.wasPropertyExplicitlySet("externalName")) {
+                this.externalName(model.getExternalName());
+            }
+            if (model.wasPropertyExplicitlySet("passwordVersions")) {
+                this.passwordVersions(model.getPasswordVersions());
+            }
+            if (model.wasPropertyExplicitlySet("editionsEnabled")) {
+                this.editionsEnabled(model.getEditionsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("authentication")) {
+                this.authentication(model.getAuthentication());
+            }
+            if (model.wasPropertyExplicitlySet("proxyConnect")) {
+                this.proxyConnect(model.getProxyConnect());
+            }
+            if (model.wasPropertyExplicitlySet("common")) {
+                this.common(model.getCommon());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastLogin")) {
+                this.timeLastLogin(model.getTimeLastLogin());
+            }
+            if (model.wasPropertyExplicitlySet("oracleMaintained")) {
+                this.oracleMaintained(model.getOracleMaintained());
+            }
+            if (model.wasPropertyExplicitlySet("inherited")) {
+                this.inherited(model.getInherited());
+            }
+            if (model.wasPropertyExplicitlySet("defaultCollation")) {
+                this.defaultCollation(model.getDefaultCollation());
+            }
+            if (model.wasPropertyExplicitlySet("implicit")) {
+                this.implicit(model.getImplicit());
+            }
+            if (model.wasPropertyExplicitlySet("allShared")) {
+                this.allShared(model.getAllShared());
+            }
+            if (model.wasPropertyExplicitlySet("externalShared")) {
+                this.externalShared(model.getExternalShared());
+            }
+            if (model.wasPropertyExplicitlySet("timePasswordChanged")) {
+                this.timePasswordChanged(model.getTimePasswordChanged());
+            }
+            return this;
         }
     }
 
@@ -1430,6 +1477,7 @@ public final class User {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("User(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeLocked=").append(String.valueOf(this.timeLocked));
@@ -1454,7 +1502,6 @@ public final class User {
         sb.append(", allShared=").append(String.valueOf(this.allShared));
         sb.append(", externalShared=").append(String.valueOf(this.externalShared));
         sb.append(", timePasswordChanged=").append(String.valueOf(this.timePasswordChanged));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1493,7 +1540,7 @@ public final class User {
                 && java.util.Objects.equals(this.allShared, other.allShared)
                 && java.util.Objects.equals(this.externalShared, other.externalShared)
                 && java.util.Objects.equals(this.timePasswordChanged, other.timePasswordChanged)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1552,16 +1599,7 @@ public final class User {
                         + (this.timePasswordChanged == null
                                 ? 43
                                 : this.timePasswordChanged.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

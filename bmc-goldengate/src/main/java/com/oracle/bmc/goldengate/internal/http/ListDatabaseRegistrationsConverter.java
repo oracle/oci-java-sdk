@@ -161,8 +161,8 @@ public class ListDatabaseRegistrationsConverter {
                                         builder =
                                                 com.oracle.bmc.goldengate.responses
                                                         .ListDatabaseRegistrationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseRegistrationCollection(response.getItem());
 

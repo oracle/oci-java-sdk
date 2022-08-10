@@ -120,8 +120,8 @@ public class ProcessRecommendationConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ProcessRecommendationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.processRecommendationDetails(response.getItem());
 

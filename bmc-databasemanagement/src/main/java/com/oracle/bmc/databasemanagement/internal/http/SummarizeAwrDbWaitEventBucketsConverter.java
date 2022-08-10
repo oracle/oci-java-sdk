@@ -239,8 +239,8 @@ public class SummarizeAwrDbWaitEventBucketsConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAwrDbWaitEventBucketsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbWaitEventBucketCollection(response.getItem());
 

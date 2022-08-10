@@ -176,8 +176,8 @@ public class ListRefreshActivitiesConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListRefreshActivitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.refreshActivityCollection(response.getItem());
 

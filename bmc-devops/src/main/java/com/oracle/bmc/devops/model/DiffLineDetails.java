@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffLineDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiffLineDetails {
+public final class DiffLineDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"baseLine", "targetLine", "lineContent", "conflictMarker"})
     public DiffLineDetails(
@@ -103,22 +103,30 @@ public final class DiffLineDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiffLineDetails build() {
-            DiffLineDetails __instance__ =
-                    new DiffLineDetails(baseLine, targetLine, lineContent, conflictMarker);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DiffLineDetails model =
+                    new DiffLineDetails(
+                            this.baseLine, this.targetLine, this.lineContent, this.conflictMarker);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiffLineDetails o) {
-            Builder copiedBuilder =
-                    baseLine(o.getBaseLine())
-                            .targetLine(o.getTargetLine())
-                            .lineContent(o.getLineContent())
-                            .conflictMarker(o.getConflictMarker());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiffLineDetails model) {
+            if (model.wasPropertyExplicitlySet("baseLine")) {
+                this.baseLine(model.getBaseLine());
+            }
+            if (model.wasPropertyExplicitlySet("targetLine")) {
+                this.targetLine(model.getTargetLine());
+            }
+            if (model.wasPropertyExplicitlySet("lineContent")) {
+                this.lineContent(model.getLineContent());
+            }
+            if (model.wasPropertyExplicitlySet("conflictMarker")) {
+                this.conflictMarker(model.getConflictMarker());
+            }
+            return this;
         }
     }
 
@@ -252,11 +260,11 @@ public final class DiffLineDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiffLineDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("baseLine=").append(String.valueOf(this.baseLine));
         sb.append(", targetLine=").append(String.valueOf(this.targetLine));
         sb.append(", lineContent=").append(String.valueOf(this.lineContent));
         sb.append(", conflictMarker=").append(String.valueOf(this.conflictMarker));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +283,7 @@ public final class DiffLineDetails {
                 && java.util.Objects.equals(this.targetLine, other.targetLine)
                 && java.util.Objects.equals(this.lineContent, other.lineContent)
                 && java.util.Objects.equals(this.conflictMarker, other.conflictMarker)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -288,16 +296,7 @@ public final class DiffLineDetails {
         result =
                 (result * PRIME)
                         + (this.conflictMarker == null ? 43 : this.conflictMarker.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

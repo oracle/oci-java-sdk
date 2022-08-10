@@ -58,17 +58,19 @@ public class GetAppCatalogListingResourceVersionResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "appCatalogListingResourceVersion"
     })
     private GetAppCatalogListingResourceVersionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.AppCatalogListingResourceVersion
                     appCatalogListingResourceVersion) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
@@ -79,6 +81,13 @@ public class GetAppCatalogListingResourceVersionResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class GetAppCatalogListingResourceVersionResponse
          */
         public Builder copy(GetAppCatalogListingResourceVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             appCatalogListingResourceVersion(o.getAppCatalogListingResourceVersion());
@@ -155,7 +165,11 @@ public class GetAppCatalogListingResourceVersionResponse
          */
         public GetAppCatalogListingResourceVersionResponse build() {
             return new GetAppCatalogListingResourceVersionResponse(
-                    __httpStatusCode__, etag, opcRequestId, appCatalogListingResourceVersion);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    appCatalogListingResourceVersion);
         }
     }
 

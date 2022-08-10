@@ -145,8 +145,8 @@ public class ListWorkRequestErrorsConverter {
                                         builder =
                                                 com.oracle.bmc.networkfirewall.responses
                                                         .ListWorkRequestErrorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequestErrorCollection(response.getItem());
 

@@ -53,13 +53,20 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
         return connection;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "connection"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "connection"
+    })
     private UpdateConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.Connection connection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.connection = connection;
@@ -70,6 +77,13 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(UpdateConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             connection(o.getConnection());
@@ -142,7 +157,8 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public UpdateConnectionResponse build() {
-            return new UpdateConnectionResponse(__httpStatusCode__, etag, opcRequestId, connection);
+            return new UpdateConnectionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, connection);
         }
     }
 

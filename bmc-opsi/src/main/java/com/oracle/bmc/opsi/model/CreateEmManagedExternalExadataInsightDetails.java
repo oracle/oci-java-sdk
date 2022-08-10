@@ -136,35 +136,50 @@ public final class CreateEmManagedExternalExadataInsightDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateEmManagedExternalExadataInsightDetails build() {
-            CreateEmManagedExternalExadataInsightDetails __instance__ =
+            CreateEmManagedExternalExadataInsightDetails model =
                     new CreateEmManagedExternalExadataInsightDetails(
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerBridgeId,
-                            enterpriseManagerEntityIdentifier,
-                            memberEntityDetails,
-                            isAutoSyncEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerBridgeId,
+                            this.enterpriseManagerEntityIdentifier,
+                            this.memberEntityDetails,
+                            this.isAutoSyncEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateEmManagedExternalExadataInsightDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
-                            .enterpriseManagerEntityIdentifier(
-                                    o.getEnterpriseManagerEntityIdentifier())
-                            .memberEntityDetails(o.getMemberEntityDetails())
-                            .isAutoSyncEnabled(o.getIsAutoSyncEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateEmManagedExternalExadataInsightDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityIdentifier")) {
+                this.enterpriseManagerEntityIdentifier(
+                        model.getEnterpriseManagerEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("memberEntityDetails")) {
+                this.memberEntityDetails(model.getMemberEntityDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoSyncEnabled")) {
+                this.isAutoSyncEnabled(model.getIsAutoSyncEnabled());
+            }
+            return this;
         }
     }
 
@@ -284,7 +299,6 @@ public final class CreateEmManagedExternalExadataInsightDetails
                 .append(String.valueOf(this.enterpriseManagerEntityIdentifier));
         sb.append(", memberEntityDetails=").append(String.valueOf(this.memberEntityDetails));
         sb.append(", isAutoSyncEnabled=").append(String.valueOf(this.isAutoSyncEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,8 +323,7 @@ public final class CreateEmManagedExternalExadataInsightDetails
                         other.enterpriseManagerEntityIdentifier)
                 && java.util.Objects.equals(this.memberEntityDetails, other.memberEntityDetails)
                 && java.util.Objects.equals(this.isAutoSyncEnabled, other.isAutoSyncEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -340,16 +353,6 @@ public final class CreateEmManagedExternalExadataInsightDetails
         result =
                 (result * PRIME)
                         + (this.isAutoSyncEnabled == null ? 43 : this.isAutoSyncEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

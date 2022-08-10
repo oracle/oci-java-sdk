@@ -17,7 +17,7 @@ package com.oracle.bmc.servicemesh.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProxyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProxyDetails {
+public final class ProxyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"proxyImage"})
     public ProxyDetails(String proxyImage) {
@@ -48,17 +48,19 @@ public final class ProxyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProxyDetails build() {
-            ProxyDetails __instance__ = new ProxyDetails(proxyImage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ProxyDetails model = new ProxyDetails(this.proxyImage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProxyDetails o) {
-            Builder copiedBuilder = proxyImage(o.getProxyImage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProxyDetails model) {
+            if (model.wasPropertyExplicitlySet("proxyImage")) {
+                this.proxyImage(model.getProxyImage());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class ProxyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProxyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("proxyImage=").append(String.valueOf(this.proxyImage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class ProxyDetails {
         }
 
         ProxyDetails other = (ProxyDetails) o;
-        return java.util.Objects.equals(this.proxyImage, other.proxyImage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.proxyImage, other.proxyImage) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class ProxyDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.proxyImage == null ? 43 : this.proxyImage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

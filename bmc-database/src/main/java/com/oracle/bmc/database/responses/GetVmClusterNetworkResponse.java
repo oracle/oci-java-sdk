@@ -53,16 +53,18 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "vmClusterNetwork"
     })
     private GetVmClusterNetworkResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.vmClusterNetwork = vmClusterNetwork;
@@ -73,6 +75,13 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GetVmClusterNetworkResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             vmClusterNetwork(o.getVmClusterNetwork());
@@ -145,7 +155,7 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GetVmClusterNetworkResponse build() {
             return new GetVmClusterNetworkResponse(
-                    __httpStatusCode__, etag, opcRequestId, vmClusterNetwork);
+                    __httpStatusCode__, headers, etag, opcRequestId, vmClusterNetwork);
         }
     }
 

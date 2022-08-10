@@ -28,7 +28,7 @@ package com.oracle.bmc.core.model;
     builder = VolumeGroupReplica.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeGroupReplica {
+public final class VolumeGroupReplica extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -296,42 +296,65 @@ public final class VolumeGroupReplica {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeGroupReplica build() {
-            VolumeGroupReplica __instance__ =
+            VolumeGroupReplica model =
                     new VolumeGroupReplica(
-                            availabilityDomain,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            sizeInGBs,
-                            volumeGroupId,
-                            timeCreated,
-                            memberReplicas,
-                            timeLastSynced);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.sizeInGBs,
+                            this.volumeGroupId,
+                            this.timeCreated,
+                            this.memberReplicas,
+                            this.timeLastSynced);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeGroupReplica o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .volumeGroupId(o.getVolumeGroupId())
-                            .timeCreated(o.getTimeCreated())
-                            .memberReplicas(o.getMemberReplicas())
-                            .timeLastSynced(o.getTimeLastSynced());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeGroupReplica model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("volumeGroupId")) {
+                this.volumeGroupId(model.getVolumeGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("memberReplicas")) {
+                this.memberReplicas(model.getMemberReplicas());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSynced")) {
+                this.timeLastSynced(model.getTimeLastSynced());
+            }
+            return this;
         }
     }
 
@@ -603,6 +626,7 @@ public final class VolumeGroupReplica {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeGroupReplica(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -615,7 +639,6 @@ public final class VolumeGroupReplica {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", memberReplicas=").append(String.valueOf(this.memberReplicas));
         sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -642,7 +665,7 @@ public final class VolumeGroupReplica {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.memberReplicas, other.memberReplicas)
                 && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -675,16 +698,7 @@ public final class VolumeGroupReplica {
         result =
                 (result * PRIME)
                         + (this.timeLastSynced == null ? 43 : this.timeLastSynced.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

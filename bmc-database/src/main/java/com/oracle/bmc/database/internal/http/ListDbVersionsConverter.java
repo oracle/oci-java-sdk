@@ -165,8 +165,8 @@ public class ListDbVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListDbVersionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

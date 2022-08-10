@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateBulkProblemStatusDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateBulkProblemStatusDetails {
+public final class UpdateBulkProblemStatusDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "problemIds", "comment"})
     public UpdateBulkProblemStatusDetails(
@@ -85,19 +86,26 @@ public final class UpdateBulkProblemStatusDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBulkProblemStatusDetails build() {
-            UpdateBulkProblemStatusDetails __instance__ =
-                    new UpdateBulkProblemStatusDetails(status, problemIds, comment);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateBulkProblemStatusDetails model =
+                    new UpdateBulkProblemStatusDetails(this.status, this.problemIds, this.comment);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateBulkProblemStatusDetails o) {
-            Builder copiedBuilder =
-                    status(o.getStatus()).problemIds(o.getProblemIds()).comment(o.getComment());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateBulkProblemStatusDetails model) {
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("problemIds")) {
+                this.problemIds(model.getProblemIds());
+            }
+            if (model.wasPropertyExplicitlySet("comment")) {
+                this.comment(model.getComment());
+            }
+            return this;
         }
     }
 
@@ -167,10 +175,10 @@ public final class UpdateBulkProblemStatusDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateBulkProblemStatusDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", problemIds=").append(String.valueOf(this.problemIds));
         sb.append(", comment=").append(String.valueOf(this.comment));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +196,7 @@ public final class UpdateBulkProblemStatusDetails {
         return java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.problemIds, other.problemIds)
                 && java.util.Objects.equals(this.comment, other.comment)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +206,7 @@ public final class UpdateBulkProblemStatusDetails {
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.problemIds == null ? 43 : this.problemIds.hashCode());
         result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

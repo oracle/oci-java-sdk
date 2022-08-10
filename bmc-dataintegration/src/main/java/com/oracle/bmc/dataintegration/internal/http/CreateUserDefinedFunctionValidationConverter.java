@@ -127,8 +127,8 @@ public class CreateUserDefinedFunctionValidationConverter {
                                                 com.oracle.bmc.dataintegration.responses
                                                         .CreateUserDefinedFunctionValidationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.userDefinedFunctionValidation(response.getItem());
 

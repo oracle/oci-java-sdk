@@ -28,7 +28,8 @@ package com.oracle.bmc.identity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UpdateIdentityProviderDetails {
+public class UpdateIdentityProviderDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description", "freeformTags", "definedTags"})
     protected UpdateIdentityProviderDetails(
@@ -112,6 +113,7 @@ public class UpdateIdentityProviderDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateIdentityProviderDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -131,7 +133,8 @@ public class UpdateIdentityProviderDetails {
         UpdateIdentityProviderDetails other = (UpdateIdentityProviderDetails) o;
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -141,6 +144,7 @@ public class UpdateIdentityProviderDetails {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

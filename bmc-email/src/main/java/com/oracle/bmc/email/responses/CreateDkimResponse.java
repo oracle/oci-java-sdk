@@ -100,6 +100,7 @@ public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "contentLocation",
         "etag",
         "location",
@@ -109,13 +110,14 @@ public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private CreateDkimResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String contentLocation,
             String etag,
             String location,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.email.model.Dkim dkim) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.contentLocation = contentLocation;
         this.etag = etag;
         this.location = location;
@@ -129,6 +131,13 @@ public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -240,6 +249,7 @@ public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(CreateDkimResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             contentLocation(o.getContentLocation());
             etag(o.getEtag());
             location(o.getLocation());
@@ -257,6 +267,7 @@ public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
         public CreateDkimResponse build() {
             return new CreateDkimResponse(
                     __httpStatusCode__,
+                    headers,
                     contentLocation,
                     etag,
                     location,

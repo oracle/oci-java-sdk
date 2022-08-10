@@ -53,16 +53,18 @@ public class UpdateNetworkSourceResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "networkSources"
     })
     private UpdateNetworkSourceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.NetworkSources networkSources) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.networkSources = networkSources;
@@ -73,6 +75,13 @@ public class UpdateNetworkSourceResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class UpdateNetworkSourceResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(UpdateNetworkSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             networkSources(o.getNetworkSources());
@@ -144,7 +154,7 @@ public class UpdateNetworkSourceResponse extends com.oracle.bmc.responses.BmcRes
          */
         public UpdateNetworkSourceResponse build() {
             return new UpdateNetworkSourceResponse(
-                    __httpStatusCode__, opcRequestId, etag, networkSources);
+                    __httpStatusCode__, headers, opcRequestId, etag, networkSources);
         }
     }
 

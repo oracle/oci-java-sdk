@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = ConfigParameterDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfigParameterDefinition {
+public final class ConfigParameterDefinition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parameterType",
@@ -160,32 +161,45 @@ public final class ConfigParameterDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigParameterDefinition build() {
-            ConfigParameterDefinition __instance__ =
+            ConfigParameterDefinition model =
                     new ConfigParameterDefinition(
-                            parameterType,
-                            parameterName,
-                            description,
-                            defaultValue,
-                            classFieldName,
-                            isStatic,
-                            isClassFieldValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.parameterType,
+                            this.parameterName,
+                            this.description,
+                            this.defaultValue,
+                            this.classFieldName,
+                            this.isStatic,
+                            this.isClassFieldValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConfigParameterDefinition o) {
-            Builder copiedBuilder =
-                    parameterType(o.getParameterType())
-                            .parameterName(o.getParameterName())
-                            .description(o.getDescription())
-                            .defaultValue(o.getDefaultValue())
-                            .classFieldName(o.getClassFieldName())
-                            .isStatic(o.getIsStatic())
-                            .isClassFieldValue(o.getIsClassFieldValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConfigParameterDefinition model) {
+            if (model.wasPropertyExplicitlySet("parameterType")) {
+                this.parameterType(model.getParameterType());
+            }
+            if (model.wasPropertyExplicitlySet("parameterName")) {
+                this.parameterName(model.getParameterName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            if (model.wasPropertyExplicitlySet("classFieldName")) {
+                this.classFieldName(model.getClassFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("isStatic")) {
+                this.isStatic(model.getIsStatic());
+            }
+            if (model.wasPropertyExplicitlySet("isClassFieldValue")) {
+                this.isClassFieldValue(model.getIsClassFieldValue());
+            }
+            return this;
         }
     }
 
@@ -304,6 +318,7 @@ public final class ConfigParameterDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfigParameterDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("parameterType=").append(String.valueOf(this.parameterType));
         sb.append(", parameterName=").append(String.valueOf(this.parameterName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -311,7 +326,6 @@ public final class ConfigParameterDefinition {
         sb.append(", classFieldName=").append(String.valueOf(this.classFieldName));
         sb.append(", isStatic=").append(String.valueOf(this.isStatic));
         sb.append(", isClassFieldValue=").append(String.valueOf(this.isClassFieldValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -333,7 +347,7 @@ public final class ConfigParameterDefinition {
                 && java.util.Objects.equals(this.classFieldName, other.classFieldName)
                 && java.util.Objects.equals(this.isStatic, other.isStatic)
                 && java.util.Objects.equals(this.isClassFieldValue, other.isClassFieldValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -355,16 +369,7 @@ public final class ConfigParameterDefinition {
         result =
                 (result * PRIME)
                         + (this.isClassFieldValue == null ? 43 : this.isClassFieldValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

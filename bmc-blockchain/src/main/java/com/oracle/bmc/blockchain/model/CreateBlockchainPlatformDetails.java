@@ -19,7 +19,8 @@ package com.oracle.bmc.blockchain.model;
     builder = CreateBlockchainPlatformDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBlockchainPlatformDetails {
+public final class CreateBlockchainPlatformDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -285,42 +286,65 @@ public final class CreateBlockchainPlatformDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBlockchainPlatformDetails build() {
-            CreateBlockchainPlatformDetails __instance__ =
+            CreateBlockchainPlatformDetails model =
                     new CreateBlockchainPlatformDetails(
-                            displayName,
-                            compartmentId,
-                            description,
-                            platformRole,
-                            computeShape,
-                            isByol,
-                            platformVersion,
-                            idcsAccessToken,
-                            federatedUserId,
-                            caCertArchiveText,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.platformRole,
+                            this.computeShape,
+                            this.isByol,
+                            this.platformVersion,
+                            this.idcsAccessToken,
+                            this.federatedUserId,
+                            this.caCertArchiveText,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBlockchainPlatformDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .platformRole(o.getPlatformRole())
-                            .computeShape(o.getComputeShape())
-                            .isByol(o.getIsByol())
-                            .platformVersion(o.getPlatformVersion())
-                            .idcsAccessToken(o.getIdcsAccessToken())
-                            .federatedUserId(o.getFederatedUserId())
-                            .caCertArchiveText(o.getCaCertArchiveText())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBlockchainPlatformDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("platformRole")) {
+                this.platformRole(model.getPlatformRole());
+            }
+            if (model.wasPropertyExplicitlySet("computeShape")) {
+                this.computeShape(model.getComputeShape());
+            }
+            if (model.wasPropertyExplicitlySet("isByol")) {
+                this.isByol(model.getIsByol());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("idcsAccessToken")) {
+                this.idcsAccessToken(model.getIdcsAccessToken());
+            }
+            if (model.wasPropertyExplicitlySet("federatedUserId")) {
+                this.federatedUserId(model.getFederatedUserId());
+            }
+            if (model.wasPropertyExplicitlySet("caCertArchiveText")) {
+                this.caCertArchiveText(model.getCaCertArchiveText());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -538,6 +562,7 @@ public final class CreateBlockchainPlatformDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBlockchainPlatformDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -550,7 +575,6 @@ public final class CreateBlockchainPlatformDetails {
         sb.append(", caCertArchiveText=").append(String.valueOf(this.caCertArchiveText));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -577,7 +601,7 @@ public final class CreateBlockchainPlatformDetails {
                 && java.util.Objects.equals(this.caCertArchiveText, other.caCertArchiveText)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -606,16 +630,7 @@ public final class CreateBlockchainPlatformDetails {
                         + (this.caCertArchiveText == null ? 43 : this.caCertArchiveText.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

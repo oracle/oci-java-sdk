@@ -55,16 +55,18 @@ public class UpdateMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "mediaWorkflowJob"
     })
     private UpdateMediaWorkflowJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.MediaWorkflowJob mediaWorkflowJob) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.mediaWorkflowJob = mediaWorkflowJob;
@@ -75,6 +77,13 @@ public class UpdateMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(UpdateMediaWorkflowJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             mediaWorkflowJob(o.getMediaWorkflowJob());
@@ -149,7 +159,7 @@ public class UpdateMediaWorkflowJobResponse extends com.oracle.bmc.responses.Bmc
          */
         public UpdateMediaWorkflowJobResponse build() {
             return new UpdateMediaWorkflowJobResponse(
-                    __httpStatusCode__, etag, opcRequestId, mediaWorkflowJob);
+                    __httpStatusCode__, headers, etag, opcRequestId, mediaWorkflowJob);
         }
     }
 

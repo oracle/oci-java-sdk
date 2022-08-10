@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = EstimatedPatchingTime.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EstimatedPatchingTime {
+public final class EstimatedPatchingTime
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalEstimatedPatchingTime",
@@ -113,28 +114,35 @@ public final class EstimatedPatchingTime {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EstimatedPatchingTime build() {
-            EstimatedPatchingTime __instance__ =
+            EstimatedPatchingTime model =
                     new EstimatedPatchingTime(
-                            totalEstimatedPatchingTime,
-                            estimatedDbServerPatchingTime,
-                            estimatedStorageServerPatchingTime,
-                            estimatedNetworkSwitchesPatchingTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalEstimatedPatchingTime,
+                            this.estimatedDbServerPatchingTime,
+                            this.estimatedStorageServerPatchingTime,
+                            this.estimatedNetworkSwitchesPatchingTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EstimatedPatchingTime o) {
-            Builder copiedBuilder =
-                    totalEstimatedPatchingTime(o.getTotalEstimatedPatchingTime())
-                            .estimatedDbServerPatchingTime(o.getEstimatedDbServerPatchingTime())
-                            .estimatedStorageServerPatchingTime(
-                                    o.getEstimatedStorageServerPatchingTime())
-                            .estimatedNetworkSwitchesPatchingTime(
-                                    o.getEstimatedNetworkSwitchesPatchingTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EstimatedPatchingTime model) {
+            if (model.wasPropertyExplicitlySet("totalEstimatedPatchingTime")) {
+                this.totalEstimatedPatchingTime(model.getTotalEstimatedPatchingTime());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedDbServerPatchingTime")) {
+                this.estimatedDbServerPatchingTime(model.getEstimatedDbServerPatchingTime());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedStorageServerPatchingTime")) {
+                this.estimatedStorageServerPatchingTime(
+                        model.getEstimatedStorageServerPatchingTime());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedNetworkSwitchesPatchingTime")) {
+                this.estimatedNetworkSwitchesPatchingTime(
+                        model.getEstimatedNetworkSwitchesPatchingTime());
+            }
+            return this;
         }
     }
 
@@ -218,6 +226,7 @@ public final class EstimatedPatchingTime {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EstimatedPatchingTime(");
+        sb.append("super=").append(super.toString());
         sb.append("totalEstimatedPatchingTime=")
                 .append(String.valueOf(this.totalEstimatedPatchingTime));
         sb.append(", estimatedDbServerPatchingTime=")
@@ -226,7 +235,6 @@ public final class EstimatedPatchingTime {
                 .append(String.valueOf(this.estimatedStorageServerPatchingTime));
         sb.append(", estimatedNetworkSwitchesPatchingTime=")
                 .append(String.valueOf(this.estimatedNetworkSwitchesPatchingTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -251,7 +259,7 @@ public final class EstimatedPatchingTime {
                 && java.util.Objects.equals(
                         this.estimatedNetworkSwitchesPatchingTime,
                         other.estimatedNetworkSwitchesPatchingTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -278,16 +286,7 @@ public final class EstimatedPatchingTime {
                         + (this.estimatedNetworkSwitchesPatchingTime == null
                                 ? 43
                                 : this.estimatedNetworkSwitchesPatchingTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

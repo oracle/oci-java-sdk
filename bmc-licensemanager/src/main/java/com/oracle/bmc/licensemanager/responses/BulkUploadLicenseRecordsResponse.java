@@ -38,12 +38,18 @@ public class BulkUploadLicenseRecordsResponse extends com.oracle.bmc.responses.B
         return bulkUploadResponse;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "bulkUploadResponse"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "bulkUploadResponse"
+    })
     private BulkUploadLicenseRecordsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.licensemanager.model.BulkUploadResponse bulkUploadResponse) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.bulkUploadResponse = bulkUploadResponse;
     }
@@ -53,6 +59,13 @@ public class BulkUploadLicenseRecordsResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class BulkUploadLicenseRecordsResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(BulkUploadLicenseRecordsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             bulkUploadResponse(o.getBulkUploadResponse());
 
@@ -109,7 +123,7 @@ public class BulkUploadLicenseRecordsResponse extends com.oracle.bmc.responses.B
          */
         public BulkUploadLicenseRecordsResponse build() {
             return new BulkUploadLicenseRecordsResponse(
-                    __httpStatusCode__, opcRequestId, bulkUploadResponse);
+                    __httpStatusCode__, headers, opcRequestId, bulkUploadResponse);
         }
     }
 

@@ -179,8 +179,8 @@ public class ListCommitsConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses.ListCommitsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repositoryCommitCollection(response.getItem());
 

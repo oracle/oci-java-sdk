@@ -36,7 +36,8 @@ package com.oracle.bmc.servicemesh.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class VirtualServiceTrafficRouteRule {
+public class VirtualServiceTrafficRouteRule
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"destinations"})
     protected VirtualServiceTrafficRouteRule(
@@ -72,6 +73,7 @@ public class VirtualServiceTrafficRouteRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VirtualServiceTrafficRouteRule(");
+        sb.append("super=").append(super.toString());
         sb.append("destinations=").append(String.valueOf(this.destinations));
         sb.append(")");
         return sb.toString();
@@ -87,7 +89,8 @@ public class VirtualServiceTrafficRouteRule {
         }
 
         VirtualServiceTrafficRouteRule other = (VirtualServiceTrafficRouteRule) o;
-        return java.util.Objects.equals(this.destinations, other.destinations);
+        return java.util.Objects.equals(this.destinations, other.destinations)
+                && super.equals(other);
     }
 
     @Override
@@ -95,6 +98,7 @@ public class VirtualServiceTrafficRouteRule {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

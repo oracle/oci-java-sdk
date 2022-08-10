@@ -52,7 +52,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class FieldMap {
+public class FieldMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description"})
     protected FieldMap(String description) {
@@ -87,6 +87,7 @@ public class FieldMap {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FieldMap(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
@@ -102,7 +103,7 @@ public class FieldMap {
         }
 
         FieldMap other = (FieldMap) o;
-        return java.util.Objects.equals(this.description, other.description);
+        return java.util.Objects.equals(this.description, other.description) && super.equals(other);
     }
 
     @Override
@@ -110,6 +111,7 @@ public class FieldMap {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

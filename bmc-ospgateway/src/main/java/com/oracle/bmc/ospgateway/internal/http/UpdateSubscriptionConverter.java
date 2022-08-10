@@ -126,8 +126,8 @@ public class UpdateSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.ospgateway.responses
                                                         .UpdateSubscriptionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.subscription(response.getItem());
 

@@ -59,16 +59,18 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "responderRuleCollection"
     })
     private ListResponderRulesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ResponderRuleCollection responderRuleCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.responderRuleCollection = responderRuleCollection;
@@ -79,6 +81,13 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(ListResponderRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             responderRuleCollection(o.getResponderRuleCollection());
@@ -157,7 +167,11 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public ListResponderRulesResponse build() {
             return new ListResponderRulesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, responderRuleCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    responderRuleCollection);
         }
     }
 

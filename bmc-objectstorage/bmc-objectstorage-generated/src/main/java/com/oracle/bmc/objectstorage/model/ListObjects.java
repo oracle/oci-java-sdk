@@ -20,7 +20,7 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListObjects.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ListObjects {
+public final class ListObjects extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objects", "prefixes", "nextStartWith"})
     public ListObjects(
@@ -98,20 +98,25 @@ public final class ListObjects {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ListObjects build() {
-            ListObjects __instance__ = new ListObjects(objects, prefixes, nextStartWith);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ListObjects model = new ListObjects(this.objects, this.prefixes, this.nextStartWith);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ListObjects o) {
-            Builder copiedBuilder =
-                    objects(o.getObjects())
-                            .prefixes(o.getPrefixes())
-                            .nextStartWith(o.getNextStartWith());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ListObjects model) {
+            if (model.wasPropertyExplicitlySet("objects")) {
+                this.objects(model.getObjects());
+            }
+            if (model.wasPropertyExplicitlySet("prefixes")) {
+                this.prefixes(model.getPrefixes());
+            }
+            if (model.wasPropertyExplicitlySet("nextStartWith")) {
+                this.nextStartWith(model.getNextStartWith());
+            }
+            return this;
         }
     }
 
@@ -191,10 +196,10 @@ public final class ListObjects {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ListObjects(");
+        sb.append("super=").append(super.toString());
         sb.append("objects=").append(String.valueOf(this.objects));
         sb.append(", prefixes=").append(String.valueOf(this.prefixes));
         sb.append(", nextStartWith=").append(String.valueOf(this.nextStartWith));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,7 +217,7 @@ public final class ListObjects {
         return java.util.Objects.equals(this.objects, other.objects)
                 && java.util.Objects.equals(this.prefixes, other.prefixes)
                 && java.util.Objects.equals(this.nextStartWith, other.nextStartWith)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +229,7 @@ public final class ListObjects {
         result =
                 (result * PRIME)
                         + (this.nextStartWith == null ? 43 : this.nextStartWith.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

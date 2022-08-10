@@ -17,7 +17,7 @@ package com.oracle.bmc.dts.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TransferPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferPackage {
+public final class TransferPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "label",
@@ -150,38 +150,55 @@ public final class TransferPackage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferPackage build() {
-            TransferPackage __instance__ =
+            TransferPackage model =
                     new TransferPackage(
-                            label,
-                            lifecycleState,
-                            transferJobId,
-                            creationTime,
-                            originalPackageDeliveryTrackingNumber,
-                            returnPackageDeliveryTrackingNumber,
-                            packageDeliveryVendor,
-                            transferSiteShippingAddress,
-                            attachedTransferDeviceLabels);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.label,
+                            this.lifecycleState,
+                            this.transferJobId,
+                            this.creationTime,
+                            this.originalPackageDeliveryTrackingNumber,
+                            this.returnPackageDeliveryTrackingNumber,
+                            this.packageDeliveryVendor,
+                            this.transferSiteShippingAddress,
+                            this.attachedTransferDeviceLabels);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferPackage o) {
-            Builder copiedBuilder =
-                    label(o.getLabel())
-                            .lifecycleState(o.getLifecycleState())
-                            .transferJobId(o.getTransferJobId())
-                            .creationTime(o.getCreationTime())
-                            .originalPackageDeliveryTrackingNumber(
-                                    o.getOriginalPackageDeliveryTrackingNumber())
-                            .returnPackageDeliveryTrackingNumber(
-                                    o.getReturnPackageDeliveryTrackingNumber())
-                            .packageDeliveryVendor(o.getPackageDeliveryVendor())
-                            .transferSiteShippingAddress(o.getTransferSiteShippingAddress())
-                            .attachedTransferDeviceLabels(o.getAttachedTransferDeviceLabels());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferPackage model) {
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("transferJobId")) {
+                this.transferJobId(model.getTransferJobId());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            if (model.wasPropertyExplicitlySet("originalPackageDeliveryTrackingNumber")) {
+                this.originalPackageDeliveryTrackingNumber(
+                        model.getOriginalPackageDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("returnPackageDeliveryTrackingNumber")) {
+                this.returnPackageDeliveryTrackingNumber(
+                        model.getReturnPackageDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("packageDeliveryVendor")) {
+                this.packageDeliveryVendor(model.getPackageDeliveryVendor());
+            }
+            if (model.wasPropertyExplicitlySet("transferSiteShippingAddress")) {
+                this.transferSiteShippingAddress(model.getTransferSiteShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("attachedTransferDeviceLabels")) {
+                this.attachedTransferDeviceLabels(model.getAttachedTransferDeviceLabels());
+            }
+            return this;
         }
     }
 
@@ -334,6 +351,7 @@ public final class TransferPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("label=").append(String.valueOf(this.label));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", transferJobId=").append(String.valueOf(this.transferJobId));
@@ -347,7 +365,6 @@ public final class TransferPackage {
                 .append(String.valueOf(this.transferSiteShippingAddress));
         sb.append(", attachedTransferDeviceLabels=")
                 .append(String.valueOf(this.attachedTransferDeviceLabels));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -377,7 +394,7 @@ public final class TransferPackage {
                         this.transferSiteShippingAddress, other.transferSiteShippingAddress)
                 && java.util.Objects.equals(
                         this.attachedTransferDeviceLabels, other.attachedTransferDeviceLabels)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -417,16 +434,7 @@ public final class TransferPackage {
                         + (this.attachedTransferDeviceLabels == null
                                 ? 43
                                 : this.attachedTransferDeviceLabels.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

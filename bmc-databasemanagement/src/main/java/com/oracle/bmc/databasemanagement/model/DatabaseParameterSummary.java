@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseParameterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseParameterSummary {
+public final class DatabaseParameterSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -517,64 +518,109 @@ public final class DatabaseParameterSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseParameterSummary build() {
-            DatabaseParameterSummary __instance__ =
+            DatabaseParameterSummary model =
                     new DatabaseParameterSummary(
-                            name,
-                            type,
-                            value,
-                            displayValue,
-                            number,
-                            isDefault,
-                            isSessionModifiable,
-                            isSystemModifiable,
-                            isPdbModifiable,
-                            isInstanceModifiable,
-                            isModified,
-                            isAdjusted,
-                            isDeprecated,
-                            isBasic,
-                            description,
-                            ordinal,
-                            updateComment,
-                            containerId,
-                            category,
-                            constraint,
-                            sid,
-                            isSpecified,
-                            allowedValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.type,
+                            this.value,
+                            this.displayValue,
+                            this.number,
+                            this.isDefault,
+                            this.isSessionModifiable,
+                            this.isSystemModifiable,
+                            this.isPdbModifiable,
+                            this.isInstanceModifiable,
+                            this.isModified,
+                            this.isAdjusted,
+                            this.isDeprecated,
+                            this.isBasic,
+                            this.description,
+                            this.ordinal,
+                            this.updateComment,
+                            this.containerId,
+                            this.category,
+                            this.constraint,
+                            this.sid,
+                            this.isSpecified,
+                            this.allowedValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseParameterSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .type(o.getType())
-                            .value(o.getValue())
-                            .displayValue(o.getDisplayValue())
-                            .number(o.getNumber())
-                            .isDefault(o.getIsDefault())
-                            .isSessionModifiable(o.getIsSessionModifiable())
-                            .isSystemModifiable(o.getIsSystemModifiable())
-                            .isPdbModifiable(o.getIsPdbModifiable())
-                            .isInstanceModifiable(o.getIsInstanceModifiable())
-                            .isModified(o.getIsModified())
-                            .isAdjusted(o.getIsAdjusted())
-                            .isDeprecated(o.getIsDeprecated())
-                            .isBasic(o.getIsBasic())
-                            .description(o.getDescription())
-                            .ordinal(o.getOrdinal())
-                            .updateComment(o.getUpdateComment())
-                            .containerId(o.getContainerId())
-                            .category(o.getCategory())
-                            .constraint(o.getConstraint())
-                            .sid(o.getSid())
-                            .isSpecified(o.getIsSpecified())
-                            .allowedValues(o.getAllowedValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseParameterSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("displayValue")) {
+                this.displayValue(model.getDisplayValue());
+            }
+            if (model.wasPropertyExplicitlySet("number")) {
+                this.number(model.getNumber());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("isSessionModifiable")) {
+                this.isSessionModifiable(model.getIsSessionModifiable());
+            }
+            if (model.wasPropertyExplicitlySet("isSystemModifiable")) {
+                this.isSystemModifiable(model.getIsSystemModifiable());
+            }
+            if (model.wasPropertyExplicitlySet("isPdbModifiable")) {
+                this.isPdbModifiable(model.getIsPdbModifiable());
+            }
+            if (model.wasPropertyExplicitlySet("isInstanceModifiable")) {
+                this.isInstanceModifiable(model.getIsInstanceModifiable());
+            }
+            if (model.wasPropertyExplicitlySet("isModified")) {
+                this.isModified(model.getIsModified());
+            }
+            if (model.wasPropertyExplicitlySet("isAdjusted")) {
+                this.isAdjusted(model.getIsAdjusted());
+            }
+            if (model.wasPropertyExplicitlySet("isDeprecated")) {
+                this.isDeprecated(model.getIsDeprecated());
+            }
+            if (model.wasPropertyExplicitlySet("isBasic")) {
+                this.isBasic(model.getIsBasic());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("ordinal")) {
+                this.ordinal(model.getOrdinal());
+            }
+            if (model.wasPropertyExplicitlySet("updateComment")) {
+                this.updateComment(model.getUpdateComment());
+            }
+            if (model.wasPropertyExplicitlySet("containerId")) {
+                this.containerId(model.getContainerId());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("constraint")) {
+                this.constraint(model.getConstraint());
+            }
+            if (model.wasPropertyExplicitlySet("sid")) {
+                this.sid(model.getSid());
+            }
+            if (model.wasPropertyExplicitlySet("isSpecified")) {
+                this.isSpecified(model.getIsSpecified());
+            }
+            if (model.wasPropertyExplicitlySet("allowedValues")) {
+                this.allowedValues(model.getAllowedValues());
+            }
+            return this;
         }
     }
 
@@ -1177,6 +1223,7 @@ public final class DatabaseParameterSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseParameterSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", value=").append(String.valueOf(this.value));
@@ -1200,7 +1247,6 @@ public final class DatabaseParameterSummary {
         sb.append(", sid=").append(String.valueOf(this.sid));
         sb.append(", isSpecified=").append(String.valueOf(this.isSpecified));
         sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1238,7 +1284,7 @@ public final class DatabaseParameterSummary {
                 && java.util.Objects.equals(this.sid, other.sid)
                 && java.util.Objects.equals(this.isSpecified, other.isSpecified)
                 && java.util.Objects.equals(this.allowedValues, other.allowedValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1286,16 +1332,7 @@ public final class DatabaseParameterSummary {
         result =
                 (result * PRIME)
                         + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

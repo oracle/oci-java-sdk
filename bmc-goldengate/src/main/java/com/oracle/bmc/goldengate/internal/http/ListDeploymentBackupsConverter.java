@@ -167,8 +167,8 @@ public class ListDeploymentBackupsConverter {
                                         builder =
                                                 com.oracle.bmc.goldengate.responses
                                                         .ListDeploymentBackupsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deploymentBackupCollection(response.getItem());
 

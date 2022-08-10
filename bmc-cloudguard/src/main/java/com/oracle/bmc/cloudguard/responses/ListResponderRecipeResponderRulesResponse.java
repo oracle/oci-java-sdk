@@ -62,17 +62,19 @@ public class ListResponderRecipeResponderRulesResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "responderRecipeResponderRuleCollection"
     })
     private ListResponderRecipeResponderRulesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleCollection
                     responderRecipeResponderRuleCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.responderRecipeResponderRuleCollection = responderRecipeResponderRuleCollection;
@@ -83,6 +85,13 @@ public class ListResponderRecipeResponderRulesResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -150,6 +159,7 @@ public class ListResponderRecipeResponderRulesResponse
          */
         public Builder copy(ListResponderRecipeResponderRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             responderRecipeResponderRuleCollection(o.getResponderRecipeResponderRuleCollection());
@@ -164,6 +174,7 @@ public class ListResponderRecipeResponderRulesResponse
         public ListResponderRecipeResponderRulesResponse build() {
             return new ListResponderRecipeResponderRulesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     responderRecipeResponderRuleCollection);

@@ -51,13 +51,20 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
         return dbServer;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dbServer"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "dbServer"
+    })
     private GetDbServerResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.DbServer dbServer) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dbServer = dbServer;
@@ -68,6 +75,13 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetDbServerResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dbServer(o.getDbServer());
@@ -138,7 +153,8 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetDbServerResponse build() {
-            return new GetDbServerResponse(__httpStatusCode__, etag, opcRequestId, dbServer);
+            return new GetDbServerResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, dbServer);
         }
     }
 

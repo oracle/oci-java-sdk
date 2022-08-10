@@ -19,7 +19,7 @@ package com.oracle.bmc.filestorage.model;
     builder = CreateExportDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateExportDetails {
+public final class CreateExportDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"exportOptions", "exportSetId", "fileSystemId", "path"})
     public CreateExportDetails(
@@ -159,22 +159,30 @@ public final class CreateExportDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateExportDetails build() {
-            CreateExportDetails __instance__ =
-                    new CreateExportDetails(exportOptions, exportSetId, fileSystemId, path);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateExportDetails model =
+                    new CreateExportDetails(
+                            this.exportOptions, this.exportSetId, this.fileSystemId, this.path);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateExportDetails o) {
-            Builder copiedBuilder =
-                    exportOptions(o.getExportOptions())
-                            .exportSetId(o.getExportSetId())
-                            .fileSystemId(o.getFileSystemId())
-                            .path(o.getPath());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateExportDetails model) {
+            if (model.wasPropertyExplicitlySet("exportOptions")) {
+                this.exportOptions(model.getExportOptions());
+            }
+            if (model.wasPropertyExplicitlySet("exportSetId")) {
+                this.exportSetId(model.getExportSetId());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemId")) {
+                this.fileSystemId(model.getFileSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            return this;
         }
     }
 
@@ -312,11 +320,11 @@ public final class CreateExportDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateExportDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("exportOptions=").append(String.valueOf(this.exportOptions));
         sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
         sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(", path=").append(String.valueOf(this.path));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -335,7 +343,7 @@ public final class CreateExportDetails {
                 && java.util.Objects.equals(this.exportSetId, other.exportSetId)
                 && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.path, other.path)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -348,16 +356,7 @@ public final class CreateExportDetails {
         result = (result * PRIME) + (this.exportSetId == null ? 43 : this.exportSetId.hashCode());
         result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

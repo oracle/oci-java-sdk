@@ -57,16 +57,18 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "privateEndpoint"
     })
     private GetPrivateEndpointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.privateEndpoint = privateEndpoint;
@@ -77,6 +79,13 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             privateEndpoint(o.getPrivateEndpoint());
@@ -153,7 +163,7 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetPrivateEndpointResponse build() {
             return new GetPrivateEndpointResponse(
-                    __httpStatusCode__, etag, opcRequestId, privateEndpoint);
+                    __httpStatusCode__, headers, etag, opcRequestId, privateEndpoint);
         }
     }
 

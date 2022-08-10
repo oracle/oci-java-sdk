@@ -231,8 +231,8 @@ public class ListMediaAssetsConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .ListMediaAssetsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaAssetCollection(response.getItem());
 

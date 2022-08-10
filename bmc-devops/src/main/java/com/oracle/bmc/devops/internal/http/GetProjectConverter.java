@@ -98,7 +98,8 @@ public class GetProjectConverter {
 
                                 com.oracle.bmc.devops.responses.GetProjectResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.GetProjectResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.project(response.getItem());
 

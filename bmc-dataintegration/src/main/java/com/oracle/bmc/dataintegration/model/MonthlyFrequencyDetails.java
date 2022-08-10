@@ -81,22 +81,30 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonthlyFrequencyDetails build() {
-            MonthlyFrequencyDetails __instance__ =
-                    new MonthlyFrequencyDetails(frequency, interval, time, days);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonthlyFrequencyDetails model =
+                    new MonthlyFrequencyDetails(
+                            this.frequency, this.interval, this.time, this.days);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonthlyFrequencyDetails o) {
-            Builder copiedBuilder =
-                    frequency(o.getFrequency())
-                            .interval(o.getInterval())
-                            .time(o.getTime())
-                            .days(o.getDays());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonthlyFrequencyDetails model) {
+            if (model.wasPropertyExplicitlySet("frequency")) {
+                this.frequency(model.getFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("interval")) {
+                this.interval(model.getInterval());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            if (model.wasPropertyExplicitlySet("days")) {
+                this.days(model.getDays());
+            }
+            return this;
         }
     }
 
@@ -172,7 +180,6 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
         sb.append(", interval=").append(String.valueOf(this.interval));
         sb.append(", time=").append(String.valueOf(this.time));
         sb.append(", days=").append(String.valueOf(this.days));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,8 +197,7 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
         return java.util.Objects.equals(this.interval, other.interval)
                 && java.util.Objects.equals(this.time, other.time)
                 && java.util.Objects.equals(this.days, other.days)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -201,16 +207,6 @@ public final class MonthlyFrequencyDetails extends AbstractFrequencyDetails {
         result = (result * PRIME) + (this.interval == null ? 43 : this.interval.hashCode());
         result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
         result = (result * PRIME) + (this.days == null ? 43 : this.days.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -130,8 +130,8 @@ public class CreateReferenceArtifactConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .CreateReferenceArtifactResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.referenceInfo(response.getItem());
 

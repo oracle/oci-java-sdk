@@ -119,8 +119,8 @@ public class GetListenerConverter {
                                         builder =
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .GetListenerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.listener(response.getItem());
 

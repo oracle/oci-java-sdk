@@ -32,7 +32,7 @@ package com.oracle.bmc.marketplace.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PublicationPackage {
+public class PublicationPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -156,6 +156,7 @@ public class PublicationPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PublicationPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", version=").append(String.valueOf(this.version));
@@ -181,7 +182,8 @@ public class PublicationPackage {
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem);
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
+                && super.equals(other);
     }
 
     @Override
@@ -196,6 +198,7 @@ public class PublicationPackage {
         result =
                 (result * PRIME)
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

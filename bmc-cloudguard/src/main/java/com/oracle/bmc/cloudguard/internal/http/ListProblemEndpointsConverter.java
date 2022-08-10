@@ -143,8 +143,8 @@ public class ListProblemEndpointsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListProblemEndpointsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.problemEndpointCollection(response.getItem());
 

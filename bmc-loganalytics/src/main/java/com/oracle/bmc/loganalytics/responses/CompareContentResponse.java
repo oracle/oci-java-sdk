@@ -38,14 +38,16 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "compareContentResult"
     })
     private CompareContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.CompareContentResult compareContentResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.compareContentResult = compareContentResult;
     }
@@ -55,6 +57,13 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +106,7 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(CompareContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             compareContentResult(o.getCompareContentResult());
 
@@ -109,7 +119,7 @@ public class CompareContentResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public CompareContentResponse build() {
             return new CompareContentResponse(
-                    __httpStatusCode__, opcRequestId, compareContentResult);
+                    __httpStatusCode__, headers, opcRequestId, compareContentResult);
         }
     }
 

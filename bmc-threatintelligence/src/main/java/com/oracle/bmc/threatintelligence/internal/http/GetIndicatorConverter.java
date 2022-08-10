@@ -116,8 +116,8 @@ public class GetIndicatorConverter {
                                         builder =
                                                 com.oracle.bmc.threatintelligence.responses
                                                         .GetIndicatorResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.indicator(response.getItem());
 

@@ -55,16 +55,18 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "crossConnectGroup"
     })
     private GetCrossConnectGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.CrossConnectGroup crossConnectGroup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.crossConnectGroup = crossConnectGroup;
@@ -75,6 +77,13 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetCrossConnectGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             crossConnectGroup(o.getCrossConnectGroup());
@@ -149,7 +159,7 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetCrossConnectGroupResponse build() {
             return new GetCrossConnectGroupResponse(
-                    __httpStatusCode__, etag, opcRequestId, crossConnectGroup);
+                    __httpStatusCode__, headers, etag, opcRequestId, crossConnectGroup);
         }
     }
 

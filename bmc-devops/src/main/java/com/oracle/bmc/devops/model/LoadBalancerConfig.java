@@ -22,7 +22,7 @@ package com.oracle.bmc.devops.model;
     builder = LoadBalancerConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LoadBalancerConfig {
+public final class LoadBalancerConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"loadBalancerId", "listenerName", "backendPort"})
     public LoadBalancerConfig(String loadBalancerId, String listenerName, Integer backendPort) {
@@ -87,21 +87,27 @@ public final class LoadBalancerConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoadBalancerConfig build() {
-            LoadBalancerConfig __instance__ =
-                    new LoadBalancerConfig(loadBalancerId, listenerName, backendPort);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LoadBalancerConfig model =
+                    new LoadBalancerConfig(
+                            this.loadBalancerId, this.listenerName, this.backendPort);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LoadBalancerConfig o) {
-            Builder copiedBuilder =
-                    loadBalancerId(o.getLoadBalancerId())
-                            .listenerName(o.getListenerName())
-                            .backendPort(o.getBackendPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LoadBalancerConfig model) {
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
+            if (model.wasPropertyExplicitlySet("listenerName")) {
+                this.listenerName(model.getListenerName());
+            }
+            if (model.wasPropertyExplicitlySet("backendPort")) {
+                this.backendPort(model.getBackendPort());
+            }
+            return this;
         }
     }
 
@@ -171,10 +177,10 @@ public final class LoadBalancerConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LoadBalancerConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", listenerName=").append(String.valueOf(this.listenerName));
         sb.append(", backendPort=").append(String.valueOf(this.backendPort));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +198,7 @@ public final class LoadBalancerConfig {
         return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.listenerName, other.listenerName)
                 && java.util.Objects.equals(this.backendPort, other.backendPort)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +210,7 @@ public final class LoadBalancerConfig {
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.listenerName == null ? 43 : this.listenerName.hashCode());
         result = (result * PRIME) + (this.backendPort == null ? 43 : this.backendPort.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

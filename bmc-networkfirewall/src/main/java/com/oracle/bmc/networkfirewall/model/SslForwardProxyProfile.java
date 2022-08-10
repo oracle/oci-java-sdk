@@ -181,39 +181,54 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SslForwardProxyProfile build() {
-            SslForwardProxyProfile __instance__ =
+            SslForwardProxyProfile model =
                     new SslForwardProxyProfile(
-                            isExpiredCertificateBlocked,
-                            isUntrustedIssuerBlocked,
-                            isRevocationStatusTimeoutBlocked,
-                            isUnsupportedVersionBlocked,
-                            isUnsupportedCipherBlocked,
-                            isUnknownRevocationStatusBlocked,
-                            areCertificateExtensionsRestricted,
-                            isAutoIncludeAltName,
-                            isOutOfCapacityBlocked);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isExpiredCertificateBlocked,
+                            this.isUntrustedIssuerBlocked,
+                            this.isRevocationStatusTimeoutBlocked,
+                            this.isUnsupportedVersionBlocked,
+                            this.isUnsupportedCipherBlocked,
+                            this.isUnknownRevocationStatusBlocked,
+                            this.areCertificateExtensionsRestricted,
+                            this.isAutoIncludeAltName,
+                            this.isOutOfCapacityBlocked);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SslForwardProxyProfile o) {
-            Builder copiedBuilder =
-                    isExpiredCertificateBlocked(o.getIsExpiredCertificateBlocked())
-                            .isUntrustedIssuerBlocked(o.getIsUntrustedIssuerBlocked())
-                            .isRevocationStatusTimeoutBlocked(
-                                    o.getIsRevocationStatusTimeoutBlocked())
-                            .isUnsupportedVersionBlocked(o.getIsUnsupportedVersionBlocked())
-                            .isUnsupportedCipherBlocked(o.getIsUnsupportedCipherBlocked())
-                            .isUnknownRevocationStatusBlocked(
-                                    o.getIsUnknownRevocationStatusBlocked())
-                            .areCertificateExtensionsRestricted(
-                                    o.getAreCertificateExtensionsRestricted())
-                            .isAutoIncludeAltName(o.getIsAutoIncludeAltName())
-                            .isOutOfCapacityBlocked(o.getIsOutOfCapacityBlocked());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SslForwardProxyProfile model) {
+            if (model.wasPropertyExplicitlySet("isExpiredCertificateBlocked")) {
+                this.isExpiredCertificateBlocked(model.getIsExpiredCertificateBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isUntrustedIssuerBlocked")) {
+                this.isUntrustedIssuerBlocked(model.getIsUntrustedIssuerBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isRevocationStatusTimeoutBlocked")) {
+                this.isRevocationStatusTimeoutBlocked(model.getIsRevocationStatusTimeoutBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isUnsupportedVersionBlocked")) {
+                this.isUnsupportedVersionBlocked(model.getIsUnsupportedVersionBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isUnsupportedCipherBlocked")) {
+                this.isUnsupportedCipherBlocked(model.getIsUnsupportedCipherBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isUnknownRevocationStatusBlocked")) {
+                this.isUnknownRevocationStatusBlocked(model.getIsUnknownRevocationStatusBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("areCertificateExtensionsRestricted")) {
+                this.areCertificateExtensionsRestricted(
+                        model.getAreCertificateExtensionsRestricted());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoIncludeAltName")) {
+                this.isAutoIncludeAltName(model.getIsAutoIncludeAltName());
+            }
+            if (model.wasPropertyExplicitlySet("isOutOfCapacityBlocked")) {
+                this.isOutOfCapacityBlocked(model.getIsOutOfCapacityBlocked());
+            }
+            return this;
         }
     }
 
@@ -411,7 +426,6 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
                 .append(String.valueOf(this.areCertificateExtensionsRestricted));
         sb.append(", isAutoIncludeAltName=").append(String.valueOf(this.isAutoIncludeAltName));
         sb.append(", isOutOfCapacityBlocked=").append(String.valueOf(this.isOutOfCapacityBlocked));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -446,8 +460,7 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
                 && java.util.Objects.equals(this.isAutoIncludeAltName, other.isAutoIncludeAltName)
                 && java.util.Objects.equals(
                         this.isOutOfCapacityBlocked, other.isOutOfCapacityBlocked)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -499,16 +512,6 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
                         + (this.isOutOfCapacityBlocked == null
                                 ? 43
                                 : this.isOutOfCapacityBlocked.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

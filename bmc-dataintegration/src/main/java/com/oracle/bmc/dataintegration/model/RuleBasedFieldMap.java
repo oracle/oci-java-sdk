@@ -188,42 +188,65 @@ public final class RuleBasedFieldMap extends FieldMap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RuleBasedFieldMap build() {
-            RuleBasedFieldMap __instance__ =
+            RuleBasedFieldMap model =
                     new RuleBasedFieldMap(
-                            description,
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            mapType,
-                            fromPattern,
-                            toPattern,
-                            isJavaRegexSyntax,
-                            objectStatus,
-                            fromRuleConfig,
-                            toRuleConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.mapType,
+                            this.fromPattern,
+                            this.toPattern,
+                            this.isJavaRegexSyntax,
+                            this.objectStatus,
+                            this.fromRuleConfig,
+                            this.toRuleConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RuleBasedFieldMap o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .mapType(o.getMapType())
-                            .fromPattern(o.getFromPattern())
-                            .toPattern(o.getToPattern())
-                            .isJavaRegexSyntax(o.getIsJavaRegexSyntax())
-                            .objectStatus(o.getObjectStatus())
-                            .fromRuleConfig(o.getFromRuleConfig())
-                            .toRuleConfig(o.getToRuleConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RuleBasedFieldMap model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("mapType")) {
+                this.mapType(model.getMapType());
+            }
+            if (model.wasPropertyExplicitlySet("fromPattern")) {
+                this.fromPattern(model.getFromPattern());
+            }
+            if (model.wasPropertyExplicitlySet("toPattern")) {
+                this.toPattern(model.getToPattern());
+            }
+            if (model.wasPropertyExplicitlySet("isJavaRegexSyntax")) {
+                this.isJavaRegexSyntax(model.getIsJavaRegexSyntax());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("fromRuleConfig")) {
+                this.fromRuleConfig(model.getFromRuleConfig());
+            }
+            if (model.wasPropertyExplicitlySet("toRuleConfig")) {
+                this.toRuleConfig(model.getToRuleConfig());
+            }
+            return this;
         }
     }
 
@@ -466,7 +489,6 @@ public final class RuleBasedFieldMap extends FieldMap {
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", fromRuleConfig=").append(String.valueOf(this.fromRuleConfig));
         sb.append(", toRuleConfig=").append(String.valueOf(this.toRuleConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -492,8 +514,7 @@ public final class RuleBasedFieldMap extends FieldMap {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.fromRuleConfig, other.fromRuleConfig)
                 && java.util.Objects.equals(this.toRuleConfig, other.toRuleConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -515,16 +536,6 @@ public final class RuleBasedFieldMap extends FieldMap {
                 (result * PRIME)
                         + (this.fromRuleConfig == null ? 43 : this.fromRuleConfig.hashCode());
         result = (result * PRIME) + (this.toRuleConfig == null ? 43 : this.toRuleConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

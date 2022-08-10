@@ -100,8 +100,8 @@ public class VerifyConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .VerifyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.verifiedData(response.getItem());
 

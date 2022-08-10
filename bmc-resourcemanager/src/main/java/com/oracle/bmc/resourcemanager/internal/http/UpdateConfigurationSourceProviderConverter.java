@@ -127,8 +127,8 @@ public class UpdateConfigurationSourceProviderConverter {
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .UpdateConfigurationSourceProviderResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.configurationSourceProvider(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.osubusage.model;
     builder = ComputedUsageAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputedUsageAggregation {
+public final class ComputedUsageAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "quantity",
@@ -194,34 +195,49 @@ public final class ComputedUsageAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputedUsageAggregation build() {
-            ComputedUsageAggregation __instance__ =
+            ComputedUsageAggregation model =
                     new ComputedUsageAggregation(
-                            quantity,
-                            product,
-                            dataCenter,
-                            timeMeteredOn,
-                            netUnitPrice,
-                            costUnrounded,
-                            cost,
-                            type);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.quantity,
+                            this.product,
+                            this.dataCenter,
+                            this.timeMeteredOn,
+                            this.netUnitPrice,
+                            this.costUnrounded,
+                            this.cost,
+                            this.type);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputedUsageAggregation o) {
-            Builder copiedBuilder =
-                    quantity(o.getQuantity())
-                            .product(o.getProduct())
-                            .dataCenter(o.getDataCenter())
-                            .timeMeteredOn(o.getTimeMeteredOn())
-                            .netUnitPrice(o.getNetUnitPrice())
-                            .costUnrounded(o.getCostUnrounded())
-                            .cost(o.getCost())
-                            .type(o.getType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputedUsageAggregation model) {
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenter")) {
+                this.dataCenter(model.getDataCenter());
+            }
+            if (model.wasPropertyExplicitlySet("timeMeteredOn")) {
+                this.timeMeteredOn(model.getTimeMeteredOn());
+            }
+            if (model.wasPropertyExplicitlySet("netUnitPrice")) {
+                this.netUnitPrice(model.getNetUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("costUnrounded")) {
+                this.costUnrounded(model.getCostUnrounded());
+            }
+            if (model.wasPropertyExplicitlySet("cost")) {
+                this.cost(model.getCost());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            return this;
         }
     }
 
@@ -428,6 +444,7 @@ public final class ComputedUsageAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputedUsageAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("quantity=").append(String.valueOf(this.quantity));
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", dataCenter=").append(String.valueOf(this.dataCenter));
@@ -436,7 +453,6 @@ public final class ComputedUsageAggregation {
         sb.append(", costUnrounded=").append(String.valueOf(this.costUnrounded));
         sb.append(", cost=").append(String.valueOf(this.cost));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -459,7 +475,7 @@ public final class ComputedUsageAggregation {
                 && java.util.Objects.equals(this.costUnrounded, other.costUnrounded)
                 && java.util.Objects.equals(this.cost, other.cost)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -478,16 +494,7 @@ public final class ComputedUsageAggregation {
                         + (this.costUnrounded == null ? 43 : this.costUnrounded.hashCode());
         result = (result * PRIME) + (this.cost == null ? 43 : this.cost.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

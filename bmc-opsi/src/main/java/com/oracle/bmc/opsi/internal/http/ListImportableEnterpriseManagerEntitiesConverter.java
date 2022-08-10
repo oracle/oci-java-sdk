@@ -161,8 +161,8 @@ public class ListImportableEnterpriseManagerEntitiesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .ListImportableEnterpriseManagerEntitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.importableEnterpriseManagerEntityCollection(
                                         response.getItem());

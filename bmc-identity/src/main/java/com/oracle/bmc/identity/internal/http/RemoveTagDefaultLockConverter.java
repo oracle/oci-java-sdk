@@ -114,8 +114,8 @@ public class RemoveTagDefaultLockConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .RemoveTagDefaultLockResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tagDefault(response.getItem());
 

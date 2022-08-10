@@ -18,7 +18,7 @@ package com.oracle.bmc.mysql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystem {
+public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -726,88 +726,157 @@ public final class DbSystem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystem build() {
-            DbSystem __instance__ =
+            DbSystem model =
                     new DbSystem(
-                            id,
-                            displayName,
-                            description,
-                            compartmentId,
-                            subnetId,
-                            isHighlyAvailable,
-                            currentPlacement,
-                            isAnalyticsClusterAttached,
-                            analyticsCluster,
-                            isHeatWaveClusterAttached,
-                            heatWaveCluster,
-                            availabilityDomain,
-                            faultDomain,
-                            shapeName,
-                            mysqlVersion,
-                            backupPolicy,
-                            source,
-                            configurationId,
-                            dataStorageSizeInGBs,
-                            hostnameLabel,
-                            ipAddress,
-                            port,
-                            portX,
-                            endpoints,
-                            channels,
-                            lifecycleState,
-                            lifecycleDetails,
-                            maintenance,
-                            deletionPolicy,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            crashRecovery,
-                            pointInTimeRecoveryDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.subnetId,
+                            this.isHighlyAvailable,
+                            this.currentPlacement,
+                            this.isAnalyticsClusterAttached,
+                            this.analyticsCluster,
+                            this.isHeatWaveClusterAttached,
+                            this.heatWaveCluster,
+                            this.availabilityDomain,
+                            this.faultDomain,
+                            this.shapeName,
+                            this.mysqlVersion,
+                            this.backupPolicy,
+                            this.source,
+                            this.configurationId,
+                            this.dataStorageSizeInGBs,
+                            this.hostnameLabel,
+                            this.ipAddress,
+                            this.port,
+                            this.portX,
+                            this.endpoints,
+                            this.channels,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.maintenance,
+                            this.deletionPolicy,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.crashRecovery,
+                            this.pointInTimeRecoveryDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystem o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .subnetId(o.getSubnetId())
-                            .isHighlyAvailable(o.getIsHighlyAvailable())
-                            .currentPlacement(o.getCurrentPlacement())
-                            .isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached())
-                            .analyticsCluster(o.getAnalyticsCluster())
-                            .isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached())
-                            .heatWaveCluster(o.getHeatWaveCluster())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .faultDomain(o.getFaultDomain())
-                            .shapeName(o.getShapeName())
-                            .mysqlVersion(o.getMysqlVersion())
-                            .backupPolicy(o.getBackupPolicy())
-                            .source(o.getSource())
-                            .configurationId(o.getConfigurationId())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .hostnameLabel(o.getHostnameLabel())
-                            .ipAddress(o.getIpAddress())
-                            .port(o.getPort())
-                            .portX(o.getPortX())
-                            .endpoints(o.getEndpoints())
-                            .channels(o.getChannels())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .maintenance(o.getMaintenance())
-                            .deletionPolicy(o.getDeletionPolicy())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .crashRecovery(o.getCrashRecovery())
-                            .pointInTimeRecoveryDetails(o.getPointInTimeRecoveryDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystem model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
+                this.isHighlyAvailable(model.getIsHighlyAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("currentPlacement")) {
+                this.currentPlacement(model.getCurrentPlacement());
+            }
+            if (model.wasPropertyExplicitlySet("isAnalyticsClusterAttached")) {
+                this.isAnalyticsClusterAttached(model.getIsAnalyticsClusterAttached());
+            }
+            if (model.wasPropertyExplicitlySet("analyticsCluster")) {
+                this.analyticsCluster(model.getAnalyticsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveClusterAttached")) {
+                this.isHeatWaveClusterAttached(model.getIsHeatWaveClusterAttached());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveCluster")) {
+                this.heatWaveCluster(model.getHeatWaveCluster());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlVersion")) {
+                this.mysqlVersion(model.getMysqlVersion());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicy")) {
+                this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("configurationId")) {
+                this.configurationId(model.getConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("hostnameLabel")) {
+                this.hostnameLabel(model.getHostnameLabel());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("portX")) {
+                this.portX(model.getPortX());
+            }
+            if (model.wasPropertyExplicitlySet("endpoints")) {
+                this.endpoints(model.getEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("channels")) {
+                this.channels(model.getChannels());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("maintenance")) {
+                this.maintenance(model.getMaintenance());
+            }
+            if (model.wasPropertyExplicitlySet("deletionPolicy")) {
+                this.deletionPolicy(model.getDeletionPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("crashRecovery")) {
+                this.crashRecovery(model.getCrashRecovery());
+            }
+            if (model.wasPropertyExplicitlySet("pointInTimeRecoveryDetails")) {
+                this.pointInTimeRecoveryDetails(model.getPointInTimeRecoveryDetails());
+            }
+            return this;
         }
     }
 
@@ -1404,6 +1473,7 @@ public final class DbSystem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystem(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1442,7 +1512,6 @@ public final class DbSystem {
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", pointInTimeRecoveryDetails=")
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1495,7 +1564,7 @@ public final class DbSystem {
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1579,16 +1648,7 @@ public final class DbSystem {
                         + (this.pointInTimeRecoveryDetails == null
                                 ? 43
                                 : this.pointInTimeRecoveryDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

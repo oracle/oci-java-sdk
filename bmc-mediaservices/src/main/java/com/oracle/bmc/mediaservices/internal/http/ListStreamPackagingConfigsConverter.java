@@ -171,8 +171,8 @@ public class ListStreamPackagingConfigsConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .ListStreamPackagingConfigsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamPackagingConfigCollection(response.getItem());
 

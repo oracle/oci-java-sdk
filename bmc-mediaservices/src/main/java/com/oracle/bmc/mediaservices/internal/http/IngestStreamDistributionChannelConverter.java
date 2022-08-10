@@ -126,8 +126,8 @@ public class IngestStreamDistributionChannelConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .IngestStreamDistributionChannelResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingestStreamDistributionChannelResult(response.getItem());
 

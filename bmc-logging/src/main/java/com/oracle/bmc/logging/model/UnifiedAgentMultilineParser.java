@@ -112,36 +112,53 @@ public final class UnifiedAgentMultilineParser extends UnifiedAgentParser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentMultilineParser build() {
-            UnifiedAgentMultilineParser __instance__ =
+            UnifiedAgentMultilineParser model =
                     new UnifiedAgentMultilineParser(
-                            fieldTimeKey,
-                            types,
-                            nullValuePattern,
-                            isNullEmptyString,
-                            isEstimateCurrentEvent,
-                            isKeepTimeKey,
-                            timeoutInMilliseconds,
-                            formatFirstline,
-                            format);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldTimeKey,
+                            this.types,
+                            this.nullValuePattern,
+                            this.isNullEmptyString,
+                            this.isEstimateCurrentEvent,
+                            this.isKeepTimeKey,
+                            this.timeoutInMilliseconds,
+                            this.formatFirstline,
+                            this.format);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentMultilineParser o) {
-            Builder copiedBuilder =
-                    fieldTimeKey(o.getFieldTimeKey())
-                            .types(o.getTypes())
-                            .nullValuePattern(o.getNullValuePattern())
-                            .isNullEmptyString(o.getIsNullEmptyString())
-                            .isEstimateCurrentEvent(o.getIsEstimateCurrentEvent())
-                            .isKeepTimeKey(o.getIsKeepTimeKey())
-                            .timeoutInMilliseconds(o.getTimeoutInMilliseconds())
-                            .formatFirstline(o.getFormatFirstline())
-                            .format(o.getFormat());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentMultilineParser model) {
+            if (model.wasPropertyExplicitlySet("fieldTimeKey")) {
+                this.fieldTimeKey(model.getFieldTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("nullValuePattern")) {
+                this.nullValuePattern(model.getNullValuePattern());
+            }
+            if (model.wasPropertyExplicitlySet("isNullEmptyString")) {
+                this.isNullEmptyString(model.getIsNullEmptyString());
+            }
+            if (model.wasPropertyExplicitlySet("isEstimateCurrentEvent")) {
+                this.isEstimateCurrentEvent(model.getIsEstimateCurrentEvent());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepTimeKey")) {
+                this.isKeepTimeKey(model.getIsKeepTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMilliseconds")) {
+                this.timeoutInMilliseconds(model.getTimeoutInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("formatFirstline")) {
+                this.formatFirstline(model.getFormatFirstline());
+            }
+            if (model.wasPropertyExplicitlySet("format")) {
+                this.format(model.getFormat());
+            }
+            return this;
         }
     }
 
@@ -209,7 +226,6 @@ public final class UnifiedAgentMultilineParser extends UnifiedAgentParser {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", formatFirstline=").append(String.valueOf(this.formatFirstline));
         sb.append(", format=").append(String.valueOf(this.format));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,8 +242,7 @@ public final class UnifiedAgentMultilineParser extends UnifiedAgentParser {
         UnifiedAgentMultilineParser other = (UnifiedAgentMultilineParser) o;
         return java.util.Objects.equals(this.formatFirstline, other.formatFirstline)
                 && java.util.Objects.equals(this.format, other.format)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -238,16 +253,6 @@ public final class UnifiedAgentMultilineParser extends UnifiedAgentParser {
                 (result * PRIME)
                         + (this.formatFirstline == null ? 43 : this.formatFirstline.hashCode());
         result = (result * PRIME) + (this.format == null ? 43 : this.format.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

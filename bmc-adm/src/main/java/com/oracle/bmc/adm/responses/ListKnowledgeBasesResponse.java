@@ -59,16 +59,18 @@ public class ListKnowledgeBasesResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "knowledgeBaseCollection"
     })
     private ListKnowledgeBasesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.adm.model.KnowledgeBaseCollection knowledgeBaseCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.knowledgeBaseCollection = knowledgeBaseCollection;
@@ -79,6 +81,13 @@ public class ListKnowledgeBasesResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListKnowledgeBasesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(ListKnowledgeBasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             knowledgeBaseCollection(o.getKnowledgeBaseCollection());
@@ -157,7 +167,11 @@ public class ListKnowledgeBasesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public ListKnowledgeBasesResponse build() {
             return new ListKnowledgeBasesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, knowledgeBaseCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    knowledgeBaseCollection);
         }
     }
 

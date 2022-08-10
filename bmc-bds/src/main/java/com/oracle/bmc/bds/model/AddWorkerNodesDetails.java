@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = AddWorkerNodesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddWorkerNodesDetails {
+public final class AddWorkerNodesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
@@ -143,30 +144,41 @@ public final class AddWorkerNodesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddWorkerNodesDetails build() {
-            AddWorkerNodesDetails __instance__ =
+            AddWorkerNodesDetails model =
                     new AddWorkerNodesDetails(
-                            clusterAdminPassword,
-                            numberOfWorkerNodes,
-                            nodeType,
-                            shape,
-                            blockVolumeSizeInGBs,
-                            shapeConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.clusterAdminPassword,
+                            this.numberOfWorkerNodes,
+                            this.nodeType,
+                            this.shape,
+                            this.blockVolumeSizeInGBs,
+                            this.shapeConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddWorkerNodesDetails o) {
-            Builder copiedBuilder =
-                    clusterAdminPassword(o.getClusterAdminPassword())
-                            .numberOfWorkerNodes(o.getNumberOfWorkerNodes())
-                            .nodeType(o.getNodeType())
-                            .shape(o.getShape())
-                            .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs())
-                            .shapeConfig(o.getShapeConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddWorkerNodesDetails model) {
+            if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
+                this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfWorkerNodes")) {
+                this.numberOfWorkerNodes(model.getNumberOfWorkerNodes());
+            }
+            if (model.wasPropertyExplicitlySet("nodeType")) {
+                this.nodeType(model.getNodeType());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("blockVolumeSizeInGBs")) {
+                this.blockVolumeSizeInGBs(model.getBlockVolumeSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("shapeConfig")) {
+                this.shapeConfig(model.getShapeConfig());
+            }
+            return this;
         }
     }
 
@@ -308,13 +320,13 @@ public final class AddWorkerNodesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddWorkerNodesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
         sb.append(", numberOfWorkerNodes=").append(String.valueOf(this.numberOfWorkerNodes));
         sb.append(", nodeType=").append(String.valueOf(this.nodeType));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -335,7 +347,7 @@ public final class AddWorkerNodesDetails {
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -360,16 +372,7 @@ public final class AddWorkerNodesDetails {
                                 ? 43
                                 : this.blockVolumeSizeInGBs.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

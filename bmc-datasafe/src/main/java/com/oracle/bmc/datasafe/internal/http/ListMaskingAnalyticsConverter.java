@@ -158,8 +158,8 @@ public class ListMaskingAnalyticsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListMaskingAnalyticsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.maskingAnalyticsCollection(response.getItem());
 

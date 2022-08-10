@@ -118,8 +118,8 @@ public class SetAutoUpgradableConfigConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .SetAutoUpgradableConfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autoUpgradableConfig(response.getItem());
 

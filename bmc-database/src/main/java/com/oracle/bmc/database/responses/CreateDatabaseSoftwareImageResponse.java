@@ -68,6 +68,7 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "etag",
         "opcRequestId",
@@ -75,11 +76,12 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
     })
     private CreateDatabaseSoftwareImageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.DatabaseSoftwareImage databaseSoftwareImage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
         this.opcRequestId = opcRequestId;
@@ -91,6 +93,13 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
          */
         public Builder copy(CreateDatabaseSoftwareImageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
@@ -182,6 +192,7 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
         public CreateDatabaseSoftwareImageResponse build() {
             return new CreateDatabaseSoftwareImageResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     etag,
                     opcRequestId,

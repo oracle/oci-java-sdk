@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = CloudVmClusterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CloudVmClusterSummary {
+public final class CloudVmClusterSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -898,100 +899,181 @@ public final class CloudVmClusterSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CloudVmClusterSummary build() {
-            CloudVmClusterSummary __instance__ =
+            CloudVmClusterSummary model =
                     new CloudVmClusterSummary(
-                            id,
-                            compartmentId,
-                            availabilityDomain,
-                            subnetId,
-                            backupSubnetId,
-                            nsgIds,
-                            backupNetworkNsgIds,
-                            lastUpdateHistoryEntryId,
-                            shape,
-                            listenerPort,
-                            lifecycleState,
-                            nodeCount,
-                            storageSizeInGBs,
-                            displayName,
-                            timeCreated,
-                            lifecycleDetails,
-                            timeZone,
-                            hostname,
-                            domain,
-                            cpuCoreCount,
-                            ocpuCount,
-                            clusterName,
-                            dataStoragePercentage,
-                            isLocalBackupEnabled,
-                            cloudExadataInfrastructureId,
-                            isSparseDiskgroupEnabled,
-                            giVersion,
-                            systemVersion,
-                            sshPublicKeys,
-                            licenseModel,
-                            diskRedundancy,
-                            scanIpIds,
-                            vipIds,
-                            scanDnsRecordId,
-                            freeformTags,
-                            definedTags,
-                            scanDnsName,
-                            zoneId,
-                            scanListenerPortTcp,
-                            scanListenerPortTcpSsl,
-                            dataCollectionOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.availabilityDomain,
+                            this.subnetId,
+                            this.backupSubnetId,
+                            this.nsgIds,
+                            this.backupNetworkNsgIds,
+                            this.lastUpdateHistoryEntryId,
+                            this.shape,
+                            this.listenerPort,
+                            this.lifecycleState,
+                            this.nodeCount,
+                            this.storageSizeInGBs,
+                            this.displayName,
+                            this.timeCreated,
+                            this.lifecycleDetails,
+                            this.timeZone,
+                            this.hostname,
+                            this.domain,
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.clusterName,
+                            this.dataStoragePercentage,
+                            this.isLocalBackupEnabled,
+                            this.cloudExadataInfrastructureId,
+                            this.isSparseDiskgroupEnabled,
+                            this.giVersion,
+                            this.systemVersion,
+                            this.sshPublicKeys,
+                            this.licenseModel,
+                            this.diskRedundancy,
+                            this.scanIpIds,
+                            this.vipIds,
+                            this.scanDnsRecordId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.scanDnsName,
+                            this.zoneId,
+                            this.scanListenerPortTcp,
+                            this.scanListenerPortTcpSsl,
+                            this.dataCollectionOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CloudVmClusterSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .subnetId(o.getSubnetId())
-                            .backupSubnetId(o.getBackupSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
-                            .lastUpdateHistoryEntryId(o.getLastUpdateHistoryEntryId())
-                            .shape(o.getShape())
-                            .listenerPort(o.getListenerPort())
-                            .lifecycleState(o.getLifecycleState())
-                            .nodeCount(o.getNodeCount())
-                            .storageSizeInGBs(o.getStorageSizeInGBs())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeZone(o.getTimeZone())
-                            .hostname(o.getHostname())
-                            .domain(o.getDomain())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .clusterName(o.getClusterName())
-                            .dataStoragePercentage(o.getDataStoragePercentage())
-                            .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
-                            .cloudExadataInfrastructureId(o.getCloudExadataInfrastructureId())
-                            .isSparseDiskgroupEnabled(o.getIsSparseDiskgroupEnabled())
-                            .giVersion(o.getGiVersion())
-                            .systemVersion(o.getSystemVersion())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .licenseModel(o.getLicenseModel())
-                            .diskRedundancy(o.getDiskRedundancy())
-                            .scanIpIds(o.getScanIpIds())
-                            .vipIds(o.getVipIds())
-                            .scanDnsRecordId(o.getScanDnsRecordId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .scanDnsName(o.getScanDnsName())
-                            .zoneId(o.getZoneId())
-                            .scanListenerPortTcp(o.getScanListenerPortTcp())
-                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
-                            .dataCollectionOptions(o.getDataCollectionOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CloudVmClusterSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("backupSubnetId")) {
+                this.backupSubnetId(model.getBackupSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
+                this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("lastUpdateHistoryEntryId")) {
+                this.lastUpdateHistoryEntryId(model.getLastUpdateHistoryEntryId());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("listenerPort")) {
+                this.listenerPort(model.getListenerPort());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeInGBs")) {
+                this.storageSizeInGBs(model.getStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("clusterName")) {
+                this.clusterName(model.getClusterName());
+            }
+            if (model.wasPropertyExplicitlySet("dataStoragePercentage")) {
+                this.dataStoragePercentage(model.getDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalBackupEnabled")) {
+                this.isLocalBackupEnabled(model.getIsLocalBackupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("cloudExadataInfrastructureId")) {
+                this.cloudExadataInfrastructureId(model.getCloudExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("isSparseDiskgroupEnabled")) {
+                this.isSparseDiskgroupEnabled(model.getIsSparseDiskgroupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("giVersion")) {
+                this.giVersion(model.getGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKeys")) {
+                this.sshPublicKeys(model.getSshPublicKeys());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("diskRedundancy")) {
+                this.diskRedundancy(model.getDiskRedundancy());
+            }
+            if (model.wasPropertyExplicitlySet("scanIpIds")) {
+                this.scanIpIds(model.getScanIpIds());
+            }
+            if (model.wasPropertyExplicitlySet("vipIds")) {
+                this.vipIds(model.getVipIds());
+            }
+            if (model.wasPropertyExplicitlySet("scanDnsRecordId")) {
+                this.scanDnsRecordId(model.getScanDnsRecordId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("scanDnsName")) {
+                this.scanDnsName(model.getScanDnsName());
+            }
+            if (model.wasPropertyExplicitlySet("zoneId")) {
+                this.zoneId(model.getZoneId());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTcp")) {
+                this.scanListenerPortTcp(model.getScanListenerPortTcp());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTcpSsl")) {
+                this.scanListenerPortTcpSsl(model.getScanListenerPortTcpSsl());
+            }
+            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
+                this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            return this;
         }
     }
 
@@ -1829,6 +1911,7 @@ public final class CloudVmClusterSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CloudVmClusterSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
@@ -1873,7 +1956,6 @@ public final class CloudVmClusterSummary {
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1933,7 +2015,7 @@ public final class CloudVmClusterSummary {
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2039,16 +2121,7 @@ public final class CloudVmClusterSummary {
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

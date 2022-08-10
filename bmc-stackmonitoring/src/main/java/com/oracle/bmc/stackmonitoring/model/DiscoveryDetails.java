@@ -17,7 +17,7 @@ package com.oracle.bmc.stackmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiscoveryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiscoveryDetails {
+public final class DiscoveryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "agentId",
@@ -125,25 +125,41 @@ public final class DiscoveryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiscoveryDetails build() {
-            DiscoveryDetails __instance__ =
+            DiscoveryDetails model =
                     new DiscoveryDetails(
-                            agentId, resourceType, resourceName, properties, credentials, tags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.agentId,
+                            this.resourceType,
+                            this.resourceName,
+                            this.properties,
+                            this.credentials,
+                            this.tags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiscoveryDetails o) {
-            Builder copiedBuilder =
-                    agentId(o.getAgentId())
-                            .resourceType(o.getResourceType())
-                            .resourceName(o.getResourceName())
-                            .properties(o.getProperties())
-                            .credentials(o.getCredentials())
-                            .tags(o.getTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiscoveryDetails model) {
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("tags")) {
+                this.tags(model.getTags());
+            }
+            return this;
         }
     }
 
@@ -286,13 +302,13 @@ public final class DiscoveryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiscoveryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("agentId=").append(String.valueOf(this.agentId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", tags=").append(String.valueOf(this.tags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,7 +329,7 @@ public final class DiscoveryDetails {
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.tags, other.tags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -326,16 +342,7 @@ public final class DiscoveryDetails {
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

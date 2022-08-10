@@ -22,7 +22,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateDataGuardAssociationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDataGuardAssociationDetails {
+public final class UpdateDataGuardAssociationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseAdminPassword",
@@ -161,26 +162,33 @@ public final class UpdateDataGuardAssociationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDataGuardAssociationDetails build() {
-            UpdateDataGuardAssociationDetails __instance__ =
+            UpdateDataGuardAssociationDetails model =
                     new UpdateDataGuardAssociationDetails(
-                            databaseAdminPassword,
-                            protectionMode,
-                            transportType,
-                            isActiveDataGuardEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseAdminPassword,
+                            this.protectionMode,
+                            this.transportType,
+                            this.isActiveDataGuardEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDataGuardAssociationDetails o) {
-            Builder copiedBuilder =
-                    databaseAdminPassword(o.getDatabaseAdminPassword())
-                            .protectionMode(o.getProtectionMode())
-                            .transportType(o.getTransportType())
-                            .isActiveDataGuardEnabled(o.getIsActiveDataGuardEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDataGuardAssociationDetails model) {
+            if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
+                this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
+                this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
+            }
+            return this;
         }
     }
 
@@ -395,12 +403,12 @@ public final class UpdateDataGuardAssociationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDataGuardAssociationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
         sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(", isActiveDataGuardEnabled=")
                 .append(String.valueOf(this.isActiveDataGuardEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -420,7 +428,7 @@ public final class UpdateDataGuardAssociationDetails {
                 && java.util.Objects.equals(this.transportType, other.transportType)
                 && java.util.Objects.equals(
                         this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -443,16 +451,7 @@ public final class UpdateDataGuardAssociationDetails {
                         + (this.isActiveDataGuardEnabled == null
                                 ? 43
                                 : this.isActiveDataGuardEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

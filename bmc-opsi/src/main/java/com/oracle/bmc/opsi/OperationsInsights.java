@@ -894,6 +894,26 @@ public interface OperationsInsights extends AutoCloseable {
             ListImportableAgentEntitiesRequest request);
 
     /**
+     * Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is \"available\"
+     * and will be shown if all the following conditions are true:
+     *    1. Compute is running OCA
+     *    2. OCI Management Agent is not enabled or If OCI Management Agent is enabled
+     *       2.1 The agent OCID is not already being used for an existing hostInsight.
+     *       2.2 The agent availabilityStatus = 'ACTIVE'
+     *       2.3 The agent lifecycleState = 'ACTIVE'
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListImportableComputeEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImportableComputeEntities API.
+     */
+    ListImportableComputeEntitiesResponse listImportableComputeEntities(
+            ListImportableComputeEntitiesRequest request);
+
+    /**
      * Gets a list of importable entities for an Operations Insights Enterprise Manager bridge that have not been imported before.
      *
      * @param request The request object containing the details to send

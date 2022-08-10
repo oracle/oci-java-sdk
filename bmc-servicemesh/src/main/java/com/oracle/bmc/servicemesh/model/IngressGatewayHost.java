@@ -19,7 +19,7 @@ package com.oracle.bmc.servicemesh.model;
     builder = IngressGatewayHost.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IngressGatewayHost {
+public final class IngressGatewayHost extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "hostnames", "listeners"})
     public IngressGatewayHost(
@@ -101,18 +101,26 @@ public final class IngressGatewayHost {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IngressGatewayHost build() {
-            IngressGatewayHost __instance__ = new IngressGatewayHost(name, hostnames, listeners);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IngressGatewayHost model =
+                    new IngressGatewayHost(this.name, this.hostnames, this.listeners);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IngressGatewayHost o) {
-            Builder copiedBuilder =
-                    name(o.getName()).hostnames(o.getHostnames()).listeners(o.getListeners());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IngressGatewayHost model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("hostnames")) {
+                this.hostnames(model.getHostnames());
+            }
+            if (model.wasPropertyExplicitlySet("listeners")) {
+                this.listeners(model.getListeners());
+            }
+            return this;
         }
     }
 
@@ -196,10 +204,10 @@ public final class IngressGatewayHost {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IngressGatewayHost(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", hostnames=").append(String.valueOf(this.hostnames));
         sb.append(", listeners=").append(String.valueOf(this.listeners));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -217,7 +225,7 @@ public final class IngressGatewayHost {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.hostnames, other.hostnames)
                 && java.util.Objects.equals(this.listeners, other.listeners)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -227,16 +235,7 @@ public final class IngressGatewayHost {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.hostnames == null ? 43 : this.hostnames.hashCode());
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

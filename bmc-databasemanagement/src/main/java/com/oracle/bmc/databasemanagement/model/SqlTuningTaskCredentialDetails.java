@@ -32,7 +32,8 @@ package com.oracle.bmc.databasemanagement.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class SqlTuningTaskCredentialDetails {
+public class SqlTuningTaskCredentialDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "role"})
     protected SqlTuningTaskCredentialDetails(String username, Role role) {
@@ -117,6 +118,7 @@ public class SqlTuningTaskCredentialDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningTaskCredentialDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(")");
@@ -134,7 +136,8 @@ public class SqlTuningTaskCredentialDetails {
 
         SqlTuningTaskCredentialDetails other = (SqlTuningTaskCredentialDetails) o;
         return java.util.Objects.equals(this.username, other.username)
-                && java.util.Objects.equals(this.role, other.role);
+                && java.util.Objects.equals(this.role, other.role)
+                && super.equals(other);
     }
 
     @Override
@@ -143,6 +146,7 @@ public class SqlTuningTaskCredentialDetails {
         int result = 1;
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

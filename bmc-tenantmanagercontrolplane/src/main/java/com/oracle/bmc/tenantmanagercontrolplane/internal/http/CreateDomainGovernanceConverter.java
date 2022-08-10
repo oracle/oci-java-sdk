@@ -118,8 +118,8 @@ public class CreateDomainGovernanceConverter {
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .CreateDomainGovernanceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.domainGovernance(response.getItem());
 

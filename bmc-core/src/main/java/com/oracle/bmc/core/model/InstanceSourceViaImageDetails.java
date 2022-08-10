@@ -124,23 +124,33 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceSourceViaImageDetails build() {
-            InstanceSourceViaImageDetails __instance__ =
+            InstanceSourceViaImageDetails model =
                     new InstanceSourceViaImageDetails(
-                            bootVolumeSizeInGBs, imageId, kmsKeyId, bootVolumeVpusPerGB);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bootVolumeSizeInGBs,
+                            this.imageId,
+                            this.kmsKeyId,
+                            this.bootVolumeVpusPerGB);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceSourceViaImageDetails o) {
-            Builder copiedBuilder =
-                    bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs())
-                            .imageId(o.getImageId())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .bootVolumeVpusPerGB(o.getBootVolumeVpusPerGB());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceSourceViaImageDetails model) {
+            if (model.wasPropertyExplicitlySet("bootVolumeSizeInGBs")) {
+                this.bootVolumeSizeInGBs(model.getBootVolumeSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("bootVolumeVpusPerGB")) {
+                this.bootVolumeVpusPerGB(model.getBootVolumeVpusPerGB());
+            }
+            return this;
         }
     }
 
@@ -267,7 +277,6 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", bootVolumeVpusPerGB=").append(String.valueOf(this.bootVolumeVpusPerGB));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -286,8 +295,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.bootVolumeVpusPerGB, other.bootVolumeVpusPerGB)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -306,16 +314,6 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
                         + (this.bootVolumeVpusPerGB == null
                                 ? 43
                                 : this.bootVolumeVpusPerGB.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

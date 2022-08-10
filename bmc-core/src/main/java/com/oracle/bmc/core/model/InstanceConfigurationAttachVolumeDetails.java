@@ -33,7 +33,8 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class InstanceConfigurationAttachVolumeDetails {
+public class InstanceConfigurationAttachVolumeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "isReadOnly", "device", "isShareable"})
     protected InstanceConfigurationAttachVolumeDetails(
@@ -126,6 +127,7 @@ public class InstanceConfigurationAttachVolumeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationAttachVolumeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isReadOnly=").append(String.valueOf(this.isReadOnly));
         sb.append(", device=").append(String.valueOf(this.device));
@@ -148,7 +150,8 @@ public class InstanceConfigurationAttachVolumeDetails {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isReadOnly, other.isReadOnly)
                 && java.util.Objects.equals(this.device, other.device)
-                && java.util.Objects.equals(this.isShareable, other.isShareable);
+                && java.util.Objects.equals(this.isShareable, other.isShareable)
+                && super.equals(other);
     }
 
     @Override
@@ -159,6 +162,7 @@ public class InstanceConfigurationAttachVolumeDetails {
         result = (result * PRIME) + (this.isReadOnly == null ? 43 : this.isReadOnly.hashCode());
         result = (result * PRIME) + (this.device == null ? 43 : this.device.hashCode());
         result = (result * PRIME) + (this.isShareable == null ? 43 : this.isShareable.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

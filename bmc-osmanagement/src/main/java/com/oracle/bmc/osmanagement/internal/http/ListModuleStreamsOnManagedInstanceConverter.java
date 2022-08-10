@@ -189,8 +189,8 @@ public class ListModuleStreamsOnManagedInstanceConverter {
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListModuleStreamsOnManagedInstanceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

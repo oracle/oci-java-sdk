@@ -68,6 +68,7 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
@@ -75,11 +76,12 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
     })
     private EnableDatabaseManagementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.database.model.Database database) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -91,6 +93,13 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -166,6 +175,7 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(EnableDatabaseManagementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -180,7 +190,7 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
          */
         public EnableDatabaseManagementResponse build() {
             return new EnableDatabaseManagementResponse(
-                    __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, database);
+                    __httpStatusCode__, headers, etag, opcWorkRequestId, opcRequestId, database);
         }
     }
 

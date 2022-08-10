@@ -122,8 +122,8 @@ public class GetOrganizationTenancyConverter {
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .GetOrganizationTenancyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.organizationTenancy(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = UpdateLookupMetadataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateLookupMetadataDetails {
+public final class UpdateLookupMetadataDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "defaultMatchValue",
@@ -133,24 +134,37 @@ public final class UpdateLookupMetadataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLookupMetadataDetails build() {
-            UpdateLookupMetadataDetails __instance__ =
+            UpdateLookupMetadataDetails model =
                     new UpdateLookupMetadataDetails(
-                            defaultMatchValue, description, fields, maxMatches, categories);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.defaultMatchValue,
+                            this.description,
+                            this.fields,
+                            this.maxMatches,
+                            this.categories);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateLookupMetadataDetails o) {
-            Builder copiedBuilder =
-                    defaultMatchValue(o.getDefaultMatchValue())
-                            .description(o.getDescription())
-                            .fields(o.getFields())
-                            .maxMatches(o.getMaxMatches())
-                            .categories(o.getCategories());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateLookupMetadataDetails model) {
+            if (model.wasPropertyExplicitlySet("defaultMatchValue")) {
+                this.defaultMatchValue(model.getDefaultMatchValue());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("maxMatches")) {
+                this.maxMatches(model.getMaxMatches());
+            }
+            if (model.wasPropertyExplicitlySet("categories")) {
+                this.categories(model.getCategories());
+            }
+            return this;
         }
     }
 
@@ -252,12 +266,12 @@ public final class UpdateLookupMetadataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateLookupMetadataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("defaultMatchValue=").append(String.valueOf(this.defaultMatchValue));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", fields=").append(String.valueOf(this.fields));
         sb.append(", maxMatches=").append(String.valueOf(this.maxMatches));
         sb.append(", categories=").append(String.valueOf(this.categories));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -277,7 +291,7 @@ public final class UpdateLookupMetadataDetails {
                 && java.util.Objects.equals(this.fields, other.fields)
                 && java.util.Objects.equals(this.maxMatches, other.maxMatches)
                 && java.util.Objects.equals(this.categories, other.categories)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +305,7 @@ public final class UpdateLookupMetadataDetails {
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
         result = (result * PRIME) + (this.maxMatches == null ? 43 : this.maxMatches.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

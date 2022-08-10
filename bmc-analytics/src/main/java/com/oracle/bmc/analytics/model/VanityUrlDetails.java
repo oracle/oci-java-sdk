@@ -18,7 +18,7 @@ package com.oracle.bmc.analytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VanityUrlDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VanityUrlDetails {
+public final class VanityUrlDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "description", "urls", "hosts", "publicCertificate"})
     public VanityUrlDetails(
@@ -132,23 +132,37 @@ public final class VanityUrlDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VanityUrlDetails build() {
-            VanityUrlDetails __instance__ =
-                    new VanityUrlDetails(key, description, urls, hosts, publicCertificate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VanityUrlDetails model =
+                    new VanityUrlDetails(
+                            this.key,
+                            this.description,
+                            this.urls,
+                            this.hosts,
+                            this.publicCertificate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VanityUrlDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .description(o.getDescription())
-                            .urls(o.getUrls())
-                            .hosts(o.getHosts())
-                            .publicCertificate(o.getPublicCertificate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VanityUrlDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("urls")) {
+                this.urls(model.getUrls());
+            }
+            if (model.wasPropertyExplicitlySet("hosts")) {
+                this.hosts(model.getHosts());
+            }
+            if (model.wasPropertyExplicitlySet("publicCertificate")) {
+                this.publicCertificate(model.getPublicCertificate());
+            }
+            return this;
         }
     }
 
@@ -256,12 +270,12 @@ public final class VanityUrlDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VanityUrlDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", urls=").append(String.valueOf(this.urls));
         sb.append(", hosts=").append(String.valueOf(this.hosts));
         sb.append(", publicCertificate=").append(String.valueOf(this.publicCertificate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -281,7 +295,7 @@ public final class VanityUrlDetails {
                 && java.util.Objects.equals(this.urls, other.urls)
                 && java.util.Objects.equals(this.hosts, other.hosts)
                 && java.util.Objects.equals(this.publicCertificate, other.publicCertificate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -295,16 +309,7 @@ public final class VanityUrlDetails {
         result =
                 (result * PRIME)
                         + (this.publicCertificate == null ? 43 : this.publicCertificate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

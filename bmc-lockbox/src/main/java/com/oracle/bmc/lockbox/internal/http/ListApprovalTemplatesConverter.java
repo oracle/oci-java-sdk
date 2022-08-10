@@ -167,8 +167,8 @@ public class ListApprovalTemplatesConverter {
                                         builder =
                                                 com.oracle.bmc.lockbox.responses
                                                         .ListApprovalTemplatesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.approvalTemplateCollection(response.getItem());
 

@@ -53,13 +53,20 @@ public class InstanceActionResponse extends com.oracle.bmc.responses.BmcResponse
         return instance;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "instance"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "instance"
+    })
     private InstanceActionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.Instance instance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.instance = instance;
@@ -70,6 +77,13 @@ public class InstanceActionResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class InstanceActionResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(InstanceActionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             instance(o.getInstance());
@@ -142,7 +157,8 @@ public class InstanceActionResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public InstanceActionResponse build() {
-            return new InstanceActionResponse(__httpStatusCode__, etag, opcRequestId, instance);
+            return new InstanceActionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, instance);
         }
     }
 

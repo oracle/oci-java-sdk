@@ -19,7 +19,8 @@ package com.oracle.bmc.mediaservices.model;
     builder = MediaAssetDistributionChannelAttachmentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MediaAssetDistributionChannelAttachmentSummary {
+public final class MediaAssetDistributionChannelAttachmentSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mediaAssetId",
@@ -167,32 +168,45 @@ public final class MediaAssetDistributionChannelAttachmentSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MediaAssetDistributionChannelAttachmentSummary build() {
-            MediaAssetDistributionChannelAttachmentSummary __instance__ =
+            MediaAssetDistributionChannelAttachmentSummary model =
                     new MediaAssetDistributionChannelAttachmentSummary(
-                            mediaAssetId,
-                            displayName,
-                            distributionChannelId,
-                            version,
-                            lifecycleState,
-                            metadataRef,
-                            mediaWorkflowJobId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.mediaAssetId,
+                            this.displayName,
+                            this.distributionChannelId,
+                            this.version,
+                            this.lifecycleState,
+                            this.metadataRef,
+                            this.mediaWorkflowJobId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MediaAssetDistributionChannelAttachmentSummary o) {
-            Builder copiedBuilder =
-                    mediaAssetId(o.getMediaAssetId())
-                            .displayName(o.getDisplayName())
-                            .distributionChannelId(o.getDistributionChannelId())
-                            .version(o.getVersion())
-                            .lifecycleState(o.getLifecycleState())
-                            .metadataRef(o.getMetadataRef())
-                            .mediaWorkflowJobId(o.getMediaWorkflowJobId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MediaAssetDistributionChannelAttachmentSummary model) {
+            if (model.wasPropertyExplicitlySet("mediaAssetId")) {
+                this.mediaAssetId(model.getMediaAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("distributionChannelId")) {
+                this.distributionChannelId(model.getDistributionChannelId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("metadataRef")) {
+                this.metadataRef(model.getMetadataRef());
+            }
+            if (model.wasPropertyExplicitlySet("mediaWorkflowJobId")) {
+                this.mediaWorkflowJobId(model.getMediaWorkflowJobId());
+            }
+            return this;
         }
     }
 
@@ -368,6 +382,7 @@ public final class MediaAssetDistributionChannelAttachmentSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MediaAssetDistributionChannelAttachmentSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("mediaAssetId=").append(String.valueOf(this.mediaAssetId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", distributionChannelId=").append(String.valueOf(this.distributionChannelId));
@@ -375,7 +390,6 @@ public final class MediaAssetDistributionChannelAttachmentSummary {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", metadataRef=").append(String.valueOf(this.metadataRef));
         sb.append(", mediaWorkflowJobId=").append(String.valueOf(this.mediaWorkflowJobId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -398,7 +412,7 @@ public final class MediaAssetDistributionChannelAttachmentSummary {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.metadataRef, other.metadataRef)
                 && java.util.Objects.equals(this.mediaWorkflowJobId, other.mediaWorkflowJobId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -422,16 +436,7 @@ public final class MediaAssetDistributionChannelAttachmentSummary {
                         + (this.mediaWorkflowJobId == null
                                 ? 43
                                 : this.mediaWorkflowJobId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

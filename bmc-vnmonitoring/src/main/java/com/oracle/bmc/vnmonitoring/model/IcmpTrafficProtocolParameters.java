@@ -65,18 +65,23 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IcmpTrafficProtocolParameters build() {
-            IcmpTrafficProtocolParameters __instance__ =
-                    new IcmpTrafficProtocolParameters(icmpCode, icmpType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IcmpTrafficProtocolParameters model =
+                    new IcmpTrafficProtocolParameters(this.icmpCode, this.icmpType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IcmpTrafficProtocolParameters o) {
-            Builder copiedBuilder = icmpCode(o.getIcmpCode()).icmpType(o.getIcmpType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IcmpTrafficProtocolParameters model) {
+            if (model.wasPropertyExplicitlySet("icmpCode")) {
+                this.icmpCode(model.getIcmpCode());
+            }
+            if (model.wasPropertyExplicitlySet("icmpType")) {
+                this.icmpType(model.getIcmpType());
+            }
+            return this;
         }
     }
 
@@ -142,7 +147,6 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", icmpCode=").append(String.valueOf(this.icmpCode));
         sb.append(", icmpType=").append(String.valueOf(this.icmpType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,8 +163,7 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         IcmpTrafficProtocolParameters other = (IcmpTrafficProtocolParameters) o;
         return java.util.Objects.equals(this.icmpCode, other.icmpCode)
                 && java.util.Objects.equals(this.icmpType, other.icmpType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -169,16 +172,6 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         int result = super.hashCode();
         result = (result * PRIME) + (this.icmpCode == null ? 43 : this.icmpCode.hashCode());
         result = (result * PRIME) + (this.icmpType == null ? 43 : this.icmpType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

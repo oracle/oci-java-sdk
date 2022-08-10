@@ -112,8 +112,8 @@ public class UpdateSecurityZoneConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateSecurityZoneResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityZone(response.getItem());
 

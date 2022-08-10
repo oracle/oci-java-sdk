@@ -55,16 +55,18 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "softwareSource"
     })
     private UpdateSoftwareSourceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.softwareSource = softwareSource;
@@ -75,6 +77,13 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(UpdateSoftwareSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             softwareSource(o.getSoftwareSource());
@@ -149,7 +159,7 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
          */
         public UpdateSoftwareSourceResponse build() {
             return new UpdateSoftwareSourceResponse(
-                    __httpStatusCode__, etag, opcRequestId, softwareSource);
+                    __httpStatusCode__, headers, etag, opcRequestId, softwareSource);
         }
     }
 

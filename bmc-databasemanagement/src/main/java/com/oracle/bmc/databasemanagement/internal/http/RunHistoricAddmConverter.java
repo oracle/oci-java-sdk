@@ -119,8 +119,8 @@ public class RunHistoricAddmConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .RunHistoricAddmResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.historicAddmResult(response.getItem());
 

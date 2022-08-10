@@ -103,8 +103,8 @@ public class GetDatabaseInsightConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .GetDatabaseInsightResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseInsight(response.getItem());
 

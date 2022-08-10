@@ -106,8 +106,8 @@ public class GetNetworkAddressListConverter {
                                         builder =
                                                 com.oracle.bmc.waf.responses
                                                         .GetNetworkAddressListResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkAddressList(response.getItem());
 

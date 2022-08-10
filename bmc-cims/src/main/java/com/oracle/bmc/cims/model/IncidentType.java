@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IncidentType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IncidentType {
+public final class IncidentType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "name", "label", "description", "classifierList"})
     public IncidentType(
@@ -121,23 +121,33 @@ public final class IncidentType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IncidentType build() {
-            IncidentType __instance__ =
-                    new IncidentType(id, name, label, description, classifierList);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IncidentType model =
+                    new IncidentType(
+                            this.id, this.name, this.label, this.description, this.classifierList);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IncidentType o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .label(o.getLabel())
-                            .description(o.getDescription())
-                            .classifierList(o.getClassifierList());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IncidentType model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("classifierList")) {
+                this.classifierList(model.getClassifierList());
+            }
+            return this;
         }
     }
 
@@ -235,12 +245,12 @@ public final class IncidentType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IncidentType(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", label=").append(String.valueOf(this.label));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", classifierList=").append(String.valueOf(this.classifierList));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -260,7 +270,7 @@ public final class IncidentType {
                 && java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.classifierList, other.classifierList)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -274,16 +284,7 @@ public final class IncidentType {
         result =
                 (result * PRIME)
                         + (this.classifierList == null ? 43 : this.classifierList.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

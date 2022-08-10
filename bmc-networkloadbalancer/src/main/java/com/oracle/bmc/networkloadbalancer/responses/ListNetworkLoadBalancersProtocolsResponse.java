@@ -62,17 +62,19 @@ public class ListNetworkLoadBalancersProtocolsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "networkLoadBalancersProtocolCollection"
     })
     private ListNetworkLoadBalancersProtocolsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
                     networkLoadBalancersProtocolCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.networkLoadBalancersProtocolCollection = networkLoadBalancersProtocolCollection;
@@ -83,6 +85,13 @@ public class ListNetworkLoadBalancersProtocolsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -150,6 +159,7 @@ public class ListNetworkLoadBalancersProtocolsResponse
          */
         public Builder copy(ListNetworkLoadBalancersProtocolsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             networkLoadBalancersProtocolCollection(o.getNetworkLoadBalancersProtocolCollection());
@@ -164,6 +174,7 @@ public class ListNetworkLoadBalancersProtocolsResponse
         public ListNetworkLoadBalancersProtocolsResponse build() {
             return new ListNetworkLoadBalancersProtocolsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcRequestId,
                     networkLoadBalancersProtocolCollection);

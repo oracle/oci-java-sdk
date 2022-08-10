@@ -98,7 +98,8 @@ public class GetModelConverter {
 
                                 com.oracle.bmc.aivision.responses.GetModelResponse.Builder builder =
                                         com.oracle.bmc.aivision.responses.GetModelResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.model(response.getItem());
 

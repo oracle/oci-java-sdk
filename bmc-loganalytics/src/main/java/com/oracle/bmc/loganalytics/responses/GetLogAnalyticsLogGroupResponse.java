@@ -53,16 +53,18 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "logAnalyticsLogGroup"
     })
     private GetLogAnalyticsLogGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup logAnalyticsLogGroup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.logAnalyticsLogGroup = logAnalyticsLogGroup;
@@ -73,6 +75,13 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetLogAnalyticsLogGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsLogGroup(o.getLogAnalyticsLogGroup());
@@ -145,7 +155,7 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
          */
         public GetLogAnalyticsLogGroupResponse build() {
             return new GetLogAnalyticsLogGroupResponse(
-                    __httpStatusCode__, etag, opcRequestId, logAnalyticsLogGroup);
+                    __httpStatusCode__, headers, etag, opcRequestId, logAnalyticsLogGroup);
         }
     }
 

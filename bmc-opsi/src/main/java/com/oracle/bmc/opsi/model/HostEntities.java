@@ -71,20 +71,26 @@ public final class HostEntities extends HostConfigurationMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostEntities build() {
-            HostEntities __instance__ = new HostEntities(timeCollected, entityName, entityType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostEntities model =
+                    new HostEntities(this.timeCollected, this.entityName, this.entityType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostEntities o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .entityName(o.getEntityName())
-                            .entityType(o.getEntityType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostEntities model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            return this;
         }
     }
 
@@ -150,7 +156,6 @@ public final class HostEntities extends HostConfigurationMetricGroup {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", entityName=").append(String.valueOf(this.entityName));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -167,8 +172,7 @@ public final class HostEntities extends HostConfigurationMetricGroup {
         HostEntities other = (HostEntities) o;
         return java.util.Objects.equals(this.entityName, other.entityName)
                 && java.util.Objects.equals(this.entityType, other.entityType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -177,16 +181,6 @@ public final class HostEntities extends HostConfigurationMetricGroup {
         int result = super.hashCode();
         result = (result * PRIME) + (this.entityName == null ? 43 : this.entityName.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

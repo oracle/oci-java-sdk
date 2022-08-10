@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = UpdateUserCapabilitiesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateUserCapabilitiesDetails {
+public final class UpdateUserCapabilitiesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "canUseConsolePassword",
@@ -181,32 +182,45 @@ public final class UpdateUserCapabilitiesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateUserCapabilitiesDetails build() {
-            UpdateUserCapabilitiesDetails __instance__ =
+            UpdateUserCapabilitiesDetails model =
                     new UpdateUserCapabilitiesDetails(
-                            canUseConsolePassword,
-                            canUseApiKeys,
-                            canUseAuthTokens,
-                            canUseSmtpCredentials,
-                            canUseDBCredentials,
-                            canUseCustomerSecretKeys,
-                            canUseOAuth2ClientCredentials);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.canUseConsolePassword,
+                            this.canUseApiKeys,
+                            this.canUseAuthTokens,
+                            this.canUseSmtpCredentials,
+                            this.canUseDBCredentials,
+                            this.canUseCustomerSecretKeys,
+                            this.canUseOAuth2ClientCredentials);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateUserCapabilitiesDetails o) {
-            Builder copiedBuilder =
-                    canUseConsolePassword(o.getCanUseConsolePassword())
-                            .canUseApiKeys(o.getCanUseApiKeys())
-                            .canUseAuthTokens(o.getCanUseAuthTokens())
-                            .canUseSmtpCredentials(o.getCanUseSmtpCredentials())
-                            .canUseDBCredentials(o.getCanUseDBCredentials())
-                            .canUseCustomerSecretKeys(o.getCanUseCustomerSecretKeys())
-                            .canUseOAuth2ClientCredentials(o.getCanUseOAuth2ClientCredentials());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateUserCapabilitiesDetails model) {
+            if (model.wasPropertyExplicitlySet("canUseConsolePassword")) {
+                this.canUseConsolePassword(model.getCanUseConsolePassword());
+            }
+            if (model.wasPropertyExplicitlySet("canUseApiKeys")) {
+                this.canUseApiKeys(model.getCanUseApiKeys());
+            }
+            if (model.wasPropertyExplicitlySet("canUseAuthTokens")) {
+                this.canUseAuthTokens(model.getCanUseAuthTokens());
+            }
+            if (model.wasPropertyExplicitlySet("canUseSmtpCredentials")) {
+                this.canUseSmtpCredentials(model.getCanUseSmtpCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("canUseDBCredentials")) {
+                this.canUseDBCredentials(model.getCanUseDBCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("canUseCustomerSecretKeys")) {
+                this.canUseCustomerSecretKeys(model.getCanUseCustomerSecretKeys());
+            }
+            if (model.wasPropertyExplicitlySet("canUseOAuth2ClientCredentials")) {
+                this.canUseOAuth2ClientCredentials(model.getCanUseOAuth2ClientCredentials());
+            }
+            return this;
         }
     }
 
@@ -346,6 +360,7 @@ public final class UpdateUserCapabilitiesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateUserCapabilitiesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("canUseConsolePassword=").append(String.valueOf(this.canUseConsolePassword));
         sb.append(", canUseApiKeys=").append(String.valueOf(this.canUseApiKeys));
         sb.append(", canUseAuthTokens=").append(String.valueOf(this.canUseAuthTokens));
@@ -355,7 +370,6 @@ public final class UpdateUserCapabilitiesDetails {
                 .append(String.valueOf(this.canUseCustomerSecretKeys));
         sb.append(", canUseOAuth2ClientCredentials=")
                 .append(String.valueOf(this.canUseOAuth2ClientCredentials));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -379,7 +393,7 @@ public final class UpdateUserCapabilitiesDetails {
                         this.canUseCustomerSecretKeys, other.canUseCustomerSecretKeys)
                 && java.util.Objects.equals(
                         this.canUseOAuth2ClientCredentials, other.canUseOAuth2ClientCredentials)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -417,16 +431,7 @@ public final class UpdateUserCapabilitiesDetails {
                         + (this.canUseOAuth2ClientCredentials == null
                                 ? 43
                                 : this.canUseOAuth2ClientCredentials.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

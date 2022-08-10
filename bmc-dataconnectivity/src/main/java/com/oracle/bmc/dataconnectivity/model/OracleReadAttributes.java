@@ -48,17 +48,19 @@ public final class OracleReadAttributes extends AbstractReadAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OracleReadAttributes build() {
-            OracleReadAttributes __instance__ = new OracleReadAttributes(fetchSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OracleReadAttributes model = new OracleReadAttributes(this.fetchSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OracleReadAttributes o) {
-            Builder copiedBuilder = fetchSize(o.getFetchSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OracleReadAttributes model) {
+            if (model.wasPropertyExplicitlySet("fetchSize")) {
+                this.fetchSize(model.getFetchSize());
+            }
+            return this;
         }
     }
 
@@ -108,7 +110,6 @@ public final class OracleReadAttributes extends AbstractReadAttribute {
         sb.append("OracleReadAttributes(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", fetchSize=").append(String.valueOf(this.fetchSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -123,9 +124,7 @@ public final class OracleReadAttributes extends AbstractReadAttribute {
         }
 
         OracleReadAttributes other = (OracleReadAttributes) o;
-        return java.util.Objects.equals(this.fetchSize, other.fetchSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.fetchSize, other.fetchSize) && super.equals(other);
     }
 
     @Override
@@ -133,16 +132,6 @@ public final class OracleReadAttributes extends AbstractReadAttribute {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.fetchSize == null ? 43 : this.fetchSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

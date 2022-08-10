@@ -19,7 +19,8 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = MonitoredResourceAliasSourceCredential.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitoredResourceAliasSourceCredential {
+public final class MonitoredResourceAliasSourceCredential
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"source", "name", "service"})
     public MonitoredResourceAliasSourceCredential(String source, String name, String service) {
@@ -84,18 +85,27 @@ public final class MonitoredResourceAliasSourceCredential {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoredResourceAliasSourceCredential build() {
-            MonitoredResourceAliasSourceCredential __instance__ =
-                    new MonitoredResourceAliasSourceCredential(source, name, service);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitoredResourceAliasSourceCredential model =
+                    new MonitoredResourceAliasSourceCredential(
+                            this.source, this.name, this.service);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoredResourceAliasSourceCredential o) {
-            Builder copiedBuilder = source(o.getSource()).name(o.getName()).service(o.getService());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoredResourceAliasSourceCredential model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            return this;
         }
     }
 
@@ -165,10 +175,10 @@ public final class MonitoredResourceAliasSourceCredential {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitoredResourceAliasSourceCredential(");
+        sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", service=").append(String.valueOf(this.service));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +196,7 @@ public final class MonitoredResourceAliasSourceCredential {
         return java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.service, other.service)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +206,7 @@ public final class MonitoredResourceAliasSourceCredential {
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -116,8 +116,8 @@ public class GetMediaWorkflowJobFactConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .GetMediaWorkflowJobFactResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaWorkflowJobFact(response.getItem());
 

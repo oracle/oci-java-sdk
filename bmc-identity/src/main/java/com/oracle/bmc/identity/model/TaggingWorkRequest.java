@@ -21,7 +21,7 @@ package com.oracle.bmc.identity.model;
     builder = TaggingWorkRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaggingWorkRequest {
+public final class TaggingWorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -223,36 +223,53 @@ public final class TaggingWorkRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaggingWorkRequest build() {
-            TaggingWorkRequest __instance__ =
+            TaggingWorkRequest model =
                     new TaggingWorkRequest(
-                            id,
-                            operationType,
-                            compartmentId,
-                            status,
-                            resources,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished,
-                            percentComplete);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.operationType,
+                            this.compartmentId,
+                            this.status,
+                            this.resources,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.percentComplete);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaggingWorkRequest o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .operationType(o.getOperationType())
-                            .compartmentId(o.getCompartmentId())
-                            .status(o.getStatus())
-                            .resources(o.getResources())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .percentComplete(o.getPercentComplete());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaggingWorkRequest model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("resources")) {
+                this.resources(model.getResources());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            return this;
         }
     }
 
@@ -525,6 +542,7 @@ public final class TaggingWorkRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TaggingWorkRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", operationType=").append(String.valueOf(this.operationType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -534,7 +552,6 @@ public final class TaggingWorkRequest {
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -558,7 +575,7 @@ public final class TaggingWorkRequest {
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.percentComplete, other.percentComplete)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -580,16 +597,7 @@ public final class TaggingWorkRequest {
         result =
                 (result * PRIME)
                         + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

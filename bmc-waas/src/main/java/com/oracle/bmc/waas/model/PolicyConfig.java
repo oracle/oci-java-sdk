@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PolicyConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PolicyConfig {
+public final class PolicyConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateId",
@@ -345,46 +345,73 @@ public final class PolicyConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PolicyConfig build() {
-            PolicyConfig __instance__ =
+            PolicyConfig model =
                     new PolicyConfig(
-                            certificateId,
-                            isHttpsEnabled,
-                            isHttpsForced,
-                            tlsProtocols,
-                            isOriginCompressionEnabled,
-                            isBehindCdn,
-                            clientAddressHeader,
-                            isCacheControlRespected,
-                            isResponseBufferingEnabled,
-                            cipherGroup,
-                            loadBalancingMethod,
-                            websocketPathPrefixes,
-                            isSniEnabled,
-                            healthChecks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.certificateId,
+                            this.isHttpsEnabled,
+                            this.isHttpsForced,
+                            this.tlsProtocols,
+                            this.isOriginCompressionEnabled,
+                            this.isBehindCdn,
+                            this.clientAddressHeader,
+                            this.isCacheControlRespected,
+                            this.isResponseBufferingEnabled,
+                            this.cipherGroup,
+                            this.loadBalancingMethod,
+                            this.websocketPathPrefixes,
+                            this.isSniEnabled,
+                            this.healthChecks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PolicyConfig o) {
-            Builder copiedBuilder =
-                    certificateId(o.getCertificateId())
-                            .isHttpsEnabled(o.getIsHttpsEnabled())
-                            .isHttpsForced(o.getIsHttpsForced())
-                            .tlsProtocols(o.getTlsProtocols())
-                            .isOriginCompressionEnabled(o.getIsOriginCompressionEnabled())
-                            .isBehindCdn(o.getIsBehindCdn())
-                            .clientAddressHeader(o.getClientAddressHeader())
-                            .isCacheControlRespected(o.getIsCacheControlRespected())
-                            .isResponseBufferingEnabled(o.getIsResponseBufferingEnabled())
-                            .cipherGroup(o.getCipherGroup())
-                            .loadBalancingMethod(o.getLoadBalancingMethod())
-                            .websocketPathPrefixes(o.getWebsocketPathPrefixes())
-                            .isSniEnabled(o.getIsSniEnabled())
-                            .healthChecks(o.getHealthChecks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PolicyConfig model) {
+            if (model.wasPropertyExplicitlySet("certificateId")) {
+                this.certificateId(model.getCertificateId());
+            }
+            if (model.wasPropertyExplicitlySet("isHttpsEnabled")) {
+                this.isHttpsEnabled(model.getIsHttpsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isHttpsForced")) {
+                this.isHttpsForced(model.getIsHttpsForced());
+            }
+            if (model.wasPropertyExplicitlySet("tlsProtocols")) {
+                this.tlsProtocols(model.getTlsProtocols());
+            }
+            if (model.wasPropertyExplicitlySet("isOriginCompressionEnabled")) {
+                this.isOriginCompressionEnabled(model.getIsOriginCompressionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isBehindCdn")) {
+                this.isBehindCdn(model.getIsBehindCdn());
+            }
+            if (model.wasPropertyExplicitlySet("clientAddressHeader")) {
+                this.clientAddressHeader(model.getClientAddressHeader());
+            }
+            if (model.wasPropertyExplicitlySet("isCacheControlRespected")) {
+                this.isCacheControlRespected(model.getIsCacheControlRespected());
+            }
+            if (model.wasPropertyExplicitlySet("isResponseBufferingEnabled")) {
+                this.isResponseBufferingEnabled(model.getIsResponseBufferingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("cipherGroup")) {
+                this.cipherGroup(model.getCipherGroup());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancingMethod")) {
+                this.loadBalancingMethod(model.getLoadBalancingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("websocketPathPrefixes")) {
+                this.websocketPathPrefixes(model.getWebsocketPathPrefixes());
+            }
+            if (model.wasPropertyExplicitlySet("isSniEnabled")) {
+                this.isSniEnabled(model.getIsSniEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("healthChecks")) {
+                this.healthChecks(model.getHealthChecks());
+            }
+            return this;
         }
     }
 
@@ -819,6 +846,7 @@ public final class PolicyConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PolicyConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", isHttpsEnabled=").append(String.valueOf(this.isHttpsEnabled));
         sb.append(", isHttpsForced=").append(String.valueOf(this.isHttpsForced));
@@ -836,7 +864,6 @@ public final class PolicyConfig {
         sb.append(", websocketPathPrefixes=").append(String.valueOf(this.websocketPathPrefixes));
         sb.append(", isSniEnabled=").append(String.valueOf(this.isSniEnabled));
         sb.append(", healthChecks=").append(String.valueOf(this.healthChecks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -868,7 +895,7 @@ public final class PolicyConfig {
                 && java.util.Objects.equals(this.websocketPathPrefixes, other.websocketPathPrefixes)
                 && java.util.Objects.equals(this.isSniEnabled, other.isSniEnabled)
                 && java.util.Objects.equals(this.healthChecks, other.healthChecks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -919,16 +946,7 @@ public final class PolicyConfig {
                                 : this.websocketPathPrefixes.hashCode());
         result = (result * PRIME) + (this.isSniEnabled == null ? 43 : this.isSniEnabled.hashCode());
         result = (result * PRIME) + (this.healthChecks == null ? 43 : this.healthChecks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -167,8 +167,8 @@ public class ListDigitalAssistantParametersConverter {
                                                 com.oracle.bmc.oda.responses
                                                         .ListDigitalAssistantParametersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.digitalAssistantParameterCollection(response.getItem());
 

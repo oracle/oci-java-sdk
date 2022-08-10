@@ -104,8 +104,8 @@ public class UpdateUserStateConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateUserStateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.user(response.getItem());
 

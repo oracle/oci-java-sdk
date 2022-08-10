@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = ArchivingConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ArchivingConfiguration {
+public final class ArchivingConfiguration
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"activeStorageDuration", "archivalStorageDuration"})
     public ArchivingConfiguration(String activeStorageDuration, String archivalStorageDuration) {
@@ -79,20 +80,24 @@ public final class ArchivingConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ArchivingConfiguration build() {
-            ArchivingConfiguration __instance__ =
-                    new ArchivingConfiguration(activeStorageDuration, archivalStorageDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ArchivingConfiguration model =
+                    new ArchivingConfiguration(
+                            this.activeStorageDuration, this.archivalStorageDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ArchivingConfiguration o) {
-            Builder copiedBuilder =
-                    activeStorageDuration(o.getActiveStorageDuration())
-                            .archivalStorageDuration(o.getArchivalStorageDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ArchivingConfiguration model) {
+            if (model.wasPropertyExplicitlySet("activeStorageDuration")) {
+                this.activeStorageDuration(model.getActiveStorageDuration());
+            }
+            if (model.wasPropertyExplicitlySet("archivalStorageDuration")) {
+                this.archivalStorageDuration(model.getArchivalStorageDuration());
+            }
+            return this;
         }
     }
 
@@ -160,10 +165,10 @@ public final class ArchivingConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ArchivingConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("activeStorageDuration=").append(String.valueOf(this.activeStorageDuration));
         sb.append(", archivalStorageDuration=")
                 .append(String.valueOf(this.archivalStorageDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -181,7 +186,7 @@ public final class ArchivingConfiguration {
         return java.util.Objects.equals(this.activeStorageDuration, other.activeStorageDuration)
                 && java.util.Objects.equals(
                         this.archivalStorageDuration, other.archivalStorageDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +203,7 @@ public final class ArchivingConfiguration {
                         + (this.archivalStorageDuration == null
                                 ? 43
                                 : this.archivalStorageDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = QuarterlyUpgradeBeginTimes.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QuarterlyUpgradeBeginTimes {
+public final class QuarterlyUpgradeBeginTimes
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"overrideType", "beginTimesValue"})
     public QuarterlyUpgradeBeginTimes(OverrideType overrideType, String beginTimesValue) {
@@ -67,19 +68,23 @@ public final class QuarterlyUpgradeBeginTimes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QuarterlyUpgradeBeginTimes build() {
-            QuarterlyUpgradeBeginTimes __instance__ =
-                    new QuarterlyUpgradeBeginTimes(overrideType, beginTimesValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            QuarterlyUpgradeBeginTimes model =
+                    new QuarterlyUpgradeBeginTimes(this.overrideType, this.beginTimesValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QuarterlyUpgradeBeginTimes o) {
-            Builder copiedBuilder =
-                    overrideType(o.getOverrideType()).beginTimesValue(o.getBeginTimesValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QuarterlyUpgradeBeginTimes model) {
+            if (model.wasPropertyExplicitlySet("overrideType")) {
+                this.overrideType(model.getOverrideType());
+            }
+            if (model.wasPropertyExplicitlySet("beginTimesValue")) {
+                this.beginTimesValue(model.getBeginTimesValue());
+            }
+            return this;
         }
     }
 
@@ -183,9 +188,9 @@ public final class QuarterlyUpgradeBeginTimes {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QuarterlyUpgradeBeginTimes(");
+        sb.append("super=").append(super.toString());
         sb.append("overrideType=").append(String.valueOf(this.overrideType));
         sb.append(", beginTimesValue=").append(String.valueOf(this.beginTimesValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -202,7 +207,7 @@ public final class QuarterlyUpgradeBeginTimes {
         QuarterlyUpgradeBeginTimes other = (QuarterlyUpgradeBeginTimes) o;
         return java.util.Objects.equals(this.overrideType, other.overrideType)
                 && java.util.Objects.equals(this.beginTimesValue, other.beginTimesValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -213,16 +218,7 @@ public final class QuarterlyUpgradeBeginTimes {
         result =
                 (result * PRIME)
                         + (this.beginTimesValue == null ? 43 : this.beginTimesValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = InstancePoolInstance.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstancePoolInstance {
+public final class InstancePoolInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -304,44 +304,69 @@ public final class InstancePoolInstance {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstancePoolInstance build() {
-            InstancePoolInstance __instance__ =
+            InstancePoolInstance model =
                     new InstancePoolInstance(
-                            id,
-                            instancePoolId,
-                            availabilityDomain,
-                            lifecycleState,
-                            compartmentId,
-                            displayName,
-                            faultDomain,
-                            instanceConfigurationId,
-                            region,
-                            shape,
-                            state,
-                            timeCreated,
-                            loadBalancerBackends);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.instancePoolId,
+                            this.availabilityDomain,
+                            this.lifecycleState,
+                            this.compartmentId,
+                            this.displayName,
+                            this.faultDomain,
+                            this.instanceConfigurationId,
+                            this.region,
+                            this.shape,
+                            this.state,
+                            this.timeCreated,
+                            this.loadBalancerBackends);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstancePoolInstance o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .instancePoolId(o.getInstancePoolId())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .lifecycleState(o.getLifecycleState())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .faultDomain(o.getFaultDomain())
-                            .instanceConfigurationId(o.getInstanceConfigurationId())
-                            .region(o.getRegion())
-                            .shape(o.getShape())
-                            .state(o.getState())
-                            .timeCreated(o.getTimeCreated())
-                            .loadBalancerBackends(o.getLoadBalancerBackends());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstancePoolInstance model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instancePoolId")) {
+                this.instancePoolId(model.getInstancePoolId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerBackends")) {
+                this.loadBalancerBackends(model.getLoadBalancerBackends());
+            }
+            return this;
         }
     }
 
@@ -622,6 +647,7 @@ public final class InstancePoolInstance {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstancePoolInstance(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", instancePoolId=").append(String.valueOf(this.instancePoolId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
@@ -636,7 +662,6 @@ public final class InstancePoolInstance {
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", loadBalancerBackends=").append(String.valueOf(this.loadBalancerBackends));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -665,7 +690,7 @@ public final class InstancePoolInstance {
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.loadBalancerBackends, other.loadBalancerBackends)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -703,16 +728,7 @@ public final class InstancePoolInstance {
                         + (this.loadBalancerBackends == null
                                 ? 43
                                 : this.loadBalancerBackends.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.identity.model;
     builder = IdentityProviderGroupSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IdentityProviderGroupSummary {
+public final class IdentityProviderGroupSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -180,32 +181,45 @@ public final class IdentityProviderGroupSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IdentityProviderGroupSummary build() {
-            IdentityProviderGroupSummary __instance__ =
+            IdentityProviderGroupSummary model =
                     new IdentityProviderGroupSummary(
-                            id,
-                            identityProviderId,
-                            displayName,
-                            name,
-                            externalIdentifier,
-                            timeCreated,
-                            timeModified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.identityProviderId,
+                            this.displayName,
+                            this.name,
+                            this.externalIdentifier,
+                            this.timeCreated,
+                            this.timeModified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IdentityProviderGroupSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .identityProviderId(o.getIdentityProviderId())
-                            .displayName(o.getDisplayName())
-                            .name(o.getName())
-                            .externalIdentifier(o.getExternalIdentifier())
-                            .timeCreated(o.getTimeCreated())
-                            .timeModified(o.getTimeModified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IdentityProviderGroupSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("identityProviderId")) {
+                this.identityProviderId(model.getIdentityProviderId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("externalIdentifier")) {
+                this.externalIdentifier(model.getExternalIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            return this;
         }
     }
 
@@ -343,6 +357,7 @@ public final class IdentityProviderGroupSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IdentityProviderGroupSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", identityProviderId=").append(String.valueOf(this.identityProviderId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -350,7 +365,6 @@ public final class IdentityProviderGroupSummary {
         sb.append(", externalIdentifier=").append(String.valueOf(this.externalIdentifier));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeModified=").append(String.valueOf(this.timeModified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -372,7 +386,7 @@ public final class IdentityProviderGroupSummary {
                 && java.util.Objects.equals(this.externalIdentifier, other.externalIdentifier)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeModified, other.timeModified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -394,16 +408,7 @@ public final class IdentityProviderGroupSummary {
                                 : this.externalIdentifier.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

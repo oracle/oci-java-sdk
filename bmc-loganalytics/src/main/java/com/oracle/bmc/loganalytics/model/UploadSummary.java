@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UploadSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UploadSummary {
+public final class UploadSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "reference",
@@ -165,32 +165,45 @@ public final class UploadSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UploadSummary build() {
-            UploadSummary __instance__ =
+            UploadSummary model =
                     new UploadSummary(
-                            reference,
-                            name,
-                            timeCreated,
-                            timeUpdated,
-                            timeEarliestLogEntry,
-                            timeLatestLogEntry,
-                            warningsCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.reference,
+                            this.name,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.timeEarliestLogEntry,
+                            this.timeLatestLogEntry,
+                            this.warningsCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UploadSummary o) {
-            Builder copiedBuilder =
-                    reference(o.getReference())
-                            .name(o.getName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeEarliestLogEntry(o.getTimeEarliestLogEntry())
-                            .timeLatestLogEntry(o.getTimeLatestLogEntry())
-                            .warningsCount(o.getWarningsCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UploadSummary model) {
+            if (model.wasPropertyExplicitlySet("reference")) {
+                this.reference(model.getReference());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeEarliestLogEntry")) {
+                this.timeEarliestLogEntry(model.getTimeEarliestLogEntry());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestLogEntry")) {
+                this.timeLatestLogEntry(model.getTimeLatestLogEntry());
+            }
+            if (model.wasPropertyExplicitlySet("warningsCount")) {
+                this.warningsCount(model.getWarningsCount());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class UploadSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UploadSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("reference=").append(String.valueOf(this.reference));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -323,7 +337,6 @@ public final class UploadSummary {
         sb.append(", timeEarliestLogEntry=").append(String.valueOf(this.timeEarliestLogEntry));
         sb.append(", timeLatestLogEntry=").append(String.valueOf(this.timeLatestLogEntry));
         sb.append(", warningsCount=").append(String.valueOf(this.warningsCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class UploadSummary {
                 && java.util.Objects.equals(this.timeEarliestLogEntry, other.timeEarliestLogEntry)
                 && java.util.Objects.equals(this.timeLatestLogEntry, other.timeLatestLogEntry)
                 && java.util.Objects.equals(this.warningsCount, other.warningsCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -369,16 +382,7 @@ public final class UploadSummary {
         result =
                 (result * PRIME)
                         + (this.warningsCount == null ? 43 : this.warningsCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

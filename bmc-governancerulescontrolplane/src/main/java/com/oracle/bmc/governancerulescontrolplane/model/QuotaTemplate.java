@@ -80,20 +80,26 @@ public final class QuotaTemplate extends Template {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QuotaTemplate build() {
-            QuotaTemplate __instance__ = new QuotaTemplate(displayName, description, statements);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            QuotaTemplate model =
+                    new QuotaTemplate(this.displayName, this.description, this.statements);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QuotaTemplate o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .statements(o.getStatements());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QuotaTemplate model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("statements")) {
+                this.statements(model.getStatements());
+            }
+            return this;
         }
     }
 
@@ -178,7 +184,6 @@ public final class QuotaTemplate extends Template {
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", statements=").append(String.valueOf(this.statements));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -196,8 +201,7 @@ public final class QuotaTemplate extends Template {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.statements, other.statements)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +211,6 @@ public final class QuotaTemplate extends Template {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.statements == null ? 43 : this.statements.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

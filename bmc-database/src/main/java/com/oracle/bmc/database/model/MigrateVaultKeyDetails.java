@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = MigrateVaultKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrateVaultKeyDetails {
+public final class MigrateVaultKeyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "kmsKeyId",
@@ -132,24 +133,37 @@ public final class MigrateVaultKeyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrateVaultKeyDetails build() {
-            MigrateVaultKeyDetails __instance__ =
+            MigrateVaultKeyDetails model =
                     new MigrateVaultKeyDetails(
-                            kmsKeyId, kmsKeyVersionId, vaultId, tdeWalletPassword, adminPassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.vaultId,
+                            this.tdeWalletPassword,
+                            this.adminPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MigrateVaultKeyDetails o) {
-            Builder copiedBuilder =
-                    kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .vaultId(o.getVaultId())
-                            .tdeWalletPassword(o.getTdeWalletPassword())
-                            .adminPassword(o.getAdminPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MigrateVaultKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("tdeWalletPassword")) {
+                this.tdeWalletPassword(model.getTdeWalletPassword());
+            }
+            if (model.wasPropertyExplicitlySet("adminPassword")) {
+                this.adminPassword(model.getAdminPassword());
+            }
+            return this;
         }
     }
 
@@ -249,12 +263,12 @@ public final class MigrateVaultKeyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MigrateVaultKeyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", tdeWalletPassword=").append(String.valueOf(this.tdeWalletPassword));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -274,7 +288,7 @@ public final class MigrateVaultKeyDetails {
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.tdeWalletPassword, other.tdeWalletPassword)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -292,16 +306,7 @@ public final class MigrateVaultKeyDetails {
         result =
                 (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

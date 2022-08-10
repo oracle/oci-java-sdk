@@ -34,9 +34,13 @@ public class GetJobLogsContentResponse extends com.oracle.bmc.responses.BmcRespo
         return value;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "value"})
-    private GetJobLogsContentResponse(int __httpStatusCode__, String opcRequestId, String value) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "value"})
+    private GetJobLogsContentResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String value) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.value = value;
     }
@@ -46,6 +50,13 @@ public class GetJobLogsContentResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -85,6 +96,7 @@ public class GetJobLogsContentResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetJobLogsContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             value(o.getValue());
 
@@ -96,7 +108,7 @@ public class GetJobLogsContentResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public GetJobLogsContentResponse build() {
-            return new GetJobLogsContentResponse(__httpStatusCode__, opcRequestId, value);
+            return new GetJobLogsContentResponse(__httpStatusCode__, headers, opcRequestId, value);
         }
     }
 

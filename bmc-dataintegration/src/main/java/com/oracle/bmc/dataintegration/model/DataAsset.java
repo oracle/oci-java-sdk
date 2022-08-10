@@ -56,7 +56,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DataAsset {
+public class DataAsset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -277,6 +277,7 @@ public class DataAsset {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAsset(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -316,7 +317,8 @@ public class DataAsset {
                 && java.util.Objects.equals(this.objectVersion, other.objectVersion)
                 && java.util.Objects.equals(this.parentRef, other.parentRef)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.keyMap, other.keyMap);
+                && java.util.Objects.equals(this.keyMap, other.keyMap)
+                && super.equals(other);
     }
 
     @Override
@@ -342,6 +344,7 @@ public class DataAsset {
         result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

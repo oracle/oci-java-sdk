@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = CountStatisticSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CountStatisticSummary {
+public final class CountStatisticSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectType", "objectCount"})
     public CountStatisticSummary(ObjectType objectType, Long objectCount) {
@@ -67,17 +68,23 @@ public final class CountStatisticSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CountStatisticSummary build() {
-            CountStatisticSummary __instance__ = new CountStatisticSummary(objectType, objectCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CountStatisticSummary model =
+                    new CountStatisticSummary(this.objectType, this.objectCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CountStatisticSummary o) {
-            Builder copiedBuilder = objectType(o.getObjectType()).objectCount(o.getObjectCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CountStatisticSummary model) {
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("objectCount")) {
+                this.objectCount(model.getObjectCount());
+            }
+            return this;
         }
     }
 
@@ -188,9 +195,9 @@ public final class CountStatisticSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CountStatisticSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("objectType=").append(String.valueOf(this.objectType));
         sb.append(", objectCount=").append(String.valueOf(this.objectCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -207,7 +214,7 @@ public final class CountStatisticSummary {
         CountStatisticSummary other = (CountStatisticSummary) o;
         return java.util.Objects.equals(this.objectType, other.objectType)
                 && java.util.Objects.equals(this.objectCount, other.objectCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -216,16 +223,7 @@ public final class CountStatisticSummary {
         int result = 1;
         result = (result * PRIME) + (this.objectType == null ? 43 : this.objectType.hashCode());
         result = (result * PRIME) + (this.objectCount == null ? 43 : this.objectCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -114,8 +114,8 @@ public class GetContainerImageSignatureConverter {
                                                 com.oracle.bmc.artifacts.responses
                                                         .GetContainerImageSignatureResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerImageSignature(response.getItem());
 

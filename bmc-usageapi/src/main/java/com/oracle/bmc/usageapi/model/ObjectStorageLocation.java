@@ -80,19 +80,26 @@ public final class ObjectStorageLocation extends ResultLocation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectStorageLocation build() {
-            ObjectStorageLocation __instance__ =
-                    new ObjectStorageLocation(region, namespace, bucketName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ObjectStorageLocation model =
+                    new ObjectStorageLocation(this.region, this.namespace, this.bucketName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectStorageLocation o) {
-            Builder copiedBuilder =
-                    region(o.getRegion()).namespace(o.getNamespace()).bucketName(o.getBucketName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectStorageLocation model) {
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            return this;
         }
     }
 
@@ -174,7 +181,6 @@ public final class ObjectStorageLocation extends ResultLocation {
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,8 +198,7 @@ public final class ObjectStorageLocation extends ResultLocation {
         return java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -203,16 +208,6 @@ public final class ObjectStorageLocation extends ResultLocation {
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

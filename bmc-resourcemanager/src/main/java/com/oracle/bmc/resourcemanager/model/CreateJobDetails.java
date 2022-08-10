@@ -18,7 +18,7 @@ package com.oracle.bmc.resourcemanager.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateJobDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateJobDetails {
+public final class CreateJobDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stackId",
@@ -165,32 +165,45 @@ public final class CreateJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateJobDetails build() {
-            CreateJobDetails __instance__ =
+            CreateJobDetails model =
                     new CreateJobDetails(
-                            stackId,
-                            displayName,
-                            operation,
-                            jobOperationDetails,
-                            applyJobPlanResolution,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.stackId,
+                            this.displayName,
+                            this.operation,
+                            this.jobOperationDetails,
+                            this.applyJobPlanResolution,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateJobDetails o) {
-            Builder copiedBuilder =
-                    stackId(o.getStackId())
-                            .displayName(o.getDisplayName())
-                            .operation(o.getOperation())
-                            .jobOperationDetails(o.getJobOperationDetails())
-                            .applyJobPlanResolution(o.getApplyJobPlanResolution())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateJobDetails model) {
+            if (model.wasPropertyExplicitlySet("stackId")) {
+                this.stackId(model.getStackId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("jobOperationDetails")) {
+                this.jobOperationDetails(model.getJobOperationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("applyJobPlanResolution")) {
+                this.applyJobPlanResolution(model.getApplyJobPlanResolution());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -314,6 +327,7 @@ public final class CreateJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("stackId=").append(String.valueOf(this.stackId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", operation=").append(String.valueOf(this.operation));
@@ -321,7 +335,6 @@ public final class CreateJobDetails {
         sb.append(", applyJobPlanResolution=").append(String.valueOf(this.applyJobPlanResolution));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,7 +357,7 @@ public final class CreateJobDetails {
                         this.applyJobPlanResolution, other.applyJobPlanResolution)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -366,16 +379,7 @@ public final class CreateJobDetails {
                                 : this.applyJobPlanResolution.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Month.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Month {
+public final class Month extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name"})
     public Month(Name name) {
@@ -48,17 +48,19 @@ public final class Month {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Month build() {
-            Month __instance__ = new Month(name);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Month model = new Month(this.name);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Month o) {
-            Builder copiedBuilder = name(o.getName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Month model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            return this;
         }
     }
 
@@ -156,8 +158,8 @@ public final class Month {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Month(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -172,8 +174,7 @@ public final class Month {
         }
 
         Month other = (Month) o;
-        return java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.name, other.name) && super.equals(other);
     }
 
     @Override
@@ -181,16 +182,7 @@ public final class Month {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

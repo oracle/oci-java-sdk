@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = CloneSqlTuningTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CloneSqlTuningTaskDetails {
+public final class CloneSqlTuningTaskDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskName",
@@ -109,23 +110,33 @@ public final class CloneSqlTuningTaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CloneSqlTuningTaskDetails build() {
-            CloneSqlTuningTaskDetails __instance__ =
+            CloneSqlTuningTaskDetails model =
                     new CloneSqlTuningTaskDetails(
-                            taskName, originalTaskId, taskDescription, credentialDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.taskName,
+                            this.originalTaskId,
+                            this.taskDescription,
+                            this.credentialDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CloneSqlTuningTaskDetails o) {
-            Builder copiedBuilder =
-                    taskName(o.getTaskName())
-                            .originalTaskId(o.getOriginalTaskId())
-                            .taskDescription(o.getTaskDescription())
-                            .credentialDetails(o.getCredentialDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CloneSqlTuningTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("taskName")) {
+                this.taskName(model.getTaskName());
+            }
+            if (model.wasPropertyExplicitlySet("originalTaskId")) {
+                this.originalTaskId(model.getOriginalTaskId());
+            }
+            if (model.wasPropertyExplicitlySet("taskDescription")) {
+                this.taskDescription(model.getTaskDescription());
+            }
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            return this;
         }
     }
 
@@ -208,11 +219,11 @@ public final class CloneSqlTuningTaskDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CloneSqlTuningTaskDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("taskName=").append(String.valueOf(this.taskName));
         sb.append(", originalTaskId=").append(String.valueOf(this.originalTaskId));
         sb.append(", taskDescription=").append(String.valueOf(this.taskDescription));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -231,7 +242,7 @@ public final class CloneSqlTuningTaskDetails {
                 && java.util.Objects.equals(this.originalTaskId, other.originalTaskId)
                 && java.util.Objects.equals(this.taskDescription, other.taskDescription)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -248,16 +259,7 @@ public final class CloneSqlTuningTaskDetails {
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

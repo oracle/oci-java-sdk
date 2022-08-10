@@ -19,7 +19,7 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = OperationInputRecord.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperationInputRecord {
+public final class OperationInputRecord extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldValues"})
     public OperationInputRecord(java.util.List<Object> fieldValues) {
@@ -50,17 +50,19 @@ public final class OperationInputRecord {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperationInputRecord build() {
-            OperationInputRecord __instance__ = new OperationInputRecord(fieldValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OperationInputRecord model = new OperationInputRecord(this.fieldValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperationInputRecord o) {
-            Builder copiedBuilder = fieldValues(o.getFieldValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperationInputRecord model) {
+            if (model.wasPropertyExplicitlySet("fieldValues")) {
+                this.fieldValues(model.getFieldValues());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class OperationInputRecord {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperationInputRecord(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldValues=").append(String.valueOf(this.fieldValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +120,7 @@ public final class OperationInputRecord {
         }
 
         OperationInputRecord other = (OperationInputRecord) o;
-        return java.util.Objects.equals(this.fieldValues, other.fieldValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.fieldValues, other.fieldValues) && super.equals(other);
     }
 
     @Override
@@ -127,16 +128,7 @@ public final class OperationInputRecord {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.fieldValues == null ? 43 : this.fieldValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

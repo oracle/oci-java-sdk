@@ -20,7 +20,7 @@ package com.oracle.bmc.database.model;
     builder = ExternalBackupJob.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExternalBackupJob {
+public final class ExternalBackupJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "backupId",
@@ -172,32 +172,45 @@ public final class ExternalBackupJob {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalBackupJob build() {
-            ExternalBackupJob __instance__ =
+            ExternalBackupJob model =
                     new ExternalBackupJob(
-                            backupId,
-                            provisioning,
-                            swiftPath,
-                            bucketName,
-                            tag,
-                            userName,
-                            swiftPassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.backupId,
+                            this.provisioning,
+                            this.swiftPath,
+                            this.bucketName,
+                            this.tag,
+                            this.userName,
+                            this.swiftPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalBackupJob o) {
-            Builder copiedBuilder =
-                    backupId(o.getBackupId())
-                            .provisioning(o.getProvisioning())
-                            .swiftPath(o.getSwiftPath())
-                            .bucketName(o.getBucketName())
-                            .tag(o.getTag())
-                            .userName(o.getUserName())
-                            .swiftPassword(o.getSwiftPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalBackupJob model) {
+            if (model.wasPropertyExplicitlySet("backupId")) {
+                this.backupId(model.getBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("provisioning")) {
+                this.provisioning(model.getProvisioning());
+            }
+            if (model.wasPropertyExplicitlySet("swiftPath")) {
+                this.swiftPath(model.getSwiftPath());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("tag")) {
+                this.tag(model.getTag());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("swiftPassword")) {
+                this.swiftPassword(model.getSwiftPassword());
+            }
+            return this;
         }
     }
 
@@ -327,6 +340,7 @@ public final class ExternalBackupJob {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalBackupJob(");
+        sb.append("super=").append(super.toString());
         sb.append("backupId=").append(String.valueOf(this.backupId));
         sb.append(", provisioning=").append(String.valueOf(this.provisioning));
         sb.append(", swiftPath=").append(String.valueOf(this.swiftPath));
@@ -334,7 +348,6 @@ public final class ExternalBackupJob {
         sb.append(", tag=").append(String.valueOf(this.tag));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", swiftPassword=").append(String.valueOf(this.swiftPassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -356,7 +369,7 @@ public final class ExternalBackupJob {
                 && java.util.Objects.equals(this.tag, other.tag)
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.swiftPassword, other.swiftPassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -372,16 +385,7 @@ public final class ExternalBackupJob {
         result =
                 (result * PRIME)
                         + (this.swiftPassword == null ? 43 : this.swiftPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

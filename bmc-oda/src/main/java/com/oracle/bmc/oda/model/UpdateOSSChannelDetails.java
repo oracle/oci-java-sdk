@@ -229,47 +229,74 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOSSChannelDetails build() {
-            UpdateOSSChannelDetails __instance__ =
+            UpdateOSSChannelDetails model =
                     new UpdateOSSChannelDetails(
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            eventSinkBotIds,
-                            inboundMessageTopic,
-                            outboundMessageTopic,
-                            bootstrapServers,
-                            securityProtocol,
-                            saslMechanism,
-                            tenancyName,
-                            userName,
-                            streamPoolId,
-                            authToken);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.eventSinkBotIds,
+                            this.inboundMessageTopic,
+                            this.outboundMessageTopic,
+                            this.bootstrapServers,
+                            this.securityProtocol,
+                            this.saslMechanism,
+                            this.tenancyName,
+                            this.userName,
+                            this.streamPoolId,
+                            this.authToken);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOSSChannelDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .eventSinkBotIds(o.getEventSinkBotIds())
-                            .inboundMessageTopic(o.getInboundMessageTopic())
-                            .outboundMessageTopic(o.getOutboundMessageTopic())
-                            .bootstrapServers(o.getBootstrapServers())
-                            .securityProtocol(o.getSecurityProtocol())
-                            .saslMechanism(o.getSaslMechanism())
-                            .tenancyName(o.getTenancyName())
-                            .userName(o.getUserName())
-                            .streamPoolId(o.getStreamPoolId())
-                            .authToken(o.getAuthToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOSSChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("eventSinkBotIds")) {
+                this.eventSinkBotIds(model.getEventSinkBotIds());
+            }
+            if (model.wasPropertyExplicitlySet("inboundMessageTopic")) {
+                this.inboundMessageTopic(model.getInboundMessageTopic());
+            }
+            if (model.wasPropertyExplicitlySet("outboundMessageTopic")) {
+                this.outboundMessageTopic(model.getOutboundMessageTopic());
+            }
+            if (model.wasPropertyExplicitlySet("bootstrapServers")) {
+                this.bootstrapServers(model.getBootstrapServers());
+            }
+            if (model.wasPropertyExplicitlySet("securityProtocol")) {
+                this.securityProtocol(model.getSecurityProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("saslMechanism")) {
+                this.saslMechanism(model.getSaslMechanism());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyName")) {
+                this.tenancyName(model.getTenancyName());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("streamPoolId")) {
+                this.streamPoolId(model.getStreamPoolId());
+            }
+            if (model.wasPropertyExplicitlySet("authToken")) {
+                this.authToken(model.getAuthToken());
+            }
+            return this;
         }
     }
 
@@ -477,7 +504,6 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", streamPoolId=").append(String.valueOf(this.streamPoolId));
         sb.append(", authToken=").append(String.valueOf(this.authToken));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -502,8 +528,7 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.streamPoolId, other.streamPoolId)
                 && java.util.Objects.equals(this.authToken, other.authToken)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -536,16 +561,6 @@ public final class UpdateOSSChannelDetails extends UpdateChannelDetails {
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.streamPoolId == null ? 43 : this.streamPoolId.hashCode());
         result = (result * PRIME) + (this.authToken == null ? 43 : this.authToken.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

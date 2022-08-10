@@ -107,8 +107,8 @@ public class UpdateJobRunConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .UpdateJobRunResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobRun(response.getItem());
 

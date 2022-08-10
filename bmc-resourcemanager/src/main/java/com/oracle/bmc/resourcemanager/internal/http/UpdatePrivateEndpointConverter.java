@@ -119,8 +119,8 @@ public class UpdatePrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .UpdatePrivateEndpointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateEndpoint(response.getItem());
 

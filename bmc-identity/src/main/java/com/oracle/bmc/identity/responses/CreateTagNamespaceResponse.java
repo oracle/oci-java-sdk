@@ -38,12 +38,18 @@ public class CreateTagNamespaceResponse extends com.oracle.bmc.responses.BmcResp
         return tagNamespace;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "tagNamespace"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "tagNamespace"
+    })
     private CreateTagNamespaceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identity.model.TagNamespace tagNamespace) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.tagNamespace = tagNamespace;
     }
@@ -53,6 +59,13 @@ public class CreateTagNamespaceResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class CreateTagNamespaceResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(CreateTagNamespaceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             tagNamespace(o.getTagNamespace());
 
@@ -107,7 +121,8 @@ public class CreateTagNamespaceResponse extends com.oracle.bmc.responses.BmcResp
          * @return the response object
          */
         public CreateTagNamespaceResponse build() {
-            return new CreateTagNamespaceResponse(__httpStatusCode__, opcRequestId, tagNamespace);
+            return new CreateTagNamespaceResponse(
+                    __httpStatusCode__, headers, opcRequestId, tagNamespace);
         }
     }
 

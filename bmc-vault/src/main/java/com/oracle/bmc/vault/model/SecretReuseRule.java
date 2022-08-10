@@ -50,18 +50,20 @@ public final class SecretReuseRule extends SecretRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecretReuseRule build() {
-            SecretReuseRule __instance__ = new SecretReuseRule(isEnforcedOnDeletedSecretVersions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SecretReuseRule model = new SecretReuseRule(this.isEnforcedOnDeletedSecretVersions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecretReuseRule o) {
-            Builder copiedBuilder =
-                    isEnforcedOnDeletedSecretVersions(o.getIsEnforcedOnDeletedSecretVersions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecretReuseRule model) {
+            if (model.wasPropertyExplicitlySet("isEnforcedOnDeletedSecretVersions")) {
+                this.isEnforcedOnDeletedSecretVersions(
+                        model.getIsEnforcedOnDeletedSecretVersions());
+            }
+            return this;
         }
     }
 
@@ -114,7 +116,6 @@ public final class SecretReuseRule extends SecretRule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isEnforcedOnDeletedSecretVersions=")
                 .append(String.valueOf(this.isEnforcedOnDeletedSecretVersions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -132,8 +133,7 @@ public final class SecretReuseRule extends SecretRule {
         return java.util.Objects.equals(
                         this.isEnforcedOnDeletedSecretVersions,
                         other.isEnforcedOnDeletedSecretVersions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -145,16 +145,6 @@ public final class SecretReuseRule extends SecretRule {
                         + (this.isEnforcedOnDeletedSecretVersions == null
                                 ? 43
                                 : this.isEnforcedOnDeletedSecretVersions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

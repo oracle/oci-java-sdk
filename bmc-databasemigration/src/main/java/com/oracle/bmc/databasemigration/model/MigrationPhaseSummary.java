@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = MigrationPhaseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrationPhaseSummary {
+public final class MigrationPhaseSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "recommendedAction", "supportedActions"})
     public MigrationPhaseSummary(
@@ -94,21 +95,27 @@ public final class MigrationPhaseSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrationPhaseSummary build() {
-            MigrationPhaseSummary __instance__ =
-                    new MigrationPhaseSummary(name, recommendedAction, supportedActions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MigrationPhaseSummary model =
+                    new MigrationPhaseSummary(
+                            this.name, this.recommendedAction, this.supportedActions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MigrationPhaseSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .recommendedAction(o.getRecommendedAction())
-                            .supportedActions(o.getSupportedActions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MigrationPhaseSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("recommendedAction")) {
+                this.recommendedAction(model.getRecommendedAction());
+            }
+            if (model.wasPropertyExplicitlySet("supportedActions")) {
+                this.supportedActions(model.getSupportedActions());
+            }
+            return this;
         }
     }
 
@@ -184,10 +191,10 @@ public final class MigrationPhaseSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MigrationPhaseSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", recommendedAction=").append(String.valueOf(this.recommendedAction));
         sb.append(", supportedActions=").append(String.valueOf(this.supportedActions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +212,7 @@ public final class MigrationPhaseSummary {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.recommendedAction, other.recommendedAction)
                 && java.util.Objects.equals(this.supportedActions, other.supportedActions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +226,7 @@ public final class MigrationPhaseSummary {
         result =
                 (result * PRIME)
                         + (this.supportedActions == null ? 43 : this.supportedActions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

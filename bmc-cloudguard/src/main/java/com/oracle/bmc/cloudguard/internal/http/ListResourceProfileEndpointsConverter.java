@@ -147,8 +147,8 @@ public class ListResourceProfileEndpointsConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListResourceProfileEndpointsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceProfileEndpointCollection(response.getItem());
 

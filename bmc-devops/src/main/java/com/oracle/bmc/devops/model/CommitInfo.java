@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CommitInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CommitInfo {
+public final class CommitInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"repositoryUrl", "repositoryBranch", "commitHash"})
     public CommitInfo(String repositoryUrl, String repositoryBranch, String commitHash) {
@@ -82,20 +82,26 @@ public final class CommitInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CommitInfo build() {
-            CommitInfo __instance__ = new CommitInfo(repositoryUrl, repositoryBranch, commitHash);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CommitInfo model =
+                    new CommitInfo(this.repositoryUrl, this.repositoryBranch, this.commitHash);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CommitInfo o) {
-            Builder copiedBuilder =
-                    repositoryUrl(o.getRepositoryUrl())
-                            .repositoryBranch(o.getRepositoryBranch())
-                            .commitHash(o.getCommitHash());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CommitInfo model) {
+            if (model.wasPropertyExplicitlySet("repositoryUrl")) {
+                this.repositoryUrl(model.getRepositoryUrl());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryBranch")) {
+                this.repositoryBranch(model.getRepositoryBranch());
+            }
+            if (model.wasPropertyExplicitlySet("commitHash")) {
+                this.commitHash(model.getCommitHash());
+            }
+            return this;
         }
     }
 
@@ -165,10 +171,10 @@ public final class CommitInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CommitInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("repositoryUrl=").append(String.valueOf(this.repositoryUrl));
         sb.append(", repositoryBranch=").append(String.valueOf(this.repositoryBranch));
         sb.append(", commitHash=").append(String.valueOf(this.commitHash));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +192,7 @@ public final class CommitInfo {
         return java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
                 && java.util.Objects.equals(this.repositoryBranch, other.repositoryBranch)
                 && java.util.Objects.equals(this.commitHash, other.commitHash)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -200,16 +206,7 @@ public final class CommitInfo {
                 (result * PRIME)
                         + (this.repositoryBranch == null ? 43 : this.repositoryBranch.hashCode());
         result = (result * PRIME) + (this.commitHash == null ? 43 : this.commitHash.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

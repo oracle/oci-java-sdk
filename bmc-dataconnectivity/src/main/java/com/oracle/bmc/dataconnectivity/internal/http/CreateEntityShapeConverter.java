@@ -149,8 +149,8 @@ public class CreateEntityShapeConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .CreateEntityShapeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.entityShape(response.getItem());
 

@@ -122,8 +122,8 @@ public class ResetDatabaseParametersConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ResetDatabaseParametersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.updateDatabaseParametersResult(response.getItem());
 

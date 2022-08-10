@@ -53,13 +53,20 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "items"
+    })
     private ParseConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             java.util.List<com.oracle.bmc.datacatalog.model.ConnectionAliasSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.items = items;
@@ -70,6 +77,13 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +145,7 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ParseConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
@@ -143,7 +158,8 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public ParseConnectionResponse build() {
-            return new ParseConnectionResponse(__httpStatusCode__, etag, opcRequestId, items);
+            return new ParseConnectionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, items);
         }
     }
 

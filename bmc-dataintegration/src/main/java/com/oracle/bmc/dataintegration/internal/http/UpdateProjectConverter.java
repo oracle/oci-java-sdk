@@ -116,8 +116,8 @@ public class UpdateProjectConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateProjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.project(response.getItem());
 

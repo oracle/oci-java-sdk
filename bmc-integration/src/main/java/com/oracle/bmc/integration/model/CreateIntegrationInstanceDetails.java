@@ -6,6 +6,10 @@ package com.oracle.bmc.integration.model;
 
 /**
  * The information about new IntegrationInstance.
+ * Some properties may not be applicable to specific integration types,
+ * see [Differences in Instance Management](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E)
+ * for details.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -19,7 +23,8 @@ package com.oracle.bmc.integration.model;
     builder = CreateIntegrationInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIntegrationInstanceDetails {
+public final class CreateIntegrationInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -35,7 +40,8 @@ public final class CreateIntegrationInstanceDetails {
         "alternateCustomEndpoints",
         "consumptionModel",
         "isFileServerEnabled",
-        "networkEndpointDetails"
+        "networkEndpointDetails",
+        "shape"
     })
     public CreateIntegrationInstanceDetails(
             String displayName,
@@ -51,7 +57,8 @@ public final class CreateIntegrationInstanceDetails {
             java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints,
             ConsumptionModel consumptionModel,
             Boolean isFileServerEnabled,
-            NetworkEndpointDetails networkEndpointDetails) {
+            NetworkEndpointDetails networkEndpointDetails,
+            Shape shape) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -67,6 +74,7 @@ public final class CreateIntegrationInstanceDetails {
         this.consumptionModel = consumptionModel;
         this.isFileServerEnabled = isFileServerEnabled;
         this.networkEndpointDetails = networkEndpointDetails;
+        this.shape = shape;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -104,13 +112,19 @@ public final class CreateIntegrationInstanceDetails {
             return this;
         }
         /**
-         * Standard or Enterprise type
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
         private IntegrationInstanceType integrationInstanceType;
 
         /**
-         * Standard or Enterprise type
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         *
          * @param integrationInstanceType the value to set
          * @return this builder
          **/
@@ -299,51 +313,98 @@ public final class CreateIntegrationInstanceDetails {
             this.__explicitlySet__.add("networkEndpointDetails");
             return this;
         }
+        /**
+         * Shape
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private Shape shape;
+
+        /**
+         * Shape
+         * @param shape the value to set
+         * @return this builder
+         **/
+        public Builder shape(Shape shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIntegrationInstanceDetails build() {
-            CreateIntegrationInstanceDetails __instance__ =
+            CreateIntegrationInstanceDetails model =
                     new CreateIntegrationInstanceDetails(
-                            displayName,
-                            compartmentId,
-                            integrationInstanceType,
-                            freeformTags,
-                            definedTags,
-                            isByol,
-                            idcsAt,
-                            messagePacks,
-                            isVisualBuilderEnabled,
-                            customEndpoint,
-                            alternateCustomEndpoints,
-                            consumptionModel,
-                            isFileServerEnabled,
-                            networkEndpointDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.integrationInstanceType,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.isByol,
+                            this.idcsAt,
+                            this.messagePacks,
+                            this.isVisualBuilderEnabled,
+                            this.customEndpoint,
+                            this.alternateCustomEndpoints,
+                            this.consumptionModel,
+                            this.isFileServerEnabled,
+                            this.networkEndpointDetails,
+                            this.shape);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateIntegrationInstanceDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .integrationInstanceType(o.getIntegrationInstanceType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .isByol(o.getIsByol())
-                            .idcsAt(o.getIdcsAt())
-                            .messagePacks(o.getMessagePacks())
-                            .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
-                            .customEndpoint(o.getCustomEndpoint())
-                            .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
-                            .consumptionModel(o.getConsumptionModel())
-                            .isFileServerEnabled(o.getIsFileServerEnabled())
-                            .networkEndpointDetails(o.getNetworkEndpointDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateIntegrationInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("integrationInstanceType")) {
+                this.integrationInstanceType(model.getIntegrationInstanceType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isByol")) {
+                this.isByol(model.getIsByol());
+            }
+            if (model.wasPropertyExplicitlySet("idcsAt")) {
+                this.idcsAt(model.getIdcsAt());
+            }
+            if (model.wasPropertyExplicitlySet("messagePacks")) {
+                this.messagePacks(model.getMessagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("isVisualBuilderEnabled")) {
+                this.isVisualBuilderEnabled(model.getIsVisualBuilderEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customEndpoint")) {
+                this.customEndpoint(model.getCustomEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("alternateCustomEndpoints")) {
+                this.alternateCustomEndpoints(model.getAlternateCustomEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("consumptionModel")) {
+                this.consumptionModel(model.getConsumptionModel());
+            }
+            if (model.wasPropertyExplicitlySet("isFileServerEnabled")) {
+                this.isFileServerEnabled(model.getIsFileServerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
+                this.networkEndpointDetails(model.getNetworkEndpointDetails());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            return this;
         }
     }
 
@@ -387,11 +448,16 @@ public final class CreateIntegrationInstanceDetails {
     }
 
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     *
      **/
     public enum IntegrationInstanceType {
         Standard("STANDARD"),
         Enterprise("ENTERPRISE"),
+        Standardx("STANDARDX"),
+        Enterprisex("ENTERPRISEX"),
         ;
 
         private final String value;
@@ -422,13 +488,19 @@ public final class CreateIntegrationInstanceDetails {
         }
     };
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
     private final IntegrationInstanceType integrationInstanceType;
 
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     *
      * @return the value
      **/
     public IntegrationInstanceType getIntegrationInstanceType() {
@@ -627,6 +699,55 @@ public final class CreateIntegrationInstanceDetails {
         return networkEndpointDetails;
     }
 
+    /**
+     * Shape
+     **/
+    public enum Shape {
+        Development("DEVELOPMENT"),
+        Production("PRODUCTION"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Shape> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Shape v : Shape.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Shape(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Shape create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Shape: " + key);
+        }
+    };
+    /**
+     * Shape
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final Shape shape;
+
+    /**
+     * Shape
+     * @return the value
+     **/
+    public Shape getShape() {
+        return shape;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -640,6 +761,7 @@ public final class CreateIntegrationInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateIntegrationInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", integrationInstanceType=")
@@ -656,7 +778,7 @@ public final class CreateIntegrationInstanceDetails {
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
         sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(")");
         return sb.toString();
     }
@@ -689,7 +811,8 @@ public final class CreateIntegrationInstanceDetails {
                 && java.util.Objects.equals(this.isFileServerEnabled, other.isFileServerEnabled)
                 && java.util.Objects.equals(
                         this.networkEndpointDetails, other.networkEndpointDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && java.util.Objects.equals(this.shape, other.shape)
+                && super.equals(other);
     }
 
     @Override
@@ -736,16 +859,8 @@ public final class CreateIntegrationInstanceDetails {
                         + (this.networkEndpointDetails == null
                                 ? 43
                                 : this.networkEndpointDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

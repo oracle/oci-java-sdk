@@ -55,16 +55,18 @@ public class GetSecurityZoneResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "securityZone"
     })
     private GetSecurityZoneResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.SecurityZone securityZone) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.securityZone = securityZone;
@@ -75,6 +77,13 @@ public class GetSecurityZoneResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetSecurityZoneResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetSecurityZoneResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             securityZone(o.getSecurityZone());
@@ -148,7 +158,7 @@ public class GetSecurityZoneResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetSecurityZoneResponse build() {
             return new GetSecurityZoneResponse(
-                    __httpStatusCode__, etag, opcRequestId, securityZone);
+                    __httpStatusCode__, headers, etag, opcRequestId, securityZone);
         }
     }
 

@@ -438,6 +438,64 @@ public class DashboardGroupAsyncClient implements DashboardGroupAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDashboardGroupCompartmentResponse>
+            changeDashboardGroupCompartment(
+                    ChangeDashboardGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDashboardGroupCompartmentRequest,
+                                    ChangeDashboardGroupCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeDashboardGroupCompartment");
+        final ChangeDashboardGroupCompartmentRequest interceptedRequest =
+                ChangeDashboardGroupCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDashboardGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DashboardGroup",
+                        "ChangeDashboardGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/ChangeDashboardGroupCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDashboardGroupCompartmentResponse>
+                transformer =
+                        ChangeDashboardGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDashboardGroupCompartmentRequest,
+                        ChangeDashboardGroupCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDashboardGroupCompartmentRequest,
+                                ChangeDashboardGroupCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeDashboardGroupCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeDashboardGroupCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDashboardGroupCompartmentRequest,
+                    ChangeDashboardGroupCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDashboardGroupResponse> createDashboardGroup(
             CreateDashboardGroupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

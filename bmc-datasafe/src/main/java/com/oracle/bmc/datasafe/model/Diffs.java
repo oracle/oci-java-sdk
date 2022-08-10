@@ -18,7 +18,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Diffs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Diffs {
+public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "current",
@@ -135,24 +135,41 @@ public final class Diffs {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Diffs build() {
-            Diffs __instance__ =
-                    new Diffs(current, baseline, removedItems, addedItems, modifiedItems, severity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Diffs model =
+                    new Diffs(
+                            this.current,
+                            this.baseline,
+                            this.removedItems,
+                            this.addedItems,
+                            this.modifiedItems,
+                            this.severity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Diffs o) {
-            Builder copiedBuilder =
-                    current(o.getCurrent())
-                            .baseline(o.getBaseline())
-                            .removedItems(o.getRemovedItems())
-                            .addedItems(o.getAddedItems())
-                            .modifiedItems(o.getModifiedItems())
-                            .severity(o.getSeverity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Diffs model) {
+            if (model.wasPropertyExplicitlySet("current")) {
+                this.current(model.getCurrent());
+            }
+            if (model.wasPropertyExplicitlySet("baseline")) {
+                this.baseline(model.getBaseline());
+            }
+            if (model.wasPropertyExplicitlySet("removedItems")) {
+                this.removedItems(model.getRemovedItems());
+            }
+            if (model.wasPropertyExplicitlySet("addedItems")) {
+                this.addedItems(model.getAddedItems());
+            }
+            if (model.wasPropertyExplicitlySet("modifiedItems")) {
+                this.modifiedItems(model.getModifiedItems());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            return this;
         }
     }
 
@@ -304,13 +321,13 @@ public final class Diffs {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Diffs(");
+        sb.append("super=").append(super.toString());
         sb.append("current=").append(String.valueOf(this.current));
         sb.append(", baseline=").append(String.valueOf(this.baseline));
         sb.append(", removedItems=").append(String.valueOf(this.removedItems));
         sb.append(", addedItems=").append(String.valueOf(this.addedItems));
         sb.append(", modifiedItems=").append(String.valueOf(this.modifiedItems));
         sb.append(", severity=").append(String.valueOf(this.severity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -331,7 +348,7 @@ public final class Diffs {
                 && java.util.Objects.equals(this.addedItems, other.addedItems)
                 && java.util.Objects.equals(this.modifiedItems, other.modifiedItems)
                 && java.util.Objects.equals(this.severity, other.severity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -346,16 +363,7 @@ public final class Diffs {
                 (result * PRIME)
                         + (this.modifiedItems == null ? 43 : this.modifiedItems.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

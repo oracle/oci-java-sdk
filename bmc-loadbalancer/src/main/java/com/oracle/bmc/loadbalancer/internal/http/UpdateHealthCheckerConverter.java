@@ -58,6 +58,10 @@ public class UpdateHealthCheckerConverter {
             ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }
@@ -110,8 +114,8 @@ public class UpdateHealthCheckerConverter {
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .UpdateHealthCheckerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -101,32 +101,45 @@ public final class AttachParavirtualizedVolumeDetails extends AttachVolumeDetail
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachParavirtualizedVolumeDetails build() {
-            AttachParavirtualizedVolumeDetails __instance__ =
+            AttachParavirtualizedVolumeDetails model =
                     new AttachParavirtualizedVolumeDetails(
-                            device,
-                            displayName,
-                            instanceId,
-                            isReadOnly,
-                            isShareable,
-                            volumeId,
-                            isPvEncryptionInTransitEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.device,
+                            this.displayName,
+                            this.instanceId,
+                            this.isReadOnly,
+                            this.isShareable,
+                            this.volumeId,
+                            this.isPvEncryptionInTransitEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachParavirtualizedVolumeDetails o) {
-            Builder copiedBuilder =
-                    device(o.getDevice())
-                            .displayName(o.getDisplayName())
-                            .instanceId(o.getInstanceId())
-                            .isReadOnly(o.getIsReadOnly())
-                            .isShareable(o.getIsShareable())
-                            .volumeId(o.getVolumeId())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachParavirtualizedVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("device")) {
+                this.device(model.getDevice());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("isReadOnly")) {
+                this.isReadOnly(model.getIsReadOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isShareable")) {
+                this.isShareable(model.getIsShareable());
+            }
+            if (model.wasPropertyExplicitlySet("volumeId")) {
+                this.volumeId(model.getVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
+                this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            return this;
         }
     }
 
@@ -184,7 +197,6 @@ public final class AttachParavirtualizedVolumeDetails extends AttachVolumeDetail
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -201,8 +213,7 @@ public final class AttachParavirtualizedVolumeDetails extends AttachVolumeDetail
         AttachParavirtualizedVolumeDetails other = (AttachParavirtualizedVolumeDetails) o;
         return java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +225,6 @@ public final class AttachParavirtualizedVolumeDetails extends AttachVolumeDetail
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

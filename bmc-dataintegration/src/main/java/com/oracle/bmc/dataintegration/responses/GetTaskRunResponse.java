@@ -53,13 +53,20 @@ public class GetTaskRunResponse extends com.oracle.bmc.responses.BmcResponse {
         return taskRun;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "taskRun"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "taskRun"
+    })
     private GetTaskRunResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.TaskRun taskRun) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.taskRun = taskRun;
@@ -70,6 +77,13 @@ public class GetTaskRunResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetTaskRunResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetTaskRunResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             taskRun(o.getTaskRun());
@@ -142,7 +157,7 @@ public class GetTaskRunResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetTaskRunResponse build() {
-            return new GetTaskRunResponse(__httpStatusCode__, etag, opcRequestId, taskRun);
+            return new GetTaskRunResponse(__httpStatusCode__, headers, etag, opcRequestId, taskRun);
         }
     }
 

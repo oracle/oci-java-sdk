@@ -19,7 +19,8 @@ package com.oracle.bmc.apigateway.model;
     builder = SdkLanguageOptionalParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SdkLanguageOptionalParameters {
+public final class SdkLanguageOptionalParameters
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "paramName",
@@ -192,32 +193,45 @@ public final class SdkLanguageOptionalParameters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SdkLanguageOptionalParameters build() {
-            SdkLanguageOptionalParameters __instance__ =
+            SdkLanguageOptionalParameters model =
                     new SdkLanguageOptionalParameters(
-                            paramName,
-                            displayName,
-                            description,
-                            isRequired,
-                            maxSize,
-                            inputType,
-                            allowedValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.paramName,
+                            this.displayName,
+                            this.description,
+                            this.isRequired,
+                            this.maxSize,
+                            this.inputType,
+                            this.allowedValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SdkLanguageOptionalParameters o) {
-            Builder copiedBuilder =
-                    paramName(o.getParamName())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .isRequired(o.getIsRequired())
-                            .maxSize(o.getMaxSize())
-                            .inputType(o.getInputType())
-                            .allowedValues(o.getAllowedValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SdkLanguageOptionalParameters model) {
+            if (model.wasPropertyExplicitlySet("paramName")) {
+                this.paramName(model.getParamName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isRequired")) {
+                this.isRequired(model.getIsRequired());
+            }
+            if (model.wasPropertyExplicitlySet("maxSize")) {
+                this.maxSize(model.getMaxSize());
+            }
+            if (model.wasPropertyExplicitlySet("inputType")) {
+                this.inputType(model.getInputType());
+            }
+            if (model.wasPropertyExplicitlySet("allowedValues")) {
+                this.allowedValues(model.getAllowedValues());
+            }
+            return this;
         }
     }
 
@@ -422,6 +436,7 @@ public final class SdkLanguageOptionalParameters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SdkLanguageOptionalParameters(");
+        sb.append("super=").append(super.toString());
         sb.append("paramName=").append(String.valueOf(this.paramName));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -429,7 +444,6 @@ public final class SdkLanguageOptionalParameters {
         sb.append(", maxSize=").append(String.valueOf(this.maxSize));
         sb.append(", inputType=").append(String.valueOf(this.inputType));
         sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -451,7 +465,7 @@ public final class SdkLanguageOptionalParameters {
                 && java.util.Objects.equals(this.maxSize, other.maxSize)
                 && java.util.Objects.equals(this.inputType, other.inputType)
                 && java.util.Objects.equals(this.allowedValues, other.allowedValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -467,16 +481,7 @@ public final class SdkLanguageOptionalParameters {
         result =
                 (result * PRIME)
                         + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

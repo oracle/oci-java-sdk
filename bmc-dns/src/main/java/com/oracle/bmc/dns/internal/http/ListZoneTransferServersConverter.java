@@ -129,8 +129,8 @@ public class ListZoneTransferServersConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .ListZoneTransferServersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

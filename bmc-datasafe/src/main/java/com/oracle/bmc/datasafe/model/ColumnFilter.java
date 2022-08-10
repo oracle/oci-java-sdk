@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ColumnFilter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ColumnFilter {
+public final class ColumnFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fieldName",
@@ -127,23 +127,37 @@ public final class ColumnFilter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ColumnFilter build() {
-            ColumnFilter __instance__ =
-                    new ColumnFilter(fieldName, operator, expressions, isEnabled, isHidden);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ColumnFilter model =
+                    new ColumnFilter(
+                            this.fieldName,
+                            this.operator,
+                            this.expressions,
+                            this.isEnabled,
+                            this.isHidden);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ColumnFilter o) {
-            Builder copiedBuilder =
-                    fieldName(o.getFieldName())
-                            .operator(o.getOperator())
-                            .expressions(o.getExpressions())
-                            .isEnabled(o.getIsEnabled())
-                            .isHidden(o.getIsHidden());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ColumnFilter model) {
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("operator")) {
+                this.operator(model.getOperator());
+            }
+            if (model.wasPropertyExplicitlySet("expressions")) {
+                this.expressions(model.getExpressions());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
+            return this;
         }
     }
 
@@ -299,12 +313,12 @@ public final class ColumnFilter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ColumnFilter(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", operator=").append(String.valueOf(this.operator));
         sb.append(", expressions=").append(String.valueOf(this.expressions));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", isHidden=").append(String.valueOf(this.isHidden));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -324,7 +338,7 @@ public final class ColumnFilter {
                 && java.util.Objects.equals(this.expressions, other.expressions)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.isHidden, other.isHidden)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -336,16 +350,7 @@ public final class ColumnFilter {
         result = (result * PRIME) + (this.expressions == null ? 43 : this.expressions.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

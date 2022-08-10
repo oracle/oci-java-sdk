@@ -98,8 +98,8 @@ public class GetClusterNetworkConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetClusterNetworkResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.clusterNetwork(response.getItem());
 

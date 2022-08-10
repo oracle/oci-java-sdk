@@ -18,7 +18,7 @@ package com.oracle.bmc.optimizer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HistorySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HistorySummary {
+public final class HistorySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -389,52 +389,85 @@ public final class HistorySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HistorySummary build() {
-            HistorySummary __instance__ =
+            HistorySummary model =
                     new HistorySummary(
-                            id,
-                            name,
-                            resourceType,
-                            categoryId,
-                            recommendationId,
-                            recommendationName,
-                            resourceId,
-                            resourceActionId,
-                            action,
-                            compartmentId,
-                            compartmentName,
-                            lifecycleState,
-                            estimatedCostSaving,
-                            status,
-                            metadata,
-                            extendedMetadata,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.resourceType,
+                            this.categoryId,
+                            this.recommendationId,
+                            this.recommendationName,
+                            this.resourceId,
+                            this.resourceActionId,
+                            this.action,
+                            this.compartmentId,
+                            this.compartmentName,
+                            this.lifecycleState,
+                            this.estimatedCostSaving,
+                            this.status,
+                            this.metadata,
+                            this.extendedMetadata,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HistorySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .resourceType(o.getResourceType())
-                            .categoryId(o.getCategoryId())
-                            .recommendationId(o.getRecommendationId())
-                            .recommendationName(o.getRecommendationName())
-                            .resourceId(o.getResourceId())
-                            .resourceActionId(o.getResourceActionId())
-                            .action(o.getAction())
-                            .compartmentId(o.getCompartmentId())
-                            .compartmentName(o.getCompartmentName())
-                            .lifecycleState(o.getLifecycleState())
-                            .estimatedCostSaving(o.getEstimatedCostSaving())
-                            .status(o.getStatus())
-                            .metadata(o.getMetadata())
-                            .extendedMetadata(o.getExtendedMetadata())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HistorySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("categoryId")) {
+                this.categoryId(model.getCategoryId());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationId")) {
+                this.recommendationId(model.getRecommendationId());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationName")) {
+                this.recommendationName(model.getRecommendationName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceActionId")) {
+                this.resourceActionId(model.getResourceActionId());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedCostSaving")) {
+                this.estimatedCostSaving(model.getEstimatedCostSaving());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("extendedMetadata")) {
+                this.extendedMetadata(model.getExtendedMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -733,6 +766,7 @@ public final class HistorySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HistorySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
@@ -750,7 +784,6 @@ public final class HistorySummary {
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -782,7 +815,7 @@ public final class HistorySummary {
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -826,16 +859,7 @@ public final class HistorySummary {
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

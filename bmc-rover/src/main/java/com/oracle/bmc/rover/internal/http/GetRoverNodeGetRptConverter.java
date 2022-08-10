@@ -108,8 +108,8 @@ public class GetRoverNodeGetRptConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .GetRoverNodeGetRptResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverNodeGetRpt(response.getItem());
 

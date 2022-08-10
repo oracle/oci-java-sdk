@@ -131,8 +131,8 @@ public class CreateDeReferenceArtifactConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .CreateDeReferenceArtifactResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deReferenceInfo(response.getItem());
 

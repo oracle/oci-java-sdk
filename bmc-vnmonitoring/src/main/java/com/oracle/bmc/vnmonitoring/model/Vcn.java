@@ -23,7 +23,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vcn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Vcn {
+public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cidrBlock",
@@ -416,48 +416,77 @@ public final class Vcn {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Vcn build() {
-            Vcn __instance__ =
+            Vcn model =
                     new Vcn(
-                            cidrBlock,
-                            compartmentId,
-                            defaultDhcpOptionsId,
-                            defaultRouteTableId,
-                            defaultSecurityListId,
-                            definedTags,
-                            displayName,
-                            dnsLabel,
-                            freeformTags,
-                            id,
-                            ipv6CidrBlock,
-                            ipv6PublicCidrBlock,
-                            lifecycleState,
-                            timeCreated,
-                            vcnDomainName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cidrBlock,
+                            this.compartmentId,
+                            this.defaultDhcpOptionsId,
+                            this.defaultRouteTableId,
+                            this.defaultSecurityListId,
+                            this.definedTags,
+                            this.displayName,
+                            this.dnsLabel,
+                            this.freeformTags,
+                            this.id,
+                            this.ipv6CidrBlock,
+                            this.ipv6PublicCidrBlock,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.vcnDomainName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Vcn o) {
-            Builder copiedBuilder =
-                    cidrBlock(o.getCidrBlock())
-                            .compartmentId(o.getCompartmentId())
-                            .defaultDhcpOptionsId(o.getDefaultDhcpOptionsId())
-                            .defaultRouteTableId(o.getDefaultRouteTableId())
-                            .defaultSecurityListId(o.getDefaultSecurityListId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .dnsLabel(o.getDnsLabel())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .ipv6PublicCidrBlock(o.getIpv6PublicCidrBlock())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .vcnDomainName(o.getVcnDomainName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Vcn model) {
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("defaultDhcpOptionsId")) {
+                this.defaultDhcpOptionsId(model.getDefaultDhcpOptionsId());
+            }
+            if (model.wasPropertyExplicitlySet("defaultRouteTableId")) {
+                this.defaultRouteTableId(model.getDefaultRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("defaultSecurityListId")) {
+                this.defaultSecurityListId(model.getDefaultSecurityListId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dnsLabel")) {
+                this.dnsLabel(model.getDnsLabel());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6PublicCidrBlock")) {
+                this.ipv6PublicCidrBlock(model.getIpv6PublicCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("vcnDomainName")) {
+                this.vcnDomainName(model.getVcnDomainName());
+            }
+            return this;
         }
     }
 
@@ -824,6 +853,7 @@ public final class Vcn {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Vcn(");
+        sb.append("super=").append(super.toString());
         sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", defaultDhcpOptionsId=").append(String.valueOf(this.defaultDhcpOptionsId));
@@ -839,7 +869,6 @@ public final class Vcn {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnDomainName=").append(String.valueOf(this.vcnDomainName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -869,7 +898,7 @@ public final class Vcn {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnDomainName, other.vcnDomainName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -915,16 +944,7 @@ public final class Vcn {
         result =
                 (result * PRIME)
                         + (this.vcnDomainName == null ? 43 : this.vcnDomainName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

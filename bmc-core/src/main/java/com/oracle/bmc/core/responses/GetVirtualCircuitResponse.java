@@ -55,16 +55,18 @@ public class GetVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "virtualCircuit"
     })
     private GetVirtualCircuitResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.VirtualCircuit virtualCircuit) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.virtualCircuit = virtualCircuit;
@@ -75,6 +77,13 @@ public class GetVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetVirtualCircuitResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             virtualCircuit(o.getVirtualCircuit());
@@ -148,7 +158,7 @@ public class GetVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetVirtualCircuitResponse build() {
             return new GetVirtualCircuitResponse(
-                    __httpStatusCode__, etag, opcRequestId, virtualCircuit);
+                    __httpStatusCode__, headers, etag, opcRequestId, virtualCircuit);
         }
     }
 

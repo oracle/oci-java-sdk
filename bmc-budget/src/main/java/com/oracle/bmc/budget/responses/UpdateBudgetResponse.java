@@ -53,13 +53,20 @@ public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
         return budget;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "budget"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "budget"
+    })
     private UpdateBudgetResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.budget.model.Budget budget) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.budget = budget;
@@ -70,6 +77,13 @@ public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateBudgetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             budget(o.getBudget());
@@ -142,7 +157,8 @@ public class UpdateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateBudgetResponse build() {
-            return new UpdateBudgetResponse(__httpStatusCode__, opcRequestId, etag, budget);
+            return new UpdateBudgetResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, budget);
         }
     }
 

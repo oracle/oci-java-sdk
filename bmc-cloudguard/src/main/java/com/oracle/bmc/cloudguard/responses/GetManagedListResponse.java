@@ -53,13 +53,20 @@ public class GetManagedListResponse extends com.oracle.bmc.responses.BmcResponse
         return managedList;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "managedList"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "managedList"
+    })
     private GetManagedListResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.cloudguard.model.ManagedList managedList) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.managedList = managedList;
@@ -70,6 +77,13 @@ public class GetManagedListResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetManagedListResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetManagedListResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             managedList(o.getManagedList());
@@ -142,7 +157,8 @@ public class GetManagedListResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetManagedListResponse build() {
-            return new GetManagedListResponse(__httpStatusCode__, opcRequestId, etag, managedList);
+            return new GetManagedListResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, managedList);
         }
     }
 

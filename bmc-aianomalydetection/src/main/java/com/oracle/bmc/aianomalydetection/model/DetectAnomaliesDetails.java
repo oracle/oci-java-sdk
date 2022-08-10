@@ -34,7 +34,7 @@ package com.oracle.bmc.aianomalydetection.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DetectAnomaliesDetails {
+public class DetectAnomaliesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelId"})
     protected DetectAnomaliesDetails(String modelId) {
@@ -69,6 +69,7 @@ public class DetectAnomaliesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectAnomaliesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("modelId=").append(String.valueOf(this.modelId));
         sb.append(")");
         return sb.toString();
@@ -84,7 +85,7 @@ public class DetectAnomaliesDetails {
         }
 
         DetectAnomaliesDetails other = (DetectAnomaliesDetails) o;
-        return java.util.Objects.equals(this.modelId, other.modelId);
+        return java.util.Objects.equals(this.modelId, other.modelId) && super.equals(other);
     }
 
     @Override
@@ -92,6 +93,7 @@ public class DetectAnomaliesDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

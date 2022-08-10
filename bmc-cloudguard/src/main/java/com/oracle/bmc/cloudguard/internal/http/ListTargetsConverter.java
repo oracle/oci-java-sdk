@@ -178,8 +178,8 @@ public class ListTargetsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListTargetsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.targetCollection(response.getItem());
 

@@ -160,8 +160,8 @@ public class RequestSummarizedActivityProblemsConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedActivityProblemsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.activityProblemAggregationCollection(response.getItem());
 

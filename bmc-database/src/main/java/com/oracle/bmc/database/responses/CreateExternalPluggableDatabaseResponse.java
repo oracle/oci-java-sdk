@@ -68,6 +68,7 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "etag",
         "opcRequestId",
@@ -75,11 +76,12 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
     })
     private CreateExternalPluggableDatabaseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.ExternalPluggableDatabase externalPluggableDatabase) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
         this.opcRequestId = opcRequestId;
@@ -91,6 +93,13 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
          */
         public Builder copy(CreateExternalPluggableDatabaseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
@@ -182,6 +192,7 @@ public class CreateExternalPluggableDatabaseResponse extends com.oracle.bmc.resp
         public CreateExternalPluggableDatabaseResponse build() {
             return new CreateExternalPluggableDatabaseResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     etag,
                     opcRequestId,

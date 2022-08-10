@@ -21,7 +21,8 @@ package com.oracle.bmc.operatoraccesscontrol.model;
     builder = CreateOperatorControlAssignmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateOperatorControlAssignmentDetails {
+public final class CreateOperatorControlAssignmentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operatorControlId",
@@ -368,52 +369,85 @@ public final class CreateOperatorControlAssignmentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOperatorControlAssignmentDetails build() {
-            CreateOperatorControlAssignmentDetails __instance__ =
+            CreateOperatorControlAssignmentDetails model =
                     new CreateOperatorControlAssignmentDetails(
-                            operatorControlId,
-                            resourceId,
-                            resourceName,
-                            resourceType,
-                            resourceCompartmentId,
-                            timeAssignmentFrom,
-                            timeAssignmentTo,
-                            compartmentId,
-                            isEnforcedAlways,
-                            comment,
-                            isLogForwarded,
-                            remoteSyslogServerAddress,
-                            remoteSyslogServerPort,
-                            remoteSyslogServerCACert,
-                            isAutoApproveDuringMaintenance,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operatorControlId,
+                            this.resourceId,
+                            this.resourceName,
+                            this.resourceType,
+                            this.resourceCompartmentId,
+                            this.timeAssignmentFrom,
+                            this.timeAssignmentTo,
+                            this.compartmentId,
+                            this.isEnforcedAlways,
+                            this.comment,
+                            this.isLogForwarded,
+                            this.remoteSyslogServerAddress,
+                            this.remoteSyslogServerPort,
+                            this.remoteSyslogServerCACert,
+                            this.isAutoApproveDuringMaintenance,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOperatorControlAssignmentDetails o) {
-            Builder copiedBuilder =
-                    operatorControlId(o.getOperatorControlId())
-                            .resourceId(o.getResourceId())
-                            .resourceName(o.getResourceName())
-                            .resourceType(o.getResourceType())
-                            .resourceCompartmentId(o.getResourceCompartmentId())
-                            .timeAssignmentFrom(o.getTimeAssignmentFrom())
-                            .timeAssignmentTo(o.getTimeAssignmentTo())
-                            .compartmentId(o.getCompartmentId())
-                            .isEnforcedAlways(o.getIsEnforcedAlways())
-                            .comment(o.getComment())
-                            .isLogForwarded(o.getIsLogForwarded())
-                            .remoteSyslogServerAddress(o.getRemoteSyslogServerAddress())
-                            .remoteSyslogServerPort(o.getRemoteSyslogServerPort())
-                            .remoteSyslogServerCACert(o.getRemoteSyslogServerCACert())
-                            .isAutoApproveDuringMaintenance(o.getIsAutoApproveDuringMaintenance())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOperatorControlAssignmentDetails model) {
+            if (model.wasPropertyExplicitlySet("operatorControlId")) {
+                this.operatorControlId(model.getOperatorControlId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCompartmentId")) {
+                this.resourceCompartmentId(model.getResourceCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeAssignmentFrom")) {
+                this.timeAssignmentFrom(model.getTimeAssignmentFrom());
+            }
+            if (model.wasPropertyExplicitlySet("timeAssignmentTo")) {
+                this.timeAssignmentTo(model.getTimeAssignmentTo());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isEnforcedAlways")) {
+                this.isEnforcedAlways(model.getIsEnforcedAlways());
+            }
+            if (model.wasPropertyExplicitlySet("comment")) {
+                this.comment(model.getComment());
+            }
+            if (model.wasPropertyExplicitlySet("isLogForwarded")) {
+                this.isLogForwarded(model.getIsLogForwarded());
+            }
+            if (model.wasPropertyExplicitlySet("remoteSyslogServerAddress")) {
+                this.remoteSyslogServerAddress(model.getRemoteSyslogServerAddress());
+            }
+            if (model.wasPropertyExplicitlySet("remoteSyslogServerPort")) {
+                this.remoteSyslogServerPort(model.getRemoteSyslogServerPort());
+            }
+            if (model.wasPropertyExplicitlySet("remoteSyslogServerCACert")) {
+                this.remoteSyslogServerCACert(model.getRemoteSyslogServerCACert());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoApproveDuringMaintenance")) {
+                this.isAutoApproveDuringMaintenance(model.getIsAutoApproveDuringMaintenance());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -687,6 +721,7 @@ public final class CreateOperatorControlAssignmentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateOperatorControlAssignmentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("operatorControlId=").append(String.valueOf(this.operatorControlId));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
@@ -707,7 +742,6 @@ public final class CreateOperatorControlAssignmentDetails {
                 .append(String.valueOf(this.isAutoApproveDuringMaintenance));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -743,7 +777,7 @@ public final class CreateOperatorControlAssignmentDetails {
                         this.isAutoApproveDuringMaintenance, other.isAutoApproveDuringMaintenance)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -801,16 +835,7 @@ public final class CreateOperatorControlAssignmentDetails {
                                 : this.isAutoApproveDuringMaintenance.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

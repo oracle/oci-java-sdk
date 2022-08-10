@@ -126,8 +126,8 @@ public class ListAlertPolicyRulesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAlertPolicyRulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.alertPolicyRuleCollection(response.getItem());
 

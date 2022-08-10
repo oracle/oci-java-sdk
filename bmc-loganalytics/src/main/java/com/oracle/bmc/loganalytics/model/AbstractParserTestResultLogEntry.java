@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = AbstractParserTestResultLogEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AbstractParserTestResultLogEntry {
+public final class AbstractParserTestResultLogEntry
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "extraInfoAttributes",
@@ -167,32 +168,45 @@ public final class AbstractParserTestResultLogEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AbstractParserTestResultLogEntry build() {
-            AbstractParserTestResultLogEntry __instance__ =
+            AbstractParserTestResultLogEntry model =
                     new AbstractParserTestResultLogEntry(
-                            extraInfoAttributes,
-                            fieldNameValueMap,
-                            fieldPositionValueMap,
-                            fields,
-                            logEntry,
-                            matchStatus,
-                            matchStatusDescription);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.extraInfoAttributes,
+                            this.fieldNameValueMap,
+                            this.fieldPositionValueMap,
+                            this.fields,
+                            this.logEntry,
+                            this.matchStatus,
+                            this.matchStatusDescription);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AbstractParserTestResultLogEntry o) {
-            Builder copiedBuilder =
-                    extraInfoAttributes(o.getExtraInfoAttributes())
-                            .fieldNameValueMap(o.getFieldNameValueMap())
-                            .fieldPositionValueMap(o.getFieldPositionValueMap())
-                            .fields(o.getFields())
-                            .logEntry(o.getLogEntry())
-                            .matchStatus(o.getMatchStatus())
-                            .matchStatusDescription(o.getMatchStatusDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AbstractParserTestResultLogEntry model) {
+            if (model.wasPropertyExplicitlySet("extraInfoAttributes")) {
+                this.extraInfoAttributes(model.getExtraInfoAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("fieldNameValueMap")) {
+                this.fieldNameValueMap(model.getFieldNameValueMap());
+            }
+            if (model.wasPropertyExplicitlySet("fieldPositionValueMap")) {
+                this.fieldPositionValueMap(model.getFieldPositionValueMap());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("logEntry")) {
+                this.logEntry(model.getLogEntry());
+            }
+            if (model.wasPropertyExplicitlySet("matchStatus")) {
+                this.matchStatus(model.getMatchStatus());
+            }
+            if (model.wasPropertyExplicitlySet("matchStatusDescription")) {
+                this.matchStatusDescription(model.getMatchStatusDescription());
+            }
+            return this;
         }
     }
 
@@ -318,6 +332,7 @@ public final class AbstractParserTestResultLogEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractParserTestResultLogEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("extraInfoAttributes=").append(String.valueOf(this.extraInfoAttributes));
         sb.append(", fieldNameValueMap=").append(String.valueOf(this.fieldNameValueMap));
         sb.append(", fieldPositionValueMap=").append(String.valueOf(this.fieldPositionValueMap));
@@ -325,7 +340,6 @@ public final class AbstractParserTestResultLogEntry {
         sb.append(", logEntry=").append(String.valueOf(this.logEntry));
         sb.append(", matchStatus=").append(String.valueOf(this.matchStatus));
         sb.append(", matchStatusDescription=").append(String.valueOf(this.matchStatusDescription));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -348,7 +362,7 @@ public final class AbstractParserTestResultLogEntry {
                 && java.util.Objects.equals(this.matchStatus, other.matchStatus)
                 && java.util.Objects.equals(
                         this.matchStatusDescription, other.matchStatusDescription)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -376,16 +390,7 @@ public final class AbstractParserTestResultLogEntry {
                         + (this.matchStatusDescription == null
                                 ? 43
                                 : this.matchStatusDescription.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

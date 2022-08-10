@@ -20,7 +20,8 @@ package com.oracle.bmc.mediaservices.model;
     builder = MediaWorkflowJobFactSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MediaWorkflowJobFactSummary {
+public final class MediaWorkflowJobFactSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"mediaWorkflowJobId", "key", "name", "type"})
     public MediaWorkflowJobFactSummary(
@@ -103,22 +104,30 @@ public final class MediaWorkflowJobFactSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MediaWorkflowJobFactSummary build() {
-            MediaWorkflowJobFactSummary __instance__ =
-                    new MediaWorkflowJobFactSummary(mediaWorkflowJobId, key, name, type);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MediaWorkflowJobFactSummary model =
+                    new MediaWorkflowJobFactSummary(
+                            this.mediaWorkflowJobId, this.key, this.name, this.type);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MediaWorkflowJobFactSummary o) {
-            Builder copiedBuilder =
-                    mediaWorkflowJobId(o.getMediaWorkflowJobId())
-                            .key(o.getKey())
-                            .name(o.getName())
-                            .type(o.getType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MediaWorkflowJobFactSummary model) {
+            if (model.wasPropertyExplicitlySet("mediaWorkflowJobId")) {
+                this.mediaWorkflowJobId(model.getMediaWorkflowJobId());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            return this;
         }
     }
 
@@ -202,11 +211,11 @@ public final class MediaWorkflowJobFactSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MediaWorkflowJobFactSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("mediaWorkflowJobId=").append(String.valueOf(this.mediaWorkflowJobId));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -225,7 +234,7 @@ public final class MediaWorkflowJobFactSummary {
                 && java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -240,16 +249,7 @@ public final class MediaWorkflowJobFactSummary {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

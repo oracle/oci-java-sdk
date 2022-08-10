@@ -18,7 +18,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlTextSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTextSummary {
+public final class SqlTextSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlIdentifier",
@@ -130,23 +130,37 @@ public final class SqlTextSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTextSummary build() {
-            SqlTextSummary __instance__ =
-                    new SqlTextSummary(sqlIdentifier, id, databaseId, compartmentId, sqlText);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlTextSummary model =
+                    new SqlTextSummary(
+                            this.sqlIdentifier,
+                            this.id,
+                            this.databaseId,
+                            this.compartmentId,
+                            this.sqlText);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTextSummary o) {
-            Builder copiedBuilder =
-                    sqlIdentifier(o.getSqlIdentifier())
-                            .id(o.getId())
-                            .databaseId(o.getDatabaseId())
-                            .compartmentId(o.getCompartmentId())
-                            .sqlText(o.getSqlText());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTextSummary model) {
+            if (model.wasPropertyExplicitlySet("sqlIdentifier")) {
+                this.sqlIdentifier(model.getSqlIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("sqlText")) {
+                this.sqlText(model.getSqlText());
+            }
+            return this;
         }
     }
 
@@ -246,12 +260,12 @@ public final class SqlTextSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTextSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sqlText=").append(String.valueOf(this.sqlText));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -271,7 +285,7 @@ public final class SqlTextSummary {
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.sqlText, other.sqlText)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -287,16 +301,7 @@ public final class SqlTextSummary {
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.sqlText == null ? 43 : this.sqlText.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

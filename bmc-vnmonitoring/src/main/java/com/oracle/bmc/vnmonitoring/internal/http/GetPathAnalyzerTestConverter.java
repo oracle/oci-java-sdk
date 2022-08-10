@@ -109,8 +109,8 @@ public class GetPathAnalyzerTestConverter {
                                         builder =
                                                 com.oracle.bmc.vnmonitoring.responses
                                                         .GetPathAnalyzerTestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pathAnalyzerTest(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoleSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoleSummary {
+public final class RoleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -152,25 +152,41 @@ public final class RoleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoleSummary build() {
-            RoleSummary __instance__ =
+            RoleSummary model =
                     new RoleSummary(
-                            name, adminOption, delegateOption, defaultRole, common, inherited);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.adminOption,
+                            this.delegateOption,
+                            this.defaultRole,
+                            this.common,
+                            this.inherited);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoleSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .adminOption(o.getAdminOption())
-                            .delegateOption(o.getDelegateOption())
-                            .defaultRole(o.getDefaultRole())
-                            .common(o.getCommon())
-                            .inherited(o.getInherited());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoleSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("adminOption")) {
+                this.adminOption(model.getAdminOption());
+            }
+            if (model.wasPropertyExplicitlySet("delegateOption")) {
+                this.delegateOption(model.getDelegateOption());
+            }
+            if (model.wasPropertyExplicitlySet("defaultRole")) {
+                this.defaultRole(model.getDefaultRole());
+            }
+            if (model.wasPropertyExplicitlySet("common")) {
+                this.common(model.getCommon());
+            }
+            if (model.wasPropertyExplicitlySet("inherited")) {
+                this.inherited(model.getInherited());
+            }
+            return this;
         }
     }
 
@@ -530,13 +546,13 @@ public final class RoleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", adminOption=").append(String.valueOf(this.adminOption));
         sb.append(", delegateOption=").append(String.valueOf(this.delegateOption));
         sb.append(", defaultRole=").append(String.valueOf(this.defaultRole));
         sb.append(", common=").append(String.valueOf(this.common));
         sb.append(", inherited=").append(String.valueOf(this.inherited));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -557,7 +573,7 @@ public final class RoleSummary {
                 && java.util.Objects.equals(this.defaultRole, other.defaultRole)
                 && java.util.Objects.equals(this.common, other.common)
                 && java.util.Objects.equals(this.inherited, other.inherited)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -572,16 +588,7 @@ public final class RoleSummary {
         result = (result * PRIME) + (this.defaultRole == null ? 43 : this.defaultRole.hashCode());
         result = (result * PRIME) + (this.common == null ? 43 : this.common.hashCode());
         result = (result * PRIME) + (this.inherited == null ? 43 : this.inherited.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -122,8 +122,8 @@ public class UpdatePathAnalyzerTestConverter {
                                         builder =
                                                 com.oracle.bmc.vnmonitoring.responses
                                                         .UpdatePathAnalyzerTestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pathAnalyzerTest(response.getItem());
 

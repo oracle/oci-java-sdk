@@ -106,8 +106,8 @@ public class GetJobOutputContentConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .GetJobOutputContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

@@ -142,8 +142,8 @@ public class ListServicesConverter {
                                         builder =
                                                 com.oracle.bmc.limits.responses.ListServicesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

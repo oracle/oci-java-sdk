@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = DedicatedVmHostInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DedicatedVmHostInstanceSummary {
+public final class DedicatedVmHostInstanceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -148,24 +149,37 @@ public final class DedicatedVmHostInstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DedicatedVmHostInstanceSummary build() {
-            DedicatedVmHostInstanceSummary __instance__ =
+            DedicatedVmHostInstanceSummary model =
                     new DedicatedVmHostInstanceSummary(
-                            availabilityDomain, compartmentId, instanceId, shape, timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.instanceId,
+                            this.shape,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DedicatedVmHostInstanceSummary o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .instanceId(o.getInstanceId())
-                            .shape(o.getShape())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DedicatedVmHostInstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -281,12 +295,12 @@ public final class DedicatedVmHostInstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DedicatedVmHostInstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -306,7 +320,7 @@ public final class DedicatedVmHostInstanceSummary {
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -324,16 +338,7 @@ public final class DedicatedVmHostInstanceSummary {
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

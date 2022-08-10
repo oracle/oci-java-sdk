@@ -136,8 +136,8 @@ public class GetMediaAssetDistributionChannelAttachmentConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .GetMediaAssetDistributionChannelAttachmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaAssetDistributionChannelAttachment(response.getItem());
 

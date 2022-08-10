@@ -149,40 +149,61 @@ public final class DerivedField extends TypedObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DerivedField build() {
-            DerivedField __instance__ =
+            DerivedField model =
                     new DerivedField(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            objectStatus,
-                            name,
-                            description,
-                            expr,
-                            type,
-                            isUseInferredType,
-                            labels);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.objectStatus,
+                            this.name,
+                            this.description,
+                            this.expr,
+                            this.type,
+                            this.isUseInferredType,
+                            this.labels);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DerivedField o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .expr(o.getExpr())
-                            .type(o.getType())
-                            .isUseInferredType(o.getIsUseInferredType())
-                            .labels(o.getLabels());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DerivedField model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("expr")) {
+                this.expr(model.getExpr());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isUseInferredType")) {
+                this.isUseInferredType(model.getIsUseInferredType());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            return this;
         }
     }
 
@@ -284,7 +305,6 @@ public final class DerivedField extends TypedObject {
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isUseInferredType=").append(String.valueOf(this.isUseInferredType));
         sb.append(", labels=").append(String.valueOf(this.labels));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -303,8 +323,7 @@ public final class DerivedField extends TypedObject {
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isUseInferredType, other.isUseInferredType)
                 && java.util.Objects.equals(this.labels, other.labels)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -317,16 +336,6 @@ public final class DerivedField extends TypedObject {
                 (result * PRIME)
                         + (this.isUseInferredType == null ? 43 : this.isUseInferredType.hashCode());
         result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

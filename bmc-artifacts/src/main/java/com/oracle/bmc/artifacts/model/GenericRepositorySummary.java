@@ -113,36 +113,53 @@ public final class GenericRepositorySummary extends RepositorySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenericRepositorySummary build() {
-            GenericRepositorySummary __instance__ =
+            GenericRepositorySummary model =
                     new GenericRepositorySummary(
-                            id,
-                            displayName,
-                            compartmentId,
-                            description,
-                            isImmutable,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.isImmutable,
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenericRepositorySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .isImmutable(o.getIsImmutable())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GenericRepositorySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isImmutable")) {
+                this.isImmutable(model.getIsImmutable());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -194,7 +211,6 @@ public final class GenericRepositorySummary extends RepositorySummary {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenericRepositorySummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -209,24 +225,13 @@ public final class GenericRepositorySummary extends RepositorySummary {
         }
 
         GenericRepositorySummary other = (GenericRepositorySummary) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

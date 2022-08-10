@@ -19,7 +19,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskingReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaskingReport {
+public final class MaskingReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -262,42 +262,65 @@ public final class MaskingReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaskingReport build() {
-            MaskingReport __instance__ =
+            MaskingReport model =
                     new MaskingReport(
-                            id,
-                            compartmentId,
-                            maskingWorkRequestId,
-                            maskingPolicyId,
-                            targetId,
-                            totalMaskedSensitiveTypes,
-                            totalMaskedSchemas,
-                            totalMaskedObjects,
-                            totalMaskedColumns,
-                            totalMaskedValues,
-                            timeMaskingStarted,
-                            timeMaskingFinished);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.maskingWorkRequestId,
+                            this.maskingPolicyId,
+                            this.targetId,
+                            this.totalMaskedSensitiveTypes,
+                            this.totalMaskedSchemas,
+                            this.totalMaskedObjects,
+                            this.totalMaskedColumns,
+                            this.totalMaskedValues,
+                            this.timeMaskingStarted,
+                            this.timeMaskingFinished);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaskingReport o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .maskingWorkRequestId(o.getMaskingWorkRequestId())
-                            .maskingPolicyId(o.getMaskingPolicyId())
-                            .targetId(o.getTargetId())
-                            .totalMaskedSensitiveTypes(o.getTotalMaskedSensitiveTypes())
-                            .totalMaskedSchemas(o.getTotalMaskedSchemas())
-                            .totalMaskedObjects(o.getTotalMaskedObjects())
-                            .totalMaskedColumns(o.getTotalMaskedColumns())
-                            .totalMaskedValues(o.getTotalMaskedValues())
-                            .timeMaskingStarted(o.getTimeMaskingStarted())
-                            .timeMaskingFinished(o.getTimeMaskingFinished());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaskingReport model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("maskingWorkRequestId")) {
+                this.maskingWorkRequestId(model.getMaskingWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("maskingPolicyId")) {
+                this.maskingPolicyId(model.getMaskingPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("totalMaskedSensitiveTypes")) {
+                this.totalMaskedSensitiveTypes(model.getTotalMaskedSensitiveTypes());
+            }
+            if (model.wasPropertyExplicitlySet("totalMaskedSchemas")) {
+                this.totalMaskedSchemas(model.getTotalMaskedSchemas());
+            }
+            if (model.wasPropertyExplicitlySet("totalMaskedObjects")) {
+                this.totalMaskedObjects(model.getTotalMaskedObjects());
+            }
+            if (model.wasPropertyExplicitlySet("totalMaskedColumns")) {
+                this.totalMaskedColumns(model.getTotalMaskedColumns());
+            }
+            if (model.wasPropertyExplicitlySet("totalMaskedValues")) {
+                this.totalMaskedValues(model.getTotalMaskedValues());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaskingStarted")) {
+                this.timeMaskingStarted(model.getTimeMaskingStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaskingFinished")) {
+                this.timeMaskingFinished(model.getTimeMaskingFinished());
+            }
+            return this;
         }
     }
 
@@ -493,6 +516,7 @@ public final class MaskingReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaskingReport(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", maskingWorkRequestId=").append(String.valueOf(this.maskingWorkRequestId));
@@ -506,7 +530,6 @@ public final class MaskingReport {
         sb.append(", totalMaskedValues=").append(String.valueOf(this.totalMaskedValues));
         sb.append(", timeMaskingStarted=").append(String.valueOf(this.timeMaskingStarted));
         sb.append(", timeMaskingFinished=").append(String.valueOf(this.timeMaskingFinished));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -534,7 +557,7 @@ public final class MaskingReport {
                 && java.util.Objects.equals(this.totalMaskedValues, other.totalMaskedValues)
                 && java.util.Objects.equals(this.timeMaskingStarted, other.timeMaskingStarted)
                 && java.util.Objects.equals(this.timeMaskingFinished, other.timeMaskingFinished)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -587,16 +610,7 @@ public final class MaskingReport {
                         + (this.timeMaskingFinished == null
                                 ? 43
                                 : this.timeMaskingFinished.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

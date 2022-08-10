@@ -34,10 +34,13 @@ public class GetJobDetailedLogContentResponse extends com.oracle.bmc.responses.B
         return value;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "value"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "value"})
     private GetJobDetailedLogContentResponse(
-            int __httpStatusCode__, String opcRequestId, String value) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String value) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.value = value;
     }
@@ -47,6 +50,13 @@ public class GetJobDetailedLogContentResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -86,6 +96,7 @@ public class GetJobDetailedLogContentResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(GetJobDetailedLogContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             value(o.getValue());
 
@@ -97,7 +108,8 @@ public class GetJobDetailedLogContentResponse extends com.oracle.bmc.responses.B
          * @return the response object
          */
         public GetJobDetailedLogContentResponse build() {
-            return new GetJobDetailedLogContentResponse(__httpStatusCode__, opcRequestId, value);
+            return new GetJobDetailedLogContentResponse(
+                    __httpStatusCode__, headers, opcRequestId, value);
         }
     }
 

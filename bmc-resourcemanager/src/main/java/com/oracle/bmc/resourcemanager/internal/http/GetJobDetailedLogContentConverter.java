@@ -103,8 +103,8 @@ public class GetJobDetailedLogContentConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetJobDetailedLogContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.value(response.getItem());
 

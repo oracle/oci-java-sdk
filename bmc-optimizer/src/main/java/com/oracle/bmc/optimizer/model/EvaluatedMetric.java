@@ -17,7 +17,7 @@ package com.oracle.bmc.optimizer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EvaluatedMetric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EvaluatedMetric {
+public final class EvaluatedMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "statistic", "threshold", "target"})
     public EvaluatedMetric(String name, String statistic, Double threshold, Double target) {
@@ -99,21 +99,29 @@ public final class EvaluatedMetric {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EvaluatedMetric build() {
-            EvaluatedMetric __instance__ = new EvaluatedMetric(name, statistic, threshold, target);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EvaluatedMetric model =
+                    new EvaluatedMetric(this.name, this.statistic, this.threshold, this.target);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EvaluatedMetric o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .statistic(o.getStatistic())
-                            .threshold(o.getThreshold())
-                            .target(o.getTarget());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EvaluatedMetric model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("statistic")) {
+                this.statistic(model.getStatistic());
+            }
+            if (model.wasPropertyExplicitlySet("threshold")) {
+                this.threshold(model.getThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            return this;
         }
     }
 
@@ -197,11 +205,11 @@ public final class EvaluatedMetric {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EvaluatedMetric(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", statistic=").append(String.valueOf(this.statistic));
         sb.append(", threshold=").append(String.valueOf(this.threshold));
         sb.append(", target=").append(String.valueOf(this.target));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +228,7 @@ public final class EvaluatedMetric {
                 && java.util.Objects.equals(this.statistic, other.statistic)
                 && java.util.Objects.equals(this.threshold, other.threshold)
                 && java.util.Objects.equals(this.target, other.target)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +239,7 @@ public final class EvaluatedMetric {
         result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
         result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

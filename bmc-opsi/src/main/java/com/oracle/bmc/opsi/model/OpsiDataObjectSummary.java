@@ -36,7 +36,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class OpsiDataObjectSummary {
+public class OpsiDataObjectSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"identifier", "displayName", "description"})
     protected OpsiDataObjectSummary(String identifier, String displayName, String description) {
@@ -101,6 +101,7 @@ public class OpsiDataObjectSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OpsiDataObjectSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("identifier=").append(String.valueOf(this.identifier));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -120,7 +121,8 @@ public class OpsiDataObjectSummary {
         OpsiDataObjectSummary other = (OpsiDataObjectSummary) o;
         return java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.description, other.description);
+                && java.util.Objects.equals(this.description, other.description)
+                && super.equals(other);
     }
 
     @Override
@@ -130,6 +132,7 @@ public class OpsiDataObjectSummary {
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

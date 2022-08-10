@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PurgeCache.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PurgeCache {
+public final class PurgeCache extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resources"})
     public PurgeCache(java.util.List<String> resources) {
@@ -48,17 +48,19 @@ public final class PurgeCache {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PurgeCache build() {
-            PurgeCache __instance__ = new PurgeCache(resources);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PurgeCache model = new PurgeCache(this.resources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PurgeCache o) {
-            Builder copiedBuilder = resources(o.getResources());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PurgeCache model) {
+            if (model.wasPropertyExplicitlySet("resources")) {
+                this.resources(model.getResources());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class PurgeCache {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PurgeCache(");
+        sb.append("super=").append(super.toString());
         sb.append("resources=").append(String.valueOf(this.resources));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class PurgeCache {
         }
 
         PurgeCache other = (PurgeCache) o;
-        return java.util.Objects.equals(this.resources, other.resources)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.resources, other.resources) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class PurgeCache {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

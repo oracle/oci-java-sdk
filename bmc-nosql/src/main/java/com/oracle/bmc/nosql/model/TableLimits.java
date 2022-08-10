@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TableLimits.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TableLimits {
+public final class TableLimits extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "maxReadUnits",
@@ -114,22 +114,33 @@ public final class TableLimits {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableLimits build() {
-            TableLimits __instance__ =
-                    new TableLimits(maxReadUnits, maxWriteUnits, maxStorageInGBs, capacityMode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TableLimits model =
+                    new TableLimits(
+                            this.maxReadUnits,
+                            this.maxWriteUnits,
+                            this.maxStorageInGBs,
+                            this.capacityMode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TableLimits o) {
-            Builder copiedBuilder =
-                    maxReadUnits(o.getMaxReadUnits())
-                            .maxWriteUnits(o.getMaxWriteUnits())
-                            .maxStorageInGBs(o.getMaxStorageInGBs())
-                            .capacityMode(o.getCapacityMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TableLimits model) {
+            if (model.wasPropertyExplicitlySet("maxReadUnits")) {
+                this.maxReadUnits(model.getMaxReadUnits());
+            }
+            if (model.wasPropertyExplicitlySet("maxWriteUnits")) {
+                this.maxWriteUnits(model.getMaxWriteUnits());
+            }
+            if (model.wasPropertyExplicitlySet("maxStorageInGBs")) {
+                this.maxStorageInGBs(model.getMaxStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("capacityMode")) {
+                this.capacityMode(model.getCapacityMode());
+            }
+            return this;
         }
     }
 
@@ -270,11 +281,11 @@ public final class TableLimits {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TableLimits(");
+        sb.append("super=").append(super.toString());
         sb.append("maxReadUnits=").append(String.valueOf(this.maxReadUnits));
         sb.append(", maxWriteUnits=").append(String.valueOf(this.maxWriteUnits));
         sb.append(", maxStorageInGBs=").append(String.valueOf(this.maxStorageInGBs));
         sb.append(", capacityMode=").append(String.valueOf(this.capacityMode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -293,7 +304,7 @@ public final class TableLimits {
                 && java.util.Objects.equals(this.maxWriteUnits, other.maxWriteUnits)
                 && java.util.Objects.equals(this.maxStorageInGBs, other.maxStorageInGBs)
                 && java.util.Objects.equals(this.capacityMode, other.capacityMode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -308,16 +319,7 @@ public final class TableLimits {
                 (result * PRIME)
                         + (this.maxStorageInGBs == null ? 43 : this.maxStorageInGBs.hashCode());
         result = (result * PRIME) + (this.capacityMode == null ? 43 : this.capacityMode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

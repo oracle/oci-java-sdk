@@ -102,8 +102,8 @@ public class GetGatewayConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .GetGatewayResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.gateway(response.getItem());
 

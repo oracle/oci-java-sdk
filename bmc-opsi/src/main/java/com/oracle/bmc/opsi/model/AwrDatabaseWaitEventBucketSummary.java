@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = AwrDatabaseWaitEventBucketSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDatabaseWaitEventBucketSummary {
+public final class AwrDatabaseWaitEventBucketSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"category", "percentage"})
     public AwrDatabaseWaitEventBucketSummary(String category, Double percentage) {
@@ -67,18 +68,23 @@ public final class AwrDatabaseWaitEventBucketSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDatabaseWaitEventBucketSummary build() {
-            AwrDatabaseWaitEventBucketSummary __instance__ =
-                    new AwrDatabaseWaitEventBucketSummary(category, percentage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AwrDatabaseWaitEventBucketSummary model =
+                    new AwrDatabaseWaitEventBucketSummary(this.category, this.percentage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDatabaseWaitEventBucketSummary o) {
-            Builder copiedBuilder = category(o.getCategory()).percentage(o.getPercentage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDatabaseWaitEventBucketSummary model) {
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("percentage")) {
+                this.percentage(model.getPercentage());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class AwrDatabaseWaitEventBucketSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDatabaseWaitEventBucketSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("category=").append(String.valueOf(this.category));
         sb.append(", percentage=").append(String.valueOf(this.percentage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class AwrDatabaseWaitEventBucketSummary {
         AwrDatabaseWaitEventBucketSummary other = (AwrDatabaseWaitEventBucketSummary) o;
         return java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.percentage, other.percentage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class AwrDatabaseWaitEventBucketSummary {
         int result = 1;
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.percentage == null ? 43 : this.percentage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

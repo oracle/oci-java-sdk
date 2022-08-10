@@ -43,18 +43,20 @@ public final class SingleModelDeploymentConfigurationDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SingleModelDeploymentConfigurationDetails build() {
-            SingleModelDeploymentConfigurationDetails __instance__ =
-                    new SingleModelDeploymentConfigurationDetails(modelConfigurationDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SingleModelDeploymentConfigurationDetails model =
+                    new SingleModelDeploymentConfigurationDetails(this.modelConfigurationDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SingleModelDeploymentConfigurationDetails o) {
-            Builder copiedBuilder = modelConfigurationDetails(o.getModelConfigurationDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SingleModelDeploymentConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("modelConfigurationDetails")) {
+                this.modelConfigurationDetails(model.getModelConfigurationDetails());
+            }
+            return this;
         }
     }
 
@@ -99,7 +101,6 @@ public final class SingleModelDeploymentConfigurationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", modelConfigurationDetails=")
                 .append(String.valueOf(this.modelConfigurationDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -117,8 +118,7 @@ public final class SingleModelDeploymentConfigurationDetails
                 (SingleModelDeploymentConfigurationDetails) o;
         return java.util.Objects.equals(
                         this.modelConfigurationDetails, other.modelConfigurationDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -130,16 +130,6 @@ public final class SingleModelDeploymentConfigurationDetails
                         + (this.modelConfigurationDetails == null
                                 ? 43
                                 : this.modelConfigurationDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

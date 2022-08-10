@@ -47,7 +47,7 @@ package com.oracle.bmc.database.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDbHomeBase {
+public class CreateDbHomeBase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -201,6 +201,7 @@ public class CreateDbHomeBase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDbHomeBase(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
@@ -230,7 +231,8 @@ public class CreateDbHomeBase {
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.isDesupportedVersion, other.isDesupportedVersion);
+                && java.util.Objects.equals(this.isDesupportedVersion, other.isDesupportedVersion)
+                && super.equals(other);
     }
 
     @Override
@@ -254,6 +256,7 @@ public class CreateDbHomeBase {
                         + (this.isDesupportedVersion == null
                                 ? 43
                                 : this.isDesupportedVersion.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

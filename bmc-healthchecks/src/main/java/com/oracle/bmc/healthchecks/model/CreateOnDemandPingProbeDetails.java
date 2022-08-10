@@ -19,7 +19,8 @@ package com.oracle.bmc.healthchecks.model;
     builder = CreateOnDemandPingProbeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateOnDemandPingProbeDetails {
+public final class CreateOnDemandPingProbeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -149,30 +150,41 @@ public final class CreateOnDemandPingProbeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOnDemandPingProbeDetails build() {
-            CreateOnDemandPingProbeDetails __instance__ =
+            CreateOnDemandPingProbeDetails model =
                     new CreateOnDemandPingProbeDetails(
-                            compartmentId,
-                            targets,
-                            vantagePointNames,
-                            port,
-                            timeoutInSeconds,
-                            protocol);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.targets,
+                            this.vantagePointNames,
+                            this.port,
+                            this.timeoutInSeconds,
+                            this.protocol);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOnDemandPingProbeDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .targets(o.getTargets())
-                            .vantagePointNames(o.getVantagePointNames())
-                            .port(o.getPort())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .protocol(o.getProtocol());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOnDemandPingProbeDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("targets")) {
+                this.targets(model.getTargets());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePointNames")) {
+                this.vantagePointNames(model.getVantagePointNames());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            return this;
         }
     }
 
@@ -285,13 +297,13 @@ public final class CreateOnDemandPingProbeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateOnDemandPingProbeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", targets=").append(String.valueOf(this.targets));
         sb.append(", vantagePointNames=").append(String.valueOf(this.vantagePointNames));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -312,7 +324,7 @@ public final class CreateOnDemandPingProbeDetails {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.protocol, other.protocol)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -331,16 +343,7 @@ public final class CreateOnDemandPingProbeDetails {
                 (result * PRIME)
                         + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

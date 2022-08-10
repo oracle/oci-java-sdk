@@ -22,7 +22,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatchSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PatchSummary {
+public final class PatchSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -193,34 +193,49 @@ public final class PatchSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchSummary build() {
-            PatchSummary __instance__ =
+            PatchSummary model =
                     new PatchSummary(
-                            id,
-                            description,
-                            lastAction,
-                            availableActions,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeReleased,
-                            version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.description,
+                            this.lastAction,
+                            this.availableActions,
+                            this.lifecycleDetails,
+                            this.lifecycleState,
+                            this.timeReleased,
+                            this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PatchSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .description(o.getDescription())
-                            .lastAction(o.getLastAction())
-                            .availableActions(o.getAvailableActions())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeReleased(o.getTimeReleased())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PatchSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("lastAction")) {
+                this.lastAction(model.getLastAction());
+            }
+            if (model.wasPropertyExplicitlySet("availableActions")) {
+                this.availableActions(model.getAvailableActions());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeReleased")) {
+                this.timeReleased(model.getTimeReleased());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -509,6 +524,7 @@ public final class PatchSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PatchSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lastAction=").append(String.valueOf(this.lastAction));
@@ -517,7 +533,6 @@ public final class PatchSummary {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -540,7 +555,7 @@ public final class PatchSummary {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeReleased, other.timeReleased)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -561,16 +576,7 @@ public final class PatchSummary {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

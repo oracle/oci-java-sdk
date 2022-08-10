@@ -118,8 +118,8 @@ public class GetTypeConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetTypeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.type(response.getItem());
 

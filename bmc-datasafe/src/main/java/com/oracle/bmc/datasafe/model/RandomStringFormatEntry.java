@@ -90,21 +90,26 @@ public final class RandomStringFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RandomStringFormatEntry build() {
-            RandomStringFormatEntry __instance__ =
-                    new RandomStringFormatEntry(description, startLength, endLength);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RandomStringFormatEntry model =
+                    new RandomStringFormatEntry(this.description, this.startLength, this.endLength);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RandomStringFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .startLength(o.getStartLength())
-                            .endLength(o.getEndLength());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RandomStringFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("startLength")) {
+                this.startLength(model.getStartLength());
+            }
+            if (model.wasPropertyExplicitlySet("endLength")) {
+                this.endLength(model.getEndLength());
+            }
+            return this;
         }
     }
 
@@ -182,7 +187,6 @@ public final class RandomStringFormatEntry extends FormatEntry {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", startLength=").append(String.valueOf(this.startLength));
         sb.append(", endLength=").append(String.valueOf(this.endLength));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,8 +203,7 @@ public final class RandomStringFormatEntry extends FormatEntry {
         RandomStringFormatEntry other = (RandomStringFormatEntry) o;
         return java.util.Objects.equals(this.startLength, other.startLength)
                 && java.util.Objects.equals(this.endLength, other.endLength)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +212,6 @@ public final class RandomStringFormatEntry extends FormatEntry {
         int result = super.hashCode();
         result = (result * PRIME) + (this.startLength == null ? 43 : this.startLength.hashCode());
         result = (result * PRIME) + (this.endLength == null ? 43 : this.endLength.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

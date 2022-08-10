@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OriginGroup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OriginGroup {
+public final class OriginGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"origins"})
     public OriginGroup(java.util.List<OriginGroup_origins> origins) {
@@ -48,17 +48,19 @@ public final class OriginGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OriginGroup build() {
-            OriginGroup __instance__ = new OriginGroup(origins);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OriginGroup model = new OriginGroup(this.origins);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OriginGroup o) {
-            Builder copiedBuilder = origins(o.getOrigins());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OriginGroup model) {
+            if (model.wasPropertyExplicitlySet("origins")) {
+                this.origins(model.getOrigins());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class OriginGroup {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OriginGroup(");
+        sb.append("super=").append(super.toString());
         sb.append("origins=").append(String.valueOf(this.origins));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class OriginGroup {
         }
 
         OriginGroup other = (OriginGroup) o;
-        return java.util.Objects.equals(this.origins, other.origins)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.origins, other.origins) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class OriginGroup {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.origins == null ? 43 : this.origins.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -60,7 +60,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DataObjectColumnUnit {
+public class DataObjectColumnUnit extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName"})
     protected DataObjectColumnUnit(String displayName) {
@@ -95,6 +95,7 @@ public class DataObjectColumnUnit {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataObjectColumnUnit(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(")");
         return sb.toString();
@@ -110,7 +111,7 @@ public class DataObjectColumnUnit {
         }
 
         DataObjectColumnUnit other = (DataObjectColumnUnit) o;
-        return java.util.Objects.equals(this.displayName, other.displayName);
+        return java.util.Objects.equals(this.displayName, other.displayName) && super.equals(other);
     }
 
     @Override
@@ -118,6 +119,7 @@ public class DataObjectColumnUnit {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

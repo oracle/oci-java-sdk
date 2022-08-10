@@ -20,7 +20,8 @@ package com.oracle.bmc.apigateway.model;
     builder = ApiSpecificationRouteResponsePolicies.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiSpecificationRouteResponsePolicies {
+public final class ApiSpecificationRouteResponsePolicies
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headerTransformations", "responseCacheStore"})
     public ApiSpecificationRouteResponsePolicies(
@@ -56,21 +57,24 @@ public final class ApiSpecificationRouteResponsePolicies {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRouteResponsePolicies build() {
-            ApiSpecificationRouteResponsePolicies __instance__ =
+            ApiSpecificationRouteResponsePolicies model =
                     new ApiSpecificationRouteResponsePolicies(
-                            headerTransformations, responseCacheStore);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.headerTransformations, this.responseCacheStore);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiSpecificationRouteResponsePolicies o) {
-            Builder copiedBuilder =
-                    headerTransformations(o.getHeaderTransformations())
-                            .responseCacheStore(o.getResponseCacheStore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiSpecificationRouteResponsePolicies model) {
+            if (model.wasPropertyExplicitlySet("headerTransformations")) {
+                this.headerTransformations(model.getHeaderTransformations());
+            }
+            if (model.wasPropertyExplicitlySet("responseCacheStore")) {
+                this.responseCacheStore(model.getResponseCacheStore());
+            }
+            return this;
         }
     }
 
@@ -112,9 +116,9 @@ public final class ApiSpecificationRouteResponsePolicies {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiSpecificationRouteResponsePolicies(");
+        sb.append("super=").append(super.toString());
         sb.append("headerTransformations=").append(String.valueOf(this.headerTransformations));
         sb.append(", responseCacheStore=").append(String.valueOf(this.responseCacheStore));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -131,7 +135,7 @@ public final class ApiSpecificationRouteResponsePolicies {
         ApiSpecificationRouteResponsePolicies other = (ApiSpecificationRouteResponsePolicies) o;
         return java.util.Objects.equals(this.headerTransformations, other.headerTransformations)
                 && java.util.Objects.equals(this.responseCacheStore, other.responseCacheStore)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -148,16 +152,7 @@ public final class ApiSpecificationRouteResponsePolicies {
                         + (this.responseCacheStore == null
                                 ? 43
                                 : this.responseCacheStore.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

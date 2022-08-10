@@ -56,7 +56,8 @@ package com.oracle.bmc.database.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateAutonomousDatabaseBase {
+public class CreateAutonomousDatabaseBase
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -1038,6 +1039,7 @@ public class CreateAutonomousDatabaseBase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutonomousDatabaseBase(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
@@ -1144,7 +1146,8 @@ public class CreateAutonomousDatabaseBase {
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
-                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition);
+                && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
+                && super.equals(other);
     }
 
     @Override
@@ -1263,6 +1266,7 @@ public class CreateAutonomousDatabaseBase {
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

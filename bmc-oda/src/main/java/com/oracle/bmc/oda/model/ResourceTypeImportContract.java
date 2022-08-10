@@ -19,7 +19,8 @@ package com.oracle.bmc.oda.model;
     builder = ResourceTypeImportContract.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceTypeImportContract {
+public final class ResourceTypeImportContract
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceType", "parameters"})
     public ResourceTypeImportContract(
@@ -68,18 +69,23 @@ public final class ResourceTypeImportContract {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceTypeImportContract build() {
-            ResourceTypeImportContract __instance__ =
-                    new ResourceTypeImportContract(resourceType, parameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResourceTypeImportContract model =
+                    new ResourceTypeImportContract(this.resourceType, this.parameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceTypeImportContract o) {
-            Builder copiedBuilder = resourceType(o.getResourceType()).parameters(o.getParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceTypeImportContract model) {
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            return this;
         }
     }
 
@@ -135,9 +141,9 @@ public final class ResourceTypeImportContract {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceTypeImportContract(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +160,7 @@ public final class ResourceTypeImportContract {
         ResourceTypeImportContract other = (ResourceTypeImportContract) o;
         return java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +169,7 @@ public final class ResourceTypeImportContract {
         int result = 1;
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

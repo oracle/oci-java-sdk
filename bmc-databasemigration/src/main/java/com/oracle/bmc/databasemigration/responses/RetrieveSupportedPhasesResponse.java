@@ -42,15 +42,17 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "migrationPhaseCollection"
     })
     private RetrieveSupportedPhasesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
                     migrationPhaseCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.migrationPhaseCollection = migrationPhaseCollection;
     }
@@ -60,6 +62,13 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(RetrieveSupportedPhasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             migrationPhaseCollection(o.getMigrationPhaseCollection());
 
@@ -118,7 +128,7 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
          */
         public RetrieveSupportedPhasesResponse build() {
             return new RetrieveSupportedPhasesResponse(
-                    __httpStatusCode__, opcRequestId, migrationPhaseCollection);
+                    __httpStatusCode__, headers, opcRequestId, migrationPhaseCollection);
         }
     }
 

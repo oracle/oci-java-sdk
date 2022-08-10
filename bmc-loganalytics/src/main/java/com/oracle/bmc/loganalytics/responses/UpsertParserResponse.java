@@ -53,16 +53,18 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "logAnalyticsParser"
     })
     private UpsertParserResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsParser logAnalyticsParser) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.logAnalyticsParser = logAnalyticsParser;
@@ -73,6 +75,13 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpsertParserResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsParser(o.getLogAnalyticsParser());
@@ -145,7 +155,7 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public UpsertParserResponse build() {
             return new UpsertParserResponse(
-                    __httpStatusCode__, etag, opcRequestId, logAnalyticsParser);
+                    __httpStatusCode__, headers, etag, opcRequestId, logAnalyticsParser);
         }
     }
 

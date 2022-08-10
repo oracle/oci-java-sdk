@@ -24,7 +24,8 @@ package com.oracle.bmc.objectstorage.model;
     builder = MultipartUploadPartSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MultipartUploadPartSummary {
+public final class MultipartUploadPartSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"etag", "md5", "size", "partNumber"})
     public MultipartUploadPartSummary(String etag, String md5, Long size, Integer partNumber) {
@@ -106,22 +107,29 @@ public final class MultipartUploadPartSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MultipartUploadPartSummary build() {
-            MultipartUploadPartSummary __instance__ =
-                    new MultipartUploadPartSummary(etag, md5, size, partNumber);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MultipartUploadPartSummary model =
+                    new MultipartUploadPartSummary(this.etag, this.md5, this.size, this.partNumber);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MultipartUploadPartSummary o) {
-            Builder copiedBuilder =
-                    etag(o.getEtag())
-                            .md5(o.getMd5())
-                            .size(o.getSize())
-                            .partNumber(o.getPartNumber());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MultipartUploadPartSummary model) {
+            if (model.wasPropertyExplicitlySet("etag")) {
+                this.etag(model.getEtag());
+            }
+            if (model.wasPropertyExplicitlySet("md5")) {
+                this.md5(model.getMd5());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("partNumber")) {
+                this.partNumber(model.getPartNumber());
+            }
+            return this;
         }
     }
 
@@ -205,11 +213,11 @@ public final class MultipartUploadPartSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MultipartUploadPartSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("etag=").append(String.valueOf(this.etag));
         sb.append(", md5=").append(String.valueOf(this.md5));
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", partNumber=").append(String.valueOf(this.partNumber));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -228,7 +236,7 @@ public final class MultipartUploadPartSummary {
                 && java.util.Objects.equals(this.md5, other.md5)
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.partNumber, other.partNumber)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +247,7 @@ public final class MultipartUploadPartSummary {
         result = (result * PRIME) + (this.md5 == null ? 43 : this.md5.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + (this.partNumber == null ? 43 : this.partNumber.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

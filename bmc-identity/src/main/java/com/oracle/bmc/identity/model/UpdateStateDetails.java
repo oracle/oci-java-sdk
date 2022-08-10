@@ -19,7 +19,7 @@ package com.oracle.bmc.identity.model;
     builder = UpdateStateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateStateDetails {
+public final class UpdateStateDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"blocked"})
     public UpdateStateDetails(Boolean blocked) {
@@ -52,17 +52,19 @@ public final class UpdateStateDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateStateDetails build() {
-            UpdateStateDetails __instance__ = new UpdateStateDetails(blocked);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateStateDetails model = new UpdateStateDetails(this.blocked);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateStateDetails o) {
-            Builder copiedBuilder = blocked(o.getBlocked());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateStateDetails model) {
+            if (model.wasPropertyExplicitlySet("blocked")) {
+                this.blocked(model.getBlocked());
+            }
+            return this;
         }
     }
 
@@ -106,8 +108,8 @@ public final class UpdateStateDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateStateDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("blocked=").append(String.valueOf(this.blocked));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,8 +124,7 @@ public final class UpdateStateDetails {
         }
 
         UpdateStateDetails other = (UpdateStateDetails) o;
-        return java.util.Objects.equals(this.blocked, other.blocked)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.blocked, other.blocked) && super.equals(other);
     }
 
     @Override
@@ -131,16 +132,7 @@ public final class UpdateStateDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.blocked == null ? 43 : this.blocked.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

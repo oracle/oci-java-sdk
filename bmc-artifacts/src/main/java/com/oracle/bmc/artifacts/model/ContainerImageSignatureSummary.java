@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = ContainerImageSignatureSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerImageSignatureSummary {
+public final class ContainerImageSignatureSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -254,38 +255,57 @@ public final class ContainerImageSignatureSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerImageSignatureSummary build() {
-            ContainerImageSignatureSummary __instance__ =
+            ContainerImageSignatureSummary model =
                     new ContainerImageSignatureSummary(
-                            compartmentId,
-                            displayName,
-                            id,
-                            imageId,
-                            kmsKeyId,
-                            kmsKeyVersionId,
-                            message,
-                            signature,
-                            signingAlgorithm,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.id,
+                            this.imageId,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.message,
+                            this.signature,
+                            this.signingAlgorithm,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerImageSignatureSummary o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .imageId(o.getImageId())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .message(o.getMessage())
-                            .signature(o.getSignature())
-                            .signingAlgorithm(o.getSigningAlgorithm())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerImageSignatureSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("signature")) {
+                this.signature(model.getSignature());
+            }
+            if (model.wasPropertyExplicitlySet("signingAlgorithm")) {
+                this.signingAlgorithm(model.getSigningAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -533,6 +553,7 @@ public final class ContainerImageSignatureSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerImageSignatureSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -543,7 +564,6 @@ public final class ContainerImageSignatureSummary {
         sb.append(", signature=").append(String.valueOf(this.signature));
         sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -568,7 +588,7 @@ public final class ContainerImageSignatureSummary {
                 && java.util.Objects.equals(this.signature, other.signature)
                 && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -591,16 +611,7 @@ public final class ContainerImageSignatureSummary {
                 (result * PRIME)
                         + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

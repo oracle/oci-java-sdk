@@ -19,7 +19,7 @@ package com.oracle.bmc.usage.model;
     builder = MonthlyRewardSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonthlyRewardSummary {
+public final class MonthlyRewardSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availableRewards",
@@ -276,42 +276,65 @@ public final class MonthlyRewardSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonthlyRewardSummary build() {
-            MonthlyRewardSummary __instance__ =
+            MonthlyRewardSummary model =
                     new MonthlyRewardSummary(
-                            availableRewards,
-                            redeemedRewards,
-                            earnedRewards,
-                            isManual,
-                            timeRewardsExpired,
-                            timeRewardsEarned,
-                            timeUsageStarted,
-                            timeUsageEnded,
-                            usageAmount,
-                            eligibleUsageAmount,
-                            ineligibleUsageAmount,
-                            usagePeriodKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availableRewards,
+                            this.redeemedRewards,
+                            this.earnedRewards,
+                            this.isManual,
+                            this.timeRewardsExpired,
+                            this.timeRewardsEarned,
+                            this.timeUsageStarted,
+                            this.timeUsageEnded,
+                            this.usageAmount,
+                            this.eligibleUsageAmount,
+                            this.ineligibleUsageAmount,
+                            this.usagePeriodKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonthlyRewardSummary o) {
-            Builder copiedBuilder =
-                    availableRewards(o.getAvailableRewards())
-                            .redeemedRewards(o.getRedeemedRewards())
-                            .earnedRewards(o.getEarnedRewards())
-                            .isManual(o.getIsManual())
-                            .timeRewardsExpired(o.getTimeRewardsExpired())
-                            .timeRewardsEarned(o.getTimeRewardsEarned())
-                            .timeUsageStarted(o.getTimeUsageStarted())
-                            .timeUsageEnded(o.getTimeUsageEnded())
-                            .usageAmount(o.getUsageAmount())
-                            .eligibleUsageAmount(o.getEligibleUsageAmount())
-                            .ineligibleUsageAmount(o.getIneligibleUsageAmount())
-                            .usagePeriodKey(o.getUsagePeriodKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonthlyRewardSummary model) {
+            if (model.wasPropertyExplicitlySet("availableRewards")) {
+                this.availableRewards(model.getAvailableRewards());
+            }
+            if (model.wasPropertyExplicitlySet("redeemedRewards")) {
+                this.redeemedRewards(model.getRedeemedRewards());
+            }
+            if (model.wasPropertyExplicitlySet("earnedRewards")) {
+                this.earnedRewards(model.getEarnedRewards());
+            }
+            if (model.wasPropertyExplicitlySet("isManual")) {
+                this.isManual(model.getIsManual());
+            }
+            if (model.wasPropertyExplicitlySet("timeRewardsExpired")) {
+                this.timeRewardsExpired(model.getTimeRewardsExpired());
+            }
+            if (model.wasPropertyExplicitlySet("timeRewardsEarned")) {
+                this.timeRewardsEarned(model.getTimeRewardsEarned());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageStarted")) {
+                this.timeUsageStarted(model.getTimeUsageStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageEnded")) {
+                this.timeUsageEnded(model.getTimeUsageEnded());
+            }
+            if (model.wasPropertyExplicitlySet("usageAmount")) {
+                this.usageAmount(model.getUsageAmount());
+            }
+            if (model.wasPropertyExplicitlySet("eligibleUsageAmount")) {
+                this.eligibleUsageAmount(model.getEligibleUsageAmount());
+            }
+            if (model.wasPropertyExplicitlySet("ineligibleUsageAmount")) {
+                this.ineligibleUsageAmount(model.getIneligibleUsageAmount());
+            }
+            if (model.wasPropertyExplicitlySet("usagePeriodKey")) {
+                this.usagePeriodKey(model.getUsagePeriodKey());
+            }
+            return this;
         }
     }
 
@@ -521,6 +544,7 @@ public final class MonthlyRewardSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonthlyRewardSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("availableRewards=").append(String.valueOf(this.availableRewards));
         sb.append(", redeemedRewards=").append(String.valueOf(this.redeemedRewards));
         sb.append(", earnedRewards=").append(String.valueOf(this.earnedRewards));
@@ -533,7 +557,6 @@ public final class MonthlyRewardSummary {
         sb.append(", eligibleUsageAmount=").append(String.valueOf(this.eligibleUsageAmount));
         sb.append(", ineligibleUsageAmount=").append(String.valueOf(this.ineligibleUsageAmount));
         sb.append(", usagePeriodKey=").append(String.valueOf(this.usagePeriodKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -560,7 +583,7 @@ public final class MonthlyRewardSummary {
                 && java.util.Objects.equals(this.eligibleUsageAmount, other.eligibleUsageAmount)
                 && java.util.Objects.equals(this.ineligibleUsageAmount, other.ineligibleUsageAmount)
                 && java.util.Objects.equals(this.usagePeriodKey, other.usagePeriodKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -605,16 +628,7 @@ public final class MonthlyRewardSummary {
         result =
                 (result * PRIME)
                         + (this.usagePeriodKey == null ? 43 : this.usagePeriodKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

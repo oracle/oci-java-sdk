@@ -121,8 +121,8 @@ public class UpsertFieldConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpsertFieldResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsField(response.getItem());
 

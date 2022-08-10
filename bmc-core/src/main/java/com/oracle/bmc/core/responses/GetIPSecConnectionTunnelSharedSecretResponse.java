@@ -58,17 +58,19 @@ public class GetIPSecConnectionTunnelSharedSecretResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "iPSecConnectionTunnelSharedSecret"
     })
     private GetIPSecConnectionTunnelSharedSecretResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret
                     iPSecConnectionTunnelSharedSecret) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.iPSecConnectionTunnelSharedSecret = iPSecConnectionTunnelSharedSecret;
@@ -79,6 +81,13 @@ public class GetIPSecConnectionTunnelSharedSecretResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class GetIPSecConnectionTunnelSharedSecretResponse
          */
         public Builder copy(GetIPSecConnectionTunnelSharedSecretResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             iPSecConnectionTunnelSharedSecret(o.getIPSecConnectionTunnelSharedSecret());
@@ -155,7 +165,11 @@ public class GetIPSecConnectionTunnelSharedSecretResponse
          */
         public GetIPSecConnectionTunnelSharedSecretResponse build() {
             return new GetIPSecConnectionTunnelSharedSecretResponse(
-                    __httpStatusCode__, etag, opcRequestId, iPSecConnectionTunnelSharedSecret);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    iPSecConnectionTunnelSharedSecret);
         }
     }
 

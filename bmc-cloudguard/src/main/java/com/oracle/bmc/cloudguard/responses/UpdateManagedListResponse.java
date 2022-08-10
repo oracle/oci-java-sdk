@@ -53,13 +53,20 @@ public class UpdateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
         return managedList;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "managedList"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "managedList"
+    })
     private UpdateManagedListResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.ManagedList managedList) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.managedList = managedList;
@@ -70,6 +77,13 @@ public class UpdateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(UpdateManagedListResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             managedList(o.getManagedList());
@@ -143,7 +158,7 @@ public class UpdateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public UpdateManagedListResponse build() {
             return new UpdateManagedListResponse(
-                    __httpStatusCode__, etag, opcRequestId, managedList);
+                    __httpStatusCode__, headers, etag, opcRequestId, managedList);
         }
     }
 

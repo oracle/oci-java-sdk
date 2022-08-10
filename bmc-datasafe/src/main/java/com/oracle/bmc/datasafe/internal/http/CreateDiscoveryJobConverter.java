@@ -104,8 +104,8 @@ public class CreateDiscoveryJobConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .CreateDiscoveryJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.discoveryJob(response.getItem());
 

@@ -156,8 +156,8 @@ public class ListEtlRunsConverter {
                                         builder =
                                                 com.oracle.bmc.emwarehouse.responses
                                                         .ListEtlRunsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.etlRunCollection(response.getItem());
 

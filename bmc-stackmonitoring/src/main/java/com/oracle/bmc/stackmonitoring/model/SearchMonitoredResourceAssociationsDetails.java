@@ -19,7 +19,8 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = SearchMonitoredResourceAssociationsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchMonitoredResourceAssociationsDetails {
+public final class SearchMonitoredResourceAssociationsDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -228,38 +229,57 @@ public final class SearchMonitoredResourceAssociationsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchMonitoredResourceAssociationsDetails build() {
-            SearchMonitoredResourceAssociationsDetails __instance__ =
+            SearchMonitoredResourceAssociationsDetails model =
                     new SearchMonitoredResourceAssociationsDetails(
-                            compartmentId,
-                            sourceResourceId,
-                            sourceResourceName,
-                            sourceResourceType,
-                            destinationResourceId,
-                            destinationResourceName,
-                            destinationResourceType,
-                            associationType,
-                            sortBy,
-                            sortOrder);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.sourceResourceId,
+                            this.sourceResourceName,
+                            this.sourceResourceType,
+                            this.destinationResourceId,
+                            this.destinationResourceName,
+                            this.destinationResourceType,
+                            this.associationType,
+                            this.sortBy,
+                            this.sortOrder);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchMonitoredResourceAssociationsDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .sourceResourceId(o.getSourceResourceId())
-                            .sourceResourceName(o.getSourceResourceName())
-                            .sourceResourceType(o.getSourceResourceType())
-                            .destinationResourceId(o.getDestinationResourceId())
-                            .destinationResourceName(o.getDestinationResourceName())
-                            .destinationResourceType(o.getDestinationResourceType())
-                            .associationType(o.getAssociationType())
-                            .sortBy(o.getSortBy())
-                            .sortOrder(o.getSortOrder());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchMonitoredResourceAssociationsDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceResourceId")) {
+                this.sourceResourceId(model.getSourceResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceResourceName")) {
+                this.sourceResourceName(model.getSourceResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceResourceType")) {
+                this.sourceResourceType(model.getSourceResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("destinationResourceId")) {
+                this.destinationResourceId(model.getDestinationResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationResourceName")) {
+                this.destinationResourceName(model.getDestinationResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("destinationResourceType")) {
+                this.destinationResourceType(model.getDestinationResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("associationType")) {
+                this.associationType(model.getAssociationType());
+            }
+            if (model.wasPropertyExplicitlySet("sortBy")) {
+                this.sortBy(model.getSortBy());
+            }
+            if (model.wasPropertyExplicitlySet("sortOrder")) {
+                this.sortOrder(model.getSortOrder());
+            }
+            return this;
         }
     }
 
@@ -468,6 +488,7 @@ public final class SearchMonitoredResourceAssociationsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchMonitoredResourceAssociationsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sourceResourceId=").append(String.valueOf(this.sourceResourceId));
         sb.append(", sourceResourceName=").append(String.valueOf(this.sourceResourceName));
@@ -480,7 +501,6 @@ public final class SearchMonitoredResourceAssociationsDetails {
         sb.append(", associationType=").append(String.valueOf(this.associationType));
         sb.append(", sortBy=").append(String.valueOf(this.sortBy));
         sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -508,7 +528,7 @@ public final class SearchMonitoredResourceAssociationsDetails {
                 && java.util.Objects.equals(this.associationType, other.associationType)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -551,16 +571,7 @@ public final class SearchMonitoredResourceAssociationsDetails {
                         + (this.associationType == null ? 43 : this.associationType.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

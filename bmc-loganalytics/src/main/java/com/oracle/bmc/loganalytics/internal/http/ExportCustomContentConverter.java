@@ -111,8 +111,8 @@ public class ExportCustomContentConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ExportCustomContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

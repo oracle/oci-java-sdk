@@ -191,51 +191,82 @@ public final class TriggerDeploymentStageSummary extends BuildPipelineStageSumma
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TriggerDeploymentStageSummary build() {
-            TriggerDeploymentStageSummary __instance__ =
+            TriggerDeploymentStageSummary model =
                     new TriggerDeploymentStageSummary(
-                            id,
-                            displayName,
-                            projectId,
-                            buildPipelineId,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            description,
-                            buildPipelineStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            deployPipelineId,
-                            isPassAllParametersEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.projectId,
+                            this.buildPipelineId,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.description,
+                            this.buildPipelineStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.deployPipelineId,
+                            this.isPassAllParametersEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TriggerDeploymentStageSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .buildPipelineId(o.getBuildPipelineId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .description(o.getDescription())
-                            .buildPipelineStagePredecessorCollection(
-                                    o.getBuildPipelineStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .isPassAllParametersEnabled(o.getIsPassAllParametersEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TriggerDeploymentStageSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineId")) {
+                this.buildPipelineId(model.getBuildPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessorCollection")) {
+                this.buildPipelineStagePredecessorCollection(
+                        model.getBuildPipelineStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("isPassAllParametersEnabled")) {
+                this.isPassAllParametersEnabled(model.getIsPassAllParametersEnabled());
+            }
+            return this;
         }
     }
 
@@ -332,7 +363,6 @@ public final class TriggerDeploymentStageSummary extends BuildPipelineStageSumma
         sb.append(", deployPipelineId=").append(String.valueOf(this.deployPipelineId));
         sb.append(", isPassAllParametersEnabled=")
                 .append(String.valueOf(this.isPassAllParametersEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -350,8 +380,7 @@ public final class TriggerDeploymentStageSummary extends BuildPipelineStageSumma
         return java.util.Objects.equals(this.deployPipelineId, other.deployPipelineId)
                 && java.util.Objects.equals(
                         this.isPassAllParametersEnabled, other.isPassAllParametersEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -366,16 +395,6 @@ public final class TriggerDeploymentStageSummary extends BuildPipelineStageSumma
                         + (this.isPassAllParametersEnabled == null
                                 ? 43
                                 : this.isPassAllParametersEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

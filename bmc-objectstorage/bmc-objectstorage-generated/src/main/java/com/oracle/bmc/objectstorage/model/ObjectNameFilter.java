@@ -21,7 +21,7 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectNameFilter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectNameFilter {
+public final class ObjectNameFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inclusionPrefixes",
@@ -175,21 +175,27 @@ public final class ObjectNameFilter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectNameFilter build() {
-            ObjectNameFilter __instance__ =
-                    new ObjectNameFilter(inclusionPrefixes, inclusionPatterns, exclusionPatterns);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ObjectNameFilter model =
+                    new ObjectNameFilter(
+                            this.inclusionPrefixes, this.inclusionPatterns, this.exclusionPatterns);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectNameFilter o) {
-            Builder copiedBuilder =
-                    inclusionPrefixes(o.getInclusionPrefixes())
-                            .inclusionPatterns(o.getInclusionPatterns())
-                            .exclusionPatterns(o.getExclusionPatterns());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectNameFilter model) {
+            if (model.wasPropertyExplicitlySet("inclusionPrefixes")) {
+                this.inclusionPrefixes(model.getInclusionPrefixes());
+            }
+            if (model.wasPropertyExplicitlySet("inclusionPatterns")) {
+                this.inclusionPatterns(model.getInclusionPatterns());
+            }
+            if (model.wasPropertyExplicitlySet("exclusionPatterns")) {
+                this.exclusionPatterns(model.getExclusionPatterns());
+            }
+            return this;
         }
     }
 
@@ -341,10 +347,10 @@ public final class ObjectNameFilter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectNameFilter(");
+        sb.append("super=").append(super.toString());
         sb.append("inclusionPrefixes=").append(String.valueOf(this.inclusionPrefixes));
         sb.append(", inclusionPatterns=").append(String.valueOf(this.inclusionPatterns));
         sb.append(", exclusionPatterns=").append(String.valueOf(this.exclusionPatterns));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -362,7 +368,7 @@ public final class ObjectNameFilter {
         return java.util.Objects.equals(this.inclusionPrefixes, other.inclusionPrefixes)
                 && java.util.Objects.equals(this.inclusionPatterns, other.inclusionPatterns)
                 && java.util.Objects.equals(this.exclusionPatterns, other.exclusionPatterns)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -378,16 +384,7 @@ public final class ObjectNameFilter {
         result =
                 (result * PRIME)
                         + (this.exclusionPatterns == null ? 43 : this.exclusionPatterns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

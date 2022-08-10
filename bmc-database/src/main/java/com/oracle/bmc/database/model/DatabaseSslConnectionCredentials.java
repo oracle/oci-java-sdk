@@ -131,24 +131,37 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseSslConnectionCredentials build() {
-            DatabaseSslConnectionCredentials __instance__ =
+            DatabaseSslConnectionCredentials model =
                     new DatabaseSslConnectionCredentials(
-                            credentialName, username, password, role, sslSecretId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialName,
+                            this.username,
+                            this.password,
+                            this.role,
+                            this.sslSecretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseSslConnectionCredentials o) {
-            Builder copiedBuilder =
-                    credentialName(o.getCredentialName())
-                            .username(o.getUsername())
-                            .password(o.getPassword())
-                            .role(o.getRole())
-                            .sslSecretId(o.getSslSecretId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseSslConnectionCredentials model) {
+            if (model.wasPropertyExplicitlySet("credentialName")) {
+                this.credentialName(model.getCredentialName());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("sslSecretId")) {
+                this.sslSecretId(model.getSslSecretId());
+            }
+            return this;
         }
     }
 
@@ -331,7 +344,6 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(", sslSecretId=").append(String.valueOf(this.sslSecretId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -351,8 +363,7 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.role, other.role)
                 && java.util.Objects.equals(this.sslSecretId, other.sslSecretId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -366,16 +377,6 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
         result = (result * PRIME) + (this.sslSecretId == null ? 43 : this.sslSecretId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

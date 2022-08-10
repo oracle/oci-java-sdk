@@ -20,7 +20,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = VirtualCircuitBandwidthShape.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VirtualCircuitBandwidthShape {
+public final class VirtualCircuitBandwidthShape
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bandwidthInMbps", "name"})
     public VirtualCircuitBandwidthShape(Integer bandwidthInMbps, String name) {
@@ -80,18 +81,23 @@ public final class VirtualCircuitBandwidthShape {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VirtualCircuitBandwidthShape build() {
-            VirtualCircuitBandwidthShape __instance__ =
-                    new VirtualCircuitBandwidthShape(bandwidthInMbps, name);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VirtualCircuitBandwidthShape model =
+                    new VirtualCircuitBandwidthShape(this.bandwidthInMbps, this.name);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VirtualCircuitBandwidthShape o) {
-            Builder copiedBuilder = bandwidthInMbps(o.getBandwidthInMbps()).name(o.getName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VirtualCircuitBandwidthShape model) {
+            if (model.wasPropertyExplicitlySet("bandwidthInMbps")) {
+                this.bandwidthInMbps(model.getBandwidthInMbps());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            return this;
         }
     }
 
@@ -159,9 +165,9 @@ public final class VirtualCircuitBandwidthShape {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VirtualCircuitBandwidthShape(");
+        sb.append("super=").append(super.toString());
         sb.append("bandwidthInMbps=").append(String.valueOf(this.bandwidthInMbps));
         sb.append(", name=").append(String.valueOf(this.name));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -178,7 +184,7 @@ public final class VirtualCircuitBandwidthShape {
         VirtualCircuitBandwidthShape other = (VirtualCircuitBandwidthShape) o;
         return java.util.Objects.equals(this.bandwidthInMbps, other.bandwidthInMbps)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -189,16 +195,7 @@ public final class VirtualCircuitBandwidthShape {
                 (result * PRIME)
                         + (this.bandwidthInMbps == null ? 43 : this.bandwidthInMbps.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

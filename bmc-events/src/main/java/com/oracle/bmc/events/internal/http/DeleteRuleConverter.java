@@ -97,7 +97,8 @@ public class DeleteRuleConverter {
 
                                 com.oracle.bmc.events.responses.DeleteRuleResponse.Builder builder =
                                         com.oracle.bmc.events.responses.DeleteRuleResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

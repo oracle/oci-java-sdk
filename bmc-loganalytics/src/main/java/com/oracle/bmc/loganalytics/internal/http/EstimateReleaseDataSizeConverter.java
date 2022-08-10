@@ -118,8 +118,8 @@ public class EstimateReleaseDataSizeConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .EstimateReleaseDataSizeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.estimateReleaseDataSizeResult(response.getItem());
 

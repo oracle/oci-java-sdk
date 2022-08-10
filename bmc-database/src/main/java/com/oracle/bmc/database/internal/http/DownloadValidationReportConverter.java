@@ -115,8 +115,8 @@ public class DownloadValidationReportConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .DownloadValidationReportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

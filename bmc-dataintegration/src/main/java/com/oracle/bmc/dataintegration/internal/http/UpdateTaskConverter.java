@@ -113,8 +113,8 @@ public class UpdateTaskConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateTaskResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.task(response.getItem());
 

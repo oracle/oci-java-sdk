@@ -57,17 +57,19 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "dbManagementPrivateEndpoint"
     })
     private GetDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
                     dbManagementPrivateEndpoint) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dbManagementPrivateEndpoint = dbManagementPrivateEndpoint;
@@ -78,6 +80,13 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
          */
         public Builder copy(GetDbManagementPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dbManagementPrivateEndpoint(o.getDbManagementPrivateEndpoint());
@@ -154,7 +164,7 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
          */
         public GetDbManagementPrivateEndpointResponse build() {
             return new GetDbManagementPrivateEndpointResponse(
-                    __httpStatusCode__, etag, opcRequestId, dbManagementPrivateEndpoint);
+                    __httpStatusCode__, headers, etag, opcRequestId, dbManagementPrivateEndpoint);
         }
     }
 

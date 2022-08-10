@@ -138,36 +138,53 @@ public final class LimitItem extends Item {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LimitItem build() {
-            LimitItem __instance__ =
+            LimitItem model =
                     new LimitItem(
-                            itemKey,
-                            name,
-                            category,
-                            subCategory,
-                            issueType,
-                            currentLimit,
-                            currentUsage,
-                            requestedLimit,
-                            limitStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.itemKey,
+                            this.name,
+                            this.category,
+                            this.subCategory,
+                            this.issueType,
+                            this.currentLimit,
+                            this.currentUsage,
+                            this.requestedLimit,
+                            this.limitStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LimitItem o) {
-            Builder copiedBuilder =
-                    itemKey(o.getItemKey())
-                            .name(o.getName())
-                            .category(o.getCategory())
-                            .subCategory(o.getSubCategory())
-                            .issueType(o.getIssueType())
-                            .currentLimit(o.getCurrentLimit())
-                            .currentUsage(o.getCurrentUsage())
-                            .requestedLimit(o.getRequestedLimit())
-                            .limitStatus(o.getLimitStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LimitItem model) {
+            if (model.wasPropertyExplicitlySet("itemKey")) {
+                this.itemKey(model.getItemKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("subCategory")) {
+                this.subCategory(model.getSubCategory());
+            }
+            if (model.wasPropertyExplicitlySet("issueType")) {
+                this.issueType(model.getIssueType());
+            }
+            if (model.wasPropertyExplicitlySet("currentLimit")) {
+                this.currentLimit(model.getCurrentLimit());
+            }
+            if (model.wasPropertyExplicitlySet("currentUsage")) {
+                this.currentUsage(model.getCurrentUsage());
+            }
+            if (model.wasPropertyExplicitlySet("requestedLimit")) {
+                this.requestedLimit(model.getRequestedLimit());
+            }
+            if (model.wasPropertyExplicitlySet("limitStatus")) {
+                this.limitStatus(model.getLimitStatus());
+            }
+            return this;
         }
     }
 
@@ -323,7 +340,6 @@ public final class LimitItem extends Item {
         sb.append(", currentUsage=").append(String.valueOf(this.currentUsage));
         sb.append(", requestedLimit=").append(String.valueOf(this.requestedLimit));
         sb.append(", limitStatus=").append(String.valueOf(this.limitStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -342,8 +358,7 @@ public final class LimitItem extends Item {
                 && java.util.Objects.equals(this.currentUsage, other.currentUsage)
                 && java.util.Objects.equals(this.requestedLimit, other.requestedLimit)
                 && java.util.Objects.equals(this.limitStatus, other.limitStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -356,16 +371,6 @@ public final class LimitItem extends Item {
                 (result * PRIME)
                         + (this.requestedLimit == null ? 43 : this.requestedLimit.hashCode());
         result = (result * PRIME) + (this.limitStatus == null ? 43 : this.limitStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

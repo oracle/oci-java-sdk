@@ -111,8 +111,8 @@ public class CreateConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .CreateConnectionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connection(response.getItem());
 

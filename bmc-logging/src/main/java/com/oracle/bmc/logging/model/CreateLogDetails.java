@@ -17,7 +17,7 @@ package com.oracle.bmc.logging.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateLogDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateLogDetails {
+public final class CreateLogDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -177,32 +177,45 @@ public final class CreateLogDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateLogDetails build() {
-            CreateLogDetails __instance__ =
+            CreateLogDetails model =
                     new CreateLogDetails(
-                            displayName,
-                            logType,
-                            isEnabled,
-                            definedTags,
-                            freeformTags,
-                            configuration,
-                            retentionDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.logType,
+                            this.isEnabled,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.configuration,
+                            this.retentionDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateLogDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .logType(o.getLogType())
-                            .isEnabled(o.getIsEnabled())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .configuration(o.getConfiguration())
-                            .retentionDuration(o.getRetentionDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateLogDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("logType")) {
+                this.logType(model.getLogType());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("configuration")) {
+                this.configuration(model.getConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("retentionDuration")) {
+                this.retentionDuration(model.getRetentionDuration());
+            }
+            return this;
         }
     }
 
@@ -374,6 +387,7 @@ public final class CreateLogDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateLogDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", logType=").append(String.valueOf(this.logType));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
@@ -381,7 +395,6 @@ public final class CreateLogDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
         sb.append(", retentionDuration=").append(String.valueOf(this.retentionDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -403,7 +416,7 @@ public final class CreateLogDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.configuration, other.configuration)
                 && java.util.Objects.equals(this.retentionDuration, other.retentionDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -421,16 +434,7 @@ public final class CreateLogDetails {
         result =
                 (result * PRIME)
                         + (this.retentionDuration == null ? 43 : this.retentionDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

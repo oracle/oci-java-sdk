@@ -47,13 +47,20 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
         return caBundle;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "caBundle"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "caBundle"
+    })
     private GetCaBundleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.certificates.model.CaBundle caBundle) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.caBundle = caBundle;
@@ -64,6 +71,13 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetCaBundleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             caBundle(o.getCaBundle());
@@ -130,7 +145,8 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetCaBundleResponse build() {
-            return new GetCaBundleResponse(__httpStatusCode__, etag, opcRequestId, caBundle);
+            return new GetCaBundleResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, caBundle);
         }
     }
 

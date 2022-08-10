@@ -51,13 +51,20 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
         return namespace;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "namespace"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "namespace"
+    })
     private GetNamespaceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.loganalytics.model.Namespace namespace) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.namespace = namespace;
@@ -68,6 +75,13 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetNamespaceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             namespace(o.getNamespace());
@@ -138,7 +153,8 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetNamespaceResponse build() {
-            return new GetNamespaceResponse(__httpStatusCode__, opcRequestId, etag, namespace);
+            return new GetNamespaceResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, namespace);
         }
     }
 

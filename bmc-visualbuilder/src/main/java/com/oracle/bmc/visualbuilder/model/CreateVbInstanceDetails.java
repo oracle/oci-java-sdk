@@ -19,7 +19,8 @@ package com.oracle.bmc.visualbuilder.model;
     builder = CreateVbInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVbInstanceDetails {
+public final class CreateVbInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -235,38 +236,57 @@ public final class CreateVbInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVbInstanceDetails build() {
-            CreateVbInstanceDetails __instance__ =
+            CreateVbInstanceDetails model =
                     new CreateVbInstanceDetails(
-                            displayName,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            idcsOpenId,
-                            nodeCount,
-                            isVisualBuilderEnabled,
-                            customEndpoint,
-                            alternateCustomEndpoints,
-                            consumptionModel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.idcsOpenId,
+                            this.nodeCount,
+                            this.isVisualBuilderEnabled,
+                            this.customEndpoint,
+                            this.alternateCustomEndpoints,
+                            this.consumptionModel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateVbInstanceDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .idcsOpenId(o.getIdcsOpenId())
-                            .nodeCount(o.getNodeCount())
-                            .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
-                            .customEndpoint(o.getCustomEndpoint())
-                            .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
-                            .consumptionModel(o.getConsumptionModel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateVbInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("idcsOpenId")) {
+                this.idcsOpenId(model.getIdcsOpenId());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("isVisualBuilderEnabled")) {
+                this.isVisualBuilderEnabled(model.getIsVisualBuilderEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customEndpoint")) {
+                this.customEndpoint(model.getCustomEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("alternateCustomEndpoints")) {
+                this.alternateCustomEndpoints(model.getAlternateCustomEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("consumptionModel")) {
+                this.consumptionModel(model.getConsumptionModel());
+            }
+            return this;
         }
     }
 
@@ -479,6 +499,7 @@ public final class CreateVbInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVbInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -490,7 +511,6 @@ public final class CreateVbInstanceDetails {
         sb.append(", alternateCustomEndpoints=")
                 .append(String.valueOf(this.alternateCustomEndpoints));
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -517,7 +537,7 @@ public final class CreateVbInstanceDetails {
                 && java.util.Objects.equals(
                         this.alternateCustomEndpoints, other.alternateCustomEndpoints)
                 && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -548,16 +568,7 @@ public final class CreateVbInstanceDetails {
         result =
                 (result * PRIME)
                         + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

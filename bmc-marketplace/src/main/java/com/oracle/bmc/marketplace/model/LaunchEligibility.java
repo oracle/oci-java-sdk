@@ -19,7 +19,7 @@ package com.oracle.bmc.marketplace.model;
     builder = LaunchEligibility.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LaunchEligibility {
+public final class LaunchEligibility extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "imageId",
@@ -110,22 +110,33 @@ public final class LaunchEligibility {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LaunchEligibility build() {
-            LaunchEligibility __instance__ =
-                    new LaunchEligibility(imageId, isLaunchAllowed, meters, ineligibilityReason);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LaunchEligibility model =
+                    new LaunchEligibility(
+                            this.imageId,
+                            this.isLaunchAllowed,
+                            this.meters,
+                            this.ineligibilityReason);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LaunchEligibility o) {
-            Builder copiedBuilder =
-                    imageId(o.getImageId())
-                            .isLaunchAllowed(o.getIsLaunchAllowed())
-                            .meters(o.getMeters())
-                            .ineligibilityReason(o.getIneligibilityReason());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LaunchEligibility model) {
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isLaunchAllowed")) {
+                this.isLaunchAllowed(model.getIsLaunchAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("meters")) {
+                this.meters(model.getMeters());
+            }
+            if (model.wasPropertyExplicitlySet("ineligibilityReason")) {
+                this.ineligibilityReason(model.getIneligibilityReason());
+            }
+            return this;
         }
     }
 
@@ -209,11 +220,11 @@ public final class LaunchEligibility {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LaunchEligibility(");
+        sb.append("super=").append(super.toString());
         sb.append("imageId=").append(String.valueOf(this.imageId));
         sb.append(", isLaunchAllowed=").append(String.valueOf(this.isLaunchAllowed));
         sb.append(", meters=").append(String.valueOf(this.meters));
         sb.append(", ineligibilityReason=").append(String.valueOf(this.ineligibilityReason));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +243,7 @@ public final class LaunchEligibility {
                 && java.util.Objects.equals(this.isLaunchAllowed, other.isLaunchAllowed)
                 && java.util.Objects.equals(this.meters, other.meters)
                 && java.util.Objects.equals(this.ineligibilityReason, other.ineligibilityReason)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +260,7 @@ public final class LaunchEligibility {
                         + (this.ineligibilityReason == null
                                 ? 43
                                 : this.ineligibilityReason.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

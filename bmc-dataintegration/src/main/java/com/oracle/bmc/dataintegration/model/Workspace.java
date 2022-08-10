@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Workspace.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Workspace {
+public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -352,48 +352,77 @@ public final class Workspace {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Workspace build() {
-            Workspace __instance__ =
+            Workspace model =
                     new Workspace(
-                            vcnId,
-                            subnetId,
-                            dnsServerIp,
-                            dnsServerZone,
-                            isPrivateNetworkEnabled,
-                            freeformTags,
-                            definedTags,
-                            description,
-                            displayName,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            stateMessage,
-                            id);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.vcnId,
+                            this.subnetId,
+                            this.dnsServerIp,
+                            this.dnsServerZone,
+                            this.isPrivateNetworkEnabled,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.stateMessage,
+                            this.id);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Workspace o) {
-            Builder copiedBuilder =
-                    vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .dnsServerIp(o.getDnsServerIp())
-                            .dnsServerZone(o.getDnsServerZone())
-                            .isPrivateNetworkEnabled(o.getIsPrivateNetworkEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .stateMessage(o.getStateMessage())
-                            .id(o.getId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Workspace model) {
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsServerIp")) {
+                this.dnsServerIp(model.getDnsServerIp());
+            }
+            if (model.wasPropertyExplicitlySet("dnsServerZone")) {
+                this.dnsServerZone(model.getDnsServerZone());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivateNetworkEnabled")) {
+                this.isPrivateNetworkEnabled(model.getIsPrivateNetworkEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("stateMessage")) {
+                this.stateMessage(model.getStateMessage());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            return this;
         }
     }
 
@@ -733,6 +762,7 @@ public final class Workspace {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Workspace(");
+        sb.append("super=").append(super.toString());
         sb.append("vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", dnsServerIp=").append(String.valueOf(this.dnsServerIp));
@@ -749,7 +779,6 @@ public final class Workspace {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", id=").append(String.valueOf(this.id));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -780,7 +809,7 @@ public final class Workspace {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -812,16 +841,7 @@ public final class Workspace {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

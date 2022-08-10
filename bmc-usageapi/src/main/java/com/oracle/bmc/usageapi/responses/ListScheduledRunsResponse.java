@@ -59,16 +59,18 @@ public class ListScheduledRunsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "scheduledRunCollection"
     })
     private ListScheduledRunsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.usageapi.model.ScheduledRunCollection scheduledRunCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.scheduledRunCollection = scheduledRunCollection;
@@ -79,6 +81,13 @@ public class ListScheduledRunsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListScheduledRunsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListScheduledRunsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             scheduledRunCollection(o.getScheduledRunCollection());
@@ -157,7 +167,7 @@ public class ListScheduledRunsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListScheduledRunsResponse build() {
             return new ListScheduledRunsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, scheduledRunCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, scheduledRunCollection);
         }
     }
 

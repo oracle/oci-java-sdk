@@ -124,8 +124,8 @@ public class GetCompatibleFormatsForDataTypesConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetCompatibleFormatsForDataTypesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.compatibleFormatsForDataTypes(response.getItem());
 

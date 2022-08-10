@@ -104,8 +104,8 @@ public class UpdateNatGatewayConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateNatGatewayResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.natGateway(response.getItem());
 

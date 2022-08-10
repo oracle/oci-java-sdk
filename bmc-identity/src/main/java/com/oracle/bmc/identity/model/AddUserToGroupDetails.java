@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = AddUserToGroupDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddUserToGroupDetails {
+public final class AddUserToGroupDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userId", "groupId"})
     public AddUserToGroupDetails(String userId, String groupId) {
@@ -67,17 +68,22 @@ public final class AddUserToGroupDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddUserToGroupDetails build() {
-            AddUserToGroupDetails __instance__ = new AddUserToGroupDetails(userId, groupId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddUserToGroupDetails model = new AddUserToGroupDetails(this.userId, this.groupId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddUserToGroupDetails o) {
-            Builder copiedBuilder = userId(o.getUserId()).groupId(o.getGroupId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddUserToGroupDetails model) {
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("groupId")) {
+                this.groupId(model.getGroupId());
+            }
+            return this;
         }
     }
 
@@ -133,9 +139,9 @@ public final class AddUserToGroupDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddUserToGroupDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("userId=").append(String.valueOf(this.userId));
         sb.append(", groupId=").append(String.valueOf(this.groupId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +158,7 @@ public final class AddUserToGroupDetails {
         AddUserToGroupDetails other = (AddUserToGroupDetails) o;
         return java.util.Objects.equals(this.userId, other.userId)
                 && java.util.Objects.equals(this.groupId, other.groupId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +167,7 @@ public final class AddUserToGroupDetails {
         int result = 1;
         result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
         result = (result * PRIME) + (this.groupId == null ? 43 : this.groupId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

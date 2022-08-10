@@ -176,8 +176,8 @@ public class ListAvailableAuditVolumesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAvailableAuditVolumesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.availableAuditVolumeCollection(response.getItem());
 

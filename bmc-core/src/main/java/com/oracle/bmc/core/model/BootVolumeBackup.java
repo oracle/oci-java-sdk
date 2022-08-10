@@ -27,7 +27,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BootVolumeBackup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BootVolumeBackup {
+public final class BootVolumeBackup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bootVolumeId",
@@ -443,54 +443,89 @@ public final class BootVolumeBackup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BootVolumeBackup build() {
-            BootVolumeBackup __instance__ =
+            BootVolumeBackup model =
                     new BootVolumeBackup(
-                            bootVolumeId,
-                            compartmentId,
-                            definedTags,
-                            systemTags,
-                            displayName,
-                            expirationTime,
-                            freeformTags,
-                            id,
-                            imageId,
-                            kmsKeyId,
-                            lifecycleState,
-                            sizeInGBs,
-                            sourceBootVolumeBackupId,
-                            sourceType,
-                            timeCreated,
-                            timeRequestReceived,
-                            type,
-                            uniqueSizeInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bootVolumeId,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.systemTags,
+                            this.displayName,
+                            this.expirationTime,
+                            this.freeformTags,
+                            this.id,
+                            this.imageId,
+                            this.kmsKeyId,
+                            this.lifecycleState,
+                            this.sizeInGBs,
+                            this.sourceBootVolumeBackupId,
+                            this.sourceType,
+                            this.timeCreated,
+                            this.timeRequestReceived,
+                            this.type,
+                            this.uniqueSizeInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BootVolumeBackup o) {
-            Builder copiedBuilder =
-                    bootVolumeId(o.getBootVolumeId())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .displayName(o.getDisplayName())
-                            .expirationTime(o.getExpirationTime())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .imageId(o.getImageId())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .lifecycleState(o.getLifecycleState())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .sourceBootVolumeBackupId(o.getSourceBootVolumeBackupId())
-                            .sourceType(o.getSourceType())
-                            .timeCreated(o.getTimeCreated())
-                            .timeRequestReceived(o.getTimeRequestReceived())
-                            .type(o.getType())
-                            .uniqueSizeInGBs(o.getUniqueSizeInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BootVolumeBackup model) {
+            if (model.wasPropertyExplicitlySet("bootVolumeId")) {
+                this.bootVolumeId(model.getBootVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("expirationTime")) {
+                this.expirationTime(model.getExpirationTime());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sourceBootVolumeBackupId")) {
+                this.sourceBootVolumeBackupId(model.getSourceBootVolumeBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeRequestReceived")) {
+                this.timeRequestReceived(model.getTimeRequestReceived());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueSizeInGBs")) {
+                this.uniqueSizeInGBs(model.getUniqueSizeInGBs());
+            }
+            return this;
         }
     }
 
@@ -975,6 +1010,7 @@ public final class BootVolumeBackup {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BootVolumeBackup(");
+        sb.append("super=").append(super.toString());
         sb.append("bootVolumeId=").append(String.valueOf(this.bootVolumeId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -994,7 +1030,6 @@ public final class BootVolumeBackup {
         sb.append(", timeRequestReceived=").append(String.valueOf(this.timeRequestReceived));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", uniqueSizeInGBs=").append(String.valueOf(this.uniqueSizeInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1028,7 +1063,7 @@ public final class BootVolumeBackup {
                 && java.util.Objects.equals(this.timeRequestReceived, other.timeRequestReceived)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.uniqueSizeInGBs, other.uniqueSizeInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1069,16 +1104,7 @@ public final class BootVolumeBackup {
         result =
                 (result * PRIME)
                         + (this.uniqueSizeInGBs == null ? 43 : this.uniqueSizeInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -102,7 +102,8 @@ public class GetPackageConverter {
 
                                 com.oracle.bmc.oda.responses.GetPackageResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.GetPackageResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.packageItem(response.getItem());
 

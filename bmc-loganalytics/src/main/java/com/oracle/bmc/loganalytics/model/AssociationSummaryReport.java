@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = AssociationSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AssociationSummaryReport {
+public final class AssociationSummaryReport
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"associationCount"})
     public AssociationSummaryReport(Integer associationCount) {
@@ -50,17 +51,19 @@ public final class AssociationSummaryReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssociationSummaryReport build() {
-            AssociationSummaryReport __instance__ = new AssociationSummaryReport(associationCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AssociationSummaryReport model = new AssociationSummaryReport(this.associationCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AssociationSummaryReport o) {
-            Builder copiedBuilder = associationCount(o.getAssociationCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AssociationSummaryReport model) {
+            if (model.wasPropertyExplicitlySet("associationCount")) {
+                this.associationCount(model.getAssociationCount());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class AssociationSummaryReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AssociationSummaryReport(");
+        sb.append("super=").append(super.toString());
         sb.append("associationCount=").append(String.valueOf(this.associationCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +122,7 @@ public final class AssociationSummaryReport {
 
         AssociationSummaryReport other = (AssociationSummaryReport) o;
         return java.util.Objects.equals(this.associationCount, other.associationCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +132,7 @@ public final class AssociationSummaryReport {
         result =
                 (result * PRIME)
                         + (this.associationCount == null ? 43 : this.associationCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

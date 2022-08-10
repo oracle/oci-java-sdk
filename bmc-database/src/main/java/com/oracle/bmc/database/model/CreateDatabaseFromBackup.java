@@ -79,24 +79,37 @@ public final class CreateDatabaseFromBackup extends CreateDatabaseBase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseFromBackup build() {
-            CreateDatabaseFromBackup __instance__ =
+            CreateDatabaseFromBackup model =
                     new CreateDatabaseFromBackup(
-                            dbHomeId, dbVersion, kmsKeyId, kmsKeyVersionId, database);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dbHomeId,
+                            this.dbVersion,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.database);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDatabaseFromBackup o) {
-            Builder copiedBuilder =
-                    dbHomeId(o.getDbHomeId())
-                            .dbVersion(o.getDbVersion())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .database(o.getDatabase());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDatabaseFromBackup model) {
+            if (model.wasPropertyExplicitlySet("dbHomeId")) {
+                this.dbHomeId(model.getDbHomeId());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("database")) {
+                this.database(model.getDatabase());
+            }
+            return this;
         }
     }
 
@@ -144,7 +157,6 @@ public final class CreateDatabaseFromBackup extends CreateDatabaseBase {
         sb.append("CreateDatabaseFromBackup(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", database=").append(String.valueOf(this.database));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,9 +171,7 @@ public final class CreateDatabaseFromBackup extends CreateDatabaseBase {
         }
 
         CreateDatabaseFromBackup other = (CreateDatabaseFromBackup) o;
-        return java.util.Objects.equals(this.database, other.database)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.database, other.database) && super.equals(other);
     }
 
     @Override
@@ -169,16 +179,6 @@ public final class CreateDatabaseFromBackup extends CreateDatabaseBase {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.database == null ? 43 : this.database.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

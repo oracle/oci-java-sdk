@@ -70,6 +70,7 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcPrevPage",
         "opcRequestId",
@@ -77,11 +78,12 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListModelsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPrevPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.datascience.model.ModelSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
         this.opcRequestId = opcRequestId;
@@ -93,6 +95,13 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -170,6 +179,7 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListModelsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
             opcRequestId(o.getOpcRequestId());
@@ -184,7 +194,7 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListModelsResponse build() {
             return new ListModelsResponse(
-                    __httpStatusCode__, opcNextPage, opcPrevPage, opcRequestId, items);
+                    __httpStatusCode__, headers, opcNextPage, opcPrevPage, opcRequestId, items);
         }
     }
 

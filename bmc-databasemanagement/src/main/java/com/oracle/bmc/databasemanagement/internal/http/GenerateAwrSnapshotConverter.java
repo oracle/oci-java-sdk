@@ -118,8 +118,8 @@ public class GenerateAwrSnapshotConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .GenerateAwrSnapshotResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.snapshotDetails(response.getItem());
 

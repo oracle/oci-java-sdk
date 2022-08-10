@@ -85,21 +85,26 @@ public final class RandomDateFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RandomDateFormatEntry build() {
-            RandomDateFormatEntry __instance__ =
-                    new RandomDateFormatEntry(description, startDate, endDate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RandomDateFormatEntry model =
+                    new RandomDateFormatEntry(this.description, this.startDate, this.endDate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RandomDateFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .startDate(o.getStartDate())
-                            .endDate(o.getEndDate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RandomDateFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("startDate")) {
+                this.startDate(model.getStartDate());
+            }
+            if (model.wasPropertyExplicitlySet("endDate")) {
+                this.endDate(model.getEndDate());
+            }
+            return this;
         }
     }
 
@@ -174,7 +179,6 @@ public final class RandomDateFormatEntry extends FormatEntry {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", startDate=").append(String.valueOf(this.startDate));
         sb.append(", endDate=").append(String.valueOf(this.endDate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,8 +195,7 @@ public final class RandomDateFormatEntry extends FormatEntry {
         RandomDateFormatEntry other = (RandomDateFormatEntry) o;
         return java.util.Objects.equals(this.startDate, other.startDate)
                 && java.util.Objects.equals(this.endDate, other.endDate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -201,16 +204,6 @@ public final class RandomDateFormatEntry extends FormatEntry {
         int result = super.hashCode();
         result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
         result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

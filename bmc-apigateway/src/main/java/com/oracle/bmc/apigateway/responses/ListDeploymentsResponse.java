@@ -84,6 +84,7 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -91,11 +92,12 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private ListDeploymentsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             com.oracle.bmc.apigateway.model.DeploymentCollection deploymentCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -107,6 +109,13 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -199,6 +208,7 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ListDeploymentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -214,6 +224,7 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
         public ListDeploymentsResponse build() {
             return new ListDeploymentsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPrevPage,

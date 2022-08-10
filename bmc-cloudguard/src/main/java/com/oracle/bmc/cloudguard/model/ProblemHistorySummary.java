@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = ProblemHistorySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProblemHistorySummary {
+public final class ProblemHistorySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -224,38 +225,57 @@ public final class ProblemHistorySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProblemHistorySummary build() {
-            ProblemHistorySummary __instance__ =
+            ProblemHistorySummary model =
                     new ProblemHistorySummary(
-                            id,
-                            problemId,
-                            actorType,
-                            actorName,
-                            explanation,
-                            lifecycleDetail,
-                            eventStatus,
-                            timeCreated,
-                            delta,
-                            comment);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.problemId,
+                            this.actorType,
+                            this.actorName,
+                            this.explanation,
+                            this.lifecycleDetail,
+                            this.eventStatus,
+                            this.timeCreated,
+                            this.delta,
+                            this.comment);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProblemHistorySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .problemId(o.getProblemId())
-                            .actorType(o.getActorType())
-                            .actorName(o.getActorName())
-                            .explanation(o.getExplanation())
-                            .lifecycleDetail(o.getLifecycleDetail())
-                            .eventStatus(o.getEventStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .delta(o.getDelta())
-                            .comment(o.getComment());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProblemHistorySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("problemId")) {
+                this.problemId(model.getProblemId());
+            }
+            if (model.wasPropertyExplicitlySet("actorType")) {
+                this.actorType(model.getActorType());
+            }
+            if (model.wasPropertyExplicitlySet("actorName")) {
+                this.actorName(model.getActorName());
+            }
+            if (model.wasPropertyExplicitlySet("explanation")) {
+                this.explanation(model.getExplanation());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetail")) {
+                this.lifecycleDetail(model.getLifecycleDetail());
+            }
+            if (model.wasPropertyExplicitlySet("eventStatus")) {
+                this.eventStatus(model.getEventStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("delta")) {
+                this.delta(model.getDelta());
+            }
+            if (model.wasPropertyExplicitlySet("comment")) {
+                this.comment(model.getComment());
+            }
+            return this;
         }
     }
 
@@ -423,6 +443,7 @@ public final class ProblemHistorySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProblemHistorySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", problemId=").append(String.valueOf(this.problemId));
         sb.append(", actorType=").append(String.valueOf(this.actorType));
@@ -433,7 +454,6 @@ public final class ProblemHistorySummary {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", delta=").append(String.valueOf(this.delta));
         sb.append(", comment=").append(String.valueOf(this.comment));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -458,7 +478,7 @@ public final class ProblemHistorySummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.delta, other.delta)
                 && java.util.Objects.equals(this.comment, other.comment)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -477,16 +497,7 @@ public final class ProblemHistorySummary {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.delta == null ? 43 : this.delta.hashCode());
         result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

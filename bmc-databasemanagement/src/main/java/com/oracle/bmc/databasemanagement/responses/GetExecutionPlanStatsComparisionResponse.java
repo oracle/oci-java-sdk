@@ -42,15 +42,17 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "executionPlanStatsComparision"
     })
     private GetExecutionPlanStatsComparisionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
                     executionPlanStatsComparision) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.executionPlanStatsComparision = executionPlanStatsComparision;
     }
@@ -60,6 +62,13 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
          */
         public Builder copy(GetExecutionPlanStatsComparisionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             executionPlanStatsComparision(o.getExecutionPlanStatsComparision());
 
@@ -118,7 +128,7 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
          */
         public GetExecutionPlanStatsComparisionResponse build() {
             return new GetExecutionPlanStatsComparisionResponse(
-                    __httpStatusCode__, opcRequestId, executionPlanStatsComparision);
+                    __httpStatusCode__, headers, opcRequestId, executionPlanStatsComparision);
         }
     }
 

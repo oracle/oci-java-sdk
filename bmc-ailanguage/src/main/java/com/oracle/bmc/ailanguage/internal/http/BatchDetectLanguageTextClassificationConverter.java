@@ -119,8 +119,8 @@ public class BatchDetectLanguageTextClassificationConverter {
                                                 com.oracle.bmc.ailanguage.responses
                                                         .BatchDetectLanguageTextClassificationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.batchDetectLanguageTextClassificationResult(
                                         response.getItem());

@@ -53,13 +53,20 @@ public class CreateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
         return glossary;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "glossary"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "glossary"
+    })
     private CreateGlossaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.Glossary glossary) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.glossary = glossary;
@@ -70,6 +77,13 @@ public class CreateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(CreateGlossaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             glossary(o.getGlossary());
@@ -142,7 +157,8 @@ public class CreateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public CreateGlossaryResponse build() {
-            return new CreateGlossaryResponse(__httpStatusCode__, etag, opcRequestId, glossary);
+            return new CreateGlossaryResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, glossary);
         }
     }
 

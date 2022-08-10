@@ -100,8 +100,8 @@ public class GetSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.ons.responses.GetSubscriptionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.subscription(response.getItem());
 

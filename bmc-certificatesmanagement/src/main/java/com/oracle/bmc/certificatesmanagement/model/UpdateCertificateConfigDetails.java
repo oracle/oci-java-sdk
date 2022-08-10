@@ -36,7 +36,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UpdateCertificateConfigDetails {
+public class UpdateCertificateConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"versionName", "stage"})
     protected UpdateCertificateConfigDetails(String versionName, Stage stage) {
@@ -130,6 +131,7 @@ public class UpdateCertificateConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateCertificateConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("versionName=").append(String.valueOf(this.versionName));
         sb.append(", stage=").append(String.valueOf(this.stage));
         sb.append(")");
@@ -147,7 +149,8 @@ public class UpdateCertificateConfigDetails {
 
         UpdateCertificateConfigDetails other = (UpdateCertificateConfigDetails) o;
         return java.util.Objects.equals(this.versionName, other.versionName)
-                && java.util.Objects.equals(this.stage, other.stage);
+                && java.util.Objects.equals(this.stage, other.stage)
+                && super.equals(other);
     }
 
     @Override
@@ -156,6 +159,7 @@ public class UpdateCertificateConfigDetails {
         int result = 1;
         result = (result * PRIME) + (this.versionName == null ? 43 : this.versionName.hashCode());
         result = (result * PRIME) + (this.stage == null ? 43 : this.stage.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

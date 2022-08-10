@@ -123,8 +123,8 @@ public class GetManagementAgentInstallKeyContentConverter {
                                                 com.oracle.bmc.managementagent.responses
                                                         .GetManagementAgentInstallKeyContentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

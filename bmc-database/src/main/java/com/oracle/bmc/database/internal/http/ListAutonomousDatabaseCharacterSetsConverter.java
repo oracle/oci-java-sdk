@@ -129,8 +129,8 @@ public class ListAutonomousDatabaseCharacterSetsConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousDatabaseCharacterSetsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

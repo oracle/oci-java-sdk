@@ -38,10 +38,18 @@ public class RestoreObjectsResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcClientRequestId",
+        "opcRequestId"
+    })
     private RestoreObjectsResponse(
-            int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcClientRequestId,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
     }
@@ -51,6 +59,13 @@ public class RestoreObjectsResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -94,6 +109,7 @@ public class RestoreObjectsResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(RestoreObjectsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
 
@@ -105,7 +121,8 @@ public class RestoreObjectsResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public RestoreObjectsResponse build() {
-            return new RestoreObjectsResponse(__httpStatusCode__, opcClientRequestId, opcRequestId);
+            return new RestoreObjectsResponse(
+                    __httpStatusCode__, headers, opcClientRequestId, opcRequestId);
         }
     }
 

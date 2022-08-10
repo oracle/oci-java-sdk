@@ -102,6 +102,7 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "opcMultipartMd5",
@@ -111,13 +112,14 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
     })
     private CommitMultipartUploadResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcMultipartMd5,
             String eTag,
             java.util.Date lastModified,
             String versionId) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.opcMultipartMd5 = opcMultipartMd5;
@@ -131,6 +133,13 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -244,6 +253,7 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(CommitMultipartUploadResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcMultipartMd5(o.getOpcMultipartMd5());
@@ -261,6 +271,7 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         public CommitMultipartUploadResponse build() {
             return new CommitMultipartUploadResponse(
                     __httpStatusCode__,
+                    headers,
                     opcClientRequestId,
                     opcRequestId,
                     opcMultipartMd5,

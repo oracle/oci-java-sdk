@@ -19,7 +19,7 @@ package com.oracle.bmc.nosql.model;
     builder = CreateTableDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTableDetails {
+public final class CreateTableDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -173,32 +173,45 @@ public final class CreateTableDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTableDetails build() {
-            CreateTableDetails __instance__ =
+            CreateTableDetails model =
                     new CreateTableDetails(
-                            name,
-                            compartmentId,
-                            ddlStatement,
-                            tableLimits,
-                            isAutoReclaimable,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.compartmentId,
+                            this.ddlStatement,
+                            this.tableLimits,
+                            this.isAutoReclaimable,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTableDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .ddlStatement(o.getDdlStatement())
-                            .tableLimits(o.getTableLimits())
-                            .isAutoReclaimable(o.getIsAutoReclaimable())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTableDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("ddlStatement")) {
+                this.ddlStatement(model.getDdlStatement());
+            }
+            if (model.wasPropertyExplicitlySet("tableLimits")) {
+                this.tableLimits(model.getTableLimits());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoReclaimable")) {
+                this.isAutoReclaimable(model.getIsAutoReclaimable());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -329,6 +342,7 @@ public final class CreateTableDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTableDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", ddlStatement=").append(String.valueOf(this.ddlStatement));
@@ -336,7 +350,6 @@ public final class CreateTableDetails {
         sb.append(", isAutoReclaimable=").append(String.valueOf(this.isAutoReclaimable));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -358,7 +371,7 @@ public final class CreateTableDetails {
                 && java.util.Objects.equals(this.isAutoReclaimable, other.isAutoReclaimable)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -376,16 +389,7 @@ public final class CreateTableDetails {
                         + (this.isAutoReclaimable == null ? 43 : this.isAutoReclaimable.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

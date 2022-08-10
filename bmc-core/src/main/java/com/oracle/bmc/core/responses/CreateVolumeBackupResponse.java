@@ -55,16 +55,18 @@ public class CreateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "volumeBackup"
     })
     private CreateVolumeBackupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.VolumeBackup volumeBackup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.volumeBackup = volumeBackup;
@@ -75,6 +77,13 @@ public class CreateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class CreateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(CreateVolumeBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             volumeBackup(o.getVolumeBackup());
@@ -148,7 +158,7 @@ public class CreateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
          */
         public CreateVolumeBackupResponse build() {
             return new CreateVolumeBackupResponse(
-                    __httpStatusCode__, etag, opcRequestId, volumeBackup);
+                    __httpStatusCode__, headers, etag, opcRequestId, volumeBackup);
         }
     }
 

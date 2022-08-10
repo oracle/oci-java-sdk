@@ -47,13 +47,20 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
         return tagDefault;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "tagDefault"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "tagDefault"
+    })
     private RemoveTagDefaultLockResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.TagDefault tagDefault) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.tagDefault = tagDefault;
@@ -64,6 +71,13 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(RemoveTagDefaultLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             tagDefault(o.getTagDefault());
@@ -131,7 +146,7 @@ public class RemoveTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRe
          */
         public RemoveTagDefaultLockResponse build() {
             return new RemoveTagDefaultLockResponse(
-                    __httpStatusCode__, opcRequestId, etag, tagDefault);
+                    __httpStatusCode__, headers, opcRequestId, etag, tagDefault);
         }
     }
 

@@ -1794,6 +1794,172 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionResponse>
+            getOptimizerStatisticsAdvisorExecution(
+                    GetOptimizerStatisticsAdvisorExecutionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOptimizerStatisticsAdvisorExecutionRequest,
+                                    GetOptimizerStatisticsAdvisorExecutionResponse>
+                            handler) {
+        LOG.trace("Called async getOptimizerStatisticsAdvisorExecution");
+        final GetOptimizerStatisticsAdvisorExecutionRequest interceptedRequest =
+                GetOptimizerStatisticsAdvisorExecutionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOptimizerStatisticsAdvisorExecutionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOptimizerStatisticsAdvisorExecution",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecution");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOptimizerStatisticsAdvisorExecutionResponse>
+                transformer =
+                        GetOptimizerStatisticsAdvisorExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOptimizerStatisticsAdvisorExecutionRequest,
+                        GetOptimizerStatisticsAdvisorExecutionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOptimizerStatisticsAdvisorExecutionRequest,
+                                GetOptimizerStatisticsAdvisorExecutionResponse>,
+                        java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOptimizerStatisticsAdvisorExecutionRequest,
+                    GetOptimizerStatisticsAdvisorExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+            getOptimizerStatisticsAdvisorExecutionScript(
+                    GetOptimizerStatisticsAdvisorExecutionScriptRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOptimizerStatisticsAdvisorExecutionScriptRequest,
+                                    GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+                            handler) {
+        LOG.trace("Called async getOptimizerStatisticsAdvisorExecutionScript");
+        final GetOptimizerStatisticsAdvisorExecutionScriptRequest interceptedRequest =
+                GetOptimizerStatisticsAdvisorExecutionScriptConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOptimizerStatisticsAdvisorExecutionScriptConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOptimizerStatisticsAdvisorExecutionScript",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecutionScript");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+                transformer =
+                        GetOptimizerStatisticsAdvisorExecutionScriptConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOptimizerStatisticsAdvisorExecutionScriptRequest,
+                        GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOptimizerStatisticsAdvisorExecutionScriptRequest,
+                                GetOptimizerStatisticsAdvisorExecutionScriptResponse>,
+                        java.util.concurrent.Future<
+                                GetOptimizerStatisticsAdvisorExecutionScriptResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOptimizerStatisticsAdvisorExecutionScriptRequest,
+                    GetOptimizerStatisticsAdvisorExecutionScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOptimizerStatisticsCollectionOperationResponse>
+            getOptimizerStatisticsCollectionOperation(
+                    GetOptimizerStatisticsCollectionOperationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOptimizerStatisticsCollectionOperationRequest,
+                                    GetOptimizerStatisticsCollectionOperationResponse>
+                            handler) {
+        LOG.trace("Called async getOptimizerStatisticsCollectionOperation");
+        final GetOptimizerStatisticsCollectionOperationRequest interceptedRequest =
+                GetOptimizerStatisticsCollectionOperationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOptimizerStatisticsCollectionOperationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOptimizerStatisticsCollectionOperation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsCollectionOperation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetOptimizerStatisticsCollectionOperationResponse>
+                transformer =
+                        GetOptimizerStatisticsCollectionOperationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOptimizerStatisticsCollectionOperationRequest,
+                        GetOptimizerStatisticsCollectionOperationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOptimizerStatisticsCollectionOperationRequest,
+                                GetOptimizerStatisticsCollectionOperationResponse>,
+                        java.util.concurrent.Future<
+                                GetOptimizerStatisticsCollectionOperationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOptimizerStatisticsCollectionOperationRequest,
+                    GetOptimizerStatisticsCollectionOperationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPdbMetricsResponse> getPdbMetrics(
             GetPdbMetricsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
@@ -1954,6 +2120,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+            implementOptimizerStatisticsAdvisorRecommendations(
+                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
+                                    ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+                            handler) {
+        LOG.trace("Called async implementOptimizerStatisticsAdvisorRecommendations");
+        final ImplementOptimizerStatisticsAdvisorRecommendationsRequest interceptedRequest =
+                ImplementOptimizerStatisticsAdvisorRecommendationsConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImplementOptimizerStatisticsAdvisorRecommendationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ImplementOptimizerStatisticsAdvisorRecommendations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ImplementOptimizerStatisticsAdvisorRecommendations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+                transformer =
+                        ImplementOptimizerStatisticsAdvisorRecommendationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
+                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
+                                ImplementOptimizerStatisticsAdvisorRecommendationsResponse>,
+                        java.util.concurrent.Future<
+                                ImplementOptimizerStatisticsAdvisorRecommendationsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getImplementOptimizerStatisticsAdvisorRecommendationsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
+                    ImplementOptimizerStatisticsAdvisorRecommendationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2625,6 +2854,173 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOptimizerStatisticsAdvisorExecutionsResponse>
+            listOptimizerStatisticsAdvisorExecutions(
+                    ListOptimizerStatisticsAdvisorExecutionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOptimizerStatisticsAdvisorExecutionsRequest,
+                                    ListOptimizerStatisticsAdvisorExecutionsResponse>
+                            handler) {
+        LOG.trace("Called async listOptimizerStatisticsAdvisorExecutions");
+        final ListOptimizerStatisticsAdvisorExecutionsRequest interceptedRequest =
+                ListOptimizerStatisticsAdvisorExecutionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOptimizerStatisticsAdvisorExecutionsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListOptimizerStatisticsAdvisorExecutions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsAdvisorExecutions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOptimizerStatisticsAdvisorExecutionsResponse>
+                transformer =
+                        ListOptimizerStatisticsAdvisorExecutionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOptimizerStatisticsAdvisorExecutionsRequest,
+                        ListOptimizerStatisticsAdvisorExecutionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOptimizerStatisticsAdvisorExecutionsRequest,
+                                ListOptimizerStatisticsAdvisorExecutionsResponse>,
+                        java.util.concurrent.Future<
+                                ListOptimizerStatisticsAdvisorExecutionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOptimizerStatisticsAdvisorExecutionsRequest,
+                    ListOptimizerStatisticsAdvisorExecutionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOptimizerStatisticsCollectionAggregationsResponse>
+            listOptimizerStatisticsCollectionAggregations(
+                    ListOptimizerStatisticsCollectionAggregationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOptimizerStatisticsCollectionAggregationsRequest,
+                                    ListOptimizerStatisticsCollectionAggregationsResponse>
+                            handler) {
+        LOG.trace("Called async listOptimizerStatisticsCollectionAggregations");
+        final ListOptimizerStatisticsCollectionAggregationsRequest interceptedRequest =
+                ListOptimizerStatisticsCollectionAggregationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOptimizerStatisticsCollectionAggregationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListOptimizerStatisticsCollectionAggregations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionAggregations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListOptimizerStatisticsCollectionAggregationsResponse>
+                transformer =
+                        ListOptimizerStatisticsCollectionAggregationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOptimizerStatisticsCollectionAggregationsRequest,
+                        ListOptimizerStatisticsCollectionAggregationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOptimizerStatisticsCollectionAggregationsRequest,
+                                ListOptimizerStatisticsCollectionAggregationsResponse>,
+                        java.util.concurrent.Future<
+                                ListOptimizerStatisticsCollectionAggregationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOptimizerStatisticsCollectionAggregationsRequest,
+                    ListOptimizerStatisticsCollectionAggregationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOptimizerStatisticsCollectionOperationsResponse>
+            listOptimizerStatisticsCollectionOperations(
+                    ListOptimizerStatisticsCollectionOperationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOptimizerStatisticsCollectionOperationsRequest,
+                                    ListOptimizerStatisticsCollectionOperationsResponse>
+                            handler) {
+        LOG.trace("Called async listOptimizerStatisticsCollectionOperations");
+        final ListOptimizerStatisticsCollectionOperationsRequest interceptedRequest =
+                ListOptimizerStatisticsCollectionOperationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOptimizerStatisticsCollectionOperationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListOptimizerStatisticsCollectionOperations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionOperations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListOptimizerStatisticsCollectionOperationsResponse>
+                transformer =
+                        ListOptimizerStatisticsCollectionOperationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOptimizerStatisticsCollectionOperationsRequest,
+                        ListOptimizerStatisticsCollectionOperationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOptimizerStatisticsCollectionOperationsRequest,
+                                ListOptimizerStatisticsCollectionOperationsResponse>,
+                        java.util.concurrent.Future<
+                                ListOptimizerStatisticsCollectionOperationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOptimizerStatisticsCollectionOperationsRequest,
+                    ListOptimizerStatisticsCollectionOperationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProxiedForUsersResponse> listProxiedForUsers(
             ListProxiedForUsersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2793,6 +3189,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableStatisticsResponse> listTableStatistics(
+            ListTableStatisticsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTableStatisticsRequest, ListTableStatisticsResponse>
+                    handler) {
+        LOG.trace("Called async listTableStatistics");
+        final ListTableStatisticsRequest interceptedRequest =
+                ListTableStatisticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTableStatisticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListTableStatistics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListTableStatistics");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTableStatisticsResponse>
+                transformer =
+                        ListTableStatisticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTableStatisticsRequest, ListTableStatisticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTableStatisticsRequest, ListTableStatisticsResponse>,
+                        java.util.concurrent.Future<ListTableStatisticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTableStatisticsRequest, ListTableStatisticsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

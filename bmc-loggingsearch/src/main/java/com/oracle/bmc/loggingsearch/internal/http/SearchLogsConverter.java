@@ -118,8 +118,8 @@ public class SearchLogsConverter {
                                         builder =
                                                 com.oracle.bmc.loggingsearch.responses
                                                         .SearchLogsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.searchResponse(response.getItem());
 

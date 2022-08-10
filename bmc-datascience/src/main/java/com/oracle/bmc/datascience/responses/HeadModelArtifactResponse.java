@@ -104,6 +104,7 @@ public class HeadModelArtifactResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "contentLength",
@@ -113,13 +114,14 @@ public class HeadModelArtifactResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private HeadModelArtifactResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
             String contentDisposition,
             String contentMd5,
             java.util.Date lastModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
@@ -133,6 +135,13 @@ public class HeadModelArtifactResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -248,6 +257,7 @@ public class HeadModelArtifactResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(HeadModelArtifactResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
@@ -265,6 +275,7 @@ public class HeadModelArtifactResponse extends com.oracle.bmc.responses.BmcRespo
         public HeadModelArtifactResponse build() {
             return new HeadModelArtifactResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     contentLength,

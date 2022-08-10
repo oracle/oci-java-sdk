@@ -137,8 +137,8 @@ public class GetRepoFileDiffConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .GetRepoFileDiffResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fileDiffResponse(response.getItem());
 

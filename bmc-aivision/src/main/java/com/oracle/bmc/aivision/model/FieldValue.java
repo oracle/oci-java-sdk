@@ -37,7 +37,7 @@ package com.oracle.bmc.aivision.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ValueArray.class, name = "ARRAY")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class FieldValue {
+public class FieldValue extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"text", "confidence", "boundingPolygon", "wordIndexes"})
     protected FieldValue(
@@ -114,6 +114,7 @@ public class FieldValue {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FieldValue(");
+        sb.append("super=").append(super.toString());
         sb.append("text=").append(String.valueOf(this.text));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
@@ -135,7 +136,8 @@ public class FieldValue {
         return java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
-                && java.util.Objects.equals(this.wordIndexes, other.wordIndexes);
+                && java.util.Objects.equals(this.wordIndexes, other.wordIndexes)
+                && super.equals(other);
     }
 
     @Override
@@ -148,6 +150,7 @@ public class FieldValue {
                 (result * PRIME)
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
         result = (result * PRIME) + (this.wordIndexes == null ? 43 : this.wordIndexes.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

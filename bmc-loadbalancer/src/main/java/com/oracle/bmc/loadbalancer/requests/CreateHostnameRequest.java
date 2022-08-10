@@ -51,6 +51,37 @@ public class CreateHostnameRequest
         return opcRequestId;
     }
     /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    public String getIfMatch() {
+        return ifMatch;
+    }
+    /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
@@ -142,6 +173,41 @@ public class CreateHostnameRequest
         }
 
         /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @param ifMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
          * server error without risk of executing that same action again. Retry tokens expire after 24
          * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
@@ -197,6 +263,7 @@ public class CreateHostnameRequest
             createHostnameDetails(o.getCreateHostnameDetails());
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
+            ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -244,9 +311,10 @@ public class CreateHostnameRequest
             request.createHostnameDetails = createHostnameDetails;
             request.loadBalancerId = loadBalancerId;
             request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateHostnameRequest(createHostnameDetails, loadBalancerId, opcRequestId, opcRetryToken);
+            // new CreateHostnameRequest(createHostnameDetails, loadBalancerId, opcRequestId, ifMatch, opcRetryToken);
         }
     }
 
@@ -259,6 +327,7 @@ public class CreateHostnameRequest
                 .createHostnameDetails(createHostnameDetails)
                 .loadBalancerId(loadBalancerId)
                 .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken);
     }
 
@@ -278,6 +347,7 @@ public class CreateHostnameRequest
         sb.append(",createHostnameDetails=").append(String.valueOf(this.createHostnameDetails));
         sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
@@ -297,6 +367,7 @@ public class CreateHostnameRequest
                 && java.util.Objects.equals(this.createHostnameDetails, other.createHostnameDetails)
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
@@ -313,6 +384,7 @@ public class CreateHostnameRequest
                 (result * PRIME)
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

@@ -19,7 +19,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = CertificateVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CertificateVersionSummary {
+public final class CertificateVersionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateId",
@@ -244,40 +245,61 @@ public final class CertificateVersionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateVersionSummary build() {
-            CertificateVersionSummary __instance__ =
+            CertificateVersionSummary model =
                     new CertificateVersionSummary(
-                            certificateId,
-                            serialNumber,
-                            timeCreated,
-                            versionNumber,
-                            issuerCaVersionNumber,
-                            versionName,
-                            subjectAlternativeNames,
-                            timeOfDeletion,
-                            validity,
-                            stages,
-                            revocationStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.certificateId,
+                            this.serialNumber,
+                            this.timeCreated,
+                            this.versionNumber,
+                            this.issuerCaVersionNumber,
+                            this.versionName,
+                            this.subjectAlternativeNames,
+                            this.timeOfDeletion,
+                            this.validity,
+                            this.stages,
+                            this.revocationStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateVersionSummary o) {
-            Builder copiedBuilder =
-                    certificateId(o.getCertificateId())
-                            .serialNumber(o.getSerialNumber())
-                            .timeCreated(o.getTimeCreated())
-                            .versionNumber(o.getVersionNumber())
-                            .issuerCaVersionNumber(o.getIssuerCaVersionNumber())
-                            .versionName(o.getVersionName())
-                            .subjectAlternativeNames(o.getSubjectAlternativeNames())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .validity(o.getValidity())
-                            .stages(o.getStages())
-                            .revocationStatus(o.getRevocationStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateVersionSummary model) {
+            if (model.wasPropertyExplicitlySet("certificateId")) {
+                this.certificateId(model.getCertificateId());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("versionNumber")) {
+                this.versionNumber(model.getVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("issuerCaVersionNumber")) {
+                this.issuerCaVersionNumber(model.getIssuerCaVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("subjectAlternativeNames")) {
+                this.subjectAlternativeNames(model.getSubjectAlternativeNames());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            if (model.wasPropertyExplicitlySet("stages")) {
+                this.stages(model.getStages());
+            }
+            if (model.wasPropertyExplicitlySet("revocationStatus")) {
+                this.revocationStatus(model.getRevocationStatus());
+            }
+            return this;
         }
     }
 
@@ -459,6 +481,7 @@ public final class CertificateVersionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateVersionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -471,7 +494,6 @@ public final class CertificateVersionSummary {
         sb.append(", validity=").append(String.valueOf(this.validity));
         sb.append(", stages=").append(String.valueOf(this.stages));
         sb.append(", revocationStatus=").append(String.valueOf(this.revocationStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -498,7 +520,7 @@ public final class CertificateVersionSummary {
                 && java.util.Objects.equals(this.validity, other.validity)
                 && java.util.Objects.equals(this.stages, other.stages)
                 && java.util.Objects.equals(this.revocationStatus, other.revocationStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -532,16 +554,7 @@ public final class CertificateVersionSummary {
         result =
                 (result * PRIME)
                         + (this.revocationStatus == null ? 43 : this.revocationStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

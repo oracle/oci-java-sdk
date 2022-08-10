@@ -28,7 +28,7 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TagDefault.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TagDefault {
+public final class TagDefault extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -269,38 +269,57 @@ public final class TagDefault {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TagDefault build() {
-            TagDefault __instance__ =
+            TagDefault model =
                     new TagDefault(
-                            id,
-                            compartmentId,
-                            tagNamespaceId,
-                            tagDefinitionId,
-                            tagDefinitionName,
-                            value,
-                            timeCreated,
-                            lifecycleState,
-                            isRequired,
-                            locks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.tagNamespaceId,
+                            this.tagDefinitionId,
+                            this.tagDefinitionName,
+                            this.value,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.isRequired,
+                            this.locks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TagDefault o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .tagNamespaceId(o.getTagNamespaceId())
-                            .tagDefinitionId(o.getTagDefinitionId())
-                            .tagDefinitionName(o.getTagDefinitionName())
-                            .value(o.getValue())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .isRequired(o.getIsRequired())
-                            .locks(o.getLocks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TagDefault model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("tagNamespaceId")) {
+                this.tagNamespaceId(model.getTagNamespaceId());
+            }
+            if (model.wasPropertyExplicitlySet("tagDefinitionId")) {
+                this.tagDefinitionId(model.getTagDefinitionId());
+            }
+            if (model.wasPropertyExplicitlySet("tagDefinitionName")) {
+                this.tagDefinitionName(model.getTagDefinitionName());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isRequired")) {
+                this.isRequired(model.getIsRequired());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            return this;
         }
     }
 
@@ -552,6 +571,7 @@ public final class TagDefault {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TagDefault(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
@@ -562,7 +582,6 @@ public final class TagDefault {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", isRequired=").append(String.valueOf(this.isRequired));
         sb.append(", locks=").append(String.valueOf(this.locks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -587,7 +606,7 @@ public final class TagDefault {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isRequired, other.isRequired)
                 && java.util.Objects.equals(this.locks, other.locks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -614,16 +633,7 @@ public final class TagDefault {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

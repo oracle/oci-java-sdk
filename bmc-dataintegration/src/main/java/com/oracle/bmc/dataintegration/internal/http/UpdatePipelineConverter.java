@@ -116,8 +116,8 @@ public class UpdatePipelineConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdatePipelineResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pipeline(response.getItem());
 

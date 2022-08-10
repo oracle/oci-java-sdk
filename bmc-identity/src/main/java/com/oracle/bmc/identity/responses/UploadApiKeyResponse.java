@@ -51,13 +51,20 @@ public class UploadApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return apiKey;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "apiKey"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "apiKey"
+    })
     private UploadApiKeyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.ApiKey apiKey) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.apiKey = apiKey;
@@ -68,6 +75,13 @@ public class UploadApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class UploadApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UploadApiKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             apiKey(o.getApiKey());
@@ -138,7 +153,8 @@ public class UploadApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UploadApiKeyResponse build() {
-            return new UploadApiKeyResponse(__httpStatusCode__, opcRequestId, etag, apiKey);
+            return new UploadApiKeyResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, apiKey);
         }
     }
 

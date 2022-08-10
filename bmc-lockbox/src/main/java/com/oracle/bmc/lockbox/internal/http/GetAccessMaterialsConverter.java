@@ -106,8 +106,8 @@ public class GetAccessMaterialsConverter {
                                         builder =
                                                 com.oracle.bmc.lockbox.responses
                                                         .GetAccessMaterialsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.accessMaterials(response.getItem());
 

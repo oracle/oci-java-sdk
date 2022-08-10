@@ -20,7 +20,7 @@ package com.oracle.bmc.ocvp.model;
     builder = HcxLicenseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HcxLicenseSummary {
+public final class HcxLicenseSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"activationKey", "status", "systemName"})
     public HcxLicenseSummary(String activationKey, HcxLicenseStatus status, String systemName) {
@@ -85,21 +85,26 @@ public final class HcxLicenseSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HcxLicenseSummary build() {
-            HcxLicenseSummary __instance__ =
-                    new HcxLicenseSummary(activationKey, status, systemName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HcxLicenseSummary model =
+                    new HcxLicenseSummary(this.activationKey, this.status, this.systemName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HcxLicenseSummary o) {
-            Builder copiedBuilder =
-                    activationKey(o.getActivationKey())
-                            .status(o.getStatus())
-                            .systemName(o.getSystemName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HcxLicenseSummary model) {
+            if (model.wasPropertyExplicitlySet("activationKey")) {
+                this.activationKey(model.getActivationKey());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("systemName")) {
+                this.systemName(model.getSystemName());
+            }
+            return this;
         }
     }
 
@@ -169,10 +174,10 @@ public final class HcxLicenseSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HcxLicenseSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("activationKey=").append(String.valueOf(this.activationKey));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", systemName=").append(String.valueOf(this.systemName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +195,7 @@ public final class HcxLicenseSummary {
         return java.util.Objects.equals(this.activationKey, other.activationKey)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.systemName, other.systemName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +207,7 @@ public final class HcxLicenseSummary {
                         + (this.activationKey == null ? 43 : this.activationKey.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.systemName == null ? 43 : this.systemName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

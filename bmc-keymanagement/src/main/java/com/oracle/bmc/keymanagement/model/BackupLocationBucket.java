@@ -59,21 +59,26 @@ public final class BackupLocationBucket extends BackupLocation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackupLocationBucket build() {
-            BackupLocationBucket __instance__ =
-                    new BackupLocationBucket(namespace, bucketName, objectName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BackupLocationBucket model =
+                    new BackupLocationBucket(this.namespace, this.bucketName, this.objectName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BackupLocationBucket o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .bucketName(o.getBucketName())
-                            .objectName(o.getObjectName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BackupLocationBucket model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            return this;
         }
     }
 
@@ -134,7 +139,6 @@ public final class BackupLocationBucket extends BackupLocation {
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,8 +156,7 @@ public final class BackupLocationBucket extends BackupLocation {
         return java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
                 && java.util.Objects.equals(this.objectName, other.objectName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +166,6 @@ public final class BackupLocationBucket extends BackupLocation {
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

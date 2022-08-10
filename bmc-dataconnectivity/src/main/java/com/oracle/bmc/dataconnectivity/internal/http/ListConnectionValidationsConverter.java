@@ -187,8 +187,8 @@ public class ListConnectionValidationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListConnectionValidationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connectionValidationSummaryCollection(response.getItem());
 

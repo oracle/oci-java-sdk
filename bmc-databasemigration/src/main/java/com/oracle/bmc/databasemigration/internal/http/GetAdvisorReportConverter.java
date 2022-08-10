@@ -113,8 +113,8 @@ public class GetAdvisorReportConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .GetAdvisorReportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.advisorReport(response.getItem());
 

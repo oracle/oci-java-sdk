@@ -117,8 +117,8 @@ public class GetLogAnalyticsEntityTypeConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogAnalyticsEntityTypeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsEntityType(response.getItem());
 

@@ -202,8 +202,8 @@ public class ListAnnotationsConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservicedataplane
                                                         .responses.ListAnnotationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.annotationCollection(response.getItem());
 

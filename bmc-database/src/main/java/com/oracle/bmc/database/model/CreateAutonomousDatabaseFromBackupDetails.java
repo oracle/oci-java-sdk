@@ -411,100 +411,179 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAutonomousDatabaseFromBackupDetails build() {
-            CreateAutonomousDatabaseFromBackupDetails __instance__ =
+            CreateAutonomousDatabaseFromBackupDetails model =
                     new CreateAutonomousDatabaseFromBackupDetails(
-                            compartmentId,
-                            characterSet,
-                            ncharacterSet,
-                            dbName,
-                            cpuCoreCount,
-                            ocpuCount,
-                            dbWorkload,
-                            dataStorageSizeInTBs,
-                            dataStorageSizeInGBs,
-                            isFreeTier,
-                            kmsKeyId,
-                            vaultId,
-                            adminPassword,
-                            displayName,
-                            licenseModel,
-                            isPreviewVersionWithServiceTermsAccepted,
-                            isAutoScalingEnabled,
-                            isDedicated,
-                            autonomousContainerDatabaseId,
-                            isAccessControlEnabled,
-                            whitelistedIps,
-                            arePrimaryWhitelistedIpsUsed,
-                            standbyWhitelistedIps,
-                            isDataGuardEnabled,
-                            isLocalDataGuardEnabled,
-                            subnetId,
-                            nsgIds,
-                            privateEndpointLabel,
-                            freeformTags,
-                            definedTags,
-                            dbVersion,
-                            customerContacts,
-                            isMtlsConnectionRequired,
-                            autonomousMaintenanceScheduleType,
-                            scheduledOperations,
-                            isAutoScalingForStorageEnabled,
-                            maxCpuCoreCount,
-                            databaseEdition,
-                            autonomousDatabaseBackupId,
-                            cloneType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.characterSet,
+                            this.ncharacterSet,
+                            this.dbName,
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.dbWorkload,
+                            this.dataStorageSizeInTBs,
+                            this.dataStorageSizeInGBs,
+                            this.isFreeTier,
+                            this.kmsKeyId,
+                            this.vaultId,
+                            this.adminPassword,
+                            this.displayName,
+                            this.licenseModel,
+                            this.isPreviewVersionWithServiceTermsAccepted,
+                            this.isAutoScalingEnabled,
+                            this.isDedicated,
+                            this.autonomousContainerDatabaseId,
+                            this.isAccessControlEnabled,
+                            this.whitelistedIps,
+                            this.arePrimaryWhitelistedIpsUsed,
+                            this.standbyWhitelistedIps,
+                            this.isDataGuardEnabled,
+                            this.isLocalDataGuardEnabled,
+                            this.subnetId,
+                            this.nsgIds,
+                            this.privateEndpointLabel,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.dbVersion,
+                            this.customerContacts,
+                            this.isMtlsConnectionRequired,
+                            this.autonomousMaintenanceScheduleType,
+                            this.scheduledOperations,
+                            this.isAutoScalingForStorageEnabled,
+                            this.maxCpuCoreCount,
+                            this.databaseEdition,
+                            this.autonomousDatabaseBackupId,
+                            this.cloneType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAutonomousDatabaseFromBackupDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .characterSet(o.getCharacterSet())
-                            .ncharacterSet(o.getNcharacterSet())
-                            .dbName(o.getDbName())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .dbWorkload(o.getDbWorkload())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .isFreeTier(o.getIsFreeTier())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .vaultId(o.getVaultId())
-                            .adminPassword(o.getAdminPassword())
-                            .displayName(o.getDisplayName())
-                            .licenseModel(o.getLicenseModel())
-                            .isPreviewVersionWithServiceTermsAccepted(
-                                    o.getIsPreviewVersionWithServiceTermsAccepted())
-                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
-                            .isDedicated(o.getIsDedicated())
-                            .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
-                            .isAccessControlEnabled(o.getIsAccessControlEnabled())
-                            .whitelistedIps(o.getWhitelistedIps())
-                            .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
-                            .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
-                            .isDataGuardEnabled(o.getIsDataGuardEnabled())
-                            .isLocalDataGuardEnabled(o.getIsLocalDataGuardEnabled())
-                            .subnetId(o.getSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .privateEndpointLabel(o.getPrivateEndpointLabel())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .dbVersion(o.getDbVersion())
-                            .customerContacts(o.getCustomerContacts())
-                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
-                            .autonomousMaintenanceScheduleType(
-                                    o.getAutonomousMaintenanceScheduleType())
-                            .scheduledOperations(o.getScheduledOperations())
-                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
-                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
-                            .databaseEdition(o.getDatabaseEdition())
-                            .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
-                            .cloneType(o.getCloneType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAutonomousDatabaseFromBackupDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("characterSet")) {
+                this.characterSet(model.getCharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("ncharacterSet")) {
+                this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("dbWorkload")) {
+                this.dbWorkload(model.getDbWorkload());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("isFreeTier")) {
+                this.isFreeTier(model.getIsFreeTier());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("adminPassword")) {
+                this.adminPassword(model.getAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isPreviewVersionWithServiceTermsAccepted")) {
+                this.isPreviewVersionWithServiceTermsAccepted(
+                        model.getIsPreviewVersionWithServiceTermsAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
+                this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDedicated")) {
+                this.isDedicated(model.getIsDedicated());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
+                this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
+                this.isAccessControlEnabled(model.getIsAccessControlEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("whitelistedIps")) {
+                this.whitelistedIps(model.getWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("arePrimaryWhitelistedIpsUsed")) {
+                this.arePrimaryWhitelistedIpsUsed(model.getArePrimaryWhitelistedIpsUsed());
+            }
+            if (model.wasPropertyExplicitlySet("standbyWhitelistedIps")) {
+                this.standbyWhitelistedIps(model.getStandbyWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("isDataGuardEnabled")) {
+                this.isDataGuardEnabled(model.getIsDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalDataGuardEnabled")) {
+                this.isLocalDataGuardEnabled(model.getIsLocalDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointLabel")) {
+                this.privateEndpointLabel(model.getPrivateEndpointLabel());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
+                this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousMaintenanceScheduleType")) {
+                this.autonomousMaintenanceScheduleType(
+                        model.getAutonomousMaintenanceScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledOperations")) {
+                this.scheduledOperations(model.getScheduledOperations());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
+                this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
+                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseBackupId")) {
+                this.autonomousDatabaseBackupId(model.getAutonomousDatabaseBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("cloneType")) {
+                this.cloneType(model.getCloneType());
+            }
+            return this;
         }
     }
 
@@ -684,7 +763,6 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         sb.append(", autonomousDatabaseBackupId=")
                 .append(String.valueOf(this.autonomousDatabaseBackupId));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -703,8 +781,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         return java.util.Objects.equals(
                         this.autonomousDatabaseBackupId, other.autonomousDatabaseBackupId)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -717,16 +794,6 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                                 ? 43
                                 : this.autonomousDatabaseBackupId.hashCode());
         result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

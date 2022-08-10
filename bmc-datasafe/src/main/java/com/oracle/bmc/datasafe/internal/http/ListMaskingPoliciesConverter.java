@@ -214,8 +214,8 @@ public class ListMaskingPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListMaskingPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.maskingPolicyCollection(response.getItem());
 

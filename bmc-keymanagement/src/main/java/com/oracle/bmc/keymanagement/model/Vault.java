@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vault.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Vault {
+public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -354,48 +354,77 @@ public final class Vault {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Vault build() {
-            Vault __instance__ =
+            Vault model =
                     new Vault(
-                            compartmentId,
-                            cryptoEndpoint,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            managementEndpoint,
-                            timeCreated,
-                            timeOfDeletion,
-                            vaultType,
-                            restoredFromVaultId,
-                            wrappingkeyId,
-                            replicaDetails,
-                            isPrimary);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.cryptoEndpoint,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.managementEndpoint,
+                            this.timeCreated,
+                            this.timeOfDeletion,
+                            this.vaultType,
+                            this.restoredFromVaultId,
+                            this.wrappingkeyId,
+                            this.replicaDetails,
+                            this.isPrimary);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Vault o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .cryptoEndpoint(o.getCryptoEndpoint())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .managementEndpoint(o.getManagementEndpoint())
-                            .timeCreated(o.getTimeCreated())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultType(o.getVaultType())
-                            .restoredFromVaultId(o.getRestoredFromVaultId())
-                            .wrappingkeyId(o.getWrappingkeyId())
-                            .replicaDetails(o.getReplicaDetails())
-                            .isPrimary(o.getIsPrimary());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Vault model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("cryptoEndpoint")) {
+                this.cryptoEndpoint(model.getCryptoEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("managementEndpoint")) {
+                this.managementEndpoint(model.getManagementEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("vaultType")) {
+                this.vaultType(model.getVaultType());
+            }
+            if (model.wasPropertyExplicitlySet("restoredFromVaultId")) {
+                this.restoredFromVaultId(model.getRestoredFromVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("wrappingkeyId")) {
+                this.wrappingkeyId(model.getWrappingkeyId());
+            }
+            if (model.wasPropertyExplicitlySet("replicaDetails")) {
+                this.replicaDetails(model.getReplicaDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
+            }
+            return this;
         }
     }
 
@@ -778,6 +807,7 @@ public final class Vault {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Vault(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", cryptoEndpoint=").append(String.valueOf(this.cryptoEndpoint));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -793,7 +823,6 @@ public final class Vault {
         sb.append(", wrappingkeyId=").append(String.valueOf(this.wrappingkeyId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -823,7 +852,7 @@ public final class Vault {
                 && java.util.Objects.equals(this.wrappingkeyId, other.wrappingkeyId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -865,16 +894,7 @@ public final class Vault {
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

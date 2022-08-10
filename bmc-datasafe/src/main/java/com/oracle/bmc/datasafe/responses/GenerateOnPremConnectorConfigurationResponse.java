@@ -65,6 +65,7 @@ public class GenerateOnPremConnectorConfigurationResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "contentLength",
         "lastModified",
@@ -72,11 +73,12 @@ public class GenerateOnPremConnectorConfigurationResponse
     })
     private GenerateOnPremConnectorConfigurationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Long contentLength,
             java.util.Date lastModified,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
         this.lastModified = lastModified;
@@ -88,6 +90,13 @@ public class GenerateOnPremConnectorConfigurationResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -159,6 +168,7 @@ public class GenerateOnPremConnectorConfigurationResponse
          */
         public Builder copy(GenerateOnPremConnectorConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
             lastModified(o.getLastModified());
@@ -173,7 +183,12 @@ public class GenerateOnPremConnectorConfigurationResponse
          */
         public GenerateOnPremConnectorConfigurationResponse build() {
             return new GenerateOnPremConnectorConfigurationResponse(
-                    __httpStatusCode__, opcRequestId, contentLength, lastModified, inputStream);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    contentLength,
+                    lastModified,
+                    inputStream);
         }
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsParserFilter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsParserFilter {
+public final class LogAnalyticsParserFilter
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -162,26 +163,45 @@ public final class LogAnalyticsParserFilter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsParserFilter build() {
-            LogAnalyticsParserFilter __instance__ =
+            LogAnalyticsParserFilter model =
                     new LogAnalyticsParserFilter(
-                            id, parser, agentVersion, isInUse, operatingSystem, parserId, version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.parser,
+                            this.agentVersion,
+                            this.isInUse,
+                            this.operatingSystem,
+                            this.parserId,
+                            this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsParserFilter o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .parser(o.getParser())
-                            .agentVersion(o.getAgentVersion())
-                            .isInUse(o.getIsInUse())
-                            .operatingSystem(o.getOperatingSystem())
-                            .parserId(o.getParserId())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsParserFilter model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("parser")) {
+                this.parser(model.getParser());
+            }
+            if (model.wasPropertyExplicitlySet("agentVersion")) {
+                this.agentVersion(model.getAgentVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isInUse")) {
+                this.isInUse(model.getIsInUse());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("parserId")) {
+                this.parserId(model.getParserId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -302,6 +322,7 @@ public final class LogAnalyticsParserFilter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsParserFilter(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", parser=").append(String.valueOf(this.parser));
         sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
@@ -309,7 +330,6 @@ public final class LogAnalyticsParserFilter {
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
         sb.append(", parserId=").append(String.valueOf(this.parserId));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -331,7 +351,7 @@ public final class LogAnalyticsParserFilter {
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
                 && java.util.Objects.equals(this.parserId, other.parserId)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -347,16 +367,7 @@ public final class LogAnalyticsParserFilter {
                         + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
         result = (result * PRIME) + (this.parserId == null ? 43 : this.parserId.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

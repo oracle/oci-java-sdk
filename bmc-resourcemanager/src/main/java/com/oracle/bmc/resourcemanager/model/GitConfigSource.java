@@ -89,26 +89,33 @@ public final class GitConfigSource extends ConfigSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GitConfigSource build() {
-            GitConfigSource __instance__ =
+            GitConfigSource model =
                     new GitConfigSource(
-                            workingDirectory,
-                            configurationSourceProviderId,
-                            repositoryUrl,
-                            branchName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.workingDirectory,
+                            this.configurationSourceProviderId,
+                            this.repositoryUrl,
+                            this.branchName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GitConfigSource o) {
-            Builder copiedBuilder =
-                    workingDirectory(o.getWorkingDirectory())
-                            .configurationSourceProviderId(o.getConfigurationSourceProviderId())
-                            .repositoryUrl(o.getRepositoryUrl())
-                            .branchName(o.getBranchName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GitConfigSource model) {
+            if (model.wasPropertyExplicitlySet("workingDirectory")) {
+                this.workingDirectory(model.getWorkingDirectory());
+            }
+            if (model.wasPropertyExplicitlySet("configurationSourceProviderId")) {
+                this.configurationSourceProviderId(model.getConfigurationSourceProviderId());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryUrl")) {
+                this.repositoryUrl(model.getRepositoryUrl());
+            }
+            if (model.wasPropertyExplicitlySet("branchName")) {
+                this.branchName(model.getBranchName());
+            }
+            return this;
         }
     }
 
@@ -197,7 +204,6 @@ public final class GitConfigSource extends ConfigSource {
                 .append(String.valueOf(this.configurationSourceProviderId));
         sb.append(", repositoryUrl=").append(String.valueOf(this.repositoryUrl));
         sb.append(", branchName=").append(String.valueOf(this.branchName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -216,8 +222,7 @@ public final class GitConfigSource extends ConfigSource {
                         this.configurationSourceProviderId, other.configurationSourceProviderId)
                 && java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
                 && java.util.Objects.equals(this.branchName, other.branchName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -233,16 +238,6 @@ public final class GitConfigSource extends ConfigSource {
                 (result * PRIME)
                         + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
         result = (result * PRIME) + (this.branchName == null ? 43 : this.branchName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

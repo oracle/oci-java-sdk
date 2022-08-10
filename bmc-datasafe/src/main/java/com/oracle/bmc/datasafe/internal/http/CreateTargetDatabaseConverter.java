@@ -107,8 +107,8 @@ public class CreateTargetDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .CreateTargetDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.targetDatabase(response.getItem());
 

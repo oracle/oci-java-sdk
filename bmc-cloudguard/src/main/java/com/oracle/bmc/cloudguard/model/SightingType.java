@@ -17,7 +17,7 @@ package com.oracle.bmc.cloudguard.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SightingType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SightingType {
+public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -146,24 +146,41 @@ public final class SightingType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SightingType build() {
-            SightingType __instance__ =
-                    new SightingType(id, displayName, description, mitreLink, tactic, techniques);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SightingType model =
+                    new SightingType(
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.mitreLink,
+                            this.tactic,
+                            this.techniques);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SightingType o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .mitreLink(o.getMitreLink())
-                            .tactic(o.getTactic())
-                            .techniques(o.getTechniques());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SightingType model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("mitreLink")) {
+                this.mitreLink(model.getMitreLink());
+            }
+            if (model.wasPropertyExplicitlySet("tactic")) {
+                this.tactic(model.getTactic());
+            }
+            if (model.wasPropertyExplicitlySet("techniques")) {
+                this.techniques(model.getTechniques());
+            }
+            return this;
         }
     }
 
@@ -275,13 +292,13 @@ public final class SightingType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SightingType(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", mitreLink=").append(String.valueOf(this.mitreLink));
         sb.append(", tactic=").append(String.valueOf(this.tactic));
         sb.append(", techniques=").append(String.valueOf(this.techniques));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -302,7 +319,7 @@ public final class SightingType {
                 && java.util.Objects.equals(this.mitreLink, other.mitreLink)
                 && java.util.Objects.equals(this.tactic, other.tactic)
                 && java.util.Objects.equals(this.techniques, other.techniques)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -315,16 +332,7 @@ public final class SightingType {
         result = (result * PRIME) + (this.mitreLink == null ? 43 : this.mitreLink.hashCode());
         result = (result * PRIME) + (this.tactic == null ? 43 : this.tactic.hashCode());
         result = (result * PRIME) + (this.techniques == null ? 43 : this.techniques.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -32,7 +32,8 @@ package com.oracle.bmc.mediaservices.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateMediaWorkflowJobDetails {
+public class CreateMediaWorkflowJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mediaWorkflowConfigurationIds",
@@ -173,6 +174,7 @@ public class CreateMediaWorkflowJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMediaWorkflowJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("mediaWorkflowConfigurationIds=")
                 .append(String.valueOf(this.mediaWorkflowConfigurationIds));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -200,7 +202,8 @@ public class CreateMediaWorkflowJobDetails {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -219,6 +222,7 @@ public class CreateMediaWorkflowJobDetails {
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

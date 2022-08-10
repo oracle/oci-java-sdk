@@ -131,8 +131,8 @@ public class RestoreVaultFromFileConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .RestoreVaultFromFileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vault(response.getItem());
 

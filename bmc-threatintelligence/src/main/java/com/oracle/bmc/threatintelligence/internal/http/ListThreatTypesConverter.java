@@ -137,8 +137,8 @@ public class ListThreatTypesConverter {
                                         builder =
                                                 com.oracle.bmc.threatintelligence.responses
                                                         .ListThreatTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.threatTypesCollection(response.getItem());
 

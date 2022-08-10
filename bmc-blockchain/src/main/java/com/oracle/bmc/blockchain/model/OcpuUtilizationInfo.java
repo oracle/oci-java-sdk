@@ -19,7 +19,7 @@ package com.oracle.bmc.blockchain.model;
     builder = OcpuUtilizationInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OcpuUtilizationInfo {
+public final class OcpuUtilizationInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"host", "ocpuUtilizationNumber", "ocpuCapacityNumber"})
     public OcpuUtilizationInfo(String host, Float ocpuUtilizationNumber, Float ocpuCapacityNumber) {
@@ -84,21 +84,27 @@ public final class OcpuUtilizationInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OcpuUtilizationInfo build() {
-            OcpuUtilizationInfo __instance__ =
-                    new OcpuUtilizationInfo(host, ocpuUtilizationNumber, ocpuCapacityNumber);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OcpuUtilizationInfo model =
+                    new OcpuUtilizationInfo(
+                            this.host, this.ocpuUtilizationNumber, this.ocpuCapacityNumber);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OcpuUtilizationInfo o) {
-            Builder copiedBuilder =
-                    host(o.getHost())
-                            .ocpuUtilizationNumber(o.getOcpuUtilizationNumber())
-                            .ocpuCapacityNumber(o.getOcpuCapacityNumber());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OcpuUtilizationInfo model) {
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuUtilizationNumber")) {
+                this.ocpuUtilizationNumber(model.getOcpuUtilizationNumber());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCapacityNumber")) {
+                this.ocpuCapacityNumber(model.getOcpuCapacityNumber());
+            }
+            return this;
         }
     }
 
@@ -168,10 +174,10 @@ public final class OcpuUtilizationInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OcpuUtilizationInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("host=").append(String.valueOf(this.host));
         sb.append(", ocpuUtilizationNumber=").append(String.valueOf(this.ocpuUtilizationNumber));
         sb.append(", ocpuCapacityNumber=").append(String.valueOf(this.ocpuCapacityNumber));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +195,7 @@ public final class OcpuUtilizationInfo {
         return java.util.Objects.equals(this.host, other.host)
                 && java.util.Objects.equals(this.ocpuUtilizationNumber, other.ocpuUtilizationNumber)
                 && java.util.Objects.equals(this.ocpuCapacityNumber, other.ocpuCapacityNumber)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +213,7 @@ public final class OcpuUtilizationInfo {
                         + (this.ocpuCapacityNumber == null
                                 ? 43
                                 : this.ocpuCapacityNumber.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.containerengine.model;
     builder = KubernetesNetworkConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KubernetesNetworkConfig {
+public final class KubernetesNetworkConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"podsCidr", "servicesCidr"})
     public KubernetesNetworkConfig(String podsCidr, String servicesCidr) {
@@ -67,18 +68,23 @@ public final class KubernetesNetworkConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KubernetesNetworkConfig build() {
-            KubernetesNetworkConfig __instance__ =
-                    new KubernetesNetworkConfig(podsCidr, servicesCidr);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            KubernetesNetworkConfig model =
+                    new KubernetesNetworkConfig(this.podsCidr, this.servicesCidr);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KubernetesNetworkConfig o) {
-            Builder copiedBuilder = podsCidr(o.getPodsCidr()).servicesCidr(o.getServicesCidr());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KubernetesNetworkConfig model) {
+            if (model.wasPropertyExplicitlySet("podsCidr")) {
+                this.podsCidr(model.getPodsCidr());
+            }
+            if (model.wasPropertyExplicitlySet("servicesCidr")) {
+                this.servicesCidr(model.getServicesCidr());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class KubernetesNetworkConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KubernetesNetworkConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("podsCidr=").append(String.valueOf(this.podsCidr));
         sb.append(", servicesCidr=").append(String.valueOf(this.servicesCidr));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class KubernetesNetworkConfig {
         KubernetesNetworkConfig other = (KubernetesNetworkConfig) o;
         return java.util.Objects.equals(this.podsCidr, other.podsCidr)
                 && java.util.Objects.equals(this.servicesCidr, other.servicesCidr)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class KubernetesNetworkConfig {
         int result = 1;
         result = (result * PRIME) + (this.podsCidr == null ? 43 : this.podsCidr.hashCode());
         result = (result * PRIME) + (this.servicesCidr == null ? 43 : this.servicesCidr.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

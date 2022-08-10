@@ -346,80 +346,141 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LaunchDbSystemDetails build() {
-            LaunchDbSystemDetails __instance__ =
+            LaunchDbSystemDetails model =
                     new LaunchDbSystemDetails(
-                            compartmentId,
-                            faultDomains,
-                            displayName,
-                            availabilityDomain,
-                            subnetId,
-                            backupSubnetId,
-                            nsgIds,
-                            backupNetworkNsgIds,
-                            shape,
-                            timeZone,
-                            dbSystemOptions,
-                            storageVolumePerformanceMode,
-                            sparseDiskgroup,
-                            sshPublicKeys,
-                            hostname,
-                            domain,
-                            cpuCoreCount,
-                            clusterName,
-                            dataStoragePercentage,
-                            initialDataStorageSizeInGB,
-                            kmsKeyId,
-                            kmsKeyVersionId,
-                            nodeCount,
-                            freeformTags,
-                            definedTags,
-                            privateIp,
-                            dbHome,
-                            databaseEdition,
-                            diskRedundancy,
-                            licenseModel,
-                            maintenanceWindowDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.faultDomains,
+                            this.displayName,
+                            this.availabilityDomain,
+                            this.subnetId,
+                            this.backupSubnetId,
+                            this.nsgIds,
+                            this.backupNetworkNsgIds,
+                            this.shape,
+                            this.timeZone,
+                            this.dbSystemOptions,
+                            this.storageVolumePerformanceMode,
+                            this.sparseDiskgroup,
+                            this.sshPublicKeys,
+                            this.hostname,
+                            this.domain,
+                            this.cpuCoreCount,
+                            this.clusterName,
+                            this.dataStoragePercentage,
+                            this.initialDataStorageSizeInGB,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.nodeCount,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.privateIp,
+                            this.dbHome,
+                            this.databaseEdition,
+                            this.diskRedundancy,
+                            this.licenseModel,
+                            this.maintenanceWindowDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LaunchDbSystemDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .faultDomains(o.getFaultDomains())
-                            .displayName(o.getDisplayName())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .subnetId(o.getSubnetId())
-                            .backupSubnetId(o.getBackupSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
-                            .shape(o.getShape())
-                            .timeZone(o.getTimeZone())
-                            .dbSystemOptions(o.getDbSystemOptions())
-                            .storageVolumePerformanceMode(o.getStorageVolumePerformanceMode())
-                            .sparseDiskgroup(o.getSparseDiskgroup())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .hostname(o.getHostname())
-                            .domain(o.getDomain())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .clusterName(o.getClusterName())
-                            .dataStoragePercentage(o.getDataStoragePercentage())
-                            .initialDataStorageSizeInGB(o.getInitialDataStorageSizeInGB())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .nodeCount(o.getNodeCount())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .privateIp(o.getPrivateIp())
-                            .dbHome(o.getDbHome())
-                            .databaseEdition(o.getDatabaseEdition())
-                            .diskRedundancy(o.getDiskRedundancy())
-                            .licenseModel(o.getLicenseModel())
-                            .maintenanceWindowDetails(o.getMaintenanceWindowDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LaunchDbSystemDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomains")) {
+                this.faultDomains(model.getFaultDomains());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("backupSubnetId")) {
+                this.backupSubnetId(model.getBackupSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
+                this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemOptions")) {
+                this.dbSystemOptions(model.getDbSystemOptions());
+            }
+            if (model.wasPropertyExplicitlySet("storageVolumePerformanceMode")) {
+                this.storageVolumePerformanceMode(model.getStorageVolumePerformanceMode());
+            }
+            if (model.wasPropertyExplicitlySet("sparseDiskgroup")) {
+                this.sparseDiskgroup(model.getSparseDiskgroup());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKeys")) {
+                this.sshPublicKeys(model.getSshPublicKeys());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("clusterName")) {
+                this.clusterName(model.getClusterName());
+            }
+            if (model.wasPropertyExplicitlySet("dataStoragePercentage")) {
+                this.dataStoragePercentage(model.getDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("initialDataStorageSizeInGB")) {
+                this.initialDataStorageSizeInGB(model.getInitialDataStorageSizeInGB());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("privateIp")) {
+                this.privateIp(model.getPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("dbHome")) {
+                this.dbHome(model.getDbHome());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            if (model.wasPropertyExplicitlySet("diskRedundancy")) {
+                this.diskRedundancy(model.getDiskRedundancy());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
+                this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
+            }
+            return this;
         }
     }
 
@@ -702,7 +763,6 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -723,8 +783,7 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -744,16 +803,6 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                         + (this.maintenanceWindowDetails == null
                                 ? 43
                                 : this.maintenanceWindowDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

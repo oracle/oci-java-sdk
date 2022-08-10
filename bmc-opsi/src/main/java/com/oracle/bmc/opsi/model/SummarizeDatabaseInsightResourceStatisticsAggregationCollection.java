@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = SummarizeDatabaseInsightResourceStatisticsAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollection {
+public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -95,15 +96,13 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
             return this;
         }
         /**
-         * Displays usage unit ( CORES, GB)
-         *
+         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
         /**
-         * Displays usage unit ( CORES, GB)
-         *
+         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
          * @param usageUnit the value to set
          * @return this builder
          **/
@@ -133,24 +132,37 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummarizeDatabaseInsightResourceStatisticsAggregationCollection build() {
-            SummarizeDatabaseInsightResourceStatisticsAggregationCollection __instance__ =
+            SummarizeDatabaseInsightResourceStatisticsAggregationCollection model =
                     new SummarizeDatabaseInsightResourceStatisticsAggregationCollection(
-                            timeIntervalStart, timeIntervalEnd, resourceMetric, usageUnit, items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeIntervalStart,
+                            this.timeIntervalEnd,
+                            this.resourceMetric,
+                            this.usageUnit,
+                            this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummarizeDatabaseInsightResourceStatisticsAggregationCollection o) {
-            Builder copiedBuilder =
-                    timeIntervalStart(o.getTimeIntervalStart())
-                            .timeIntervalEnd(o.getTimeIntervalEnd())
-                            .resourceMetric(o.getResourceMetric())
-                            .usageUnit(o.getUsageUnit())
-                            .items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummarizeDatabaseInsightResourceStatisticsAggregationCollection model) {
+            if (model.wasPropertyExplicitlySet("timeIntervalStart")) {
+                this.timeIntervalStart(model.getTimeIntervalStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
+                this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("resourceMetric")) {
+                this.resourceMetric(model.getResourceMetric());
+            }
+            if (model.wasPropertyExplicitlySet("usageUnit")) {
+                this.usageUnit(model.getUsageUnit());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -263,15 +275,64 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
     }
 
     /**
-     * Displays usage unit ( CORES, GB)
-     *
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+     **/
+    public enum UsageUnit {
+        Cores("CORES"),
+        Gb("GB"),
+        Mbps("MBPS"),
+        Iops("IOPS"),
+        Percent("PERCENT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UsageUnit.class);
+
+        private final String value;
+        private static java.util.Map<String, UsageUnit> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UsageUnit v : UsageUnit.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        UsageUnit(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UsageUnit create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'UsageUnit', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
     /**
-     * Displays usage unit ( CORES, GB)
-     *
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
      * @return the value
      **/
     public UsageUnit getUsageUnit() {
@@ -305,12 +366,12 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummarizeDatabaseInsightResourceStatisticsAggregationCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
         sb.append(", resourceMetric=").append(String.valueOf(this.resourceMetric));
         sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -331,7 +392,7 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
                 && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
                 && java.util.Objects.equals(this.usageUnit, other.usageUnit)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -349,16 +410,7 @@ public final class SummarizeDatabaseInsightResourceStatisticsAggregationCollecti
                         + (this.resourceMetric == null ? 43 : this.resourceMetric.hashCode());
         result = (result * PRIME) + (this.usageUnit == null ? 43 : this.usageUnit.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

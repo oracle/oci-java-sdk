@@ -96,23 +96,30 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyStoreTypeFromOracleKeyVaultDetails build() {
-            KeyStoreTypeFromOracleKeyVaultDetails __instance__ =
+            KeyStoreTypeFromOracleKeyVaultDetails model =
                     new KeyStoreTypeFromOracleKeyVaultDetails(
-                            connectionIps, adminUsername, vaultId, secretId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.connectionIps, this.adminUsername, this.vaultId, this.secretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KeyStoreTypeFromOracleKeyVaultDetails o) {
-            Builder copiedBuilder =
-                    connectionIps(o.getConnectionIps())
-                            .adminUsername(o.getAdminUsername())
-                            .vaultId(o.getVaultId())
-                            .secretId(o.getSecretId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KeyStoreTypeFromOracleKeyVaultDetails model) {
+            if (model.wasPropertyExplicitlySet("connectionIps")) {
+                this.connectionIps(model.getConnectionIps());
+            }
+            if (model.wasPropertyExplicitlySet("adminUsername")) {
+                this.adminUsername(model.getAdminUsername());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            return this;
         }
     }
 
@@ -214,7 +221,6 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,8 +239,7 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.secretId, other.secretId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +254,6 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
                         + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

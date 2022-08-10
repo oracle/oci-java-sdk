@@ -53,13 +53,20 @@ public class AssociateCustomPropertyResponse extends com.oracle.bmc.responses.Bm
         return type;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "type"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "type"
+    })
     private AssociateCustomPropertyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.Type type) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.type = type;
@@ -70,6 +77,13 @@ public class AssociateCustomPropertyResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class AssociateCustomPropertyResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(AssociateCustomPropertyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             type(o.getType());
@@ -143,7 +158,7 @@ public class AssociateCustomPropertyResponse extends com.oracle.bmc.responses.Bm
          */
         public AssociateCustomPropertyResponse build() {
             return new AssociateCustomPropertyResponse(
-                    __httpStatusCode__, etag, opcRequestId, type);
+                    __httpStatusCode__, headers, etag, opcRequestId, type);
         }
     }
 

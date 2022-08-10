@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = PluggableDatabaseConnectionStrings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PluggableDatabaseConnectionStrings {
+public final class PluggableDatabaseConnectionStrings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pdbDefault", "pdbIpDefault", "allConnectionStrings"})
     public PluggableDatabaseConnectionStrings(
@@ -88,22 +89,27 @@ public final class PluggableDatabaseConnectionStrings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PluggableDatabaseConnectionStrings build() {
-            PluggableDatabaseConnectionStrings __instance__ =
+            PluggableDatabaseConnectionStrings model =
                     new PluggableDatabaseConnectionStrings(
-                            pdbDefault, pdbIpDefault, allConnectionStrings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.pdbDefault, this.pdbIpDefault, this.allConnectionStrings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PluggableDatabaseConnectionStrings o) {
-            Builder copiedBuilder =
-                    pdbDefault(o.getPdbDefault())
-                            .pdbIpDefault(o.getPdbIpDefault())
-                            .allConnectionStrings(o.getAllConnectionStrings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PluggableDatabaseConnectionStrings model) {
+            if (model.wasPropertyExplicitlySet("pdbDefault")) {
+                this.pdbDefault(model.getPdbDefault());
+            }
+            if (model.wasPropertyExplicitlySet("pdbIpDefault")) {
+                this.pdbIpDefault(model.getPdbIpDefault());
+            }
+            if (model.wasPropertyExplicitlySet("allConnectionStrings")) {
+                this.allConnectionStrings(model.getAllConnectionStrings());
+            }
+            return this;
         }
     }
 
@@ -173,10 +179,10 @@ public final class PluggableDatabaseConnectionStrings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PluggableDatabaseConnectionStrings(");
+        sb.append("super=").append(super.toString());
         sb.append("pdbDefault=").append(String.valueOf(this.pdbDefault));
         sb.append(", pdbIpDefault=").append(String.valueOf(this.pdbIpDefault));
         sb.append(", allConnectionStrings=").append(String.valueOf(this.allConnectionStrings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +200,7 @@ public final class PluggableDatabaseConnectionStrings {
         return java.util.Objects.equals(this.pdbDefault, other.pdbDefault)
                 && java.util.Objects.equals(this.pdbIpDefault, other.pdbIpDefault)
                 && java.util.Objects.equals(this.allConnectionStrings, other.allConnectionStrings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -208,16 +214,7 @@ public final class PluggableDatabaseConnectionStrings {
                         + (this.allConnectionStrings == null
                                 ? 43
                                 : this.allConnectionStrings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

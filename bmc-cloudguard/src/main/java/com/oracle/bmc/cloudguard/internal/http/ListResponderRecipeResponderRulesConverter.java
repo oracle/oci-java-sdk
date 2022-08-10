@@ -171,8 +171,8 @@ public class ListResponderRecipeResponderRulesConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListResponderRecipeResponderRulesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.responderRecipeResponderRuleCollection(response.getItem());
 

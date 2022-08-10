@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateSshDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSshDetails {
+public final class CreateSshDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"host", "sshkey", "user", "sudoLocation"})
     public CreateSshDetails(String host, String sshkey, String user, String sudoLocation) {
@@ -109,21 +109,29 @@ public final class CreateSshDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSshDetails build() {
-            CreateSshDetails __instance__ = new CreateSshDetails(host, sshkey, user, sudoLocation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateSshDetails model =
+                    new CreateSshDetails(this.host, this.sshkey, this.user, this.sudoLocation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSshDetails o) {
-            Builder copiedBuilder =
-                    host(o.getHost())
-                            .sshkey(o.getSshkey())
-                            .user(o.getUser())
-                            .sudoLocation(o.getSudoLocation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSshDetails model) {
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("sshkey")) {
+                this.sshkey(model.getSshkey());
+            }
+            if (model.wasPropertyExplicitlySet("user")) {
+                this.user(model.getUser());
+            }
+            if (model.wasPropertyExplicitlySet("sudoLocation")) {
+                this.sudoLocation(model.getSudoLocation());
+            }
+            return this;
         }
     }
 
@@ -215,11 +223,11 @@ public final class CreateSshDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSshDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("host=").append(String.valueOf(this.host));
         sb.append(", sshkey=").append(String.valueOf(this.sshkey));
         sb.append(", user=").append(String.valueOf(this.user));
         sb.append(", sudoLocation=").append(String.valueOf(this.sudoLocation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -238,7 +246,7 @@ public final class CreateSshDetails {
                 && java.util.Objects.equals(this.sshkey, other.sshkey)
                 && java.util.Objects.equals(this.user, other.user)
                 && java.util.Objects.equals(this.sudoLocation, other.sudoLocation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +257,7 @@ public final class CreateSshDetails {
         result = (result * PRIME) + (this.sshkey == null ? 43 : this.sshkey.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
         result = (result * PRIME) + (this.sudoLocation == null ? 43 : this.sudoLocation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

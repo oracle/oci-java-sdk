@@ -110,8 +110,8 @@ public class GetMaskingColumnConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetMaskingColumnResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.maskingColumn(response.getItem());
 

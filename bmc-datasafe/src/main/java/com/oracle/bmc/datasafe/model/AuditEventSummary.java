@@ -19,7 +19,7 @@ package com.oracle.bmc.datasafe.model;
     builder = AuditEventSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditEventSummary {
+public final class AuditEventSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -701,86 +701,153 @@ public final class AuditEventSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditEventSummary build() {
-            AuditEventSummary __instance__ =
+            AuditEventSummary model =
                     new AuditEventSummary(
-                            id,
-                            compartmentId,
-                            dbUserName,
-                            targetId,
-                            targetName,
-                            databaseType,
-                            targetClass,
-                            auditEventTime,
-                            timeCollected,
-                            osUserName,
-                            operation,
-                            operationStatus,
-                            eventName,
-                            errorCode,
-                            errorMessage,
-                            objectType,
-                            objectName,
-                            objectOwner,
-                            clientHostname,
-                            clientIp,
-                            auditTrailId,
-                            isAlerted,
-                            actionTaken,
-                            clientProgram,
-                            commandText,
-                            commandParam,
-                            extendedEventAttributes,
-                            auditLocation,
-                            osTerminal,
-                            clientId,
-                            auditPolicies,
-                            auditType,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.dbUserName,
+                            this.targetId,
+                            this.targetName,
+                            this.databaseType,
+                            this.targetClass,
+                            this.auditEventTime,
+                            this.timeCollected,
+                            this.osUserName,
+                            this.operation,
+                            this.operationStatus,
+                            this.eventName,
+                            this.errorCode,
+                            this.errorMessage,
+                            this.objectType,
+                            this.objectName,
+                            this.objectOwner,
+                            this.clientHostname,
+                            this.clientIp,
+                            this.auditTrailId,
+                            this.isAlerted,
+                            this.actionTaken,
+                            this.clientProgram,
+                            this.commandText,
+                            this.commandParam,
+                            this.extendedEventAttributes,
+                            this.auditLocation,
+                            this.osTerminal,
+                            this.clientId,
+                            this.auditPolicies,
+                            this.auditType,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuditEventSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .dbUserName(o.getDbUserName())
-                            .targetId(o.getTargetId())
-                            .targetName(o.getTargetName())
-                            .databaseType(o.getDatabaseType())
-                            .targetClass(o.getTargetClass())
-                            .auditEventTime(o.getAuditEventTime())
-                            .timeCollected(o.getTimeCollected())
-                            .osUserName(o.getOsUserName())
-                            .operation(o.getOperation())
-                            .operationStatus(o.getOperationStatus())
-                            .eventName(o.getEventName())
-                            .errorCode(o.getErrorCode())
-                            .errorMessage(o.getErrorMessage())
-                            .objectType(o.getObjectType())
-                            .objectName(o.getObjectName())
-                            .objectOwner(o.getObjectOwner())
-                            .clientHostname(o.getClientHostname())
-                            .clientIp(o.getClientIp())
-                            .auditTrailId(o.getAuditTrailId())
-                            .isAlerted(o.getIsAlerted())
-                            .actionTaken(o.getActionTaken())
-                            .clientProgram(o.getClientProgram())
-                            .commandText(o.getCommandText())
-                            .commandParam(o.getCommandParam())
-                            .extendedEventAttributes(o.getExtendedEventAttributes())
-                            .auditLocation(o.getAuditLocation())
-                            .osTerminal(o.getOsTerminal())
-                            .clientId(o.getClientId())
-                            .auditPolicies(o.getAuditPolicies())
-                            .auditType(o.getAuditType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuditEventSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("dbUserName")) {
+                this.dbUserName(model.getDbUserName());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetName")) {
+                this.targetName(model.getTargetName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("targetClass")) {
+                this.targetClass(model.getTargetClass());
+            }
+            if (model.wasPropertyExplicitlySet("auditEventTime")) {
+                this.auditEventTime(model.getAuditEventTime());
+            }
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("osUserName")) {
+                this.osUserName(model.getOsUserName());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("operationStatus")) {
+                this.operationStatus(model.getOperationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("eventName")) {
+                this.eventName(model.getEventName());
+            }
+            if (model.wasPropertyExplicitlySet("errorCode")) {
+                this.errorCode(model.getErrorCode());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectOwner")) {
+                this.objectOwner(model.getObjectOwner());
+            }
+            if (model.wasPropertyExplicitlySet("clientHostname")) {
+                this.clientHostname(model.getClientHostname());
+            }
+            if (model.wasPropertyExplicitlySet("clientIp")) {
+                this.clientIp(model.getClientIp());
+            }
+            if (model.wasPropertyExplicitlySet("auditTrailId")) {
+                this.auditTrailId(model.getAuditTrailId());
+            }
+            if (model.wasPropertyExplicitlySet("isAlerted")) {
+                this.isAlerted(model.getIsAlerted());
+            }
+            if (model.wasPropertyExplicitlySet("actionTaken")) {
+                this.actionTaken(model.getActionTaken());
+            }
+            if (model.wasPropertyExplicitlySet("clientProgram")) {
+                this.clientProgram(model.getClientProgram());
+            }
+            if (model.wasPropertyExplicitlySet("commandText")) {
+                this.commandText(model.getCommandText());
+            }
+            if (model.wasPropertyExplicitlySet("commandParam")) {
+                this.commandParam(model.getCommandParam());
+            }
+            if (model.wasPropertyExplicitlySet("extendedEventAttributes")) {
+                this.extendedEventAttributes(model.getExtendedEventAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("auditLocation")) {
+                this.auditLocation(model.getAuditLocation());
+            }
+            if (model.wasPropertyExplicitlySet("osTerminal")) {
+                this.osTerminal(model.getOsTerminal());
+            }
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            if (model.wasPropertyExplicitlySet("auditPolicies")) {
+                this.auditPolicies(model.getAuditPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("auditType")) {
+                this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1553,6 +1620,7 @@ public final class AuditEventSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditEventSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dbUserName=").append(String.valueOf(this.dbUserName));
@@ -1588,7 +1656,6 @@ public final class AuditEventSummary {
         sb.append(", auditType=").append(String.valueOf(this.auditType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1638,7 +1705,7 @@ public final class AuditEventSummary {
                 && java.util.Objects.equals(this.auditType, other.auditType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1699,16 +1766,7 @@ public final class AuditEventSummary {
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

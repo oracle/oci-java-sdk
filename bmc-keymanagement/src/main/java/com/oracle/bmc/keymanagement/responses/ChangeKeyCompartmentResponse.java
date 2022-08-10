@@ -38,9 +38,13 @@ public class ChangeKeyCompartmentResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
-    private ChangeKeyCompartmentResponse(int __httpStatusCode__, String etag, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "opcRequestId"})
+    private ChangeKeyCompartmentResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
     }
@@ -50,6 +54,13 @@ public class ChangeKeyCompartmentResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +104,7 @@ public class ChangeKeyCompartmentResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ChangeKeyCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
 
@@ -104,7 +116,8 @@ public class ChangeKeyCompartmentResponse extends com.oracle.bmc.responses.BmcRe
          * @return the response object
          */
         public ChangeKeyCompartmentResponse build() {
-            return new ChangeKeyCompartmentResponse(__httpStatusCode__, etag, opcRequestId);
+            return new ChangeKeyCompartmentResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId);
         }
     }
 

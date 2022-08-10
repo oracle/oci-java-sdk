@@ -19,7 +19,8 @@ package com.oracle.bmc.streaming.model;
     builder = CreateGroupCursorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateGroupCursorDetails {
+public final class CreateGroupCursorDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -152,25 +153,41 @@ public final class CreateGroupCursorDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateGroupCursorDetails build() {
-            CreateGroupCursorDetails __instance__ =
+            CreateGroupCursorDetails model =
                     new CreateGroupCursorDetails(
-                            type, time, groupName, instanceName, timeoutInMs, commitOnGet);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.type,
+                            this.time,
+                            this.groupName,
+                            this.instanceName,
+                            this.timeoutInMs,
+                            this.commitOnGet);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateGroupCursorDetails o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .time(o.getTime())
-                            .groupName(o.getGroupName())
-                            .instanceName(o.getInstanceName())
-                            .timeoutInMs(o.getTimeoutInMs())
-                            .commitOnGet(o.getCommitOnGet());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateGroupCursorDetails model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            if (model.wasPropertyExplicitlySet("groupName")) {
+                this.groupName(model.getGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceName")) {
+                this.instanceName(model.getInstanceName());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMs")) {
+                this.timeoutInMs(model.getTimeoutInMs());
+            }
+            if (model.wasPropertyExplicitlySet("commitOnGet")) {
+                this.commitOnGet(model.getCommitOnGet());
+            }
+            return this;
         }
     }
 
@@ -322,13 +339,13 @@ public final class CreateGroupCursorDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateGroupCursorDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", time=").append(String.valueOf(this.time));
         sb.append(", groupName=").append(String.valueOf(this.groupName));
         sb.append(", instanceName=").append(String.valueOf(this.instanceName));
         sb.append(", timeoutInMs=").append(String.valueOf(this.timeoutInMs));
         sb.append(", commitOnGet=").append(String.valueOf(this.commitOnGet));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -349,7 +366,7 @@ public final class CreateGroupCursorDetails {
                 && java.util.Objects.equals(this.instanceName, other.instanceName)
                 && java.util.Objects.equals(this.timeoutInMs, other.timeoutInMs)
                 && java.util.Objects.equals(this.commitOnGet, other.commitOnGet)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -362,16 +379,7 @@ public final class CreateGroupCursorDetails {
         result = (result * PRIME) + (this.instanceName == null ? 43 : this.instanceName.hashCode());
         result = (result * PRIME) + (this.timeoutInMs == null ? 43 : this.timeoutInMs.hashCode());
         result = (result * PRIME) + (this.commitOnGet == null ? 43 : this.commitOnGet.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

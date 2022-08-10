@@ -46,7 +46,7 @@ package com.oracle.bmc.loganalytics.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractColumn {
+public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -276,6 +276,7 @@ public class AbstractColumn {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractColumn(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", subSystem=").append(String.valueOf(this.subSystem));
         sb.append(", values=").append(String.valueOf(this.values));
@@ -311,7 +312,8 @@ public class AbstractColumn {
                 && java.util.Objects.equals(this.isEvaluable, other.isEvaluable)
                 && java.util.Objects.equals(this.valueType, other.valueType)
                 && java.util.Objects.equals(this.originalDisplayName, other.originalDisplayName)
-                && java.util.Objects.equals(this.internalName, other.internalName);
+                && java.util.Objects.equals(this.internalName, other.internalName)
+                && super.equals(other);
     }
 
     @Override
@@ -339,6 +341,7 @@ public class AbstractColumn {
                                 ? 43
                                 : this.originalDisplayName.hashCode());
         result = (result * PRIME) + (this.internalName == null ? 43 : this.internalName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

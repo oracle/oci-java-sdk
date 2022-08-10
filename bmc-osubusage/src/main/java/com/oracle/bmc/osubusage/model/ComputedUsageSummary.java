@@ -20,7 +20,7 @@ package com.oracle.bmc.osubusage.model;
     builder = ComputedUsageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputedUsageSummary {
+public final class ComputedUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeCreated",
@@ -542,68 +542,117 @@ public final class ComputedUsageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputedUsageSummary build() {
-            ComputedUsageSummary __instance__ =
+            ComputedUsageSummary model =
                     new ComputedUsageSummary(
-                            timeCreated,
-                            timeUpdated,
-                            parentSubscribedServiceId,
-                            parentProduct,
-                            planNumber,
-                            currencyCode,
-                            rateCardTierdId,
-                            rateCardId,
-                            computeSource,
-                            dataCenter,
-                            mqsMessageId,
-                            computedUsageId,
-                            quantity,
-                            usageNumber,
-                            originalUsageNumber,
-                            commitmentServiceId,
-                            isInvoiced,
-                            type,
-                            timeOfArrival,
-                            timeMeteredOn,
-                            netUnitPrice,
-                            costRounded,
-                            cost,
-                            product,
-                            unitOfMeasure);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.parentSubscribedServiceId,
+                            this.parentProduct,
+                            this.planNumber,
+                            this.currencyCode,
+                            this.rateCardTierdId,
+                            this.rateCardId,
+                            this.computeSource,
+                            this.dataCenter,
+                            this.mqsMessageId,
+                            this.computedUsageId,
+                            this.quantity,
+                            this.usageNumber,
+                            this.originalUsageNumber,
+                            this.commitmentServiceId,
+                            this.isInvoiced,
+                            this.type,
+                            this.timeOfArrival,
+                            this.timeMeteredOn,
+                            this.netUnitPrice,
+                            this.costRounded,
+                            this.cost,
+                            this.product,
+                            this.unitOfMeasure);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputedUsageSummary o) {
-            Builder copiedBuilder =
-                    timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .parentSubscribedServiceId(o.getParentSubscribedServiceId())
-                            .parentProduct(o.getParentProduct())
-                            .planNumber(o.getPlanNumber())
-                            .currencyCode(o.getCurrencyCode())
-                            .rateCardTierdId(o.getRateCardTierdId())
-                            .rateCardId(o.getRateCardId())
-                            .computeSource(o.getComputeSource())
-                            .dataCenter(o.getDataCenter())
-                            .mqsMessageId(o.getMqsMessageId())
-                            .computedUsageId(o.getComputedUsageId())
-                            .quantity(o.getQuantity())
-                            .usageNumber(o.getUsageNumber())
-                            .originalUsageNumber(o.getOriginalUsageNumber())
-                            .commitmentServiceId(o.getCommitmentServiceId())
-                            .isInvoiced(o.getIsInvoiced())
-                            .type(o.getType())
-                            .timeOfArrival(o.getTimeOfArrival())
-                            .timeMeteredOn(o.getTimeMeteredOn())
-                            .netUnitPrice(o.getNetUnitPrice())
-                            .costRounded(o.getCostRounded())
-                            .cost(o.getCost())
-                            .product(o.getProduct())
-                            .unitOfMeasure(o.getUnitOfMeasure());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputedUsageSummary model) {
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("parentSubscribedServiceId")) {
+                this.parentSubscribedServiceId(model.getParentSubscribedServiceId());
+            }
+            if (model.wasPropertyExplicitlySet("parentProduct")) {
+                this.parentProduct(model.getParentProduct());
+            }
+            if (model.wasPropertyExplicitlySet("planNumber")) {
+                this.planNumber(model.getPlanNumber());
+            }
+            if (model.wasPropertyExplicitlySet("currencyCode")) {
+                this.currencyCode(model.getCurrencyCode());
+            }
+            if (model.wasPropertyExplicitlySet("rateCardTierdId")) {
+                this.rateCardTierdId(model.getRateCardTierdId());
+            }
+            if (model.wasPropertyExplicitlySet("rateCardId")) {
+                this.rateCardId(model.getRateCardId());
+            }
+            if (model.wasPropertyExplicitlySet("computeSource")) {
+                this.computeSource(model.getComputeSource());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenter")) {
+                this.dataCenter(model.getDataCenter());
+            }
+            if (model.wasPropertyExplicitlySet("mqsMessageId")) {
+                this.mqsMessageId(model.getMqsMessageId());
+            }
+            if (model.wasPropertyExplicitlySet("computedUsageId")) {
+                this.computedUsageId(model.getComputedUsageId());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("usageNumber")) {
+                this.usageNumber(model.getUsageNumber());
+            }
+            if (model.wasPropertyExplicitlySet("originalUsageNumber")) {
+                this.originalUsageNumber(model.getOriginalUsageNumber());
+            }
+            if (model.wasPropertyExplicitlySet("commitmentServiceId")) {
+                this.commitmentServiceId(model.getCommitmentServiceId());
+            }
+            if (model.wasPropertyExplicitlySet("isInvoiced")) {
+                this.isInvoiced(model.getIsInvoiced());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfArrival")) {
+                this.timeOfArrival(model.getTimeOfArrival());
+            }
+            if (model.wasPropertyExplicitlySet("timeMeteredOn")) {
+                this.timeMeteredOn(model.getTimeMeteredOn());
+            }
+            if (model.wasPropertyExplicitlySet("netUnitPrice")) {
+                this.netUnitPrice(model.getNetUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("costRounded")) {
+                this.costRounded(model.getCostRounded());
+            }
+            if (model.wasPropertyExplicitlySet("cost")) {
+                this.cost(model.getCost());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            if (model.wasPropertyExplicitlySet("unitOfMeasure")) {
+                this.unitOfMeasure(model.getUnitOfMeasure());
+            }
+            return this;
         }
     }
 
@@ -1073,6 +1122,7 @@ public final class ComputedUsageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputedUsageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", parentSubscribedServiceId=")
@@ -1099,7 +1149,6 @@ public final class ComputedUsageSummary {
         sb.append(", cost=").append(String.valueOf(this.cost));
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", unitOfMeasure=").append(String.valueOf(this.unitOfMeasure));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1140,7 +1189,7 @@ public final class ComputedUsageSummary {
                 && java.util.Objects.equals(this.cost, other.cost)
                 && java.util.Objects.equals(this.product, other.product)
                 && java.util.Objects.equals(this.unitOfMeasure, other.unitOfMeasure)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1198,16 +1247,7 @@ public final class ComputedUsageSummary {
         result =
                 (result * PRIME)
                         + (this.unitOfMeasure == null ? 43 : this.unitOfMeasure.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

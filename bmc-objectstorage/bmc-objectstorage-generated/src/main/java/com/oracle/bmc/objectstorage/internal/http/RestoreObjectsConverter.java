@@ -106,8 +106,8 @@ public class RestoreObjectsConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .RestoreObjectsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

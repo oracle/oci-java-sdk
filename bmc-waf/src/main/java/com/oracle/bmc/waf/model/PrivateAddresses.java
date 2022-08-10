@@ -17,7 +17,7 @@ package com.oracle.bmc.waf.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PrivateAddresses.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PrivateAddresses {
+public final class PrivateAddresses extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vcnId", "addresses"})
     public PrivateAddresses(String vcnId, String addresses) {
@@ -65,17 +65,22 @@ public final class PrivateAddresses {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateAddresses build() {
-            PrivateAddresses __instance__ = new PrivateAddresses(vcnId, addresses);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PrivateAddresses model = new PrivateAddresses(this.vcnId, this.addresses);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PrivateAddresses o) {
-            Builder copiedBuilder = vcnId(o.getVcnId()).addresses(o.getAddresses());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PrivateAddresses model) {
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("addresses")) {
+                this.addresses(model.getAddresses());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class PrivateAddresses {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PrivateAddresses(");
+        sb.append("super=").append(super.toString());
         sb.append("vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", addresses=").append(String.valueOf(this.addresses));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class PrivateAddresses {
         PrivateAddresses other = (PrivateAddresses) o;
         return java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.addresses, other.addresses)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class PrivateAddresses {
         int result = 1;
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + (this.addresses == null ? 43 : this.addresses.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

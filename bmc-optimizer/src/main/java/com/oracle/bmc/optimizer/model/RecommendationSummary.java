@@ -20,7 +20,8 @@ package com.oracle.bmc.optimizer.model;
     builder = RecommendationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RecommendationSummary {
+public final class RecommendationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -356,50 +357,81 @@ public final class RecommendationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RecommendationSummary build() {
-            RecommendationSummary __instance__ =
+            RecommendationSummary model =
                     new RecommendationSummary(
-                            id,
-                            compartmentId,
-                            categoryId,
-                            name,
-                            description,
-                            importance,
-                            resourceCounts,
-                            lifecycleState,
-                            estimatedCostSaving,
-                            status,
-                            timeStatusBegin,
-                            timeStatusEnd,
-                            timeCreated,
-                            timeUpdated,
-                            supportedLevels,
-                            extendedMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.categoryId,
+                            this.name,
+                            this.description,
+                            this.importance,
+                            this.resourceCounts,
+                            this.lifecycleState,
+                            this.estimatedCostSaving,
+                            this.status,
+                            this.timeStatusBegin,
+                            this.timeStatusEnd,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.supportedLevels,
+                            this.extendedMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RecommendationSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .categoryId(o.getCategoryId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .importance(o.getImportance())
-                            .resourceCounts(o.getResourceCounts())
-                            .lifecycleState(o.getLifecycleState())
-                            .estimatedCostSaving(o.getEstimatedCostSaving())
-                            .status(o.getStatus())
-                            .timeStatusBegin(o.getTimeStatusBegin())
-                            .timeStatusEnd(o.getTimeStatusEnd())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .supportedLevels(o.getSupportedLevels())
-                            .extendedMetadata(o.getExtendedMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RecommendationSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("categoryId")) {
+                this.categoryId(model.getCategoryId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("importance")) {
+                this.importance(model.getImportance());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCounts")) {
+                this.resourceCounts(model.getResourceCounts());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedCostSaving")) {
+                this.estimatedCostSaving(model.getEstimatedCostSaving());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeStatusBegin")) {
+                this.timeStatusBegin(model.getTimeStatusBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeStatusEnd")) {
+                this.timeStatusEnd(model.getTimeStatusEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("supportedLevels")) {
+                this.supportedLevels(model.getSupportedLevels());
+            }
+            if (model.wasPropertyExplicitlySet("extendedMetadata")) {
+                this.extendedMetadata(model.getExtendedMetadata());
+            }
+            return this;
         }
     }
 
@@ -668,6 +700,7 @@ public final class RecommendationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RecommendationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", categoryId=").append(String.valueOf(this.categoryId));
@@ -684,7 +717,6 @@ public final class RecommendationSummary {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", supportedLevels=").append(String.valueOf(this.supportedLevels));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -715,7 +747,7 @@ public final class RecommendationSummary {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.supportedLevels, other.supportedLevels)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -756,16 +788,7 @@ public final class RecommendationSummary {
         result =
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

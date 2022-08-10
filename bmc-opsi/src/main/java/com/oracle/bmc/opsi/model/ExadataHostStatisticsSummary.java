@@ -51,20 +51,23 @@ public final class ExadataHostStatisticsSummary
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataHostStatisticsSummary build() {
-            ExadataHostStatisticsSummary __instance__ =
-                    new ExadataHostStatisticsSummary(resourceDetails, currentStatistics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExadataHostStatisticsSummary model =
+                    new ExadataHostStatisticsSummary(this.resourceDetails, this.currentStatistics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataHostStatisticsSummary o) {
-            Builder copiedBuilder =
-                    resourceDetails(o.getResourceDetails())
-                            .currentStatistics(o.getCurrentStatistics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataHostStatisticsSummary model) {
+            if (model.wasPropertyExplicitlySet("resourceDetails")) {
+                this.resourceDetails(model.getResourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("currentStatistics")) {
+                this.currentStatistics(model.getCurrentStatistics());
+            }
+            return this;
         }
     }
 
@@ -117,7 +120,6 @@ public final class ExadataHostStatisticsSummary
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", resourceDetails=").append(String.valueOf(this.resourceDetails));
         sb.append(", currentStatistics=").append(String.valueOf(this.currentStatistics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -134,8 +136,7 @@ public final class ExadataHostStatisticsSummary
         ExadataHostStatisticsSummary other = (ExadataHostStatisticsSummary) o;
         return java.util.Objects.equals(this.resourceDetails, other.resourceDetails)
                 && java.util.Objects.equals(this.currentStatistics, other.currentStatistics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -148,16 +149,6 @@ public final class ExadataHostStatisticsSummary
         result =
                 (result * PRIME)
                         + (this.currentStatistics == null ? 43 : this.currentStatistics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

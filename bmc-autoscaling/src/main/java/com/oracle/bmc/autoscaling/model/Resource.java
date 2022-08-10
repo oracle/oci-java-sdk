@@ -31,7 +31,7 @@ package com.oracle.bmc.autoscaling.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Resource {
+public class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id"})
     protected Resource(String id) {
@@ -68,6 +68,7 @@ public class Resource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Resource(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(")");
         return sb.toString();
@@ -83,7 +84,7 @@ public class Resource {
         }
 
         Resource other = (Resource) o;
-        return java.util.Objects.equals(this.id, other.id);
+        return java.util.Objects.equals(this.id, other.id) && super.equals(other);
     }
 
     @Override
@@ -91,6 +92,7 @@ public class Resource {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

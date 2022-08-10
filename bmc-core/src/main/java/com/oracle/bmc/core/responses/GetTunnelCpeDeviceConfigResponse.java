@@ -55,16 +55,18 @@ public class GetTunnelCpeDeviceConfigResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "tunnelCpeDeviceConfig"
     })
     private GetTunnelCpeDeviceConfigResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.TunnelCpeDeviceConfig tunnelCpeDeviceConfig) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.tunnelCpeDeviceConfig = tunnelCpeDeviceConfig;
@@ -75,6 +77,13 @@ public class GetTunnelCpeDeviceConfigResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetTunnelCpeDeviceConfigResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(GetTunnelCpeDeviceConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             tunnelCpeDeviceConfig(o.getTunnelCpeDeviceConfig());
@@ -149,7 +159,7 @@ public class GetTunnelCpeDeviceConfigResponse extends com.oracle.bmc.responses.B
          */
         public GetTunnelCpeDeviceConfigResponse build() {
             return new GetTunnelCpeDeviceConfigResponse(
-                    __httpStatusCode__, etag, opcRequestId, tunnelCpeDeviceConfig);
+                    __httpStatusCode__, headers, etag, opcRequestId, tunnelCpeDeviceConfig);
         }
     }
 

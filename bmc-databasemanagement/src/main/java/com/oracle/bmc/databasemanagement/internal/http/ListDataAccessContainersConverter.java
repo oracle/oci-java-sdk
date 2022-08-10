@@ -160,8 +160,8 @@ public class ListDataAccessContainersConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListDataAccessContainersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataAccessContainerCollection(response.getItem());
 

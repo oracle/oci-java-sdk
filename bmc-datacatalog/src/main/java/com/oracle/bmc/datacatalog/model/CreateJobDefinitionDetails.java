@@ -22,7 +22,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CreateJobDefinitionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateJobDefinitionDetails {
+public final class CreateJobDefinitionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -222,36 +223,53 @@ public final class CreateJobDefinitionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateJobDefinitionDetails build() {
-            CreateJobDefinitionDetails __instance__ =
+            CreateJobDefinitionDetails model =
                     new CreateJobDefinitionDetails(
-                            displayName,
-                            description,
-                            jobType,
-                            isIncremental,
-                            dataAssetKey,
-                            connectionKey,
-                            isSampleDataExtracted,
-                            sampleDataSizeInMBs,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.jobType,
+                            this.isIncremental,
+                            this.dataAssetKey,
+                            this.connectionKey,
+                            this.isSampleDataExtracted,
+                            this.sampleDataSizeInMBs,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateJobDefinitionDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .jobType(o.getJobType())
-                            .isIncremental(o.getIsIncremental())
-                            .dataAssetKey(o.getDataAssetKey())
-                            .connectionKey(o.getConnectionKey())
-                            .isSampleDataExtracted(o.getIsSampleDataExtracted())
-                            .sampleDataSizeInMBs(o.getSampleDataSizeInMBs())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateJobDefinitionDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("jobType")) {
+                this.jobType(model.getJobType());
+            }
+            if (model.wasPropertyExplicitlySet("isIncremental")) {
+                this.isIncremental(model.getIsIncremental());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("connectionKey")) {
+                this.connectionKey(model.getConnectionKey());
+            }
+            if (model.wasPropertyExplicitlySet("isSampleDataExtracted")) {
+                this.isSampleDataExtracted(model.getIsSampleDataExtracted());
+            }
+            if (model.wasPropertyExplicitlySet("sampleDataSizeInMBs")) {
+                this.sampleDataSizeInMBs(model.getSampleDataSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -419,6 +437,7 @@ public final class CreateJobDefinitionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateJobDefinitionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", jobType=").append(String.valueOf(this.jobType));
@@ -428,7 +447,6 @@ public final class CreateJobDefinitionDetails {
         sb.append(", isSampleDataExtracted=").append(String.valueOf(this.isSampleDataExtracted));
         sb.append(", sampleDataSizeInMBs=").append(String.valueOf(this.sampleDataSizeInMBs));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -452,7 +470,7 @@ public final class CreateJobDefinitionDetails {
                 && java.util.Objects.equals(this.isSampleDataExtracted, other.isSampleDataExtracted)
                 && java.util.Objects.equals(this.sampleDataSizeInMBs, other.sampleDataSizeInMBs)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -480,16 +498,7 @@ public final class CreateJobDefinitionDetails {
                                 ? 43
                                 : this.sampleDataSizeInMBs.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

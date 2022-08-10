@@ -105,8 +105,8 @@ public class GetApprovalTemplateConverter {
                                         builder =
                                                 com.oracle.bmc.lockbox.responses
                                                         .GetApprovalTemplateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.approvalTemplate(response.getItem());
 

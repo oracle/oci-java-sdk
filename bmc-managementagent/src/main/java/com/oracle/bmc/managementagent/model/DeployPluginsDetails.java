@@ -19,7 +19,7 @@ package com.oracle.bmc.managementagent.model;
     builder = DeployPluginsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeployPluginsDetails {
+public final class DeployPluginsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pluginIds", "agentCompartmentId", "agentIds"})
     public DeployPluginsDetails(
@@ -87,21 +87,27 @@ public final class DeployPluginsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeployPluginsDetails build() {
-            DeployPluginsDetails __instance__ =
-                    new DeployPluginsDetails(pluginIds, agentCompartmentId, agentIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DeployPluginsDetails model =
+                    new DeployPluginsDetails(
+                            this.pluginIds, this.agentCompartmentId, this.agentIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeployPluginsDetails o) {
-            Builder copiedBuilder =
-                    pluginIds(o.getPluginIds())
-                            .agentCompartmentId(o.getAgentCompartmentId())
-                            .agentIds(o.getAgentIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeployPluginsDetails model) {
+            if (model.wasPropertyExplicitlySet("pluginIds")) {
+                this.pluginIds(model.getPluginIds());
+            }
+            if (model.wasPropertyExplicitlySet("agentCompartmentId")) {
+                this.agentCompartmentId(model.getAgentCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("agentIds")) {
+                this.agentIds(model.getAgentIds());
+            }
+            return this;
         }
     }
 
@@ -171,10 +177,10 @@ public final class DeployPluginsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeployPluginsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("pluginIds=").append(String.valueOf(this.pluginIds));
         sb.append(", agentCompartmentId=").append(String.valueOf(this.agentCompartmentId));
         sb.append(", agentIds=").append(String.valueOf(this.agentIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +198,7 @@ public final class DeployPluginsDetails {
         return java.util.Objects.equals(this.pluginIds, other.pluginIds)
                 && java.util.Objects.equals(this.agentCompartmentId, other.agentCompartmentId)
                 && java.util.Objects.equals(this.agentIds, other.agentIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +212,7 @@ public final class DeployPluginsDetails {
                                 ? 43
                                 : this.agentCompartmentId.hashCode());
         result = (result * PRIME) + (this.agentIds == null ? 43 : this.agentIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

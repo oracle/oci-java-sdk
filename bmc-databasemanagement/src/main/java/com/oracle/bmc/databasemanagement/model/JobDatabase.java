@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobDatabase.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobDatabase {
+public final class JobDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -165,32 +165,45 @@ public final class JobDatabase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobDatabase build() {
-            JobDatabase __instance__ =
+            JobDatabase model =
                     new JobDatabase(
-                            id,
-                            name,
-                            databaseType,
-                            databaseSubType,
-                            deploymentType,
-                            isCluster,
-                            workloadType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.deploymentType,
+                            this.isCluster,
+                            this.workloadType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobDatabase o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .deploymentType(o.getDeploymentType())
-                            .isCluster(o.getIsCluster())
-                            .workloadType(o.getWorkloadType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobDatabase model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("isCluster")) {
+                this.isCluster(model.getIsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class JobDatabase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobDatabase(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
@@ -323,7 +337,6 @@ public final class JobDatabase {
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", isCluster=").append(String.valueOf(this.isCluster));
         sb.append(", workloadType=").append(String.valueOf(this.workloadType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class JobDatabase {
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.isCluster, other.isCluster)
                 && java.util.Objects.equals(this.workloadType, other.workloadType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -363,16 +376,7 @@ public final class JobDatabase {
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result = (result * PRIME) + (this.isCluster == null ? 43 : this.isCluster.hashCode());
         result = (result * PRIME) + (this.workloadType == null ? 43 : this.workloadType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -38,12 +38,18 @@ public class GetTraceSnapshotResponse extends com.oracle.bmc.responses.BmcRespon
         return traceSnapshot;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "traceSnapshot"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "traceSnapshot"
+    })
     private GetTraceSnapshotResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.apmtraces.model.TraceSnapshot traceSnapshot) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.traceSnapshot = traceSnapshot;
     }
@@ -53,6 +59,13 @@ public class GetTraceSnapshotResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class GetTraceSnapshotResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetTraceSnapshotResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             traceSnapshot(o.getTraceSnapshot());
 
@@ -107,7 +121,8 @@ public class GetTraceSnapshotResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public GetTraceSnapshotResponse build() {
-            return new GetTraceSnapshotResponse(__httpStatusCode__, opcRequestId, traceSnapshot);
+            return new GetTraceSnapshotResponse(
+                    __httpStatusCode__, headers, opcRequestId, traceSnapshot);
         }
     }
 

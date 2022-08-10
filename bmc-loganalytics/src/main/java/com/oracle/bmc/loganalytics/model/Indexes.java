@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Indexes.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Indexes {
+public final class Indexes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endIndex", "startIndex"})
     public Indexes(Integer endIndex, Integer startIndex) {
@@ -65,17 +65,22 @@ public final class Indexes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Indexes build() {
-            Indexes __instance__ = new Indexes(endIndex, startIndex);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Indexes model = new Indexes(this.endIndex, this.startIndex);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Indexes o) {
-            Builder copiedBuilder = endIndex(o.getEndIndex()).startIndex(o.getStartIndex());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Indexes model) {
+            if (model.wasPropertyExplicitlySet("endIndex")) {
+                this.endIndex(model.getEndIndex());
+            }
+            if (model.wasPropertyExplicitlySet("startIndex")) {
+                this.startIndex(model.getStartIndex());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class Indexes {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Indexes(");
+        sb.append("super=").append(super.toString());
         sb.append("endIndex=").append(String.valueOf(this.endIndex));
         sb.append(", startIndex=").append(String.valueOf(this.startIndex));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class Indexes {
         Indexes other = (Indexes) o;
         return java.util.Objects.equals(this.endIndex, other.endIndex)
                 && java.util.Objects.equals(this.startIndex, other.startIndex)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class Indexes {
         int result = 1;
         result = (result * PRIME) + (this.endIndex == null ? 43 : this.endIndex.hashCode());
         result = (result * PRIME) + (this.startIndex == null ? 43 : this.startIndex.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

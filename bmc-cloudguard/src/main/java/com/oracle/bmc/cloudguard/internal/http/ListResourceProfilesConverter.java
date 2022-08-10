@@ -234,8 +234,8 @@ public class ListResourceProfilesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListResourceProfilesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceProfileCollection(response.getItem());
 

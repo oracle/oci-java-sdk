@@ -22,7 +22,7 @@ package com.oracle.bmc.applicationmigration.model;
     builder = ConfigurationField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfigurationField {
+public final class ConfigurationField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -195,34 +195,49 @@ public final class ConfigurationField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigurationField build() {
-            ConfigurationField __instance__ =
+            ConfigurationField model =
                     new ConfigurationField(
-                            name,
-                            group,
-                            type,
-                            value,
-                            description,
-                            resourceList,
-                            isRequired,
-                            isMutable);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.group,
+                            this.type,
+                            this.value,
+                            this.description,
+                            this.resourceList,
+                            this.isRequired,
+                            this.isMutable);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConfigurationField o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .group(o.getGroup())
-                            .type(o.getType())
-                            .value(o.getValue())
-                            .description(o.getDescription())
-                            .resourceList(o.getResourceList())
-                            .isRequired(o.getIsRequired())
-                            .isMutable(o.getIsMutable());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConfigurationField model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("group")) {
+                this.group(model.getGroup());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("resourceList")) {
+                this.resourceList(model.getResourceList());
+            }
+            if (model.wasPropertyExplicitlySet("isRequired")) {
+                this.isRequired(model.getIsRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isMutable")) {
+                this.isMutable(model.getIsMutable());
+            }
+            return this;
         }
     }
 
@@ -368,6 +383,7 @@ public final class ConfigurationField {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfigurationField(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", group=").append(String.valueOf(this.group));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -376,7 +392,6 @@ public final class ConfigurationField {
         sb.append(", resourceList=").append(String.valueOf(this.resourceList));
         sb.append(", isRequired=").append(String.valueOf(this.isRequired));
         sb.append(", isMutable=").append(String.valueOf(this.isMutable));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -399,7 +414,7 @@ public final class ConfigurationField {
                 && java.util.Objects.equals(this.resourceList, other.resourceList)
                 && java.util.Objects.equals(this.isRequired, other.isRequired)
                 && java.util.Objects.equals(this.isMutable, other.isMutable)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -414,16 +429,7 @@ public final class ConfigurationField {
         result = (result * PRIME) + (this.resourceList == null ? 43 : this.resourceList.hashCode());
         result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
         result = (result * PRIME) + (this.isMutable == null ? 43 : this.isMutable.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

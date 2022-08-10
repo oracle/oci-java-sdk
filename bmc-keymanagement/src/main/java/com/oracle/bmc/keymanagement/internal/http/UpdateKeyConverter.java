@@ -108,8 +108,8 @@ public class UpdateKeyConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .UpdateKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.key(response.getItem());
 

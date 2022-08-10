@@ -49,16 +49,18 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "repositoryMirrorRecord"
     })
     private GetMirrorRecordResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.RepositoryMirrorRecord repositoryMirrorRecord) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.repositoryMirrorRecord = repositoryMirrorRecord;
@@ -69,6 +71,13 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetMirrorRecordResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             repositoryMirrorRecord(o.getRepositoryMirrorRecord());
@@ -137,7 +147,7 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetMirrorRecordResponse build() {
             return new GetMirrorRecordResponse(
-                    __httpStatusCode__, etag, opcRequestId, repositoryMirrorRecord);
+                    __httpStatusCode__, headers, etag, opcRequestId, repositoryMirrorRecord);
         }
     }
 

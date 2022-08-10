@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ByoipRangeVcnIpv6AllocationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ByoipRangeVcnIpv6AllocationSummary {
+public final class ByoipRangeVcnIpv6AllocationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"byoipRangeId", "compartmentId", "ipv6CidrBlock", "vcnId"})
     public ByoipRangeVcnIpv6AllocationSummary(
@@ -111,23 +112,30 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ByoipRangeVcnIpv6AllocationSummary build() {
-            ByoipRangeVcnIpv6AllocationSummary __instance__ =
+            ByoipRangeVcnIpv6AllocationSummary model =
                     new ByoipRangeVcnIpv6AllocationSummary(
-                            byoipRangeId, compartmentId, ipv6CidrBlock, vcnId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.byoipRangeId, this.compartmentId, this.ipv6CidrBlock, this.vcnId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ByoipRangeVcnIpv6AllocationSummary o) {
-            Builder copiedBuilder =
-                    byoipRangeId(o.getByoipRangeId())
-                            .compartmentId(o.getCompartmentId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .vcnId(o.getVcnId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ByoipRangeVcnIpv6AllocationSummary model) {
+            if (model.wasPropertyExplicitlySet("byoipRangeId")) {
+                this.byoipRangeId(model.getByoipRangeId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            return this;
         }
     }
 
@@ -219,11 +227,11 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ByoipRangeVcnIpv6AllocationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("byoipRangeId=").append(String.valueOf(this.byoipRangeId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -242,7 +250,7 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -257,16 +265,7 @@ public final class ByoipRangeVcnIpv6AllocationSummary {
                 (result * PRIME)
                         + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

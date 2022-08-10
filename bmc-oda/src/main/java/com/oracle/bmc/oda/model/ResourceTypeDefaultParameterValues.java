@@ -19,7 +19,8 @@ package com.oracle.bmc.oda.model;
     builder = ResourceTypeDefaultParameterValues.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceTypeDefaultParameterValues {
+public final class ResourceTypeDefaultParameterValues
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceType", "parameterValues"})
     public ResourceTypeDefaultParameterValues(
@@ -68,19 +69,23 @@ public final class ResourceTypeDefaultParameterValues {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceTypeDefaultParameterValues build() {
-            ResourceTypeDefaultParameterValues __instance__ =
-                    new ResourceTypeDefaultParameterValues(resourceType, parameterValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResourceTypeDefaultParameterValues model =
+                    new ResourceTypeDefaultParameterValues(this.resourceType, this.parameterValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceTypeDefaultParameterValues o) {
-            Builder copiedBuilder =
-                    resourceType(o.getResourceType()).parameterValues(o.getParameterValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceTypeDefaultParameterValues model) {
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("parameterValues")) {
+                this.parameterValues(model.getParameterValues());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class ResourceTypeDefaultParameterValues {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceTypeDefaultParameterValues(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", parameterValues=").append(String.valueOf(this.parameterValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class ResourceTypeDefaultParameterValues {
         ResourceTypeDefaultParameterValues other = (ResourceTypeDefaultParameterValues) o;
         return java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.parameterValues, other.parameterValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -166,16 +171,7 @@ public final class ResourceTypeDefaultParameterValues {
         result =
                 (result * PRIME)
                         + (this.parameterValues == null ? 43 : this.parameterValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

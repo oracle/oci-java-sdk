@@ -17,7 +17,7 @@ package com.oracle.bmc.sch.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MonitoringSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitoringSource {
+public final class MonitoringSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "namespaceDetails"})
     public MonitoringSource(
@@ -61,18 +61,23 @@ public final class MonitoringSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoringSource build() {
-            MonitoringSource __instance__ = new MonitoringSource(compartmentId, namespaceDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitoringSource model =
+                    new MonitoringSource(this.compartmentId, this.namespaceDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoringSource o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId()).namespaceDetails(o.getNamespaceDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoringSource model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceDetails")) {
+                this.namespaceDetails(model.getNamespaceDetails());
+            }
+            return this;
         }
     }
 
@@ -123,9 +128,9 @@ public final class MonitoringSource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitoringSource(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", namespaceDetails=").append(String.valueOf(this.namespaceDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -142,7 +147,7 @@ public final class MonitoringSource {
         MonitoringSource other = (MonitoringSource) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.namespaceDetails, other.namespaceDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -155,16 +160,7 @@ public final class MonitoringSource {
         result =
                 (result * PRIME)
                         + (this.namespaceDetails == null ? 43 : this.namespaceDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

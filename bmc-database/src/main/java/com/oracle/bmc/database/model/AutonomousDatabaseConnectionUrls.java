@@ -22,7 +22,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabaseConnectionUrls.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabaseConnectionUrls {
+public final class AutonomousDatabaseConnectionUrls
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlDevWebUrl",
@@ -113,27 +114,33 @@ public final class AutonomousDatabaseConnectionUrls {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConnectionUrls build() {
-            AutonomousDatabaseConnectionUrls __instance__ =
+            AutonomousDatabaseConnectionUrls model =
                     new AutonomousDatabaseConnectionUrls(
-                            sqlDevWebUrl,
-                            apexUrl,
-                            machineLearningUserManagementUrl,
-                            graphStudioUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sqlDevWebUrl,
+                            this.apexUrl,
+                            this.machineLearningUserManagementUrl,
+                            this.graphStudioUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseConnectionUrls o) {
-            Builder copiedBuilder =
-                    sqlDevWebUrl(o.getSqlDevWebUrl())
-                            .apexUrl(o.getApexUrl())
-                            .machineLearningUserManagementUrl(
-                                    o.getMachineLearningUserManagementUrl())
-                            .graphStudioUrl(o.getGraphStudioUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseConnectionUrls model) {
+            if (model.wasPropertyExplicitlySet("sqlDevWebUrl")) {
+                this.sqlDevWebUrl(model.getSqlDevWebUrl());
+            }
+            if (model.wasPropertyExplicitlySet("apexUrl")) {
+                this.apexUrl(model.getApexUrl());
+            }
+            if (model.wasPropertyExplicitlySet("machineLearningUserManagementUrl")) {
+                this.machineLearningUserManagementUrl(model.getMachineLearningUserManagementUrl());
+            }
+            if (model.wasPropertyExplicitlySet("graphStudioUrl")) {
+                this.graphStudioUrl(model.getGraphStudioUrl());
+            }
+            return this;
         }
     }
 
@@ -217,12 +224,12 @@ public final class AutonomousDatabaseConnectionUrls {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseConnectionUrls(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlDevWebUrl=").append(String.valueOf(this.sqlDevWebUrl));
         sb.append(", apexUrl=").append(String.valueOf(this.apexUrl));
         sb.append(", machineLearningUserManagementUrl=")
                 .append(String.valueOf(this.machineLearningUserManagementUrl));
         sb.append(", graphStudioUrl=").append(String.valueOf(this.graphStudioUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -243,7 +250,7 @@ public final class AutonomousDatabaseConnectionUrls {
                         this.machineLearningUserManagementUrl,
                         other.machineLearningUserManagementUrl)
                 && java.util.Objects.equals(this.graphStudioUrl, other.graphStudioUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -260,16 +267,7 @@ public final class AutonomousDatabaseConnectionUrls {
         result =
                 (result * PRIME)
                         + (this.graphStudioUrl == null ? 43 : this.graphStudioUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

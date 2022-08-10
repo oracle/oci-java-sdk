@@ -213,8 +213,8 @@ public class ListInvoicesConverter {
                                         builder =
                                                 com.oracle.bmc.ospgateway.responses
                                                         .ListInvoicesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.invoiceCollection(response.getItem());
 

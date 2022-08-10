@@ -111,8 +111,8 @@ public class GetDataAssetConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetDataAssetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataAsset(response.getItem());
 

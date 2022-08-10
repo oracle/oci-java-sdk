@@ -20,7 +20,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = GetPublicIpByPrivateIpIdDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GetPublicIpByPrivateIpIdDetails {
+public final class GetPublicIpByPrivateIpIdDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"privateIpId"})
     public GetPublicIpByPrivateIpIdDetails(String privateIpId) {
@@ -53,18 +54,20 @@ public final class GetPublicIpByPrivateIpIdDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GetPublicIpByPrivateIpIdDetails build() {
-            GetPublicIpByPrivateIpIdDetails __instance__ =
-                    new GetPublicIpByPrivateIpIdDetails(privateIpId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GetPublicIpByPrivateIpIdDetails model =
+                    new GetPublicIpByPrivateIpIdDetails(this.privateIpId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GetPublicIpByPrivateIpIdDetails o) {
-            Builder copiedBuilder = privateIpId(o.getPrivateIpId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GetPublicIpByPrivateIpIdDetails model) {
+            if (model.wasPropertyExplicitlySet("privateIpId")) {
+                this.privateIpId(model.getPrivateIpId());
+            }
+            return this;
         }
     }
 
@@ -108,8 +111,8 @@ public final class GetPublicIpByPrivateIpIdDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GetPublicIpByPrivateIpIdDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("privateIpId=").append(String.valueOf(this.privateIpId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,8 +127,7 @@ public final class GetPublicIpByPrivateIpIdDetails {
         }
 
         GetPublicIpByPrivateIpIdDetails other = (GetPublicIpByPrivateIpIdDetails) o;
-        return java.util.Objects.equals(this.privateIpId, other.privateIpId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.privateIpId, other.privateIpId) && super.equals(other);
     }
 
     @Override
@@ -133,16 +135,7 @@ public final class GetPublicIpByPrivateIpIdDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.privateIpId == null ? 43 : this.privateIpId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

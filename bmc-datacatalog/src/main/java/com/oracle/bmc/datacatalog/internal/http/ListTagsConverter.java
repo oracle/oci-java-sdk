@@ -171,8 +171,8 @@ public class ListTagsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListTagsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.termCollection(response.getItem());
 

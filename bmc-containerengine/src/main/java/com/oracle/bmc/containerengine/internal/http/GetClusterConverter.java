@@ -105,8 +105,8 @@ public class GetClusterConverter {
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
                                                         .GetClusterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.cluster(response.getItem());
 

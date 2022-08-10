@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DocumentMetadata {
+public final class DocumentMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pageCount", "mimeType"})
     public DocumentMetadata(Integer pageCount, String mimeType) {
@@ -65,17 +65,22 @@ public final class DocumentMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentMetadata build() {
-            DocumentMetadata __instance__ = new DocumentMetadata(pageCount, mimeType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DocumentMetadata model = new DocumentMetadata(this.pageCount, this.mimeType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DocumentMetadata o) {
-            Builder copiedBuilder = pageCount(o.getPageCount()).mimeType(o.getMimeType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DocumentMetadata model) {
+            if (model.wasPropertyExplicitlySet("pageCount")) {
+                this.pageCount(model.getPageCount());
+            }
+            if (model.wasPropertyExplicitlySet("mimeType")) {
+                this.mimeType(model.getMimeType());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class DocumentMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DocumentMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("pageCount=").append(String.valueOf(this.pageCount));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class DocumentMetadata {
         DocumentMetadata other = (DocumentMetadata) o;
         return java.util.Objects.equals(this.pageCount, other.pageCount)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class DocumentMetadata {
         int result = 1;
         result = (result * PRIME) + (this.pageCount == null ? 43 : this.pageCount.hashCode());
         result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

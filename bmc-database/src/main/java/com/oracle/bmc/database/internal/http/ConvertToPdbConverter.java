@@ -109,8 +109,8 @@ public class ConvertToPdbConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ConvertToPdbResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.database(response.getItem());
 

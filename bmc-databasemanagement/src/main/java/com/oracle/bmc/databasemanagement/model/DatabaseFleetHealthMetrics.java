@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseFleetHealthMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseFleetHealthMetrics {
+public final class DatabaseFleetHealthMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compareBaselineTime",
@@ -132,28 +133,37 @@ public final class DatabaseFleetHealthMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseFleetHealthMetrics build() {
-            DatabaseFleetHealthMetrics __instance__ =
+            DatabaseFleetHealthMetrics model =
                     new DatabaseFleetHealthMetrics(
-                            compareBaselineTime,
-                            compareTargetTime,
-                            compareType,
-                            fleetSummary,
-                            fleetDatabases);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compareBaselineTime,
+                            this.compareTargetTime,
+                            this.compareType,
+                            this.fleetSummary,
+                            this.fleetDatabases);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseFleetHealthMetrics o) {
-            Builder copiedBuilder =
-                    compareBaselineTime(o.getCompareBaselineTime())
-                            .compareTargetTime(o.getCompareTargetTime())
-                            .compareType(o.getCompareType())
-                            .fleetSummary(o.getFleetSummary())
-                            .fleetDatabases(o.getFleetDatabases());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseFleetHealthMetrics model) {
+            if (model.wasPropertyExplicitlySet("compareBaselineTime")) {
+                this.compareBaselineTime(model.getCompareBaselineTime());
+            }
+            if (model.wasPropertyExplicitlySet("compareTargetTime")) {
+                this.compareTargetTime(model.getCompareTargetTime());
+            }
+            if (model.wasPropertyExplicitlySet("compareType")) {
+                this.compareType(model.getCompareType());
+            }
+            if (model.wasPropertyExplicitlySet("fleetSummary")) {
+                this.fleetSummary(model.getFleetSummary());
+            }
+            if (model.wasPropertyExplicitlySet("fleetDatabases")) {
+                this.fleetDatabases(model.getFleetDatabases());
+            }
+            return this;
         }
     }
 
@@ -254,12 +264,12 @@ public final class DatabaseFleetHealthMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseFleetHealthMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("compareBaselineTime=").append(String.valueOf(this.compareBaselineTime));
         sb.append(", compareTargetTime=").append(String.valueOf(this.compareTargetTime));
         sb.append(", compareType=").append(String.valueOf(this.compareType));
         sb.append(", fleetSummary=").append(String.valueOf(this.fleetSummary));
         sb.append(", fleetDatabases=").append(String.valueOf(this.fleetDatabases));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -279,7 +289,7 @@ public final class DatabaseFleetHealthMetrics {
                 && java.util.Objects.equals(this.compareType, other.compareType)
                 && java.util.Objects.equals(this.fleetSummary, other.fleetSummary)
                 && java.util.Objects.equals(this.fleetDatabases, other.fleetDatabases)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -299,16 +309,7 @@ public final class DatabaseFleetHealthMetrics {
         result =
                 (result * PRIME)
                         + (this.fleetDatabases == null ? 43 : this.fleetDatabases.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

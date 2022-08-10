@@ -56,17 +56,19 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "privateApplicationPackage"
     })
     private GetPrivateApplicationPackageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage
                     privateApplicationPackage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.privateApplicationPackage = privateApplicationPackage;
@@ -77,6 +79,13 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
          */
         public Builder copy(GetPrivateApplicationPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             privateApplicationPackage(o.getPrivateApplicationPackage());
@@ -153,7 +163,7 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
          */
         public GetPrivateApplicationPackageResponse build() {
             return new GetPrivateApplicationPackageResponse(
-                    __httpStatusCode__, etag, opcRequestId, privateApplicationPackage);
+                    __httpStatusCode__, headers, etag, opcRequestId, privateApplicationPackage);
         }
     }
 

@@ -53,13 +53,18 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcBytesRemaining",
         "opcRequestId",
         "value"
     })
     private GetConsoleHistoryContentResponse(
-            int __httpStatusCode__, Integer opcBytesRemaining, String opcRequestId, String value) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            Integer opcBytesRemaining,
+            String opcRequestId,
+            String value) {
+        super(__httpStatusCode__, headers);
         this.opcBytesRemaining = opcBytesRemaining;
         this.opcRequestId = opcRequestId;
         this.value = value;
@@ -70,6 +75,13 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -128,6 +140,7 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(GetConsoleHistoryContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcBytesRemaining(o.getOpcBytesRemaining());
             opcRequestId(o.getOpcRequestId());
             value(o.getValue());
@@ -141,7 +154,7 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
          */
         public GetConsoleHistoryContentResponse build() {
             return new GetConsoleHistoryContentResponse(
-                    __httpStatusCode__, opcBytesRemaining, opcRequestId, value);
+                    __httpStatusCode__, headers, opcBytesRemaining, opcRequestId, value);
         }
     }
 

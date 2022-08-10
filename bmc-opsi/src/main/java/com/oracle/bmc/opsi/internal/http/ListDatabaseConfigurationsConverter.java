@@ -254,8 +254,8 @@ public class ListDatabaseConfigurationsConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .ListDatabaseConfigurationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseConfigurationCollection(response.getItem());
 

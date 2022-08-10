@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = UploadWarningSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UploadWarningSummary {
+public final class UploadWarningSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reference", "status", "timeStarted", "errorMessage"})
     public UploadWarningSummary(
@@ -102,22 +102,30 @@ public final class UploadWarningSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UploadWarningSummary build() {
-            UploadWarningSummary __instance__ =
-                    new UploadWarningSummary(reference, status, timeStarted, errorMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UploadWarningSummary model =
+                    new UploadWarningSummary(
+                            this.reference, this.status, this.timeStarted, this.errorMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UploadWarningSummary o) {
-            Builder copiedBuilder =
-                    reference(o.getReference())
-                            .status(o.getStatus())
-                            .timeStarted(o.getTimeStarted())
-                            .errorMessage(o.getErrorMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UploadWarningSummary model) {
+            if (model.wasPropertyExplicitlySet("reference")) {
+                this.reference(model.getReference());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            return this;
         }
     }
 
@@ -201,11 +209,11 @@ public final class UploadWarningSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UploadWarningSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("reference=").append(String.valueOf(this.reference));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +232,7 @@ public final class UploadWarningSummary {
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -235,16 +243,7 @@ public final class UploadWarningSummary {
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

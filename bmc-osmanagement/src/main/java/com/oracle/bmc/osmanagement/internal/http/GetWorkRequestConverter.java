@@ -105,8 +105,8 @@ public class GetWorkRequestConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .GetWorkRequestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequest(response.getItem());
 

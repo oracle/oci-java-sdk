@@ -141,8 +141,8 @@ public class ListGiVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListGiVersionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

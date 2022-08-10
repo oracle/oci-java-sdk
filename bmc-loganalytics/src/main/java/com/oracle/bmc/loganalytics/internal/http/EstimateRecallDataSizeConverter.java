@@ -118,8 +118,8 @@ public class EstimateRecallDataSizeConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .EstimateRecallDataSizeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.estimateRecallDataSizeResult(response.getItem());
 

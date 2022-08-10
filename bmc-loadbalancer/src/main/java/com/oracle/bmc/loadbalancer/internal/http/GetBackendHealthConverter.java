@@ -58,6 +58,10 @@ public class GetBackendHealthConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }
@@ -117,8 +121,8 @@ public class GetBackendHealthConverter {
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .GetBackendHealthResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.backendHealth(response.getItem());
 
@@ -131,6 +135,15 @@ public class GetBackendHealthConverter {
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
                                                     String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> eTagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "eTag");
+                                if (eTagHeader.isPresent()) {
+                                    builder.eTag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "eTag", eTagHeader.get().get(0), String.class));
                                 }
 
                                 com.oracle.bmc.loadbalancer.responses.GetBackendHealthResponse

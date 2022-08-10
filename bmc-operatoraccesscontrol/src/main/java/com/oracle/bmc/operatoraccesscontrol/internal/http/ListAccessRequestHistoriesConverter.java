@@ -135,8 +135,8 @@ public class ListAccessRequestHistoriesConverter {
                                                 com.oracle.bmc.operatoraccesscontrol.responses
                                                         .ListAccessRequestHistoriesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.accessRequestHistoryCollection(response.getItem());
 

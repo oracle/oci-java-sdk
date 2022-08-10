@@ -34,7 +34,7 @@ package com.oracle.bmc.vnmonitoring.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Topology {
+public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entities", "relationships", "timeCreated"})
     protected Topology(
@@ -102,6 +102,7 @@ public class Topology {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Topology(");
+        sb.append("super=").append(super.toString());
         sb.append("entities=").append(String.valueOf(this.entities));
         sb.append(", relationships=").append(String.valueOf(this.relationships));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -121,7 +122,8 @@ public class Topology {
         Topology other = (Topology) o;
         return java.util.Objects.equals(this.entities, other.entities)
                 && java.util.Objects.equals(this.relationships, other.relationships)
-                && java.util.Objects.equals(this.timeCreated, other.timeCreated);
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && super.equals(other);
     }
 
     @Override
@@ -133,6 +135,7 @@ public class Topology {
                 (result * PRIME)
                         + (this.relationships == null ? 43 : this.relationships.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

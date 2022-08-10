@@ -149,36 +149,53 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BucketCommandDescriptor build() {
-            BucketCommandDescriptor __instance__ =
+            BucketCommandDescriptor model =
                     new BucketCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            maxBuckets,
-                            span,
-                            ranges,
-                            defaultValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.maxBuckets,
+                            this.span,
+                            this.ranges,
+                            this.defaultValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BucketCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .maxBuckets(o.getMaxBuckets())
-                            .span(o.getSpan())
-                            .ranges(o.getRanges())
-                            .defaultValue(o.getDefaultValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BucketCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("maxBuckets")) {
+                this.maxBuckets(model.getMaxBuckets());
+            }
+            if (model.wasPropertyExplicitlySet("span")) {
+                this.span(model.getSpan());
+            }
+            if (model.wasPropertyExplicitlySet("ranges")) {
+                this.ranges(model.getRanges());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            return this;
         }
     }
 
@@ -293,7 +310,6 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
         sb.append(", span=").append(String.valueOf(this.span));
         sb.append(", ranges=").append(String.valueOf(this.ranges));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -312,8 +328,7 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
                 && java.util.Objects.equals(this.span, other.span)
                 && java.util.Objects.equals(this.ranges, other.ranges)
                 && java.util.Objects.equals(this.defaultValue, other.defaultValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -324,16 +339,6 @@ public final class BucketCommandDescriptor extends AbstractCommandDescriptor {
         result = (result * PRIME) + (this.span == null ? 43 : this.span.hashCode());
         result = (result * PRIME) + (this.ranges == null ? 43 : this.ranges.hashCode());
         result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

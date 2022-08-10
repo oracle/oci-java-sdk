@@ -136,36 +136,53 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataGuardAssociationToExistingVmClusterDetails build() {
-            CreateDataGuardAssociationToExistingVmClusterDetails __instance__ =
+            CreateDataGuardAssociationToExistingVmClusterDetails model =
                     new CreateDataGuardAssociationToExistingVmClusterDetails(
-                            databaseSoftwareImageId,
-                            databaseAdminPassword,
-                            protectionMode,
-                            transportType,
-                            isActiveDataGuardEnabled,
-                            peerDbUniqueName,
-                            peerSidPrefix,
-                            peerVmClusterId,
-                            peerDbHomeId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseSoftwareImageId,
+                            this.databaseAdminPassword,
+                            this.protectionMode,
+                            this.transportType,
+                            this.isActiveDataGuardEnabled,
+                            this.peerDbUniqueName,
+                            this.peerSidPrefix,
+                            this.peerVmClusterId,
+                            this.peerDbHomeId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDataGuardAssociationToExistingVmClusterDetails o) {
-            Builder copiedBuilder =
-                    databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
-                            .databaseAdminPassword(o.getDatabaseAdminPassword())
-                            .protectionMode(o.getProtectionMode())
-                            .transportType(o.getTransportType())
-                            .isActiveDataGuardEnabled(o.getIsActiveDataGuardEnabled())
-                            .peerDbUniqueName(o.getPeerDbUniqueName())
-                            .peerSidPrefix(o.getPeerSidPrefix())
-                            .peerVmClusterId(o.getPeerVmClusterId())
-                            .peerDbHomeId(o.getPeerDbHomeId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDataGuardAssociationToExistingVmClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
+                this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
+                this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbUniqueName")) {
+                this.peerDbUniqueName(model.getPeerDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("peerSidPrefix")) {
+                this.peerSidPrefix(model.getPeerSidPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("peerVmClusterId")) {
+                this.peerVmClusterId(model.getPeerVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbHomeId")) {
+                this.peerDbHomeId(model.getPeerDbHomeId());
+            }
+            return this;
         }
     }
 
@@ -255,7 +272,6 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", peerVmClusterId=").append(String.valueOf(this.peerVmClusterId));
         sb.append(", peerDbHomeId=").append(String.valueOf(this.peerDbHomeId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,8 +289,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
                 (CreateDataGuardAssociationToExistingVmClusterDetails) o;
         return java.util.Objects.equals(this.peerVmClusterId, other.peerVmClusterId)
                 && java.util.Objects.equals(this.peerDbHomeId, other.peerDbHomeId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -285,16 +300,6 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
                 (result * PRIME)
                         + (this.peerVmClusterId == null ? 43 : this.peerVmClusterId.hashCode());
         result = (result * PRIME) + (this.peerDbHomeId == null ? 43 : this.peerDbHomeId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

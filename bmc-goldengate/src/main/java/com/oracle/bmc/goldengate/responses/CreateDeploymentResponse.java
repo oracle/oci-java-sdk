@@ -68,6 +68,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "etag",
@@ -75,11 +76,12 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateDeploymentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
             com.oracle.bmc.goldengate.model.Deployment deployment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -91,6 +93,13 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -166,6 +175,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(CreateDeploymentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -180,7 +190,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public CreateDeploymentResponse build() {
             return new CreateDeploymentResponse(
-                    __httpStatusCode__, opcWorkRequestId, opcRequestId, etag, deployment);
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, etag, deployment);
         }
     }
 

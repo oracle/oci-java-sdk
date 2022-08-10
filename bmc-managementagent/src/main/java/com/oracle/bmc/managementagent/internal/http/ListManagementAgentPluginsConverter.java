@@ -186,8 +186,8 @@ public class ListManagementAgentPluginsConverter {
                                                 com.oracle.bmc.managementagent.responses
                                                         .ListManagementAgentPluginsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

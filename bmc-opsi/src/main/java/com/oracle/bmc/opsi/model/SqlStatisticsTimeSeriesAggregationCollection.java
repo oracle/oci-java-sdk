@@ -20,7 +20,8 @@ package com.oracle.bmc.opsi.model;
     builder = SqlStatisticsTimeSeriesAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlStatisticsTimeSeriesAggregationCollection {
+public final class SqlStatisticsTimeSeriesAggregationCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlIdentifier",
@@ -153,30 +154,41 @@ public final class SqlStatisticsTimeSeriesAggregationCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlStatisticsTimeSeriesAggregationCollection build() {
-            SqlStatisticsTimeSeriesAggregationCollection __instance__ =
+            SqlStatisticsTimeSeriesAggregationCollection model =
                     new SqlStatisticsTimeSeriesAggregationCollection(
-                            sqlIdentifier,
-                            timeIntervalStart,
-                            timeIntervalEnd,
-                            itemDurationInMs,
-                            endTimestamps,
-                            items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sqlIdentifier,
+                            this.timeIntervalStart,
+                            this.timeIntervalEnd,
+                            this.itemDurationInMs,
+                            this.endTimestamps,
+                            this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlStatisticsTimeSeriesAggregationCollection o) {
-            Builder copiedBuilder =
-                    sqlIdentifier(o.getSqlIdentifier())
-                            .timeIntervalStart(o.getTimeIntervalStart())
-                            .timeIntervalEnd(o.getTimeIntervalEnd())
-                            .itemDurationInMs(o.getItemDurationInMs())
-                            .endTimestamps(o.getEndTimestamps())
-                            .items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlStatisticsTimeSeriesAggregationCollection model) {
+            if (model.wasPropertyExplicitlySet("sqlIdentifier")) {
+                this.sqlIdentifier(model.getSqlIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("timeIntervalStart")) {
+                this.timeIntervalStart(model.getTimeIntervalStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
+                this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("itemDurationInMs")) {
+                this.itemDurationInMs(model.getItemDurationInMs());
+            }
+            if (model.wasPropertyExplicitlySet("endTimestamps")) {
+                this.endTimestamps(model.getEndTimestamps());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -292,13 +304,13 @@ public final class SqlStatisticsTimeSeriesAggregationCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlStatisticsTimeSeriesAggregationCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
         sb.append(", timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
         sb.append(", itemDurationInMs=").append(String.valueOf(this.itemDurationInMs));
         sb.append(", endTimestamps=").append(String.valueOf(this.endTimestamps));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -320,7 +332,7 @@ public final class SqlStatisticsTimeSeriesAggregationCollection {
                 && java.util.Objects.equals(this.itemDurationInMs, other.itemDurationInMs)
                 && java.util.Objects.equals(this.endTimestamps, other.endTimestamps)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -343,16 +355,7 @@ public final class SqlStatisticsTimeSeriesAggregationCollection {
                 (result * PRIME)
                         + (this.endTimestamps == null ? 43 : this.endTimestamps.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

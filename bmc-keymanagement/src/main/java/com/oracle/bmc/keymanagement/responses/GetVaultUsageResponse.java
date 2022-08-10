@@ -38,12 +38,18 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
         return vaultUsage;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "vaultUsage"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "vaultUsage"
+    })
     private GetVaultUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.VaultUsage vaultUsage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.vaultUsage = vaultUsage;
     }
@@ -53,6 +59,13 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(GetVaultUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             vaultUsage(o.getVaultUsage());
 
@@ -107,7 +121,7 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public GetVaultUsageResponse build() {
-            return new GetVaultUsageResponse(__httpStatusCode__, opcRequestId, vaultUsage);
+            return new GetVaultUsageResponse(__httpStatusCode__, headers, opcRequestId, vaultUsage);
         }
     }
 

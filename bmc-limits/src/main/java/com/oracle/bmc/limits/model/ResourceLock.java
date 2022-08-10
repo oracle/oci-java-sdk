@@ -20,7 +20,7 @@ package com.oracle.bmc.limits.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceLock.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceLock {
+public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "relatedResourceId", "message", "timeCreated"})
     public ResourceLock(
@@ -109,22 +109,30 @@ public final class ResourceLock {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceLock build() {
-            ResourceLock __instance__ =
-                    new ResourceLock(type, relatedResourceId, message, timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResourceLock model =
+                    new ResourceLock(
+                            this.type, this.relatedResourceId, this.message, this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceLock o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .relatedResourceId(o.getRelatedResourceId())
-                            .message(o.getMessage())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceLock model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("relatedResourceId")) {
+                this.relatedResourceId(model.getRelatedResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -260,11 +268,11 @@ public final class ResourceLock {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceLock(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", relatedResourceId=").append(String.valueOf(this.relatedResourceId));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -283,7 +291,7 @@ public final class ResourceLock {
                 && java.util.Objects.equals(this.relatedResourceId, other.relatedResourceId)
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -296,16 +304,7 @@ public final class ResourceLock {
                         + (this.relatedResourceId == null ? 43 : this.relatedResourceId.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

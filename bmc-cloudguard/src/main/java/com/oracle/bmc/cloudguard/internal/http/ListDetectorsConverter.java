@@ -148,8 +148,8 @@ public class ListDetectorsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListDetectorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectorCollection(response.getItem());
 

@@ -115,8 +115,8 @@ public class ChangeDedicatedVmHostCompartmentConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ChangeDedicatedVmHostCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -22,7 +22,7 @@ package com.oracle.bmc.cims.model;
     builder = CreateTicketDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTicketDetails {
+public final class CreateTicketDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "severity",
@@ -132,24 +132,37 @@ public final class CreateTicketDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTicketDetails build() {
-            CreateTicketDetails __instance__ =
+            CreateTicketDetails model =
                     new CreateTicketDetails(
-                            severity, resourceList, title, description, contextualData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.severity,
+                            this.resourceList,
+                            this.title,
+                            this.description,
+                            this.contextualData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTicketDetails o) {
-            Builder copiedBuilder =
-                    severity(o.getSeverity())
-                            .resourceList(o.getResourceList())
-                            .title(o.getTitle())
-                            .description(o.getDescription())
-                            .contextualData(o.getContextualData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTicketDetails model) {
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("resourceList")) {
+                this.resourceList(model.getResourceList());
+            }
+            if (model.wasPropertyExplicitlySet("title")) {
+                this.title(model.getTitle());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("contextualData")) {
+                this.contextualData(model.getContextualData());
+            }
+            return this;
         }
     }
 
@@ -283,12 +296,12 @@ public final class CreateTicketDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTicketDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("severity=").append(String.valueOf(this.severity));
         sb.append(", resourceList=").append(String.valueOf(this.resourceList));
         sb.append(", title=").append(String.valueOf(this.title));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", contextualData=").append(String.valueOf(this.contextualData));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -308,7 +321,7 @@ public final class CreateTicketDetails {
                 && java.util.Objects.equals(this.title, other.title)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.contextualData, other.contextualData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -322,16 +335,7 @@ public final class CreateTicketDetails {
         result =
                 (result * PRIME)
                         + (this.contextualData == null ? 43 : this.contextualData.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

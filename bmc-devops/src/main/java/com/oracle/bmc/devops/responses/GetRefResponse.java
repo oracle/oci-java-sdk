@@ -49,16 +49,18 @@ public class GetRefResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "repositoryRef"
     })
     private GetRefResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.RepositoryRef repositoryRef) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.repositoryRef = repositoryRef;
@@ -69,6 +71,13 @@ public class GetRefResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class GetRefResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetRefResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             repositoryRef(o.getRepositoryRef());
@@ -135,7 +145,8 @@ public class GetRefResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetRefResponse build() {
-            return new GetRefResponse(__httpStatusCode__, etag, opcRequestId, repositoryRef);
+            return new GetRefResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, repositoryRef);
         }
     }
 

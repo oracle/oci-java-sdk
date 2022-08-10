@@ -20,7 +20,8 @@ package com.oracle.bmc.announcementsservice.model;
     builder = AnnouncementUserStatusDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnnouncementUserStatusDetails {
+public final class AnnouncementUserStatusDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userStatusAnnouncementId", "userId", "timeAcknowledged"})
     public AnnouncementUserStatusDetails(
@@ -90,22 +91,27 @@ public final class AnnouncementUserStatusDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnnouncementUserStatusDetails build() {
-            AnnouncementUserStatusDetails __instance__ =
+            AnnouncementUserStatusDetails model =
                     new AnnouncementUserStatusDetails(
-                            userStatusAnnouncementId, userId, timeAcknowledged);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.userStatusAnnouncementId, this.userId, this.timeAcknowledged);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnnouncementUserStatusDetails o) {
-            Builder copiedBuilder =
-                    userStatusAnnouncementId(o.getUserStatusAnnouncementId())
-                            .userId(o.getUserId())
-                            .timeAcknowledged(o.getTimeAcknowledged());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnnouncementUserStatusDetails model) {
+            if (model.wasPropertyExplicitlySet("userStatusAnnouncementId")) {
+                this.userStatusAnnouncementId(model.getUserStatusAnnouncementId());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("timeAcknowledged")) {
+                this.timeAcknowledged(model.getTimeAcknowledged());
+            }
+            return this;
         }
     }
 
@@ -179,11 +185,11 @@ public final class AnnouncementUserStatusDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnnouncementUserStatusDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("userStatusAnnouncementId=")
                 .append(String.valueOf(this.userStatusAnnouncementId));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", timeAcknowledged=").append(String.valueOf(this.timeAcknowledged));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -202,7 +208,7 @@ public final class AnnouncementUserStatusDetails {
                         this.userStatusAnnouncementId, other.userStatusAnnouncementId)
                 && java.util.Objects.equals(this.userId, other.userId)
                 && java.util.Objects.equals(this.timeAcknowledged, other.timeAcknowledged)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -218,16 +224,7 @@ public final class AnnouncementUserStatusDetails {
         result =
                 (result * PRIME)
                         + (this.timeAcknowledged == null ? 43 : this.timeAcknowledged.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

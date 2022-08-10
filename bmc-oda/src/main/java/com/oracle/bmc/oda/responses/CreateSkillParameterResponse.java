@@ -66,6 +66,7 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "opcRequestId",
         "etag",
@@ -73,11 +74,12 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateSkillParameterResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
             com.oracle.bmc.oda.model.SkillParameter skillParameter) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -89,6 +91,13 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -162,6 +171,7 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(CreateSkillParameterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -176,7 +186,7 @@ public class CreateSkillParameterResponse extends com.oracle.bmc.responses.BmcRe
          */
         public CreateSkillParameterResponse build() {
             return new CreateSkillParameterResponse(
-                    __httpStatusCode__, location, opcRequestId, etag, skillParameter);
+                    __httpStatusCode__, headers, location, opcRequestId, etag, skillParameter);
         }
     }
 

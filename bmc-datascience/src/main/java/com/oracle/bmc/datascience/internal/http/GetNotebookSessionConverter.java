@@ -106,8 +106,8 @@ public class GetNotebookSessionConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .GetNotebookSessionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.notebookSession(response.getItem());
 

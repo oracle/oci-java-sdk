@@ -103,8 +103,8 @@ public class GetErratumConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .GetErratumResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.erratum(response.getItem());
 

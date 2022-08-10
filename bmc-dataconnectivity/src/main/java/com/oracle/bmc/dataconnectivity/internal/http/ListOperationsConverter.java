@@ -169,8 +169,8 @@ public class ListOperationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListOperationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operationSummaryCollection(response.getItem());
 

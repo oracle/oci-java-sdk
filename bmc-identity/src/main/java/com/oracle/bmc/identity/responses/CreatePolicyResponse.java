@@ -51,13 +51,20 @@ public class CreatePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
         return policy;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "policy"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "policy"
+    })
     private CreatePolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.Policy policy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.policy = policy;
@@ -68,6 +75,13 @@ public class CreatePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class CreatePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(CreatePolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             policy(o.getPolicy());
@@ -138,7 +153,8 @@ public class CreatePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public CreatePolicyResponse build() {
-            return new CreatePolicyResponse(__httpStatusCode__, opcRequestId, etag, policy);
+            return new CreatePolicyResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, policy);
         }
     }
 

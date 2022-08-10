@@ -49,17 +49,19 @@ public final class TenancyAssociation extends Association {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TenancyAssociation build() {
-            TenancyAssociation __instance__ = new TenancyAssociation(tenancyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TenancyAssociation model = new TenancyAssociation(this.tenancyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TenancyAssociation o) {
-            Builder copiedBuilder = tenancyId(o.getTenancyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TenancyAssociation model) {
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            return this;
         }
     }
 
@@ -109,7 +111,6 @@ public final class TenancyAssociation extends Association {
         sb.append("TenancyAssociation(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,9 +125,7 @@ public final class TenancyAssociation extends Association {
         }
 
         TenancyAssociation other = (TenancyAssociation) o;
-        return java.util.Objects.equals(this.tenancyId, other.tenancyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.tenancyId, other.tenancyId) && super.equals(other);
     }
 
     @Override
@@ -134,16 +133,6 @@ public final class TenancyAssociation extends Association {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

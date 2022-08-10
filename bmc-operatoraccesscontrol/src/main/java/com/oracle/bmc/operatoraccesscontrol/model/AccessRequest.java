@@ -26,7 +26,7 @@ package com.oracle.bmc.operatoraccesscontrol.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AccessRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRequest {
+public final class AccessRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -640,78 +640,137 @@ public final class AccessRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessRequest build() {
-            AccessRequest __instance__ =
+            AccessRequest model =
                     new AccessRequest(
-                            id,
-                            requestId,
-                            accessReasonSummary,
-                            operatorId,
-                            resourceId,
-                            resourceName,
-                            compartmentId,
-                            resourceType,
-                            actionRequestsList,
-                            reason,
-                            severity,
-                            duration,
-                            extendDuration,
-                            workflowId,
-                            isAutoApproved,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeOfCreation,
-                            timeOfModification,
-                            timeOfUserCreation,
-                            userId,
-                            approverComment,
-                            closureComment,
-                            opctlId,
-                            opctlName,
-                            systemMessage,
-                            opctlAdditionalMessage,
-                            auditType,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.requestId,
+                            this.accessReasonSummary,
+                            this.operatorId,
+                            this.resourceId,
+                            this.resourceName,
+                            this.compartmentId,
+                            this.resourceType,
+                            this.actionRequestsList,
+                            this.reason,
+                            this.severity,
+                            this.duration,
+                            this.extendDuration,
+                            this.workflowId,
+                            this.isAutoApproved,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeOfCreation,
+                            this.timeOfModification,
+                            this.timeOfUserCreation,
+                            this.userId,
+                            this.approverComment,
+                            this.closureComment,
+                            this.opctlId,
+                            this.opctlName,
+                            this.systemMessage,
+                            this.opctlAdditionalMessage,
+                            this.auditType,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessRequest o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .requestId(o.getRequestId())
-                            .accessReasonSummary(o.getAccessReasonSummary())
-                            .operatorId(o.getOperatorId())
-                            .resourceId(o.getResourceId())
-                            .resourceName(o.getResourceName())
-                            .compartmentId(o.getCompartmentId())
-                            .resourceType(o.getResourceType())
-                            .actionRequestsList(o.getActionRequestsList())
-                            .reason(o.getReason())
-                            .severity(o.getSeverity())
-                            .duration(o.getDuration())
-                            .extendDuration(o.getExtendDuration())
-                            .workflowId(o.getWorkflowId())
-                            .isAutoApproved(o.getIsAutoApproved())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeOfCreation(o.getTimeOfCreation())
-                            .timeOfModification(o.getTimeOfModification())
-                            .timeOfUserCreation(o.getTimeOfUserCreation())
-                            .userId(o.getUserId())
-                            .approverComment(o.getApproverComment())
-                            .closureComment(o.getClosureComment())
-                            .opctlId(o.getOpctlId())
-                            .opctlName(o.getOpctlName())
-                            .systemMessage(o.getSystemMessage())
-                            .opctlAdditionalMessage(o.getOpctlAdditionalMessage())
-                            .auditType(o.getAuditType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessRequest model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("requestId")) {
+                this.requestId(model.getRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("accessReasonSummary")) {
+                this.accessReasonSummary(model.getAccessReasonSummary());
+            }
+            if (model.wasPropertyExplicitlySet("operatorId")) {
+                this.operatorId(model.getOperatorId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("actionRequestsList")) {
+                this.actionRequestsList(model.getActionRequestsList());
+            }
+            if (model.wasPropertyExplicitlySet("reason")) {
+                this.reason(model.getReason());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("duration")) {
+                this.duration(model.getDuration());
+            }
+            if (model.wasPropertyExplicitlySet("extendDuration")) {
+                this.extendDuration(model.getExtendDuration());
+            }
+            if (model.wasPropertyExplicitlySet("workflowId")) {
+                this.workflowId(model.getWorkflowId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoApproved")) {
+                this.isAutoApproved(model.getIsAutoApproved());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfCreation")) {
+                this.timeOfCreation(model.getTimeOfCreation());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfModification")) {
+                this.timeOfModification(model.getTimeOfModification());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfUserCreation")) {
+                this.timeOfUserCreation(model.getTimeOfUserCreation());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("approverComment")) {
+                this.approverComment(model.getApproverComment());
+            }
+            if (model.wasPropertyExplicitlySet("closureComment")) {
+                this.closureComment(model.getClosureComment());
+            }
+            if (model.wasPropertyExplicitlySet("opctlId")) {
+                this.opctlId(model.getOpctlId());
+            }
+            if (model.wasPropertyExplicitlySet("opctlName")) {
+                this.opctlName(model.getOpctlName());
+            }
+            if (model.wasPropertyExplicitlySet("systemMessage")) {
+                this.systemMessage(model.getSystemMessage());
+            }
+            if (model.wasPropertyExplicitlySet("opctlAdditionalMessage")) {
+                this.opctlAdditionalMessage(model.getOpctlAdditionalMessage());
+            }
+            if (model.wasPropertyExplicitlySet("auditType")) {
+                this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1187,6 +1246,7 @@ public final class AccessRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", requestId=").append(String.valueOf(this.requestId));
         sb.append(", accessReasonSummary=").append(String.valueOf(this.accessReasonSummary));
@@ -1217,7 +1277,6 @@ public final class AccessRequest {
         sb.append(", auditType=").append(String.valueOf(this.auditType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1263,7 +1322,7 @@ public final class AccessRequest {
                 && java.util.Objects.equals(this.auditType, other.auditType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1338,16 +1397,7 @@ public final class AccessRequest {
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

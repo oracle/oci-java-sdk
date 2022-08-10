@@ -105,8 +105,8 @@ public class GetFileSystemConverter {
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
                                                         .GetFileSystemResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fileSystem(response.getItem());
 

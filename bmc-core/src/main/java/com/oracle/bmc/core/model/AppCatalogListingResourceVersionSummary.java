@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AppCatalogListingResourceVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AppCatalogListingResourceVersionSummary {
+public final class AppCatalogListingResourceVersionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingId",
@@ -114,23 +115,33 @@ public final class AppCatalogListingResourceVersionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AppCatalogListingResourceVersionSummary build() {
-            AppCatalogListingResourceVersionSummary __instance__ =
+            AppCatalogListingResourceVersionSummary model =
                     new AppCatalogListingResourceVersionSummary(
-                            listingId, timePublished, listingResourceId, listingResourceVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.listingId,
+                            this.timePublished,
+                            this.listingResourceId,
+                            this.listingResourceVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AppCatalogListingResourceVersionSummary o) {
-            Builder copiedBuilder =
-                    listingId(o.getListingId())
-                            .timePublished(o.getTimePublished())
-                            .listingResourceId(o.getListingResourceId())
-                            .listingResourceVersion(o.getListingResourceVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AppCatalogListingResourceVersionSummary model) {
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("timePublished")) {
+                this.timePublished(model.getTimePublished());
+            }
+            if (model.wasPropertyExplicitlySet("listingResourceId")) {
+                this.listingResourceId(model.getListingResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("listingResourceVersion")) {
+                this.listingResourceVersion(model.getListingResourceVersion());
+            }
+            return this;
         }
     }
 
@@ -218,11 +229,11 @@ public final class AppCatalogListingResourceVersionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AppCatalogListingResourceVersionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("listingId=").append(String.valueOf(this.listingId));
         sb.append(", timePublished=").append(String.valueOf(this.timePublished));
         sb.append(", listingResourceId=").append(String.valueOf(this.listingResourceId));
         sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -242,7 +253,7 @@ public final class AppCatalogListingResourceVersionSummary {
                 && java.util.Objects.equals(this.listingResourceId, other.listingResourceId)
                 && java.util.Objects.equals(
                         this.listingResourceVersion, other.listingResourceVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -261,16 +272,7 @@ public final class AppCatalogListingResourceVersionSummary {
                         + (this.listingResourceVersion == null
                                 ? 43
                                 : this.listingResourceVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

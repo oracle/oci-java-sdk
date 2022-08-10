@@ -19,7 +19,8 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = SearchMonitoredResourcesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchMonitoredResourcesDetails {
+public final class SearchMonitoredResourcesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -408,50 +409,81 @@ public final class SearchMonitoredResourcesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchMonitoredResourcesDetails build() {
-            SearchMonitoredResourcesDetails __instance__ =
+            SearchMonitoredResourcesDetails model =
                     new SearchMonitoredResourcesDetails(
-                            compartmentId,
-                            name,
-                            nameContains,
-                            type,
-                            hostName,
-                            hostNameContains,
-                            managementAgentId,
-                            lifecycleState,
-                            timeCreatedGreaterThanOrEqualTo,
-                            timeCreatedLessThan,
-                            timeUpdatedGreaterThanOrEqualTo,
-                            timeUpdatedLessThan,
-                            resourceTimeZone,
-                            sortOrder,
-                            sortBy,
-                            propertyEquals);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.name,
+                            this.nameContains,
+                            this.type,
+                            this.hostName,
+                            this.hostNameContains,
+                            this.managementAgentId,
+                            this.lifecycleState,
+                            this.timeCreatedGreaterThanOrEqualTo,
+                            this.timeCreatedLessThan,
+                            this.timeUpdatedGreaterThanOrEqualTo,
+                            this.timeUpdatedLessThan,
+                            this.resourceTimeZone,
+                            this.sortOrder,
+                            this.sortBy,
+                            this.propertyEquals);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchMonitoredResourcesDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .nameContains(o.getNameContains())
-                            .type(o.getType())
-                            .hostName(o.getHostName())
-                            .hostNameContains(o.getHostNameContains())
-                            .managementAgentId(o.getManagementAgentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo())
-                            .timeCreatedLessThan(o.getTimeCreatedLessThan())
-                            .timeUpdatedGreaterThanOrEqualTo(o.getTimeUpdatedGreaterThanOrEqualTo())
-                            .timeUpdatedLessThan(o.getTimeUpdatedLessThan())
-                            .resourceTimeZone(o.getResourceTimeZone())
-                            .sortOrder(o.getSortOrder())
-                            .sortBy(o.getSortBy())
-                            .propertyEquals(o.getPropertyEquals());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchMonitoredResourcesDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("nameContains")) {
+                this.nameContains(model.getNameContains());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("hostNameContains")) {
+                this.hostNameContains(model.getHostNameContains());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentId")) {
+                this.managementAgentId(model.getManagementAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreatedGreaterThanOrEqualTo")) {
+                this.timeCreatedGreaterThanOrEqualTo(model.getTimeCreatedGreaterThanOrEqualTo());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreatedLessThan")) {
+                this.timeCreatedLessThan(model.getTimeCreatedLessThan());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdatedGreaterThanOrEqualTo")) {
+                this.timeUpdatedGreaterThanOrEqualTo(model.getTimeUpdatedGreaterThanOrEqualTo());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdatedLessThan")) {
+                this.timeUpdatedLessThan(model.getTimeUpdatedLessThan());
+            }
+            if (model.wasPropertyExplicitlySet("resourceTimeZone")) {
+                this.resourceTimeZone(model.getResourceTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("sortOrder")) {
+                this.sortOrder(model.getSortOrder());
+            }
+            if (model.wasPropertyExplicitlySet("sortBy")) {
+                this.sortBy(model.getSortBy());
+            }
+            if (model.wasPropertyExplicitlySet("propertyEquals")) {
+                this.propertyEquals(model.getPropertyEquals());
+            }
+            return this;
         }
     }
 
@@ -808,6 +840,7 @@ public final class SearchMonitoredResourcesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchMonitoredResourcesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", nameContains=").append(String.valueOf(this.nameContains));
@@ -826,7 +859,6 @@ public final class SearchMonitoredResourcesDetails {
         sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(", sortBy=").append(String.valueOf(this.sortBy));
         sb.append(", propertyEquals=").append(String.valueOf(this.propertyEquals));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -859,7 +891,7 @@ public final class SearchMonitoredResourcesDetails {
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.propertyEquals, other.propertyEquals)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -910,16 +942,7 @@ public final class SearchMonitoredResourcesDetails {
         result =
                 (result * PRIME)
                         + (this.propertyEquals == null ? 43 : this.propertyEquals.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

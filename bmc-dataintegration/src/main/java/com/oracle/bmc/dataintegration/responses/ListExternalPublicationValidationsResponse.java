@@ -88,6 +88,7 @@ public class ListExternalPublicationValidationsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -96,13 +97,14 @@ public class ListExternalPublicationValidationsResponse
     })
     private ListExternalPublicationValidationsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             Integer opcTotalItems,
             com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummaryCollection
                     externalPublicationValidationSummaryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -116,6 +118,13 @@ public class ListExternalPublicationValidationsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -214,6 +223,7 @@ public class ListExternalPublicationValidationsResponse
          */
         public Builder copy(ListExternalPublicationValidationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -231,6 +241,7 @@ public class ListExternalPublicationValidationsResponse
         public ListExternalPublicationValidationsResponse build() {
             return new ListExternalPublicationValidationsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPrevPage,

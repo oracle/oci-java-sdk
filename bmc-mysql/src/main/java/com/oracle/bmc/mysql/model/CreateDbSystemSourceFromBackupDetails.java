@@ -51,18 +51,20 @@ public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemS
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDbSystemSourceFromBackupDetails build() {
-            CreateDbSystemSourceFromBackupDetails __instance__ =
-                    new CreateDbSystemSourceFromBackupDetails(backupId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateDbSystemSourceFromBackupDetails model =
+                    new CreateDbSystemSourceFromBackupDetails(this.backupId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDbSystemSourceFromBackupDetails o) {
-            Builder copiedBuilder = backupId(o.getBackupId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDbSystemSourceFromBackupDetails model) {
+            if (model.wasPropertyExplicitlySet("backupId")) {
+                this.backupId(model.getBackupId());
+            }
+            return this;
         }
     }
 
@@ -114,7 +116,6 @@ public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemS
         sb.append("CreateDbSystemSourceFromBackupDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", backupId=").append(String.valueOf(this.backupId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -129,9 +130,7 @@ public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemS
         }
 
         CreateDbSystemSourceFromBackupDetails other = (CreateDbSystemSourceFromBackupDetails) o;
-        return java.util.Objects.equals(this.backupId, other.backupId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.backupId, other.backupId) && super.equals(other);
     }
 
     @Override
@@ -139,16 +138,6 @@ public final class CreateDbSystemSourceFromBackupDetails extends CreateDbSystemS
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

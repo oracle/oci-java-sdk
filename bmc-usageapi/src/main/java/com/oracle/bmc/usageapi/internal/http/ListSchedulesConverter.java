@@ -146,8 +146,8 @@ public class ListSchedulesConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .ListSchedulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scheduleCollection(response.getItem());
 

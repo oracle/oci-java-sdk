@@ -20,7 +20,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ProcessRecommendationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProcessRecommendationDetails {
+public final class ProcessRecommendationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"recommendationKey", "recommendationStatus", "properties"})
     public ProcessRecommendationDetails(
@@ -108,22 +109,27 @@ public final class ProcessRecommendationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProcessRecommendationDetails build() {
-            ProcessRecommendationDetails __instance__ =
+            ProcessRecommendationDetails model =
                     new ProcessRecommendationDetails(
-                            recommendationKey, recommendationStatus, properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.recommendationKey, this.recommendationStatus, this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProcessRecommendationDetails o) {
-            Builder copiedBuilder =
-                    recommendationKey(o.getRecommendationKey())
-                            .recommendationStatus(o.getRecommendationStatus())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProcessRecommendationDetails model) {
+            if (model.wasPropertyExplicitlySet("recommendationKey")) {
+                this.recommendationKey(model.getRecommendationKey());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationStatus")) {
+                this.recommendationStatus(model.getRecommendationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -213,10 +219,10 @@ public final class ProcessRecommendationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProcessRecommendationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("recommendationKey=").append(String.valueOf(this.recommendationKey));
         sb.append(", recommendationStatus=").append(String.valueOf(this.recommendationStatus));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -234,7 +240,7 @@ public final class ProcessRecommendationDetails {
         return java.util.Objects.equals(this.recommendationKey, other.recommendationKey)
                 && java.util.Objects.equals(this.recommendationStatus, other.recommendationStatus)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -250,16 +256,7 @@ public final class ProcessRecommendationDetails {
                                 ? 43
                                 : this.recommendationStatus.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.autoscaling.model;
     builder = CreateAutoScalingConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAutoScalingConfigurationDetails {
+public final class CreateAutoScalingConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -204,34 +205,49 @@ public final class CreateAutoScalingConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAutoScalingConfigurationDetails build() {
-            CreateAutoScalingConfigurationDetails __instance__ =
+            CreateAutoScalingConfigurationDetails model =
                     new CreateAutoScalingConfigurationDetails(
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            coolDownInSeconds,
-                            isEnabled,
-                            policies,
-                            resource);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.coolDownInSeconds,
+                            this.isEnabled,
+                            this.policies,
+                            this.resource);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAutoScalingConfigurationDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .coolDownInSeconds(o.getCoolDownInSeconds())
-                            .isEnabled(o.getIsEnabled())
-                            .policies(o.getPolicies())
-                            .resource(o.getResource());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAutoScalingConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("coolDownInSeconds")) {
+                this.coolDownInSeconds(model.getCoolDownInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("policies")) {
+                this.policies(model.getPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("resource")) {
+                this.resource(model.getResource());
+            }
+            return this;
         }
     }
 
@@ -387,6 +403,7 @@ public final class CreateAutoScalingConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutoScalingConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -395,7 +412,6 @@ public final class CreateAutoScalingConfigurationDetails {
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", policies=").append(String.valueOf(this.policies));
         sb.append(", resource=").append(String.valueOf(this.resource));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -418,7 +434,7 @@ public final class CreateAutoScalingConfigurationDetails {
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.policies, other.policies)
                 && java.util.Objects.equals(this.resource, other.resource)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -437,16 +453,7 @@ public final class CreateAutoScalingConfigurationDetails {
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.policies == null ? 43 : this.policies.hashCode());
         result = (result * PRIME) + (this.resource == null ? 43 : this.resource.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

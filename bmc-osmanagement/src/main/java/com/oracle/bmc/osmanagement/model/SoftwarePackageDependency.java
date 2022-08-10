@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = SoftwarePackageDependency.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SoftwarePackageDependency {
+public final class SoftwarePackageDependency
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dependency", "dependencyType", "dependencyModifier"})
     public SoftwarePackageDependency(
@@ -85,21 +86,27 @@ public final class SoftwarePackageDependency {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoftwarePackageDependency build() {
-            SoftwarePackageDependency __instance__ =
-                    new SoftwarePackageDependency(dependency, dependencyType, dependencyModifier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SoftwarePackageDependency model =
+                    new SoftwarePackageDependency(
+                            this.dependency, this.dependencyType, this.dependencyModifier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SoftwarePackageDependency o) {
-            Builder copiedBuilder =
-                    dependency(o.getDependency())
-                            .dependencyType(o.getDependencyType())
-                            .dependencyModifier(o.getDependencyModifier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SoftwarePackageDependency model) {
+            if (model.wasPropertyExplicitlySet("dependency")) {
+                this.dependency(model.getDependency());
+            }
+            if (model.wasPropertyExplicitlySet("dependencyType")) {
+                this.dependencyType(model.getDependencyType());
+            }
+            if (model.wasPropertyExplicitlySet("dependencyModifier")) {
+                this.dependencyModifier(model.getDependencyModifier());
+            }
+            return this;
         }
     }
 
@@ -169,10 +176,10 @@ public final class SoftwarePackageDependency {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SoftwarePackageDependency(");
+        sb.append("super=").append(super.toString());
         sb.append("dependency=").append(String.valueOf(this.dependency));
         sb.append(", dependencyType=").append(String.valueOf(this.dependencyType));
         sb.append(", dependencyModifier=").append(String.valueOf(this.dependencyModifier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +197,7 @@ public final class SoftwarePackageDependency {
         return java.util.Objects.equals(this.dependency, other.dependency)
                 && java.util.Objects.equals(this.dependencyType, other.dependencyType)
                 && java.util.Objects.equals(this.dependencyModifier, other.dependencyModifier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +213,7 @@ public final class SoftwarePackageDependency {
                         + (this.dependencyModifier == null
                                 ? 43
                                 : this.dependencyModifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

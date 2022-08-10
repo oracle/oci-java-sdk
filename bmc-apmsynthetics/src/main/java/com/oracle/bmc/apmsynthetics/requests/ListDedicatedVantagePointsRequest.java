@@ -37,8 +37,8 @@ public class ListDedicatedVantagePointsRequest
         return limit;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
+     * The maximum number of results per page, or items to return in a paginated
+     * "List" call. For information on how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
@@ -47,8 +47,8 @@ public class ListDedicatedVantagePointsRequest
     private String page;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
+     * The maximum number of results per page, or items to return in a paginated
+     * "List" call. For information on how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
@@ -74,7 +74,7 @@ public class ListDedicatedVantagePointsRequest
      * The field to sort by. Only one sort order may be provided.
      * Default order of displayName is ascending.
      * Default order of timeCreated and timeUpdated is descending.
-     * The displayName sort by is case sensitive.
+     * The displayName sort by is case-sensitive.
      *
      */
     private SortBy sortBy;
@@ -83,7 +83,7 @@ public class ListDedicatedVantagePointsRequest
      * The field to sort by. Only one sort order may be provided.
      * Default order of displayName is ascending.
      * Default order of timeCreated and timeUpdated is descending.
-     * The displayName sort by is case sensitive.
+     * The displayName sort by is case-sensitive.
      *
      **/
     public enum SortBy {
@@ -126,7 +126,7 @@ public class ListDedicatedVantagePointsRequest
      * The field to sort by. Only one sort order may be provided.
      * Default order of displayName is ascending.
      * Default order of timeCreated and timeUpdated is descending.
-     * The displayName sort by is case sensitive.
+     * The displayName sort by is case-sensitive.
      *
      */
     public SortBy getSortBy() {
@@ -221,8 +221,8 @@ public class ListDedicatedVantagePointsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
+         * The maximum number of results per page, or items to return in a paginated
+         * "List" call. For information on how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
@@ -231,8 +231,8 @@ public class ListDedicatedVantagePointsRequest
         private String page = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
+         * The maximum number of results per page, or items to return in a paginated
+         * "List" call. For information on how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
@@ -266,7 +266,7 @@ public class ListDedicatedVantagePointsRequest
          * The field to sort by. Only one sort order may be provided.
          * Default order of displayName is ascending.
          * Default order of timeCreated and timeUpdated is descending.
-         * The displayName sort by is case sensitive.
+         * The displayName sort by is case-sensitive.
          *
          */
         private SortBy sortBy = null;
@@ -275,7 +275,7 @@ public class ListDedicatedVantagePointsRequest
          * The field to sort by. Only one sort order may be provided.
          * Default order of displayName is ascending.
          * Default order of timeCreated and timeUpdated is descending.
-         * The displayName sort by is case sensitive.
+         * The displayName sort by is case-sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance

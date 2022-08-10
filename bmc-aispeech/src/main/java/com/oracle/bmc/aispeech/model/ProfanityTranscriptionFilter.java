@@ -54,17 +54,19 @@ public final class ProfanityTranscriptionFilter extends TranscriptionFilter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProfanityTranscriptionFilter build() {
-            ProfanityTranscriptionFilter __instance__ = new ProfanityTranscriptionFilter(mode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ProfanityTranscriptionFilter model = new ProfanityTranscriptionFilter(this.mode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProfanityTranscriptionFilter o) {
-            Builder copiedBuilder = mode(o.getMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProfanityTranscriptionFilter model) {
+            if (model.wasPropertyExplicitlySet("mode")) {
+                this.mode(model.getMode());
+            }
+            return this;
         }
     }
 
@@ -170,7 +172,6 @@ public final class ProfanityTranscriptionFilter extends TranscriptionFilter {
         sb.append("ProfanityTranscriptionFilter(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", mode=").append(String.valueOf(this.mode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -185,9 +186,7 @@ public final class ProfanityTranscriptionFilter extends TranscriptionFilter {
         }
 
         ProfanityTranscriptionFilter other = (ProfanityTranscriptionFilter) o;
-        return java.util.Objects.equals(this.mode, other.mode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.mode, other.mode) && super.equals(other);
     }
 
     @Override
@@ -195,16 +194,6 @@ public final class ProfanityTranscriptionFilter extends TranscriptionFilter {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.mode == null ? 43 : this.mode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

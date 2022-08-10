@@ -43,7 +43,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = LBCookieSessionPersistenceConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LBCookieSessionPersistenceConfigurationDetails {
+public final class LBCookieSessionPersistenceConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cookieName",
@@ -341,32 +342,45 @@ public final class LBCookieSessionPersistenceConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LBCookieSessionPersistenceConfigurationDetails build() {
-            LBCookieSessionPersistenceConfigurationDetails __instance__ =
+            LBCookieSessionPersistenceConfigurationDetails model =
                     new LBCookieSessionPersistenceConfigurationDetails(
-                            cookieName,
-                            disableFallback,
-                            domain,
-                            path,
-                            maxAgeInSeconds,
-                            isSecure,
-                            isHttpOnly);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cookieName,
+                            this.disableFallback,
+                            this.domain,
+                            this.path,
+                            this.maxAgeInSeconds,
+                            this.isSecure,
+                            this.isHttpOnly);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LBCookieSessionPersistenceConfigurationDetails o) {
-            Builder copiedBuilder =
-                    cookieName(o.getCookieName())
-                            .disableFallback(o.getDisableFallback())
-                            .domain(o.getDomain())
-                            .path(o.getPath())
-                            .maxAgeInSeconds(o.getMaxAgeInSeconds())
-                            .isSecure(o.getIsSecure())
-                            .isHttpOnly(o.getIsHttpOnly());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LBCookieSessionPersistenceConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("cookieName")) {
+                this.cookieName(model.getCookieName());
+            }
+            if (model.wasPropertyExplicitlySet("disableFallback")) {
+                this.disableFallback(model.getDisableFallback());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("maxAgeInSeconds")) {
+                this.maxAgeInSeconds(model.getMaxAgeInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("isSecure")) {
+                this.isSecure(model.getIsSecure());
+            }
+            if (model.wasPropertyExplicitlySet("isHttpOnly")) {
+                this.isHttpOnly(model.getIsHttpOnly());
+            }
+            return this;
         }
     }
 
@@ -642,6 +656,7 @@ public final class LBCookieSessionPersistenceConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LBCookieSessionPersistenceConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("cookieName=").append(String.valueOf(this.cookieName));
         sb.append(", disableFallback=").append(String.valueOf(this.disableFallback));
         sb.append(", domain=").append(String.valueOf(this.domain));
@@ -649,7 +664,6 @@ public final class LBCookieSessionPersistenceConfigurationDetails {
         sb.append(", maxAgeInSeconds=").append(String.valueOf(this.maxAgeInSeconds));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
         sb.append(", isHttpOnly=").append(String.valueOf(this.isHttpOnly));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -672,7 +686,7 @@ public final class LBCookieSessionPersistenceConfigurationDetails {
                 && java.util.Objects.equals(this.maxAgeInSeconds, other.maxAgeInSeconds)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
                 && java.util.Objects.equals(this.isHttpOnly, other.isHttpOnly)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -690,16 +704,7 @@ public final class LBCookieSessionPersistenceConfigurationDetails {
                         + (this.maxAgeInSeconds == null ? 43 : this.maxAgeInSeconds.hashCode());
         result = (result * PRIME) + (this.isSecure == null ? 43 : this.isSecure.hashCode());
         result = (result * PRIME) + (this.isHttpOnly == null ? 43 : this.isHttpOnly.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

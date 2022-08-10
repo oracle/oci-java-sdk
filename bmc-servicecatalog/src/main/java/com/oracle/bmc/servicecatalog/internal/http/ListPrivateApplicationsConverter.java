@@ -161,8 +161,8 @@ public class ListPrivateApplicationsConverter {
                                         builder =
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .ListPrivateApplicationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateApplicationCollection(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskSchedule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaskSchedule {
+public final class TaskSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -453,66 +453,113 @@ public final class TaskSchedule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaskSchedule build() {
-            TaskSchedule __instance__ =
+            TaskSchedule model =
                     new TaskSchedule(
-                            key,
-                            modelVersion,
-                            modelType,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            scheduleRef,
-                            configProviderDelegate,
-                            isEnabled,
-                            retryAttempts,
-                            retryDelayUnit,
-                            retryDelay,
-                            startTimeMillis,
-                            endTimeMillis,
-                            isConcurrentAllowed,
-                            isBackfillEnabled,
-                            authMode,
-                            expectedDuration,
-                            expectedDurationUnit,
-                            lastRunDetails,
-                            metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.modelType,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.scheduleRef,
+                            this.configProviderDelegate,
+                            this.isEnabled,
+                            this.retryAttempts,
+                            this.retryDelayUnit,
+                            this.retryDelay,
+                            this.startTimeMillis,
+                            this.endTimeMillis,
+                            this.isConcurrentAllowed,
+                            this.isBackfillEnabled,
+                            this.authMode,
+                            this.expectedDuration,
+                            this.expectedDurationUnit,
+                            this.lastRunDetails,
+                            this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaskSchedule o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .modelType(o.getModelType())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .scheduleRef(o.getScheduleRef())
-                            .configProviderDelegate(o.getConfigProviderDelegate())
-                            .isEnabled(o.getIsEnabled())
-                            .retryAttempts(o.getRetryAttempts())
-                            .retryDelayUnit(o.getRetryDelayUnit())
-                            .retryDelay(o.getRetryDelay())
-                            .startTimeMillis(o.getStartTimeMillis())
-                            .endTimeMillis(o.getEndTimeMillis())
-                            .isConcurrentAllowed(o.getIsConcurrentAllowed())
-                            .isBackfillEnabled(o.getIsBackfillEnabled())
-                            .authMode(o.getAuthMode())
-                            .expectedDuration(o.getExpectedDuration())
-                            .expectedDurationUnit(o.getExpectedDurationUnit())
-                            .lastRunDetails(o.getLastRunDetails())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaskSchedule model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleRef")) {
+                this.scheduleRef(model.getScheduleRef());
+            }
+            if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
+                this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("retryAttempts")) {
+                this.retryAttempts(model.getRetryAttempts());
+            }
+            if (model.wasPropertyExplicitlySet("retryDelayUnit")) {
+                this.retryDelayUnit(model.getRetryDelayUnit());
+            }
+            if (model.wasPropertyExplicitlySet("retryDelay")) {
+                this.retryDelay(model.getRetryDelay());
+            }
+            if (model.wasPropertyExplicitlySet("startTimeMillis")) {
+                this.startTimeMillis(model.getStartTimeMillis());
+            }
+            if (model.wasPropertyExplicitlySet("endTimeMillis")) {
+                this.endTimeMillis(model.getEndTimeMillis());
+            }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("isBackfillEnabled")) {
+                this.isBackfillEnabled(model.getIsBackfillEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("authMode")) {
+                this.authMode(model.getAuthMode());
+            }
+            if (model.wasPropertyExplicitlySet("expectedDuration")) {
+                this.expectedDuration(model.getExpectedDuration());
+            }
+            if (model.wasPropertyExplicitlySet("expectedDurationUnit")) {
+                this.expectedDurationUnit(model.getExpectedDurationUnit());
+            }
+            if (model.wasPropertyExplicitlySet("lastRunDetails")) {
+                this.lastRunDetails(model.getLastRunDetails());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -990,6 +1037,7 @@ public final class TaskSchedule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TaskSchedule(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
@@ -1014,7 +1062,6 @@ public final class TaskSchedule {
         sb.append(", expectedDurationUnit=").append(String.valueOf(this.expectedDurationUnit));
         sb.append(", lastRunDetails=").append(String.valueOf(this.lastRunDetails));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1054,7 +1101,7 @@ public final class TaskSchedule {
                 && java.util.Objects.equals(this.expectedDurationUnit, other.expectedDurationUnit)
                 && java.util.Objects.equals(this.lastRunDetails, other.lastRunDetails)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1113,16 +1160,7 @@ public final class TaskSchedule {
                 (result * PRIME)
                         + (this.lastRunDetails == null ? 43 : this.lastRunDetails.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

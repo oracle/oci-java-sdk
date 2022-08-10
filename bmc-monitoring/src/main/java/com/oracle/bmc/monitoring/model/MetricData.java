@@ -33,7 +33,7 @@ package com.oracle.bmc.monitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetricData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricData {
+public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -259,34 +259,49 @@ public final class MetricData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricData build() {
-            MetricData __instance__ =
+            MetricData model =
                     new MetricData(
-                            namespace,
-                            resourceGroup,
-                            compartmentId,
-                            name,
-                            dimensions,
-                            metadata,
-                            resolution,
-                            aggregatedDatapoints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.namespace,
+                            this.resourceGroup,
+                            this.compartmentId,
+                            this.name,
+                            this.dimensions,
+                            this.metadata,
+                            this.resolution,
+                            this.aggregatedDatapoints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricData o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .resourceGroup(o.getResourceGroup())
-                            .compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .dimensions(o.getDimensions())
-                            .metadata(o.getMetadata())
-                            .resolution(o.getResolution())
-                            .aggregatedDatapoints(o.getAggregatedDatapoints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricData model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("resourceGroup")) {
+                this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("resolution")) {
+                this.resolution(model.getResolution());
+            }
+            if (model.wasPropertyExplicitlySet("aggregatedDatapoints")) {
+                this.aggregatedDatapoints(model.getAggregatedDatapoints());
+            }
+            return this;
         }
     }
 
@@ -484,6 +499,7 @@ public final class MetricData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricData(");
+        sb.append("super=").append(super.toString());
         sb.append("namespace=").append(String.valueOf(this.namespace));
         sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -492,7 +508,6 @@ public final class MetricData {
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", resolution=").append(String.valueOf(this.resolution));
         sb.append(", aggregatedDatapoints=").append(String.valueOf(this.aggregatedDatapoints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -515,7 +530,7 @@ public final class MetricData {
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.resolution, other.resolution)
                 && java.util.Objects.equals(this.aggregatedDatapoints, other.aggregatedDatapoints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -538,16 +553,7 @@ public final class MetricData {
                         + (this.aggregatedDatapoints == null
                                 ? 43
                                 : this.aggregatedDatapoints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

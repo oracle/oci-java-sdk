@@ -31,7 +31,7 @@ package com.oracle.bmc.database.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExternalDatabaseConnector {
+public class ExternalDatabaseConnector extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -313,6 +313,7 @@ public class ExternalDatabaseConnector {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalDatabaseConnector(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -350,8 +351,8 @@ public class ExternalDatabaseConnector {
                 && java.util.Objects.equals(this.externalDatabaseId, other.externalDatabaseId)
                 && java.util.Objects.equals(this.connectionStatus, other.connectionStatus)
                 && java.util.Objects.equals(
-                        this.timeConnectionStatusLastUpdated,
-                        other.timeConnectionStatusLastUpdated);
+                        this.timeConnectionStatusLastUpdated, other.timeConnectionStatusLastUpdated)
+                && super.equals(other);
     }
 
     @Override
@@ -385,6 +386,7 @@ public class ExternalDatabaseConnector {
                         + (this.timeConnectionStatusLastUpdated == null
                                 ? 43
                                 : this.timeConnectionStatusLastUpdated.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

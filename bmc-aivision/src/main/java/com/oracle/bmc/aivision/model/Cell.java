@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Cell.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Cell {
+public final class Cell extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "text",
@@ -139,24 +139,41 @@ public final class Cell {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Cell build() {
-            Cell __instance__ =
-                    new Cell(text, rowIndex, columnIndex, confidence, boundingPolygon, wordIndexes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Cell model =
+                    new Cell(
+                            this.text,
+                            this.rowIndex,
+                            this.columnIndex,
+                            this.confidence,
+                            this.boundingPolygon,
+                            this.wordIndexes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Cell o) {
-            Builder copiedBuilder =
-                    text(o.getText())
-                            .rowIndex(o.getRowIndex())
-                            .columnIndex(o.getColumnIndex())
-                            .confidence(o.getConfidence())
-                            .boundingPolygon(o.getBoundingPolygon())
-                            .wordIndexes(o.getWordIndexes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Cell model) {
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("rowIndex")) {
+                this.rowIndex(model.getRowIndex());
+            }
+            if (model.wasPropertyExplicitlySet("columnIndex")) {
+                this.columnIndex(model.getColumnIndex());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("boundingPolygon")) {
+                this.boundingPolygon(model.getBoundingPolygon());
+            }
+            if (model.wasPropertyExplicitlySet("wordIndexes")) {
+                this.wordIndexes(model.getWordIndexes());
+            }
+            return this;
         }
     }
 
@@ -261,13 +278,13 @@ public final class Cell {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Cell(");
+        sb.append("super=").append(super.toString());
         sb.append("text=").append(String.valueOf(this.text));
         sb.append(", rowIndex=").append(String.valueOf(this.rowIndex));
         sb.append(", columnIndex=").append(String.valueOf(this.columnIndex));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
         sb.append(", wordIndexes=").append(String.valueOf(this.wordIndexes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -288,7 +305,7 @@ public final class Cell {
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
                 && java.util.Objects.equals(this.wordIndexes, other.wordIndexes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -303,16 +320,7 @@ public final class Cell {
                 (result * PRIME)
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
         result = (result * PRIME) + (this.wordIndexes == null ? 43 : this.wordIndexes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Violation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Violation {
+public final class Violation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "indexes",
@@ -127,23 +127,37 @@ public final class Violation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Violation build() {
-            Violation __instance__ =
-                    new Violation(indexes, ruleDescription, ruleName, ruleRemediation, ruleType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Violation model =
+                    new Violation(
+                            this.indexes,
+                            this.ruleDescription,
+                            this.ruleName,
+                            this.ruleRemediation,
+                            this.ruleType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Violation o) {
-            Builder copiedBuilder =
-                    indexes(o.getIndexes())
-                            .ruleDescription(o.getRuleDescription())
-                            .ruleName(o.getRuleName())
-                            .ruleRemediation(o.getRuleRemediation())
-                            .ruleType(o.getRuleType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Violation model) {
+            if (model.wasPropertyExplicitlySet("indexes")) {
+                this.indexes(model.getIndexes());
+            }
+            if (model.wasPropertyExplicitlySet("ruleDescription")) {
+                this.ruleDescription(model.getRuleDescription());
+            }
+            if (model.wasPropertyExplicitlySet("ruleName")) {
+                this.ruleName(model.getRuleName());
+            }
+            if (model.wasPropertyExplicitlySet("ruleRemediation")) {
+                this.ruleRemediation(model.getRuleRemediation());
+            }
+            if (model.wasPropertyExplicitlySet("ruleType")) {
+                this.ruleType(model.getRuleType());
+            }
+            return this;
         }
     }
 
@@ -289,12 +303,12 @@ public final class Violation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Violation(");
+        sb.append("super=").append(super.toString());
         sb.append("indexes=").append(String.valueOf(this.indexes));
         sb.append(", ruleDescription=").append(String.valueOf(this.ruleDescription));
         sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", ruleRemediation=").append(String.valueOf(this.ruleRemediation));
         sb.append(", ruleType=").append(String.valueOf(this.ruleType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -314,7 +328,7 @@ public final class Violation {
                 && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.ruleRemediation, other.ruleRemediation)
                 && java.util.Objects.equals(this.ruleType, other.ruleType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -330,16 +344,7 @@ public final class Violation {
                 (result * PRIME)
                         + (this.ruleRemediation == null ? 43 : this.ruleRemediation.hashCode());
         result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

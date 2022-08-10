@@ -115,7 +115,8 @@ public class UpdateTsigKeyConverter {
 
                                 com.oracle.bmc.dns.responses.UpdateTsigKeyResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.UpdateTsigKeyResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.tsigKey(response.getItem());
 

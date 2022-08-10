@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = CreateIdpGroupMappingDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIdpGroupMappingDetails {
+public final class CreateIdpGroupMappingDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"idpGroupName", "groupId"})
     public CreateIdpGroupMappingDetails(String idpGroupName, String groupId) {
@@ -71,18 +72,23 @@ public final class CreateIdpGroupMappingDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIdpGroupMappingDetails build() {
-            CreateIdpGroupMappingDetails __instance__ =
-                    new CreateIdpGroupMappingDetails(idpGroupName, groupId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateIdpGroupMappingDetails model =
+                    new CreateIdpGroupMappingDetails(this.idpGroupName, this.groupId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateIdpGroupMappingDetails o) {
-            Builder copiedBuilder = idpGroupName(o.getIdpGroupName()).groupId(o.getGroupId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateIdpGroupMappingDetails model) {
+            if (model.wasPropertyExplicitlySet("idpGroupName")) {
+                this.idpGroupName(model.getIdpGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("groupId")) {
+                this.groupId(model.getGroupId());
+            }
+            return this;
         }
     }
 
@@ -142,9 +148,9 @@ public final class CreateIdpGroupMappingDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateIdpGroupMappingDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("idpGroupName=").append(String.valueOf(this.idpGroupName));
         sb.append(", groupId=").append(String.valueOf(this.groupId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +167,7 @@ public final class CreateIdpGroupMappingDetails {
         CreateIdpGroupMappingDetails other = (CreateIdpGroupMappingDetails) o;
         return java.util.Objects.equals(this.idpGroupName, other.idpGroupName)
                 && java.util.Objects.equals(this.groupId, other.groupId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +176,7 @@ public final class CreateIdpGroupMappingDetails {
         int result = 1;
         result = (result * PRIME) + (this.idpGroupName == null ? 43 : this.idpGroupName.hashCode());
         result = (result * PRIME) + (this.groupId == null ? 43 : this.groupId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -151,8 +151,8 @@ public class ListSdkLanguageTypesConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .ListSdkLanguageTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sdkLanguageTypeCollection(response.getItem());
 

@@ -21,7 +21,8 @@ package com.oracle.bmc.mysql.model;
     builder = HeatWaveClusterSchemaMemoryEstimate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HeatWaveClusterSchemaMemoryEstimate {
+public final class HeatWaveClusterSchemaMemoryEstimate
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"schemaName", "perTableEstimates"})
     public HeatWaveClusterSchemaMemoryEstimate(
@@ -76,19 +77,24 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HeatWaveClusterSchemaMemoryEstimate build() {
-            HeatWaveClusterSchemaMemoryEstimate __instance__ =
-                    new HeatWaveClusterSchemaMemoryEstimate(schemaName, perTableEstimates);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HeatWaveClusterSchemaMemoryEstimate model =
+                    new HeatWaveClusterSchemaMemoryEstimate(
+                            this.schemaName, this.perTableEstimates);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HeatWaveClusterSchemaMemoryEstimate o) {
-            Builder copiedBuilder =
-                    schemaName(o.getSchemaName()).perTableEstimates(o.getPerTableEstimates());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HeatWaveClusterSchemaMemoryEstimate model) {
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("perTableEstimates")) {
+                this.perTableEstimates(model.getPerTableEstimates());
+            }
+            return this;
         }
     }
 
@@ -148,9 +154,9 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HeatWaveClusterSchemaMemoryEstimate(");
+        sb.append("super=").append(super.toString());
         sb.append("schemaName=").append(String.valueOf(this.schemaName));
         sb.append(", perTableEstimates=").append(String.valueOf(this.perTableEstimates));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -167,7 +173,7 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
         HeatWaveClusterSchemaMemoryEstimate other = (HeatWaveClusterSchemaMemoryEstimate) o;
         return java.util.Objects.equals(this.schemaName, other.schemaName)
                 && java.util.Objects.equals(this.perTableEstimates, other.perTableEstimates)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -178,16 +184,7 @@ public final class HeatWaveClusterSchemaMemoryEstimate {
         result =
                 (result * PRIME)
                         + (this.perTableEstimates == null ? 43 : this.perTableEstimates.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

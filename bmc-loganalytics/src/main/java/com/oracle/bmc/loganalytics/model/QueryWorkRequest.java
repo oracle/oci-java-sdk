@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryWorkRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryWorkRequest {
+public final class QueryWorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -348,50 +348,81 @@ public final class QueryWorkRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryWorkRequest build() {
-            QueryWorkRequest __instance__ =
+            QueryWorkRequest model =
                     new QueryWorkRequest(
-                            id,
-                            compartmentId,
-                            timeStarted,
-                            timeAccepted,
-                            timeFinished,
-                            timeExpires,
-                            percentComplete,
-                            status,
-                            operationType,
-                            mode,
-                            timeBackgroundAt,
-                            timeFilter,
-                            scopeFilters,
-                            subSystem,
-                            displayQueryString,
-                            internalQueryString);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.timeStarted,
+                            this.timeAccepted,
+                            this.timeFinished,
+                            this.timeExpires,
+                            this.percentComplete,
+                            this.status,
+                            this.operationType,
+                            this.mode,
+                            this.timeBackgroundAt,
+                            this.timeFilter,
+                            this.scopeFilters,
+                            this.subSystem,
+                            this.displayQueryString,
+                            this.internalQueryString);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryWorkRequest o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeFinished(o.getTimeFinished())
-                            .timeExpires(o.getTimeExpires())
-                            .percentComplete(o.getPercentComplete())
-                            .status(o.getStatus())
-                            .operationType(o.getOperationType())
-                            .mode(o.getMode())
-                            .timeBackgroundAt(o.getTimeBackgroundAt())
-                            .timeFilter(o.getTimeFilter())
-                            .scopeFilters(o.getScopeFilters())
-                            .subSystem(o.getSubSystem())
-                            .displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryWorkRequest model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpires")) {
+                this.timeExpires(model.getTimeExpires());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("mode")) {
+                this.mode(model.getMode());
+            }
+            if (model.wasPropertyExplicitlySet("timeBackgroundAt")) {
+                this.timeBackgroundAt(model.getTimeBackgroundAt());
+            }
+            if (model.wasPropertyExplicitlySet("timeFilter")) {
+                this.timeFilter(model.getTimeFilter());
+            }
+            if (model.wasPropertyExplicitlySet("scopeFilters")) {
+                this.scopeFilters(model.getScopeFilters());
+            }
+            if (model.wasPropertyExplicitlySet("subSystem")) {
+                this.subSystem(model.getSubSystem());
+            }
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            return this;
         }
     }
 
@@ -654,6 +685,7 @@ public final class QueryWorkRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryWorkRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -670,7 +702,6 @@ public final class QueryWorkRequest {
         sb.append(", subSystem=").append(String.valueOf(this.subSystem));
         sb.append(", displayQueryString=").append(String.valueOf(this.displayQueryString));
         sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -701,7 +732,7 @@ public final class QueryWorkRequest {
                 && java.util.Objects.equals(this.subSystem, other.subSystem)
                 && java.util.Objects.equals(this.displayQueryString, other.displayQueryString)
                 && java.util.Objects.equals(this.internalQueryString, other.internalQueryString)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -740,16 +771,7 @@ public final class QueryWorkRequest {
                         + (this.internalQueryString == null
                                 ? 43
                                 : this.internalQueryString.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

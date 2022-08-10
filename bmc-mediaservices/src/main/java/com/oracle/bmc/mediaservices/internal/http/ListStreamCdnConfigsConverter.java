@@ -169,8 +169,8 @@ public class ListStreamCdnConfigsConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .ListStreamCdnConfigsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamCdnConfigCollection(response.getItem());
 

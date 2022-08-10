@@ -20,7 +20,8 @@ package com.oracle.bmc.apmtraces.model;
     builder = QueryResultRowTypeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryResultRowTypeSummary {
+public final class QueryResultRowTypeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataType",
@@ -143,24 +144,37 @@ public final class QueryResultRowTypeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryResultRowTypeSummary build() {
-            QueryResultRowTypeSummary __instance__ =
+            QueryResultRowTypeSummary model =
                     new QueryResultRowTypeSummary(
-                            dataType, unit, displayName, expression, queryResultRowTypeSummaries);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dataType,
+                            this.unit,
+                            this.displayName,
+                            this.expression,
+                            this.queryResultRowTypeSummaries);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryResultRowTypeSummary o) {
-            Builder copiedBuilder =
-                    dataType(o.getDataType())
-                            .unit(o.getUnit())
-                            .displayName(o.getDisplayName())
-                            .expression(o.getExpression())
-                            .queryResultRowTypeSummaries(o.getQueryResultRowTypeSummaries());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryResultRowTypeSummary model) {
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("queryResultRowTypeSummaries")) {
+                this.queryResultRowTypeSummaries(model.getQueryResultRowTypeSummaries());
+            }
+            return this;
         }
     }
 
@@ -270,13 +284,13 @@ public final class QueryResultRowTypeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryResultRowTypeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("dataType=").append(String.valueOf(this.dataType));
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", expression=").append(String.valueOf(this.expression));
         sb.append(", queryResultRowTypeSummaries=")
                 .append(String.valueOf(this.queryResultRowTypeSummaries));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -297,7 +311,7 @@ public final class QueryResultRowTypeSummary {
                 && java.util.Objects.equals(this.expression, other.expression)
                 && java.util.Objects.equals(
                         this.queryResultRowTypeSummaries, other.queryResultRowTypeSummaries)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -313,16 +327,7 @@ public final class QueryResultRowTypeSummary {
                         + (this.queryResultRowTypeSummaries == null
                                 ? 43
                                 : this.queryResultRowTypeSummaries.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -36,12 +36,13 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
         return bootVolumeBackup;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "bootVolumeBackup"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "bootVolumeBackup"})
     private UpdateBootVolumeBackupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.bootVolumeBackup = bootVolumeBackup;
     }
@@ -51,6 +52,13 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +101,7 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(UpdateBootVolumeBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             bootVolumeBackup(o.getBootVolumeBackup());
 
@@ -104,7 +113,8 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
          * @return the response object
          */
         public UpdateBootVolumeBackupResponse build() {
-            return new UpdateBootVolumeBackupResponse(__httpStatusCode__, etag, bootVolumeBackup);
+            return new UpdateBootVolumeBackupResponse(
+                    __httpStatusCode__, headers, etag, bootVolumeBackup);
         }
     }
 

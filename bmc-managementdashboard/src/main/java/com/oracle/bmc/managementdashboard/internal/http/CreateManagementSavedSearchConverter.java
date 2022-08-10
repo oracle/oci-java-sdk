@@ -119,8 +119,8 @@ public class CreateManagementSavedSearchConverter {
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .CreateManagementSavedSearchResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementSavedSearch(response.getItem());
 

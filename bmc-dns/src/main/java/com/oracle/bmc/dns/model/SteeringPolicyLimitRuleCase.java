@@ -19,7 +19,8 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyLimitRuleCase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicyLimitRuleCase {
+public final class SteeringPolicyLimitRuleCase
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"caseCondition", "count"})
     public SteeringPolicyLimitRuleCase(String caseCondition, Integer count) {
@@ -87,18 +88,23 @@ public final class SteeringPolicyLimitRuleCase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicyLimitRuleCase build() {
-            SteeringPolicyLimitRuleCase __instance__ =
-                    new SteeringPolicyLimitRuleCase(caseCondition, count);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SteeringPolicyLimitRuleCase model =
+                    new SteeringPolicyLimitRuleCase(this.caseCondition, this.count);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicyLimitRuleCase o) {
-            Builder copiedBuilder = caseCondition(o.getCaseCondition()).count(o.getCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicyLimitRuleCase model) {
+            if (model.wasPropertyExplicitlySet("caseCondition")) {
+                this.caseCondition(model.getCaseCondition());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            return this;
         }
     }
 
@@ -174,9 +180,9 @@ public final class SteeringPolicyLimitRuleCase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyLimitRuleCase(");
+        sb.append("super=").append(super.toString());
         sb.append("caseCondition=").append(String.valueOf(this.caseCondition));
         sb.append(", count=").append(String.valueOf(this.count));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +199,7 @@ public final class SteeringPolicyLimitRuleCase {
         SteeringPolicyLimitRuleCase other = (SteeringPolicyLimitRuleCase) o;
         return java.util.Objects.equals(this.caseCondition, other.caseCondition)
                 && java.util.Objects.equals(this.count, other.count)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +210,7 @@ public final class SteeringPolicyLimitRuleCase {
                 (result * PRIME)
                         + (this.caseCondition == null ? 43 : this.caseCondition.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

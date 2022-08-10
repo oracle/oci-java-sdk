@@ -120,8 +120,8 @@ public class GetConfirmSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.ons.responses
                                                         .GetConfirmSubscriptionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.confirmationResult(response.getItem());
 

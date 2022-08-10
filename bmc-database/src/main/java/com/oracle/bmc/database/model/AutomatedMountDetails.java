@@ -64,19 +64,23 @@ public final class AutomatedMountDetails extends MountTypeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutomatedMountDetails build() {
-            AutomatedMountDetails __instance__ =
-                    new AutomatedMountDetails(nfsServer, nfsServerExport);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutomatedMountDetails model =
+                    new AutomatedMountDetails(this.nfsServer, this.nfsServerExport);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutomatedMountDetails o) {
-            Builder copiedBuilder =
-                    nfsServer(o.getNfsServer()).nfsServerExport(o.getNfsServerExport());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutomatedMountDetails model) {
+            if (model.wasPropertyExplicitlySet("nfsServer")) {
+                this.nfsServer(model.getNfsServer());
+            }
+            if (model.wasPropertyExplicitlySet("nfsServerExport")) {
+                this.nfsServerExport(model.getNfsServerExport());
+            }
+            return this;
         }
     }
 
@@ -142,7 +146,6 @@ public final class AutomatedMountDetails extends MountTypeDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", nfsServer=").append(String.valueOf(this.nfsServer));
         sb.append(", nfsServerExport=").append(String.valueOf(this.nfsServerExport));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,8 +162,7 @@ public final class AutomatedMountDetails extends MountTypeDetails {
         AutomatedMountDetails other = (AutomatedMountDetails) o;
         return java.util.Objects.equals(this.nfsServer, other.nfsServer)
                 && java.util.Objects.equals(this.nfsServerExport, other.nfsServerExport)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -171,16 +173,6 @@ public final class AutomatedMountDetails extends MountTypeDetails {
         result =
                 (result * PRIME)
                         + (this.nfsServerExport == null ? 43 : this.nfsServerExport.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

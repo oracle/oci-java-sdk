@@ -164,8 +164,8 @@ public class ListWorkspacesConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListWorkspacesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

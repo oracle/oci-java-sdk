@@ -22,7 +22,8 @@ package com.oracle.bmc.core.model;
     builder = ShapeNetworkingBandwidthOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeNetworkingBandwidthOptions {
+public final class ShapeNetworkingBandwidthOptions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"minInGbps", "maxInGbps", "defaultPerOcpuInGbps"})
     public ShapeNetworkingBandwidthOptions(
@@ -94,21 +95,27 @@ public final class ShapeNetworkingBandwidthOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeNetworkingBandwidthOptions build() {
-            ShapeNetworkingBandwidthOptions __instance__ =
-                    new ShapeNetworkingBandwidthOptions(minInGbps, maxInGbps, defaultPerOcpuInGbps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShapeNetworkingBandwidthOptions model =
+                    new ShapeNetworkingBandwidthOptions(
+                            this.minInGbps, this.maxInGbps, this.defaultPerOcpuInGbps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeNetworkingBandwidthOptions o) {
-            Builder copiedBuilder =
-                    minInGbps(o.getMinInGbps())
-                            .maxInGbps(o.getMaxInGbps())
-                            .defaultPerOcpuInGbps(o.getDefaultPerOcpuInGbps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeNetworkingBandwidthOptions model) {
+            if (model.wasPropertyExplicitlySet("minInGbps")) {
+                this.minInGbps(model.getMinInGbps());
+            }
+            if (model.wasPropertyExplicitlySet("maxInGbps")) {
+                this.maxInGbps(model.getMaxInGbps());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPerOcpuInGbps")) {
+                this.defaultPerOcpuInGbps(model.getDefaultPerOcpuInGbps());
+            }
+            return this;
         }
     }
 
@@ -184,10 +191,10 @@ public final class ShapeNetworkingBandwidthOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeNetworkingBandwidthOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("minInGbps=").append(String.valueOf(this.minInGbps));
         sb.append(", maxInGbps=").append(String.valueOf(this.maxInGbps));
         sb.append(", defaultPerOcpuInGbps=").append(String.valueOf(this.defaultPerOcpuInGbps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +212,7 @@ public final class ShapeNetworkingBandwidthOptions {
         return java.util.Objects.equals(this.minInGbps, other.minInGbps)
                 && java.util.Objects.equals(this.maxInGbps, other.maxInGbps)
                 && java.util.Objects.equals(this.defaultPerOcpuInGbps, other.defaultPerOcpuInGbps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +226,7 @@ public final class ShapeNetworkingBandwidthOptions {
                         + (this.defaultPerOcpuInGbps == null
                                 ? 43
                                 : this.defaultPerOcpuInGbps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

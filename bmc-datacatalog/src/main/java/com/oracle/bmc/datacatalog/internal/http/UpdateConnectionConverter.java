@@ -122,8 +122,8 @@ public class UpdateConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .UpdateConnectionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connection(response.getItem());
 

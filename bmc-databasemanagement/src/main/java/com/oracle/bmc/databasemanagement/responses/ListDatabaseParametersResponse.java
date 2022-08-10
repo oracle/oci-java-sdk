@@ -42,15 +42,17 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "databaseParametersCollection"
     })
     private ListDatabaseParametersResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
                     databaseParametersCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.databaseParametersCollection = databaseParametersCollection;
     }
@@ -60,6 +62,13 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListDatabaseParametersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             databaseParametersCollection(o.getDatabaseParametersCollection());
 
@@ -118,7 +128,7 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListDatabaseParametersResponse build() {
             return new ListDatabaseParametersResponse(
-                    __httpStatusCode__, opcRequestId, databaseParametersCollection);
+                    __httpStatusCode__, headers, opcRequestId, databaseParametersCollection);
         }
     }
 

@@ -34,7 +34,7 @@ package com.oracle.bmc.governancerulescontrolplane.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Template {
+public class Template extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected Template() {
@@ -54,6 +54,7 @@ public class Template {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Template(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -68,13 +69,14 @@ public class Template {
         }
 
         Template other = (Template) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

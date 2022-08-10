@@ -20,7 +20,7 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectSummary {
+public final class ObjectSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -191,34 +191,49 @@ public final class ObjectSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectSummary build() {
-            ObjectSummary __instance__ =
+            ObjectSummary model =
                     new ObjectSummary(
-                            name,
-                            size,
-                            md5,
-                            timeCreated,
-                            etag,
-                            storageTier,
-                            archivalState,
-                            timeModified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.size,
+                            this.md5,
+                            this.timeCreated,
+                            this.etag,
+                            this.storageTier,
+                            this.archivalState,
+                            this.timeModified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .size(o.getSize())
-                            .md5(o.getMd5())
-                            .timeCreated(o.getTimeCreated())
-                            .etag(o.getEtag())
-                            .storageTier(o.getStorageTier())
-                            .archivalState(o.getArchivalState())
-                            .timeModified(o.getTimeModified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("md5")) {
+                this.md5(model.getMd5());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("etag")) {
+                this.etag(model.getEtag());
+            }
+            if (model.wasPropertyExplicitlySet("storageTier")) {
+                this.storageTier(model.getStorageTier());
+            }
+            if (model.wasPropertyExplicitlySet("archivalState")) {
+                this.archivalState(model.getArchivalState());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            return this;
         }
     }
 
@@ -362,6 +377,7 @@ public final class ObjectSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", md5=").append(String.valueOf(this.md5));
@@ -370,7 +386,6 @@ public final class ObjectSummary {
         sb.append(", storageTier=").append(String.valueOf(this.storageTier));
         sb.append(", archivalState=").append(String.valueOf(this.archivalState));
         sb.append(", timeModified=").append(String.valueOf(this.timeModified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -393,7 +408,7 @@ public final class ObjectSummary {
                 && java.util.Objects.equals(this.storageTier, other.storageTier)
                 && java.util.Objects.equals(this.archivalState, other.archivalState)
                 && java.util.Objects.equals(this.timeModified, other.timeModified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -410,16 +425,7 @@ public final class ObjectSummary {
                 (result * PRIME)
                         + (this.archivalState == null ? 43 : this.archivalState.hashCode());
         result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

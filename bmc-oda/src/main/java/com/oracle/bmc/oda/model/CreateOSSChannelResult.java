@@ -267,57 +267,94 @@ public final class CreateOSSChannelResult extends CreateChannelResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOSSChannelResult build() {
-            CreateOSSChannelResult __instance__ =
+            CreateOSSChannelResult model =
                     new CreateOSSChannelResult(
-                            id,
-                            name,
-                            description,
-                            category,
-                            sessionExpiryDurationInMilliseconds,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            eventSinkBotIds,
-                            inboundMessageTopic,
-                            outboundMessageTopic,
-                            bootstrapServers,
-                            securityProtocol,
-                            saslMechanism,
-                            tenancyName,
-                            userName,
-                            streamPoolId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.description,
+                            this.category,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.eventSinkBotIds,
+                            this.inboundMessageTopic,
+                            this.outboundMessageTopic,
+                            this.bootstrapServers,
+                            this.securityProtocol,
+                            this.saslMechanism,
+                            this.tenancyName,
+                            this.userName,
+                            this.streamPoolId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOSSChannelResult o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .category(o.getCategory())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .eventSinkBotIds(o.getEventSinkBotIds())
-                            .inboundMessageTopic(o.getInboundMessageTopic())
-                            .outboundMessageTopic(o.getOutboundMessageTopic())
-                            .bootstrapServers(o.getBootstrapServers())
-                            .securityProtocol(o.getSecurityProtocol())
-                            .saslMechanism(o.getSaslMechanism())
-                            .tenancyName(o.getTenancyName())
-                            .userName(o.getUserName())
-                            .streamPoolId(o.getStreamPoolId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOSSChannelResult model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("eventSinkBotIds")) {
+                this.eventSinkBotIds(model.getEventSinkBotIds());
+            }
+            if (model.wasPropertyExplicitlySet("inboundMessageTopic")) {
+                this.inboundMessageTopic(model.getInboundMessageTopic());
+            }
+            if (model.wasPropertyExplicitlySet("outboundMessageTopic")) {
+                this.outboundMessageTopic(model.getOutboundMessageTopic());
+            }
+            if (model.wasPropertyExplicitlySet("bootstrapServers")) {
+                this.bootstrapServers(model.getBootstrapServers());
+            }
+            if (model.wasPropertyExplicitlySet("securityProtocol")) {
+                this.securityProtocol(model.getSecurityProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("saslMechanism")) {
+                this.saslMechanism(model.getSaslMechanism());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyName")) {
+                this.tenancyName(model.getTenancyName());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("streamPoolId")) {
+                this.streamPoolId(model.getStreamPoolId());
+            }
+            return this;
         }
     }
 
@@ -524,7 +561,6 @@ public final class CreateOSSChannelResult extends CreateChannelResult {
         sb.append(", tenancyName=").append(String.valueOf(this.tenancyName));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", streamPoolId=").append(String.valueOf(this.streamPoolId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -548,8 +584,7 @@ public final class CreateOSSChannelResult extends CreateChannelResult {
                 && java.util.Objects.equals(this.tenancyName, other.tenancyName)
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.streamPoolId, other.streamPoolId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -581,16 +616,6 @@ public final class CreateOSSChannelResult extends CreateChannelResult {
         result = (result * PRIME) + (this.tenancyName == null ? 43 : this.tenancyName.hashCode());
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.streamPoolId == null ? 43 : this.streamPoolId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

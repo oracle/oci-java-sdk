@@ -118,8 +118,8 @@ public class ListTransferDevicesConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .ListTransferDevicesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.multipleTransferDevices(response.getItem());
 

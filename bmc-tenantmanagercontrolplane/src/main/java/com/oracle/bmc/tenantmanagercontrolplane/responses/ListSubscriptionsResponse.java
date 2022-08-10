@@ -61,17 +61,19 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "subscriptionCollection"
     })
     private ListSubscriptionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionCollection
                     subscriptionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.subscriptionCollection = subscriptionCollection;
@@ -82,6 +84,13 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListSubscriptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             subscriptionCollection(o.getSubscriptionCollection());
@@ -162,7 +172,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListSubscriptionsResponse build() {
             return new ListSubscriptionsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, subscriptionCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, subscriptionCollection);
         }
     }
 

@@ -115,8 +115,8 @@ public class GetAutonomousDatabaseWalletConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetAutonomousDatabaseWalletResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousDatabaseWallet(response.getItem());
 

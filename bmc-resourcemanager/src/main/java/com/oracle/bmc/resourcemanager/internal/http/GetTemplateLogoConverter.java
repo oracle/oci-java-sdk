@@ -103,8 +103,8 @@ public class GetTemplateLogoConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetTemplateLogoResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

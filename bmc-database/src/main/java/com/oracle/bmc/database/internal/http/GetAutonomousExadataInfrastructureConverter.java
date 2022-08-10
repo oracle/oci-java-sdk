@@ -113,8 +113,8 @@ public class GetAutonomousExadataInfrastructureConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetAutonomousExadataInfrastructureResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousExadataInfrastructure(response.getItem());
 

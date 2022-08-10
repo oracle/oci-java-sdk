@@ -28,7 +28,7 @@ package com.oracle.bmc.vault.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class SecretContentDetails {
+public class SecretContentDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "stage"})
     protected SecretContentDetails(String name, Stage stage) {
@@ -128,6 +128,7 @@ public class SecretContentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecretContentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", stage=").append(String.valueOf(this.stage));
         sb.append(")");
@@ -145,7 +146,8 @@ public class SecretContentDetails {
 
         SecretContentDetails other = (SecretContentDetails) o;
         return java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.stage, other.stage);
+                && java.util.Objects.equals(this.stage, other.stage)
+                && super.equals(other);
     }
 
     @Override
@@ -154,6 +156,7 @@ public class SecretContentDetails {
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.stage == null ? 43 : this.stage.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

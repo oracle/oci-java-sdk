@@ -22,7 +22,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SSLConfiguration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SSLConfiguration {
+public final class SSLConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "verifyDepth",
@@ -332,34 +332,49 @@ public final class SSLConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SSLConfiguration build() {
-            SSLConfiguration __instance__ =
+            SSLConfiguration model =
                     new SSLConfiguration(
-                            verifyDepth,
-                            verifyPeerCertificate,
-                            trustedCertificateAuthorityIds,
-                            certificateIds,
-                            certificateName,
-                            serverOrderPreference,
-                            cipherSuiteName,
-                            protocols);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.verifyDepth,
+                            this.verifyPeerCertificate,
+                            this.trustedCertificateAuthorityIds,
+                            this.certificateIds,
+                            this.certificateName,
+                            this.serverOrderPreference,
+                            this.cipherSuiteName,
+                            this.protocols);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SSLConfiguration o) {
-            Builder copiedBuilder =
-                    verifyDepth(o.getVerifyDepth())
-                            .verifyPeerCertificate(o.getVerifyPeerCertificate())
-                            .trustedCertificateAuthorityIds(o.getTrustedCertificateAuthorityIds())
-                            .certificateIds(o.getCertificateIds())
-                            .certificateName(o.getCertificateName())
-                            .serverOrderPreference(o.getServerOrderPreference())
-                            .cipherSuiteName(o.getCipherSuiteName())
-                            .protocols(o.getProtocols());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SSLConfiguration model) {
+            if (model.wasPropertyExplicitlySet("verifyDepth")) {
+                this.verifyDepth(model.getVerifyDepth());
+            }
+            if (model.wasPropertyExplicitlySet("verifyPeerCertificate")) {
+                this.verifyPeerCertificate(model.getVerifyPeerCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("trustedCertificateAuthorityIds")) {
+                this.trustedCertificateAuthorityIds(model.getTrustedCertificateAuthorityIds());
+            }
+            if (model.wasPropertyExplicitlySet("certificateIds")) {
+                this.certificateIds(model.getCertificateIds());
+            }
+            if (model.wasPropertyExplicitlySet("certificateName")) {
+                this.certificateName(model.getCertificateName());
+            }
+            if (model.wasPropertyExplicitlySet("serverOrderPreference")) {
+                this.serverOrderPreference(model.getServerOrderPreference());
+            }
+            if (model.wasPropertyExplicitlySet("cipherSuiteName")) {
+                this.cipherSuiteName(model.getCipherSuiteName());
+            }
+            if (model.wasPropertyExplicitlySet("protocols")) {
+                this.protocols(model.getProtocols());
+            }
+            return this;
         }
     }
 
@@ -694,6 +709,7 @@ public final class SSLConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SSLConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("verifyDepth=").append(String.valueOf(this.verifyDepth));
         sb.append(", verifyPeerCertificate=").append(String.valueOf(this.verifyPeerCertificate));
         sb.append(", trustedCertificateAuthorityIds=")
@@ -703,7 +719,6 @@ public final class SSLConfiguration {
         sb.append(", serverOrderPreference=").append(String.valueOf(this.serverOrderPreference));
         sb.append(", cipherSuiteName=").append(String.valueOf(this.cipherSuiteName));
         sb.append(", protocols=").append(String.valueOf(this.protocols));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -727,7 +742,7 @@ public final class SSLConfiguration {
                 && java.util.Objects.equals(this.serverOrderPreference, other.serverOrderPreference)
                 && java.util.Objects.equals(this.cipherSuiteName, other.cipherSuiteName)
                 && java.util.Objects.equals(this.protocols, other.protocols)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -760,16 +775,7 @@ public final class SSLConfiguration {
                 (result * PRIME)
                         + (this.cipherSuiteName == null ? 43 : this.cipherSuiteName.hashCode());
         result = (result * PRIME) + (this.protocols == null ? 43 : this.protocols.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

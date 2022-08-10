@@ -110,22 +110,30 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalServiceAccessPolicyTarget build() {
-            ExternalServiceAccessPolicyTarget __instance__ =
-                    new ExternalServiceAccessPolicyTarget(hostnames, ipAddresses, ports, protocol);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExternalServiceAccessPolicyTarget model =
+                    new ExternalServiceAccessPolicyTarget(
+                            this.hostnames, this.ipAddresses, this.ports, this.protocol);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalServiceAccessPolicyTarget o) {
-            Builder copiedBuilder =
-                    hostnames(o.getHostnames())
-                            .ipAddresses(o.getIpAddresses())
-                            .ports(o.getPorts())
-                            .protocol(o.getProtocol());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalServiceAccessPolicyTarget model) {
+            if (model.wasPropertyExplicitlySet("hostnames")) {
+                this.hostnames(model.getHostnames());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddresses")) {
+                this.ipAddresses(model.getIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("ports")) {
+                this.ports(model.getPorts());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            return this;
         }
     }
 
@@ -290,7 +298,6 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
         sb.append(", ports=").append(String.valueOf(this.ports));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,8 +316,7 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
                 && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
                 && java.util.Objects.equals(this.ports, other.ports)
                 && java.util.Objects.equals(this.protocol, other.protocol)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -321,16 +327,6 @@ public final class ExternalServiceAccessPolicyTarget extends AccessPolicyTarget 
         result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
         result = (result * PRIME) + (this.ports == null ? 43 : this.ports.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -53,16 +53,18 @@ public class GetScheduledRunResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "scheduledRun"
     })
     private GetScheduledRunResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.usageapi.model.ScheduledRun scheduledRun) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.scheduledRun = scheduledRun;
@@ -73,6 +75,13 @@ public class GetScheduledRunResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class GetScheduledRunResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetScheduledRunResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             scheduledRun(o.getScheduledRun());
@@ -144,7 +154,7 @@ public class GetScheduledRunResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetScheduledRunResponse build() {
             return new GetScheduledRunResponse(
-                    __httpStatusCode__, opcRequestId, etag, scheduledRun);
+                    __httpStatusCode__, headers, opcRequestId, etag, scheduledRun);
         }
     }
 

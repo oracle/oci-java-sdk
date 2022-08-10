@@ -111,8 +111,8 @@ public class CreateDbCredentialConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .CreateDbCredentialResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbCredential(response.getItem());
 

@@ -162,8 +162,8 @@ public class ListTopUtilizedResourcesConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .ListTopUtilizedResourcesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.topUtilizedResourceCollection(response.getItem());
 

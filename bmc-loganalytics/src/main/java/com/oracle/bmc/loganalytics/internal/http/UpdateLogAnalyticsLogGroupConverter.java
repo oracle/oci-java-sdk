@@ -127,8 +127,8 @@ public class UpdateLogAnalyticsLogGroupConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateLogAnalyticsLogGroupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsLogGroup(response.getItem());
 

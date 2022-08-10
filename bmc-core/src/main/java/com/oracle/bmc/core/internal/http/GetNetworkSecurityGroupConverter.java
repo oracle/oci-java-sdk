@@ -103,8 +103,8 @@ public class GetNetworkSecurityGroupConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetNetworkSecurityGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkSecurityGroup(response.getItem());
 

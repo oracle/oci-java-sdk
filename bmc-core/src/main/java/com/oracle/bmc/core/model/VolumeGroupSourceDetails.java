@@ -40,7 +40,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class VolumeGroupSourceDetails {
+public class VolumeGroupSourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected VolumeGroupSourceDetails() {
@@ -60,6 +60,7 @@ public class VolumeGroupSourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeGroupSourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -74,13 +75,14 @@ public class VolumeGroupSourceDetails {
         }
 
         VolumeGroupSourceDetails other = (VolumeGroupSourceDetails) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

@@ -109,8 +109,8 @@ public class RetrieveNamespacesConverter {
                                         builder =
                                                 com.oracle.bmc.apmconfig.responses
                                                         .RetrieveNamespacesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.namespaceCollection(response.getItem());
 

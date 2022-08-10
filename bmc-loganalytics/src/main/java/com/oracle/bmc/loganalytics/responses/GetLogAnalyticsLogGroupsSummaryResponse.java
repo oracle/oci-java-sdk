@@ -38,14 +38,16 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "logGroupSummaryReport"
     })
     private GetLogAnalyticsLogGroupsSummaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.logGroupSummaryReport = logGroupSummaryReport;
     }
@@ -55,6 +57,13 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +106,7 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
          */
         public Builder copy(GetLogAnalyticsLogGroupsSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             logGroupSummaryReport(o.getLogGroupSummaryReport());
 
@@ -109,7 +119,7 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
          */
         public GetLogAnalyticsLogGroupsSummaryResponse build() {
             return new GetLogAnalyticsLogGroupsSummaryResponse(
-                    __httpStatusCode__, opcRequestId, logGroupSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, logGroupSummaryReport);
         }
     }
 

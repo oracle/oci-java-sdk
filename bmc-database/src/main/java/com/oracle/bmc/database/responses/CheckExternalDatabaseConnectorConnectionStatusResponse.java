@@ -56,13 +56,18 @@ public class CheckExternalDatabaseConnectorConnectionStatusResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "etag"
     })
     private CheckExternalDatabaseConnectorConnectionStatusResponse(
-            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId, String etag) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcWorkRequestId,
+            String opcRequestId,
+            String etag) {
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -73,6 +78,13 @@ public class CheckExternalDatabaseConnectorConnectionStatusResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -133,6 +145,7 @@ public class CheckExternalDatabaseConnectorConnectionStatusResponse
          */
         public Builder copy(CheckExternalDatabaseConnectorConnectionStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -146,7 +159,7 @@ public class CheckExternalDatabaseConnectorConnectionStatusResponse
          */
         public CheckExternalDatabaseConnectorConnectionStatusResponse build() {
             return new CheckExternalDatabaseConnectorConnectionStatusResponse(
-                    __httpStatusCode__, opcWorkRequestId, opcRequestId, etag);
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, etag);
         }
     }
 

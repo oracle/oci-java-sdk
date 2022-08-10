@@ -174,8 +174,8 @@ public class ListSubscribedServicesConverter {
                                         builder =
                                                 com.oracle.bmc.onesubscription.responses
                                                         .ListSubscribedServicesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

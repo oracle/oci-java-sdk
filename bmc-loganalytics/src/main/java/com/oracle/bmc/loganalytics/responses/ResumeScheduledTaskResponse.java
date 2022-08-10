@@ -72,6 +72,7 @@ public class ResumeScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "scheduledTask",
@@ -79,11 +80,12 @@ public class ResumeScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ResumeScheduledTaskResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.loganalytics.model.ScheduledTask scheduledTask,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.scheduledTask = scheduledTask;
@@ -95,6 +97,13 @@ public class ResumeScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -174,6 +183,7 @@ public class ResumeScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ResumeScheduledTaskResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             scheduledTask(o.getScheduledTask());
@@ -187,7 +197,7 @@ public class ResumeScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ResumeScheduledTaskResponse build() {
             return new ResumeScheduledTaskResponse(
-                    __httpStatusCode__, opcRequestId, etag, scheduledTask, isNotModified);
+                    __httpStatusCode__, headers, opcRequestId, etag, scheduledTask, isNotModified);
         }
     }
 

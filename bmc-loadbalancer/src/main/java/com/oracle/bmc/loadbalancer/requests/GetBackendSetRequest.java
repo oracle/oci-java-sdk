@@ -54,6 +54,37 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -118,6 +149,41 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @param ifMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -148,6 +214,7 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
             loadBalancerId(o.getLoadBalancerId());
             backendSetName(o.getBackendSetName());
             opcRequestId(o.getOpcRequestId());
+            ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -183,8 +250,9 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.loadBalancerId = loadBalancerId;
             request.backendSetName = backendSetName;
             request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
             return request;
-            // new GetBackendSetRequest(loadBalancerId, backendSetName, opcRequestId);
+            // new GetBackendSetRequest(loadBalancerId, backendSetName, opcRequestId, ifMatch);
         }
     }
 
@@ -196,7 +264,8 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return new Builder()
                 .loadBalancerId(loadBalancerId)
                 .backendSetName(backendSetName)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -215,6 +284,7 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(",backendSetName=").append(String.valueOf(this.backendSetName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +302,8 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return super.equals(o)
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.backendSetName, other.backendSetName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -246,6 +317,7 @@ public class GetBackendSetRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }
 }

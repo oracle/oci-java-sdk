@@ -99,23 +99,30 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeterministicSubstitutionFormatEntry build() {
-            DeterministicSubstitutionFormatEntry __instance__ =
+            DeterministicSubstitutionFormatEntry model =
                     new DeterministicSubstitutionFormatEntry(
-                            description, schemaName, tableName, columnName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description, this.schemaName, this.tableName, this.columnName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeterministicSubstitutionFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .schemaName(o.getSchemaName())
-                            .tableName(o.getTableName())
-                            .columnName(o.getColumnName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeterministicSubstitutionFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("tableName")) {
+                this.tableName(model.getTableName());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            return this;
         }
     }
 
@@ -198,7 +205,6 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
         sb.append(", schemaName=").append(String.valueOf(this.schemaName));
         sb.append(", tableName=").append(String.valueOf(this.tableName));
         sb.append(", columnName=").append(String.valueOf(this.columnName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -216,8 +222,7 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
         return java.util.Objects.equals(this.schemaName, other.schemaName)
                 && java.util.Objects.equals(this.tableName, other.tableName)
                 && java.util.Objects.equals(this.columnName, other.columnName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -227,16 +232,6 @@ public final class DeterministicSubstitutionFormatEntry extends FormatEntry {
         result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
         result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
         result = (result * PRIME) + (this.columnName == null ? 43 : this.columnName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

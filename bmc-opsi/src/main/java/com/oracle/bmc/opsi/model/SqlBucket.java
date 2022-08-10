@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlBucket.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlBucket {
+public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -275,40 +275,61 @@ public final class SqlBucket {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlBucket build() {
-            SqlBucket __instance__ =
+            SqlBucket model =
                     new SqlBucket(
-                            version,
-                            databaseType,
-                            timeCollected,
-                            sqlIdentifier,
-                            planHash,
-                            bucketId,
-                            executionsCount,
-                            cpuTimeInSec,
-                            ioTimeInSec,
-                            otherWaitTimeInSec,
-                            totalTimeInSec);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.version,
+                            this.databaseType,
+                            this.timeCollected,
+                            this.sqlIdentifier,
+                            this.planHash,
+                            this.bucketId,
+                            this.executionsCount,
+                            this.cpuTimeInSec,
+                            this.ioTimeInSec,
+                            this.otherWaitTimeInSec,
+                            this.totalTimeInSec);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlBucket o) {
-            Builder copiedBuilder =
-                    version(o.getVersion())
-                            .databaseType(o.getDatabaseType())
-                            .timeCollected(o.getTimeCollected())
-                            .sqlIdentifier(o.getSqlIdentifier())
-                            .planHash(o.getPlanHash())
-                            .bucketId(o.getBucketId())
-                            .executionsCount(o.getExecutionsCount())
-                            .cpuTimeInSec(o.getCpuTimeInSec())
-                            .ioTimeInSec(o.getIoTimeInSec())
-                            .otherWaitTimeInSec(o.getOtherWaitTimeInSec())
-                            .totalTimeInSec(o.getTotalTimeInSec());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlBucket model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("sqlIdentifier")) {
+                this.sqlIdentifier(model.getSqlIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("planHash")) {
+                this.planHash(model.getPlanHash());
+            }
+            if (model.wasPropertyExplicitlySet("bucketId")) {
+                this.bucketId(model.getBucketId());
+            }
+            if (model.wasPropertyExplicitlySet("executionsCount")) {
+                this.executionsCount(model.getExecutionsCount());
+            }
+            if (model.wasPropertyExplicitlySet("cpuTimeInSec")) {
+                this.cpuTimeInSec(model.getCpuTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("ioTimeInSec")) {
+                this.ioTimeInSec(model.getIoTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("otherWaitTimeInSec")) {
+                this.otherWaitTimeInSec(model.getOtherWaitTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("totalTimeInSec")) {
+                this.totalTimeInSec(model.getTotalTimeInSec());
+            }
+            return this;
         }
     }
 
@@ -524,6 +545,7 @@ public final class SqlBucket {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlBucket(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
@@ -535,7 +557,6 @@ public final class SqlBucket {
         sb.append(", ioTimeInSec=").append(String.valueOf(this.ioTimeInSec));
         sb.append(", otherWaitTimeInSec=").append(String.valueOf(this.otherWaitTimeInSec));
         sb.append(", totalTimeInSec=").append(String.valueOf(this.totalTimeInSec));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -561,7 +582,7 @@ public final class SqlBucket {
                 && java.util.Objects.equals(this.ioTimeInSec, other.ioTimeInSec)
                 && java.util.Objects.equals(this.otherWaitTimeInSec, other.otherWaitTimeInSec)
                 && java.util.Objects.equals(this.totalTimeInSec, other.totalTimeInSec)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -591,16 +612,7 @@ public final class SqlBucket {
         result =
                 (result * PRIME)
                         + (this.totalTimeInSec == null ? 43 : this.totalTimeInSec.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

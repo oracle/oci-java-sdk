@@ -17,7 +17,7 @@ package com.oracle.bmc.aianomalydetection.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PerSignalDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PerSignalDetails {
+public final class PerSignalDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "signalName",
@@ -211,28 +211,53 @@ public final class PerSignalDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PerSignalDetails build() {
-            PerSignalDetails __instance__ =
+            PerSignalDetails model =
                     new PerSignalDetails(
-                            signalName, mviRatio, isQuantized, fap, min, max, std, status, details);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.signalName,
+                            this.mviRatio,
+                            this.isQuantized,
+                            this.fap,
+                            this.min,
+                            this.max,
+                            this.std,
+                            this.status,
+                            this.details);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PerSignalDetails o) {
-            Builder copiedBuilder =
-                    signalName(o.getSignalName())
-                            .mviRatio(o.getMviRatio())
-                            .isQuantized(o.getIsQuantized())
-                            .fap(o.getFap())
-                            .min(o.getMin())
-                            .max(o.getMax())
-                            .std(o.getStd())
-                            .status(o.getStatus())
-                            .details(o.getDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PerSignalDetails model) {
+            if (model.wasPropertyExplicitlySet("signalName")) {
+                this.signalName(model.getSignalName());
+            }
+            if (model.wasPropertyExplicitlySet("mviRatio")) {
+                this.mviRatio(model.getMviRatio());
+            }
+            if (model.wasPropertyExplicitlySet("isQuantized")) {
+                this.isQuantized(model.getIsQuantized());
+            }
+            if (model.wasPropertyExplicitlySet("fap")) {
+                this.fap(model.getFap());
+            }
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("std")) {
+                this.std(model.getStd());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
+            }
+            return this;
         }
     }
 
@@ -446,6 +471,7 @@ public final class PerSignalDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PerSignalDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("signalName=").append(String.valueOf(this.signalName));
         sb.append(", mviRatio=").append(String.valueOf(this.mviRatio));
         sb.append(", isQuantized=").append(String.valueOf(this.isQuantized));
@@ -455,7 +481,6 @@ public final class PerSignalDetails {
         sb.append(", std=").append(String.valueOf(this.std));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", details=").append(String.valueOf(this.details));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -479,7 +504,7 @@ public final class PerSignalDetails {
                 && java.util.Objects.equals(this.std, other.std)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.details, other.details)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -495,16 +520,7 @@ public final class PerSignalDetails {
         result = (result * PRIME) + (this.std == null ? 43 : this.std.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

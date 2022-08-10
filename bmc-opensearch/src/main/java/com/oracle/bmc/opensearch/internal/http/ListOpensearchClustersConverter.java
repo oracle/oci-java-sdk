@@ -168,8 +168,8 @@ public class ListOpensearchClustersConverter {
                                         builder =
                                                 com.oracle.bmc.opensearch.responses
                                                         .ListOpensearchClustersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.opensearchClusterCollection(response.getItem());
 

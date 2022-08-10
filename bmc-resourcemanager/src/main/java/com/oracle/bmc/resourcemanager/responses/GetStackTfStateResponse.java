@@ -34,10 +34,18 @@ public class GetStackTfStateResponse extends com.oracle.bmc.responses.BmcRespons
         return inputStream;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "inputStream"
+    })
     private GetStackTfStateResponse(
-            int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            java.io.InputStream inputStream) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.inputStream = inputStream;
     }
@@ -47,6 +55,13 @@ public class GetStackTfStateResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -86,6 +101,7 @@ public class GetStackTfStateResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetStackTfStateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             inputStream(o.getInputStream());
 
@@ -97,7 +113,8 @@ public class GetStackTfStateResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public GetStackTfStateResponse build() {
-            return new GetStackTfStateResponse(__httpStatusCode__, opcRequestId, inputStream);
+            return new GetStackTfStateResponse(
+                    __httpStatusCode__, headers, opcRequestId, inputStream);
         }
     }
 

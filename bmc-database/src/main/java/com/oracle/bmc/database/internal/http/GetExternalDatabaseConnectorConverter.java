@@ -115,8 +115,8 @@ public class GetExternalDatabaseConnectorConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetExternalDatabaseConnectorResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalDatabaseConnector(response.getItem());
 

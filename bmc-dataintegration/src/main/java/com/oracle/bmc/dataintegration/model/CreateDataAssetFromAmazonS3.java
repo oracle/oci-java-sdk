@@ -137,40 +137,61 @@ public final class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataAssetFromAmazonS3 build() {
-            CreateDataAssetFromAmazonS3 __instance__ =
+            CreateDataAssetFromAmazonS3 model =
                     new CreateDataAssetFromAmazonS3(
-                            key,
-                            modelVersion,
-                            name,
-                            description,
-                            objectStatus,
-                            identifier,
-                            externalKey,
-                            assetProperties,
-                            registryMetadata,
-                            region,
-                            defaultConnection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.identifier,
+                            this.externalKey,
+                            this.assetProperties,
+                            this.registryMetadata,
+                            this.region,
+                            this.defaultConnection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDataAssetFromAmazonS3 o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .externalKey(o.getExternalKey())
-                            .assetProperties(o.getAssetProperties())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .region(o.getRegion())
-                            .defaultConnection(o.getDefaultConnection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDataAssetFromAmazonS3 model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("assetProperties")) {
+                this.assetProperties(model.getAssetProperties());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("defaultConnection")) {
+                this.defaultConnection(model.getDefaultConnection());
+            }
+            return this;
         }
     }
 
@@ -249,7 +270,6 @@ public final class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,8 +286,7 @@ public final class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
         CreateDataAssetFromAmazonS3 other = (CreateDataAssetFromAmazonS3) o;
         return java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -278,16 +297,6 @@ public final class CreateDataAssetFromAmazonS3 extends CreateDataAssetDetails {
         result =
                 (result * PRIME)
                         + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -154,38 +154,57 @@ public final class DirectFieldMap extends FieldMap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DirectFieldMap build() {
-            DirectFieldMap __instance__ =
+            DirectFieldMap model =
                     new DirectFieldMap(
-                            description,
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            sourceTypedObject,
-                            targetTypedObject,
-                            sourceScopeReference,
-                            targetScopeReference,
-                            objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.sourceTypedObject,
+                            this.targetTypedObject,
+                            this.sourceScopeReference,
+                            this.targetScopeReference,
+                            this.objectStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DirectFieldMap o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .sourceTypedObject(o.getSourceTypedObject())
-                            .targetTypedObject(o.getTargetTypedObject())
-                            .sourceScopeReference(o.getSourceScopeReference())
-                            .targetScopeReference(o.getTargetScopeReference())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DirectFieldMap model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("sourceTypedObject")) {
+                this.sourceTypedObject(model.getSourceTypedObject());
+            }
+            if (model.wasPropertyExplicitlySet("targetTypedObject")) {
+                this.targetTypedObject(model.getTargetTypedObject());
+            }
+            if (model.wasPropertyExplicitlySet("sourceScopeReference")) {
+                this.sourceScopeReference(model.getSourceScopeReference());
+            }
+            if (model.wasPropertyExplicitlySet("targetScopeReference")) {
+                this.targetScopeReference(model.getTargetScopeReference());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            return this;
         }
     }
 
@@ -345,7 +364,6 @@ public final class DirectFieldMap extends FieldMap {
         sb.append(", sourceScopeReference=").append(String.valueOf(this.sourceScopeReference));
         sb.append(", targetScopeReference=").append(String.valueOf(this.targetScopeReference));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -369,8 +387,7 @@ public final class DirectFieldMap extends FieldMap {
                 && java.util.Objects.equals(this.sourceScopeReference, other.sourceScopeReference)
                 && java.util.Objects.equals(this.targetScopeReference, other.targetScopeReference)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -398,16 +415,6 @@ public final class DirectFieldMap extends FieldMap {
                                 ? 43
                                 : this.targetScopeReference.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

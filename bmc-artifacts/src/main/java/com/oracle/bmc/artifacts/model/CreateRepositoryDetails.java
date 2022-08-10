@@ -28,7 +28,7 @@ package com.oracle.bmc.artifacts.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateRepositoryDetails {
+public class CreateRepositoryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -169,6 +169,7 @@ public class CreateRepositoryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRepositoryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -194,7 +195,8 @@ public class CreateRepositoryDetails {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.isImmutable, other.isImmutable)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -209,6 +211,7 @@ public class CreateRepositoryDetails {
         result = (result * PRIME) + (this.isImmutable == null ? 43 : this.isImmutable.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

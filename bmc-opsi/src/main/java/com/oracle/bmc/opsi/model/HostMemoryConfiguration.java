@@ -121,30 +121,41 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostMemoryConfiguration build() {
-            HostMemoryConfiguration __instance__ =
+            HostMemoryConfiguration model =
                     new HostMemoryConfiguration(
-                            timeCollected,
-                            pageSizeInKB,
-                            pageTablesInKB,
-                            swapTotalInKB,
-                            hugePageSizeInKB,
-                            hugePagesTotal);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.pageSizeInKB,
+                            this.pageTablesInKB,
+                            this.swapTotalInKB,
+                            this.hugePageSizeInKB,
+                            this.hugePagesTotal);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostMemoryConfiguration o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .pageSizeInKB(o.getPageSizeInKB())
-                            .pageTablesInKB(o.getPageTablesInKB())
-                            .swapTotalInKB(o.getSwapTotalInKB())
-                            .hugePageSizeInKB(o.getHugePageSizeInKB())
-                            .hugePagesTotal(o.getHugePagesTotal());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostMemoryConfiguration model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("pageSizeInKB")) {
+                this.pageSizeInKB(model.getPageSizeInKB());
+            }
+            if (model.wasPropertyExplicitlySet("pageTablesInKB")) {
+                this.pageTablesInKB(model.getPageTablesInKB());
+            }
+            if (model.wasPropertyExplicitlySet("swapTotalInKB")) {
+                this.swapTotalInKB(model.getSwapTotalInKB());
+            }
+            if (model.wasPropertyExplicitlySet("hugePageSizeInKB")) {
+                this.hugePageSizeInKB(model.getHugePageSizeInKB());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesTotal")) {
+                this.hugePagesTotal(model.getHugePagesTotal());
+            }
+            return this;
         }
     }
 
@@ -264,7 +275,6 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
         sb.append(", swapTotalInKB=").append(String.valueOf(this.swapTotalInKB));
         sb.append(", hugePageSizeInKB=").append(String.valueOf(this.hugePageSizeInKB));
         sb.append(", hugePagesTotal=").append(String.valueOf(this.hugePagesTotal));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -284,8 +294,7 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
                 && java.util.Objects.equals(this.swapTotalInKB, other.swapTotalInKB)
                 && java.util.Objects.equals(this.hugePageSizeInKB, other.hugePageSizeInKB)
                 && java.util.Objects.equals(this.hugePagesTotal, other.hugePagesTotal)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -305,16 +314,6 @@ public final class HostMemoryConfiguration extends HostConfigurationMetricGroup 
         result =
                 (result * PRIME)
                         + (this.hugePagesTotal == null ? 43 : this.hugePagesTotal.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

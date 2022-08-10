@@ -175,8 +175,8 @@ public class ListFoldersConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListFoldersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.folderSummaryCollection(response.getItem());
 

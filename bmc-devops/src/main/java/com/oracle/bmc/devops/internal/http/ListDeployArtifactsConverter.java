@@ -174,8 +174,8 @@ public class ListDeployArtifactsConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListDeployArtifactsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployArtifactCollection(response.getItem());
 

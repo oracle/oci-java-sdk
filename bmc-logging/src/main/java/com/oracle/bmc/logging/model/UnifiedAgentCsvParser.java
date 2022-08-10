@@ -112,36 +112,53 @@ public final class UnifiedAgentCsvParser extends UnifiedAgentParser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentCsvParser build() {
-            UnifiedAgentCsvParser __instance__ =
+            UnifiedAgentCsvParser model =
                     new UnifiedAgentCsvParser(
-                            fieldTimeKey,
-                            types,
-                            nullValuePattern,
-                            isNullEmptyString,
-                            isEstimateCurrentEvent,
-                            isKeepTimeKey,
-                            timeoutInMilliseconds,
-                            delimiter,
-                            keys);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldTimeKey,
+                            this.types,
+                            this.nullValuePattern,
+                            this.isNullEmptyString,
+                            this.isEstimateCurrentEvent,
+                            this.isKeepTimeKey,
+                            this.timeoutInMilliseconds,
+                            this.delimiter,
+                            this.keys);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentCsvParser o) {
-            Builder copiedBuilder =
-                    fieldTimeKey(o.getFieldTimeKey())
-                            .types(o.getTypes())
-                            .nullValuePattern(o.getNullValuePattern())
-                            .isNullEmptyString(o.getIsNullEmptyString())
-                            .isEstimateCurrentEvent(o.getIsEstimateCurrentEvent())
-                            .isKeepTimeKey(o.getIsKeepTimeKey())
-                            .timeoutInMilliseconds(o.getTimeoutInMilliseconds())
-                            .delimiter(o.getDelimiter())
-                            .keys(o.getKeys());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentCsvParser model) {
+            if (model.wasPropertyExplicitlySet("fieldTimeKey")) {
+                this.fieldTimeKey(model.getFieldTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("nullValuePattern")) {
+                this.nullValuePattern(model.getNullValuePattern());
+            }
+            if (model.wasPropertyExplicitlySet("isNullEmptyString")) {
+                this.isNullEmptyString(model.getIsNullEmptyString());
+            }
+            if (model.wasPropertyExplicitlySet("isEstimateCurrentEvent")) {
+                this.isEstimateCurrentEvent(model.getIsEstimateCurrentEvent());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepTimeKey")) {
+                this.isKeepTimeKey(model.getIsKeepTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMilliseconds")) {
+                this.timeoutInMilliseconds(model.getTimeoutInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("delimiter")) {
+                this.delimiter(model.getDelimiter());
+            }
+            if (model.wasPropertyExplicitlySet("keys")) {
+                this.keys(model.getKeys());
+            }
+            return this;
         }
     }
 
@@ -209,7 +226,6 @@ public final class UnifiedAgentCsvParser extends UnifiedAgentParser {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", delimiter=").append(String.valueOf(this.delimiter));
         sb.append(", keys=").append(String.valueOf(this.keys));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,8 +242,7 @@ public final class UnifiedAgentCsvParser extends UnifiedAgentParser {
         UnifiedAgentCsvParser other = (UnifiedAgentCsvParser) o;
         return java.util.Objects.equals(this.delimiter, other.delimiter)
                 && java.util.Objects.equals(this.keys, other.keys)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -236,16 +251,6 @@ public final class UnifiedAgentCsvParser extends UnifiedAgentParser {
         int result = super.hashCode();
         result = (result * PRIME) + (this.delimiter == null ? 43 : this.delimiter.hashCode());
         result = (result * PRIME) + (this.keys == null ? 43 : this.keys.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

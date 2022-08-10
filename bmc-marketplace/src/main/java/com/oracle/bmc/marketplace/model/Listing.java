@@ -17,7 +17,7 @@ package com.oracle.bmc.marketplace.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Listing.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Listing {
+public final class Listing extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -585,78 +585,137 @@ public final class Listing {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Listing build() {
-            Listing __instance__ =
+            Listing model =
                     new Listing(
-                            id,
-                            name,
-                            version,
-                            tagline,
-                            keywords,
-                            shortDescription,
-                            usageInformation,
-                            longDescription,
-                            licenseModelDescription,
-                            systemRequirements,
-                            timeReleased,
-                            releaseNotes,
-                            categories,
-                            publisher,
-                            languages,
-                            screenshots,
-                            videos,
-                            supportContacts,
-                            supportLinks,
-                            documentationLinks,
-                            icon,
-                            banner,
-                            compatibleArchitectures,
-                            regions,
-                            packageType,
-                            defaultPackageVersion,
-                            links,
-                            isFeatured,
-                            listingType,
-                            supportedOperatingSystems);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.version,
+                            this.tagline,
+                            this.keywords,
+                            this.shortDescription,
+                            this.usageInformation,
+                            this.longDescription,
+                            this.licenseModelDescription,
+                            this.systemRequirements,
+                            this.timeReleased,
+                            this.releaseNotes,
+                            this.categories,
+                            this.publisher,
+                            this.languages,
+                            this.screenshots,
+                            this.videos,
+                            this.supportContacts,
+                            this.supportLinks,
+                            this.documentationLinks,
+                            this.icon,
+                            this.banner,
+                            this.compatibleArchitectures,
+                            this.regions,
+                            this.packageType,
+                            this.defaultPackageVersion,
+                            this.links,
+                            this.isFeatured,
+                            this.listingType,
+                            this.supportedOperatingSystems);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Listing o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .version(o.getVersion())
-                            .tagline(o.getTagline())
-                            .keywords(o.getKeywords())
-                            .shortDescription(o.getShortDescription())
-                            .usageInformation(o.getUsageInformation())
-                            .longDescription(o.getLongDescription())
-                            .licenseModelDescription(o.getLicenseModelDescription())
-                            .systemRequirements(o.getSystemRequirements())
-                            .timeReleased(o.getTimeReleased())
-                            .releaseNotes(o.getReleaseNotes())
-                            .categories(o.getCategories())
-                            .publisher(o.getPublisher())
-                            .languages(o.getLanguages())
-                            .screenshots(o.getScreenshots())
-                            .videos(o.getVideos())
-                            .supportContacts(o.getSupportContacts())
-                            .supportLinks(o.getSupportLinks())
-                            .documentationLinks(o.getDocumentationLinks())
-                            .icon(o.getIcon())
-                            .banner(o.getBanner())
-                            .compatibleArchitectures(o.getCompatibleArchitectures())
-                            .regions(o.getRegions())
-                            .packageType(o.getPackageType())
-                            .defaultPackageVersion(o.getDefaultPackageVersion())
-                            .links(o.getLinks())
-                            .isFeatured(o.getIsFeatured())
-                            .listingType(o.getListingType())
-                            .supportedOperatingSystems(o.getSupportedOperatingSystems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Listing model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("tagline")) {
+                this.tagline(model.getTagline());
+            }
+            if (model.wasPropertyExplicitlySet("keywords")) {
+                this.keywords(model.getKeywords());
+            }
+            if (model.wasPropertyExplicitlySet("shortDescription")) {
+                this.shortDescription(model.getShortDescription());
+            }
+            if (model.wasPropertyExplicitlySet("usageInformation")) {
+                this.usageInformation(model.getUsageInformation());
+            }
+            if (model.wasPropertyExplicitlySet("longDescription")) {
+                this.longDescription(model.getLongDescription());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModelDescription")) {
+                this.licenseModelDescription(model.getLicenseModelDescription());
+            }
+            if (model.wasPropertyExplicitlySet("systemRequirements")) {
+                this.systemRequirements(model.getSystemRequirements());
+            }
+            if (model.wasPropertyExplicitlySet("timeReleased")) {
+                this.timeReleased(model.getTimeReleased());
+            }
+            if (model.wasPropertyExplicitlySet("releaseNotes")) {
+                this.releaseNotes(model.getReleaseNotes());
+            }
+            if (model.wasPropertyExplicitlySet("categories")) {
+                this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("publisher")) {
+                this.publisher(model.getPublisher());
+            }
+            if (model.wasPropertyExplicitlySet("languages")) {
+                this.languages(model.getLanguages());
+            }
+            if (model.wasPropertyExplicitlySet("screenshots")) {
+                this.screenshots(model.getScreenshots());
+            }
+            if (model.wasPropertyExplicitlySet("videos")) {
+                this.videos(model.getVideos());
+            }
+            if (model.wasPropertyExplicitlySet("supportContacts")) {
+                this.supportContacts(model.getSupportContacts());
+            }
+            if (model.wasPropertyExplicitlySet("supportLinks")) {
+                this.supportLinks(model.getSupportLinks());
+            }
+            if (model.wasPropertyExplicitlySet("documentationLinks")) {
+                this.documentationLinks(model.getDocumentationLinks());
+            }
+            if (model.wasPropertyExplicitlySet("icon")) {
+                this.icon(model.getIcon());
+            }
+            if (model.wasPropertyExplicitlySet("banner")) {
+                this.banner(model.getBanner());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleArchitectures")) {
+                this.compatibleArchitectures(model.getCompatibleArchitectures());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPackageVersion")) {
+                this.defaultPackageVersion(model.getDefaultPackageVersion());
+            }
+            if (model.wasPropertyExplicitlySet("links")) {
+                this.links(model.getLinks());
+            }
+            if (model.wasPropertyExplicitlySet("isFeatured")) {
+                this.isFeatured(model.getIsFeatured());
+            }
+            if (model.wasPropertyExplicitlySet("listingType")) {
+                this.listingType(model.getListingType());
+            }
+            if (model.wasPropertyExplicitlySet("supportedOperatingSystems")) {
+                this.supportedOperatingSystems(model.getSupportedOperatingSystems());
+            }
+            return this;
         }
     }
 
@@ -1132,6 +1191,7 @@ public final class Listing {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Listing(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", version=").append(String.valueOf(this.version));
@@ -1165,7 +1225,6 @@ public final class Listing {
         sb.append(", listingType=").append(String.valueOf(this.listingType));
         sb.append(", supportedOperatingSystems=")
                 .append(String.valueOf(this.supportedOperatingSystems));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1213,7 +1272,7 @@ public final class Listing {
                 && java.util.Objects.equals(this.listingType, other.listingType)
                 && java.util.Objects.equals(
                         this.supportedOperatingSystems, other.supportedOperatingSystems)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1282,16 +1341,7 @@ public final class Listing {
                         + (this.supportedOperatingSystems == null
                                 ? 43
                                 : this.supportedOperatingSystems.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -97,7 +97,8 @@ public class GetFleetConverter {
 
                                 com.oracle.bmc.jms.responses.GetFleetResponse.Builder builder =
                                         com.oracle.bmc.jms.responses.GetFleetResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.fleet(response.getItem());
 

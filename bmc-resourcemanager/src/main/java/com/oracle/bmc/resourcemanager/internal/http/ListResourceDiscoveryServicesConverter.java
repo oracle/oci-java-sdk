@@ -117,8 +117,8 @@ public class ListResourceDiscoveryServicesConverter {
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListResourceDiscoveryServicesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceDiscoveryServiceCollection(response.getItem());
 

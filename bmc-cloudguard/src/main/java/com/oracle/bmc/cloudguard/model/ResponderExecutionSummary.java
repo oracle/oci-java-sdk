@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = ResponderExecutionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResponderExecutionSummary {
+public final class ResponderExecutionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -351,52 +352,85 @@ public final class ResponderExecutionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResponderExecutionSummary build() {
-            ResponderExecutionSummary __instance__ =
+            ResponderExecutionSummary model =
                     new ResponderExecutionSummary(
-                            id,
-                            responderRuleId,
-                            responderRuleType,
-                            responderRuleName,
-                            problemId,
-                            problemName,
-                            region,
-                            targetId,
-                            compartmentId,
-                            resourceType,
-                            resourceName,
-                            timeCreated,
-                            timeCompleted,
-                            responderExecutionStatus,
-                            responderExecutionMode,
-                            message,
-                            responderRuleExecutionDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.responderRuleId,
+                            this.responderRuleType,
+                            this.responderRuleName,
+                            this.problemId,
+                            this.problemName,
+                            this.region,
+                            this.targetId,
+                            this.compartmentId,
+                            this.resourceType,
+                            this.resourceName,
+                            this.timeCreated,
+                            this.timeCompleted,
+                            this.responderExecutionStatus,
+                            this.responderExecutionMode,
+                            this.message,
+                            this.responderRuleExecutionDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResponderExecutionSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .responderRuleId(o.getResponderRuleId())
-                            .responderRuleType(o.getResponderRuleType())
-                            .responderRuleName(o.getResponderRuleName())
-                            .problemId(o.getProblemId())
-                            .problemName(o.getProblemName())
-                            .region(o.getRegion())
-                            .targetId(o.getTargetId())
-                            .compartmentId(o.getCompartmentId())
-                            .resourceType(o.getResourceType())
-                            .resourceName(o.getResourceName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeCompleted(o.getTimeCompleted())
-                            .responderExecutionStatus(o.getResponderExecutionStatus())
-                            .responderExecutionMode(o.getResponderExecutionMode())
-                            .message(o.getMessage())
-                            .responderRuleExecutionDetails(o.getResponderRuleExecutionDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResponderExecutionSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("responderRuleId")) {
+                this.responderRuleId(model.getResponderRuleId());
+            }
+            if (model.wasPropertyExplicitlySet("responderRuleType")) {
+                this.responderRuleType(model.getResponderRuleType());
+            }
+            if (model.wasPropertyExplicitlySet("responderRuleName")) {
+                this.responderRuleName(model.getResponderRuleName());
+            }
+            if (model.wasPropertyExplicitlySet("problemId")) {
+                this.problemId(model.getProblemId());
+            }
+            if (model.wasPropertyExplicitlySet("problemName")) {
+                this.problemName(model.getProblemName());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeCompleted")) {
+                this.timeCompleted(model.getTimeCompleted());
+            }
+            if (model.wasPropertyExplicitlySet("responderExecutionStatus")) {
+                this.responderExecutionStatus(model.getResponderExecutionStatus());
+            }
+            if (model.wasPropertyExplicitlySet("responderExecutionMode")) {
+                this.responderExecutionMode(model.getResponderExecutionMode());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("responderRuleExecutionDetails")) {
+                this.responderRuleExecutionDetails(model.getResponderRuleExecutionDetails());
+            }
+            return this;
         }
     }
 
@@ -655,6 +689,7 @@ public final class ResponderExecutionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResponderExecutionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", responderRuleId=").append(String.valueOf(this.responderRuleId));
         sb.append(", responderRuleType=").append(String.valueOf(this.responderRuleType));
@@ -674,7 +709,6 @@ public final class ResponderExecutionSummary {
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", responderRuleExecutionDetails=")
                 .append(String.valueOf(this.responderRuleExecutionDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -709,7 +743,7 @@ public final class ResponderExecutionSummary {
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(
                         this.responderRuleExecutionDetails, other.responderRuleExecutionDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -755,16 +789,7 @@ public final class ResponderExecutionSummary {
                         + (this.responderRuleExecutionDetails == null
                                 ? 43
                                 : this.responderRuleExecutionDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

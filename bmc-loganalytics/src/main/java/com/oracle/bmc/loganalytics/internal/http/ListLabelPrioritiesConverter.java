@@ -127,8 +127,8 @@ public class ListLabelPrioritiesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListLabelPrioritiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.labelPriorityCollection(response.getItem());
 

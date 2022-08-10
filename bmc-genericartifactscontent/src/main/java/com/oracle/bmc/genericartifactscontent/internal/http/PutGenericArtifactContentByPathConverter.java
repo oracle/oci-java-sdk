@@ -138,8 +138,8 @@ public class PutGenericArtifactContentByPathConverter {
                                                 com.oracle.bmc.genericartifactscontent.responses
                                                         .PutGenericArtifactContentByPathResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.genericArtifact(response.getItem());
 

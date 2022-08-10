@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningAdvisorTaskSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningAdvisorTaskSummary {
+public final class SqlTuningAdvisorTaskSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlTuningAdvisorTaskId",
@@ -262,42 +263,65 @@ public final class SqlTuningAdvisorTaskSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningAdvisorTaskSummary build() {
-            SqlTuningAdvisorTaskSummary __instance__ =
+            SqlTuningAdvisorTaskSummary model =
                     new SqlTuningAdvisorTaskSummary(
-                            sqlTuningAdvisorTaskId,
-                            instanceId,
-                            name,
-                            description,
-                            owner,
-                            timeCreated,
-                            taskStatus,
-                            daysToExpire,
-                            timeExecutionStarted,
-                            timeExecutionEnded,
-                            totalSqlStatements,
-                            recommendationCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sqlTuningAdvisorTaskId,
+                            this.instanceId,
+                            this.name,
+                            this.description,
+                            this.owner,
+                            this.timeCreated,
+                            this.taskStatus,
+                            this.daysToExpire,
+                            this.timeExecutionStarted,
+                            this.timeExecutionEnded,
+                            this.totalSqlStatements,
+                            this.recommendationCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningAdvisorTaskSummary o) {
-            Builder copiedBuilder =
-                    sqlTuningAdvisorTaskId(o.getSqlTuningAdvisorTaskId())
-                            .instanceId(o.getInstanceId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .owner(o.getOwner())
-                            .timeCreated(o.getTimeCreated())
-                            .taskStatus(o.getTaskStatus())
-                            .daysToExpire(o.getDaysToExpire())
-                            .timeExecutionStarted(o.getTimeExecutionStarted())
-                            .timeExecutionEnded(o.getTimeExecutionEnded())
-                            .totalSqlStatements(o.getTotalSqlStatements())
-                            .recommendationCount(o.getRecommendationCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningAdvisorTaskSummary model) {
+            if (model.wasPropertyExplicitlySet("sqlTuningAdvisorTaskId")) {
+                this.sqlTuningAdvisorTaskId(model.getSqlTuningAdvisorTaskId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("taskStatus")) {
+                this.taskStatus(model.getTaskStatus());
+            }
+            if (model.wasPropertyExplicitlySet("daysToExpire")) {
+                this.daysToExpire(model.getDaysToExpire());
+            }
+            if (model.wasPropertyExplicitlySet("timeExecutionStarted")) {
+                this.timeExecutionStarted(model.getTimeExecutionStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeExecutionEnded")) {
+                this.timeExecutionEnded(model.getTimeExecutionEnded());
+            }
+            if (model.wasPropertyExplicitlySet("totalSqlStatements")) {
+                this.totalSqlStatements(model.getTotalSqlStatements());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationCount")) {
+                this.recommendationCount(model.getRecommendationCount());
+            }
+            return this;
         }
     }
 
@@ -493,6 +517,7 @@ public final class SqlTuningAdvisorTaskSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningAdvisorTaskSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlTuningAdvisorTaskId=").append(String.valueOf(this.sqlTuningAdvisorTaskId));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -505,7 +530,6 @@ public final class SqlTuningAdvisorTaskSummary {
         sb.append(", timeExecutionEnded=").append(String.valueOf(this.timeExecutionEnded));
         sb.append(", totalSqlStatements=").append(String.valueOf(this.totalSqlStatements));
         sb.append(", recommendationCount=").append(String.valueOf(this.recommendationCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -532,7 +556,7 @@ public final class SqlTuningAdvisorTaskSummary {
                 && java.util.Objects.equals(this.timeExecutionEnded, other.timeExecutionEnded)
                 && java.util.Objects.equals(this.totalSqlStatements, other.totalSqlStatements)
                 && java.util.Objects.equals(this.recommendationCount, other.recommendationCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -571,16 +595,7 @@ public final class SqlTuningAdvisorTaskSummary {
                         + (this.recommendationCount == null
                                 ? 43
                                 : this.recommendationCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

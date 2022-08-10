@@ -114,8 +114,8 @@ public class GetAiPrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.aianomalydetection.responses
                                                         .GetAiPrivateEndpointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.aiPrivateEndpoint(response.getItem());
 

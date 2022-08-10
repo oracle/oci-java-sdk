@@ -117,8 +117,8 @@ public class ListReportTypesConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .ListReportTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.reportTypeCollection(response.getItem());
 

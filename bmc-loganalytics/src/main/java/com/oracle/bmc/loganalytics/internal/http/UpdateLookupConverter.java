@@ -124,8 +124,8 @@ public class UpdateLookupConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateLookupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsLookup(response.getItem());
 

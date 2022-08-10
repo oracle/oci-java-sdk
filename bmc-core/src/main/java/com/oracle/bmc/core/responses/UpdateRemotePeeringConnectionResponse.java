@@ -55,16 +55,18 @@ public class UpdateRemotePeeringConnectionResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "remotePeeringConnection"
     })
     private UpdateRemotePeeringConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.RemotePeeringConnection remotePeeringConnection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.remotePeeringConnection = remotePeeringConnection;
@@ -75,6 +77,13 @@ public class UpdateRemotePeeringConnectionResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateRemotePeeringConnectionResponse extends com.oracle.bmc.respon
          */
         public Builder copy(UpdateRemotePeeringConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             remotePeeringConnection(o.getRemotePeeringConnection());
@@ -149,7 +159,7 @@ public class UpdateRemotePeeringConnectionResponse extends com.oracle.bmc.respon
          */
         public UpdateRemotePeeringConnectionResponse build() {
             return new UpdateRemotePeeringConnectionResponse(
-                    __httpStatusCode__, etag, opcRequestId, remotePeeringConnection);
+                    __httpStatusCode__, headers, etag, opcRequestId, remotePeeringConnection);
         }
     }
 

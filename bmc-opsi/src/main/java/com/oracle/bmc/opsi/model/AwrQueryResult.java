@@ -76,7 +76,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AwrQueryResult {
+public class AwrQueryResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "version", "dbQueryTimeInSecs"})
     protected AwrQueryResult(String name, String version, Double dbQueryTimeInSecs) {
@@ -141,6 +141,7 @@ public class AwrQueryResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrQueryResult(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", dbQueryTimeInSecs=").append(String.valueOf(this.dbQueryTimeInSecs));
@@ -160,7 +161,8 @@ public class AwrQueryResult {
         AwrQueryResult other = (AwrQueryResult) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.dbQueryTimeInSecs, other.dbQueryTimeInSecs);
+                && java.util.Objects.equals(this.dbQueryTimeInSecs, other.dbQueryTimeInSecs)
+                && super.equals(other);
     }
 
     @Override
@@ -172,6 +174,7 @@ public class AwrQueryResult {
         result =
                 (result * PRIME)
                         + (this.dbQueryTimeInSecs == null ? 43 : this.dbQueryTimeInSecs.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

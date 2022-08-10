@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostDetails {
+public final class HostDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -152,30 +152,41 @@ public final class HostDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostDetails build() {
-            HostDetails __instance__ =
+            HostDetails model =
                     new HostDetails(
-                            id,
-                            compartmentId,
-                            hostName,
-                            hostDisplayName,
-                            platformType,
-                            agentIdentifier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.hostName,
+                            this.hostDisplayName,
+                            this.platformType,
+                            this.agentIdentifier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostDetails o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .hostName(o.getHostName())
-                            .hostDisplayName(o.getHostDisplayName())
-                            .platformType(o.getPlatformType())
-                            .agentIdentifier(o.getAgentIdentifier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostDetails model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("hostDisplayName")) {
+                this.hostDisplayName(model.getHostDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("agentIdentifier")) {
+                this.agentIdentifier(model.getAgentIdentifier());
+            }
+            return this;
         }
     }
 
@@ -346,13 +357,13 @@ public final class HostDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
         sb.append(", hostDisplayName=").append(String.valueOf(this.hostDisplayName));
         sb.append(", platformType=").append(String.valueOf(this.platformType));
         sb.append(", agentIdentifier=").append(String.valueOf(this.agentIdentifier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -373,7 +384,7 @@ public final class HostDetails {
                 && java.util.Objects.equals(this.hostDisplayName, other.hostDisplayName)
                 && java.util.Objects.equals(this.platformType, other.platformType)
                 && java.util.Objects.equals(this.agentIdentifier, other.agentIdentifier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -392,16 +403,7 @@ public final class HostDetails {
         result =
                 (result * PRIME)
                         + (this.agentIdentifier == null ? 43 : this.agentIdentifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.waas.model;
     builder = DeviceFingerprintChallenge.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeviceFingerprintChallenge {
+public final class DeviceFingerprintChallenge
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -181,36 +182,51 @@ public final class DeviceFingerprintChallenge {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeviceFingerprintChallenge build() {
-            DeviceFingerprintChallenge __instance__ =
+            DeviceFingerprintChallenge model =
                     new DeviceFingerprintChallenge(
-                            isEnabled,
-                            action,
-                            failureThreshold,
-                            actionExpirationInSeconds,
-                            failureThresholdExpirationInSeconds,
-                            maxAddressCount,
-                            maxAddressCountExpirationInSeconds,
-                            challengeSettings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.action,
+                            this.failureThreshold,
+                            this.actionExpirationInSeconds,
+                            this.failureThresholdExpirationInSeconds,
+                            this.maxAddressCount,
+                            this.maxAddressCountExpirationInSeconds,
+                            this.challengeSettings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeviceFingerprintChallenge o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .action(o.getAction())
-                            .failureThreshold(o.getFailureThreshold())
-                            .actionExpirationInSeconds(o.getActionExpirationInSeconds())
-                            .failureThresholdExpirationInSeconds(
-                                    o.getFailureThresholdExpirationInSeconds())
-                            .maxAddressCount(o.getMaxAddressCount())
-                            .maxAddressCountExpirationInSeconds(
-                                    o.getMaxAddressCountExpirationInSeconds())
-                            .challengeSettings(o.getChallengeSettings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeviceFingerprintChallenge model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("failureThreshold")) {
+                this.failureThreshold(model.getFailureThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("actionExpirationInSeconds")) {
+                this.actionExpirationInSeconds(model.getActionExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("failureThresholdExpirationInSeconds")) {
+                this.failureThresholdExpirationInSeconds(
+                        model.getFailureThresholdExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("maxAddressCount")) {
+                this.maxAddressCount(model.getMaxAddressCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxAddressCountExpirationInSeconds")) {
+                this.maxAddressCountExpirationInSeconds(
+                        model.getMaxAddressCountExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("challengeSettings")) {
+                this.challengeSettings(model.getChallengeSettings());
+            }
+            return this;
         }
     }
 
@@ -390,6 +406,7 @@ public final class DeviceFingerprintChallenge {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeviceFingerprintChallenge(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", failureThreshold=").append(String.valueOf(this.failureThreshold));
@@ -401,7 +418,6 @@ public final class DeviceFingerprintChallenge {
         sb.append(", maxAddressCountExpirationInSeconds=")
                 .append(String.valueOf(this.maxAddressCountExpirationInSeconds));
         sb.append(", challengeSettings=").append(String.valueOf(this.challengeSettings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -429,7 +445,7 @@ public final class DeviceFingerprintChallenge {
                         this.maxAddressCountExpirationInSeconds,
                         other.maxAddressCountExpirationInSeconds)
                 && java.util.Objects.equals(this.challengeSettings, other.challengeSettings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -462,16 +478,7 @@ public final class DeviceFingerprintChallenge {
         result =
                 (result * PRIME)
                         + (this.challengeSettings == null ? 43 : this.challengeSettings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

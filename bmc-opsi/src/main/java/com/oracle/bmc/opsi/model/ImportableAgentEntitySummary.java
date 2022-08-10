@@ -28,7 +28,8 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ImportableAgentEntitySummary {
+public class ImportableAgentEntitySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"managementAgentId", "managementAgentDisplayName"})
     protected ImportableAgentEntitySummary(
@@ -79,6 +80,7 @@ public class ImportableAgentEntitySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportableAgentEntitySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", managementAgentDisplayName=")
                 .append(String.valueOf(this.managementAgentDisplayName));
@@ -98,7 +100,8 @@ public class ImportableAgentEntitySummary {
         ImportableAgentEntitySummary other = (ImportableAgentEntitySummary) o;
         return java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(
-                        this.managementAgentDisplayName, other.managementAgentDisplayName);
+                        this.managementAgentDisplayName, other.managementAgentDisplayName)
+                && super.equals(other);
     }
 
     @Override
@@ -113,6 +116,7 @@ public class ImportableAgentEntitySummary {
                         + (this.managementAgentDisplayName == null
                                 ? 43
                                 : this.managementAgentDisplayName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

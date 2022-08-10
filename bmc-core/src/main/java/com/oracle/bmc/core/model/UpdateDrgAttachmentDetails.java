@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = UpdateDrgAttachmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDrgAttachmentDetails {
+public final class UpdateDrgAttachmentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -211,32 +212,45 @@ public final class UpdateDrgAttachmentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDrgAttachmentDetails build() {
-            UpdateDrgAttachmentDetails __instance__ =
+            UpdateDrgAttachmentDetails model =
                     new UpdateDrgAttachmentDetails(
-                            displayName,
-                            drgRouteTableId,
-                            networkDetails,
-                            definedTags,
-                            freeformTags,
-                            exportDrgRouteDistributionId,
-                            routeTableId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.drgRouteTableId,
+                            this.networkDetails,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.exportDrgRouteDistributionId,
+                            this.routeTableId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDrgAttachmentDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .drgRouteTableId(o.getDrgRouteTableId())
-                            .networkDetails(o.getNetworkDetails())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .exportDrgRouteDistributionId(o.getExportDrgRouteDistributionId())
-                            .routeTableId(o.getRouteTableId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDrgAttachmentDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("drgRouteTableId")) {
+                this.drgRouteTableId(model.getDrgRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("networkDetails")) {
+                this.networkDetails(model.getNetworkDetails());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("exportDrgRouteDistributionId")) {
+                this.exportDrgRouteDistributionId(model.getExportDrgRouteDistributionId());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
+            return this;
         }
     }
 
@@ -405,6 +419,7 @@ public final class UpdateDrgAttachmentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDrgAttachmentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
         sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
@@ -413,7 +428,6 @@ public final class UpdateDrgAttachmentDetails {
         sb.append(", exportDrgRouteDistributionId=")
                 .append(String.valueOf(this.exportDrgRouteDistributionId));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -436,7 +450,7 @@ public final class UpdateDrgAttachmentDetails {
                 && java.util.Objects.equals(
                         this.exportDrgRouteDistributionId, other.exportDrgRouteDistributionId)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -458,16 +472,7 @@ public final class UpdateDrgAttachmentDetails {
                                 ? 43
                                 : this.exportDrgRouteDistributionId.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

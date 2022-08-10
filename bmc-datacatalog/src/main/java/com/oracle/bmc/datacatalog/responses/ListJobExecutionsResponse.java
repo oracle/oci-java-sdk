@@ -55,16 +55,18 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "jobExecutionCollection"
     })
     private ListJobExecutionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.JobExecutionCollection jobExecutionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.jobExecutionCollection = jobExecutionCollection;
@@ -75,6 +77,13 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListJobExecutionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             jobExecutionCollection(o.getJobExecutionCollection());
@@ -149,7 +159,7 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListJobExecutionsResponse build() {
             return new ListJobExecutionsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, jobExecutionCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, jobExecutionCollection);
         }
     }
 

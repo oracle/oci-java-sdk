@@ -46,17 +46,19 @@ public final class PrivateEndpoint extends ConnectionOption {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateEndpoint build() {
-            PrivateEndpoint __instance__ = new PrivateEndpoint(datasafePrivateEndpointId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PrivateEndpoint model = new PrivateEndpoint(this.datasafePrivateEndpointId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PrivateEndpoint o) {
-            Builder copiedBuilder = datasafePrivateEndpointId(o.getDatasafePrivateEndpointId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PrivateEndpoint model) {
+            if (model.wasPropertyExplicitlySet("datasafePrivateEndpointId")) {
+                this.datasafePrivateEndpointId(model.getDatasafePrivateEndpointId());
+            }
+            return this;
         }
     }
 
@@ -107,7 +109,6 @@ public final class PrivateEndpoint extends ConnectionOption {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", datasafePrivateEndpointId=")
                 .append(String.valueOf(this.datasafePrivateEndpointId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,8 +125,7 @@ public final class PrivateEndpoint extends ConnectionOption {
         PrivateEndpoint other = (PrivateEndpoint) o;
         return java.util.Objects.equals(
                         this.datasafePrivateEndpointId, other.datasafePrivateEndpointId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -137,16 +137,6 @@ public final class PrivateEndpoint extends ConnectionOption {
                         + (this.datasafePrivateEndpointId == null
                                 ? 43
                                 : this.datasafePrivateEndpointId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

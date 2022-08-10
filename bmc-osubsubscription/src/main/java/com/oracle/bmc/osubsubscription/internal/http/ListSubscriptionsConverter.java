@@ -194,8 +194,8 @@ public class ListSubscriptionsConverter {
                                         builder =
                                                 com.oracle.bmc.osubsubscription.responses
                                                         .ListSubscriptionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -120,8 +120,8 @@ public class GetDbSystemUpgradeHistoryEntryConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetDbSystemUpgradeHistoryEntryResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbSystemUpgradeHistoryEntry(response.getItem());
 

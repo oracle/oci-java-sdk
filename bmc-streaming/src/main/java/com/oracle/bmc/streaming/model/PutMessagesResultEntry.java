@@ -22,7 +22,8 @@ package com.oracle.bmc.streaming.model;
     builder = PutMessagesResultEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PutMessagesResultEntry {
+public final class PutMessagesResultEntry
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"partition", "offset", "timestamp", "error", "errorMessage"})
     public PutMessagesResultEntry(
@@ -126,23 +127,37 @@ public final class PutMessagesResultEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PutMessagesResultEntry build() {
-            PutMessagesResultEntry __instance__ =
-                    new PutMessagesResultEntry(partition, offset, timestamp, error, errorMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PutMessagesResultEntry model =
+                    new PutMessagesResultEntry(
+                            this.partition,
+                            this.offset,
+                            this.timestamp,
+                            this.error,
+                            this.errorMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PutMessagesResultEntry o) {
-            Builder copiedBuilder =
-                    partition(o.getPartition())
-                            .offset(o.getOffset())
-                            .timestamp(o.getTimestamp())
-                            .error(o.getError())
-                            .errorMessage(o.getErrorMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PutMessagesResultEntry model) {
+            if (model.wasPropertyExplicitlySet("partition")) {
+                this.partition(model.getPartition());
+            }
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("error")) {
+                this.error(model.getError());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            return this;
         }
     }
 
@@ -240,12 +255,12 @@ public final class PutMessagesResultEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PutMessagesResultEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("partition=").append(String.valueOf(this.partition));
         sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", error=").append(String.valueOf(this.error));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -265,7 +280,7 @@ public final class PutMessagesResultEntry {
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.error, other.error)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -277,16 +292,7 @@ public final class PutMessagesResultEntry {
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.error == null ? 43 : this.error.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

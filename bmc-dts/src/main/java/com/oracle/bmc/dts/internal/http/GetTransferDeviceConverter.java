@@ -104,8 +104,8 @@ public class GetTransferDeviceConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .GetTransferDeviceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transferDevice(response.getItem());
 

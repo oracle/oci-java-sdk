@@ -32,7 +32,8 @@ package com.oracle.bmc.bastion.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateSessionTargetResourceDetails {
+public class CreateSessionTargetResourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetResourcePort"})
     protected CreateSessionTargetResourceDetails(Integer targetResourcePort) {
@@ -67,6 +68,7 @@ public class CreateSessionTargetResourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSessionTargetResourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
@@ -82,7 +84,8 @@ public class CreateSessionTargetResourceDetails {
         }
 
         CreateSessionTargetResourceDetails other = (CreateSessionTargetResourceDetails) o;
-        return java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort);
+        return java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
+                && super.equals(other);
     }
 
     @Override
@@ -94,6 +97,7 @@ public class CreateSessionTargetResourceDetails {
                         + (this.targetResourcePort == null
                                 ? 43
                                 : this.targetResourcePort.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

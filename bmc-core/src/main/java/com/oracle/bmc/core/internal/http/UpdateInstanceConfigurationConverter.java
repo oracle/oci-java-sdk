@@ -116,8 +116,8 @@ public class UpdateInstanceConfigurationConverter {
                                                 com.oracle.bmc.core.responses
                                                         .UpdateInstanceConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceConfiguration(response.getItem());
 

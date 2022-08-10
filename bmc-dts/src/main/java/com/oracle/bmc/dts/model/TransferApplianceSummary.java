@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = TransferApplianceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferApplianceSummary {
+public final class TransferApplianceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"label", "lifecycleState", "serialNumber", "creationTime"})
     public TransferApplianceSummary(
@@ -77,22 +78,30 @@ public final class TransferApplianceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferApplianceSummary build() {
-            TransferApplianceSummary __instance__ =
-                    new TransferApplianceSummary(label, lifecycleState, serialNumber, creationTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TransferApplianceSummary model =
+                    new TransferApplianceSummary(
+                            this.label, this.lifecycleState, this.serialNumber, this.creationTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferApplianceSummary o) {
-            Builder copiedBuilder =
-                    label(o.getLabel())
-                            .lifecycleState(o.getLifecycleState())
-                            .serialNumber(o.getSerialNumber())
-                            .creationTime(o.getCreationTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferApplianceSummary model) {
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            return this;
         }
     }
 
@@ -217,11 +226,11 @@ public final class TransferApplianceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferApplianceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("label=").append(String.valueOf(this.label));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
         sb.append(", creationTime=").append(String.valueOf(this.creationTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +249,7 @@ public final class TransferApplianceSummary {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.serialNumber, other.serialNumber)
                 && java.util.Objects.equals(this.creationTime, other.creationTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -253,16 +262,7 @@ public final class TransferApplianceSummary {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.serialNumber == null ? 43 : this.serialNumber.hashCode());
         result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

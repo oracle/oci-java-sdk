@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ValidatePatternDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ValidatePatternDetails {
+public final class ValidatePatternDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "expression",
@@ -138,23 +139,33 @@ public final class ValidatePatternDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidatePatternDetails build() {
-            ValidatePatternDetails __instance__ =
+            ValidatePatternDetails model =
                     new ValidatePatternDetails(
-                            expression, filePathPrefix, checkFilePathList, checkFailureLimit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.expression,
+                            this.filePathPrefix,
+                            this.checkFilePathList,
+                            this.checkFailureLimit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValidatePatternDetails o) {
-            Builder copiedBuilder =
-                    expression(o.getExpression())
-                            .filePathPrefix(o.getFilePathPrefix())
-                            .checkFilePathList(o.getCheckFilePathList())
-                            .checkFailureLimit(o.getCheckFailureLimit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValidatePatternDetails model) {
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("filePathPrefix")) {
+                this.filePathPrefix(model.getFilePathPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("checkFilePathList")) {
+                this.checkFilePathList(model.getCheckFilePathList());
+            }
+            if (model.wasPropertyExplicitlySet("checkFailureLimit")) {
+                this.checkFailureLimit(model.getCheckFailureLimit());
+            }
+            return this;
         }
     }
 
@@ -266,11 +277,11 @@ public final class ValidatePatternDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ValidatePatternDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("expression=").append(String.valueOf(this.expression));
         sb.append(", filePathPrefix=").append(String.valueOf(this.filePathPrefix));
         sb.append(", checkFilePathList=").append(String.valueOf(this.checkFilePathList));
         sb.append(", checkFailureLimit=").append(String.valueOf(this.checkFailureLimit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -289,7 +300,7 @@ public final class ValidatePatternDetails {
                 && java.util.Objects.equals(this.filePathPrefix, other.filePathPrefix)
                 && java.util.Objects.equals(this.checkFilePathList, other.checkFilePathList)
                 && java.util.Objects.equals(this.checkFailureLimit, other.checkFailureLimit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -306,16 +317,7 @@ public final class ValidatePatternDetails {
         result =
                 (result * PRIME)
                         + (this.checkFailureLimit == null ? 43 : this.checkFailureLimit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

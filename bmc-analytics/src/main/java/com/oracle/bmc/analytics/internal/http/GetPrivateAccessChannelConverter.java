@@ -117,8 +117,8 @@ public class GetPrivateAccessChannelConverter {
                                         builder =
                                                 com.oracle.bmc.analytics.responses
                                                         .GetPrivateAccessChannelResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateAccessChannel(response.getItem());
 

@@ -1326,6 +1326,286 @@ public class DbManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOptimizerStatisticsCollectionAggregations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOptimizerStatisticsCollectionAggregationsResponse>
+            listOptimizerStatisticsCollectionAggregationsResponseIterator(
+                    final ListOptimizerStatisticsCollectionAggregationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOptimizerStatisticsCollectionAggregationsRequest.Builder,
+                ListOptimizerStatisticsCollectionAggregationsRequest,
+                ListOptimizerStatisticsCollectionAggregationsResponse>(
+                new java.util.function.Supplier<
+                        ListOptimizerStatisticsCollectionAggregationsRequest.Builder>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionAggregationsRequest.Builder get() {
+                        return ListOptimizerStatisticsCollectionAggregationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionAggregationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListOptimizerStatisticsCollectionAggregationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOptimizerStatisticsCollectionAggregationsRequest.Builder>,
+                        ListOptimizerStatisticsCollectionAggregationsRequest>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionAggregationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOptimizerStatisticsCollectionAggregationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionAggregationsRequest,
+                        ListOptimizerStatisticsCollectionAggregationsResponse>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionAggregationsResponse apply(
+                            ListOptimizerStatisticsCollectionAggregationsRequest request) {
+                        return client.listOptimizerStatisticsCollectionAggregations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.OptimizerStatisticsCollectionAggregationSummary} objects
+     * contained in responses from the listOptimizerStatisticsCollectionAggregations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.OptimizerStatisticsCollectionAggregationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<
+                    com.oracle.bmc.databasemanagement.model
+                            .OptimizerStatisticsCollectionAggregationSummary>
+            listOptimizerStatisticsCollectionAggregationsRecordIterator(
+                    final ListOptimizerStatisticsCollectionAggregationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOptimizerStatisticsCollectionAggregationsRequest.Builder,
+                ListOptimizerStatisticsCollectionAggregationsRequest,
+                ListOptimizerStatisticsCollectionAggregationsResponse,
+                com.oracle.bmc.databasemanagement.model
+                        .OptimizerStatisticsCollectionAggregationSummary>(
+                new java.util.function.Supplier<
+                        ListOptimizerStatisticsCollectionAggregationsRequest.Builder>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionAggregationsRequest.Builder get() {
+                        return ListOptimizerStatisticsCollectionAggregationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionAggregationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListOptimizerStatisticsCollectionAggregationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOptimizerStatisticsCollectionAggregationsRequest.Builder>,
+                        ListOptimizerStatisticsCollectionAggregationsRequest>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionAggregationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOptimizerStatisticsCollectionAggregationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionAggregationsRequest,
+                        ListOptimizerStatisticsCollectionAggregationsResponse>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionAggregationsResponse apply(
+                            ListOptimizerStatisticsCollectionAggregationsRequest request) {
+                        return client.listOptimizerStatisticsCollectionAggregations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionAggregationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .OptimizerStatisticsCollectionAggregationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .OptimizerStatisticsCollectionAggregationSummary>
+                            apply(ListOptimizerStatisticsCollectionAggregationsResponse response) {
+                        return response.getOptimizerStatisticsCollectionAggregationsCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOptimizerStatisticsCollectionOperations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOptimizerStatisticsCollectionOperationsResponse>
+            listOptimizerStatisticsCollectionOperationsResponseIterator(
+                    final ListOptimizerStatisticsCollectionOperationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOptimizerStatisticsCollectionOperationsRequest.Builder,
+                ListOptimizerStatisticsCollectionOperationsRequest,
+                ListOptimizerStatisticsCollectionOperationsResponse>(
+                new java.util.function.Supplier<
+                        ListOptimizerStatisticsCollectionOperationsRequest.Builder>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionOperationsRequest.Builder get() {
+                        return ListOptimizerStatisticsCollectionOperationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionOperationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListOptimizerStatisticsCollectionOperationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOptimizerStatisticsCollectionOperationsRequest.Builder>,
+                        ListOptimizerStatisticsCollectionOperationsRequest>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionOperationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOptimizerStatisticsCollectionOperationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionOperationsRequest,
+                        ListOptimizerStatisticsCollectionOperationsResponse>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionOperationsResponse apply(
+                            ListOptimizerStatisticsCollectionOperationsRequest request) {
+                        return client.listOptimizerStatisticsCollectionOperations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.OptimizerStatisticsCollectionOperationSummary} objects
+     * contained in responses from the listOptimizerStatisticsCollectionOperations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.OptimizerStatisticsCollectionOperationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<
+                    com.oracle.bmc.databasemanagement.model
+                            .OptimizerStatisticsCollectionOperationSummary>
+            listOptimizerStatisticsCollectionOperationsRecordIterator(
+                    final ListOptimizerStatisticsCollectionOperationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOptimizerStatisticsCollectionOperationsRequest.Builder,
+                ListOptimizerStatisticsCollectionOperationsRequest,
+                ListOptimizerStatisticsCollectionOperationsResponse,
+                com.oracle.bmc.databasemanagement.model
+                        .OptimizerStatisticsCollectionOperationSummary>(
+                new java.util.function.Supplier<
+                        ListOptimizerStatisticsCollectionOperationsRequest.Builder>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionOperationsRequest.Builder get() {
+                        return ListOptimizerStatisticsCollectionOperationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionOperationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListOptimizerStatisticsCollectionOperationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOptimizerStatisticsCollectionOperationsRequest.Builder>,
+                        ListOptimizerStatisticsCollectionOperationsRequest>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionOperationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOptimizerStatisticsCollectionOperationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionOperationsRequest,
+                        ListOptimizerStatisticsCollectionOperationsResponse>() {
+                    @Override
+                    public ListOptimizerStatisticsCollectionOperationsResponse apply(
+                            ListOptimizerStatisticsCollectionOperationsRequest request) {
+                        return client.listOptimizerStatisticsCollectionOperations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOptimizerStatisticsCollectionOperationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .OptimizerStatisticsCollectionOperationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .OptimizerStatisticsCollectionOperationSummary>
+                            apply(ListOptimizerStatisticsCollectionOperationsResponse response) {
+                        return response.getOptimizerStatisticsCollectionOperationsCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listProxiedForUsers operation. This iterable
      * will fetch more data from the server as needed.
      *

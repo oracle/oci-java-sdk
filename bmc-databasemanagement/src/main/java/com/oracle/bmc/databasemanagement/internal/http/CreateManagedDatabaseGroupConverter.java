@@ -116,8 +116,8 @@ public class CreateManagedDatabaseGroupConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .CreateManagedDatabaseGroupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedDatabaseGroup(response.getItem());
 

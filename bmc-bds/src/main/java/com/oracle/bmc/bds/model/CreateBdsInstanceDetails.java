@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = CreateBdsInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBdsInstanceDetails {
+public final class CreateBdsInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -302,46 +303,73 @@ public final class CreateBdsInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBdsInstanceDetails build() {
-            CreateBdsInstanceDetails __instance__ =
+            CreateBdsInstanceDetails model =
                     new CreateBdsInstanceDetails(
-                            compartmentId,
-                            displayName,
-                            clusterVersion,
-                            clusterPublicKey,
-                            clusterAdminPassword,
-                            isHighAvailability,
-                            isSecure,
-                            networkConfig,
-                            bootstrapScriptUrl,
-                            nodes,
-                            kerberosRealmName,
-                            freeformTags,
-                            definedTags,
-                            kmsKeyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.clusterVersion,
+                            this.clusterPublicKey,
+                            this.clusterAdminPassword,
+                            this.isHighAvailability,
+                            this.isSecure,
+                            this.networkConfig,
+                            this.bootstrapScriptUrl,
+                            this.nodes,
+                            this.kerberosRealmName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kmsKeyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBdsInstanceDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .clusterVersion(o.getClusterVersion())
-                            .clusterPublicKey(o.getClusterPublicKey())
-                            .clusterAdminPassword(o.getClusterAdminPassword())
-                            .isHighAvailability(o.getIsHighAvailability())
-                            .isSecure(o.getIsSecure())
-                            .networkConfig(o.getNetworkConfig())
-                            .bootstrapScriptUrl(o.getBootstrapScriptUrl())
-                            .nodes(o.getNodes())
-                            .kerberosRealmName(o.getKerberosRealmName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBdsInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("clusterVersion")) {
+                this.clusterVersion(model.getClusterVersion());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPublicKey")) {
+                this.clusterPublicKey(model.getClusterPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
+                this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("isHighAvailability")) {
+                this.isHighAvailability(model.getIsHighAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("isSecure")) {
+                this.isSecure(model.getIsSecure());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfig")) {
+                this.networkConfig(model.getNetworkConfig());
+            }
+            if (model.wasPropertyExplicitlySet("bootstrapScriptUrl")) {
+                this.bootstrapScriptUrl(model.getBootstrapScriptUrl());
+            }
+            if (model.wasPropertyExplicitlySet("nodes")) {
+                this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("kerberosRealmName")) {
+                this.kerberosRealmName(model.getKerberosRealmName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            return this;
         }
     }
 
@@ -566,6 +594,7 @@ public final class CreateBdsInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBdsInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", clusterVersion=").append(String.valueOf(this.clusterVersion));
@@ -580,7 +609,6 @@ public final class CreateBdsInstanceDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -609,7 +637,7 @@ public final class CreateBdsInstanceDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -652,16 +680,7 @@ public final class CreateBdsInstanceDetails {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

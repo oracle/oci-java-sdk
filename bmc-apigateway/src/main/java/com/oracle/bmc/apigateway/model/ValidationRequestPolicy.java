@@ -19,7 +19,8 @@ package com.oracle.bmc.apigateway.model;
     builder = ValidationRequestPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ValidationRequestPolicy {
+public final class ValidationRequestPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"validationMode"})
     public ValidationRequestPolicy(ValidationMode validationMode) {
@@ -68,17 +69,19 @@ public final class ValidationRequestPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidationRequestPolicy build() {
-            ValidationRequestPolicy __instance__ = new ValidationRequestPolicy(validationMode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ValidationRequestPolicy model = new ValidationRequestPolicy(this.validationMode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValidationRequestPolicy o) {
-            Builder copiedBuilder = validationMode(o.getValidationMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValidationRequestPolicy model) {
+            if (model.wasPropertyExplicitlySet("validationMode")) {
+                this.validationMode(model.getValidationMode());
+            }
+            return this;
         }
     }
 
@@ -183,8 +186,8 @@ public final class ValidationRequestPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ValidationRequestPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("validationMode=").append(String.valueOf(this.validationMode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +203,7 @@ public final class ValidationRequestPolicy {
 
         ValidationRequestPolicy other = (ValidationRequestPolicy) o;
         return java.util.Objects.equals(this.validationMode, other.validationMode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -210,16 +213,7 @@ public final class ValidationRequestPolicy {
         result =
                 (result * PRIME)
                         + (this.validationMode == null ? 43 : this.validationMode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

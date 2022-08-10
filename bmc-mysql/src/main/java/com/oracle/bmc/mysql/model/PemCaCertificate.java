@@ -46,17 +46,19 @@ public final class PemCaCertificate extends CaCertificate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PemCaCertificate build() {
-            PemCaCertificate __instance__ = new PemCaCertificate(contents);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PemCaCertificate model = new PemCaCertificate(this.contents);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PemCaCertificate o) {
-            Builder copiedBuilder = contents(o.getContents());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PemCaCertificate model) {
+            if (model.wasPropertyExplicitlySet("contents")) {
+                this.contents(model.getContents());
+            }
+            return this;
         }
     }
 
@@ -106,7 +108,6 @@ public final class PemCaCertificate extends CaCertificate {
         sb.append("PemCaCertificate(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", contents=").append(String.valueOf(this.contents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,9 +122,7 @@ public final class PemCaCertificate extends CaCertificate {
         }
 
         PemCaCertificate other = (PemCaCertificate) o;
-        return java.util.Objects.equals(this.contents, other.contents)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.contents, other.contents) && super.equals(other);
     }
 
     @Override
@@ -131,16 +130,6 @@ public final class PemCaCertificate extends CaCertificate {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.contents == null ? 43 : this.contents.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

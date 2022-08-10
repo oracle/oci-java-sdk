@@ -23,7 +23,7 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MfaTotpDevice.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MfaTotpDevice {
+public final class MfaTotpDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -222,34 +222,49 @@ public final class MfaTotpDevice {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MfaTotpDevice build() {
-            MfaTotpDevice __instance__ =
+            MfaTotpDevice model =
                     new MfaTotpDevice(
-                            id,
-                            seed,
-                            userId,
-                            timeCreated,
-                            timeExpires,
-                            lifecycleState,
-                            inactiveStatus,
-                            isActivated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.seed,
+                            this.userId,
+                            this.timeCreated,
+                            this.timeExpires,
+                            this.lifecycleState,
+                            this.inactiveStatus,
+                            this.isActivated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MfaTotpDevice o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .seed(o.getSeed())
-                            .userId(o.getUserId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeExpires(o.getTimeExpires())
-                            .lifecycleState(o.getLifecycleState())
-                            .inactiveStatus(o.getInactiveStatus())
-                            .isActivated(o.getIsActivated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MfaTotpDevice model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("seed")) {
+                this.seed(model.getSeed());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpires")) {
+                this.timeExpires(model.getTimeExpires());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("inactiveStatus")) {
+                this.inactiveStatus(model.getInactiveStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isActivated")) {
+                this.isActivated(model.getIsActivated());
+            }
+            return this;
         }
     }
 
@@ -474,6 +489,7 @@ public final class MfaTotpDevice {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MfaTotpDevice(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", seed=").append(String.valueOf(this.seed));
         sb.append(", userId=").append(String.valueOf(this.userId));
@@ -482,7 +498,6 @@ public final class MfaTotpDevice {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
         sb.append(", isActivated=").append(String.valueOf(this.isActivated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -505,7 +520,7 @@ public final class MfaTotpDevice {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
                 && java.util.Objects.equals(this.isActivated, other.isActivated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -524,16 +539,7 @@ public final class MfaTotpDevice {
                 (result * PRIME)
                         + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
         result = (result * PRIME) + (this.isActivated == null ? 43 : this.isActivated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

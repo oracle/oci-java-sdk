@@ -160,44 +160,69 @@ public final class StringAttribute extends AttributeProfileResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StringAttribute build() {
-            StringAttribute __instance__ =
+            StringAttribute model =
                     new StringAttribute(
-                            name,
-                            min,
-                            max,
-                            nullCount,
-                            distinctCount,
-                            uniqueCount,
-                            duplicateCount,
-                            valueFrequencies,
-                            minLength,
-                            maxLength,
-                            meanLength,
-                            patternFrequencies,
-                            inferredDataTypes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.min,
+                            this.max,
+                            this.nullCount,
+                            this.distinctCount,
+                            this.uniqueCount,
+                            this.duplicateCount,
+                            this.valueFrequencies,
+                            this.minLength,
+                            this.maxLength,
+                            this.meanLength,
+                            this.patternFrequencies,
+                            this.inferredDataTypes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StringAttribute o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .min(o.getMin())
-                            .max(o.getMax())
-                            .nullCount(o.getNullCount())
-                            .distinctCount(o.getDistinctCount())
-                            .uniqueCount(o.getUniqueCount())
-                            .duplicateCount(o.getDuplicateCount())
-                            .valueFrequencies(o.getValueFrequencies())
-                            .minLength(o.getMinLength())
-                            .maxLength(o.getMaxLength())
-                            .meanLength(o.getMeanLength())
-                            .patternFrequencies(o.getPatternFrequencies())
-                            .inferredDataTypes(o.getInferredDataTypes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StringAttribute model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("nullCount")) {
+                this.nullCount(model.getNullCount());
+            }
+            if (model.wasPropertyExplicitlySet("distinctCount")) {
+                this.distinctCount(model.getDistinctCount());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueCount")) {
+                this.uniqueCount(model.getUniqueCount());
+            }
+            if (model.wasPropertyExplicitlySet("duplicateCount")) {
+                this.duplicateCount(model.getDuplicateCount());
+            }
+            if (model.wasPropertyExplicitlySet("valueFrequencies")) {
+                this.valueFrequencies(model.getValueFrequencies());
+            }
+            if (model.wasPropertyExplicitlySet("minLength")) {
+                this.minLength(model.getMinLength());
+            }
+            if (model.wasPropertyExplicitlySet("maxLength")) {
+                this.maxLength(model.getMaxLength());
+            }
+            if (model.wasPropertyExplicitlySet("meanLength")) {
+                this.meanLength(model.getMeanLength());
+            }
+            if (model.wasPropertyExplicitlySet("patternFrequencies")) {
+                this.patternFrequencies(model.getPatternFrequencies());
+            }
+            if (model.wasPropertyExplicitlySet("inferredDataTypes")) {
+                this.inferredDataTypes(model.getInferredDataTypes());
+            }
+            return this;
         }
     }
 
@@ -311,7 +336,6 @@ public final class StringAttribute extends AttributeProfileResult {
         sb.append(", meanLength=").append(String.valueOf(this.meanLength));
         sb.append(", patternFrequencies=").append(String.valueOf(this.patternFrequencies));
         sb.append(", inferredDataTypes=").append(String.valueOf(this.inferredDataTypes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -331,8 +355,7 @@ public final class StringAttribute extends AttributeProfileResult {
                 && java.util.Objects.equals(this.meanLength, other.meanLength)
                 && java.util.Objects.equals(this.patternFrequencies, other.patternFrequencies)
                 && java.util.Objects.equals(this.inferredDataTypes, other.inferredDataTypes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -350,16 +373,6 @@ public final class StringAttribute extends AttributeProfileResult {
         result =
                 (result * PRIME)
                         + (this.inferredDataTypes == null ? 43 : this.inferredDataTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

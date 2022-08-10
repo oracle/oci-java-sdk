@@ -21,7 +21,8 @@ package com.oracle.bmc.monitoring.model;
     builder = SummarizeMetricsDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummarizeMetricsDataDetails {
+public final class SummarizeMetricsDataDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -226,25 +227,41 @@ public final class SummarizeMetricsDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummarizeMetricsDataDetails build() {
-            SummarizeMetricsDataDetails __instance__ =
+            SummarizeMetricsDataDetails model =
                     new SummarizeMetricsDataDetails(
-                            namespace, resourceGroup, query, startTime, endTime, resolution);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.namespace,
+                            this.resourceGroup,
+                            this.query,
+                            this.startTime,
+                            this.endTime,
+                            this.resolution);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummarizeMetricsDataDetails o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .resourceGroup(o.getResourceGroup())
-                            .query(o.getQuery())
-                            .startTime(o.getStartTime())
-                            .endTime(o.getEndTime())
-                            .resolution(o.getResolution());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummarizeMetricsDataDetails model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("resourceGroup")) {
+                this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("startTime")) {
+                this.startTime(model.getStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("endTime")) {
+                this.endTime(model.getEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("resolution")) {
+                this.resolution(model.getResolution());
+            }
+            return this;
         }
     }
 
@@ -432,13 +449,13 @@ public final class SummarizeMetricsDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummarizeMetricsDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("namespace=").append(String.valueOf(this.namespace));
         sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
         sb.append(", query=").append(String.valueOf(this.query));
         sb.append(", startTime=").append(String.valueOf(this.startTime));
         sb.append(", endTime=").append(String.valueOf(this.endTime));
         sb.append(", resolution=").append(String.valueOf(this.resolution));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -459,7 +476,7 @@ public final class SummarizeMetricsDataDetails {
                 && java.util.Objects.equals(this.startTime, other.startTime)
                 && java.util.Objects.equals(this.endTime, other.endTime)
                 && java.util.Objects.equals(this.resolution, other.resolution)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -474,16 +491,7 @@ public final class SummarizeMetricsDataDetails {
         result = (result * PRIME) + (this.startTime == null ? 43 : this.startTime.hashCode());
         result = (result * PRIME) + (this.endTime == null ? 43 : this.endTime.hashCode());
         result = (result * PRIME) + (this.resolution == null ? 43 : this.resolution.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

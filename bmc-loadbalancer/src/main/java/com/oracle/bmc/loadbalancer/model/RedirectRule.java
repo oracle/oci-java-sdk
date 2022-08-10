@@ -104,20 +104,26 @@ public final class RedirectRule extends Rule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RedirectRule build() {
-            RedirectRule __instance__ = new RedirectRule(responseCode, conditions, redirectUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RedirectRule model =
+                    new RedirectRule(this.responseCode, this.conditions, this.redirectUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RedirectRule o) {
-            Builder copiedBuilder =
-                    responseCode(o.getResponseCode())
-                            .conditions(o.getConditions())
-                            .redirectUri(o.getRedirectUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RedirectRule model) {
+            if (model.wasPropertyExplicitlySet("responseCode")) {
+                this.responseCode(model.getResponseCode());
+            }
+            if (model.wasPropertyExplicitlySet("conditions")) {
+                this.conditions(model.getConditions());
+            }
+            if (model.wasPropertyExplicitlySet("redirectUri")) {
+                this.redirectUri(model.getRedirectUri());
+            }
+            return this;
         }
     }
 
@@ -216,7 +222,6 @@ public final class RedirectRule extends Rule {
         sb.append(", responseCode=").append(String.valueOf(this.responseCode));
         sb.append(", conditions=").append(String.valueOf(this.conditions));
         sb.append(", redirectUri=").append(String.valueOf(this.redirectUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -234,8 +239,7 @@ public final class RedirectRule extends Rule {
         return java.util.Objects.equals(this.responseCode, other.responseCode)
                 && java.util.Objects.equals(this.conditions, other.conditions)
                 && java.util.Objects.equals(this.redirectUri, other.redirectUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +249,6 @@ public final class RedirectRule extends Rule {
         result = (result * PRIME) + (this.responseCode == null ? 43 : this.responseCode.hashCode());
         result = (result * PRIME) + (this.conditions == null ? 43 : this.conditions.hashCode());
         result = (result * PRIME) + (this.redirectUri == null ? 43 : this.redirectUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

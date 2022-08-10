@@ -110,8 +110,8 @@ public class UpdateCrossConnectGroupConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateCrossConnectGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.crossConnectGroup(response.getItem());
 

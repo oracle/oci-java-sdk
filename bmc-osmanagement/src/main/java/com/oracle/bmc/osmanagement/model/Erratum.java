@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Erratum.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Erratum {
+public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -317,48 +317,77 @@ public final class Erratum {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Erratum build() {
-            Erratum __instance__ =
+            Erratum model =
                     new Erratum(
-                            name,
-                            id,
-                            compartmentId,
-                            synopsis,
-                            issued,
-                            description,
-                            updated,
-                            advisoryType,
-                            from,
-                            solution,
-                            references,
-                            affectedInstances,
-                            relatedCves,
-                            softwareSources,
-                            packages);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.id,
+                            this.compartmentId,
+                            this.synopsis,
+                            this.issued,
+                            this.description,
+                            this.updated,
+                            this.advisoryType,
+                            this.from,
+                            this.solution,
+                            this.references,
+                            this.affectedInstances,
+                            this.relatedCves,
+                            this.softwareSources,
+                            this.packages);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Erratum o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .synopsis(o.getSynopsis())
-                            .issued(o.getIssued())
-                            .description(o.getDescription())
-                            .updated(o.getUpdated())
-                            .advisoryType(o.getAdvisoryType())
-                            .from(o.getFrom())
-                            .solution(o.getSolution())
-                            .references(o.getReferences())
-                            .affectedInstances(o.getAffectedInstances())
-                            .relatedCves(o.getRelatedCves())
-                            .softwareSources(o.getSoftwareSources())
-                            .packages(o.getPackages());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Erratum model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("synopsis")) {
+                this.synopsis(model.getSynopsis());
+            }
+            if (model.wasPropertyExplicitlySet("issued")) {
+                this.issued(model.getIssued());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("updated")) {
+                this.updated(model.getUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("advisoryType")) {
+                this.advisoryType(model.getAdvisoryType());
+            }
+            if (model.wasPropertyExplicitlySet("from")) {
+                this.from(model.getFrom());
+            }
+            if (model.wasPropertyExplicitlySet("solution")) {
+                this.solution(model.getSolution());
+            }
+            if (model.wasPropertyExplicitlySet("references")) {
+                this.references(model.getReferences());
+            }
+            if (model.wasPropertyExplicitlySet("affectedInstances")) {
+                this.affectedInstances(model.getAffectedInstances());
+            }
+            if (model.wasPropertyExplicitlySet("relatedCves")) {
+                this.relatedCves(model.getRelatedCves());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSources")) {
+                this.softwareSources(model.getSoftwareSources());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
+            return this;
         }
     }
 
@@ -596,6 +625,7 @@ public final class Erratum {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Erratum(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -611,7 +641,6 @@ public final class Erratum {
         sb.append(", relatedCves=").append(String.valueOf(this.relatedCves));
         sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
         sb.append(", packages=").append(String.valueOf(this.packages));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -641,7 +670,7 @@ public final class Erratum {
                 && java.util.Objects.equals(this.relatedCves, other.relatedCves)
                 && java.util.Objects.equals(this.softwareSources, other.softwareSources)
                 && java.util.Objects.equals(this.packages, other.packages)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -669,16 +698,7 @@ public final class Erratum {
                 (result * PRIME)
                         + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

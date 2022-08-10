@@ -35,7 +35,7 @@ package com.oracle.bmc.database.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDatabaseBase {
+public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dbHomeId", "dbVersion", "kmsKeyId", "kmsKeyVersionId"})
     protected CreateDatabaseBase(
@@ -118,6 +118,7 @@ public class CreateDatabaseBase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDatabaseBase(");
+        sb.append("super=").append(super.toString());
         sb.append("dbHomeId=").append(String.valueOf(this.dbHomeId));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
@@ -139,7 +140,8 @@ public class CreateDatabaseBase {
         return java.util.Objects.equals(this.dbHomeId, other.dbHomeId)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
-                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId);
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && super.equals(other);
     }
 
     @Override
@@ -152,6 +154,7 @@ public class CreateDatabaseBase {
         result =
                 (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -18,7 +18,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpgradeStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpgradeStatus {
+public final class UpgradeStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"drgId", "status", "upgradedConnections"})
     public UpgradeStatus(String drgId, Status status, String upgradedConnections) {
@@ -89,20 +89,26 @@ public final class UpgradeStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpgradeStatus build() {
-            UpgradeStatus __instance__ = new UpgradeStatus(drgId, status, upgradedConnections);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpgradeStatus model =
+                    new UpgradeStatus(this.drgId, this.status, this.upgradedConnections);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpgradeStatus o) {
-            Builder copiedBuilder =
-                    drgId(o.getDrgId())
-                            .status(o.getStatus())
-                            .upgradedConnections(o.getUpgradedConnections());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpgradeStatus model) {
+            if (model.wasPropertyExplicitlySet("drgId")) {
+                this.drgId(model.getDrgId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("upgradedConnections")) {
+                this.upgradedConnections(model.getUpgradedConnections());
+            }
+            return this;
         }
     }
 
@@ -227,10 +233,10 @@ public final class UpgradeStatus {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpgradeStatus(");
+        sb.append("super=").append(super.toString());
         sb.append("drgId=").append(String.valueOf(this.drgId));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", upgradedConnections=").append(String.valueOf(this.upgradedConnections));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -248,7 +254,7 @@ public final class UpgradeStatus {
         return java.util.Objects.equals(this.drgId, other.drgId)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.upgradedConnections, other.upgradedConnections)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -262,16 +268,7 @@ public final class UpgradeStatus {
                         + (this.upgradedConnections == null
                                 ? 43
                                 : this.upgradedConnections.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

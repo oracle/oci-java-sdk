@@ -53,16 +53,18 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "deploymentBackup"
     })
     private UpdateDeploymentBackupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.deploymentBackup = deploymentBackup;
@@ -73,6 +75,13 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(UpdateDeploymentBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             deploymentBackup(o.getDeploymentBackup());
@@ -145,7 +155,7 @@ public class UpdateDeploymentBackupResponse extends com.oracle.bmc.responses.Bmc
          */
         public UpdateDeploymentBackupResponse build() {
             return new UpdateDeploymentBackupResponse(
-                    __httpStatusCode__, etag, opcRequestId, deploymentBackup);
+                    __httpStatusCode__, headers, etag, opcRequestId, deploymentBackup);
         }
     }
 

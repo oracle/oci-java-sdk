@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AppCatalogListingResourceVersionAgreements.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AppCatalogListingResourceVersionAgreements {
+public final class AppCatalogListingResourceVersionAgreements
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingId",
@@ -154,30 +155,41 @@ public final class AppCatalogListingResourceVersionAgreements {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AppCatalogListingResourceVersionAgreements build() {
-            AppCatalogListingResourceVersionAgreements __instance__ =
+            AppCatalogListingResourceVersionAgreements model =
                     new AppCatalogListingResourceVersionAgreements(
-                            listingId,
-                            listingResourceVersion,
-                            oracleTermsOfUseLink,
-                            eulaLink,
-                            timeRetrieved,
-                            signature);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.listingId,
+                            this.listingResourceVersion,
+                            this.oracleTermsOfUseLink,
+                            this.eulaLink,
+                            this.timeRetrieved,
+                            this.signature);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AppCatalogListingResourceVersionAgreements o) {
-            Builder copiedBuilder =
-                    listingId(o.getListingId())
-                            .listingResourceVersion(o.getListingResourceVersion())
-                            .oracleTermsOfUseLink(o.getOracleTermsOfUseLink())
-                            .eulaLink(o.getEulaLink())
-                            .timeRetrieved(o.getTimeRetrieved())
-                            .signature(o.getSignature());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AppCatalogListingResourceVersionAgreements model) {
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("listingResourceVersion")) {
+                this.listingResourceVersion(model.getListingResourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("oracleTermsOfUseLink")) {
+                this.oracleTermsOfUseLink(model.getOracleTermsOfUseLink());
+            }
+            if (model.wasPropertyExplicitlySet("eulaLink")) {
+                this.eulaLink(model.getEulaLink());
+            }
+            if (model.wasPropertyExplicitlySet("timeRetrieved")) {
+                this.timeRetrieved(model.getTimeRetrieved());
+            }
+            if (model.wasPropertyExplicitlySet("signature")) {
+                this.signature(model.getSignature());
+            }
+            return this;
         }
     }
 
@@ -295,13 +307,13 @@ public final class AppCatalogListingResourceVersionAgreements {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AppCatalogListingResourceVersionAgreements(");
+        sb.append("super=").append(super.toString());
         sb.append("listingId=").append(String.valueOf(this.listingId));
         sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
         sb.append(", oracleTermsOfUseLink=").append(String.valueOf(this.oracleTermsOfUseLink));
         sb.append(", eulaLink=").append(String.valueOf(this.eulaLink));
         sb.append(", timeRetrieved=").append(String.valueOf(this.timeRetrieved));
         sb.append(", signature=").append(String.valueOf(this.signature));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -324,7 +336,7 @@ public final class AppCatalogListingResourceVersionAgreements {
                 && java.util.Objects.equals(this.eulaLink, other.eulaLink)
                 && java.util.Objects.equals(this.timeRetrieved, other.timeRetrieved)
                 && java.util.Objects.equals(this.signature, other.signature)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -347,16 +359,7 @@ public final class AppCatalogListingResourceVersionAgreements {
                 (result * PRIME)
                         + (this.timeRetrieved == null ? 43 : this.timeRetrieved.hashCode());
         result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

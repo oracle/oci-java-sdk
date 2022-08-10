@@ -40,15 +40,17 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "logAnalyticsConfigWorkRequest"
     })
     private GetConfigWorkRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
                     logAnalyticsConfigWorkRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.logAnalyticsConfigWorkRequest = logAnalyticsConfigWorkRequest;
     }
@@ -58,6 +60,13 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +111,7 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetConfigWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsConfigWorkRequest(o.getLogAnalyticsConfigWorkRequest());
 
@@ -114,7 +124,7 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetConfigWorkRequestResponse build() {
             return new GetConfigWorkRequestResponse(
-                    __httpStatusCode__, opcRequestId, logAnalyticsConfigWorkRequest);
+                    __httpStatusCode__, headers, opcRequestId, logAnalyticsConfigWorkRequest);
         }
     }
 

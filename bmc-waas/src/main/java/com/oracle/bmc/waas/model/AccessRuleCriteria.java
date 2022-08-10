@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
     builder = AccessRuleCriteria.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRuleCriteria {
+public final class AccessRuleCriteria extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"condition", "value", "isCaseSensitive"})
     public AccessRuleCriteria(Condition condition, String value, Boolean isCaseSensitive) {
@@ -184,21 +184,26 @@ public final class AccessRuleCriteria {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessRuleCriteria build() {
-            AccessRuleCriteria __instance__ =
-                    new AccessRuleCriteria(condition, value, isCaseSensitive);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AccessRuleCriteria model =
+                    new AccessRuleCriteria(this.condition, this.value, this.isCaseSensitive);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessRuleCriteria o) {
-            Builder copiedBuilder =
-                    condition(o.getCondition())
-                            .value(o.getValue())
-                            .isCaseSensitive(o.getIsCaseSensitive());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessRuleCriteria model) {
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("isCaseSensitive")) {
+                this.isCaseSensitive(model.getIsCaseSensitive());
+            }
+            return this;
         }
     }
 
@@ -485,10 +490,10 @@ public final class AccessRuleCriteria {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessRuleCriteria(");
+        sb.append("super=").append(super.toString());
         sb.append("condition=").append(String.valueOf(this.condition));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", isCaseSensitive=").append(String.valueOf(this.isCaseSensitive));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -506,7 +511,7 @@ public final class AccessRuleCriteria {
         return java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.isCaseSensitive, other.isCaseSensitive)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -518,16 +523,7 @@ public final class AccessRuleCriteria {
         result =
                 (result * PRIME)
                         + (this.isCaseSensitive == null ? 43 : this.isCaseSensitive.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class UpdateDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "detectorRecipe"
     })
     private UpdateDetectorRecipeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.detectorRecipe = detectorRecipe;
@@ -75,6 +77,13 @@ public class UpdateDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(UpdateDetectorRecipeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             detectorRecipe(o.getDetectorRecipe());
@@ -149,7 +159,7 @@ public class UpdateDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRe
          */
         public UpdateDetectorRecipeResponse build() {
             return new UpdateDetectorRecipeResponse(
-                    __httpStatusCode__, etag, opcRequestId, detectorRecipe);
+                    __httpStatusCode__, headers, etag, opcRequestId, detectorRecipe);
         }
     }
 

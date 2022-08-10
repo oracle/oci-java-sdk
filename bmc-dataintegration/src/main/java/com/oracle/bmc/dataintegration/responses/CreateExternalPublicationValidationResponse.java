@@ -58,17 +58,19 @@ public class CreateExternalPublicationValidationResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "externalPublicationValidation"
     })
     private CreateExternalPublicationValidationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
                     externalPublicationValidation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.externalPublicationValidation = externalPublicationValidation;
@@ -79,6 +81,13 @@ public class CreateExternalPublicationValidationResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class CreateExternalPublicationValidationResponse
          */
         public Builder copy(CreateExternalPublicationValidationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             externalPublicationValidation(o.getExternalPublicationValidation());
@@ -155,7 +165,7 @@ public class CreateExternalPublicationValidationResponse
          */
         public CreateExternalPublicationValidationResponse build() {
             return new CreateExternalPublicationValidationResponse(
-                    __httpStatusCode__, etag, opcRequestId, externalPublicationValidation);
+                    __httpStatusCode__, headers, etag, opcRequestId, externalPublicationValidation);
         }
     }
 

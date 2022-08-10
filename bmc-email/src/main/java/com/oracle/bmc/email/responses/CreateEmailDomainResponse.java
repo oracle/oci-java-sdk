@@ -100,6 +100,7 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "contentLocation",
         "etag",
         "location",
@@ -109,13 +110,14 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreateEmailDomainResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String contentLocation,
             String etag,
             String location,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.email.model.EmailDomain emailDomain) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.contentLocation = contentLocation;
         this.etag = etag;
         this.location = location;
@@ -129,6 +131,13 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -240,6 +249,7 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreateEmailDomainResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             contentLocation(o.getContentLocation());
             etag(o.getEtag());
             location(o.getLocation());
@@ -257,6 +267,7 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
         public CreateEmailDomainResponse build() {
             return new CreateEmailDomainResponse(
                     __httpStatusCode__,
+                    headers,
                     contentLocation,
                     etag,
                     location,

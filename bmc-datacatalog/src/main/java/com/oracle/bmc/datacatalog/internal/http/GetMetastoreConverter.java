@@ -104,8 +104,8 @@ public class GetMetastoreConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .GetMetastoreResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.metastore(response.getItem());
 

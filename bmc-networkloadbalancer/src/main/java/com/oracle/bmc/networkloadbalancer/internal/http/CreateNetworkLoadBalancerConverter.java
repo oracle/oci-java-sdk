@@ -115,8 +115,8 @@ public class CreateNetworkLoadBalancerConverter {
                                         builder =
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .CreateNetworkLoadBalancerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkLoadBalancer(response.getItem());
 

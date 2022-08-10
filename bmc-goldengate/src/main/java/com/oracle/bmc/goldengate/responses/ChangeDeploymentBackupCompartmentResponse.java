@@ -24,9 +24,12 @@ public class ChangeDeploymentBackupCompartmentResponse
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private ChangeDeploymentBackupCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private ChangeDeploymentBackupCompartmentResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -35,6 +38,13 @@ public class ChangeDeploymentBackupCompartmentResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -61,6 +71,7 @@ public class ChangeDeploymentBackupCompartmentResponse
          */
         public Builder copy(ChangeDeploymentBackupCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -71,7 +82,8 @@ public class ChangeDeploymentBackupCompartmentResponse
          * @return the response object
          */
         public ChangeDeploymentBackupCompartmentResponse build() {
-            return new ChangeDeploymentBackupCompartmentResponse(__httpStatusCode__, opcRequestId);
+            return new ChangeDeploymentBackupCompartmentResponse(
+                    __httpStatusCode__, headers, opcRequestId);
         }
     }
 

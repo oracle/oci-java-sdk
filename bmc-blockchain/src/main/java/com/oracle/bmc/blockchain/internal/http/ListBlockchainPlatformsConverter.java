@@ -161,8 +161,8 @@ public class ListBlockchainPlatformsConverter {
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
                                                         .ListBlockchainPlatformsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.blockchainPlatformCollection(response.getItem());
 

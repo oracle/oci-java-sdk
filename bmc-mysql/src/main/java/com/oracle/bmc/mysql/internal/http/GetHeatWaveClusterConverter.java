@@ -109,8 +109,8 @@ public class GetHeatWaveClusterConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses
                                                         .GetHeatWaveClusterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.heatWaveCluster(response.getItem());

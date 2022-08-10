@@ -120,8 +120,8 @@ public class RotateChannelKeysConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .RotateChannelKeysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.createChannelResult(response.getItem());
 

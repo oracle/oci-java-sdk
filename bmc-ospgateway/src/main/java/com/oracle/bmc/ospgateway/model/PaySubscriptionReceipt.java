@@ -19,7 +19,8 @@ package com.oracle.bmc.ospgateway.model;
     builder = PaySubscriptionReceipt.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PaySubscriptionReceipt {
+public final class PaySubscriptionReceipt
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headerId", "apiToken", "userToken"})
     public PaySubscriptionReceipt(String headerId, String apiToken, String userToken) {
@@ -84,19 +85,26 @@ public final class PaySubscriptionReceipt {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PaySubscriptionReceipt build() {
-            PaySubscriptionReceipt __instance__ =
-                    new PaySubscriptionReceipt(headerId, apiToken, userToken);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PaySubscriptionReceipt model =
+                    new PaySubscriptionReceipt(this.headerId, this.apiToken, this.userToken);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PaySubscriptionReceipt o) {
-            Builder copiedBuilder =
-                    headerId(o.getHeaderId()).apiToken(o.getApiToken()).userToken(o.getUserToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PaySubscriptionReceipt model) {
+            if (model.wasPropertyExplicitlySet("headerId")) {
+                this.headerId(model.getHeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("apiToken")) {
+                this.apiToken(model.getApiToken());
+            }
+            if (model.wasPropertyExplicitlySet("userToken")) {
+                this.userToken(model.getUserToken());
+            }
+            return this;
         }
     }
 
@@ -166,10 +174,10 @@ public final class PaySubscriptionReceipt {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PaySubscriptionReceipt(");
+        sb.append("super=").append(super.toString());
         sb.append("headerId=").append(String.valueOf(this.headerId));
         sb.append(", apiToken=").append(String.valueOf(this.apiToken));
         sb.append(", userToken=").append(String.valueOf(this.userToken));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +195,7 @@ public final class PaySubscriptionReceipt {
         return java.util.Objects.equals(this.headerId, other.headerId)
                 && java.util.Objects.equals(this.apiToken, other.apiToken)
                 && java.util.Objects.equals(this.userToken, other.userToken)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -197,16 +205,7 @@ public final class PaySubscriptionReceipt {
         result = (result * PRIME) + (this.headerId == null ? 43 : this.headerId.hashCode());
         result = (result * PRIME) + (this.apiToken == null ? 43 : this.apiToken.hashCode());
         result = (result * PRIME) + (this.userToken == null ? 43 : this.userToken.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

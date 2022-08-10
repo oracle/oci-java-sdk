@@ -106,24 +106,37 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstalledDatabaseDetails build() {
-            InstalledDatabaseDetails __instance__ =
+            InstalledDatabaseDetails model =
                     new InstalledDatabaseDetails(
-                            infrastructureType, instanceId, ipAddresses, listenerPort, serviceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.infrastructureType,
+                            this.instanceId,
+                            this.ipAddresses,
+                            this.listenerPort,
+                            this.serviceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstalledDatabaseDetails o) {
-            Builder copiedBuilder =
-                    infrastructureType(o.getInfrastructureType())
-                            .instanceId(o.getInstanceId())
-                            .ipAddresses(o.getIpAddresses())
-                            .listenerPort(o.getListenerPort())
-                            .serviceName(o.getServiceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstalledDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddresses")) {
+                this.ipAddresses(model.getIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("listenerPort")) {
+                this.listenerPort(model.getListenerPort());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            return this;
         }
     }
 
@@ -228,7 +241,6 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
         sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -247,8 +259,7 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
                 && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
                 && java.util.Objects.equals(this.listenerPort, other.listenerPort)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +270,6 @@ public final class InstalledDatabaseDetails extends DatabaseDetails {
         result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
         result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.aispeech.model;
     builder = TranscriptionNormalization.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TranscriptionNormalization {
+public final class TranscriptionNormalization
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isPunctuationEnabled", "filters"})
     public TranscriptionNormalization(
@@ -32,13 +33,13 @@ public final class TranscriptionNormalization {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Whether to add punctuation in generated transcription. By default it is enabled.
+         * Whether to add punctuation in the generated transcription. Enabled by default.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
         private Boolean isPunctuationEnabled;
 
         /**
-         * Whether to add punctuation in generated transcription. By default it is enabled.
+         * Whether to add punctuation in the generated transcription. Enabled by default.
          * @param isPunctuationEnabled the value to set
          * @return this builder
          **/
@@ -68,19 +69,23 @@ public final class TranscriptionNormalization {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionNormalization build() {
-            TranscriptionNormalization __instance__ =
-                    new TranscriptionNormalization(isPunctuationEnabled, filters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TranscriptionNormalization model =
+                    new TranscriptionNormalization(this.isPunctuationEnabled, this.filters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TranscriptionNormalization o) {
-            Builder copiedBuilder =
-                    isPunctuationEnabled(o.getIsPunctuationEnabled()).filters(o.getFilters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TranscriptionNormalization model) {
+            if (model.wasPropertyExplicitlySet("isPunctuationEnabled")) {
+                this.isPunctuationEnabled(model.getIsPunctuationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("filters")) {
+                this.filters(model.getFilters());
+            }
+            return this;
         }
     }
 
@@ -96,13 +101,13 @@ public final class TranscriptionNormalization {
     }
 
     /**
-     * Whether to add punctuation in generated transcription. By default it is enabled.
+     * Whether to add punctuation in the generated transcription. Enabled by default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
     private final Boolean isPunctuationEnabled;
 
     /**
-     * Whether to add punctuation in generated transcription. By default it is enabled.
+     * Whether to add punctuation in the generated transcription. Enabled by default.
      * @return the value
      **/
     public Boolean getIsPunctuationEnabled() {
@@ -136,9 +141,9 @@ public final class TranscriptionNormalization {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TranscriptionNormalization(");
+        sb.append("super=").append(super.toString());
         sb.append("isPunctuationEnabled=").append(String.valueOf(this.isPunctuationEnabled));
         sb.append(", filters=").append(String.valueOf(this.filters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class TranscriptionNormalization {
         TranscriptionNormalization other = (TranscriptionNormalization) o;
         return java.util.Objects.equals(this.isPunctuationEnabled, other.isPunctuationEnabled)
                 && java.util.Objects.equals(this.filters, other.filters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class TranscriptionNormalization {
                                 ? 43
                                 : this.isPunctuationEnabled.hashCode());
         result = (result * PRIME) + (this.filters == null ? 43 : this.filters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

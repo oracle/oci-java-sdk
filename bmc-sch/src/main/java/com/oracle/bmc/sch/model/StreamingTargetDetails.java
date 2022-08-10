@@ -53,17 +53,19 @@ public final class StreamingTargetDetails extends TargetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StreamingTargetDetails build() {
-            StreamingTargetDetails __instance__ = new StreamingTargetDetails(streamId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StreamingTargetDetails model = new StreamingTargetDetails(this.streamId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StreamingTargetDetails o) {
-            Builder copiedBuilder = streamId(o.getStreamId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StreamingTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("streamId")) {
+                this.streamId(model.getStreamId());
+            }
+            return this;
         }
     }
 
@@ -115,7 +117,6 @@ public final class StreamingTargetDetails extends TargetDetails {
         sb.append("StreamingTargetDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", streamId=").append(String.valueOf(this.streamId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -130,9 +131,7 @@ public final class StreamingTargetDetails extends TargetDetails {
         }
 
         StreamingTargetDetails other = (StreamingTargetDetails) o;
-        return java.util.Objects.equals(this.streamId, other.streamId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.streamId, other.streamId) && super.equals(other);
     }
 
     @Override
@@ -140,16 +139,6 @@ public final class StreamingTargetDetails extends TargetDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

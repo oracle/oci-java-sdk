@@ -95,8 +95,8 @@ public class CreateUserConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses.CreateUserResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.user(response.getItem());
 

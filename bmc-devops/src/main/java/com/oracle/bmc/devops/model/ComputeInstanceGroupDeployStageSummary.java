@@ -244,62 +244,102 @@ public final class ComputeInstanceGroupDeployStageSummary extends DeployStageSum
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceGroupDeployStageSummary build() {
-            ComputeInstanceGroupDeployStageSummary __instance__ =
+            ComputeInstanceGroupDeployStageSummary model =
                     new ComputeInstanceGroupDeployStageSummary(
-                            id,
-                            description,
-                            displayName,
-                            projectId,
-                            deployPipelineId,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            computeInstanceGroupDeployEnvironmentId,
-                            deploymentSpecDeployArtifactId,
-                            deployArtifactIds,
-                            rolloutPolicy,
-                            rollbackPolicy,
-                            failurePolicy,
-                            loadBalancerConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.description,
+                            this.displayName,
+                            this.projectId,
+                            this.deployPipelineId,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.computeInstanceGroupDeployEnvironmentId,
+                            this.deploymentSpecDeployArtifactId,
+                            this.deployArtifactIds,
+                            this.rolloutPolicy,
+                            this.rollbackPolicy,
+                            this.failurePolicy,
+                            this.loadBalancerConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceGroupDeployStageSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .computeInstanceGroupDeployEnvironmentId(
-                                    o.getComputeInstanceGroupDeployEnvironmentId())
-                            .deploymentSpecDeployArtifactId(o.getDeploymentSpecDeployArtifactId())
-                            .deployArtifactIds(o.getDeployArtifactIds())
-                            .rolloutPolicy(o.getRolloutPolicy())
-                            .rollbackPolicy(o.getRollbackPolicy())
-                            .failurePolicy(o.getFailurePolicy())
-                            .loadBalancerConfig(o.getLoadBalancerConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceGroupDeployStageSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("computeInstanceGroupDeployEnvironmentId")) {
+                this.computeInstanceGroupDeployEnvironmentId(
+                        model.getComputeInstanceGroupDeployEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentSpecDeployArtifactId")) {
+                this.deploymentSpecDeployArtifactId(model.getDeploymentSpecDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactIds")) {
+                this.deployArtifactIds(model.getDeployArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("rolloutPolicy")) {
+                this.rolloutPolicy(model.getRolloutPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackPolicy")) {
+                this.rollbackPolicy(model.getRollbackPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("failurePolicy")) {
+                this.failurePolicy(model.getFailurePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerConfig")) {
+                this.loadBalancerConfig(model.getLoadBalancerConfig());
+            }
+            return this;
         }
     }
 
@@ -454,7 +494,6 @@ public final class ComputeInstanceGroupDeployStageSummary extends DeployStageSum
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
         sb.append(", failurePolicy=").append(String.valueOf(this.failurePolicy));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -479,8 +518,7 @@ public final class ComputeInstanceGroupDeployStageSummary extends DeployStageSum
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
                 && java.util.Objects.equals(this.failurePolicy, other.failurePolicy)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -514,16 +552,6 @@ public final class ComputeInstanceGroupDeployStageSummary extends DeployStageSum
                         + (this.loadBalancerConfig == null
                                 ? 43
                                 : this.loadBalancerConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

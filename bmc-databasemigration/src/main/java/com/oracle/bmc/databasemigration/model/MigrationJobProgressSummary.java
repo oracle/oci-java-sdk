@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = MigrationJobProgressSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrationJobProgressSummary {
+public final class MigrationJobProgressSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currentPhase", "currentStatus", "jobProgress"})
     public MigrationJobProgressSummary(
@@ -92,21 +93,27 @@ public final class MigrationJobProgressSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrationJobProgressSummary build() {
-            MigrationJobProgressSummary __instance__ =
-                    new MigrationJobProgressSummary(currentPhase, currentStatus, jobProgress);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MigrationJobProgressSummary model =
+                    new MigrationJobProgressSummary(
+                            this.currentPhase, this.currentStatus, this.jobProgress);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MigrationJobProgressSummary o) {
-            Builder copiedBuilder =
-                    currentPhase(o.getCurrentPhase())
-                            .currentStatus(o.getCurrentStatus())
-                            .jobProgress(o.getJobProgress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MigrationJobProgressSummary model) {
+            if (model.wasPropertyExplicitlySet("currentPhase")) {
+                this.currentPhase(model.getCurrentPhase());
+            }
+            if (model.wasPropertyExplicitlySet("currentStatus")) {
+                this.currentStatus(model.getCurrentStatus());
+            }
+            if (model.wasPropertyExplicitlySet("jobProgress")) {
+                this.jobProgress(model.getJobProgress());
+            }
+            return this;
         }
     }
 
@@ -182,10 +189,10 @@ public final class MigrationJobProgressSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MigrationJobProgressSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("currentPhase=").append(String.valueOf(this.currentPhase));
         sb.append(", currentStatus=").append(String.valueOf(this.currentStatus));
         sb.append(", jobProgress=").append(String.valueOf(this.jobProgress));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -203,7 +210,7 @@ public final class MigrationJobProgressSummary {
         return java.util.Objects.equals(this.currentPhase, other.currentPhase)
                 && java.util.Objects.equals(this.currentStatus, other.currentStatus)
                 && java.util.Objects.equals(this.jobProgress, other.jobProgress)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -215,16 +222,7 @@ public final class MigrationJobProgressSummary {
                 (result * PRIME)
                         + (this.currentStatus == null ? 43 : this.currentStatus.hashCode());
         result = (result * PRIME) + (this.jobProgress == null ? 43 : this.jobProgress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

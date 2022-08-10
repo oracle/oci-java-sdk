@@ -109,8 +109,8 @@ public class UpdateClusterNetworkConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateClusterNetworkResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.clusterNetwork(response.getItem());
 

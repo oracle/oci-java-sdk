@@ -41,7 +41,7 @@ package com.oracle.bmc.dataconnectivity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BaseType {
+public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -157,6 +157,7 @@ public class BaseType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BaseType(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -182,7 +183,8 @@ public class BaseType {
                 && java.util.Objects.equals(this.parentRef, other.parentRef)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.description, other.description);
+                && java.util.Objects.equals(this.description, other.description)
+                && super.equals(other);
     }
 
     @Override
@@ -195,6 +197,7 @@ public class BaseType {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

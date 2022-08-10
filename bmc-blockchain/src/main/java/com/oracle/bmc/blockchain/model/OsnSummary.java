@@ -17,7 +17,7 @@ package com.oracle.bmc.blockchain.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OsnSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OsnSummary {
+public final class OsnSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"osnKey", "lifecycleState"})
     public OsnSummary(String osnKey, Osn.LifecycleState lifecycleState) {
@@ -65,17 +65,22 @@ public final class OsnSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OsnSummary build() {
-            OsnSummary __instance__ = new OsnSummary(osnKey, lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OsnSummary model = new OsnSummary(this.osnKey, this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OsnSummary o) {
-            Builder copiedBuilder = osnKey(o.getOsnKey()).lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OsnSummary model) {
+            if (model.wasPropertyExplicitlySet("osnKey")) {
+                this.osnKey(model.getOsnKey());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class OsnSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OsnSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("osnKey=").append(String.valueOf(this.osnKey));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class OsnSummary {
         OsnSummary other = (OsnSummary) o;
         return java.util.Objects.equals(this.osnKey, other.osnKey)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class OsnSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

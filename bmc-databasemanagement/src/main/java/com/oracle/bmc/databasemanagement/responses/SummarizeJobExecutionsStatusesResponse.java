@@ -42,15 +42,17 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "jobExecutionsStatusSummaryCollection"
     })
     private SummarizeJobExecutionsStatusesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.JobExecutionsStatusSummaryCollection
                     jobExecutionsStatusSummaryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.jobExecutionsStatusSummaryCollection = jobExecutionsStatusSummaryCollection;
     }
@@ -60,6 +62,13 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
          */
         public Builder copy(SummarizeJobExecutionsStatusesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             jobExecutionsStatusSummaryCollection(o.getJobExecutionsStatusSummaryCollection());
 
@@ -118,7 +128,10 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
          */
         public SummarizeJobExecutionsStatusesResponse build() {
             return new SummarizeJobExecutionsStatusesResponse(
-                    __httpStatusCode__, opcRequestId, jobExecutionsStatusSummaryCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    jobExecutionsStatusSummaryCollection);
         }
     }
 

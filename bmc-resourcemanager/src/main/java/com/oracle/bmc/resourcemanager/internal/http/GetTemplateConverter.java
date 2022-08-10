@@ -105,8 +105,8 @@ public class GetTemplateConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetTemplateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.template(response.getItem());
 

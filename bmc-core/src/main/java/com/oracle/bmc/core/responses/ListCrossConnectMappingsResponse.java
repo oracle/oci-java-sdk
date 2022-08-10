@@ -42,15 +42,17 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "crossConnectMappingDetailsCollection"
     })
     private ListCrossConnectMappingsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection
                     crossConnectMappingDetailsCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.crossConnectMappingDetailsCollection = crossConnectMappingDetailsCollection;
     }
@@ -60,6 +62,13 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListCrossConnectMappingsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             crossConnectMappingDetailsCollection(o.getCrossConnectMappingDetailsCollection());
 
@@ -118,7 +128,10 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
          */
         public ListCrossConnectMappingsResponse build() {
             return new ListCrossConnectMappingsResponse(
-                    __httpStatusCode__, opcRequestId, crossConnectMappingDetailsCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    crossConnectMappingDetailsCollection);
         }
     }
 

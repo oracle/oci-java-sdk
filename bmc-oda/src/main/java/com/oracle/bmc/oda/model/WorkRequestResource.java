@@ -19,7 +19,7 @@ package com.oracle.bmc.oda.model;
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResource {
+public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceAction",
@@ -156,30 +156,41 @@ public final class WorkRequestResource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResource build() {
-            WorkRequestResource __instance__ =
+            WorkRequestResource model =
                     new WorkRequestResource(
-                            resourceAction,
-                            resourceType,
-                            resourceId,
-                            status,
-                            statusMessage,
-                            resourceUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceAction,
+                            this.resourceType,
+                            this.resourceId,
+                            this.status,
+                            this.statusMessage,
+                            this.resourceUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestResource o) {
-            Builder copiedBuilder =
-                    resourceAction(o.getResourceAction())
-                            .resourceType(o.getResourceType())
-                            .resourceId(o.getResourceId())
-                            .status(o.getStatus())
-                            .statusMessage(o.getStatusMessage())
-                            .resourceUri(o.getResourceUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestResource model) {
+            if (model.wasPropertyExplicitlySet("resourceAction")) {
+                this.resourceAction(model.getResourceAction());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("statusMessage")) {
+                this.statusMessage(model.getStatusMessage());
+            }
+            if (model.wasPropertyExplicitlySet("resourceUri")) {
+                this.resourceUri(model.getResourceUri());
+            }
+            return this;
         }
     }
 
@@ -417,13 +428,13 @@ public final class WorkRequestResource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestResource(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceAction=").append(String.valueOf(this.resourceAction));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusMessage=").append(String.valueOf(this.statusMessage));
         sb.append(", resourceUri=").append(String.valueOf(this.resourceUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -444,7 +455,7 @@ public final class WorkRequestResource {
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusMessage, other.statusMessage)
                 && java.util.Objects.equals(this.resourceUri, other.resourceUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -461,16 +472,7 @@ public final class WorkRequestResource {
                 (result * PRIME)
                         + (this.statusMessage == null ? 43 : this.statusMessage.hashCode());
         result = (result * PRIME) + (this.resourceUri == null ? 43 : this.resourceUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

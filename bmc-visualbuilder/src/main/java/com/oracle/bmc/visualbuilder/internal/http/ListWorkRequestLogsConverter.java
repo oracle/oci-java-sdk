@@ -135,8 +135,8 @@ public class ListWorkRequestLogsConverter {
                                         builder =
                                                 com.oracle.bmc.visualbuilder.responses
                                                         .ListWorkRequestLogsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequestLogEntryCollection(response.getItem());
 

@@ -115,8 +115,8 @@ public class CancelTranscriptionTaskConverter {
                                         builder =
                                                 com.oracle.bmc.aispeech.responses
                                                         .CancelTranscriptionTaskResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

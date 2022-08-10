@@ -116,8 +116,8 @@ public class CreateServiceCatalogAssociationConverter {
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .CreateServiceCatalogAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceCatalogAssociation(response.getItem());
 

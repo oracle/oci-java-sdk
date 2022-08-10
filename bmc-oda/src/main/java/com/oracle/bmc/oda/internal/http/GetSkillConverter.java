@@ -102,7 +102,8 @@ public class GetSkillConverter {
 
                                 com.oracle.bmc.oda.responses.GetSkillResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.GetSkillResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.skill(response.getItem());
 

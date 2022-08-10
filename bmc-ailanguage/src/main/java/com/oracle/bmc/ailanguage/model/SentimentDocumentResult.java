@@ -19,7 +19,8 @@ package com.oracle.bmc.ailanguage.model;
     builder = SentimentDocumentResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SentimentDocumentResult {
+public final class SentimentDocumentResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -152,30 +153,41 @@ public final class SentimentDocumentResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SentimentDocumentResult build() {
-            SentimentDocumentResult __instance__ =
+            SentimentDocumentResult model =
                     new SentimentDocumentResult(
-                            key,
-                            documentSentiment,
-                            documentScores,
-                            aspects,
-                            sentences,
-                            languageCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.documentSentiment,
+                            this.documentScores,
+                            this.aspects,
+                            this.sentences,
+                            this.languageCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SentimentDocumentResult o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .documentSentiment(o.getDocumentSentiment())
-                            .documentScores(o.getDocumentScores())
-                            .aspects(o.getAspects())
-                            .sentences(o.getSentences())
-                            .languageCode(o.getLanguageCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SentimentDocumentResult model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("documentSentiment")) {
+                this.documentSentiment(model.getDocumentSentiment());
+            }
+            if (model.wasPropertyExplicitlySet("documentScores")) {
+                this.documentScores(model.getDocumentScores());
+            }
+            if (model.wasPropertyExplicitlySet("aspects")) {
+                this.aspects(model.getAspects());
+            }
+            if (model.wasPropertyExplicitlySet("sentences")) {
+                this.sentences(model.getSentences());
+            }
+            if (model.wasPropertyExplicitlySet("languageCode")) {
+                this.languageCode(model.getLanguageCode());
+            }
+            return this;
         }
     }
 
@@ -291,13 +303,13 @@ public final class SentimentDocumentResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SentimentDocumentResult(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", documentSentiment=").append(String.valueOf(this.documentSentiment));
         sb.append(", documentScores=").append(String.valueOf(this.documentScores));
         sb.append(", aspects=").append(String.valueOf(this.aspects));
         sb.append(", sentences=").append(String.valueOf(this.sentences));
         sb.append(", languageCode=").append(String.valueOf(this.languageCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -318,7 +330,7 @@ public final class SentimentDocumentResult {
                 && java.util.Objects.equals(this.aspects, other.aspects)
                 && java.util.Objects.equals(this.sentences, other.sentences)
                 && java.util.Objects.equals(this.languageCode, other.languageCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -335,16 +347,7 @@ public final class SentimentDocumentResult {
         result = (result * PRIME) + (this.aspects == null ? 43 : this.aspects.hashCode());
         result = (result * PRIME) + (this.sentences == null ? 43 : this.sentences.hashCode());
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

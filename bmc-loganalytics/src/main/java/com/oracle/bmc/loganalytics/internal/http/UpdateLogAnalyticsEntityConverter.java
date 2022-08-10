@@ -125,8 +125,8 @@ public class UpdateLogAnalyticsEntityConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateLogAnalyticsEntityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsEntity(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = AddDrgRouteRulesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddDrgRouteRulesDetails {
+public final class AddDrgRouteRulesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"routeRules"})
     public AddDrgRouteRulesDetails(java.util.List<AddDrgRouteRuleDetails> routeRules) {
@@ -53,17 +54,19 @@ public final class AddDrgRouteRulesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddDrgRouteRulesDetails build() {
-            AddDrgRouteRulesDetails __instance__ = new AddDrgRouteRulesDetails(routeRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddDrgRouteRulesDetails model = new AddDrgRouteRulesDetails(this.routeRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddDrgRouteRulesDetails o) {
-            Builder copiedBuilder = routeRules(o.getRouteRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddDrgRouteRulesDetails model) {
+            if (model.wasPropertyExplicitlySet("routeRules")) {
+                this.routeRules(model.getRouteRules());
+            }
+            return this;
         }
     }
 
@@ -107,8 +110,8 @@ public final class AddDrgRouteRulesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddDrgRouteRulesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("routeRules=").append(String.valueOf(this.routeRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -123,8 +126,7 @@ public final class AddDrgRouteRulesDetails {
         }
 
         AddDrgRouteRulesDetails other = (AddDrgRouteRulesDetails) o;
-        return java.util.Objects.equals(this.routeRules, other.routeRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.routeRules, other.routeRules) && super.equals(other);
     }
 
     @Override
@@ -132,16 +134,7 @@ public final class AddDrgRouteRulesDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.routeRules == null ? 43 : this.routeRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

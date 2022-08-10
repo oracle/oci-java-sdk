@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = ComputeImageCapabilitySchemaSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputeImageCapabilitySchemaSummary {
+public final class ComputeImageCapabilitySchemaSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -243,37 +244,54 @@ public final class ComputeImageCapabilitySchemaSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeImageCapabilitySchemaSummary build() {
-            ComputeImageCapabilitySchemaSummary __instance__ =
+            ComputeImageCapabilitySchemaSummary model =
                     new ComputeImageCapabilitySchemaSummary(
-                            id,
-                            compartmentId,
-                            computeGlobalImageCapabilitySchemaVersionName,
-                            imageId,
-                            displayName,
-                            schemaData,
-                            timeCreated,
-                            definedTags,
-                            freeformTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.computeGlobalImageCapabilitySchemaVersionName,
+                            this.imageId,
+                            this.displayName,
+                            this.schemaData,
+                            this.timeCreated,
+                            this.definedTags,
+                            this.freeformTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeImageCapabilitySchemaSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .computeGlobalImageCapabilitySchemaVersionName(
-                                    o.getComputeGlobalImageCapabilitySchemaVersionName())
-                            .imageId(o.getImageId())
-                            .displayName(o.getDisplayName())
-                            .schemaData(o.getSchemaData())
-                            .timeCreated(o.getTimeCreated())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeImageCapabilitySchemaSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("computeGlobalImageCapabilitySchemaVersionName")) {
+                this.computeGlobalImageCapabilitySchemaVersionName(
+                        model.getComputeGlobalImageCapabilitySchemaVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaData")) {
+                this.schemaData(model.getSchemaData());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            return this;
         }
     }
 
@@ -459,6 +477,7 @@ public final class ComputeImageCapabilitySchemaSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputeImageCapabilitySchemaSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", computeGlobalImageCapabilitySchemaVersionName=")
@@ -469,7 +488,6 @@ public final class ComputeImageCapabilitySchemaSummary {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -495,7 +513,7 @@ public final class ComputeImageCapabilitySchemaSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -517,16 +535,7 @@ public final class ComputeImageCapabilitySchemaSummary {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

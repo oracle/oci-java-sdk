@@ -49,16 +49,18 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "protectionSettings"
     })
     private GetProtectionSettingsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waas.model.ProtectionSettings protectionSettings) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.protectionSettings = protectionSettings;
@@ -69,6 +71,13 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetProtectionSettingsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             protectionSettings(o.getProtectionSettings());
@@ -137,7 +147,7 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetProtectionSettingsResponse build() {
             return new GetProtectionSettingsResponse(
-                    __httpStatusCode__, etag, opcRequestId, protectionSettings);
+                    __httpStatusCode__, headers, etag, opcRequestId, protectionSettings);
         }
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.containerengine.model;
     builder = CreateNodePoolDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateNodePoolDetails {
+public final class CreateNodePoolDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -388,52 +389,85 @@ public final class CreateNodePoolDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNodePoolDetails build() {
-            CreateNodePoolDetails __instance__ =
+            CreateNodePoolDetails model =
                     new CreateNodePoolDetails(
-                            compartmentId,
-                            clusterId,
-                            name,
-                            kubernetesVersion,
-                            nodeMetadata,
-                            nodeImageName,
-                            nodeSourceDetails,
-                            nodeShape,
-                            nodeShapeConfig,
-                            initialNodeLabels,
-                            sshPublicKey,
-                            quantityPerSubnet,
-                            subnetIds,
-                            nodeConfigDetails,
-                            freeformTags,
-                            definedTags,
-                            nodeEvictionNodePoolSettings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.clusterId,
+                            this.name,
+                            this.kubernetesVersion,
+                            this.nodeMetadata,
+                            this.nodeImageName,
+                            this.nodeSourceDetails,
+                            this.nodeShape,
+                            this.nodeShapeConfig,
+                            this.initialNodeLabels,
+                            this.sshPublicKey,
+                            this.quantityPerSubnet,
+                            this.subnetIds,
+                            this.nodeConfigDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.nodeEvictionNodePoolSettings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNodePoolDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .clusterId(o.getClusterId())
-                            .name(o.getName())
-                            .kubernetesVersion(o.getKubernetesVersion())
-                            .nodeMetadata(o.getNodeMetadata())
-                            .nodeImageName(o.getNodeImageName())
-                            .nodeSourceDetails(o.getNodeSourceDetails())
-                            .nodeShape(o.getNodeShape())
-                            .nodeShapeConfig(o.getNodeShapeConfig())
-                            .initialNodeLabels(o.getInitialNodeLabels())
-                            .sshPublicKey(o.getSshPublicKey())
-                            .quantityPerSubnet(o.getQuantityPerSubnet())
-                            .subnetIds(o.getSubnetIds())
-                            .nodeConfigDetails(o.getNodeConfigDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .nodeEvictionNodePoolSettings(o.getNodeEvictionNodePoolSettings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateNodePoolDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("kubernetesVersion")) {
+                this.kubernetesVersion(model.getKubernetesVersion());
+            }
+            if (model.wasPropertyExplicitlySet("nodeMetadata")) {
+                this.nodeMetadata(model.getNodeMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("nodeImageName")) {
+                this.nodeImageName(model.getNodeImageName());
+            }
+            if (model.wasPropertyExplicitlySet("nodeSourceDetails")) {
+                this.nodeSourceDetails(model.getNodeSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("nodeShape")) {
+                this.nodeShape(model.getNodeShape());
+            }
+            if (model.wasPropertyExplicitlySet("nodeShapeConfig")) {
+                this.nodeShapeConfig(model.getNodeShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("initialNodeLabels")) {
+                this.initialNodeLabels(model.getInitialNodeLabels());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKey")) {
+                this.sshPublicKey(model.getSshPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("quantityPerSubnet")) {
+                this.quantityPerSubnet(model.getQuantityPerSubnet());
+            }
+            if (model.wasPropertyExplicitlySet("subnetIds")) {
+                this.subnetIds(model.getSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("nodeConfigDetails")) {
+                this.nodeConfigDetails(model.getNodeConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("nodeEvictionNodePoolSettings")) {
+                this.nodeEvictionNodePoolSettings(model.getNodeEvictionNodePoolSettings());
+            }
+            return this;
         }
     }
 
@@ -728,6 +762,7 @@ public final class CreateNodePoolDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateNodePoolDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -746,7 +781,6 @@ public final class CreateNodePoolDetails {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", nodeEvictionNodePoolSettings=")
                 .append(String.valueOf(this.nodeEvictionNodePoolSettings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -779,7 +813,7 @@ public final class CreateNodePoolDetails {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.nodeEvictionNodePoolSettings, other.nodeEvictionNodePoolSettings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -823,16 +857,7 @@ public final class CreateNodePoolDetails {
                         + (this.nodeEvictionNodePoolSettings == null
                                 ? 43
                                 : this.nodeEvictionNodePoolSettings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

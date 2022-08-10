@@ -185,40 +185,61 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterCompareCommandDescriptor build() {
-            ClusterCompareCommandDescriptor __instance__ =
+            ClusterCompareCommandDescriptor model =
                     new ClusterCompareCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            timeShift,
-                            timeStart,
-                            timeEnd,
-                            shouldIncludeTrends,
-                            span,
-                            baselineQuery);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.timeShift,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.shouldIncludeTrends,
+                            this.span,
+                            this.baselineQuery);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterCompareCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .timeShift(o.getTimeShift())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .shouldIncludeTrends(o.getShouldIncludeTrends())
-                            .span(o.getSpan())
-                            .baselineQuery(o.getBaselineQuery());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterCompareCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("timeShift")) {
+                this.timeShift(model.getTimeShift());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeTrends")) {
+                this.shouldIncludeTrends(model.getShouldIncludeTrends());
+            }
+            if (model.wasPropertyExplicitlySet("span")) {
+                this.span(model.getSpan());
+            }
+            if (model.wasPropertyExplicitlySet("baselineQuery")) {
+                this.baselineQuery(model.getBaselineQuery());
+            }
+            return this;
         }
     }
 
@@ -371,7 +392,6 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
         sb.append(", shouldIncludeTrends=").append(String.valueOf(this.shouldIncludeTrends));
         sb.append(", span=").append(String.valueOf(this.span));
         sb.append(", baselineQuery=").append(String.valueOf(this.baselineQuery));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -392,8 +412,7 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
                 && java.util.Objects.equals(this.shouldIncludeTrends, other.shouldIncludeTrends)
                 && java.util.Objects.equals(this.span, other.span)
                 && java.util.Objects.equals(this.baselineQuery, other.baselineQuery)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -412,16 +431,6 @@ public final class ClusterCompareCommandDescriptor extends AbstractCommandDescri
         result =
                 (result * PRIME)
                         + (this.baselineQuery == null ? 43 : this.baselineQuery.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

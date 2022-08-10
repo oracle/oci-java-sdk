@@ -51,18 +51,23 @@ public final class UnifiedAgentLoggingConfiguration
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentLoggingConfiguration build() {
-            UnifiedAgentLoggingConfiguration __instance__ =
-                    new UnifiedAgentLoggingConfiguration(sources, destination);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UnifiedAgentLoggingConfiguration model =
+                    new UnifiedAgentLoggingConfiguration(this.sources, this.destination);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentLoggingConfiguration o) {
-            Builder copiedBuilder = sources(o.getSources()).destination(o.getDestination());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentLoggingConfiguration model) {
+            if (model.wasPropertyExplicitlySet("sources")) {
+                this.sources(model.getSources());
+            }
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            return this;
         }
     }
 
@@ -116,7 +121,6 @@ public final class UnifiedAgentLoggingConfiguration
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sources=").append(String.valueOf(this.sources));
         sb.append(", destination=").append(String.valueOf(this.destination));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -133,8 +137,7 @@ public final class UnifiedAgentLoggingConfiguration
         UnifiedAgentLoggingConfiguration other = (UnifiedAgentLoggingConfiguration) o;
         return java.util.Objects.equals(this.sources, other.sources)
                 && java.util.Objects.equals(this.destination, other.destination)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -143,16 +146,6 @@ public final class UnifiedAgentLoggingConfiguration
         int result = super.hashCode();
         result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
         result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

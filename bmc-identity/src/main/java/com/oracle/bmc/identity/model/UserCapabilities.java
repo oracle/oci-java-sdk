@@ -17,7 +17,7 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserCapabilities.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UserCapabilities {
+public final class UserCapabilities extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "canUseConsolePassword",
@@ -169,32 +169,45 @@ public final class UserCapabilities {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UserCapabilities build() {
-            UserCapabilities __instance__ =
+            UserCapabilities model =
                     new UserCapabilities(
-                            canUseConsolePassword,
-                            canUseApiKeys,
-                            canUseAuthTokens,
-                            canUseSmtpCredentials,
-                            canUseDbCredentials,
-                            canUseCustomerSecretKeys,
-                            canUseOAuth2ClientCredentials);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.canUseConsolePassword,
+                            this.canUseApiKeys,
+                            this.canUseAuthTokens,
+                            this.canUseSmtpCredentials,
+                            this.canUseDbCredentials,
+                            this.canUseCustomerSecretKeys,
+                            this.canUseOAuth2ClientCredentials);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UserCapabilities o) {
-            Builder copiedBuilder =
-                    canUseConsolePassword(o.getCanUseConsolePassword())
-                            .canUseApiKeys(o.getCanUseApiKeys())
-                            .canUseAuthTokens(o.getCanUseAuthTokens())
-                            .canUseSmtpCredentials(o.getCanUseSmtpCredentials())
-                            .canUseDbCredentials(o.getCanUseDbCredentials())
-                            .canUseCustomerSecretKeys(o.getCanUseCustomerSecretKeys())
-                            .canUseOAuth2ClientCredentials(o.getCanUseOAuth2ClientCredentials());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UserCapabilities model) {
+            if (model.wasPropertyExplicitlySet("canUseConsolePassword")) {
+                this.canUseConsolePassword(model.getCanUseConsolePassword());
+            }
+            if (model.wasPropertyExplicitlySet("canUseApiKeys")) {
+                this.canUseApiKeys(model.getCanUseApiKeys());
+            }
+            if (model.wasPropertyExplicitlySet("canUseAuthTokens")) {
+                this.canUseAuthTokens(model.getCanUseAuthTokens());
+            }
+            if (model.wasPropertyExplicitlySet("canUseSmtpCredentials")) {
+                this.canUseSmtpCredentials(model.getCanUseSmtpCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("canUseDbCredentials")) {
+                this.canUseDbCredentials(model.getCanUseDbCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("canUseCustomerSecretKeys")) {
+                this.canUseCustomerSecretKeys(model.getCanUseCustomerSecretKeys());
+            }
+            if (model.wasPropertyExplicitlySet("canUseOAuth2ClientCredentials")) {
+                this.canUseOAuth2ClientCredentials(model.getCanUseOAuth2ClientCredentials());
+            }
+            return this;
         }
     }
 
@@ -324,6 +337,7 @@ public final class UserCapabilities {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UserCapabilities(");
+        sb.append("super=").append(super.toString());
         sb.append("canUseConsolePassword=").append(String.valueOf(this.canUseConsolePassword));
         sb.append(", canUseApiKeys=").append(String.valueOf(this.canUseApiKeys));
         sb.append(", canUseAuthTokens=").append(String.valueOf(this.canUseAuthTokens));
@@ -333,7 +347,6 @@ public final class UserCapabilities {
                 .append(String.valueOf(this.canUseCustomerSecretKeys));
         sb.append(", canUseOAuth2ClientCredentials=")
                 .append(String.valueOf(this.canUseOAuth2ClientCredentials));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -357,7 +370,7 @@ public final class UserCapabilities {
                         this.canUseCustomerSecretKeys, other.canUseCustomerSecretKeys)
                 && java.util.Objects.equals(
                         this.canUseOAuth2ClientCredentials, other.canUseOAuth2ClientCredentials)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -395,16 +408,7 @@ public final class UserCapabilities {
                         + (this.canUseOAuth2ClientCredentials == null
                                 ? 43
                                 : this.canUseOAuth2ClientCredentials.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

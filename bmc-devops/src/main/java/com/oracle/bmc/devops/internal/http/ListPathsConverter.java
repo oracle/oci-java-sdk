@@ -169,7 +169,8 @@ public class ListPathsConverter {
 
                                 com.oracle.bmc.devops.responses.ListPathsResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.ListPathsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.repositoryPathCollection(response.getItem());
 

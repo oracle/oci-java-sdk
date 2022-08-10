@@ -115,8 +115,8 @@ public class UpdateDeploymentBackupConverter {
                                         builder =
                                                 com.oracle.bmc.goldengate.responses
                                                         .UpdateDeploymentBackupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deploymentBackup(response.getItem());
 

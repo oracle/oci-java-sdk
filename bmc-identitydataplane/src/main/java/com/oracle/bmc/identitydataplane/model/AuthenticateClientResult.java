@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = AuthenticateClientResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthenticateClientResult {
+public final class AuthenticateClientResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"principal", "errorMessage"})
     public AuthenticateClientResult(Principal principal, String errorMessage) {
@@ -67,18 +68,23 @@ public final class AuthenticateClientResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuthenticateClientResult build() {
-            AuthenticateClientResult __instance__ =
-                    new AuthenticateClientResult(principal, errorMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AuthenticateClientResult model =
+                    new AuthenticateClientResult(this.principal, this.errorMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuthenticateClientResult o) {
-            Builder copiedBuilder = principal(o.getPrincipal()).errorMessage(o.getErrorMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuthenticateClientResult model) {
+            if (model.wasPropertyExplicitlySet("principal")) {
+                this.principal(model.getPrincipal());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class AuthenticateClientResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthenticateClientResult(");
+        sb.append("super=").append(super.toString());
         sb.append("principal=").append(String.valueOf(this.principal));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class AuthenticateClientResult {
         AuthenticateClientResult other = (AuthenticateClientResult) o;
         return java.util.Objects.equals(this.principal, other.principal)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class AuthenticateClientResult {
         int result = 1;
         result = (result * PRIME) + (this.principal == null ? 43 : this.principal.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

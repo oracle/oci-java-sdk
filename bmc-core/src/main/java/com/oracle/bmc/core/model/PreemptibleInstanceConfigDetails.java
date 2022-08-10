@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = PreemptibleInstanceConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PreemptibleInstanceConfigDetails {
+public final class PreemptibleInstanceConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"preemptionAction"})
     public PreemptibleInstanceConfigDetails(PreemptionAction preemptionAction) {
@@ -44,18 +45,20 @@ public final class PreemptibleInstanceConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PreemptibleInstanceConfigDetails build() {
-            PreemptibleInstanceConfigDetails __instance__ =
-                    new PreemptibleInstanceConfigDetails(preemptionAction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PreemptibleInstanceConfigDetails model =
+                    new PreemptibleInstanceConfigDetails(this.preemptionAction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PreemptibleInstanceConfigDetails o) {
-            Builder copiedBuilder = preemptionAction(o.getPreemptionAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PreemptibleInstanceConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("preemptionAction")) {
+                this.preemptionAction(model.getPreemptionAction());
+            }
+            return this;
         }
     }
 
@@ -90,8 +93,8 @@ public final class PreemptibleInstanceConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PreemptibleInstanceConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("preemptionAction=").append(String.valueOf(this.preemptionAction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -107,7 +110,7 @@ public final class PreemptibleInstanceConfigDetails {
 
         PreemptibleInstanceConfigDetails other = (PreemptibleInstanceConfigDetails) o;
         return java.util.Objects.equals(this.preemptionAction, other.preemptionAction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -117,16 +120,7 @@ public final class PreemptibleInstanceConfigDetails {
         result =
                 (result * PRIME)
                         + (this.preemptionAction == null ? 43 : this.preemptionAction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

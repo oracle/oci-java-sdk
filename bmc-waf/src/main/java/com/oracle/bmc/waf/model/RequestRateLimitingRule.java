@@ -92,24 +92,37 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RequestRateLimitingRule build() {
-            RequestRateLimitingRule __instance__ =
+            RequestRateLimitingRule model =
                     new RequestRateLimitingRule(
-                            name, conditionLanguage, condition, actionName, configurations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.conditionLanguage,
+                            this.condition,
+                            this.actionName,
+                            this.configurations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RequestRateLimitingRule o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .conditionLanguage(o.getConditionLanguage())
-                            .condition(o.getCondition())
-                            .actionName(o.getActionName())
-                            .configurations(o.getConfigurations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RequestRateLimitingRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("conditionLanguage")) {
+                this.conditionLanguage(model.getConditionLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("actionName")) {
+                this.actionName(model.getActionName());
+            }
+            if (model.wasPropertyExplicitlySet("configurations")) {
+                this.configurations(model.getConfigurations());
+            }
+            return this;
         }
     }
 
@@ -168,7 +181,6 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
         sb.append("RequestRateLimitingRule(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", configurations=").append(String.valueOf(this.configurations));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -184,8 +196,7 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
 
         RequestRateLimitingRule other = (RequestRateLimitingRule) o;
         return java.util.Objects.equals(this.configurations, other.configurations)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +206,6 @@ public final class RequestRateLimitingRule extends WebAppFirewallPolicyRule {
         result =
                 (result * PRIME)
                         + (this.configurations == null ? 43 : this.configurations.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

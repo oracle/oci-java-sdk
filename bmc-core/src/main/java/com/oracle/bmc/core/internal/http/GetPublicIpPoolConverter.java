@@ -102,8 +102,8 @@ public class GetPublicIpPoolConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetPublicIpPoolResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publicIpPool(response.getItem());
 

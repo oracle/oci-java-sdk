@@ -49,16 +49,18 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "diffCollection"
     })
     private ListCommitDiffsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.devops.model.DiffCollection diffCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.diffCollection = diffCollection;
@@ -69,6 +71,13 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ListCommitDiffsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             diffCollection(o.getDiffCollection());
@@ -136,7 +146,7 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public ListCommitDiffsResponse build() {
             return new ListCommitDiffsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, diffCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, diffCollection);
         }
     }
 

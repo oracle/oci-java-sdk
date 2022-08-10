@@ -210,8 +210,8 @@ public class ListTargetDatabasesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListTargetDatabasesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

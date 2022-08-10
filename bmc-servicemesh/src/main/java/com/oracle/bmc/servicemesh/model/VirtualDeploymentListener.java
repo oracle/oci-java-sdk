@@ -19,7 +19,8 @@ package com.oracle.bmc.servicemesh.model;
     builder = VirtualDeploymentListener.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VirtualDeploymentListener {
+public final class VirtualDeploymentListener
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"protocol", "port"})
     public VirtualDeploymentListener(Protocol protocol, Integer port) {
@@ -67,17 +68,23 @@ public final class VirtualDeploymentListener {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VirtualDeploymentListener build() {
-            VirtualDeploymentListener __instance__ = new VirtualDeploymentListener(protocol, port);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VirtualDeploymentListener model =
+                    new VirtualDeploymentListener(this.protocol, this.port);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VirtualDeploymentListener o) {
-            Builder copiedBuilder = protocol(o.getProtocol()).port(o.getPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VirtualDeploymentListener model) {
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            return this;
         }
     }
 
@@ -184,9 +191,9 @@ public final class VirtualDeploymentListener {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VirtualDeploymentListener(");
+        sb.append("super=").append(super.toString());
         sb.append("protocol=").append(String.valueOf(this.protocol));
         sb.append(", port=").append(String.valueOf(this.port));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -203,7 +210,7 @@ public final class VirtualDeploymentListener {
         VirtualDeploymentListener other = (VirtualDeploymentListener) o;
         return java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.port, other.port)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +219,7 @@ public final class VirtualDeploymentListener {
         int result = 1;
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -183,8 +183,8 @@ public class ListDatabaseToolsPrivateEndpointsConverter {
                                                 com.oracle.bmc.databasetools.responses
                                                         .ListDatabaseToolsPrivateEndpointsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseToolsPrivateEndpointCollection(response.getItem());
 

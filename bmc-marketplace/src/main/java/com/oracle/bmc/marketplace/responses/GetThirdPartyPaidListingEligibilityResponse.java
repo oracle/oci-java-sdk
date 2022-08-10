@@ -43,15 +43,17 @@ public class GetThirdPartyPaidListingEligibilityResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "thirdPartyPaidListingEligibility"
     })
     private GetThirdPartyPaidListingEligibilityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
                     thirdPartyPaidListingEligibility) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.thirdPartyPaidListingEligibility = thirdPartyPaidListingEligibility;
     }
@@ -61,6 +63,13 @@ public class GetThirdPartyPaidListingEligibilityResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -107,6 +116,7 @@ public class GetThirdPartyPaidListingEligibilityResponse
          */
         public Builder copy(GetThirdPartyPaidListingEligibilityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             thirdPartyPaidListingEligibility(o.getThirdPartyPaidListingEligibility());
 
@@ -119,7 +129,7 @@ public class GetThirdPartyPaidListingEligibilityResponse
          */
         public GetThirdPartyPaidListingEligibilityResponse build() {
             return new GetThirdPartyPaidListingEligibilityResponse(
-                    __httpStatusCode__, opcRequestId, thirdPartyPaidListingEligibility);
+                    __httpStatusCode__, headers, opcRequestId, thirdPartyPaidListingEligibility);
         }
     }
 

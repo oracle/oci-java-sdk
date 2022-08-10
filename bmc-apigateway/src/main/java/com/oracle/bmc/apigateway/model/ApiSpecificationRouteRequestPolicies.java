@@ -20,7 +20,8 @@ package com.oracle.bmc.apigateway.model;
     builder = ApiSpecificationRouteRequestPolicies.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiSpecificationRouteRequestPolicies {
+public final class ApiSpecificationRouteRequestPolicies
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "authorization",
@@ -133,34 +134,49 @@ public final class ApiSpecificationRouteRequestPolicies {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRouteRequestPolicies build() {
-            ApiSpecificationRouteRequestPolicies __instance__ =
+            ApiSpecificationRouteRequestPolicies model =
                     new ApiSpecificationRouteRequestPolicies(
-                            authorization,
-                            cors,
-                            queryParameterValidations,
-                            headerValidations,
-                            bodyValidation,
-                            headerTransformations,
-                            queryParameterTransformations,
-                            responseCacheLookup);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.authorization,
+                            this.cors,
+                            this.queryParameterValidations,
+                            this.headerValidations,
+                            this.bodyValidation,
+                            this.headerTransformations,
+                            this.queryParameterTransformations,
+                            this.responseCacheLookup);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiSpecificationRouteRequestPolicies o) {
-            Builder copiedBuilder =
-                    authorization(o.getAuthorization())
-                            .cors(o.getCors())
-                            .queryParameterValidations(o.getQueryParameterValidations())
-                            .headerValidations(o.getHeaderValidations())
-                            .bodyValidation(o.getBodyValidation())
-                            .headerTransformations(o.getHeaderTransformations())
-                            .queryParameterTransformations(o.getQueryParameterTransformations())
-                            .responseCacheLookup(o.getResponseCacheLookup());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiSpecificationRouteRequestPolicies model) {
+            if (model.wasPropertyExplicitlySet("authorization")) {
+                this.authorization(model.getAuthorization());
+            }
+            if (model.wasPropertyExplicitlySet("cors")) {
+                this.cors(model.getCors());
+            }
+            if (model.wasPropertyExplicitlySet("queryParameterValidations")) {
+                this.queryParameterValidations(model.getQueryParameterValidations());
+            }
+            if (model.wasPropertyExplicitlySet("headerValidations")) {
+                this.headerValidations(model.getHeaderValidations());
+            }
+            if (model.wasPropertyExplicitlySet("bodyValidation")) {
+                this.bodyValidation(model.getBodyValidation());
+            }
+            if (model.wasPropertyExplicitlySet("headerTransformations")) {
+                this.headerTransformations(model.getHeaderTransformations());
+            }
+            if (model.wasPropertyExplicitlySet("queryParameterTransformations")) {
+                this.queryParameterTransformations(model.getQueryParameterTransformations());
+            }
+            if (model.wasPropertyExplicitlySet("responseCacheLookup")) {
+                this.responseCacheLookup(model.getResponseCacheLookup());
+            }
+            return this;
         }
     }
 
@@ -244,6 +260,7 @@ public final class ApiSpecificationRouteRequestPolicies {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiSpecificationRouteRequestPolicies(");
+        sb.append("super=").append(super.toString());
         sb.append("authorization=").append(String.valueOf(this.authorization));
         sb.append(", cors=").append(String.valueOf(this.cors));
         sb.append(", queryParameterValidations=")
@@ -254,7 +271,6 @@ public final class ApiSpecificationRouteRequestPolicies {
         sb.append(", queryParameterTransformations=")
                 .append(String.valueOf(this.queryParameterTransformations));
         sb.append(", responseCacheLookup=").append(String.valueOf(this.responseCacheLookup));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -279,7 +295,7 @@ public final class ApiSpecificationRouteRequestPolicies {
                 && java.util.Objects.equals(
                         this.queryParameterTransformations, other.queryParameterTransformations)
                 && java.util.Objects.equals(this.responseCacheLookup, other.responseCacheLookup)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -316,16 +332,7 @@ public final class ApiSpecificationRouteRequestPolicies {
                         + (this.responseCacheLookup == null
                                 ? 43
                                 : this.responseCacheLookup.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -148,8 +148,8 @@ public class ListFlexComponentsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListFlexComponentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.flexComponentCollection(response.getItem());
 

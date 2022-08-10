@@ -100,8 +100,8 @@ public class GetLogGroupConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses.GetLogGroupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logGroup(response.getItem());
 

@@ -55,16 +55,18 @@ public class GetGenericArtifactResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "genericArtifact"
     })
     private GetGenericArtifactResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.artifacts.model.GenericArtifact genericArtifact) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.genericArtifact = genericArtifact;
@@ -75,6 +77,13 @@ public class GetGenericArtifactResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetGenericArtifactResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetGenericArtifactResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             genericArtifact(o.getGenericArtifact());
@@ -149,7 +159,7 @@ public class GetGenericArtifactResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetGenericArtifactResponse build() {
             return new GetGenericArtifactResponse(
-                    __httpStatusCode__, etag, opcRequestId, genericArtifact);
+                    __httpStatusCode__, headers, etag, opcRequestId, genericArtifact);
         }
     }
 

@@ -18,7 +18,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CorsPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CorsPolicy {
+public final class CorsPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "allowedOrigins",
@@ -173,30 +173,41 @@ public final class CorsPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CorsPolicy build() {
-            CorsPolicy __instance__ =
+            CorsPolicy model =
                     new CorsPolicy(
-                            allowedOrigins,
-                            allowedMethods,
-                            allowedHeaders,
-                            exposedHeaders,
-                            isAllowCredentialsEnabled,
-                            maxAgeInSeconds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.allowedOrigins,
+                            this.allowedMethods,
+                            this.allowedHeaders,
+                            this.exposedHeaders,
+                            this.isAllowCredentialsEnabled,
+                            this.maxAgeInSeconds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CorsPolicy o) {
-            Builder copiedBuilder =
-                    allowedOrigins(o.getAllowedOrigins())
-                            .allowedMethods(o.getAllowedMethods())
-                            .allowedHeaders(o.getAllowedHeaders())
-                            .exposedHeaders(o.getExposedHeaders())
-                            .isAllowCredentialsEnabled(o.getIsAllowCredentialsEnabled())
-                            .maxAgeInSeconds(o.getMaxAgeInSeconds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CorsPolicy model) {
+            if (model.wasPropertyExplicitlySet("allowedOrigins")) {
+                this.allowedOrigins(model.getAllowedOrigins());
+            }
+            if (model.wasPropertyExplicitlySet("allowedMethods")) {
+                this.allowedMethods(model.getAllowedMethods());
+            }
+            if (model.wasPropertyExplicitlySet("allowedHeaders")) {
+                this.allowedHeaders(model.getAllowedHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("exposedHeaders")) {
+                this.exposedHeaders(model.getExposedHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("isAllowCredentialsEnabled")) {
+                this.isAllowCredentialsEnabled(model.getIsAllowCredentialsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("maxAgeInSeconds")) {
+                this.maxAgeInSeconds(model.getMaxAgeInSeconds());
+            }
+            return this;
         }
     }
 
@@ -334,6 +345,7 @@ public final class CorsPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CorsPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("allowedOrigins=").append(String.valueOf(this.allowedOrigins));
         sb.append(", allowedMethods=").append(String.valueOf(this.allowedMethods));
         sb.append(", allowedHeaders=").append(String.valueOf(this.allowedHeaders));
@@ -341,7 +353,6 @@ public final class CorsPolicy {
         sb.append(", isAllowCredentialsEnabled=")
                 .append(String.valueOf(this.isAllowCredentialsEnabled));
         sb.append(", maxAgeInSeconds=").append(String.valueOf(this.maxAgeInSeconds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -363,7 +374,7 @@ public final class CorsPolicy {
                 && java.util.Objects.equals(
                         this.isAllowCredentialsEnabled, other.isAllowCredentialsEnabled)
                 && java.util.Objects.equals(this.maxAgeInSeconds, other.maxAgeInSeconds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -390,16 +401,7 @@ public final class CorsPolicy {
         result =
                 (result * PRIME)
                         + (this.maxAgeInSeconds == null ? 43 : this.maxAgeInSeconds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

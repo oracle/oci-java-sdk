@@ -200,8 +200,8 @@ public class ListExadataConfigurationsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListExadataConfigurationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataConfigurationCollection(response.getItem());
 

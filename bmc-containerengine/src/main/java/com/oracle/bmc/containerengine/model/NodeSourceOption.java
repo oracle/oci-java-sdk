@@ -28,7 +28,7 @@ package com.oracle.bmc.containerengine.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class NodeSourceOption {
+public class NodeSourceOption extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceName"})
     protected NodeSourceOption(String sourceName) {
@@ -65,6 +65,7 @@ public class NodeSourceOption {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NodeSourceOption(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceName=").append(String.valueOf(this.sourceName));
         sb.append(")");
         return sb.toString();
@@ -80,7 +81,7 @@ public class NodeSourceOption {
         }
 
         NodeSourceOption other = (NodeSourceOption) o;
-        return java.util.Objects.equals(this.sourceName, other.sourceName);
+        return java.util.Objects.equals(this.sourceName, other.sourceName) && super.equals(other);
     }
 
     @Override
@@ -88,6 +89,7 @@ public class NodeSourceOption {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

@@ -106,7 +106,8 @@ public class GetCommitConverter {
 
                                 com.oracle.bmc.devops.responses.GetCommitResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.GetCommitResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.repositoryCommit(response.getItem());
 

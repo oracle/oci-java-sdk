@@ -124,8 +124,8 @@ public class ListDataKeysConverter {
                                         builder =
                                                 com.oracle.bmc.apmcontrolplane.responses
                                                         .ListDataKeysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

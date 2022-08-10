@@ -60,16 +60,18 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDbSysstatCollection"
     })
     private SummarizeAwrDbSysstatsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection awrDbSysstatCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDbSysstatCollection = awrDbSysstatCollection;
@@ -80,6 +82,13 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -147,6 +156,7 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(SummarizeAwrDbSysstatsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDbSysstatCollection(o.getAwrDbSysstatCollection());
@@ -160,7 +170,7 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
          */
         public SummarizeAwrDbSysstatsResponse build() {
             return new SummarizeAwrDbSysstatsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbSysstatCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, awrDbSysstatCollection);
         }
     }
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = EstimatePurgeDataSizeResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EstimatePurgeDataSizeResult {
+public final class EstimatePurgeDataSizeResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"purgeDataSizeInBytes"})
     public EstimatePurgeDataSizeResult(Long purgeDataSizeInBytes) {
@@ -51,18 +52,20 @@ public final class EstimatePurgeDataSizeResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EstimatePurgeDataSizeResult build() {
-            EstimatePurgeDataSizeResult __instance__ =
-                    new EstimatePurgeDataSizeResult(purgeDataSizeInBytes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EstimatePurgeDataSizeResult model =
+                    new EstimatePurgeDataSizeResult(this.purgeDataSizeInBytes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EstimatePurgeDataSizeResult o) {
-            Builder copiedBuilder = purgeDataSizeInBytes(o.getPurgeDataSizeInBytes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EstimatePurgeDataSizeResult model) {
+            if (model.wasPropertyExplicitlySet("purgeDataSizeInBytes")) {
+                this.purgeDataSizeInBytes(model.getPurgeDataSizeInBytes());
+            }
+            return this;
         }
     }
 
@@ -104,8 +107,8 @@ public final class EstimatePurgeDataSizeResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EstimatePurgeDataSizeResult(");
+        sb.append("super=").append(super.toString());
         sb.append("purgeDataSizeInBytes=").append(String.valueOf(this.purgeDataSizeInBytes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +124,7 @@ public final class EstimatePurgeDataSizeResult {
 
         EstimatePurgeDataSizeResult other = (EstimatePurgeDataSizeResult) o;
         return java.util.Objects.equals(this.purgeDataSizeInBytes, other.purgeDataSizeInBytes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -133,16 +136,7 @@ public final class EstimatePurgeDataSizeResult {
                         + (this.purgeDataSizeInBytes == null
                                 ? 43
                                 : this.purgeDataSizeInBytes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

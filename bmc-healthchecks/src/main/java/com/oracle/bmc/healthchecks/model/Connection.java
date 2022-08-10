@@ -17,7 +17,7 @@ package com.oracle.bmc.healthchecks.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Connection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Connection {
+public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"address", "port"})
     public Connection(String address, Integer port) {
@@ -65,17 +65,22 @@ public final class Connection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Connection build() {
-            Connection __instance__ = new Connection(address, port);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Connection model = new Connection(this.address, this.port);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Connection o) {
-            Builder copiedBuilder = address(o.getAddress()).port(o.getPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Connection model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class Connection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Connection(");
+        sb.append("super=").append(super.toString());
         sb.append("address=").append(String.valueOf(this.address));
         sb.append(", port=").append(String.valueOf(this.port));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class Connection {
         Connection other = (Connection) o;
         return java.util.Objects.equals(this.address, other.address)
                 && java.util.Objects.equals(this.port, other.port)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class Connection {
         int result = 1;
         result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -130,8 +130,8 @@ public class GetNetworkingTopologyConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetNetworkingTopologyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkingTopology(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = AwrDatabaseTopWaitEventSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDatabaseTopWaitEventSummary {
+public final class AwrDatabaseTopWaitEventSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "waitsPerSec", "avgWaitTimePerSec"})
     public AwrDatabaseTopWaitEventSummary(
@@ -85,21 +86,27 @@ public final class AwrDatabaseTopWaitEventSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDatabaseTopWaitEventSummary build() {
-            AwrDatabaseTopWaitEventSummary __instance__ =
-                    new AwrDatabaseTopWaitEventSummary(name, waitsPerSec, avgWaitTimePerSec);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AwrDatabaseTopWaitEventSummary model =
+                    new AwrDatabaseTopWaitEventSummary(
+                            this.name, this.waitsPerSec, this.avgWaitTimePerSec);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDatabaseTopWaitEventSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .waitsPerSec(o.getWaitsPerSec())
-                            .avgWaitTimePerSec(o.getAvgWaitTimePerSec());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDatabaseTopWaitEventSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("waitsPerSec")) {
+                this.waitsPerSec(model.getWaitsPerSec());
+            }
+            if (model.wasPropertyExplicitlySet("avgWaitTimePerSec")) {
+                this.avgWaitTimePerSec(model.getAvgWaitTimePerSec());
+            }
+            return this;
         }
     }
 
@@ -169,10 +176,10 @@ public final class AwrDatabaseTopWaitEventSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDatabaseTopWaitEventSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", waitsPerSec=").append(String.valueOf(this.waitsPerSec));
         sb.append(", avgWaitTimePerSec=").append(String.valueOf(this.avgWaitTimePerSec));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +197,7 @@ public final class AwrDatabaseTopWaitEventSummary {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.waitsPerSec, other.waitsPerSec)
                 && java.util.Objects.equals(this.avgWaitTimePerSec, other.avgWaitTimePerSec)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +209,7 @@ public final class AwrDatabaseTopWaitEventSummary {
         result =
                 (result * PRIME)
                         + (this.avgWaitTimePerSec == null ? 43 : this.avgWaitTimePerSec.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

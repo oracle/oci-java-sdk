@@ -19,7 +19,8 @@ package com.oracle.bmc.computeinstanceagent.model;
     builder = CreateInstanceAgentCommandDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateInstanceAgentCommandDetails {
+public final class CreateInstanceAgentCommandDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -141,24 +142,37 @@ public final class CreateInstanceAgentCommandDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateInstanceAgentCommandDetails build() {
-            CreateInstanceAgentCommandDetails __instance__ =
+            CreateInstanceAgentCommandDetails model =
                     new CreateInstanceAgentCommandDetails(
-                            compartmentId, executionTimeOutInSeconds, displayName, target, content);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.executionTimeOutInSeconds,
+                            this.displayName,
+                            this.target,
+                            this.content);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateInstanceAgentCommandDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .executionTimeOutInSeconds(o.getExecutionTimeOutInSeconds())
-                            .displayName(o.getDisplayName())
-                            .target(o.getTarget())
-                            .content(o.getContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateInstanceAgentCommandDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("executionTimeOutInSeconds")) {
+                this.executionTimeOutInSeconds(model.getExecutionTimeOutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            return this;
         }
     }
 
@@ -268,13 +282,13 @@ public final class CreateInstanceAgentCommandDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateInstanceAgentCommandDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", executionTimeOutInSeconds=")
                 .append(String.valueOf(this.executionTimeOutInSeconds));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", target=").append(String.valueOf(this.target));
         sb.append(", content=").append(String.valueOf(this.content));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -295,7 +309,7 @@ public final class CreateInstanceAgentCommandDetails {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.content, other.content)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -313,16 +327,7 @@ public final class CreateInstanceAgentCommandDetails {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

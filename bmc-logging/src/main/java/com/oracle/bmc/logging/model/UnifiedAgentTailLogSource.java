@@ -58,18 +58,26 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentTailLogSource build() {
-            UnifiedAgentTailLogSource __instance__ =
-                    new UnifiedAgentTailLogSource(name, paths, parser);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UnifiedAgentTailLogSource model =
+                    new UnifiedAgentTailLogSource(this.name, this.paths, this.parser);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentTailLogSource o) {
-            Builder copiedBuilder = name(o.getName()).paths(o.getPaths()).parser(o.getParser());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentTailLogSource model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("paths")) {
+                this.paths(model.getPaths());
+            }
+            if (model.wasPropertyExplicitlySet("parser")) {
+                this.parser(model.getParser());
+            }
+            return this;
         }
     }
 
@@ -122,7 +130,6 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", paths=").append(String.valueOf(this.paths));
         sb.append(", parser=").append(String.valueOf(this.parser));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -139,8 +146,7 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         UnifiedAgentTailLogSource other = (UnifiedAgentTailLogSource) o;
         return java.util.Objects.equals(this.paths, other.paths)
                 && java.util.Objects.equals(this.parser, other.parser)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -149,16 +155,6 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         int result = super.hashCode();
         result = (result * PRIME) + (this.paths == null ? 43 : this.paths.hashCode());
         result = (result * PRIME) + (this.parser == null ? 43 : this.parser.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

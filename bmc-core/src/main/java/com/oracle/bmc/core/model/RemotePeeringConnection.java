@@ -28,7 +28,8 @@ package com.oracle.bmc.core.model;
     builder = RemotePeeringConnection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RemotePeeringConnection {
+public final class RemotePeeringConnection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -339,44 +340,69 @@ public final class RemotePeeringConnection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RemotePeeringConnection build() {
-            RemotePeeringConnection __instance__ =
+            RemotePeeringConnection model =
                     new RemotePeeringConnection(
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            drgId,
-                            freeformTags,
-                            id,
-                            isCrossTenancyPeering,
-                            lifecycleState,
-                            peerId,
-                            peerRegionName,
-                            peerTenancyId,
-                            peeringStatus,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.drgId,
+                            this.freeformTags,
+                            this.id,
+                            this.isCrossTenancyPeering,
+                            this.lifecycleState,
+                            this.peerId,
+                            this.peerRegionName,
+                            this.peerTenancyId,
+                            this.peeringStatus,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RemotePeeringConnection o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .drgId(o.getDrgId())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .isCrossTenancyPeering(o.getIsCrossTenancyPeering())
-                            .lifecycleState(o.getLifecycleState())
-                            .peerId(o.getPeerId())
-                            .peerRegionName(o.getPeerRegionName())
-                            .peerTenancyId(o.getPeerTenancyId())
-                            .peeringStatus(o.getPeeringStatus())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RemotePeeringConnection model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("drgId")) {
+                this.drgId(model.getDrgId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("isCrossTenancyPeering")) {
+                this.isCrossTenancyPeering(model.getIsCrossTenancyPeering());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("peerId")) {
+                this.peerId(model.getPeerId());
+            }
+            if (model.wasPropertyExplicitlySet("peerRegionName")) {
+                this.peerRegionName(model.getPeerRegionName());
+            }
+            if (model.wasPropertyExplicitlySet("peerTenancyId")) {
+                this.peerTenancyId(model.getPeerTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("peeringStatus")) {
+                this.peeringStatus(model.getPeeringStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -738,6 +764,7 @@ public final class RemotePeeringConnection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RemotePeeringConnection(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -751,7 +778,6 @@ public final class RemotePeeringConnection {
         sb.append(", peerTenancyId=").append(String.valueOf(this.peerTenancyId));
         sb.append(", peeringStatus=").append(String.valueOf(this.peeringStatus));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -779,7 +805,7 @@ public final class RemotePeeringConnection {
                 && java.util.Objects.equals(this.peerTenancyId, other.peerTenancyId)
                 && java.util.Objects.equals(this.peeringStatus, other.peeringStatus)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -813,16 +839,7 @@ public final class RemotePeeringConnection {
                 (result * PRIME)
                         + (this.peeringStatus == null ? 43 : this.peeringStatus.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

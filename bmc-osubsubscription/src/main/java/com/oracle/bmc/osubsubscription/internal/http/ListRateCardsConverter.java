@@ -185,8 +185,8 @@ public class ListRateCardsConverter {
                                         builder =
                                                 com.oracle.bmc.osubsubscription.responses
                                                         .ListRateCardsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

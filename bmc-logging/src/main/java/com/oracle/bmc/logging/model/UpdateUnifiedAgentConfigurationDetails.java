@@ -19,7 +19,8 @@ package com.oracle.bmc.logging.model;
     builder = UpdateUnifiedAgentConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateUnifiedAgentConfigurationDetails {
+public final class UpdateUnifiedAgentConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -173,32 +174,45 @@ public final class UpdateUnifiedAgentConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateUnifiedAgentConfigurationDetails build() {
-            UpdateUnifiedAgentConfigurationDetails __instance__ =
+            UpdateUnifiedAgentConfigurationDetails model =
                     new UpdateUnifiedAgentConfigurationDetails(
-                            displayName,
-                            isEnabled,
-                            definedTags,
-                            freeformTags,
-                            description,
-                            serviceConfiguration,
-                            groupAssociation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isEnabled,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.description,
+                            this.serviceConfiguration,
+                            this.groupAssociation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateUnifiedAgentConfigurationDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isEnabled(o.getIsEnabled())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .description(o.getDescription())
-                            .serviceConfiguration(o.getServiceConfiguration())
-                            .groupAssociation(o.getGroupAssociation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateUnifiedAgentConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("serviceConfiguration")) {
+                this.serviceConfiguration(model.getServiceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("groupAssociation")) {
+                this.groupAssociation(model.getGroupAssociation());
+            }
+            return this;
         }
     }
 
@@ -328,6 +342,7 @@ public final class UpdateUnifiedAgentConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateUnifiedAgentConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -335,7 +350,6 @@ public final class UpdateUnifiedAgentConfigurationDetails {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", serviceConfiguration=").append(String.valueOf(this.serviceConfiguration));
         sb.append(", groupAssociation=").append(String.valueOf(this.groupAssociation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -357,7 +371,7 @@ public final class UpdateUnifiedAgentConfigurationDetails {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.serviceConfiguration, other.serviceConfiguration)
                 && java.util.Objects.equals(this.groupAssociation, other.groupAssociation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -377,16 +391,7 @@ public final class UpdateUnifiedAgentConfigurationDetails {
         result =
                 (result * PRIME)
                         + (this.groupAssociation == null ? 43 : this.groupAssociation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

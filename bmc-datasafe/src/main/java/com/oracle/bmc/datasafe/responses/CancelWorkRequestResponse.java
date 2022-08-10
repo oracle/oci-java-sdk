@@ -36,10 +36,18 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
         return retryAfter;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "retryAfter"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "retryAfter"
+    })
     private CancelWorkRequestResponse(
-            int __httpStatusCode__, String opcRequestId, Integer retryAfter) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            Integer retryAfter) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.retryAfter = retryAfter;
     }
@@ -49,6 +57,13 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -90,6 +105,7 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CancelWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());
 
@@ -101,7 +117,8 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public CancelWorkRequestResponse build() {
-            return new CancelWorkRequestResponse(__httpStatusCode__, opcRequestId, retryAfter);
+            return new CancelWorkRequestResponse(
+                    __httpStatusCode__, headers, opcRequestId, retryAfter);
         }
     }
 

@@ -107,8 +107,8 @@ public class UpdateSessionConverter {
                                         builder =
                                                 com.oracle.bmc.bastion.responses
                                                         .UpdateSessionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.session(response.getItem());
 

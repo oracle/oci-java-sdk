@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ConfigProvider.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfigProvider {
+public final class ConfigProvider extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bindings", "childProviders"})
     public ConfigProvider(
@@ -67,17 +67,22 @@ public final class ConfigProvider {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigProvider build() {
-            ConfigProvider __instance__ = new ConfigProvider(bindings, childProviders);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ConfigProvider model = new ConfigProvider(this.bindings, this.childProviders);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConfigProvider o) {
-            Builder copiedBuilder = bindings(o.getBindings()).childProviders(o.getChildProviders());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConfigProvider model) {
+            if (model.wasPropertyExplicitlySet("bindings")) {
+                this.bindings(model.getBindings());
+            }
+            if (model.wasPropertyExplicitlySet("childProviders")) {
+                this.childProviders(model.getChildProviders());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class ConfigProvider {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfigProvider(");
+        sb.append("super=").append(super.toString());
         sb.append("bindings=").append(String.valueOf(this.bindings));
         sb.append(", childProviders=").append(String.valueOf(this.childProviders));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class ConfigProvider {
         ConfigProvider other = (ConfigProvider) o;
         return java.util.Objects.equals(this.bindings, other.bindings)
                 && java.util.Objects.equals(this.childProviders, other.childProviders)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +168,7 @@ public final class ConfigProvider {
         result =
                 (result * PRIME)
                         + (this.childProviders == null ? 43 : this.childProviders.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

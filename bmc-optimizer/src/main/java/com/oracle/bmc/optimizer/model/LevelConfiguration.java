@@ -19,7 +19,7 @@ package com.oracle.bmc.optimizer.model;
     builder = LevelConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LevelConfiguration {
+public final class LevelConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"recommendationId", "level"})
     public LevelConfiguration(String recommendationId, String level) {
@@ -67,17 +67,22 @@ public final class LevelConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LevelConfiguration build() {
-            LevelConfiguration __instance__ = new LevelConfiguration(recommendationId, level);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LevelConfiguration model = new LevelConfiguration(this.recommendationId, this.level);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LevelConfiguration o) {
-            Builder copiedBuilder = recommendationId(o.getRecommendationId()).level(o.getLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LevelConfiguration model) {
+            if (model.wasPropertyExplicitlySet("recommendationId")) {
+                this.recommendationId(model.getRecommendationId());
+            }
+            if (model.wasPropertyExplicitlySet("level")) {
+                this.level(model.getLevel());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class LevelConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LevelConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("recommendationId=").append(String.valueOf(this.recommendationId));
         sb.append(", level=").append(String.valueOf(this.level));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class LevelConfiguration {
         LevelConfiguration other = (LevelConfiguration) o;
         return java.util.Objects.equals(this.recommendationId, other.recommendationId)
                 && java.util.Objects.equals(this.level, other.level)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +168,7 @@ public final class LevelConfiguration {
                 (result * PRIME)
                         + (this.recommendationId == null ? 43 : this.recommendationId.hashCode());
         result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

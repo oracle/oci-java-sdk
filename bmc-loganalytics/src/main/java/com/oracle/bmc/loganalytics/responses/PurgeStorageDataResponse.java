@@ -55,13 +55,18 @@ public class PurgeStorageDataResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcWorkRequestId",
         "location"
     })
     private PurgeStorageDataResponse(
-            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId, String location) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId,
+            String location) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
         this.location = location;
@@ -72,6 +77,13 @@ public class PurgeStorageDataResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +144,7 @@ public class PurgeStorageDataResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(PurgeStorageDataResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
             location(o.getLocation());
@@ -145,7 +158,7 @@ public class PurgeStorageDataResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public PurgeStorageDataResponse build() {
             return new PurgeStorageDataResponse(
-                    __httpStatusCode__, opcRequestId, opcWorkRequestId, location);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId, location);
         }
     }
 

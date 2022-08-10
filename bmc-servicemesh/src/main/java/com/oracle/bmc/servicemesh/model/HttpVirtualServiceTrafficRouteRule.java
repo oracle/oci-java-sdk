@@ -93,22 +93,30 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HttpVirtualServiceTrafficRouteRule build() {
-            HttpVirtualServiceTrafficRouteRule __instance__ =
-                    new HttpVirtualServiceTrafficRouteRule(destinations, path, pathType, isGrpc);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HttpVirtualServiceTrafficRouteRule model =
+                    new HttpVirtualServiceTrafficRouteRule(
+                            this.destinations, this.path, this.pathType, this.isGrpc);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HttpVirtualServiceTrafficRouteRule o) {
-            Builder copiedBuilder =
-                    destinations(o.getDestinations())
-                            .path(o.getPath())
-                            .pathType(o.getPathType())
-                            .isGrpc(o.getIsGrpc());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HttpVirtualServiceTrafficRouteRule model) {
+            if (model.wasPropertyExplicitlySet("destinations")) {
+                this.destinations(model.getDestinations());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("pathType")) {
+                this.pathType(model.getPathType());
+            }
+            if (model.wasPropertyExplicitlySet("isGrpc")) {
+                this.isGrpc(model.getIsGrpc());
+            }
+            return this;
         }
     }
 
@@ -245,7 +253,6 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", pathType=").append(String.valueOf(this.pathType));
         sb.append(", isGrpc=").append(String.valueOf(this.isGrpc));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -263,8 +270,7 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
         return java.util.Objects.equals(this.path, other.path)
                 && java.util.Objects.equals(this.pathType, other.pathType)
                 && java.util.Objects.equals(this.isGrpc, other.isGrpc)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -274,16 +280,6 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
         result = (result * PRIME) + (this.pathType == null ? 43 : this.pathType.hashCode());
         result = (result * PRIME) + (this.isGrpc == null ? 43 : this.isGrpc.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

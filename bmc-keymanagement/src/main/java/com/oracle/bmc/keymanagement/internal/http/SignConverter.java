@@ -98,8 +98,8 @@ public class SignConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses.SignResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.signedData(response.getItem());
 

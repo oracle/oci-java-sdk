@@ -53,13 +53,20 @@ public class UpdateAttributeResponse extends com.oracle.bmc.responses.BmcRespons
         return attribute;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "attribute"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "attribute"
+    })
     private UpdateAttributeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.Attribute attribute) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.attribute = attribute;
@@ -70,6 +77,13 @@ public class UpdateAttributeResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateAttributeResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(UpdateAttributeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             attribute(o.getAttribute());
@@ -142,7 +157,8 @@ public class UpdateAttributeResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public UpdateAttributeResponse build() {
-            return new UpdateAttributeResponse(__httpStatusCode__, etag, opcRequestId, attribute);
+            return new UpdateAttributeResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, attribute);
         }
     }
 

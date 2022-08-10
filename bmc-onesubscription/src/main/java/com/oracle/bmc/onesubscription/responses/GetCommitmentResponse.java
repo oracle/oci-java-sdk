@@ -38,12 +38,18 @@ public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse 
         return commitment;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "commitment"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "commitment"
+    })
     private GetCommitmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.onesubscription.model.Commitment commitment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.commitment = commitment;
     }
@@ -53,6 +59,13 @@ public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(GetCommitmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             commitment(o.getCommitment());
 
@@ -107,7 +121,7 @@ public class GetCommitmentResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public GetCommitmentResponse build() {
-            return new GetCommitmentResponse(__httpStatusCode__, opcRequestId, commitment);
+            return new GetCommitmentResponse(__httpStatusCode__, headers, opcRequestId, commitment);
         }
     }
 

@@ -183,50 +183,81 @@ public final class ConnectionFromBICC extends Connection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectionFromBICC build() {
-            ConnectionFromBICC __instance__ =
+            ConnectionFromBICC model =
                     new ConnectionFromBICC(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            primarySchema,
-                            connectionProperties,
-                            isDefault,
-                            metadata,
-                            keyMap,
-                            username,
-                            passwordSecret,
-                            defaultExternalStorage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.primarySchema,
+                            this.connectionProperties,
+                            this.isDefault,
+                            this.metadata,
+                            this.keyMap,
+                            this.username,
+                            this.passwordSecret,
+                            this.defaultExternalStorage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectionFromBICC o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .primarySchema(o.getPrimarySchema())
-                            .connectionProperties(o.getConnectionProperties())
-                            .isDefault(o.getIsDefault())
-                            .metadata(o.getMetadata())
-                            .keyMap(o.getKeyMap())
-                            .username(o.getUsername())
-                            .passwordSecret(o.getPasswordSecret())
-                            .defaultExternalStorage(o.getDefaultExternalStorage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConnectionFromBICC model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("primarySchema")) {
+                this.primarySchema(model.getPrimarySchema());
+            }
+            if (model.wasPropertyExplicitlySet("connectionProperties")) {
+                this.connectionProperties(model.getConnectionProperties());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("keyMap")) {
+                this.keyMap(model.getKeyMap());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecret")) {
+                this.passwordSecret(model.getPasswordSecret());
+            }
+            if (model.wasPropertyExplicitlySet("defaultExternalStorage")) {
+                this.defaultExternalStorage(model.getDefaultExternalStorage());
+            }
+            return this;
         }
     }
 
@@ -323,7 +354,6 @@ public final class ConnectionFromBICC extends Connection {
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", passwordSecret=").append(String.valueOf(this.passwordSecret));
         sb.append(", defaultExternalStorage=").append(String.valueOf(this.defaultExternalStorage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -342,8 +372,7 @@ public final class ConnectionFromBICC extends Connection {
                 && java.util.Objects.equals(this.passwordSecret, other.passwordSecret)
                 && java.util.Objects.equals(
                         this.defaultExternalStorage, other.defaultExternalStorage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -359,16 +388,6 @@ public final class ConnectionFromBICC extends Connection {
                         + (this.defaultExternalStorage == null
                                 ? 43
                                 : this.defaultExternalStorage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

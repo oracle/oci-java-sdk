@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = ExternalPublicationValidationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExternalPublicationValidationSummary {
+public final class ExternalPublicationValidationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalMessageCount",
@@ -149,30 +150,41 @@ public final class ExternalPublicationValidationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalPublicationValidationSummary build() {
-            ExternalPublicationValidationSummary __instance__ =
+            ExternalPublicationValidationSummary model =
                     new ExternalPublicationValidationSummary(
-                            totalMessageCount,
-                            errorMessageCount,
-                            warnMessageCount,
-                            infoMessageCount,
-                            validationMessages,
-                            key);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalMessageCount,
+                            this.errorMessageCount,
+                            this.warnMessageCount,
+                            this.infoMessageCount,
+                            this.validationMessages,
+                            this.key);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalPublicationValidationSummary o) {
-            Builder copiedBuilder =
-                    totalMessageCount(o.getTotalMessageCount())
-                            .errorMessageCount(o.getErrorMessageCount())
-                            .warnMessageCount(o.getWarnMessageCount())
-                            .infoMessageCount(o.getInfoMessageCount())
-                            .validationMessages(o.getValidationMessages())
-                            .key(o.getKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalPublicationValidationSummary model) {
+            if (model.wasPropertyExplicitlySet("totalMessageCount")) {
+                this.totalMessageCount(model.getTotalMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessageCount")) {
+                this.errorMessageCount(model.getErrorMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("warnMessageCount")) {
+                this.warnMessageCount(model.getWarnMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("infoMessageCount")) {
+                this.infoMessageCount(model.getInfoMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("validationMessages")) {
+                this.validationMessages(model.getValidationMessages());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            return this;
         }
     }
 
@@ -284,13 +296,13 @@ public final class ExternalPublicationValidationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalPublicationValidationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("totalMessageCount=").append(String.valueOf(this.totalMessageCount));
         sb.append(", errorMessageCount=").append(String.valueOf(this.errorMessageCount));
         sb.append(", warnMessageCount=").append(String.valueOf(this.warnMessageCount));
         sb.append(", infoMessageCount=").append(String.valueOf(this.infoMessageCount));
         sb.append(", validationMessages=").append(String.valueOf(this.validationMessages));
         sb.append(", key=").append(String.valueOf(this.key));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -311,7 +323,7 @@ public final class ExternalPublicationValidationSummary {
                 && java.util.Objects.equals(this.infoMessageCount, other.infoMessageCount)
                 && java.util.Objects.equals(this.validationMessages, other.validationMessages)
                 && java.util.Objects.equals(this.key, other.key)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -336,16 +348,7 @@ public final class ExternalPublicationValidationSummary {
                                 ? 43
                                 : this.validationMessages.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

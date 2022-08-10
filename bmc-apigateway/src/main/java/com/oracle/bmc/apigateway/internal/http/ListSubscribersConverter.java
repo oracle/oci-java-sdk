@@ -157,8 +157,8 @@ public class ListSubscribersConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .ListSubscribersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.subscriberCollection(response.getItem());
 

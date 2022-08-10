@@ -20,7 +20,8 @@ package com.oracle.bmc.dataflow.model;
     builder = UpdateApplicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateApplicationDetails {
+public final class UpdateApplicationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "className",
@@ -532,62 +533,105 @@ public final class UpdateApplicationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateApplicationDetails build() {
-            UpdateApplicationDetails __instance__ =
+            UpdateApplicationDetails model =
                     new UpdateApplicationDetails(
-                            className,
-                            fileUri,
-                            sparkVersion,
-                            language,
-                            archiveUri,
-                            arguments,
-                            configuration,
-                            definedTags,
-                            description,
-                            displayName,
-                            driverShape,
-                            driverShapeConfig,
-                            execute,
-                            executorShape,
-                            executorShapeConfig,
-                            freeformTags,
-                            logsBucketUri,
-                            metastoreId,
-                            numExecutors,
-                            parameters,
-                            privateEndpointId,
-                            warehouseBucketUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.className,
+                            this.fileUri,
+                            this.sparkVersion,
+                            this.language,
+                            this.archiveUri,
+                            this.arguments,
+                            this.configuration,
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.driverShape,
+                            this.driverShapeConfig,
+                            this.execute,
+                            this.executorShape,
+                            this.executorShapeConfig,
+                            this.freeformTags,
+                            this.logsBucketUri,
+                            this.metastoreId,
+                            this.numExecutors,
+                            this.parameters,
+                            this.privateEndpointId,
+                            this.warehouseBucketUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateApplicationDetails o) {
-            Builder copiedBuilder =
-                    className(o.getClassName())
-                            .fileUri(o.getFileUri())
-                            .sparkVersion(o.getSparkVersion())
-                            .language(o.getLanguage())
-                            .archiveUri(o.getArchiveUri())
-                            .arguments(o.getArguments())
-                            .configuration(o.getConfiguration())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .driverShape(o.getDriverShape())
-                            .driverShapeConfig(o.getDriverShapeConfig())
-                            .execute(o.getExecute())
-                            .executorShape(o.getExecutorShape())
-                            .executorShapeConfig(o.getExecutorShapeConfig())
-                            .freeformTags(o.getFreeformTags())
-                            .logsBucketUri(o.getLogsBucketUri())
-                            .metastoreId(o.getMetastoreId())
-                            .numExecutors(o.getNumExecutors())
-                            .parameters(o.getParameters())
-                            .privateEndpointId(o.getPrivateEndpointId())
-                            .warehouseBucketUri(o.getWarehouseBucketUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("className")) {
+                this.className(model.getClassName());
+            }
+            if (model.wasPropertyExplicitlySet("fileUri")) {
+                this.fileUri(model.getFileUri());
+            }
+            if (model.wasPropertyExplicitlySet("sparkVersion")) {
+                this.sparkVersion(model.getSparkVersion());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("archiveUri")) {
+                this.archiveUri(model.getArchiveUri());
+            }
+            if (model.wasPropertyExplicitlySet("arguments")) {
+                this.arguments(model.getArguments());
+            }
+            if (model.wasPropertyExplicitlySet("configuration")) {
+                this.configuration(model.getConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("driverShape")) {
+                this.driverShape(model.getDriverShape());
+            }
+            if (model.wasPropertyExplicitlySet("driverShapeConfig")) {
+                this.driverShapeConfig(model.getDriverShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("execute")) {
+                this.execute(model.getExecute());
+            }
+            if (model.wasPropertyExplicitlySet("executorShape")) {
+                this.executorShape(model.getExecutorShape());
+            }
+            if (model.wasPropertyExplicitlySet("executorShapeConfig")) {
+                this.executorShapeConfig(model.getExecutorShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("logsBucketUri")) {
+                this.logsBucketUri(model.getLogsBucketUri());
+            }
+            if (model.wasPropertyExplicitlySet("metastoreId")) {
+                this.metastoreId(model.getMetastoreId());
+            }
+            if (model.wasPropertyExplicitlySet("numExecutors")) {
+                this.numExecutors(model.getNumExecutors());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointId")) {
+                this.privateEndpointId(model.getPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("warehouseBucketUri")) {
+                this.warehouseBucketUri(model.getWarehouseBucketUri());
+            }
+            return this;
         }
     }
 
@@ -1001,6 +1045,7 @@ public final class UpdateApplicationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateApplicationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("className=").append(String.valueOf(this.className));
         sb.append(", fileUri=").append(String.valueOf(this.fileUri));
         sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
@@ -1023,7 +1068,6 @@ public final class UpdateApplicationDetails {
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1060,7 +1104,7 @@ public final class UpdateApplicationDetails {
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1107,16 +1151,7 @@ public final class UpdateApplicationDetails {
                         + (this.warehouseBucketUri == null
                                 ? 43
                                 : this.warehouseBucketUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

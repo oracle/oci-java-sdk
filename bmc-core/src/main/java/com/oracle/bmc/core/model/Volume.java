@@ -27,7 +27,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Volume.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Volume {
+public final class Volume extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -466,56 +466,93 @@ public final class Volume {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Volume build() {
-            Volume __instance__ =
+            Volume model =
                     new Volume(
-                            availabilityDomain,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            systemTags,
-                            id,
-                            isHydrated,
-                            kmsKeyId,
-                            lifecycleState,
-                            vpusPerGB,
-                            sizeInGBs,
-                            sizeInMBs,
-                            sourceDetails,
-                            timeCreated,
-                            volumeGroupId,
-                            isAutoTuneEnabled,
-                            autoTunedVpusPerGB,
-                            blockVolumeReplicas);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.systemTags,
+                            this.id,
+                            this.isHydrated,
+                            this.kmsKeyId,
+                            this.lifecycleState,
+                            this.vpusPerGB,
+                            this.sizeInGBs,
+                            this.sizeInMBs,
+                            this.sourceDetails,
+                            this.timeCreated,
+                            this.volumeGroupId,
+                            this.isAutoTuneEnabled,
+                            this.autoTunedVpusPerGB,
+                            this.blockVolumeReplicas);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Volume o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .systemTags(o.getSystemTags())
-                            .id(o.getId())
-                            .isHydrated(o.getIsHydrated())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .lifecycleState(o.getLifecycleState())
-                            .vpusPerGB(o.getVpusPerGB())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .sizeInMBs(o.getSizeInMBs())
-                            .sourceDetails(o.getSourceDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .volumeGroupId(o.getVolumeGroupId())
-                            .isAutoTuneEnabled(o.getIsAutoTuneEnabled())
-                            .autoTunedVpusPerGB(o.getAutoTunedVpusPerGB())
-                            .blockVolumeReplicas(o.getBlockVolumeReplicas());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Volume model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("isHydrated")) {
+                this.isHydrated(model.getIsHydrated());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("vpusPerGB")) {
+                this.vpusPerGB(model.getVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInMBs")) {
+                this.sizeInMBs(model.getSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("volumeGroupId")) {
+                this.volumeGroupId(model.getVolumeGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoTuneEnabled")) {
+                this.isAutoTuneEnabled(model.getIsAutoTuneEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoTunedVpusPerGB")) {
+                this.autoTunedVpusPerGB(model.getAutoTunedVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("blockVolumeReplicas")) {
+                this.blockVolumeReplicas(model.getBlockVolumeReplicas());
+            }
+            return this;
         }
     }
 
@@ -922,6 +959,7 @@ public final class Volume {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Volume(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -941,7 +979,6 @@ public final class Volume {
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", autoTunedVpusPerGB=").append(String.valueOf(this.autoTunedVpusPerGB));
         sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -975,7 +1012,7 @@ public final class Volume {
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.autoTunedVpusPerGB, other.autoTunedVpusPerGB)
                 && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1023,16 +1060,7 @@ public final class Volume {
                         + (this.blockVolumeReplicas == null
                                 ? 43
                                 : this.blockVolumeReplicas.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

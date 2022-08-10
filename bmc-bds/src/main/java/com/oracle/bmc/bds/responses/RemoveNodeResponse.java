@@ -40,10 +40,18 @@ public class RemoveNodeResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private RemoveNodeResponse(
-            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
     }
@@ -53,6 +61,13 @@ public class RemoveNodeResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -98,6 +113,7 @@ public class RemoveNodeResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(RemoveNodeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 
@@ -109,7 +125,8 @@ public class RemoveNodeResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public RemoveNodeResponse build() {
-            return new RemoveNodeResponse(__httpStatusCode__, opcRequestId, opcWorkRequestId);
+            return new RemoveNodeResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 

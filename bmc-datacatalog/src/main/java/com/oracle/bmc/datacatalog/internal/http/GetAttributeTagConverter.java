@@ -134,8 +134,8 @@ public class GetAttributeTagConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .GetAttributeTagResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.attributeTag(response.getItem());
 

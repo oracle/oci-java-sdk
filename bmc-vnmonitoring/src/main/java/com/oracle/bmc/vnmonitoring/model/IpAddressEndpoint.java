@@ -51,17 +51,19 @@ public final class IpAddressEndpoint extends Endpoint {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IpAddressEndpoint build() {
-            IpAddressEndpoint __instance__ = new IpAddressEndpoint(address);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IpAddressEndpoint model = new IpAddressEndpoint(this.address);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IpAddressEndpoint o) {
-            Builder copiedBuilder = address(o.getAddress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IpAddressEndpoint model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            return this;
         }
     }
 
@@ -113,7 +115,6 @@ public final class IpAddressEndpoint extends Endpoint {
         sb.append("IpAddressEndpoint(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", address=").append(String.valueOf(this.address));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -128,9 +129,7 @@ public final class IpAddressEndpoint extends Endpoint {
         }
 
         IpAddressEndpoint other = (IpAddressEndpoint) o;
-        return java.util.Objects.equals(this.address, other.address)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.address, other.address) && super.equals(other);
     }
 
     @Override
@@ -138,16 +137,6 @@ public final class IpAddressEndpoint extends Endpoint {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

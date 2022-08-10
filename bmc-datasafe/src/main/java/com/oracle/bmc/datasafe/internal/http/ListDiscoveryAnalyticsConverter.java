@@ -159,8 +159,8 @@ public class ListDiscoveryAnalyticsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListDiscoveryAnalyticsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.discoveryAnalyticsCollection(response.getItem());
 

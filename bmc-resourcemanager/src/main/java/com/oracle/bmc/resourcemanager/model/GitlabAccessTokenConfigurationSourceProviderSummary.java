@@ -137,38 +137,57 @@ public final class GitlabAccessTokenConfigurationSourceProviderSummary
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GitlabAccessTokenConfigurationSourceProviderSummary build() {
-            GitlabAccessTokenConfigurationSourceProviderSummary __instance__ =
+            GitlabAccessTokenConfigurationSourceProviderSummary model =
                     new GitlabAccessTokenConfigurationSourceProviderSummary(
-                            id,
-                            compartmentId,
-                            displayName,
-                            description,
-                            timeCreated,
-                            lifecycleState,
-                            privateServerConfigDetails,
-                            freeformTags,
-                            definedTags,
-                            apiEndpoint);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.privateServerConfigDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.apiEndpoint);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GitlabAccessTokenConfigurationSourceProviderSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .privateServerConfigDetails(o.getPrivateServerConfigDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .apiEndpoint(o.getApiEndpoint());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GitlabAccessTokenConfigurationSourceProviderSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("privateServerConfigDetails")) {
+                this.privateServerConfigDetails(model.getPrivateServerConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("apiEndpoint")) {
+                this.apiEndpoint(model.getApiEndpoint());
+            }
+            return this;
         }
     }
 
@@ -241,7 +260,6 @@ public final class GitlabAccessTokenConfigurationSourceProviderSummary
         sb.append("GitlabAccessTokenConfigurationSourceProviderSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", apiEndpoint=").append(String.valueOf(this.apiEndpoint));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -257,9 +275,7 @@ public final class GitlabAccessTokenConfigurationSourceProviderSummary
 
         GitlabAccessTokenConfigurationSourceProviderSummary other =
                 (GitlabAccessTokenConfigurationSourceProviderSummary) o;
-        return java.util.Objects.equals(this.apiEndpoint, other.apiEndpoint)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.apiEndpoint, other.apiEndpoint) && super.equals(other);
     }
 
     @Override
@@ -267,16 +283,6 @@ public final class GitlabAccessTokenConfigurationSourceProviderSummary
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.apiEndpoint == null ? 43 : this.apiEndpoint.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

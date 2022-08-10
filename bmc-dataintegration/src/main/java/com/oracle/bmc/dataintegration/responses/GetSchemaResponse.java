@@ -38,12 +38,13 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
         return schema;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "schema"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "schema"})
     private GetSchemaResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.Schema schema) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.schema = schema;
     }
@@ -53,6 +54,13 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetSchemaResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             schema(o.getSchema());
 
@@ -107,7 +116,7 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetSchemaResponse build() {
-            return new GetSchemaResponse(__httpStatusCode__, opcRequestId, schema);
+            return new GetSchemaResponse(__httpStatusCode__, headers, opcRequestId, schema);
         }
     }
 

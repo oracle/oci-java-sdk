@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = SourceSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SourceSummaryReport {
+public final class SourceSummaryReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nonOobCount", "autoAssociationSourceCount", "oobCount"})
     public SourceSummaryReport(
@@ -85,21 +85,27 @@ public final class SourceSummaryReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SourceSummaryReport build() {
-            SourceSummaryReport __instance__ =
-                    new SourceSummaryReport(nonOobCount, autoAssociationSourceCount, oobCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SourceSummaryReport model =
+                    new SourceSummaryReport(
+                            this.nonOobCount, this.autoAssociationSourceCount, this.oobCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SourceSummaryReport o) {
-            Builder copiedBuilder =
-                    nonOobCount(o.getNonOobCount())
-                            .autoAssociationSourceCount(o.getAutoAssociationSourceCount())
-                            .oobCount(o.getOobCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SourceSummaryReport model) {
+            if (model.wasPropertyExplicitlySet("nonOobCount")) {
+                this.nonOobCount(model.getNonOobCount());
+            }
+            if (model.wasPropertyExplicitlySet("autoAssociationSourceCount")) {
+                this.autoAssociationSourceCount(model.getAutoAssociationSourceCount());
+            }
+            if (model.wasPropertyExplicitlySet("oobCount")) {
+                this.oobCount(model.getOobCount());
+            }
+            return this;
         }
     }
 
@@ -169,11 +175,11 @@ public final class SourceSummaryReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SourceSummaryReport(");
+        sb.append("super=").append(super.toString());
         sb.append("nonOobCount=").append(String.valueOf(this.nonOobCount));
         sb.append(", autoAssociationSourceCount=")
                 .append(String.valueOf(this.autoAssociationSourceCount));
         sb.append(", oobCount=").append(String.valueOf(this.oobCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +198,7 @@ public final class SourceSummaryReport {
                 && java.util.Objects.equals(
                         this.autoAssociationSourceCount, other.autoAssociationSourceCount)
                 && java.util.Objects.equals(this.oobCount, other.oobCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +212,7 @@ public final class SourceSummaryReport {
                                 ? 43
                                 : this.autoAssociationSourceCount.hashCode());
         result = (result * PRIME) + (this.oobCount == null ? 43 : this.oobCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskRun.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaskRun {
+public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -612,82 +612,145 @@ public final class TaskRun {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaskRun build() {
-            TaskRun __instance__ =
+            TaskRun model =
                     new TaskRun(
-                            key,
-                            modelType,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            configProvider,
-                            status,
-                            startTimeMillis,
-                            endTimeMillis,
-                            lastUpdated,
-                            recordsWritten,
-                            bytesProcessed,
-                            errorMessage,
-                            expectedDuration,
-                            expectedDurationUnit,
-                            taskKey,
-                            externalId,
-                            retryAttempt,
-                            taskSchedule,
-                            metrics,
-                            outputs,
-                            executionErrors,
-                            terminationErrors,
-                            authMode,
-                            opcRequestId,
-                            objectStatus,
-                            taskType,
-                            identifier,
-                            metadata,
-                            keyMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.configProvider,
+                            this.status,
+                            this.startTimeMillis,
+                            this.endTimeMillis,
+                            this.lastUpdated,
+                            this.recordsWritten,
+                            this.bytesProcessed,
+                            this.errorMessage,
+                            this.expectedDuration,
+                            this.expectedDurationUnit,
+                            this.taskKey,
+                            this.externalId,
+                            this.retryAttempt,
+                            this.taskSchedule,
+                            this.metrics,
+                            this.outputs,
+                            this.executionErrors,
+                            this.terminationErrors,
+                            this.authMode,
+                            this.opcRequestId,
+                            this.objectStatus,
+                            this.taskType,
+                            this.identifier,
+                            this.metadata,
+                            this.keyMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaskRun o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .configProvider(o.getConfigProvider())
-                            .status(o.getStatus())
-                            .startTimeMillis(o.getStartTimeMillis())
-                            .endTimeMillis(o.getEndTimeMillis())
-                            .lastUpdated(o.getLastUpdated())
-                            .recordsWritten(o.getRecordsWritten())
-                            .bytesProcessed(o.getBytesProcessed())
-                            .errorMessage(o.getErrorMessage())
-                            .expectedDuration(o.getExpectedDuration())
-                            .expectedDurationUnit(o.getExpectedDurationUnit())
-                            .taskKey(o.getTaskKey())
-                            .externalId(o.getExternalId())
-                            .retryAttempt(o.getRetryAttempt())
-                            .taskSchedule(o.getTaskSchedule())
-                            .metrics(o.getMetrics())
-                            .outputs(o.getOutputs())
-                            .executionErrors(o.getExecutionErrors())
-                            .terminationErrors(o.getTerminationErrors())
-                            .authMode(o.getAuthMode())
-                            .opcRequestId(o.getOpcRequestId())
-                            .objectStatus(o.getObjectStatus())
-                            .taskType(o.getTaskType())
-                            .identifier(o.getIdentifier())
-                            .metadata(o.getMetadata())
-                            .keyMap(o.getKeyMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaskRun model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("configProvider")) {
+                this.configProvider(model.getConfigProvider());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("startTimeMillis")) {
+                this.startTimeMillis(model.getStartTimeMillis());
+            }
+            if (model.wasPropertyExplicitlySet("endTimeMillis")) {
+                this.endTimeMillis(model.getEndTimeMillis());
+            }
+            if (model.wasPropertyExplicitlySet("lastUpdated")) {
+                this.lastUpdated(model.getLastUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("recordsWritten")) {
+                this.recordsWritten(model.getRecordsWritten());
+            }
+            if (model.wasPropertyExplicitlySet("bytesProcessed")) {
+                this.bytesProcessed(model.getBytesProcessed());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("expectedDuration")) {
+                this.expectedDuration(model.getExpectedDuration());
+            }
+            if (model.wasPropertyExplicitlySet("expectedDurationUnit")) {
+                this.expectedDurationUnit(model.getExpectedDurationUnit());
+            }
+            if (model.wasPropertyExplicitlySet("taskKey")) {
+                this.taskKey(model.getTaskKey());
+            }
+            if (model.wasPropertyExplicitlySet("externalId")) {
+                this.externalId(model.getExternalId());
+            }
+            if (model.wasPropertyExplicitlySet("retryAttempt")) {
+                this.retryAttempt(model.getRetryAttempt());
+            }
+            if (model.wasPropertyExplicitlySet("taskSchedule")) {
+                this.taskSchedule(model.getTaskSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("metrics")) {
+                this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("outputs")) {
+                this.outputs(model.getOutputs());
+            }
+            if (model.wasPropertyExplicitlySet("executionErrors")) {
+                this.executionErrors(model.getExecutionErrors());
+            }
+            if (model.wasPropertyExplicitlySet("terminationErrors")) {
+                this.terminationErrors(model.getTerminationErrors());
+            }
+            if (model.wasPropertyExplicitlySet("authMode")) {
+                this.authMode(model.getAuthMode());
+            }
+            if (model.wasPropertyExplicitlySet("opcRequestId")) {
+                this.opcRequestId(model.getOpcRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("taskType")) {
+                this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("keyMap")) {
+                this.keyMap(model.getKeyMap());
+            }
+            return this;
         }
     }
 
@@ -1338,6 +1401,7 @@ public final class TaskRun {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TaskRun(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -1370,7 +1434,6 @@ public final class TaskRun {
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1417,7 +1480,7 @@ public final class TaskRun {
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1478,16 +1541,7 @@ public final class TaskRun {
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

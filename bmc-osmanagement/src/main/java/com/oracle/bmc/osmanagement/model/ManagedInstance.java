@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ManagedInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagedInstance {
+public final class ManagedInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -530,70 +530,121 @@ public final class ManagedInstance {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedInstance build() {
-            ManagedInstance __instance__ =
+            ManagedInstance model =
                     new ManagedInstance(
-                            displayName,
-                            id,
-                            description,
-                            lastCheckin,
-                            lastBoot,
-                            updatesAvailable,
-                            osName,
-                            osVersion,
-                            osKernelVersion,
-                            compartmentId,
-                            status,
-                            parentSoftwareSource,
-                            childSoftwareSources,
-                            managedInstanceGroups,
-                            osFamily,
-                            isRebootRequired,
-                            notificationTopicId,
-                            kspliceEffectiveKernelVersion,
-                            isDataCollectionAuthorized,
-                            autonomous,
-                            securityUpdatesAvailable,
-                            bugUpdatesAvailable,
-                            enhancementUpdatesAvailable,
-                            otherUpdatesAvailable,
-                            scheduledJobCount,
-                            workRequestCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.id,
+                            this.description,
+                            this.lastCheckin,
+                            this.lastBoot,
+                            this.updatesAvailable,
+                            this.osName,
+                            this.osVersion,
+                            this.osKernelVersion,
+                            this.compartmentId,
+                            this.status,
+                            this.parentSoftwareSource,
+                            this.childSoftwareSources,
+                            this.managedInstanceGroups,
+                            this.osFamily,
+                            this.isRebootRequired,
+                            this.notificationTopicId,
+                            this.kspliceEffectiveKernelVersion,
+                            this.isDataCollectionAuthorized,
+                            this.autonomous,
+                            this.securityUpdatesAvailable,
+                            this.bugUpdatesAvailable,
+                            this.enhancementUpdatesAvailable,
+                            this.otherUpdatesAvailable,
+                            this.scheduledJobCount,
+                            this.workRequestCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagedInstance o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .description(o.getDescription())
-                            .lastCheckin(o.getLastCheckin())
-                            .lastBoot(o.getLastBoot())
-                            .updatesAvailable(o.getUpdatesAvailable())
-                            .osName(o.getOsName())
-                            .osVersion(o.getOsVersion())
-                            .osKernelVersion(o.getOsKernelVersion())
-                            .compartmentId(o.getCompartmentId())
-                            .status(o.getStatus())
-                            .parentSoftwareSource(o.getParentSoftwareSource())
-                            .childSoftwareSources(o.getChildSoftwareSources())
-                            .managedInstanceGroups(o.getManagedInstanceGroups())
-                            .osFamily(o.getOsFamily())
-                            .isRebootRequired(o.getIsRebootRequired())
-                            .notificationTopicId(o.getNotificationTopicId())
-                            .kspliceEffectiveKernelVersion(o.getKspliceEffectiveKernelVersion())
-                            .isDataCollectionAuthorized(o.getIsDataCollectionAuthorized())
-                            .autonomous(o.getAutonomous())
-                            .securityUpdatesAvailable(o.getSecurityUpdatesAvailable())
-                            .bugUpdatesAvailable(o.getBugUpdatesAvailable())
-                            .enhancementUpdatesAvailable(o.getEnhancementUpdatesAvailable())
-                            .otherUpdatesAvailable(o.getOtherUpdatesAvailable())
-                            .scheduledJobCount(o.getScheduledJobCount())
-                            .workRequestCount(o.getWorkRequestCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagedInstance model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("lastCheckin")) {
+                this.lastCheckin(model.getLastCheckin());
+            }
+            if (model.wasPropertyExplicitlySet("lastBoot")) {
+                this.lastBoot(model.getLastBoot());
+            }
+            if (model.wasPropertyExplicitlySet("updatesAvailable")) {
+                this.updatesAvailable(model.getUpdatesAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("osName")) {
+                this.osName(model.getOsName());
+            }
+            if (model.wasPropertyExplicitlySet("osVersion")) {
+                this.osVersion(model.getOsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("osKernelVersion")) {
+                this.osKernelVersion(model.getOsKernelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("parentSoftwareSource")) {
+                this.parentSoftwareSource(model.getParentSoftwareSource());
+            }
+            if (model.wasPropertyExplicitlySet("childSoftwareSources")) {
+                this.childSoftwareSources(model.getChildSoftwareSources());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceGroups")) {
+                this.managedInstanceGroups(model.getManagedInstanceGroups());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            if (model.wasPropertyExplicitlySet("isRebootRequired")) {
+                this.isRebootRequired(model.getIsRebootRequired());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTopicId")) {
+                this.notificationTopicId(model.getNotificationTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("kspliceEffectiveKernelVersion")) {
+                this.kspliceEffectiveKernelVersion(model.getKspliceEffectiveKernelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isDataCollectionAuthorized")) {
+                this.isDataCollectionAuthorized(model.getIsDataCollectionAuthorized());
+            }
+            if (model.wasPropertyExplicitlySet("autonomous")) {
+                this.autonomous(model.getAutonomous());
+            }
+            if (model.wasPropertyExplicitlySet("securityUpdatesAvailable")) {
+                this.securityUpdatesAvailable(model.getSecurityUpdatesAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("bugUpdatesAvailable")) {
+                this.bugUpdatesAvailable(model.getBugUpdatesAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("enhancementUpdatesAvailable")) {
+                this.enhancementUpdatesAvailable(model.getEnhancementUpdatesAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("otherUpdatesAvailable")) {
+                this.otherUpdatesAvailable(model.getOtherUpdatesAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledJobCount")) {
+                this.scheduledJobCount(model.getScheduledJobCount());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestCount")) {
+                this.workRequestCount(model.getWorkRequestCount());
+            }
+            return this;
         }
     }
 
@@ -1038,6 +1089,7 @@ public final class ManagedInstance {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedInstance(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1068,7 +1120,6 @@ public final class ManagedInstance {
         sb.append(", otherUpdatesAvailable=").append(String.valueOf(this.otherUpdatesAvailable));
         sb.append(", scheduledJobCount=").append(String.valueOf(this.scheduledJobCount));
         sb.append(", workRequestCount=").append(String.valueOf(this.workRequestCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1113,7 +1164,7 @@ public final class ManagedInstance {
                 && java.util.Objects.equals(this.otherUpdatesAvailable, other.otherUpdatesAvailable)
                 && java.util.Objects.equals(this.scheduledJobCount, other.scheduledJobCount)
                 && java.util.Objects.equals(this.workRequestCount, other.workRequestCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1198,16 +1249,7 @@ public final class ManagedInstance {
         result =
                 (result * PRIME)
                         + (this.workRequestCount == null ? 43 : this.workRequestCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

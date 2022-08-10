@@ -126,8 +126,8 @@ public class ScheduleCertificateAuthorityVersionDeletionConverter {
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .ScheduleCertificateAuthorityVersionDeletionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

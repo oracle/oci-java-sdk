@@ -75,6 +75,7 @@ public class CreateBuildPipelineStageResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
@@ -83,12 +84,13 @@ public class CreateBuildPipelineStageResponse extends com.oracle.bmc.responses.B
     })
     private CreateBuildPipelineStageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
             com.oracle.bmc.devops.model.BuildPipelineStage buildPipelineStage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -101,6 +103,13 @@ public class CreateBuildPipelineStageResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -186,6 +195,7 @@ public class CreateBuildPipelineStageResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(CreateBuildPipelineStageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -202,6 +212,7 @@ public class CreateBuildPipelineStageResponse extends com.oracle.bmc.responses.B
         public CreateBuildPipelineStageResponse build() {
             return new CreateBuildPipelineStageResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcWorkRequestId,
                     opcRequestId,

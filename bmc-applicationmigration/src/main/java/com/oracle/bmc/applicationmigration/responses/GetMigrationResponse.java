@@ -53,13 +53,20 @@ public class GetMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
         return migration;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "migration"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "migration"
+    })
     private GetMigrationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.applicationmigration.model.Migration migration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.migration = migration;
@@ -70,6 +77,13 @@ public class GetMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetMigrationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             migration(o.getMigration());
@@ -142,7 +157,8 @@ public class GetMigrationResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetMigrationResponse build() {
-            return new GetMigrationResponse(__httpStatusCode__, opcRequestId, etag, migration);
+            return new GetMigrationResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, migration);
         }
     }
 

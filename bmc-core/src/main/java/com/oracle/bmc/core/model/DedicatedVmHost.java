@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DedicatedVmHost.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DedicatedVmHost {
+public final class DedicatedVmHost extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -365,46 +365,73 @@ public final class DedicatedVmHost {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DedicatedVmHost build() {
-            DedicatedVmHost __instance__ =
+            DedicatedVmHost model =
                     new DedicatedVmHost(
-                            availabilityDomain,
-                            compartmentId,
-                            dedicatedVmHostShape,
-                            definedTags,
-                            displayName,
-                            faultDomain,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            timeCreated,
-                            totalOcpus,
-                            remainingOcpus,
-                            totalMemoryInGBs,
-                            remainingMemoryInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.dedicatedVmHostShape,
+                            this.definedTags,
+                            this.displayName,
+                            this.faultDomain,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.totalOcpus,
+                            this.remainingOcpus,
+                            this.totalMemoryInGBs,
+                            this.remainingMemoryInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DedicatedVmHost o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .dedicatedVmHostShape(o.getDedicatedVmHostShape())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .faultDomain(o.getFaultDomain())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .totalOcpus(o.getTotalOcpus())
-                            .remainingOcpus(o.getRemainingOcpus())
-                            .totalMemoryInGBs(o.getTotalMemoryInGBs())
-                            .remainingMemoryInGBs(o.getRemainingMemoryInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DedicatedVmHost model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("dedicatedVmHostShape")) {
+                this.dedicatedVmHostShape(model.getDedicatedVmHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("totalOcpus")) {
+                this.totalOcpus(model.getTotalOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("remainingOcpus")) {
+                this.remainingOcpus(model.getRemainingOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalMemoryInGBs")) {
+                this.totalMemoryInGBs(model.getTotalMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("remainingMemoryInGBs")) {
+                this.remainingMemoryInGBs(model.getRemainingMemoryInGBs());
+            }
+            return this;
         }
     }
 
@@ -745,6 +772,7 @@ public final class DedicatedVmHost {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DedicatedVmHost(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dedicatedVmHostShape=").append(String.valueOf(this.dedicatedVmHostShape));
@@ -759,7 +787,6 @@ public final class DedicatedVmHost {
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
         sb.append(", totalMemoryInGBs=").append(String.valueOf(this.totalMemoryInGBs));
         sb.append(", remainingMemoryInGBs=").append(String.valueOf(this.remainingMemoryInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -788,7 +815,7 @@ public final class DedicatedVmHost {
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
                 && java.util.Objects.equals(this.totalMemoryInGBs, other.totalMemoryInGBs)
                 && java.util.Objects.equals(this.remainingMemoryInGBs, other.remainingMemoryInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -829,16 +856,7 @@ public final class DedicatedVmHost {
                         + (this.remainingMemoryInGBs == null
                                 ? 43
                                 : this.remainingMemoryInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.cloudguard.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SightingSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SightingSummary {
+public final class SightingSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -374,54 +374,89 @@ public final class SightingSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SightingSummary build() {
-            SightingSummary __instance__ =
+            SightingSummary model =
                     new SightingSummary(
-                            id,
-                            compartmentId,
-                            problemId,
-                            actorPrincipalId,
-                            actorPrincipalName,
-                            actorPrincipalType,
-                            detectorRuleId,
-                            classificationStatus,
-                            sightingType,
-                            sightingTypeDisplayName,
-                            tacticName,
-                            techniqueName,
-                            sightingScore,
-                            severity,
-                            confidence,
-                            timeFirstDetected,
-                            timeLastDetected,
-                            regions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.problemId,
+                            this.actorPrincipalId,
+                            this.actorPrincipalName,
+                            this.actorPrincipalType,
+                            this.detectorRuleId,
+                            this.classificationStatus,
+                            this.sightingType,
+                            this.sightingTypeDisplayName,
+                            this.tacticName,
+                            this.techniqueName,
+                            this.sightingScore,
+                            this.severity,
+                            this.confidence,
+                            this.timeFirstDetected,
+                            this.timeLastDetected,
+                            this.regions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SightingSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .problemId(o.getProblemId())
-                            .actorPrincipalId(o.getActorPrincipalId())
-                            .actorPrincipalName(o.getActorPrincipalName())
-                            .actorPrincipalType(o.getActorPrincipalType())
-                            .detectorRuleId(o.getDetectorRuleId())
-                            .classificationStatus(o.getClassificationStatus())
-                            .sightingType(o.getSightingType())
-                            .sightingTypeDisplayName(o.getSightingTypeDisplayName())
-                            .tacticName(o.getTacticName())
-                            .techniqueName(o.getTechniqueName())
-                            .sightingScore(o.getSightingScore())
-                            .severity(o.getSeverity())
-                            .confidence(o.getConfidence())
-                            .timeFirstDetected(o.getTimeFirstDetected())
-                            .timeLastDetected(o.getTimeLastDetected())
-                            .regions(o.getRegions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SightingSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("problemId")) {
+                this.problemId(model.getProblemId());
+            }
+            if (model.wasPropertyExplicitlySet("actorPrincipalId")) {
+                this.actorPrincipalId(model.getActorPrincipalId());
+            }
+            if (model.wasPropertyExplicitlySet("actorPrincipalName")) {
+                this.actorPrincipalName(model.getActorPrincipalName());
+            }
+            if (model.wasPropertyExplicitlySet("actorPrincipalType")) {
+                this.actorPrincipalType(model.getActorPrincipalType());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRuleId")) {
+                this.detectorRuleId(model.getDetectorRuleId());
+            }
+            if (model.wasPropertyExplicitlySet("classificationStatus")) {
+                this.classificationStatus(model.getClassificationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("sightingType")) {
+                this.sightingType(model.getSightingType());
+            }
+            if (model.wasPropertyExplicitlySet("sightingTypeDisplayName")) {
+                this.sightingTypeDisplayName(model.getSightingTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("tacticName")) {
+                this.tacticName(model.getTacticName());
+            }
+            if (model.wasPropertyExplicitlySet("techniqueName")) {
+                this.techniqueName(model.getTechniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("sightingScore")) {
+                this.sightingScore(model.getSightingScore());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstDetected")) {
+                this.timeFirstDetected(model.getTimeFirstDetected());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDetected")) {
+                this.timeLastDetected(model.getTimeLastDetected());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            return this;
         }
     }
 
@@ -701,6 +736,7 @@ public final class SightingSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SightingSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", problemId=").append(String.valueOf(this.problemId));
@@ -720,7 +756,6 @@ public final class SightingSummary {
         sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
         sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
         sb.append(", regions=").append(String.valueOf(this.regions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -754,7 +789,7 @@ public final class SightingSummary {
                 && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
                 && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
                 && java.util.Objects.equals(this.regions, other.regions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -809,16 +844,7 @@ public final class SightingSummary {
                 (result * PRIME)
                         + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

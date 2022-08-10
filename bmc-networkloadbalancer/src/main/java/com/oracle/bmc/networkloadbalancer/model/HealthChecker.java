@@ -19,7 +19,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HealthChecker.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HealthChecker {
+public final class HealthChecker extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "protocol",
@@ -280,38 +280,57 @@ public final class HealthChecker {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HealthChecker build() {
-            HealthChecker __instance__ =
+            HealthChecker model =
                     new HealthChecker(
-                            protocol,
-                            port,
-                            retries,
-                            timeoutInMillis,
-                            intervalInMillis,
-                            urlPath,
-                            responseBodyRegex,
-                            returnCode,
-                            requestData,
-                            responseData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.protocol,
+                            this.port,
+                            this.retries,
+                            this.timeoutInMillis,
+                            this.intervalInMillis,
+                            this.urlPath,
+                            this.responseBodyRegex,
+                            this.returnCode,
+                            this.requestData,
+                            this.responseData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HealthChecker o) {
-            Builder copiedBuilder =
-                    protocol(o.getProtocol())
-                            .port(o.getPort())
-                            .retries(o.getRetries())
-                            .timeoutInMillis(o.getTimeoutInMillis())
-                            .intervalInMillis(o.getIntervalInMillis())
-                            .urlPath(o.getUrlPath())
-                            .responseBodyRegex(o.getResponseBodyRegex())
-                            .returnCode(o.getReturnCode())
-                            .requestData(o.getRequestData())
-                            .responseData(o.getResponseData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HealthChecker model) {
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("retries")) {
+                this.retries(model.getRetries());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMillis")) {
+                this.timeoutInMillis(model.getTimeoutInMillis());
+            }
+            if (model.wasPropertyExplicitlySet("intervalInMillis")) {
+                this.intervalInMillis(model.getIntervalInMillis());
+            }
+            if (model.wasPropertyExplicitlySet("urlPath")) {
+                this.urlPath(model.getUrlPath());
+            }
+            if (model.wasPropertyExplicitlySet("responseBodyRegex")) {
+                this.responseBodyRegex(model.getResponseBodyRegex());
+            }
+            if (model.wasPropertyExplicitlySet("returnCode")) {
+                this.returnCode(model.getReturnCode());
+            }
+            if (model.wasPropertyExplicitlySet("requestData")) {
+                this.requestData(model.getRequestData());
+            }
+            if (model.wasPropertyExplicitlySet("responseData")) {
+                this.responseData(model.getResponseData());
+            }
+            return this;
         }
     }
 
@@ -535,6 +554,7 @@ public final class HealthChecker {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HealthChecker(");
+        sb.append("super=").append(super.toString());
         sb.append("protocol=").append(String.valueOf(this.protocol));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", retries=").append(String.valueOf(this.retries));
@@ -559,7 +579,6 @@ public final class HealthChecker {
                                         + (this.responseData != null
                                                 ? " (byte[" + this.responseData.length + "])"
                                                 : ""))));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -584,7 +603,7 @@ public final class HealthChecker {
                 && java.util.Objects.equals(this.returnCode, other.returnCode)
                 && java.util.Arrays.equals(this.requestData, other.requestData)
                 && java.util.Arrays.equals(this.responseData, other.responseData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -607,16 +626,7 @@ public final class HealthChecker {
         result = (result * PRIME) + (this.returnCode == null ? 43 : this.returnCode.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.requestData);
         result = (result * PRIME) + java.util.Arrays.hashCode(this.responseData);
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -25,7 +25,8 @@ package com.oracle.bmc.core.model;
     builder = DefaultDrgRouteTables.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DefaultDrgRouteTables {
+public final class DefaultDrgRouteTables
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcn",
@@ -129,23 +130,33 @@ public final class DefaultDrgRouteTables {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DefaultDrgRouteTables build() {
-            DefaultDrgRouteTables __instance__ =
+            DefaultDrgRouteTables model =
                     new DefaultDrgRouteTables(
-                            vcn, ipsecTunnel, virtualCircuit, remotePeeringConnection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.vcn,
+                            this.ipsecTunnel,
+                            this.virtualCircuit,
+                            this.remotePeeringConnection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DefaultDrgRouteTables o) {
-            Builder copiedBuilder =
-                    vcn(o.getVcn())
-                            .ipsecTunnel(o.getIpsecTunnel())
-                            .virtualCircuit(o.getVirtualCircuit())
-                            .remotePeeringConnection(o.getRemotePeeringConnection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DefaultDrgRouteTables model) {
+            if (model.wasPropertyExplicitlySet("vcn")) {
+                this.vcn(model.getVcn());
+            }
+            if (model.wasPropertyExplicitlySet("ipsecTunnel")) {
+                this.ipsecTunnel(model.getIpsecTunnel());
+            }
+            if (model.wasPropertyExplicitlySet("virtualCircuit")) {
+                this.virtualCircuit(model.getVirtualCircuit());
+            }
+            if (model.wasPropertyExplicitlySet("remotePeeringConnection")) {
+                this.remotePeeringConnection(model.getRemotePeeringConnection());
+            }
+            return this;
         }
     }
 
@@ -245,12 +256,12 @@ public final class DefaultDrgRouteTables {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DefaultDrgRouteTables(");
+        sb.append("super=").append(super.toString());
         sb.append("vcn=").append(String.valueOf(this.vcn));
         sb.append(", ipsecTunnel=").append(String.valueOf(this.ipsecTunnel));
         sb.append(", virtualCircuit=").append(String.valueOf(this.virtualCircuit));
         sb.append(", remotePeeringConnection=")
                 .append(String.valueOf(this.remotePeeringConnection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -270,7 +281,7 @@ public final class DefaultDrgRouteTables {
                 && java.util.Objects.equals(this.virtualCircuit, other.virtualCircuit)
                 && java.util.Objects.equals(
                         this.remotePeeringConnection, other.remotePeeringConnection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -287,16 +298,7 @@ public final class DefaultDrgRouteTables {
                         + (this.remotePeeringConnection == null
                                 ? 43
                                 : this.remotePeeringConnection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

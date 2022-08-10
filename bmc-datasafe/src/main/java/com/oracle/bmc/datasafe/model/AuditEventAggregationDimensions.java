@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = AuditEventAggregationDimensions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditEventAggregationDimensions {
+public final class AuditEventAggregationDimensions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditEventTime",
@@ -243,40 +244,61 @@ public final class AuditEventAggregationDimensions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditEventAggregationDimensions build() {
-            AuditEventAggregationDimensions __instance__ =
+            AuditEventAggregationDimensions model =
                     new AuditEventAggregationDimensions(
-                            auditEventTime,
-                            dbUserName,
-                            targetId,
-                            targetName,
-                            targetClass,
-                            objectType,
-                            clientHostname,
-                            clientProgram,
-                            clientId,
-                            auditType,
-                            eventName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.auditEventTime,
+                            this.dbUserName,
+                            this.targetId,
+                            this.targetName,
+                            this.targetClass,
+                            this.objectType,
+                            this.clientHostname,
+                            this.clientProgram,
+                            this.clientId,
+                            this.auditType,
+                            this.eventName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuditEventAggregationDimensions o) {
-            Builder copiedBuilder =
-                    auditEventTime(o.getAuditEventTime())
-                            .dbUserName(o.getDbUserName())
-                            .targetId(o.getTargetId())
-                            .targetName(o.getTargetName())
-                            .targetClass(o.getTargetClass())
-                            .objectType(o.getObjectType())
-                            .clientHostname(o.getClientHostname())
-                            .clientProgram(o.getClientProgram())
-                            .clientId(o.getClientId())
-                            .auditType(o.getAuditType())
-                            .eventName(o.getEventName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuditEventAggregationDimensions model) {
+            if (model.wasPropertyExplicitlySet("auditEventTime")) {
+                this.auditEventTime(model.getAuditEventTime());
+            }
+            if (model.wasPropertyExplicitlySet("dbUserName")) {
+                this.dbUserName(model.getDbUserName());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetName")) {
+                this.targetName(model.getTargetName());
+            }
+            if (model.wasPropertyExplicitlySet("targetClass")) {
+                this.targetClass(model.getTargetClass());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("clientHostname")) {
+                this.clientHostname(model.getClientHostname());
+            }
+            if (model.wasPropertyExplicitlySet("clientProgram")) {
+                this.clientProgram(model.getClientProgram());
+            }
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            if (model.wasPropertyExplicitlySet("auditType")) {
+                this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("eventName")) {
+                this.eventName(model.getEventName());
+            }
+            return this;
         }
     }
 
@@ -557,6 +579,7 @@ public final class AuditEventAggregationDimensions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditEventAggregationDimensions(");
+        sb.append("super=").append(super.toString());
         sb.append("auditEventTime=").append(String.valueOf(this.auditEventTime));
         sb.append(", dbUserName=").append(String.valueOf(this.dbUserName));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
@@ -568,7 +591,6 @@ public final class AuditEventAggregationDimensions {
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", auditType=").append(String.valueOf(this.auditType));
         sb.append(", eventName=").append(String.valueOf(this.eventName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -594,7 +616,7 @@ public final class AuditEventAggregationDimensions {
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.auditType, other.auditType)
                 && java.util.Objects.equals(this.eventName, other.eventName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -618,16 +640,7 @@ public final class AuditEventAggregationDimensions {
         result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
         result = (result * PRIME) + (this.eventName == null ? 43 : this.eventName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

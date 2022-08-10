@@ -103,7 +103,8 @@ public class RestartNodeConverter {
 
                                 com.oracle.bmc.bds.responses.RestartNodeResponse.Builder builder =
                                         com.oracle.bmc.bds.responses.RestartNodeResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

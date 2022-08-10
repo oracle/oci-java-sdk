@@ -123,8 +123,8 @@ public class UpdateAcceptedAgreementConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .UpdateAcceptedAgreementResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.acceptedAgreement(response.getItem());
 

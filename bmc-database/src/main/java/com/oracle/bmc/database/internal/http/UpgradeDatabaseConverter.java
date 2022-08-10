@@ -109,8 +109,8 @@ public class UpgradeDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpgradeDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.database(response.getItem());
 

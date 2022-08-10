@@ -20,7 +20,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = DeniedSecurityActionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeniedSecurityActionDetails {
+public final class DeniedSecurityActionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isRestrictedOrPartial",
@@ -100,22 +101,29 @@ public final class DeniedSecurityActionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeniedSecurityActionDetails build() {
-            DeniedSecurityActionDetails __instance__ =
+            DeniedSecurityActionDetails model =
                     new DeniedSecurityActionDetails(
-                            isRestrictedOrPartial, evaluatedSecurityListIds, evaluatedNsgIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isRestrictedOrPartial,
+                            this.evaluatedSecurityListIds,
+                            this.evaluatedNsgIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeniedSecurityActionDetails o) {
-            Builder copiedBuilder =
-                    isRestrictedOrPartial(o.getIsRestrictedOrPartial())
-                            .evaluatedSecurityListIds(o.getEvaluatedSecurityListIds())
-                            .evaluatedNsgIds(o.getEvaluatedNsgIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeniedSecurityActionDetails model) {
+            if (model.wasPropertyExplicitlySet("isRestrictedOrPartial")) {
+                this.isRestrictedOrPartial(model.getIsRestrictedOrPartial());
+            }
+            if (model.wasPropertyExplicitlySet("evaluatedSecurityListIds")) {
+                this.evaluatedSecurityListIds(model.getEvaluatedSecurityListIds());
+            }
+            if (model.wasPropertyExplicitlySet("evaluatedNsgIds")) {
+                this.evaluatedNsgIds(model.getEvaluatedNsgIds());
+            }
+            return this;
         }
     }
 
@@ -193,11 +201,11 @@ public final class DeniedSecurityActionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeniedSecurityActionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isRestrictedOrPartial=").append(String.valueOf(this.isRestrictedOrPartial));
         sb.append(", evaluatedSecurityListIds=")
                 .append(String.valueOf(this.evaluatedSecurityListIds));
         sb.append(", evaluatedNsgIds=").append(String.valueOf(this.evaluatedNsgIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -216,7 +224,7 @@ public final class DeniedSecurityActionDetails {
                 && java.util.Objects.equals(
                         this.evaluatedSecurityListIds, other.evaluatedSecurityListIds)
                 && java.util.Objects.equals(this.evaluatedNsgIds, other.evaluatedNsgIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -236,16 +244,7 @@ public final class DeniedSecurityActionDetails {
         result =
                 (result * PRIME)
                         + (this.evaluatedNsgIds == null ? 43 : this.evaluatedNsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

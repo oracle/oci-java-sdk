@@ -28,7 +28,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = UpdateBackendSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateBackendSetDetails {
+public final class UpdateBackendSetDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "policy",
@@ -135,31 +136,42 @@ public final class UpdateBackendSetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBackendSetDetails build() {
-            UpdateBackendSetDetails __instance__ =
+            UpdateBackendSetDetails model =
                     new UpdateBackendSetDetails(
-                            policy,
-                            backends,
-                            healthChecker,
-                            sslConfiguration,
-                            sessionPersistenceConfiguration,
-                            lbCookieSessionPersistenceConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.policy,
+                            this.backends,
+                            this.healthChecker,
+                            this.sslConfiguration,
+                            this.sessionPersistenceConfiguration,
+                            this.lbCookieSessionPersistenceConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateBackendSetDetails o) {
-            Builder copiedBuilder =
-                    policy(o.getPolicy())
-                            .backends(o.getBackends())
-                            .healthChecker(o.getHealthChecker())
-                            .sslConfiguration(o.getSslConfiguration())
-                            .sessionPersistenceConfiguration(o.getSessionPersistenceConfiguration())
-                            .lbCookieSessionPersistenceConfiguration(
-                                    o.getLbCookieSessionPersistenceConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateBackendSetDetails model) {
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("backends")) {
+                this.backends(model.getBackends());
+            }
+            if (model.wasPropertyExplicitlySet("healthChecker")) {
+                this.healthChecker(model.getHealthChecker());
+            }
+            if (model.wasPropertyExplicitlySet("sslConfiguration")) {
+                this.sslConfiguration(model.getSslConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("sessionPersistenceConfiguration")) {
+                this.sessionPersistenceConfiguration(model.getSessionPersistenceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("lbCookieSessionPersistenceConfiguration")) {
+                this.lbCookieSessionPersistenceConfiguration(
+                        model.getLbCookieSessionPersistenceConfiguration());
+            }
+            return this;
         }
     }
 
@@ -246,6 +258,7 @@ public final class UpdateBackendSetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateBackendSetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("policy=").append(String.valueOf(this.policy));
         sb.append(", backends=").append(String.valueOf(this.backends));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
@@ -254,7 +267,6 @@ public final class UpdateBackendSetDetails {
                 .append(String.valueOf(this.sessionPersistenceConfiguration));
         sb.append(", lbCookieSessionPersistenceConfiguration=")
                 .append(String.valueOf(this.lbCookieSessionPersistenceConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -278,7 +290,7 @@ public final class UpdateBackendSetDetails {
                 && java.util.Objects.equals(
                         this.lbCookieSessionPersistenceConfiguration,
                         other.lbCookieSessionPersistenceConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -303,16 +315,7 @@ public final class UpdateBackendSetDetails {
                         + (this.lbCookieSessionPersistenceConfiguration == null
                                 ? 43
                                 : this.lbCookieSessionPersistenceConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

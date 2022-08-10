@@ -118,8 +118,8 @@ public class UpdateRecordConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservicedataplane
                                                         .responses.UpdateRecordResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.record(response.getItem());
 

@@ -101,8 +101,8 @@ public class CreateBdsApiKeyConverter {
                                         builder =
                                                 com.oracle.bmc.bds.responses.CreateBdsApiKeyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -110,8 +110,8 @@ public class UpdateLibraryMaskingFormatConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .UpdateLibraryMaskingFormatResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

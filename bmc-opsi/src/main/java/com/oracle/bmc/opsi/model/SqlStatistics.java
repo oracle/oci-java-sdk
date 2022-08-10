@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlStatistics.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlStatistics {
+public final class SqlStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseTimeInSec",
@@ -394,58 +394,94 @@ public final class SqlStatistics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlStatistics build() {
-            SqlStatistics __instance__ =
+            SqlStatistics model =
                     new SqlStatistics(
-                            databaseTimeInSec,
-                            executionsPerHour,
-                            executionsCount,
-                            cpuTimeInSec,
-                            ioTimeInSec,
-                            inefficientWaitTimeInSec,
-                            responseTimeInSec,
-                            planCount,
-                            variability,
-                            averageActiveSessions,
-                            databaseTimePct,
-                            inefficiencyInPct,
-                            changeInCpuTimeInPct,
-                            changeInIoTimeInPct,
-                            changeInInefficientWaitTimeInPct,
-                            changeInResponseTimeInPct,
-                            changeInAverageActiveSessionsInPct,
-                            changeInExecutionsPerHourInPct,
-                            changeInInefficiencyInPct);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseTimeInSec,
+                            this.executionsPerHour,
+                            this.executionsCount,
+                            this.cpuTimeInSec,
+                            this.ioTimeInSec,
+                            this.inefficientWaitTimeInSec,
+                            this.responseTimeInSec,
+                            this.planCount,
+                            this.variability,
+                            this.averageActiveSessions,
+                            this.databaseTimePct,
+                            this.inefficiencyInPct,
+                            this.changeInCpuTimeInPct,
+                            this.changeInIoTimeInPct,
+                            this.changeInInefficientWaitTimeInPct,
+                            this.changeInResponseTimeInPct,
+                            this.changeInAverageActiveSessionsInPct,
+                            this.changeInExecutionsPerHourInPct,
+                            this.changeInInefficiencyInPct);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlStatistics o) {
-            Builder copiedBuilder =
-                    databaseTimeInSec(o.getDatabaseTimeInSec())
-                            .executionsPerHour(o.getExecutionsPerHour())
-                            .executionsCount(o.getExecutionsCount())
-                            .cpuTimeInSec(o.getCpuTimeInSec())
-                            .ioTimeInSec(o.getIoTimeInSec())
-                            .inefficientWaitTimeInSec(o.getInefficientWaitTimeInSec())
-                            .responseTimeInSec(o.getResponseTimeInSec())
-                            .planCount(o.getPlanCount())
-                            .variability(o.getVariability())
-                            .averageActiveSessions(o.getAverageActiveSessions())
-                            .databaseTimePct(o.getDatabaseTimePct())
-                            .inefficiencyInPct(o.getInefficiencyInPct())
-                            .changeInCpuTimeInPct(o.getChangeInCpuTimeInPct())
-                            .changeInIoTimeInPct(o.getChangeInIoTimeInPct())
-                            .changeInInefficientWaitTimeInPct(
-                                    o.getChangeInInefficientWaitTimeInPct())
-                            .changeInResponseTimeInPct(o.getChangeInResponseTimeInPct())
-                            .changeInAverageActiveSessionsInPct(
-                                    o.getChangeInAverageActiveSessionsInPct())
-                            .changeInExecutionsPerHourInPct(o.getChangeInExecutionsPerHourInPct())
-                            .changeInInefficiencyInPct(o.getChangeInInefficiencyInPct());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlStatistics model) {
+            if (model.wasPropertyExplicitlySet("databaseTimeInSec")) {
+                this.databaseTimeInSec(model.getDatabaseTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("executionsPerHour")) {
+                this.executionsPerHour(model.getExecutionsPerHour());
+            }
+            if (model.wasPropertyExplicitlySet("executionsCount")) {
+                this.executionsCount(model.getExecutionsCount());
+            }
+            if (model.wasPropertyExplicitlySet("cpuTimeInSec")) {
+                this.cpuTimeInSec(model.getCpuTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("ioTimeInSec")) {
+                this.ioTimeInSec(model.getIoTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("inefficientWaitTimeInSec")) {
+                this.inefficientWaitTimeInSec(model.getInefficientWaitTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("responseTimeInSec")) {
+                this.responseTimeInSec(model.getResponseTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("planCount")) {
+                this.planCount(model.getPlanCount());
+            }
+            if (model.wasPropertyExplicitlySet("variability")) {
+                this.variability(model.getVariability());
+            }
+            if (model.wasPropertyExplicitlySet("averageActiveSessions")) {
+                this.averageActiveSessions(model.getAverageActiveSessions());
+            }
+            if (model.wasPropertyExplicitlySet("databaseTimePct")) {
+                this.databaseTimePct(model.getDatabaseTimePct());
+            }
+            if (model.wasPropertyExplicitlySet("inefficiencyInPct")) {
+                this.inefficiencyInPct(model.getInefficiencyInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInCpuTimeInPct")) {
+                this.changeInCpuTimeInPct(model.getChangeInCpuTimeInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInIoTimeInPct")) {
+                this.changeInIoTimeInPct(model.getChangeInIoTimeInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInInefficientWaitTimeInPct")) {
+                this.changeInInefficientWaitTimeInPct(model.getChangeInInefficientWaitTimeInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInResponseTimeInPct")) {
+                this.changeInResponseTimeInPct(model.getChangeInResponseTimeInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInAverageActiveSessionsInPct")) {
+                this.changeInAverageActiveSessionsInPct(
+                        model.getChangeInAverageActiveSessionsInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInExecutionsPerHourInPct")) {
+                this.changeInExecutionsPerHourInPct(model.getChangeInExecutionsPerHourInPct());
+            }
+            if (model.wasPropertyExplicitlySet("changeInInefficiencyInPct")) {
+                this.changeInInefficiencyInPct(model.getChangeInInefficiencyInPct());
+            }
+            return this;
         }
     }
 
@@ -739,6 +775,7 @@ public final class SqlStatistics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlStatistics(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseTimeInSec=").append(String.valueOf(this.databaseTimeInSec));
         sb.append(", executionsPerHour=").append(String.valueOf(this.executionsPerHour));
         sb.append(", executionsCount=").append(String.valueOf(this.executionsCount));
@@ -764,7 +801,6 @@ public final class SqlStatistics {
                 .append(String.valueOf(this.changeInExecutionsPerHourInPct));
         sb.append(", changeInInefficiencyInPct=")
                 .append(String.valueOf(this.changeInInefficiencyInPct));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -806,7 +842,7 @@ public final class SqlStatistics {
                         this.changeInExecutionsPerHourInPct, other.changeInExecutionsPerHourInPct)
                 && java.util.Objects.equals(
                         this.changeInInefficiencyInPct, other.changeInInefficiencyInPct)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -880,16 +916,7 @@ public final class SqlStatistics {
                         + (this.changeInInefficiencyInPct == null
                                 ? 43
                                 : this.changeInInefficiencyInPct.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

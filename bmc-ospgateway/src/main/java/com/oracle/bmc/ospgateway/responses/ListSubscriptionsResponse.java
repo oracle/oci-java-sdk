@@ -72,6 +72,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcTotalItems",
@@ -79,11 +80,12 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListSubscriptionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             Integer opcTotalItems,
             com.oracle.bmc.ospgateway.model.SubscriptionCollection subscriptionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcTotalItems = opcTotalItems;
@@ -95,6 +97,13 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -175,6 +184,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListSubscriptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
@@ -190,6 +200,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         public ListSubscriptionsResponse build() {
             return new ListSubscriptionsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcTotalItems,

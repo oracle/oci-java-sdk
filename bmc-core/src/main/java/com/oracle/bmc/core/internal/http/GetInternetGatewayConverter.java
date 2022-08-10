@@ -99,8 +99,8 @@ public class GetInternetGatewayConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetInternetGatewayResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.internetGateway(response.getItem());
 

@@ -26,7 +26,7 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MultipartUpload.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MultipartUpload {
+public final class MultipartUpload extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -155,25 +155,41 @@ public final class MultipartUpload {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MultipartUpload build() {
-            MultipartUpload __instance__ =
+            MultipartUpload model =
                     new MultipartUpload(
-                            namespace, bucket, object, uploadId, timeCreated, storageTier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.namespace,
+                            this.bucket,
+                            this.object,
+                            this.uploadId,
+                            this.timeCreated,
+                            this.storageTier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MultipartUpload o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .bucket(o.getBucket())
-                            .object(o.getObject())
-                            .uploadId(o.getUploadId())
-                            .timeCreated(o.getTimeCreated())
-                            .storageTier(o.getStorageTier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MultipartUpload model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucket")) {
+                this.bucket(model.getBucket());
+            }
+            if (model.wasPropertyExplicitlySet("object")) {
+                this.object(model.getObject());
+            }
+            if (model.wasPropertyExplicitlySet("uploadId")) {
+                this.uploadId(model.getUploadId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("storageTier")) {
+                this.storageTier(model.getStorageTier());
+            }
+            return this;
         }
     }
 
@@ -285,13 +301,13 @@ public final class MultipartUpload {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MultipartUpload(");
+        sb.append("super=").append(super.toString());
         sb.append("namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucket=").append(String.valueOf(this.bucket));
         sb.append(", object=").append(String.valueOf(this.object));
         sb.append(", uploadId=").append(String.valueOf(this.uploadId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", storageTier=").append(String.valueOf(this.storageTier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -312,7 +328,7 @@ public final class MultipartUpload {
                 && java.util.Objects.equals(this.uploadId, other.uploadId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.storageTier, other.storageTier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -325,16 +341,7 @@ public final class MultipartUpload {
         result = (result * PRIME) + (this.uploadId == null ? 43 : this.uploadId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.storageTier == null ? 43 : this.storageTier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

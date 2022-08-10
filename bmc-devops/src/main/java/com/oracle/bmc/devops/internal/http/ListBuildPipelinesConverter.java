@@ -173,8 +173,8 @@ public class ListBuildPipelinesConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListBuildPipelinesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.buildPipelineCollection(response.getItem());
 

@@ -105,8 +105,8 @@ public class UpdateSecretConverter {
                                         builder =
                                                 com.oracle.bmc.vault.responses.UpdateSecretResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.secret(response.getItem());
 

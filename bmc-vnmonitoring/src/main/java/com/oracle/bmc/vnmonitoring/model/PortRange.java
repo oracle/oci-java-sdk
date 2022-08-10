@@ -17,7 +17,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PortRange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PortRange {
+public final class PortRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"max", "min"})
     public PortRange(Integer max, Integer min) {
@@ -71,17 +71,22 @@ public final class PortRange {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PortRange build() {
-            PortRange __instance__ = new PortRange(max, min);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PortRange model = new PortRange(this.max, this.min);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PortRange o) {
-            Builder copiedBuilder = max(o.getMax()).min(o.getMin());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PortRange model) {
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            return this;
         }
     }
 
@@ -143,9 +148,9 @@ public final class PortRange {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PortRange(");
+        sb.append("super=").append(super.toString());
         sb.append("max=").append(String.valueOf(this.max));
         sb.append(", min=").append(String.valueOf(this.min));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -162,7 +167,7 @@ public final class PortRange {
         PortRange other = (PortRange) o;
         return java.util.Objects.equals(this.max, other.max)
                 && java.util.Objects.equals(this.min, other.min)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -171,16 +176,7 @@ public final class PortRange {
         int result = 1;
         result = (result * PRIME) + (this.max == null ? 43 : this.max.hashCode());
         result = (result * PRIME) + (this.min == null ? 43 : this.min.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

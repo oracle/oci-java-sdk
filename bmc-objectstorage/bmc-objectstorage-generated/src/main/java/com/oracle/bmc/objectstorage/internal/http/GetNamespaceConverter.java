@@ -99,8 +99,8 @@ public class GetNamespaceConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .GetNamespaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.value(response.getItem());
 

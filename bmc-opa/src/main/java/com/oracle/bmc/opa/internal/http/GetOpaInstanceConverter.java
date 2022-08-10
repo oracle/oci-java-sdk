@@ -100,8 +100,8 @@ public class GetOpaInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.opa.responses.GetOpaInstanceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.opaInstance(response.getItem());
 

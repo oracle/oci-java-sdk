@@ -19,7 +19,7 @@ package com.oracle.bmc.emwarehouse.model;
     builder = EmInstancesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EmInstancesDetails {
+public final class EmInstancesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"emId", "targetsCount", "emHost"})
     public EmInstancesDetails(String emId, Integer targetsCount, String emHost) {
@@ -84,18 +84,26 @@ public final class EmInstancesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmInstancesDetails build() {
-            EmInstancesDetails __instance__ = new EmInstancesDetails(emId, targetsCount, emHost);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EmInstancesDetails model =
+                    new EmInstancesDetails(this.emId, this.targetsCount, this.emHost);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EmInstancesDetails o) {
-            Builder copiedBuilder =
-                    emId(o.getEmId()).targetsCount(o.getTargetsCount()).emHost(o.getEmHost());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EmInstancesDetails model) {
+            if (model.wasPropertyExplicitlySet("emId")) {
+                this.emId(model.getEmId());
+            }
+            if (model.wasPropertyExplicitlySet("targetsCount")) {
+                this.targetsCount(model.getTargetsCount());
+            }
+            if (model.wasPropertyExplicitlySet("emHost")) {
+                this.emHost(model.getEmHost());
+            }
+            return this;
         }
     }
 
@@ -165,10 +173,10 @@ public final class EmInstancesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EmInstancesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("emId=").append(String.valueOf(this.emId));
         sb.append(", targetsCount=").append(String.valueOf(this.targetsCount));
         sb.append(", emHost=").append(String.valueOf(this.emHost));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +194,7 @@ public final class EmInstancesDetails {
         return java.util.Objects.equals(this.emId, other.emId)
                 && java.util.Objects.equals(this.targetsCount, other.targetsCount)
                 && java.util.Objects.equals(this.emHost, other.emHost)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +204,7 @@ public final class EmInstancesDetails {
         result = (result * PRIME) + (this.emId == null ? 43 : this.emId.hashCode());
         result = (result * PRIME) + (this.targetsCount == null ? 43 : this.targetsCount.hashCode());
         result = (result * PRIME) + (this.emHost == null ? 43 : this.emHost.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

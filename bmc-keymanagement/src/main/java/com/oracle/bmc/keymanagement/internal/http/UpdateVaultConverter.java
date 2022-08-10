@@ -108,8 +108,8 @@ public class UpdateVaultConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .UpdateVaultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vault(response.getItem());
 

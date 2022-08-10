@@ -72,6 +72,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPreviousPage",
@@ -79,12 +80,13 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
     })
     private ListWorkRequestErrorsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPreviousPage,
             com.oracle.bmc.visualbuilder.model.WorkRequestErrorCollection
                     workRequestErrorCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPreviousPage = opcPreviousPage;
@@ -96,6 +98,13 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -176,6 +185,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ListWorkRequestErrorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPreviousPage(o.getOpcPreviousPage());
@@ -191,6 +201,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
         public ListWorkRequestErrorsResponse build() {
             return new ListWorkRequestErrorsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPreviousPage,

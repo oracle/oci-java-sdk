@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = DetachInstancePoolInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetachInstancePoolInstanceDetails {
+public final class DetachInstancePoolInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"instanceId", "isDecrementSize", "isAutoTerminate"})
     public DetachInstancePoolInstanceDetails(
@@ -96,22 +97,27 @@ public final class DetachInstancePoolInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetachInstancePoolInstanceDetails build() {
-            DetachInstancePoolInstanceDetails __instance__ =
+            DetachInstancePoolInstanceDetails model =
                     new DetachInstancePoolInstanceDetails(
-                            instanceId, isDecrementSize, isAutoTerminate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.instanceId, this.isDecrementSize, this.isAutoTerminate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetachInstancePoolInstanceDetails o) {
-            Builder copiedBuilder =
-                    instanceId(o.getInstanceId())
-                            .isDecrementSize(o.getIsDecrementSize())
-                            .isAutoTerminate(o.getIsAutoTerminate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetachInstancePoolInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("isDecrementSize")) {
+                this.isDecrementSize(model.getIsDecrementSize());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoTerminate")) {
+                this.isAutoTerminate(model.getIsAutoTerminate());
+            }
+            return this;
         }
     }
 
@@ -191,10 +197,10 @@ public final class DetachInstancePoolInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetachInstancePoolInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", isDecrementSize=").append(String.valueOf(this.isDecrementSize));
         sb.append(", isAutoTerminate=").append(String.valueOf(this.isAutoTerminate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,7 +218,7 @@ public final class DetachInstancePoolInstanceDetails {
         return java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.isDecrementSize, other.isDecrementSize)
                 && java.util.Objects.equals(this.isAutoTerminate, other.isAutoTerminate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -226,16 +232,7 @@ public final class DetachInstancePoolInstanceDetails {
         result =
                 (result * PRIME)
                         + (this.isAutoTerminate == null ? 43 : this.isAutoTerminate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

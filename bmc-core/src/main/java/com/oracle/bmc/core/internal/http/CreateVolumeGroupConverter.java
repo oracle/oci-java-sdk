@@ -98,8 +98,8 @@ public class CreateVolumeGroupConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateVolumeGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.volumeGroup(response.getItem());
 

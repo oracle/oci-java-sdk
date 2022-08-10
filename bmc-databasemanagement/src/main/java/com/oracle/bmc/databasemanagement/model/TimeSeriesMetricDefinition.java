@@ -21,7 +21,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = TimeSeriesMetricDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TimeSeriesMetricDefinition {
+public final class TimeSeriesMetricDefinition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metricName", "datapoints"})
     public TimeSeriesMetricDefinition(
@@ -70,18 +71,23 @@ public final class TimeSeriesMetricDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TimeSeriesMetricDefinition build() {
-            TimeSeriesMetricDefinition __instance__ =
-                    new TimeSeriesMetricDefinition(metricName, datapoints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TimeSeriesMetricDefinition model =
+                    new TimeSeriesMetricDefinition(this.metricName, this.datapoints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TimeSeriesMetricDefinition o) {
-            Builder copiedBuilder = metricName(o.getMetricName()).datapoints(o.getDatapoints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TimeSeriesMetricDefinition model) {
+            if (model.wasPropertyExplicitlySet("metricName")) {
+                this.metricName(model.getMetricName());
+            }
+            if (model.wasPropertyExplicitlySet("datapoints")) {
+                this.datapoints(model.getDatapoints());
+            }
+            return this;
         }
     }
 
@@ -137,9 +143,9 @@ public final class TimeSeriesMetricDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TimeSeriesMetricDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("metricName=").append(String.valueOf(this.metricName));
         sb.append(", datapoints=").append(String.valueOf(this.datapoints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,7 +162,7 @@ public final class TimeSeriesMetricDefinition {
         TimeSeriesMetricDefinition other = (TimeSeriesMetricDefinition) o;
         return java.util.Objects.equals(this.metricName, other.metricName)
                 && java.util.Objects.equals(this.datapoints, other.datapoints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +171,7 @@ public final class TimeSeriesMetricDefinition {
         int result = 1;
         result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
         result = (result * PRIME) + (this.datapoints == null ? 43 : this.datapoints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

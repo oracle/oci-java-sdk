@@ -55,17 +55,19 @@ public class GetCertificateAuthorityVersionResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "certificateAuthorityVersion"
     })
     private GetCertificateAuthorityVersionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersion
                     certificateAuthorityVersion) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.certificateAuthorityVersion = certificateAuthorityVersion;
@@ -76,6 +78,13 @@ public class GetCertificateAuthorityVersionResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -137,6 +146,7 @@ public class GetCertificateAuthorityVersionResponse extends com.oracle.bmc.respo
          */
         public Builder copy(GetCertificateAuthorityVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             certificateAuthorityVersion(o.getCertificateAuthorityVersion());
@@ -150,7 +160,7 @@ public class GetCertificateAuthorityVersionResponse extends com.oracle.bmc.respo
          */
         public GetCertificateAuthorityVersionResponse build() {
             return new GetCertificateAuthorityVersionResponse(
-                    __httpStatusCode__, etag, opcRequestId, certificateAuthorityVersion);
+                    __httpStatusCode__, headers, etag, opcRequestId, certificateAuthorityVersion);
         }
     }
 

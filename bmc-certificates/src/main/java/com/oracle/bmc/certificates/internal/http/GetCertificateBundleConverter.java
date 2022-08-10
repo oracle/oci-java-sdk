@@ -142,8 +142,8 @@ public class GetCertificateBundleConverter {
                                         builder =
                                                 com.oracle.bmc.certificates.responses
                                                         .GetCertificateBundleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateBundle(response.getItem());
 

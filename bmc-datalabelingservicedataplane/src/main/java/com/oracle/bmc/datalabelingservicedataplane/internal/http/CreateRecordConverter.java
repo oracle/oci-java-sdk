@@ -112,8 +112,8 @@ public class CreateRecordConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservicedataplane
                                                         .responses.CreateRecordResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.record(response.getItem());
 

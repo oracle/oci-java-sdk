@@ -55,16 +55,18 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "catalogPrivateEndpoint"
     })
     private GetCatalogPrivateEndpointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint catalogPrivateEndpoint) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.catalogPrivateEndpoint = catalogPrivateEndpoint;
@@ -75,6 +77,13 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
          */
         public Builder copy(GetCatalogPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             catalogPrivateEndpoint(o.getCatalogPrivateEndpoint());
@@ -149,7 +159,7 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
          */
         public GetCatalogPrivateEndpointResponse build() {
             return new GetCatalogPrivateEndpointResponse(
-                    __httpStatusCode__, opcRequestId, etag, catalogPrivateEndpoint);
+                    __httpStatusCode__, headers, opcRequestId, etag, catalogPrivateEndpoint);
         }
     }
 

@@ -106,7 +106,8 @@ public class GetStatusConverter {
 
                                 com.oracle.bmc.cims.responses.GetStatusResponse.Builder builder =
                                         com.oracle.bmc.cims.responses.GetStatusResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.status(response.getItem());
 

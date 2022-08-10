@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateConnectionDetails {
+public final class UpdateConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -245,42 +246,65 @@ public final class UpdateConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateConnectionDetails build() {
-            UpdateConnectionDetails __instance__ =
+            UpdateConnectionDetails model =
                     new UpdateConnectionDetails(
-                            displayName,
-                            databaseId,
-                            connectDescriptor,
-                            certificateTdn,
-                            tlsWallet,
-                            tlsKeystore,
-                            sshDetails,
-                            adminCredentials,
-                            privateEndpoint,
-                            vaultDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.databaseId,
+                            this.connectDescriptor,
+                            this.certificateTdn,
+                            this.tlsWallet,
+                            this.tlsKeystore,
+                            this.sshDetails,
+                            this.adminCredentials,
+                            this.privateEndpoint,
+                            this.vaultDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateConnectionDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .databaseId(o.getDatabaseId())
-                            .connectDescriptor(o.getConnectDescriptor())
-                            .certificateTdn(o.getCertificateTdn())
-                            .tlsWallet(o.getTlsWallet())
-                            .tlsKeystore(o.getTlsKeystore())
-                            .sshDetails(o.getSshDetails())
-                            .adminCredentials(o.getAdminCredentials())
-                            .privateEndpoint(o.getPrivateEndpoint())
-                            .vaultDetails(o.getVaultDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("connectDescriptor")) {
+                this.connectDescriptor(model.getConnectDescriptor());
+            }
+            if (model.wasPropertyExplicitlySet("certificateTdn")) {
+                this.certificateTdn(model.getCertificateTdn());
+            }
+            if (model.wasPropertyExplicitlySet("tlsWallet")) {
+                this.tlsWallet(model.getTlsWallet());
+            }
+            if (model.wasPropertyExplicitlySet("tlsKeystore")) {
+                this.tlsKeystore(model.getTlsKeystore());
+            }
+            if (model.wasPropertyExplicitlySet("sshDetails")) {
+                this.sshDetails(model.getSshDetails());
+            }
+            if (model.wasPropertyExplicitlySet("adminCredentials")) {
+                this.adminCredentials(model.getAdminCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpoint")) {
+                this.privateEndpoint(model.getPrivateEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("vaultDetails")) {
+                this.vaultDetails(model.getVaultDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -457,6 +481,7 @@ public final class UpdateConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", connectDescriptor=").append(String.valueOf(this.connectDescriptor));
@@ -469,7 +494,6 @@ public final class UpdateConnectionDetails {
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -496,7 +520,7 @@ public final class UpdateConnectionDetails {
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -523,16 +547,7 @@ public final class UpdateConnectionDetails {
         result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

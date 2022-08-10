@@ -70,6 +70,7 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcPrevPage",
         "opcRequestId",
@@ -77,11 +78,12 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListNotebookSessionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPrevPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
         this.opcRequestId = opcRequestId;
@@ -93,6 +95,13 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -171,6 +180,7 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListNotebookSessionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
             opcRequestId(o.getOpcRequestId());
@@ -185,7 +195,7 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
          */
         public ListNotebookSessionsResponse build() {
             return new ListNotebookSessionsResponse(
-                    __httpStatusCode__, opcNextPage, opcPrevPage, opcRequestId, items);
+                    __httpStatusCode__, headers, opcNextPage, opcPrevPage, opcRequestId, items);
         }
     }
 

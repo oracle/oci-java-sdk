@@ -106,8 +106,8 @@ public class GetRegistryConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetRegistryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.registry(response.getItem());
 

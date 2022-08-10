@@ -129,8 +129,8 @@ public class ListThreatFeedsConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .ListThreatFeedsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

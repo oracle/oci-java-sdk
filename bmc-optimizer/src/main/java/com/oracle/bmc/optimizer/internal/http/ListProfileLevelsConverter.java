@@ -164,8 +164,8 @@ public class ListProfileLevelsConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .ListProfileLevelsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.profileLevelCollection(response.getItem());
 

@@ -167,40 +167,61 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostMemoryStatistics build() {
-            HostMemoryStatistics __instance__ =
+            HostMemoryStatistics model =
                     new HostMemoryStatistics(
-                            usage,
-                            capacity,
-                            utilizationPercent,
-                            usageChangePercent,
-                            freeMemory,
-                            availableMemory,
-                            hugePagesTotal,
-                            hugePageSizeInMB,
-                            hugePagesFree,
-                            hugePagesReserved,
-                            load);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.usage,
+                            this.capacity,
+                            this.utilizationPercent,
+                            this.usageChangePercent,
+                            this.freeMemory,
+                            this.availableMemory,
+                            this.hugePagesTotal,
+                            this.hugePageSizeInMB,
+                            this.hugePagesFree,
+                            this.hugePagesReserved,
+                            this.load);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostMemoryStatistics o) {
-            Builder copiedBuilder =
-                    usage(o.getUsage())
-                            .capacity(o.getCapacity())
-                            .utilizationPercent(o.getUtilizationPercent())
-                            .usageChangePercent(o.getUsageChangePercent())
-                            .freeMemory(o.getFreeMemory())
-                            .availableMemory(o.getAvailableMemory())
-                            .hugePagesTotal(o.getHugePagesTotal())
-                            .hugePageSizeInMB(o.getHugePageSizeInMB())
-                            .hugePagesFree(o.getHugePagesFree())
-                            .hugePagesReserved(o.getHugePagesReserved())
-                            .load(o.getLoad());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostMemoryStatistics model) {
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("utilizationPercent")) {
+                this.utilizationPercent(model.getUtilizationPercent());
+            }
+            if (model.wasPropertyExplicitlySet("usageChangePercent")) {
+                this.usageChangePercent(model.getUsageChangePercent());
+            }
+            if (model.wasPropertyExplicitlySet("freeMemory")) {
+                this.freeMemory(model.getFreeMemory());
+            }
+            if (model.wasPropertyExplicitlySet("availableMemory")) {
+                this.availableMemory(model.getAvailableMemory());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesTotal")) {
+                this.hugePagesTotal(model.getHugePagesTotal());
+            }
+            if (model.wasPropertyExplicitlySet("hugePageSizeInMB")) {
+                this.hugePageSizeInMB(model.getHugePageSizeInMB());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesFree")) {
+                this.hugePagesFree(model.getHugePagesFree());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesReserved")) {
+                this.hugePagesReserved(model.getHugePagesReserved());
+            }
+            if (model.wasPropertyExplicitlySet("load")) {
+                this.load(model.getLoad());
+            }
+            return this;
         }
     }
 
@@ -344,7 +365,6 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
         sb.append(", hugePagesFree=").append(String.valueOf(this.hugePagesFree));
         sb.append(", hugePagesReserved=").append(String.valueOf(this.hugePagesReserved));
         sb.append(", load=").append(String.valueOf(this.load));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -366,8 +386,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
                 && java.util.Objects.equals(this.hugePagesFree, other.hugePagesFree)
                 && java.util.Objects.equals(this.hugePagesReserved, other.hugePagesReserved)
                 && java.util.Objects.equals(this.load, other.load)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -391,16 +410,6 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
                 (result * PRIME)
                         + (this.hugePagesReserved == null ? 43 : this.hugePagesReserved.hashCode());
         result = (result * PRIME) + (this.load == null ? 43 : this.load.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

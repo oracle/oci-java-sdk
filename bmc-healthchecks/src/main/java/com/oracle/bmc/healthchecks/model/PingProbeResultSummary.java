@@ -22,7 +22,8 @@ package com.oracle.bmc.healthchecks.model;
     builder = PingProbeResultSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PingProbeResultSummary {
+public final class PingProbeResultSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -374,50 +375,81 @@ public final class PingProbeResultSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PingProbeResultSummary build() {
-            PingProbeResultSummary __instance__ =
+            PingProbeResultSummary model =
                     new PingProbeResultSummary(
-                            key,
-                            probeConfigurationId,
-                            startTime,
-                            target,
-                            vantagePointName,
-                            isTimedOut,
-                            isHealthy,
-                            errorCategory,
-                            errorMessage,
-                            protocol,
-                            connection,
-                            dns,
-                            domainLookupStart,
-                            domainLookupEnd,
-                            latencyInMs,
-                            icmpCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.probeConfigurationId,
+                            this.startTime,
+                            this.target,
+                            this.vantagePointName,
+                            this.isTimedOut,
+                            this.isHealthy,
+                            this.errorCategory,
+                            this.errorMessage,
+                            this.protocol,
+                            this.connection,
+                            this.dns,
+                            this.domainLookupStart,
+                            this.domainLookupEnd,
+                            this.latencyInMs,
+                            this.icmpCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PingProbeResultSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .probeConfigurationId(o.getProbeConfigurationId())
-                            .startTime(o.getStartTime())
-                            .target(o.getTarget())
-                            .vantagePointName(o.getVantagePointName())
-                            .isTimedOut(o.getIsTimedOut())
-                            .isHealthy(o.getIsHealthy())
-                            .errorCategory(o.getErrorCategory())
-                            .errorMessage(o.getErrorMessage())
-                            .protocol(o.getProtocol())
-                            .connection(o.getConnection())
-                            .dns(o.getDns())
-                            .domainLookupStart(o.getDomainLookupStart())
-                            .domainLookupEnd(o.getDomainLookupEnd())
-                            .latencyInMs(o.getLatencyInMs())
-                            .icmpCode(o.getIcmpCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PingProbeResultSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("probeConfigurationId")) {
+                this.probeConfigurationId(model.getProbeConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("startTime")) {
+                this.startTime(model.getStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePointName")) {
+                this.vantagePointName(model.getVantagePointName());
+            }
+            if (model.wasPropertyExplicitlySet("isTimedOut")) {
+                this.isTimedOut(model.getIsTimedOut());
+            }
+            if (model.wasPropertyExplicitlySet("isHealthy")) {
+                this.isHealthy(model.getIsHealthy());
+            }
+            if (model.wasPropertyExplicitlySet("errorCategory")) {
+                this.errorCategory(model.getErrorCategory());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("connection")) {
+                this.connection(model.getConnection());
+            }
+            if (model.wasPropertyExplicitlySet("dns")) {
+                this.dns(model.getDns());
+            }
+            if (model.wasPropertyExplicitlySet("domainLookupStart")) {
+                this.domainLookupStart(model.getDomainLookupStart());
+            }
+            if (model.wasPropertyExplicitlySet("domainLookupEnd")) {
+                this.domainLookupEnd(model.getDomainLookupEnd());
+            }
+            if (model.wasPropertyExplicitlySet("latencyInMs")) {
+                this.latencyInMs(model.getLatencyInMs());
+            }
+            if (model.wasPropertyExplicitlySet("icmpCode")) {
+                this.icmpCode(model.getIcmpCode());
+            }
+            return this;
         }
     }
 
@@ -760,6 +792,7 @@ public final class PingProbeResultSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PingProbeResultSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", probeConfigurationId=").append(String.valueOf(this.probeConfigurationId));
         sb.append(", startTime=").append(String.valueOf(this.startTime));
@@ -776,7 +809,6 @@ public final class PingProbeResultSummary {
         sb.append(", domainLookupEnd=").append(String.valueOf(this.domainLookupEnd));
         sb.append(", latencyInMs=").append(String.valueOf(this.latencyInMs));
         sb.append(", icmpCode=").append(String.valueOf(this.icmpCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -807,7 +839,7 @@ public final class PingProbeResultSummary {
                 && java.util.Objects.equals(this.domainLookupEnd, other.domainLookupEnd)
                 && java.util.Objects.equals(this.latencyInMs, other.latencyInMs)
                 && java.util.Objects.equals(this.icmpCode, other.icmpCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -842,16 +874,7 @@ public final class PingProbeResultSummary {
                         + (this.domainLookupEnd == null ? 43 : this.domainLookupEnd.hashCode());
         result = (result * PRIME) + (this.latencyInMs == null ? 43 : this.latencyInMs.hashCode());
         result = (result * PRIME) + (this.icmpCode == null ? 43 : this.icmpCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

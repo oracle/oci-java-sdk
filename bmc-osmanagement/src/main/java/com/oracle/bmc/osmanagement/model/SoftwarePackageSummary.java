@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = SoftwarePackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SoftwarePackageSummary {
+public final class SoftwarePackageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -167,26 +168,45 @@ public final class SoftwarePackageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoftwarePackageSummary build() {
-            SoftwarePackageSummary __instance__ =
+            SoftwarePackageSummary model =
                     new SoftwarePackageSummary(
-                            displayName, name, type, version, architecture, checksum, checksumType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.name,
+                            this.type,
+                            this.version,
+                            this.architecture,
+                            this.checksum,
+                            this.checksumType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SoftwarePackageSummary o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .name(o.getName())
-                            .type(o.getType())
-                            .version(o.getVersion())
-                            .architecture(o.getArchitecture())
-                            .checksum(o.getChecksum())
-                            .checksumType(o.getChecksumType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SoftwarePackageSummary model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("checksum")) {
+                this.checksum(model.getChecksum());
+            }
+            if (model.wasPropertyExplicitlySet("checksumType")) {
+                this.checksumType(model.getChecksumType());
+            }
+            return this;
         }
     }
 
@@ -312,6 +332,7 @@ public final class SoftwarePackageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SoftwarePackageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -319,7 +340,6 @@ public final class SoftwarePackageSummary {
         sb.append(", architecture=").append(String.valueOf(this.architecture));
         sb.append(", checksum=").append(String.valueOf(this.checksum));
         sb.append(", checksumType=").append(String.valueOf(this.checksumType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -341,7 +361,7 @@ public final class SoftwarePackageSummary {
                 && java.util.Objects.equals(this.architecture, other.architecture)
                 && java.util.Objects.equals(this.checksum, other.checksum)
                 && java.util.Objects.equals(this.checksumType, other.checksumType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -355,16 +375,7 @@ public final class SoftwarePackageSummary {
         result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
         result = (result * PRIME) + (this.checksum == null ? 43 : this.checksum.hashCode());
         result = (result * PRIME) + (this.checksumType == null ? 43 : this.checksumType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

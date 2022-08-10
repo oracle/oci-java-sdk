@@ -118,8 +118,8 @@ public class GeneratePlaylistConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .GeneratePlaylistResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

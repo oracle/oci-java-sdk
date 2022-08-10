@@ -40,14 +40,16 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "configurationAggregation"
     })
     private RequestSummarizedConfigurationsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.configurationAggregation = configurationAggregation;
     }
@@ -57,6 +59,13 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
          */
         public Builder copy(RequestSummarizedConfigurationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             configurationAggregation(o.getConfigurationAggregation());
 
@@ -113,7 +123,7 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
          */
         public RequestSummarizedConfigurationsResponse build() {
             return new RequestSummarizedConfigurationsResponse(
-                    __httpStatusCode__, opcRequestId, configurationAggregation);
+                    __httpStatusCode__, headers, opcRequestId, configurationAggregation);
         }
     }
 

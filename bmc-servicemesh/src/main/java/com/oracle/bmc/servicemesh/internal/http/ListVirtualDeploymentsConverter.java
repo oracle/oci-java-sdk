@@ -177,8 +177,8 @@ public class ListVirtualDeploymentsConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .ListVirtualDeploymentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualDeploymentCollection(response.getItem());
 

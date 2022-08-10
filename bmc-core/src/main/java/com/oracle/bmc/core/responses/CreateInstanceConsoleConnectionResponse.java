@@ -55,16 +55,18 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "instanceConsoleConnection"
     })
     private CreateInstanceConsoleConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.instanceConsoleConnection = instanceConsoleConnection;
@@ -75,6 +77,13 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
          */
         public Builder copy(CreateInstanceConsoleConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             instanceConsoleConnection(o.getInstanceConsoleConnection());
@@ -149,7 +159,7 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
          */
         public CreateInstanceConsoleConnectionResponse build() {
             return new CreateInstanceConsoleConnectionResponse(
-                    __httpStatusCode__, etag, opcRequestId, instanceConsoleConnection);
+                    __httpStatusCode__, headers, etag, opcRequestId, instanceConsoleConnection);
         }
     }
 

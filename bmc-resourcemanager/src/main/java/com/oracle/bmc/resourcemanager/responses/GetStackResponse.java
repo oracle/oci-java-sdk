@@ -47,13 +47,20 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
         return stack;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "stack"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "stack"
+    })
     private GetStackResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.resourcemanager.model.Stack stack) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.stack = stack;
@@ -64,6 +71,13 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetStackResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             stack(o.getStack());
@@ -130,7 +145,7 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetStackResponse build() {
-            return new GetStackResponse(__httpStatusCode__, opcRequestId, etag, stack);
+            return new GetStackResponse(__httpStatusCode__, headers, opcRequestId, etag, stack);
         }
     }
 

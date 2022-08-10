@@ -98,8 +98,8 @@ public class CreateVolumeBackupConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateVolumeBackupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.volumeBackup(response.getItem());
 

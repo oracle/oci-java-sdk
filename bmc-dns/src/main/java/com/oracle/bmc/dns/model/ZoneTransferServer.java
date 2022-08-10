@@ -20,7 +20,7 @@ package com.oracle.bmc.dns.model;
     builder = ZoneTransferServer.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ZoneTransferServer {
+public final class ZoneTransferServer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "address",
@@ -114,22 +114,33 @@ public final class ZoneTransferServer {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ZoneTransferServer build() {
-            ZoneTransferServer __instance__ =
-                    new ZoneTransferServer(address, port, isTransferSource, isTransferDestination);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ZoneTransferServer model =
+                    new ZoneTransferServer(
+                            this.address,
+                            this.port,
+                            this.isTransferSource,
+                            this.isTransferDestination);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ZoneTransferServer o) {
-            Builder copiedBuilder =
-                    address(o.getAddress())
-                            .port(o.getPort())
-                            .isTransferSource(o.getIsTransferSource())
-                            .isTransferDestination(o.getIsTransferDestination());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ZoneTransferServer model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("isTransferSource")) {
+                this.isTransferSource(model.getIsTransferSource());
+            }
+            if (model.wasPropertyExplicitlySet("isTransferDestination")) {
+                this.isTransferDestination(model.getIsTransferDestination());
+            }
+            return this;
         }
     }
 
@@ -219,11 +230,11 @@ public final class ZoneTransferServer {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ZoneTransferServer(");
+        sb.append("super=").append(super.toString());
         sb.append("address=").append(String.valueOf(this.address));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", isTransferSource=").append(String.valueOf(this.isTransferSource));
         sb.append(", isTransferDestination=").append(String.valueOf(this.isTransferDestination));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -242,7 +253,7 @@ public final class ZoneTransferServer {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.isTransferSource, other.isTransferSource)
                 && java.util.Objects.equals(this.isTransferDestination, other.isTransferDestination)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +270,7 @@ public final class ZoneTransferServer {
                         + (this.isTransferDestination == null
                                 ? 43
                                 : this.isTransferDestination.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -51,13 +51,20 @@ public class GetSkillResponse extends com.oracle.bmc.responses.BmcResponse {
         return skill;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "skill"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "skill"
+    })
     private GetSkillResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.Skill skill) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.skill = skill;
@@ -68,6 +75,13 @@ public class GetSkillResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetSkillResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetSkillResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             skill(o.getSkill());
@@ -138,7 +153,7 @@ public class GetSkillResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetSkillResponse build() {
-            return new GetSkillResponse(__httpStatusCode__, etag, opcRequestId, skill);
+            return new GetSkillResponse(__httpStatusCode__, headers, etag, opcRequestId, skill);
         }
     }
 

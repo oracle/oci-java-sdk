@@ -127,8 +127,8 @@ public class UpdateAutoScalingConfigurationConverter {
                                                 com.oracle.bmc.autoscaling.responses
                                                         .UpdateAutoScalingConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autoScalingConfiguration(response.getItem());
 

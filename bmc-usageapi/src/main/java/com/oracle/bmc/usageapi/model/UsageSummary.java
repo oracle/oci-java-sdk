@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsageSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UsageSummary {
+public final class UsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
@@ -583,76 +583,133 @@ public final class UsageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UsageSummary build() {
-            UsageSummary __instance__ =
+            UsageSummary model =
                     new UsageSummary(
-                            tenantId,
-                            tenantName,
-                            compartmentId,
-                            compartmentPath,
-                            compartmentName,
-                            service,
-                            resourceName,
-                            resourceId,
-                            region,
-                            ad,
-                            weight,
-                            shape,
-                            skuPartNumber,
-                            skuName,
-                            unit,
-                            discount,
-                            listRate,
-                            platform,
-                            timeUsageStarted,
-                            timeUsageEnded,
-                            computedAmount,
-                            computedQuantity,
-                            overagesFlag,
-                            unitPrice,
-                            currency,
-                            subscriptionId,
-                            overage,
-                            isForecast,
-                            tags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tenantId,
+                            this.tenantName,
+                            this.compartmentId,
+                            this.compartmentPath,
+                            this.compartmentName,
+                            this.service,
+                            this.resourceName,
+                            this.resourceId,
+                            this.region,
+                            this.ad,
+                            this.weight,
+                            this.shape,
+                            this.skuPartNumber,
+                            this.skuName,
+                            this.unit,
+                            this.discount,
+                            this.listRate,
+                            this.platform,
+                            this.timeUsageStarted,
+                            this.timeUsageEnded,
+                            this.computedAmount,
+                            this.computedQuantity,
+                            this.overagesFlag,
+                            this.unitPrice,
+                            this.currency,
+                            this.subscriptionId,
+                            this.overage,
+                            this.isForecast,
+                            this.tags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UsageSummary o) {
-            Builder copiedBuilder =
-                    tenantId(o.getTenantId())
-                            .tenantName(o.getTenantName())
-                            .compartmentId(o.getCompartmentId())
-                            .compartmentPath(o.getCompartmentPath())
-                            .compartmentName(o.getCompartmentName())
-                            .service(o.getService())
-                            .resourceName(o.getResourceName())
-                            .resourceId(o.getResourceId())
-                            .region(o.getRegion())
-                            .ad(o.getAd())
-                            .weight(o.getWeight())
-                            .shape(o.getShape())
-                            .skuPartNumber(o.getSkuPartNumber())
-                            .skuName(o.getSkuName())
-                            .unit(o.getUnit())
-                            .discount(o.getDiscount())
-                            .listRate(o.getListRate())
-                            .platform(o.getPlatform())
-                            .timeUsageStarted(o.getTimeUsageStarted())
-                            .timeUsageEnded(o.getTimeUsageEnded())
-                            .computedAmount(o.getComputedAmount())
-                            .computedQuantity(o.getComputedQuantity())
-                            .overagesFlag(o.getOveragesFlag())
-                            .unitPrice(o.getUnitPrice())
-                            .currency(o.getCurrency())
-                            .subscriptionId(o.getSubscriptionId())
-                            .overage(o.getOverage())
-                            .isForecast(o.getIsForecast())
-                            .tags(o.getTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UsageSummary model) {
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
+            }
+            if (model.wasPropertyExplicitlySet("tenantName")) {
+                this.tenantName(model.getTenantName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentPath")) {
+                this.compartmentPath(model.getCompartmentPath());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
+            }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("ad")) {
+                this.ad(model.getAd());
+            }
+            if (model.wasPropertyExplicitlySet("weight")) {
+                this.weight(model.getWeight());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("skuPartNumber")) {
+                this.skuPartNumber(model.getSkuPartNumber());
+            }
+            if (model.wasPropertyExplicitlySet("skuName")) {
+                this.skuName(model.getSkuName());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("discount")) {
+                this.discount(model.getDiscount());
+            }
+            if (model.wasPropertyExplicitlySet("listRate")) {
+                this.listRate(model.getListRate());
+            }
+            if (model.wasPropertyExplicitlySet("platform")) {
+                this.platform(model.getPlatform());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageStarted")) {
+                this.timeUsageStarted(model.getTimeUsageStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageEnded")) {
+                this.timeUsageEnded(model.getTimeUsageEnded());
+            }
+            if (model.wasPropertyExplicitlySet("computedAmount")) {
+                this.computedAmount(model.getComputedAmount());
+            }
+            if (model.wasPropertyExplicitlySet("computedQuantity")) {
+                this.computedQuantity(model.getComputedQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("overagesFlag")) {
+                this.overagesFlag(model.getOveragesFlag());
+            }
+            if (model.wasPropertyExplicitlySet("unitPrice")) {
+                this.unitPrice(model.getUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("overage")) {
+                this.overage(model.getOverage());
+            }
+            if (model.wasPropertyExplicitlySet("isForecast")) {
+                this.isForecast(model.getIsForecast());
+            }
+            if (model.wasPropertyExplicitlySet("tags")) {
+                this.tags(model.getTags());
+            }
+            return this;
         }
     }
 
@@ -1086,6 +1143,7 @@ public final class UsageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UsageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", tenantName=").append(String.valueOf(this.tenantName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1115,7 +1173,6 @@ public final class UsageSummary {
         sb.append(", overage=").append(String.valueOf(this.overage));
         sb.append(", isForecast=").append(String.valueOf(this.isForecast));
         sb.append(", tags=").append(String.valueOf(this.tags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1159,7 +1216,7 @@ public final class UsageSummary {
                 && java.util.Objects.equals(this.overage, other.overage)
                 && java.util.Objects.equals(this.isForecast, other.isForecast)
                 && java.util.Objects.equals(this.tags, other.tags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1213,16 +1270,7 @@ public final class UsageSummary {
         result = (result * PRIME) + (this.overage == null ? 43 : this.overage.hashCode());
         result = (result * PRIME) + (this.isForecast == null ? 43 : this.isForecast.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

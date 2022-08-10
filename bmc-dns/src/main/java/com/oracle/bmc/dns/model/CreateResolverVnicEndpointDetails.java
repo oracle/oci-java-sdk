@@ -117,32 +117,45 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateResolverVnicEndpointDetails build() {
-            CreateResolverVnicEndpointDetails __instance__ =
+            CreateResolverVnicEndpointDetails model =
                     new CreateResolverVnicEndpointDetails(
-                            name,
-                            forwardingAddress,
-                            isForwarding,
-                            isListening,
-                            listeningAddress,
-                            subnetId,
-                            nsgIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.forwardingAddress,
+                            this.isForwarding,
+                            this.isListening,
+                            this.listeningAddress,
+                            this.subnetId,
+                            this.nsgIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateResolverVnicEndpointDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .forwardingAddress(o.getForwardingAddress())
-                            .isForwarding(o.getIsForwarding())
-                            .isListening(o.getIsListening())
-                            .listeningAddress(o.getListeningAddress())
-                            .subnetId(o.getSubnetId())
-                            .nsgIds(o.getNsgIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateResolverVnicEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("forwardingAddress")) {
+                this.forwardingAddress(model.getForwardingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("isForwarding")) {
+                this.isForwarding(model.getIsForwarding());
+            }
+            if (model.wasPropertyExplicitlySet("isListening")) {
+                this.isListening(model.getIsListening());
+            }
+            if (model.wasPropertyExplicitlySet("listeningAddress")) {
+                this.listeningAddress(model.getListeningAddress());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            return this;
         }
     }
 
@@ -219,7 +232,6 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -236,8 +248,7 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
         CreateResolverVnicEndpointDetails other = (CreateResolverVnicEndpointDetails) o;
         return java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -246,16 +257,6 @@ public final class CreateResolverVnicEndpointDetails extends CreateResolverEndpo
         int result = super.hashCode();
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

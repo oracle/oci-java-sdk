@@ -17,7 +17,7 @@ package com.oracle.bmc.fusionapps.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RefreshActivity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RefreshActivity {
+public final class RefreshActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -260,42 +260,65 @@ public final class RefreshActivity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RefreshActivity build() {
-            RefreshActivity __instance__ =
+            RefreshActivity model =
                     new RefreshActivity(
-                            id,
-                            displayName,
-                            sourceFusionEnvironmentId,
-                            timeOfRestorationPoint,
-                            lifecycleState,
-                            serviceAvailability,
-                            timeScheduledStart,
-                            timeExpectedFinish,
-                            timeFinished,
-                            timeAccepted,
-                            timeUpdated,
-                            lifecycleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.sourceFusionEnvironmentId,
+                            this.timeOfRestorationPoint,
+                            this.lifecycleState,
+                            this.serviceAvailability,
+                            this.timeScheduledStart,
+                            this.timeExpectedFinish,
+                            this.timeFinished,
+                            this.timeAccepted,
+                            this.timeUpdated,
+                            this.lifecycleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RefreshActivity o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .sourceFusionEnvironmentId(o.getSourceFusionEnvironmentId())
-                            .timeOfRestorationPoint(o.getTimeOfRestorationPoint())
-                            .lifecycleState(o.getLifecycleState())
-                            .serviceAvailability(o.getServiceAvailability())
-                            .timeScheduledStart(o.getTimeScheduledStart())
-                            .timeExpectedFinish(o.getTimeExpectedFinish())
-                            .timeFinished(o.getTimeFinished())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleDetails(o.getLifecycleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RefreshActivity model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceFusionEnvironmentId")) {
+                this.sourceFusionEnvironmentId(model.getSourceFusionEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfRestorationPoint")) {
+                this.timeOfRestorationPoint(model.getTimeOfRestorationPoint());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("serviceAvailability")) {
+                this.serviceAvailability(model.getServiceAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledStart")) {
+                this.timeScheduledStart(model.getTimeScheduledStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpectedFinish")) {
+                this.timeExpectedFinish(model.getTimeExpectedFinish());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            return this;
         }
     }
 
@@ -641,6 +664,7 @@ public final class RefreshActivity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RefreshActivity(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", sourceFusionEnvironmentId=")
@@ -654,7 +678,6 @@ public final class RefreshActivity {
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -683,7 +706,7 @@ public final class RefreshActivity {
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -726,16 +749,7 @@ public final class RefreshActivity {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

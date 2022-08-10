@@ -40,12 +40,13 @@ package com.oracle.bmc.apmsynthetics.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class MonitorConfiguration {
+public class MonitorConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"isFailureRetried"})
-    protected MonitorConfiguration(Boolean isFailureRetried) {
+    @java.beans.ConstructorProperties({"isFailureRetried", "dnsConfiguration"})
+    protected MonitorConfiguration(Boolean isFailureRetried, DnsConfiguration dnsConfiguration) {
         super();
         this.isFailureRetried = isFailureRetried;
+        this.dnsConfiguration = dnsConfiguration;
     }
 
     /**
@@ -62,6 +63,13 @@ public class MonitorConfiguration {
         return isFailureRetried;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsConfiguration")
+    private final DnsConfiguration dnsConfiguration;
+
+    public DnsConfiguration getDnsConfiguration() {
+        return dnsConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -75,7 +83,9 @@ public class MonitorConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitorConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("isFailureRetried=").append(String.valueOf(this.isFailureRetried));
+        sb.append(", dnsConfiguration=").append(String.valueOf(this.dnsConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -90,7 +100,9 @@ public class MonitorConfiguration {
         }
 
         MonitorConfiguration other = (MonitorConfiguration) o;
-        return java.util.Objects.equals(this.isFailureRetried, other.isFailureRetried);
+        return java.util.Objects.equals(this.isFailureRetried, other.isFailureRetried)
+                && java.util.Objects.equals(this.dnsConfiguration, other.dnsConfiguration)
+                && super.equals(other);
     }
 
     @Override
@@ -100,6 +112,10 @@ public class MonitorConfiguration {
         result =
                 (result * PRIME)
                         + (this.isFailureRetried == null ? 43 : this.isFailureRetried.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dnsConfiguration == null ? 43 : this.dnsConfiguration.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

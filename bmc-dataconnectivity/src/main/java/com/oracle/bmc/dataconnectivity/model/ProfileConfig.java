@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProfileConfig {
+public final class ProfileConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attributes",
@@ -127,28 +127,37 @@ public final class ProfileConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProfileConfig build() {
-            ProfileConfig __instance__ =
+            ProfileConfig model =
                     new ProfileConfig(
-                            attributes,
-                            functions,
-                            topNValFreq,
-                            patternThreshold,
-                            dataTypeThreshold);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.attributes,
+                            this.functions,
+                            this.topNValFreq,
+                            this.patternThreshold,
+                            this.dataTypeThreshold);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProfileConfig o) {
-            Builder copiedBuilder =
-                    attributes(o.getAttributes())
-                            .functions(o.getFunctions())
-                            .topNValFreq(o.getTopNValFreq())
-                            .patternThreshold(o.getPatternThreshold())
-                            .dataTypeThreshold(o.getDataTypeThreshold());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProfileConfig model) {
+            if (model.wasPropertyExplicitlySet("attributes")) {
+                this.attributes(model.getAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("functions")) {
+                this.functions(model.getFunctions());
+            }
+            if (model.wasPropertyExplicitlySet("topNValFreq")) {
+                this.topNValFreq(model.getTopNValFreq());
+            }
+            if (model.wasPropertyExplicitlySet("patternThreshold")) {
+                this.patternThreshold(model.getPatternThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("dataTypeThreshold")) {
+                this.dataTypeThreshold(model.getDataTypeThreshold());
+            }
+            return this;
         }
     }
 
@@ -298,12 +307,12 @@ public final class ProfileConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProfileConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("attributes=").append(String.valueOf(this.attributes));
         sb.append(", functions=").append(String.valueOf(this.functions));
         sb.append(", topNValFreq=").append(String.valueOf(this.topNValFreq));
         sb.append(", patternThreshold=").append(String.valueOf(this.patternThreshold));
         sb.append(", dataTypeThreshold=").append(String.valueOf(this.dataTypeThreshold));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -323,7 +332,7 @@ public final class ProfileConfig {
                 && java.util.Objects.equals(this.topNValFreq, other.topNValFreq)
                 && java.util.Objects.equals(this.patternThreshold, other.patternThreshold)
                 && java.util.Objects.equals(this.dataTypeThreshold, other.dataTypeThreshold)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -339,16 +348,7 @@ public final class ProfileConfig {
         result =
                 (result * PRIME)
                         + (this.dataTypeThreshold == null ? 43 : this.dataTypeThreshold.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

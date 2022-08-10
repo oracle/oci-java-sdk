@@ -189,47 +189,73 @@ public final class CreateComputeInstanceGroupBlueGreenDeployStageDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateComputeInstanceGroupBlueGreenDeployStageDetails build() {
-            CreateComputeInstanceGroupBlueGreenDeployStageDetails __instance__ =
+            CreateComputeInstanceGroupBlueGreenDeployStageDetails model =
                     new CreateComputeInstanceGroupBlueGreenDeployStageDetails(
-                            description,
-                            displayName,
-                            deployPipelineId,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            deployEnvironmentIdA,
-                            deployEnvironmentIdB,
-                            deploymentSpecDeployArtifactId,
-                            deployArtifactIds,
-                            rolloutPolicy,
-                            failurePolicy,
-                            testLoadBalancerConfig,
-                            productionLoadBalancerConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployPipelineId,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.deployEnvironmentIdA,
+                            this.deployEnvironmentIdB,
+                            this.deploymentSpecDeployArtifactId,
+                            this.deployArtifactIds,
+                            this.rolloutPolicy,
+                            this.failurePolicy,
+                            this.testLoadBalancerConfig,
+                            this.productionLoadBalancerConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateComputeInstanceGroupBlueGreenDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .deployEnvironmentIdA(o.getDeployEnvironmentIdA())
-                            .deployEnvironmentIdB(o.getDeployEnvironmentIdB())
-                            .deploymentSpecDeployArtifactId(o.getDeploymentSpecDeployArtifactId())
-                            .deployArtifactIds(o.getDeployArtifactIds())
-                            .rolloutPolicy(o.getRolloutPolicy())
-                            .failurePolicy(o.getFailurePolicy())
-                            .testLoadBalancerConfig(o.getTestLoadBalancerConfig())
-                            .productionLoadBalancerConfig(o.getProductionLoadBalancerConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateComputeInstanceGroupBlueGreenDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("deployEnvironmentIdA")) {
+                this.deployEnvironmentIdA(model.getDeployEnvironmentIdA());
+            }
+            if (model.wasPropertyExplicitlySet("deployEnvironmentIdB")) {
+                this.deployEnvironmentIdB(model.getDeployEnvironmentIdB());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentSpecDeployArtifactId")) {
+                this.deploymentSpecDeployArtifactId(model.getDeploymentSpecDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactIds")) {
+                this.deployArtifactIds(model.getDeployArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("rolloutPolicy")) {
+                this.rolloutPolicy(model.getRolloutPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("failurePolicy")) {
+                this.failurePolicy(model.getFailurePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("testLoadBalancerConfig")) {
+                this.testLoadBalancerConfig(model.getTestLoadBalancerConfig());
+            }
+            if (model.wasPropertyExplicitlySet("productionLoadBalancerConfig")) {
+                this.productionLoadBalancerConfig(model.getProductionLoadBalancerConfig());
+            }
+            return this;
         }
     }
 
@@ -385,7 +411,6 @@ public final class CreateComputeInstanceGroupBlueGreenDeployStageDetails
         sb.append(", testLoadBalancerConfig=").append(String.valueOf(this.testLoadBalancerConfig));
         sb.append(", productionLoadBalancerConfig=")
                 .append(String.valueOf(this.productionLoadBalancerConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -412,8 +437,7 @@ public final class CreateComputeInstanceGroupBlueGreenDeployStageDetails
                         this.testLoadBalancerConfig, other.testLoadBalancerConfig)
                 && java.util.Objects.equals(
                         this.productionLoadBalancerConfig, other.productionLoadBalancerConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -454,16 +478,6 @@ public final class CreateComputeInstanceGroupBlueGreenDeployStageDetails
                         + (this.productionLoadBalancerConfig == null
                                 ? 43
                                 : this.productionLoadBalancerConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

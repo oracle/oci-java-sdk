@@ -18,7 +18,7 @@ package com.oracle.bmc.bds.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AutoScalePolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutoScalePolicy {
+public final class AutoScalePolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"policyType", "rules"})
     public AutoScalePolicy(PolicyType policyType, java.util.List<AutoScalePolicyRule> rules) {
@@ -66,17 +66,22 @@ public final class AutoScalePolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutoScalePolicy build() {
-            AutoScalePolicy __instance__ = new AutoScalePolicy(policyType, rules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutoScalePolicy model = new AutoScalePolicy(this.policyType, this.rules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutoScalePolicy o) {
-            Builder copiedBuilder = policyType(o.getPolicyType()).rules(o.getRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutoScalePolicy model) {
+            if (model.wasPropertyExplicitlySet("policyType")) {
+                this.policyType(model.getPolicyType());
+            }
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            return this;
         }
     }
 
@@ -181,9 +186,9 @@ public final class AutoScalePolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutoScalePolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("policyType=").append(String.valueOf(this.policyType));
         sb.append(", rules=").append(String.valueOf(this.rules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +205,7 @@ public final class AutoScalePolicy {
         AutoScalePolicy other = (AutoScalePolicy) o;
         return java.util.Objects.equals(this.policyType, other.policyType)
                 && java.util.Objects.equals(this.rules, other.rules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +214,7 @@ public final class AutoScalePolicy {
         int result = 1;
         result = (result * PRIME) + (this.policyType == null ? 43 : this.policyType.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

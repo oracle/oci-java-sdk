@@ -49,16 +49,18 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "deployArtifact"
     })
     private GetDeployArtifactResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.DeployArtifact deployArtifact) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.deployArtifact = deployArtifact;
@@ -69,6 +71,13 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetDeployArtifactResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             deployArtifact(o.getDeployArtifact());
@@ -136,7 +146,7 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetDeployArtifactResponse build() {
             return new GetDeployArtifactResponse(
-                    __httpStatusCode__, etag, opcRequestId, deployArtifact);
+                    __httpStatusCode__, headers, etag, opcRequestId, deployArtifact);
         }
     }
 

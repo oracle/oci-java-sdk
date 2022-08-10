@@ -59,54 +59,17 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * Filter by one or more host types.
-     * Possible value is EXTERNAL-HOST.
+     * Possible values are CLOUD-HOST, EXTERNAL-HOST
      *
      */
-    private java.util.List<HostType> hostType;
+    private java.util.List<String> hostType;
 
     /**
      * Filter by one or more host types.
-     * Possible value is EXTERNAL-HOST.
-     *
-     **/
-    public enum HostType {
-        ExternalHost("EXTERNAL-HOST"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, HostType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (HostType v : HostType.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        HostType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static HostType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid HostType: " + key);
-        }
-    };
-
-    /**
-     * Filter by one or more host types.
-     * Possible value is EXTERNAL-HOST.
+     * Possible values are CLOUD-HOST, EXTERNAL-HOST
      *
      */
-    public java.util.List<HostType> getHostType() {
+    public java.util.List<String> getHostType() {
         return hostType;
     }
     /**
@@ -421,31 +384,31 @@ public class ListHostInsightsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Filter by one or more host types.
-         * Possible value is EXTERNAL-HOST.
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST
          *
          */
-        private java.util.List<HostType> hostType = null;
+        private java.util.List<String> hostType = null;
 
         /**
          * Filter by one or more host types.
-         * Possible value is EXTERNAL-HOST.
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST
          *
          * @param hostType the value to set
          * @return this builder instance
          */
-        public Builder hostType(java.util.List<HostType> hostType) {
+        public Builder hostType(java.util.List<String> hostType) {
             this.hostType = hostType;
             return this;
         }
 
         /**
          * Singular setter. Filter by one or more host types.
-         * Possible value is EXTERNAL-HOST.
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST
          *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder hostType(HostType singularValue) {
+        public Builder hostType(String singularValue) {
             return this.hostType(java.util.Arrays.asList(singularValue));
         }
 

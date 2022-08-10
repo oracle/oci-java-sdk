@@ -102,8 +102,8 @@ public class GetAuditTrailConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetAuditTrailResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditTrail(response.getItem());
 

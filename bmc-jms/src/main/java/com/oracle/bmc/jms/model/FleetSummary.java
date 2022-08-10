@@ -19,7 +19,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FleetSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FleetSummary {
+public final class FleetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -32,6 +32,7 @@ public final class FleetSummary {
         "approximateManagedInstanceCount",
         "inventoryLog",
         "operationLog",
+        "isAdvancedFeaturesEnabled",
         "timeCreated",
         "lifecycleState",
         "definedTags",
@@ -49,6 +50,7 @@ public final class FleetSummary {
             Integer approximateManagedInstanceCount,
             CustomLog inventoryLog,
             CustomLog operationLog,
+            Boolean isAdvancedFeaturesEnabled,
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -65,6 +67,7 @@ public final class FleetSummary {
         this.approximateManagedInstanceCount = approximateManagedInstanceCount;
         this.inventoryLog = inventoryLog;
         this.operationLog = operationLog;
+        this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.definedTags = definedTags;
@@ -239,6 +242,24 @@ public final class FleetSummary {
             return this;
         }
         /**
+         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+        private Boolean isAdvancedFeaturesEnabled;
+
+        /**
+         * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         *
+         * @param isAdvancedFeaturesEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
+            this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
+            return this;
+        }
+        /**
          * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          **/
@@ -344,48 +365,81 @@ public final class FleetSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FleetSummary build() {
-            FleetSummary __instance__ =
+            FleetSummary model =
                     new FleetSummary(
-                            id,
-                            displayName,
-                            description,
-                            compartmentId,
-                            approximateJreCount,
-                            approximateInstallationCount,
-                            approximateApplicationCount,
-                            approximateManagedInstanceCount,
-                            inventoryLog,
-                            operationLog,
-                            timeCreated,
-                            lifecycleState,
-                            definedTags,
-                            freeformTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.approximateJreCount,
+                            this.approximateInstallationCount,
+                            this.approximateApplicationCount,
+                            this.approximateManagedInstanceCount,
+                            this.inventoryLog,
+                            this.operationLog,
+                            this.isAdvancedFeaturesEnabled,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FleetSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .approximateJreCount(o.getApproximateJreCount())
-                            .approximateInstallationCount(o.getApproximateInstallationCount())
-                            .approximateApplicationCount(o.getApproximateApplicationCount())
-                            .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
-                            .inventoryLog(o.getInventoryLog())
-                            .operationLog(o.getOperationLog())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FleetSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("approximateJreCount")) {
+                this.approximateJreCount(model.getApproximateJreCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateInstallationCount")) {
+                this.approximateInstallationCount(model.getApproximateInstallationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
+                this.approximateApplicationCount(model.getApproximateApplicationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
+                this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("inventoryLog")) {
+                this.inventoryLog(model.getInventoryLog());
+            }
+            if (model.wasPropertyExplicitlySet("operationLog")) {
+                this.operationLog(model.getOperationLog());
+            }
+            if (model.wasPropertyExplicitlySet("isAdvancedFeaturesEnabled")) {
+                this.isAdvancedFeaturesEnabled(model.getIsAdvancedFeaturesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -545,6 +599,22 @@ public final class FleetSummary {
     }
 
     /**
+     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
+    private final Boolean isAdvancedFeaturesEnabled;
+
+    /**
+     * Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     *
+     * @return the value
+     **/
+    public Boolean getIsAdvancedFeaturesEnabled() {
+        return isAdvancedFeaturesEnabled;
+    }
+
+    /**
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      **/
@@ -647,6 +717,7 @@ public final class FleetSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FleetSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -660,12 +731,13 @@ public final class FleetSummary {
                 .append(String.valueOf(this.approximateManagedInstanceCount));
         sb.append(", inventoryLog=").append(String.valueOf(this.inventoryLog));
         sb.append(", operationLog=").append(String.valueOf(this.operationLog));
+        sb.append(", isAdvancedFeaturesEnabled=")
+                .append(String.valueOf(this.isAdvancedFeaturesEnabled));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -693,12 +765,14 @@ public final class FleetSummary {
                         this.approximateManagedInstanceCount, other.approximateManagedInstanceCount)
                 && java.util.Objects.equals(this.inventoryLog, other.inventoryLog)
                 && java.util.Objects.equals(this.operationLog, other.operationLog)
+                && java.util.Objects.equals(
+                        this.isAdvancedFeaturesEnabled, other.isAdvancedFeaturesEnabled)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -733,6 +807,11 @@ public final class FleetSummary {
                                 : this.approximateManagedInstanceCount.hashCode());
         result = (result * PRIME) + (this.inventoryLog == null ? 43 : this.inventoryLog.hashCode());
         result = (result * PRIME) + (this.operationLog == null ? 43 : this.operationLog.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAdvancedFeaturesEnabled == null
+                                ? 43
+                                : this.isAdvancedFeaturesEnabled.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
@@ -740,16 +819,7 @@ public final class FleetSummary {
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

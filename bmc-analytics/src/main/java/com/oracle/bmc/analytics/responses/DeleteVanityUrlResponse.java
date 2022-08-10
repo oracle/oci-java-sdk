@@ -42,10 +42,18 @@ public class DeleteVanityUrlResponse extends com.oracle.bmc.responses.BmcRespons
         return opcWorkRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private DeleteVanityUrlResponse(
-            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
     }
@@ -55,6 +63,13 @@ public class DeleteVanityUrlResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +117,7 @@ public class DeleteVanityUrlResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(DeleteVanityUrlResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 
@@ -113,7 +129,8 @@ public class DeleteVanityUrlResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public DeleteVanityUrlResponse build() {
-            return new DeleteVanityUrlResponse(__httpStatusCode__, opcRequestId, opcWorkRequestId);
+            return new DeleteVanityUrlResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 

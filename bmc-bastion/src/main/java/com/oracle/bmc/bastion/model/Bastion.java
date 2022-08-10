@@ -17,7 +17,7 @@ package com.oracle.bmc.bastion.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Bastion.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Bastion {
+public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bastionType",
@@ -418,56 +418,93 @@ public final class Bastion {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Bastion build() {
-            Bastion __instance__ =
+            Bastion model =
                     new Bastion(
-                            bastionType,
-                            id,
-                            name,
-                            compartmentId,
-                            targetVcnId,
-                            targetSubnetId,
-                            phoneBookEntry,
-                            clientCidrBlockAllowList,
-                            staticJumpHostIpAddresses,
-                            privateEndpointIpAddress,
-                            maxSessionTtlInSeconds,
-                            maxSessionsAllowed,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bastionType,
+                            this.id,
+                            this.name,
+                            this.compartmentId,
+                            this.targetVcnId,
+                            this.targetSubnetId,
+                            this.phoneBookEntry,
+                            this.clientCidrBlockAllowList,
+                            this.staticJumpHostIpAddresses,
+                            this.privateEndpointIpAddress,
+                            this.maxSessionTtlInSeconds,
+                            this.maxSessionsAllowed,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Bastion o) {
-            Builder copiedBuilder =
-                    bastionType(o.getBastionType())
-                            .id(o.getId())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .targetVcnId(o.getTargetVcnId())
-                            .targetSubnetId(o.getTargetSubnetId())
-                            .phoneBookEntry(o.getPhoneBookEntry())
-                            .clientCidrBlockAllowList(o.getClientCidrBlockAllowList())
-                            .staticJumpHostIpAddresses(o.getStaticJumpHostIpAddresses())
-                            .privateEndpointIpAddress(o.getPrivateEndpointIpAddress())
-                            .maxSessionTtlInSeconds(o.getMaxSessionTtlInSeconds())
-                            .maxSessionsAllowed(o.getMaxSessionsAllowed())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Bastion model) {
+            if (model.wasPropertyExplicitlySet("bastionType")) {
+                this.bastionType(model.getBastionType());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("targetVcnId")) {
+                this.targetVcnId(model.getTargetVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("targetSubnetId")) {
+                this.targetSubnetId(model.getTargetSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("phoneBookEntry")) {
+                this.phoneBookEntry(model.getPhoneBookEntry());
+            }
+            if (model.wasPropertyExplicitlySet("clientCidrBlockAllowList")) {
+                this.clientCidrBlockAllowList(model.getClientCidrBlockAllowList());
+            }
+            if (model.wasPropertyExplicitlySet("staticJumpHostIpAddresses")) {
+                this.staticJumpHostIpAddresses(model.getStaticJumpHostIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointIpAddress")) {
+                this.privateEndpointIpAddress(model.getPrivateEndpointIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("maxSessionTtlInSeconds")) {
+                this.maxSessionTtlInSeconds(model.getMaxSessionTtlInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("maxSessionsAllowed")) {
+                this.maxSessionsAllowed(model.getMaxSessionsAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -785,6 +822,7 @@ public final class Bastion {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Bastion(");
+        sb.append("super=").append(super.toString());
         sb.append("bastionType=").append(String.valueOf(this.bastionType));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -807,7 +845,6 @@ public final class Bastion {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -845,7 +882,7 @@ public final class Bastion {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -901,16 +938,7 @@ public final class Bastion {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

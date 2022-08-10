@@ -19,7 +19,8 @@ package com.oracle.bmc.apigateway.model;
     builder = ApiSpecificationRequestPolicies.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiSpecificationRequestPolicies {
+public final class ApiSpecificationRequestPolicies
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "authentication",
@@ -94,24 +95,37 @@ public final class ApiSpecificationRequestPolicies {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRequestPolicies build() {
-            ApiSpecificationRequestPolicies __instance__ =
+            ApiSpecificationRequestPolicies model =
                     new ApiSpecificationRequestPolicies(
-                            authentication, rateLimiting, cors, mutualTls, usagePlans);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.authentication,
+                            this.rateLimiting,
+                            this.cors,
+                            this.mutualTls,
+                            this.usagePlans);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiSpecificationRequestPolicies o) {
-            Builder copiedBuilder =
-                    authentication(o.getAuthentication())
-                            .rateLimiting(o.getRateLimiting())
-                            .cors(o.getCors())
-                            .mutualTls(o.getMutualTls())
-                            .usagePlans(o.getUsagePlans());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiSpecificationRequestPolicies model) {
+            if (model.wasPropertyExplicitlySet("authentication")) {
+                this.authentication(model.getAuthentication());
+            }
+            if (model.wasPropertyExplicitlySet("rateLimiting")) {
+                this.rateLimiting(model.getRateLimiting());
+            }
+            if (model.wasPropertyExplicitlySet("cors")) {
+                this.cors(model.getCors());
+            }
+            if (model.wasPropertyExplicitlySet("mutualTls")) {
+                this.mutualTls(model.getMutualTls());
+            }
+            if (model.wasPropertyExplicitlySet("usagePlans")) {
+                this.usagePlans(model.getUsagePlans());
+            }
+            return this;
         }
     }
 
@@ -174,12 +188,12 @@ public final class ApiSpecificationRequestPolicies {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiSpecificationRequestPolicies(");
+        sb.append("super=").append(super.toString());
         sb.append("authentication=").append(String.valueOf(this.authentication));
         sb.append(", rateLimiting=").append(String.valueOf(this.rateLimiting));
         sb.append(", cors=").append(String.valueOf(this.cors));
         sb.append(", mutualTls=").append(String.valueOf(this.mutualTls));
         sb.append(", usagePlans=").append(String.valueOf(this.usagePlans));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +213,7 @@ public final class ApiSpecificationRequestPolicies {
                 && java.util.Objects.equals(this.cors, other.cors)
                 && java.util.Objects.equals(this.mutualTls, other.mutualTls)
                 && java.util.Objects.equals(this.usagePlans, other.usagePlans)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -213,16 +227,7 @@ public final class ApiSpecificationRequestPolicies {
         result = (result * PRIME) + (this.cors == null ? 43 : this.cors.hashCode());
         result = (result * PRIME) + (this.mutualTls == null ? 43 : this.mutualTls.hashCode());
         result = (result * PRIME) + (this.usagePlans == null ? 43 : this.usagePlans.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

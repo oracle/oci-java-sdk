@@ -61,17 +61,19 @@ public class ListBlockchainPlatformPatchesResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "blockchainPlatformPatchCollection"
     })
     private ListBlockchainPlatformPatchesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.blockchain.model.BlockchainPlatformPatchCollection
                     blockchainPlatformPatchCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.blockchainPlatformPatchCollection = blockchainPlatformPatchCollection;
@@ -82,6 +84,13 @@ public class ListBlockchainPlatformPatchesResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListBlockchainPlatformPatchesResponse extends com.oracle.bmc.respon
          */
         public Builder copy(ListBlockchainPlatformPatchesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             blockchainPlatformPatchCollection(o.getBlockchainPlatformPatchCollection());
@@ -163,6 +173,7 @@ public class ListBlockchainPlatformPatchesResponse extends com.oracle.bmc.respon
         public ListBlockchainPlatformPatchesResponse build() {
             return new ListBlockchainPlatformPatchesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     blockchainPlatformPatchCollection);

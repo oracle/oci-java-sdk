@@ -91,6 +91,7 @@ public class UpdateZoneRecordsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcTotalItems",
         "opcRequestId",
@@ -99,12 +100,13 @@ public class UpdateZoneRecordsResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private UpdateZoneRecordsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             Integer opcTotalItems,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.RecordCollection recordCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcTotalItems = opcTotalItems;
         this.opcRequestId = opcRequestId;
@@ -117,6 +119,13 @@ public class UpdateZoneRecordsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -218,6 +227,7 @@ public class UpdateZoneRecordsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(UpdateZoneRecordsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
             opcRequestId(o.getOpcRequestId());
@@ -234,6 +244,7 @@ public class UpdateZoneRecordsResponse extends com.oracle.bmc.responses.BmcRespo
         public UpdateZoneRecordsResponse build() {
             return new UpdateZoneRecordsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcTotalItems,
                     opcRequestId,

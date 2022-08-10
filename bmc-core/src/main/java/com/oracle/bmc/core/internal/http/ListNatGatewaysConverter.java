@@ -164,8 +164,8 @@ public class ListNatGatewaysConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListNatGatewaysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

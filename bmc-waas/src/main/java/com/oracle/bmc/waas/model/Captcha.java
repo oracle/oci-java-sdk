@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Captcha.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Captcha {
+public final class Captcha extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "url",
@@ -167,32 +167,45 @@ public final class Captcha {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Captcha build() {
-            Captcha __instance__ =
+            Captcha model =
                     new Captcha(
-                            url,
-                            sessionExpirationInSeconds,
-                            title,
-                            headerText,
-                            footerText,
-                            failureMessage,
-                            submitLabel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.url,
+                            this.sessionExpirationInSeconds,
+                            this.title,
+                            this.headerText,
+                            this.footerText,
+                            this.failureMessage,
+                            this.submitLabel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Captcha o) {
-            Builder copiedBuilder =
-                    url(o.getUrl())
-                            .sessionExpirationInSeconds(o.getSessionExpirationInSeconds())
-                            .title(o.getTitle())
-                            .headerText(o.getHeaderText())
-                            .footerText(o.getFooterText())
-                            .failureMessage(o.getFailureMessage())
-                            .submitLabel(o.getSubmitLabel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Captcha model) {
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpirationInSeconds")) {
+                this.sessionExpirationInSeconds(model.getSessionExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("title")) {
+                this.title(model.getTitle());
+            }
+            if (model.wasPropertyExplicitlySet("headerText")) {
+                this.headerText(model.getHeaderText());
+            }
+            if (model.wasPropertyExplicitlySet("footerText")) {
+                this.footerText(model.getFooterText());
+            }
+            if (model.wasPropertyExplicitlySet("failureMessage")) {
+                this.failureMessage(model.getFailureMessage());
+            }
+            if (model.wasPropertyExplicitlySet("submitLabel")) {
+                this.submitLabel(model.getSubmitLabel());
+            }
+            return this;
         }
     }
 
@@ -318,6 +331,7 @@ public final class Captcha {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Captcha(");
+        sb.append("super=").append(super.toString());
         sb.append("url=").append(String.valueOf(this.url));
         sb.append(", sessionExpirationInSeconds=")
                 .append(String.valueOf(this.sessionExpirationInSeconds));
@@ -326,7 +340,6 @@ public final class Captcha {
         sb.append(", footerText=").append(String.valueOf(this.footerText));
         sb.append(", failureMessage=").append(String.valueOf(this.failureMessage));
         sb.append(", submitLabel=").append(String.valueOf(this.submitLabel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -349,7 +362,7 @@ public final class Captcha {
                 && java.util.Objects.equals(this.footerText, other.footerText)
                 && java.util.Objects.equals(this.failureMessage, other.failureMessage)
                 && java.util.Objects.equals(this.submitLabel, other.submitLabel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -369,16 +382,7 @@ public final class Captcha {
                 (result * PRIME)
                         + (this.failureMessage == null ? 43 : this.failureMessage.hashCode());
         result = (result * PRIME) + (this.submitLabel == null ? 43 : this.submitLabel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

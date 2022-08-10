@@ -111,8 +111,8 @@ public class GetDiscoveryJobResultConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetDiscoveryJobResultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.discoveryJobResult(response.getItem());
 

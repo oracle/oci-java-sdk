@@ -80,21 +80,26 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NginxBlueGreenStrategy build() {
-            NginxBlueGreenStrategy __instance__ =
-                    new NginxBlueGreenStrategy(namespaceA, namespaceB, ingressName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NginxBlueGreenStrategy model =
+                    new NginxBlueGreenStrategy(this.namespaceA, this.namespaceB, this.ingressName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NginxBlueGreenStrategy o) {
-            Builder copiedBuilder =
-                    namespaceA(o.getNamespaceA())
-                            .namespaceB(o.getNamespaceB())
-                            .ingressName(o.getIngressName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NginxBlueGreenStrategy model) {
+            if (model.wasPropertyExplicitlySet("namespaceA")) {
+                this.namespaceA(model.getNamespaceA());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceB")) {
+                this.namespaceB(model.getNamespaceB());
+            }
+            if (model.wasPropertyExplicitlySet("ingressName")) {
+                this.ingressName(model.getIngressName());
+            }
+            return this;
         }
     }
 
@@ -176,7 +181,6 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
         sb.append(", namespaceA=").append(String.valueOf(this.namespaceA));
         sb.append(", namespaceB=").append(String.valueOf(this.namespaceB));
         sb.append(", ingressName=").append(String.valueOf(this.ingressName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,8 +198,7 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
         return java.util.Objects.equals(this.namespaceA, other.namespaceA)
                 && java.util.Objects.equals(this.namespaceB, other.namespaceB)
                 && java.util.Objects.equals(this.ingressName, other.ingressName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -205,16 +208,6 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
         result = (result * PRIME) + (this.namespaceA == null ? 43 : this.namespaceA.hashCode());
         result = (result * PRIME) + (this.namespaceB == null ? 43 : this.namespaceB.hashCode());
         result = (result * PRIME) + (this.ingressName == null ? 43 : this.ingressName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

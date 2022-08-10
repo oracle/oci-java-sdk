@@ -19,7 +19,7 @@ package com.oracle.bmc.ailanguage.model;
     builder = SentimentSentence.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SentimentSentence {
+public final class SentimentSentence extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"offset", "length", "text", "sentiment", "scores"})
     public SentimentSentence(
@@ -127,23 +127,33 @@ public final class SentimentSentence {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SentimentSentence build() {
-            SentimentSentence __instance__ =
-                    new SentimentSentence(offset, length, text, sentiment, scores);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SentimentSentence model =
+                    new SentimentSentence(
+                            this.offset, this.length, this.text, this.sentiment, this.scores);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SentimentSentence o) {
-            Builder copiedBuilder =
-                    offset(o.getOffset())
-                            .length(o.getLength())
-                            .text(o.getText())
-                            .sentiment(o.getSentiment())
-                            .scores(o.getScores());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SentimentSentence model) {
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("sentiment")) {
+                this.sentiment(model.getSentiment());
+            }
+            if (model.wasPropertyExplicitlySet("scores")) {
+                this.scores(model.getScores());
+            }
+            return this;
         }
     }
 
@@ -245,12 +255,12 @@ public final class SentimentSentence {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SentimentSentence(");
+        sb.append("super=").append(super.toString());
         sb.append("offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
         sb.append(", text=").append(String.valueOf(this.text));
         sb.append(", sentiment=").append(String.valueOf(this.sentiment));
         sb.append(", scores=").append(String.valueOf(this.scores));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -270,7 +280,7 @@ public final class SentimentSentence {
                 && java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.sentiment, other.sentiment)
                 && java.util.Objects.equals(this.scores, other.scores)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -282,16 +292,7 @@ public final class SentimentSentence {
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
         result = (result * PRIME) + (this.sentiment == null ? 43 : this.sentiment.hashCode());
         result = (result * PRIME) + (this.scores == null ? 43 : this.scores.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

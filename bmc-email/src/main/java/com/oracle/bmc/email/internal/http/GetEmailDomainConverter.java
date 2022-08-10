@@ -102,8 +102,8 @@ public class GetEmailDomainConverter {
                                         builder =
                                                 com.oracle.bmc.email.responses
                                                         .GetEmailDomainResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.emailDomain(response.getItem());
 

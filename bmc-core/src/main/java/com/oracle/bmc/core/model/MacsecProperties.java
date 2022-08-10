@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacsecProperties.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MacsecProperties {
+public final class MacsecProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"state", "primaryKey", "encryptionCipher"})
     public MacsecProperties(
@@ -76,21 +76,26 @@ public final class MacsecProperties {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MacsecProperties build() {
-            MacsecProperties __instance__ =
-                    new MacsecProperties(state, primaryKey, encryptionCipher);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MacsecProperties model =
+                    new MacsecProperties(this.state, this.primaryKey, this.encryptionCipher);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MacsecProperties o) {
-            Builder copiedBuilder =
-                    state(o.getState())
-                            .primaryKey(o.getPrimaryKey())
-                            .encryptionCipher(o.getEncryptionCipher());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MacsecProperties model) {
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("primaryKey")) {
+                this.primaryKey(model.getPrimaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionCipher")) {
+                this.encryptionCipher(model.getEncryptionCipher());
+            }
+            return this;
         }
     }
 
@@ -153,10 +158,10 @@ public final class MacsecProperties {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MacsecProperties(");
+        sb.append("super=").append(super.toString());
         sb.append("state=").append(String.valueOf(this.state));
         sb.append(", primaryKey=").append(String.valueOf(this.primaryKey));
         sb.append(", encryptionCipher=").append(String.valueOf(this.encryptionCipher));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -174,7 +179,7 @@ public final class MacsecProperties {
         return java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.primaryKey, other.primaryKey)
                 && java.util.Objects.equals(this.encryptionCipher, other.encryptionCipher)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -186,16 +191,7 @@ public final class MacsecProperties {
         result =
                 (result * PRIME)
                         + (this.encryptionCipher == null ? 43 : this.encryptionCipher.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

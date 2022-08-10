@@ -53,13 +53,20 @@ public class UpdateModelResponse extends com.oracle.bmc.responses.BmcResponse {
         return model;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "model"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "model"
+    })
     private UpdateModelResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datascience.model.Model model) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.model = model;
@@ -70,6 +77,13 @@ public class UpdateModelResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateModelResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateModelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             model(o.getModel());
@@ -142,7 +157,7 @@ public class UpdateModelResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateModelResponse build() {
-            return new UpdateModelResponse(__httpStatusCode__, etag, opcRequestId, model);
+            return new UpdateModelResponse(__httpStatusCode__, headers, etag, opcRequestId, model);
         }
     }
 

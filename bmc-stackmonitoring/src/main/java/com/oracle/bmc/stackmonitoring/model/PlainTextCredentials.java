@@ -84,23 +84,33 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PlainTextCredentials build() {
-            PlainTextCredentials __instance__ =
-                    new PlainTextCredentials(source, name, type, description, properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PlainTextCredentials model =
+                    new PlainTextCredentials(
+                            this.source, this.name, this.type, this.description, this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PlainTextCredentials o) {
-            Builder copiedBuilder =
-                    source(o.getSource())
-                            .name(o.getName())
-                            .type(o.getType())
-                            .description(o.getDescription())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PlainTextCredentials model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -155,7 +165,6 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
         sb.append("PlainTextCredentials(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -170,9 +179,7 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
         }
 
         PlainTextCredentials other = (PlainTextCredentials) o;
-        return java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.properties, other.properties) && super.equals(other);
     }
 
     @Override
@@ -180,16 +187,6 @@ public final class PlainTextCredentials extends MonitoredResourceCredential {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

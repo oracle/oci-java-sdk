@@ -52,17 +52,19 @@ public class GetTransferApplianceEncryptionPassphraseResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "transferApplianceEncryptionPassphrase"
     })
     private GetTransferApplianceEncryptionPassphraseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
                     transferApplianceEncryptionPassphrase) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.transferApplianceEncryptionPassphrase = transferApplianceEncryptionPassphrase;
@@ -73,6 +75,13 @@ public class GetTransferApplianceEncryptionPassphraseResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +139,7 @@ public class GetTransferApplianceEncryptionPassphraseResponse
          */
         public Builder copy(GetTransferApplianceEncryptionPassphraseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             transferApplianceEncryptionPassphrase(o.getTransferApplianceEncryptionPassphrase());
@@ -143,7 +153,11 @@ public class GetTransferApplianceEncryptionPassphraseResponse
          */
         public GetTransferApplianceEncryptionPassphraseResponse build() {
             return new GetTransferApplianceEncryptionPassphraseResponse(
-                    __httpStatusCode__, opcRequestId, etag, transferApplianceEncryptionPassphrase);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    etag,
+                    transferApplianceEncryptionPassphrase);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.cloudguard.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceProfile.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceProfile {
+public final class ResourceProfile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sightingsCount",
@@ -317,48 +317,77 @@ public final class ResourceProfile {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceProfile build() {
-            ResourceProfile __instance__ =
+            ResourceProfile model =
                     new ResourceProfile(
-                            sightingsCount,
-                            id,
-                            resourceId,
-                            displayName,
-                            type,
-                            problemIds,
-                            compartmentId,
-                            targetId,
-                            riskScore,
-                            riskLevel,
-                            peakRiskScore,
-                            timePeakScore,
-                            timeFirstDetected,
-                            timeLastDetected,
-                            tactics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sightingsCount,
+                            this.id,
+                            this.resourceId,
+                            this.displayName,
+                            this.type,
+                            this.problemIds,
+                            this.compartmentId,
+                            this.targetId,
+                            this.riskScore,
+                            this.riskLevel,
+                            this.peakRiskScore,
+                            this.timePeakScore,
+                            this.timeFirstDetected,
+                            this.timeLastDetected,
+                            this.tactics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceProfile o) {
-            Builder copiedBuilder =
-                    sightingsCount(o.getSightingsCount())
-                            .id(o.getId())
-                            .resourceId(o.getResourceId())
-                            .displayName(o.getDisplayName())
-                            .type(o.getType())
-                            .problemIds(o.getProblemIds())
-                            .compartmentId(o.getCompartmentId())
-                            .targetId(o.getTargetId())
-                            .riskScore(o.getRiskScore())
-                            .riskLevel(o.getRiskLevel())
-                            .peakRiskScore(o.getPeakRiskScore())
-                            .timePeakScore(o.getTimePeakScore())
-                            .timeFirstDetected(o.getTimeFirstDetected())
-                            .timeLastDetected(o.getTimeLastDetected())
-                            .tactics(o.getTactics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceProfile model) {
+            if (model.wasPropertyExplicitlySet("sightingsCount")) {
+                this.sightingsCount(model.getSightingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("problemIds")) {
+                this.problemIds(model.getProblemIds());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("riskScore")) {
+                this.riskScore(model.getRiskScore());
+            }
+            if (model.wasPropertyExplicitlySet("riskLevel")) {
+                this.riskLevel(model.getRiskLevel());
+            }
+            if (model.wasPropertyExplicitlySet("peakRiskScore")) {
+                this.peakRiskScore(model.getPeakRiskScore());
+            }
+            if (model.wasPropertyExplicitlySet("timePeakScore")) {
+                this.timePeakScore(model.getTimePeakScore());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstDetected")) {
+                this.timeFirstDetected(model.getTimeFirstDetected());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDetected")) {
+                this.timeLastDetected(model.getTimeLastDetected());
+            }
+            if (model.wasPropertyExplicitlySet("tactics")) {
+                this.tactics(model.getTactics());
+            }
+            return this;
         }
     }
 
@@ -596,6 +625,7 @@ public final class ResourceProfile {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceProfile(");
+        sb.append("super=").append(super.toString());
         sb.append("sightingsCount=").append(String.valueOf(this.sightingsCount));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
@@ -611,7 +641,6 @@ public final class ResourceProfile {
         sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
         sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
         sb.append(", tactics=").append(String.valueOf(this.tactics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -641,7 +670,7 @@ public final class ResourceProfile {
                 && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
                 && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
                 && java.util.Objects.equals(this.tactics, other.tactics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -675,16 +704,7 @@ public final class ResourceProfile {
                 (result * PRIME)
                         + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
         result = (result * PRIME) + (this.tactics == null ? 43 : this.tactics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -18,7 +18,7 @@ package com.oracle.bmc.announcementsservice.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AffectedResource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AffectedResource {
+public final class AffectedResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -109,22 +109,33 @@ public final class AffectedResource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AffectedResource build() {
-            AffectedResource __instance__ =
-                    new AffectedResource(resourceId, resourceName, region, additionalProperties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AffectedResource model =
+                    new AffectedResource(
+                            this.resourceId,
+                            this.resourceName,
+                            this.region,
+                            this.additionalProperties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AffectedResource o) {
-            Builder copiedBuilder =
-                    resourceId(o.getResourceId())
-                            .resourceName(o.getResourceName())
-                            .region(o.getRegion())
-                            .additionalProperties(o.getAdditionalProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AffectedResource model) {
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("additionalProperties")) {
+                this.additionalProperties(model.getAdditionalProperties());
+            }
+            return this;
         }
     }
 
@@ -208,11 +219,11 @@ public final class AffectedResource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AffectedResource(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", additionalProperties=").append(String.valueOf(this.additionalProperties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -231,7 +242,7 @@ public final class AffectedResource {
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.additionalProperties, other.additionalProperties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -246,16 +257,7 @@ public final class AffectedResource {
                         + (this.additionalProperties == null
                                 ? 43
                                 : this.additionalProperties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

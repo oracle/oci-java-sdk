@@ -21,7 +21,8 @@ package com.oracle.bmc.applicationmigration.model;
     builder = SourceApplicationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SourceApplicationSummary {
+public final class SourceApplicationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "sourceId", "version", "state"})
     public SourceApplicationSummary(
@@ -121,23 +122,33 @@ public final class SourceApplicationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SourceApplicationSummary build() {
-            SourceApplicationSummary __instance__ =
-                    new SourceApplicationSummary(name, type, sourceId, version, state);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SourceApplicationSummary model =
+                    new SourceApplicationSummary(
+                            this.name, this.type, this.sourceId, this.version, this.state);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SourceApplicationSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .type(o.getType())
-                            .sourceId(o.getSourceId())
-                            .version(o.getVersion())
-                            .state(o.getState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SourceApplicationSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            return this;
         }
     }
 
@@ -235,12 +246,12 @@ public final class SourceApplicationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SourceApplicationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", state=").append(String.valueOf(this.state));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -260,7 +271,7 @@ public final class SourceApplicationSummary {
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.state, other.state)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -272,16 +283,7 @@ public final class SourceApplicationSummary {
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

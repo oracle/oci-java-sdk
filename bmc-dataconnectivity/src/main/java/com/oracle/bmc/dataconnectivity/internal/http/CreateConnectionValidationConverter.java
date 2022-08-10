@@ -131,8 +131,8 @@ public class CreateConnectionValidationConverter {
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .CreateConnectionValidationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connectionValidation(response.getItem());
 

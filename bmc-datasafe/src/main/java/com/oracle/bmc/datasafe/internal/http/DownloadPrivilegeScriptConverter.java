@@ -107,8 +107,8 @@ public class DownloadPrivilegeScriptConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadPrivilegeScriptResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

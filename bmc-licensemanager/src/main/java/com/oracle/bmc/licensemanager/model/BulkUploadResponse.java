@@ -19,7 +19,7 @@ package com.oracle.bmc.licensemanager.model;
     builder = BulkUploadResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkUploadResponse {
+public final class BulkUploadResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalSupportedRecords",
@@ -189,35 +189,50 @@ public final class BulkUploadResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkUploadResponse build() {
-            BulkUploadResponse __instance__ =
+            BulkUploadResponse model =
                     new BulkUploadResponse(
-                            totalSupportedRecords,
-                            totalSupportedRecordsSaved,
-                            totalSupportedDuplicateRecords,
-                            totalSupportedFailedLicenseRecords,
-                            totalSupportedInvalidRecords,
-                            validationErrorInfo,
-                            failedLicenseRecordInfo,
-                            message);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalSupportedRecords,
+                            this.totalSupportedRecordsSaved,
+                            this.totalSupportedDuplicateRecords,
+                            this.totalSupportedFailedLicenseRecords,
+                            this.totalSupportedInvalidRecords,
+                            this.validationErrorInfo,
+                            this.failedLicenseRecordInfo,
+                            this.message);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkUploadResponse o) {
-            Builder copiedBuilder =
-                    totalSupportedRecords(o.getTotalSupportedRecords())
-                            .totalSupportedRecordsSaved(o.getTotalSupportedRecordsSaved())
-                            .totalSupportedDuplicateRecords(o.getTotalSupportedDuplicateRecords())
-                            .totalSupportedFailedLicenseRecords(
-                                    o.getTotalSupportedFailedLicenseRecords())
-                            .totalSupportedInvalidRecords(o.getTotalSupportedInvalidRecords())
-                            .validationErrorInfo(o.getValidationErrorInfo())
-                            .failedLicenseRecordInfo(o.getFailedLicenseRecordInfo())
-                            .message(o.getMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkUploadResponse model) {
+            if (model.wasPropertyExplicitlySet("totalSupportedRecords")) {
+                this.totalSupportedRecords(model.getTotalSupportedRecords());
+            }
+            if (model.wasPropertyExplicitlySet("totalSupportedRecordsSaved")) {
+                this.totalSupportedRecordsSaved(model.getTotalSupportedRecordsSaved());
+            }
+            if (model.wasPropertyExplicitlySet("totalSupportedDuplicateRecords")) {
+                this.totalSupportedDuplicateRecords(model.getTotalSupportedDuplicateRecords());
+            }
+            if (model.wasPropertyExplicitlySet("totalSupportedFailedLicenseRecords")) {
+                this.totalSupportedFailedLicenseRecords(
+                        model.getTotalSupportedFailedLicenseRecords());
+            }
+            if (model.wasPropertyExplicitlySet("totalSupportedInvalidRecords")) {
+                this.totalSupportedInvalidRecords(model.getTotalSupportedInvalidRecords());
+            }
+            if (model.wasPropertyExplicitlySet("validationErrorInfo")) {
+                this.validationErrorInfo(model.getValidationErrorInfo());
+            }
+            if (model.wasPropertyExplicitlySet("failedLicenseRecordInfo")) {
+                this.failedLicenseRecordInfo(model.getFailedLicenseRecordInfo());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            return this;
         }
     }
 
@@ -357,6 +372,7 @@ public final class BulkUploadResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkUploadResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("totalSupportedRecords=").append(String.valueOf(this.totalSupportedRecords));
         sb.append(", totalSupportedRecordsSaved=")
                 .append(String.valueOf(this.totalSupportedRecordsSaved));
@@ -370,7 +386,6 @@ public final class BulkUploadResponse {
         sb.append(", failedLicenseRecordInfo=")
                 .append(String.valueOf(this.failedLicenseRecordInfo));
         sb.append(", message=").append(String.valueOf(this.message));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -399,7 +414,7 @@ public final class BulkUploadResponse {
                 && java.util.Objects.equals(
                         this.failedLicenseRecordInfo, other.failedLicenseRecordInfo)
                 && java.util.Objects.equals(this.message, other.message)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -442,16 +457,7 @@ public final class BulkUploadResponse {
                                 ? 43
                                 : this.failedLicenseRecordInfo.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

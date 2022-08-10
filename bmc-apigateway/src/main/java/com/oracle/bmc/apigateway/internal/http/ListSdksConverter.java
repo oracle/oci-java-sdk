@@ -161,8 +161,8 @@ public class ListSdksConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses.ListSdksResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sdkCollection(response.getItem());
 

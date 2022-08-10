@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = TunnelSecurityAssociationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TunnelSecurityAssociationSummary {
+public final class TunnelSecurityAssociationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpeSubnet",
@@ -132,24 +133,37 @@ public final class TunnelSecurityAssociationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TunnelSecurityAssociationSummary build() {
-            TunnelSecurityAssociationSummary __instance__ =
+            TunnelSecurityAssociationSummary model =
                     new TunnelSecurityAssociationSummary(
-                            cpeSubnet, oracleSubnet, tunnelSaStatus, tunnelSaErrorInfo, time);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cpeSubnet,
+                            this.oracleSubnet,
+                            this.tunnelSaStatus,
+                            this.tunnelSaErrorInfo,
+                            this.time);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TunnelSecurityAssociationSummary o) {
-            Builder copiedBuilder =
-                    cpeSubnet(o.getCpeSubnet())
-                            .oracleSubnet(o.getOracleSubnet())
-                            .tunnelSaStatus(o.getTunnelSaStatus())
-                            .tunnelSaErrorInfo(o.getTunnelSaErrorInfo())
-                            .time(o.getTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TunnelSecurityAssociationSummary model) {
+            if (model.wasPropertyExplicitlySet("cpeSubnet")) {
+                this.cpeSubnet(model.getCpeSubnet());
+            }
+            if (model.wasPropertyExplicitlySet("oracleSubnet")) {
+                this.oracleSubnet(model.getOracleSubnet());
+            }
+            if (model.wasPropertyExplicitlySet("tunnelSaStatus")) {
+                this.tunnelSaStatus(model.getTunnelSaStatus());
+            }
+            if (model.wasPropertyExplicitlySet("tunnelSaErrorInfo")) {
+                this.tunnelSaErrorInfo(model.getTunnelSaErrorInfo());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            return this;
         }
     }
 
@@ -301,12 +315,12 @@ public final class TunnelSecurityAssociationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TunnelSecurityAssociationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("cpeSubnet=").append(String.valueOf(this.cpeSubnet));
         sb.append(", oracleSubnet=").append(String.valueOf(this.oracleSubnet));
         sb.append(", tunnelSaStatus=").append(String.valueOf(this.tunnelSaStatus));
         sb.append(", tunnelSaErrorInfo=").append(String.valueOf(this.tunnelSaErrorInfo));
         sb.append(", time=").append(String.valueOf(this.time));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -326,7 +340,7 @@ public final class TunnelSecurityAssociationSummary {
                 && java.util.Objects.equals(this.tunnelSaStatus, other.tunnelSaStatus)
                 && java.util.Objects.equals(this.tunnelSaErrorInfo, other.tunnelSaErrorInfo)
                 && java.util.Objects.equals(this.time, other.time)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -342,16 +356,7 @@ public final class TunnelSecurityAssociationSummary {
                 (result * PRIME)
                         + (this.tunnelSaErrorInfo == null ? 43 : this.tunnelSaErrorInfo.hashCode());
         result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

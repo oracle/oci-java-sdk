@@ -161,8 +161,8 @@ public class ListSkillParametersConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .ListSkillParametersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.skillParameterCollection(response.getItem());
 

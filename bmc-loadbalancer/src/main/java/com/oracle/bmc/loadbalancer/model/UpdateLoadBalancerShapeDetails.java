@@ -19,7 +19,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = UpdateLoadBalancerShapeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateLoadBalancerShapeDetails {
+public final class UpdateLoadBalancerShapeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName", "shapeDetails"})
     public UpdateLoadBalancerShapeDetails(String shapeName, ShapeDetails shapeDetails) {
@@ -40,7 +41,10 @@ public final class UpdateLoadBalancerShapeDetails {
          *   *  8000Mbps
          *   *  Flexible
          * <p>
-         * Example: {@code Flexible}
+         * Example: {@code flexible}
+         * <p>
+         * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023. This api
+         *   * will only support {@code Flexible} shape after that date.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
@@ -56,7 +60,10 @@ public final class UpdateLoadBalancerShapeDetails {
          *   *  8000Mbps
          *   *  Flexible
          * <p>
-         * Example: {@code Flexible}
+         * Example: {@code flexible}
+         * <p>
+         * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023. This api
+         *   * will only support {@code Flexible} shape after that date.
          *
          * @param shapeName the value to set
          * @return this builder
@@ -89,18 +96,23 @@ public final class UpdateLoadBalancerShapeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLoadBalancerShapeDetails build() {
-            UpdateLoadBalancerShapeDetails __instance__ =
-                    new UpdateLoadBalancerShapeDetails(shapeName, shapeDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateLoadBalancerShapeDetails model =
+                    new UpdateLoadBalancerShapeDetails(this.shapeName, this.shapeDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateLoadBalancerShapeDetails o) {
-            Builder copiedBuilder = shapeName(o.getShapeName()).shapeDetails(o.getShapeDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateLoadBalancerShapeDetails model) {
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("shapeDetails")) {
+                this.shapeDetails(model.getShapeDetails());
+            }
+            return this;
         }
     }
 
@@ -125,7 +137,10 @@ public final class UpdateLoadBalancerShapeDetails {
      *   *  8000Mbps
      *   *  Flexible
      * <p>
-     * Example: {@code Flexible}
+     * Example: {@code flexible}
+     * <p>
+     * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023. This api
+     *   * will only support {@code Flexible} shape after that date.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
@@ -141,7 +156,10 @@ public final class UpdateLoadBalancerShapeDetails {
      *   *  8000Mbps
      *   *  Flexible
      * <p>
-     * Example: {@code Flexible}
+     * Example: {@code flexible}
+     * <p>
+     * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023. This api
+     *   * will only support {@code Flexible} shape after that date.
      *
      * @return the value
      **/
@@ -178,9 +196,9 @@ public final class UpdateLoadBalancerShapeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateLoadBalancerShapeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", shapeDetails=").append(String.valueOf(this.shapeDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -197,7 +215,7 @@ public final class UpdateLoadBalancerShapeDetails {
         UpdateLoadBalancerShapeDetails other = (UpdateLoadBalancerShapeDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.shapeDetails, other.shapeDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +224,7 @@ public final class UpdateLoadBalancerShapeDetails {
         int result = 1;
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.shapeDetails == null ? 43 : this.shapeDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

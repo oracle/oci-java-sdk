@@ -60,6 +60,22 @@ public interface DashboardAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a Dashboard resource from one dashboardGroup identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDashboardGroupResponse> changeDashboardGroup(
+            ChangeDashboardGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDashboardGroupRequest, ChangeDashboardGroupResponse>
+                    handler);
+
+    /**
      * Creates a new dashboard in the dashboard group's compartment using the details provided in request body.
      * <p>
      **Caution:** Resources for the Dashboard service are created in the tenacy's home region.

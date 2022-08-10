@@ -19,7 +19,7 @@ package com.oracle.bmc.opsi.model;
     builder = StorageServerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StorageServerDetails {
+public final class StorageServerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"storageServerName", "storageServerDisplayName"})
     public StorageServerDetails(String storageServerName, String storageServerDisplayName) {
@@ -67,20 +67,23 @@ public final class StorageServerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StorageServerDetails build() {
-            StorageServerDetails __instance__ =
-                    new StorageServerDetails(storageServerName, storageServerDisplayName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StorageServerDetails model =
+                    new StorageServerDetails(this.storageServerName, this.storageServerDisplayName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StorageServerDetails o) {
-            Builder copiedBuilder =
-                    storageServerName(o.getStorageServerName())
-                            .storageServerDisplayName(o.getStorageServerDisplayName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StorageServerDetails model) {
+            if (model.wasPropertyExplicitlySet("storageServerName")) {
+                this.storageServerName(model.getStorageServerName());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerDisplayName")) {
+                this.storageServerDisplayName(model.getStorageServerDisplayName());
+            }
+            return this;
         }
     }
 
@@ -136,10 +139,10 @@ public final class StorageServerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StorageServerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("storageServerName=").append(String.valueOf(this.storageServerName));
         sb.append(", storageServerDisplayName=")
                 .append(String.valueOf(this.storageServerDisplayName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,7 +160,7 @@ public final class StorageServerDetails {
         return java.util.Objects.equals(this.storageServerName, other.storageServerName)
                 && java.util.Objects.equals(
                         this.storageServerDisplayName, other.storageServerDisplayName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -172,16 +175,7 @@ public final class StorageServerDetails {
                         + (this.storageServerDisplayName == null
                                 ? 43
                                 : this.storageServerDisplayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

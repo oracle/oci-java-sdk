@@ -167,8 +167,8 @@ public class RequestSummarizedTrendProblemsConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedTrendProblemsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.problemTrendAggregationCollection(response.getItem());
 

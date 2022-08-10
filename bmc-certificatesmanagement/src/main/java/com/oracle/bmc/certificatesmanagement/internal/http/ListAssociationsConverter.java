@@ -187,8 +187,8 @@ public class ListAssociationsConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .ListAssociationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.associationCollection(response.getItem());
 

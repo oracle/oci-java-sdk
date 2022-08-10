@@ -98,8 +98,8 @@ public class GetTagDefaultConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetTagDefaultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tagDefault(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabaseBackup.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabaseBackup {
+public final class AutonomousDatabaseBackup
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -362,52 +363,85 @@ public final class AutonomousDatabaseBackup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseBackup build() {
-            AutonomousDatabaseBackup __instance__ =
+            AutonomousDatabaseBackup model =
                     new AutonomousDatabaseBackup(
-                            id,
-                            compartmentId,
-                            autonomousDatabaseId,
-                            displayName,
-                            type,
-                            isAutomatic,
-                            timeStarted,
-                            timeEnded,
-                            lifecycleDetails,
-                            databaseSizeInTBs,
-                            lifecycleState,
-                            isRestorable,
-                            keyStoreId,
-                            keyStoreWalletName,
-                            kmsKeyId,
-                            vaultId,
-                            kmsKeyVersionId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.autonomousDatabaseId,
+                            this.displayName,
+                            this.type,
+                            this.isAutomatic,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.lifecycleDetails,
+                            this.databaseSizeInTBs,
+                            this.lifecycleState,
+                            this.isRestorable,
+                            this.keyStoreId,
+                            this.keyStoreWalletName,
+                            this.kmsKeyId,
+                            this.vaultId,
+                            this.kmsKeyVersionId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseBackup o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .autonomousDatabaseId(o.getAutonomousDatabaseId())
-                            .displayName(o.getDisplayName())
-                            .type(o.getType())
-                            .isAutomatic(o.getIsAutomatic())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .databaseSizeInTBs(o.getDatabaseSizeInTBs())
-                            .lifecycleState(o.getLifecycleState())
-                            .isRestorable(o.getIsRestorable())
-                            .keyStoreId(o.getKeyStoreId())
-                            .keyStoreWalletName(o.getKeyStoreWalletName())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .vaultId(o.getVaultId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseBackup model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseId")) {
+                this.autonomousDatabaseId(model.getAutonomousDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isAutomatic")) {
+                this.isAutomatic(model.getIsAutomatic());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSizeInTBs")) {
+                this.databaseSizeInTBs(model.getDatabaseSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isRestorable")) {
+                this.isRestorable(model.getIsRestorable());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
+                this.keyStoreWalletName(model.getKeyStoreWalletName());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            return this;
         }
     }
 
@@ -774,6 +808,7 @@ public final class AutonomousDatabaseBackup {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseBackup(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
@@ -791,7 +826,6 @@ public final class AutonomousDatabaseBackup {
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -823,7 +857,7 @@ public final class AutonomousDatabaseBackup {
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -865,16 +899,7 @@ public final class AutonomousDatabaseBackup {
         result =
                 (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AppCatalogListingSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AppCatalogListingSummary {
+public final class AppCatalogListingSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"listingId", "displayName", "summary", "publisherName"})
     public AppCatalogListingSummary(
@@ -106,22 +107,30 @@ public final class AppCatalogListingSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AppCatalogListingSummary build() {
-            AppCatalogListingSummary __instance__ =
-                    new AppCatalogListingSummary(listingId, displayName, summary, publisherName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AppCatalogListingSummary model =
+                    new AppCatalogListingSummary(
+                            this.listingId, this.displayName, this.summary, this.publisherName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AppCatalogListingSummary o) {
-            Builder copiedBuilder =
-                    listingId(o.getListingId())
-                            .displayName(o.getDisplayName())
-                            .summary(o.getSummary())
-                            .publisherName(o.getPublisherName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AppCatalogListingSummary model) {
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("summary")) {
+                this.summary(model.getSummary());
+            }
+            if (model.wasPropertyExplicitlySet("publisherName")) {
+                this.publisherName(model.getPublisherName());
+            }
+            return this;
         }
     }
 
@@ -209,11 +218,11 @@ public final class AppCatalogListingSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AppCatalogListingSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("listingId=").append(String.valueOf(this.listingId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", summary=").append(String.valueOf(this.summary));
         sb.append(", publisherName=").append(String.valueOf(this.publisherName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +241,7 @@ public final class AppCatalogListingSummary {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.summary, other.summary)
                 && java.util.Objects.equals(this.publisherName, other.publisherName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +254,7 @@ public final class AppCatalogListingSummary {
         result =
                 (result * PRIME)
                         + (this.publisherName == null ? 43 : this.publisherName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

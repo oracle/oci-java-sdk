@@ -74,6 +74,7 @@ public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "heatWaveCluster",
@@ -81,11 +82,12 @@ public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GetHeatWaveClusterResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.heatWaveCluster = heatWaveCluster;
@@ -97,6 +99,13 @@ public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -177,6 +186,7 @@ public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetHeatWaveClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             heatWaveCluster(o.getHeatWaveCluster());
@@ -190,7 +200,12 @@ public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetHeatWaveClusterResponse build() {
             return new GetHeatWaveClusterResponse(
-                    __httpStatusCode__, etag, opcRequestId, heatWaveCluster, isNotModified);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    heatWaveCluster,
+                    isNotModified);
         }
     }
 

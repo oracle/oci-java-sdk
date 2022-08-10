@@ -60,17 +60,19 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDbCpuUsageCollection"
     })
     private SummarizeAwrDbCpuUsagesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection
                     awrDbCpuUsageCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDbCpuUsageCollection = awrDbCpuUsageCollection;
@@ -81,6 +83,13 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(SummarizeAwrDbCpuUsagesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDbCpuUsageCollection(o.getAwrDbCpuUsageCollection());
@@ -161,7 +171,11 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
          */
         public SummarizeAwrDbCpuUsagesResponse build() {
             return new SummarizeAwrDbCpuUsagesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbCpuUsageCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    awrDbCpuUsageCollection);
         }
     }
 

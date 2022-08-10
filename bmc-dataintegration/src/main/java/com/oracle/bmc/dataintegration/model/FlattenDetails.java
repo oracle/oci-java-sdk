@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FlattenDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FlattenDetails {
+public final class FlattenDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "flattenProjectionPreferences",
@@ -102,26 +102,33 @@ public final class FlattenDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FlattenDetails build() {
-            FlattenDetails __instance__ =
+            FlattenDetails model =
                     new FlattenDetails(
-                            flattenProjectionPreferences,
-                            flattenAttributeRoot,
-                            flattenAttributePath,
-                            flattenColumns);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.flattenProjectionPreferences,
+                            this.flattenAttributeRoot,
+                            this.flattenAttributePath,
+                            this.flattenColumns);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FlattenDetails o) {
-            Builder copiedBuilder =
-                    flattenProjectionPreferences(o.getFlattenProjectionPreferences())
-                            .flattenAttributeRoot(o.getFlattenAttributeRoot())
-                            .flattenAttributePath(o.getFlattenAttributePath())
-                            .flattenColumns(o.getFlattenColumns());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FlattenDetails model) {
+            if (model.wasPropertyExplicitlySet("flattenProjectionPreferences")) {
+                this.flattenProjectionPreferences(model.getFlattenProjectionPreferences());
+            }
+            if (model.wasPropertyExplicitlySet("flattenAttributeRoot")) {
+                this.flattenAttributeRoot(model.getFlattenAttributeRoot());
+            }
+            if (model.wasPropertyExplicitlySet("flattenAttributePath")) {
+                this.flattenAttributePath(model.getFlattenAttributePath());
+            }
+            if (model.wasPropertyExplicitlySet("flattenColumns")) {
+                this.flattenColumns(model.getFlattenColumns());
+            }
+            return this;
         }
     }
 
@@ -198,12 +205,12 @@ public final class FlattenDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FlattenDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("flattenProjectionPreferences=")
                 .append(String.valueOf(this.flattenProjectionPreferences));
         sb.append(", flattenAttributeRoot=").append(String.valueOf(this.flattenAttributeRoot));
         sb.append(", flattenAttributePath=").append(String.valueOf(this.flattenAttributePath));
         sb.append(", flattenColumns=").append(String.valueOf(this.flattenColumns));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,7 +230,7 @@ public final class FlattenDetails {
                 && java.util.Objects.equals(this.flattenAttributeRoot, other.flattenAttributeRoot)
                 && java.util.Objects.equals(this.flattenAttributePath, other.flattenAttributePath)
                 && java.util.Objects.equals(this.flattenColumns, other.flattenColumns)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -248,16 +255,7 @@ public final class FlattenDetails {
         result =
                 (result * PRIME)
                         + (this.flattenColumns == null ? 43 : this.flattenColumns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

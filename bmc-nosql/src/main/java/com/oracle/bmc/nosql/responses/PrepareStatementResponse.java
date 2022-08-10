@@ -40,12 +40,18 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
         return preparedStatement;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "preparedStatement"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "preparedStatement"
+    })
     private PrepareStatementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.nosql.model.PreparedStatement preparedStatement) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.preparedStatement = preparedStatement;
     }
@@ -55,6 +61,13 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +114,7 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(PrepareStatementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             preparedStatement(o.getPreparedStatement());
 
@@ -113,7 +127,7 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public PrepareStatementResponse build() {
             return new PrepareStatementResponse(
-                    __httpStatusCode__, opcRequestId, preparedStatement);
+                    __httpStatusCode__, headers, opcRequestId, preparedStatement);
         }
     }
 

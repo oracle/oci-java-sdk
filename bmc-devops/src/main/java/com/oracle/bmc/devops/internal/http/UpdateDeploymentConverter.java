@@ -108,8 +108,8 @@ public class UpdateDeploymentConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .UpdateDeploymentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployment(response.getItem());
 

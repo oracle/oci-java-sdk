@@ -114,8 +114,8 @@ public class GetComputeCapacityReservationConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetComputeCapacityReservationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.computeCapacityReservation(response.getItem());
 

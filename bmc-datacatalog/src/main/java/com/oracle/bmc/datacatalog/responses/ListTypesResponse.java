@@ -55,16 +55,18 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "typeCollection"
     })
     private ListTypesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.TypeCollection typeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.typeCollection = typeCollection;
@@ -75,6 +77,13 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListTypesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             typeCollection(o.getTypeCollection());
@@ -149,7 +159,7 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListTypesResponse build() {
             return new ListTypesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, typeCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, typeCollection);
         }
     }
 

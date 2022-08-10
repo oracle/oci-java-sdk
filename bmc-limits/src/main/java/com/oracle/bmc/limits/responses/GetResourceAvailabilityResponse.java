@@ -40,14 +40,16 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "resourceAvailability"
     })
     private GetResourceAvailabilityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.resourceAvailability = resourceAvailability;
     }
@@ -57,6 +59,13 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetResourceAvailabilityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             resourceAvailability(o.getResourceAvailability());
 
@@ -113,7 +123,7 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
          */
         public GetResourceAvailabilityResponse build() {
             return new GetResourceAvailabilityResponse(
-                    __httpStatusCode__, opcRequestId, resourceAvailability);
+                    __httpStatusCode__, headers, opcRequestId, resourceAvailability);
         }
     }
 

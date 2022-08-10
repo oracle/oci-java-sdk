@@ -892,6 +892,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 CreateRuleSetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRuleSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "CreateRuleSet", ib.getRequestUri().toString(), "");
@@ -2831,6 +2832,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 UpdateHostnameConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateHostnameConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateHostname", ib.getRequestUri().toString(), "");
@@ -3184,6 +3186,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 UpdateRuleSetConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRuleSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "LoadBalancer", "UpdateRuleSet", ib.getRequestUri().toString(), "");

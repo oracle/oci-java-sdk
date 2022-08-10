@@ -19,7 +19,8 @@ package com.oracle.bmc.computeinstanceagent.model;
     builder = AvailablePluginSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AvailablePluginSummary {
+public final class AvailablePluginSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "summary", "isSupported", "isEnabledByDefault"})
     public AvailablePluginSummary(
@@ -102,22 +103,30 @@ public final class AvailablePluginSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AvailablePluginSummary build() {
-            AvailablePluginSummary __instance__ =
-                    new AvailablePluginSummary(name, summary, isSupported, isEnabledByDefault);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AvailablePluginSummary model =
+                    new AvailablePluginSummary(
+                            this.name, this.summary, this.isSupported, this.isEnabledByDefault);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AvailablePluginSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .summary(o.getSummary())
-                            .isSupported(o.getIsSupported())
-                            .isEnabledByDefault(o.getIsEnabledByDefault());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AvailablePluginSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("summary")) {
+                this.summary(model.getSummary());
+            }
+            if (model.wasPropertyExplicitlySet("isSupported")) {
+                this.isSupported(model.getIsSupported());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabledByDefault")) {
+                this.isEnabledByDefault(model.getIsEnabledByDefault());
+            }
+            return this;
         }
     }
 
@@ -201,11 +210,11 @@ public final class AvailablePluginSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AvailablePluginSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", summary=").append(String.valueOf(this.summary));
         sb.append(", isSupported=").append(String.valueOf(this.isSupported));
         sb.append(", isEnabledByDefault=").append(String.valueOf(this.isEnabledByDefault));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +233,7 @@ public final class AvailablePluginSummary {
                 && java.util.Objects.equals(this.summary, other.summary)
                 && java.util.Objects.equals(this.isSupported, other.isSupported)
                 && java.util.Objects.equals(this.isEnabledByDefault, other.isEnabledByDefault)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +248,7 @@ public final class AvailablePluginSummary {
                         + (this.isEnabledByDefault == null
                                 ? 43
                                 : this.isEnabledByDefault.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

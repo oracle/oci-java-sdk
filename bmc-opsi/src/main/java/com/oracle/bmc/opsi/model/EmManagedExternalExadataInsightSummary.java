@@ -255,60 +255,99 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmManagedExternalExadataInsightSummary build() {
-            EmManagedExternalExadataInsightSummary __instance__ =
+            EmManagedExternalExadataInsightSummary model =
                     new EmManagedExternalExadataInsightSummary(
-                            id,
-                            compartmentId,
-                            exadataName,
-                            exadataDisplayName,
-                            exadataType,
-                            exadataRackType,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            status,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerEntityName,
-                            enterpriseManagerEntityType,
-                            enterpriseManagerEntityIdentifier,
-                            enterpriseManagerEntityDisplayName,
-                            enterpriseManagerBridgeId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.exadataName,
+                            this.exadataDisplayName,
+                            this.exadataType,
+                            this.exadataRackType,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.status,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerEntityName,
+                            this.enterpriseManagerEntityType,
+                            this.enterpriseManagerEntityIdentifier,
+                            this.enterpriseManagerEntityDisplayName,
+                            this.enterpriseManagerBridgeId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EmManagedExternalExadataInsightSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .exadataName(o.getExadataName())
-                            .exadataDisplayName(o.getExadataDisplayName())
-                            .exadataType(o.getExadataType())
-                            .exadataRackType(o.getExadataRackType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerEntityName(o.getEnterpriseManagerEntityName())
-                            .enterpriseManagerEntityType(o.getEnterpriseManagerEntityType())
-                            .enterpriseManagerEntityIdentifier(
-                                    o.getEnterpriseManagerEntityIdentifier())
-                            .enterpriseManagerEntityDisplayName(
-                                    o.getEnterpriseManagerEntityDisplayName())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EmManagedExternalExadataInsightSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataName")) {
+                this.exadataName(model.getExadataName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataDisplayName")) {
+                this.exadataDisplayName(model.getExadataDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataType")) {
+                this.exadataType(model.getExadataType());
+            }
+            if (model.wasPropertyExplicitlySet("exadataRackType")) {
+                this.exadataRackType(model.getExadataRackType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityName")) {
+                this.enterpriseManagerEntityName(model.getEnterpriseManagerEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityType")) {
+                this.enterpriseManagerEntityType(model.getEnterpriseManagerEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityIdentifier")) {
+                this.enterpriseManagerEntityIdentifier(
+                        model.getEnterpriseManagerEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityDisplayName")) {
+                this.enterpriseManagerEntityDisplayName(
+                        model.getEnterpriseManagerEntityDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            return this;
         }
     }
 
@@ -478,7 +517,6 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
                 .append(String.valueOf(this.enterpriseManagerEntityDisplayName));
         sb.append(", enterpriseManagerBridgeId=")
                 .append(String.valueOf(this.enterpriseManagerBridgeId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -507,8 +545,7 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
                         other.enterpriseManagerEntityDisplayName)
                 && java.util.Objects.equals(
                         this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -545,16 +582,6 @@ public final class EmManagedExternalExadataInsightSummary extends ExadataInsight
                         + (this.enterpriseManagerBridgeId == null
                                 ? 43
                                 : this.enterpriseManagerBridgeId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

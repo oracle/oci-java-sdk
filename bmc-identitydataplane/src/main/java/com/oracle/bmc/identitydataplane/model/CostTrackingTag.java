@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CostTrackingTag.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CostTrackingTag {
+public final class CostTrackingTag extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tagNamespaceId",
@@ -108,23 +108,33 @@ public final class CostTrackingTag {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CostTrackingTag build() {
-            CostTrackingTag __instance__ =
+            CostTrackingTag model =
                     new CostTrackingTag(
-                            tagNamespaceId, tagNamespaceName, tagDefinitionId, tagDefinitionName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tagNamespaceId,
+                            this.tagNamespaceName,
+                            this.tagDefinitionId,
+                            this.tagDefinitionName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CostTrackingTag o) {
-            Builder copiedBuilder =
-                    tagNamespaceId(o.getTagNamespaceId())
-                            .tagNamespaceName(o.getTagNamespaceName())
-                            .tagDefinitionId(o.getTagDefinitionId())
-                            .tagDefinitionName(o.getTagDefinitionName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CostTrackingTag model) {
+            if (model.wasPropertyExplicitlySet("tagNamespaceId")) {
+                this.tagNamespaceId(model.getTagNamespaceId());
+            }
+            if (model.wasPropertyExplicitlySet("tagNamespaceName")) {
+                this.tagNamespaceName(model.getTagNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("tagDefinitionId")) {
+                this.tagDefinitionId(model.getTagDefinitionId());
+            }
+            if (model.wasPropertyExplicitlySet("tagDefinitionName")) {
+                this.tagDefinitionName(model.getTagDefinitionName());
+            }
+            return this;
         }
     }
 
@@ -208,11 +218,11 @@ public final class CostTrackingTag {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CostTrackingTag(");
+        sb.append("super=").append(super.toString());
         sb.append("tagNamespaceId=").append(String.valueOf(this.tagNamespaceId));
         sb.append(", tagNamespaceName=").append(String.valueOf(this.tagNamespaceName));
         sb.append(", tagDefinitionId=").append(String.valueOf(this.tagDefinitionId));
         sb.append(", tagDefinitionName=").append(String.valueOf(this.tagDefinitionName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -231,7 +241,7 @@ public final class CostTrackingTag {
                 && java.util.Objects.equals(this.tagNamespaceName, other.tagNamespaceName)
                 && java.util.Objects.equals(this.tagDefinitionId, other.tagDefinitionId)
                 && java.util.Objects.equals(this.tagDefinitionName, other.tagDefinitionName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -250,16 +260,7 @@ public final class CostTrackingTag {
         result =
                 (result * PRIME)
                         + (this.tagDefinitionName == null ? 43 : this.tagDefinitionName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

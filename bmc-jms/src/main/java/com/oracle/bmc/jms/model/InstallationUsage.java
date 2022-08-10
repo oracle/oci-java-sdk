@@ -21,9 +21,10 @@ package com.oracle.bmc.jms.model;
     builder = InstallationUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstallationUsage {
+public final class InstallationUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "installationKey",
         "jreVendor",
         "jreDistribution",
         "jreVersion",
@@ -39,6 +40,7 @@ public final class InstallationUsage {
         "timeLastSeen"
     })
     public InstallationUsage(
+            String installationKey,
             String jreVendor,
             String jreDistribution,
             String jreVersion,
@@ -53,6 +55,7 @@ public final class InstallationUsage {
             java.util.Date timeFirstSeen,
             java.util.Date timeLastSeen) {
         super();
+        this.installationKey = installationKey;
         this.jreVendor = jreVendor;
         this.jreDistribution = jreDistribution;
         this.jreVersion = jreVersion;
@@ -70,6 +73,22 @@ public final class InstallationUsage {
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
+        private String installationKey;
+
+        /**
+         * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+         * @param installationKey the value to set
+         * @return this builder
+         **/
+        public Builder installationKey(String installationKey) {
+            this.installationKey = installationKey;
+            this.__explicitlySet__.add("installationKey");
+            return this;
+        }
         /**
          * The vendor of the Java Runtime that is deployed with the installation.
          **/
@@ -292,44 +311,73 @@ public final class InstallationUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstallationUsage build() {
-            InstallationUsage __instance__ =
+            InstallationUsage model =
                     new InstallationUsage(
-                            jreVendor,
-                            jreDistribution,
-                            jreVersion,
-                            path,
-                            os,
-                            architecture,
-                            operatingSystem,
-                            approximateApplicationCount,
-                            approximateManagedInstanceCount,
-                            timeStart,
-                            timeEnd,
-                            timeFirstSeen,
-                            timeLastSeen);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.installationKey,
+                            this.jreVendor,
+                            this.jreDistribution,
+                            this.jreVersion,
+                            this.path,
+                            this.os,
+                            this.architecture,
+                            this.operatingSystem,
+                            this.approximateApplicationCount,
+                            this.approximateManagedInstanceCount,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.timeFirstSeen,
+                            this.timeLastSeen);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstallationUsage o) {
-            Builder copiedBuilder =
-                    jreVendor(o.getJreVendor())
-                            .jreDistribution(o.getJreDistribution())
-                            .jreVersion(o.getJreVersion())
-                            .path(o.getPath())
-                            .os(o.getOs())
-                            .architecture(o.getArchitecture())
-                            .operatingSystem(o.getOperatingSystem())
-                            .approximateApplicationCount(o.getApproximateApplicationCount())
-                            .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .timeFirstSeen(o.getTimeFirstSeen())
-                            .timeLastSeen(o.getTimeLastSeen());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstallationUsage model) {
+            if (model.wasPropertyExplicitlySet("installationKey")) {
+                this.installationKey(model.getInstallationKey());
+            }
+            if (model.wasPropertyExplicitlySet("jreVendor")) {
+                this.jreVendor(model.getJreVendor());
+            }
+            if (model.wasPropertyExplicitlySet("jreDistribution")) {
+                this.jreDistribution(model.getJreDistribution());
+            }
+            if (model.wasPropertyExplicitlySet("jreVersion")) {
+                this.jreVersion(model.getJreVersion());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("os")) {
+                this.os(model.getOs());
+            }
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
+                this.approximateApplicationCount(model.getApproximateApplicationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
+                this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSeen")) {
+                this.timeFirstSeen(model.getTimeFirstSeen());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            return this;
         }
     }
 
@@ -342,6 +390,20 @@ public final class InstallationUsage {
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
+    private final String installationKey;
+
+    /**
+     * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+     * @return the value
+     **/
+    public String getInstallationKey() {
+        return installationKey;
     }
 
     /**
@@ -548,7 +610,9 @@ public final class InstallationUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstallationUsage(");
-        sb.append("jreVendor=").append(String.valueOf(this.jreVendor));
+        sb.append("super=").append(super.toString());
+        sb.append("installationKey=").append(String.valueOf(this.installationKey));
+        sb.append(", jreVendor=").append(String.valueOf(this.jreVendor));
         sb.append(", jreDistribution=").append(String.valueOf(this.jreDistribution));
         sb.append(", jreVersion=").append(String.valueOf(this.jreVersion));
         sb.append(", path=").append(String.valueOf(this.path));
@@ -563,7 +627,6 @@ public final class InstallationUsage {
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -578,7 +641,8 @@ public final class InstallationUsage {
         }
 
         InstallationUsage other = (InstallationUsage) o;
-        return java.util.Objects.equals(this.jreVendor, other.jreVendor)
+        return java.util.Objects.equals(this.installationKey, other.installationKey)
+                && java.util.Objects.equals(this.jreVendor, other.jreVendor)
                 && java.util.Objects.equals(this.jreDistribution, other.jreDistribution)
                 && java.util.Objects.equals(this.jreVersion, other.jreVersion)
                 && java.util.Objects.equals(this.path, other.path)
@@ -593,13 +657,16 @@ public final class InstallationUsage {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.installationKey == null ? 43 : this.installationKey.hashCode());
         result = (result * PRIME) + (this.jreVendor == null ? 43 : this.jreVendor.hashCode());
         result =
                 (result * PRIME)
@@ -627,16 +694,7 @@ public final class InstallationUsage {
                 (result * PRIME)
                         + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
         result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

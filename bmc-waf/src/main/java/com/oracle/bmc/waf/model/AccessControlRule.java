@@ -72,22 +72,30 @@ public final class AccessControlRule extends WebAppFirewallPolicyRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessControlRule build() {
-            AccessControlRule __instance__ =
-                    new AccessControlRule(name, conditionLanguage, condition, actionName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AccessControlRule model =
+                    new AccessControlRule(
+                            this.name, this.conditionLanguage, this.condition, this.actionName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessControlRule o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .conditionLanguage(o.getConditionLanguage())
-                            .condition(o.getCondition())
-                            .actionName(o.getActionName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessControlRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("conditionLanguage")) {
+                this.conditionLanguage(model.getConditionLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("actionName")) {
+                this.actionName(model.getActionName());
+            }
+            return this;
         }
     }
 
@@ -122,7 +130,6 @@ public final class AccessControlRule extends WebAppFirewallPolicyRule {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessControlRule(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -137,24 +144,13 @@ public final class AccessControlRule extends WebAppFirewallPolicyRule {
         }
 
         AccessControlRule other = (AccessControlRule) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

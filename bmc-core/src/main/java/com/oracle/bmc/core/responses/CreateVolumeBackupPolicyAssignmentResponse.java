@@ -57,16 +57,18 @@ public class CreateVolumeBackupPolicyAssignmentResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "volumeBackupPolicyAssignment"
     })
     private CreateVolumeBackupPolicyAssignmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.volumeBackupPolicyAssignment = volumeBackupPolicyAssignment;
@@ -77,6 +79,13 @@ public class CreateVolumeBackupPolicyAssignmentResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -139,6 +148,7 @@ public class CreateVolumeBackupPolicyAssignmentResponse
          */
         public Builder copy(CreateVolumeBackupPolicyAssignmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             volumeBackupPolicyAssignment(o.getVolumeBackupPolicyAssignment());
@@ -152,7 +162,7 @@ public class CreateVolumeBackupPolicyAssignmentResponse
          */
         public CreateVolumeBackupPolicyAssignmentResponse build() {
             return new CreateVolumeBackupPolicyAssignmentResponse(
-                    __httpStatusCode__, etag, opcRequestId, volumeBackupPolicyAssignment);
+                    __httpStatusCode__, headers, etag, opcRequestId, volumeBackupPolicyAssignment);
         }
     }
 

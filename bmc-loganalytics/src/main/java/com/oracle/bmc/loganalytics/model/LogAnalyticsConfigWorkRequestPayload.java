@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsConfigWorkRequestPayload.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsConfigWorkRequestPayload {
+public final class LogAnalyticsConfigWorkRequestPayload
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceName",
@@ -110,23 +111,33 @@ public final class LogAnalyticsConfigWorkRequestPayload {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsConfigWorkRequestPayload build() {
-            LogAnalyticsConfigWorkRequestPayload __instance__ =
+            LogAnalyticsConfigWorkRequestPayload model =
                     new LogAnalyticsConfigWorkRequestPayload(
-                            sourceName, entityId, lookupReference, lookupReferenceString);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sourceName,
+                            this.entityId,
+                            this.lookupReference,
+                            this.lookupReferenceString);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsConfigWorkRequestPayload o) {
-            Builder copiedBuilder =
-                    sourceName(o.getSourceName())
-                            .entityId(o.getEntityId())
-                            .lookupReference(o.getLookupReference())
-                            .lookupReferenceString(o.getLookupReferenceString());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsConfigWorkRequestPayload model) {
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("lookupReference")) {
+                this.lookupReference(model.getLookupReference());
+            }
+            if (model.wasPropertyExplicitlySet("lookupReferenceString")) {
+                this.lookupReferenceString(model.getLookupReferenceString());
+            }
+            return this;
         }
     }
 
@@ -210,11 +221,11 @@ public final class LogAnalyticsConfigWorkRequestPayload {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsConfigWorkRequestPayload(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceName=").append(String.valueOf(this.sourceName));
         sb.append(", entityId=").append(String.valueOf(this.entityId));
         sb.append(", lookupReference=").append(String.valueOf(this.lookupReference));
         sb.append(", lookupReferenceString=").append(String.valueOf(this.lookupReferenceString));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +244,7 @@ public final class LogAnalyticsConfigWorkRequestPayload {
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.lookupReference, other.lookupReference)
                 && java.util.Objects.equals(this.lookupReferenceString, other.lookupReferenceString)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -250,16 +261,7 @@ public final class LogAnalyticsConfigWorkRequestPayload {
                         + (this.lookupReferenceString == null
                                 ? 43
                                 : this.lookupReferenceString.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Promotion.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Promotion {
+public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "duration",
@@ -184,34 +184,49 @@ public final class Promotion {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Promotion build() {
-            Promotion __instance__ =
+            Promotion model =
                     new Promotion(
-                            duration,
-                            durationUnit,
-                            amount,
-                            status,
-                            isIntentToPay,
-                            currencyUnit,
-                            timeStarted,
-                            timeExpired);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.duration,
+                            this.durationUnit,
+                            this.amount,
+                            this.status,
+                            this.isIntentToPay,
+                            this.currencyUnit,
+                            this.timeStarted,
+                            this.timeExpired);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Promotion o) {
-            Builder copiedBuilder =
-                    duration(o.getDuration())
-                            .durationUnit(o.getDurationUnit())
-                            .amount(o.getAmount())
-                            .status(o.getStatus())
-                            .isIntentToPay(o.getIsIntentToPay())
-                            .currencyUnit(o.getCurrencyUnit())
-                            .timeStarted(o.getTimeStarted())
-                            .timeExpired(o.getTimeExpired());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Promotion model) {
+            if (model.wasPropertyExplicitlySet("duration")) {
+                this.duration(model.getDuration());
+            }
+            if (model.wasPropertyExplicitlySet("durationUnit")) {
+                this.durationUnit(model.getDurationUnit());
+            }
+            if (model.wasPropertyExplicitlySet("amount")) {
+                this.amount(model.getAmount());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isIntentToPay")) {
+                this.isIntentToPay(model.getIsIntentToPay());
+            }
+            if (model.wasPropertyExplicitlySet("currencyUnit")) {
+                this.currencyUnit(model.getCurrencyUnit());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpired")) {
+                this.timeExpired(model.getTimeExpired());
+            }
+            return this;
         }
     }
 
@@ -399,6 +414,7 @@ public final class Promotion {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Promotion(");
+        sb.append("super=").append(super.toString());
         sb.append("duration=").append(String.valueOf(this.duration));
         sb.append(", durationUnit=").append(String.valueOf(this.durationUnit));
         sb.append(", amount=").append(String.valueOf(this.amount));
@@ -407,7 +423,6 @@ public final class Promotion {
         sb.append(", currencyUnit=").append(String.valueOf(this.currencyUnit));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeExpired=").append(String.valueOf(this.timeExpired));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -430,7 +445,7 @@ public final class Promotion {
                 && java.util.Objects.equals(this.currencyUnit, other.currencyUnit)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeExpired, other.timeExpired)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -447,16 +462,7 @@ public final class Promotion {
         result = (result * PRIME) + (this.currencyUnit == null ? 43 : this.currencyUnit.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeExpired == null ? 43 : this.timeExpired.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

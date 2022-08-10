@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = UpdateFamilyMaintenancePolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateFamilyMaintenancePolicyDetails {
+public final class UpdateFamilyMaintenancePolicyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isMonthlyPatchingEnabled", "concurrentMaintenance"})
     public UpdateFamilyMaintenancePolicyDetails(
@@ -70,21 +71,24 @@ public final class UpdateFamilyMaintenancePolicyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateFamilyMaintenancePolicyDetails build() {
-            UpdateFamilyMaintenancePolicyDetails __instance__ =
+            UpdateFamilyMaintenancePolicyDetails model =
                     new UpdateFamilyMaintenancePolicyDetails(
-                            isMonthlyPatchingEnabled, concurrentMaintenance);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isMonthlyPatchingEnabled, this.concurrentMaintenance);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateFamilyMaintenancePolicyDetails o) {
-            Builder copiedBuilder =
-                    isMonthlyPatchingEnabled(o.getIsMonthlyPatchingEnabled())
-                            .concurrentMaintenance(o.getConcurrentMaintenance());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateFamilyMaintenancePolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("isMonthlyPatchingEnabled")) {
+                this.isMonthlyPatchingEnabled(model.getIsMonthlyPatchingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("concurrentMaintenance")) {
+                this.concurrentMaintenance(model.getConcurrentMaintenance());
+            }
+            return this;
         }
     }
 
@@ -140,10 +144,10 @@ public final class UpdateFamilyMaintenancePolicyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateFamilyMaintenancePolicyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isMonthlyPatchingEnabled=")
                 .append(String.valueOf(this.isMonthlyPatchingEnabled));
         sb.append(", concurrentMaintenance=").append(String.valueOf(this.concurrentMaintenance));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +165,7 @@ public final class UpdateFamilyMaintenancePolicyDetails {
         return java.util.Objects.equals(
                         this.isMonthlyPatchingEnabled, other.isMonthlyPatchingEnabled)
                 && java.util.Objects.equals(this.concurrentMaintenance, other.concurrentMaintenance)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -178,16 +182,7 @@ public final class UpdateFamilyMaintenancePolicyDetails {
                         + (this.concurrentMaintenance == null
                                 ? 43
                                 : this.concurrentMaintenance.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

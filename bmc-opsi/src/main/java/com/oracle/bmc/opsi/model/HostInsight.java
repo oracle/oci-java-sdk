@@ -23,6 +23,10 @@ package com.oracle.bmc.opsi.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacsManagedCloudHostInsight.class,
+        name = "MACS_MANAGED_CLOUD_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EmManagedExternalHostInsight.class,
         name = "EM_MANAGED_EXTERNAL_HOST"
     ),
@@ -32,7 +36,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class HostInsight {
+public class HostInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -303,6 +307,7 @@ public class HostInsight {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostInsight(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
@@ -344,7 +349,8 @@ public class HostInsight {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails);
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && super.equals(other);
     }
 
     @Override
@@ -375,6 +381,7 @@ public class HostInsight {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

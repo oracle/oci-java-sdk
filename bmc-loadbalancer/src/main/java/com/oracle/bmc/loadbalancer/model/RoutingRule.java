@@ -19,7 +19,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoutingRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoutingRule {
+public final class RoutingRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "condition", "actions"})
     public RoutingRule(String name, String condition, java.util.List<Action> actions) {
@@ -90,18 +90,25 @@ public final class RoutingRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoutingRule build() {
-            RoutingRule __instance__ = new RoutingRule(name, condition, actions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RoutingRule model = new RoutingRule(this.name, this.condition, this.actions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoutingRule o) {
-            Builder copiedBuilder =
-                    name(o.getName()).condition(o.getCondition()).actions(o.getActions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoutingRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("actions")) {
+                this.actions(model.getActions());
+            }
+            return this;
         }
     }
 
@@ -177,10 +184,10 @@ public final class RoutingRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoutingRule(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", condition=").append(String.valueOf(this.condition));
         sb.append(", actions=").append(String.valueOf(this.actions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +205,7 @@ public final class RoutingRule {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.actions, other.actions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -208,16 +215,7 @@ public final class RoutingRule {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.actions == null ? 43 : this.actions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

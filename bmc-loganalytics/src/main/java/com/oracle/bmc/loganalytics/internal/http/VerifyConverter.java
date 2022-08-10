@@ -122,8 +122,8 @@ public class VerifyConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses.VerifyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.verifyOutput(response.getItem());
 

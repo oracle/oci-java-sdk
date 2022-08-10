@@ -165,40 +165,61 @@ public final class CloneSkillDetails extends CreateSkillDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CloneSkillDetails build() {
-            CloneSkillDetails __instance__ =
+            CloneSkillDetails model =
                     new CloneSkillDetails(
-                            category,
-                            description,
-                            platformVersion,
-                            multilingualMode,
-                            primaryLanguageTag,
-                            freeformTags,
-                            definedTags,
-                            id,
-                            name,
-                            displayName,
-                            version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.category,
+                            this.description,
+                            this.platformVersion,
+                            this.multilingualMode,
+                            this.primaryLanguageTag,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.id,
+                            this.name,
+                            this.displayName,
+                            this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CloneSkillDetails o) {
-            Builder copiedBuilder =
-                    category(o.getCategory())
-                            .description(o.getDescription())
-                            .platformVersion(o.getPlatformVersion())
-                            .multilingualMode(o.getMultilingualMode())
-                            .primaryLanguageTag(o.getPrimaryLanguageTag())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .id(o.getId())
-                            .name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CloneSkillDetails model) {
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("multilingualMode")) {
+                this.multilingualMode(model.getMultilingualMode());
+            }
+            if (model.wasPropertyExplicitlySet("primaryLanguageTag")) {
+                this.primaryLanguageTag(model.getPrimaryLanguageTag());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -320,7 +341,6 @@ public final class CloneSkillDetails extends CreateSkillDetails {
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -339,8 +359,7 @@ public final class CloneSkillDetails extends CreateSkillDetails {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -351,16 +370,6 @@ public final class CloneSkillDetails extends CreateSkillDetails {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

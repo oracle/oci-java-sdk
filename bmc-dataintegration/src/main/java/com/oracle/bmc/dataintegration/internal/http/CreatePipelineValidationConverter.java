@@ -121,8 +121,8 @@ public class CreatePipelineValidationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .CreatePipelineValidationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pipelineValidation(response.getItem());
 

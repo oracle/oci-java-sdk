@@ -117,34 +117,49 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OrchestrationPublicationPackage build() {
-            OrchestrationPublicationPackage __instance__ =
+            OrchestrationPublicationPackage model =
                     new OrchestrationPublicationPackage(
-                            description,
-                            listingId,
-                            version,
-                            resourceId,
-                            timeCreated,
-                            operatingSystem,
-                            resourceLink,
-                            variables);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.listingId,
+                            this.version,
+                            this.resourceId,
+                            this.timeCreated,
+                            this.operatingSystem,
+                            this.resourceLink,
+                            this.variables);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OrchestrationPublicationPackage o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .listingId(o.getListingId())
-                            .version(o.getVersion())
-                            .resourceId(o.getResourceId())
-                            .timeCreated(o.getTimeCreated())
-                            .operatingSystem(o.getOperatingSystem())
-                            .resourceLink(o.getResourceLink())
-                            .variables(o.getVariables());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OrchestrationPublicationPackage model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("resourceLink")) {
+                this.resourceLink(model.getResourceLink());
+            }
+            if (model.wasPropertyExplicitlySet("variables")) {
+                this.variables(model.getVariables());
+            }
+            return this;
         }
     }
 
@@ -218,7 +233,6 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", resourceLink=").append(String.valueOf(this.resourceLink));
         sb.append(", variables=").append(String.valueOf(this.variables));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,8 +249,7 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
         OrchestrationPublicationPackage other = (OrchestrationPublicationPackage) o;
         return java.util.Objects.equals(this.resourceLink, other.resourceLink)
                 && java.util.Objects.equals(this.variables, other.variables)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +258,6 @@ public final class OrchestrationPublicationPackage extends PublicationPackage {
         int result = super.hashCode();
         result = (result * PRIME) + (this.resourceLink == null ? 43 : this.resourceLink.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

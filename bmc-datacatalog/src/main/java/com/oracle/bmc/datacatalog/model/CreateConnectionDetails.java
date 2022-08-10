@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CreateConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateConnectionDetails {
+public final class CreateConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -213,32 +214,45 @@ public final class CreateConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateConnectionDetails build() {
-            CreateConnectionDetails __instance__ =
+            CreateConnectionDetails model =
                     new CreateConnectionDetails(
-                            description,
-                            displayName,
-                            typeKey,
-                            customPropertyMembers,
-                            properties,
-                            encProperties,
-                            isDefault);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.typeKey,
+                            this.customPropertyMembers,
+                            this.properties,
+                            this.encProperties,
+                            this.isDefault);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateConnectionDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .typeKey(o.getTypeKey())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .properties(o.getProperties())
-                            .encProperties(o.getEncProperties())
-                            .isDefault(o.getIsDefault());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("typeKey")) {
+                this.typeKey(model.getTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("encProperties")) {
+                this.encProperties(model.getEncProperties());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            return this;
         }
     }
 
@@ -408,6 +422,7 @@ public final class CreateConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", typeKey=").append(String.valueOf(this.typeKey));
@@ -415,7 +430,6 @@ public final class CreateConnectionDetails {
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", encProperties=").append(String.valueOf(this.encProperties));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -437,7 +451,7 @@ public final class CreateConnectionDetails {
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.encProperties, other.encProperties)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -457,16 +471,7 @@ public final class CreateConnectionDetails {
                 (result * PRIME)
                         + (this.encProperties == null ? 43 : this.encProperties.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

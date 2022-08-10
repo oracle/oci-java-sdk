@@ -126,8 +126,8 @@ public class ValidateDatabaseToolsConnectionConverter {
                                                 com.oracle.bmc.databasetools.responses
                                                         .ValidateDatabaseToolsConnectionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.validateDatabaseToolsConnectionResult(response.getItem());
 

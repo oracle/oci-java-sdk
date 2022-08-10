@@ -130,40 +130,61 @@ public final class CertificateBundlePublicOnly extends CertificateBundle {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateBundlePublicOnly build() {
-            CertificateBundlePublicOnly __instance__ =
+            CertificateBundlePublicOnly model =
                     new CertificateBundlePublicOnly(
-                            certificateId,
-                            certificateName,
-                            versionNumber,
-                            serialNumber,
-                            certificatePem,
-                            certChainPem,
-                            timeCreated,
-                            validity,
-                            versionName,
-                            stages,
-                            revocationStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.certificateId,
+                            this.certificateName,
+                            this.versionNumber,
+                            this.serialNumber,
+                            this.certificatePem,
+                            this.certChainPem,
+                            this.timeCreated,
+                            this.validity,
+                            this.versionName,
+                            this.stages,
+                            this.revocationStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateBundlePublicOnly o) {
-            Builder copiedBuilder =
-                    certificateId(o.getCertificateId())
-                            .certificateName(o.getCertificateName())
-                            .versionNumber(o.getVersionNumber())
-                            .serialNumber(o.getSerialNumber())
-                            .certificatePem(o.getCertificatePem())
-                            .certChainPem(o.getCertChainPem())
-                            .timeCreated(o.getTimeCreated())
-                            .validity(o.getValidity())
-                            .versionName(o.getVersionName())
-                            .stages(o.getStages())
-                            .revocationStatus(o.getRevocationStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateBundlePublicOnly model) {
+            if (model.wasPropertyExplicitlySet("certificateId")) {
+                this.certificateId(model.getCertificateId());
+            }
+            if (model.wasPropertyExplicitlySet("certificateName")) {
+                this.certificateName(model.getCertificateName());
+            }
+            if (model.wasPropertyExplicitlySet("versionNumber")) {
+                this.versionNumber(model.getVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("certificatePem")) {
+                this.certificatePem(model.getCertificatePem());
+            }
+            if (model.wasPropertyExplicitlySet("certChainPem")) {
+                this.certChainPem(model.getCertChainPem());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("stages")) {
+                this.stages(model.getStages());
+            }
+            if (model.wasPropertyExplicitlySet("revocationStatus")) {
+                this.revocationStatus(model.getRevocationStatus());
+            }
+            return this;
         }
     }
 
@@ -219,7 +240,6 @@ public final class CertificateBundlePublicOnly extends CertificateBundle {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateBundlePublicOnly(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -234,24 +254,13 @@ public final class CertificateBundlePublicOnly extends CertificateBundle {
         }
 
         CertificateBundlePublicOnly other = (CertificateBundlePublicOnly) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

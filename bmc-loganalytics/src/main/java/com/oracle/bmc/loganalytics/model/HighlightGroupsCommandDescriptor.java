@@ -185,40 +185,61 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HighlightGroupsCommandDescriptor build() {
-            HighlightGroupsCommandDescriptor __instance__ =
+            HighlightGroupsCommandDescriptor model =
                     new HighlightGroupsCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            color,
-                            priority,
-                            matchOnly,
-                            fields,
-                            keywords,
-                            subQueries);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.color,
+                            this.priority,
+                            this.matchOnly,
+                            this.fields,
+                            this.keywords,
+                            this.subQueries);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HighlightGroupsCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .color(o.getColor())
-                            .priority(o.getPriority())
-                            .matchOnly(o.getMatchOnly())
-                            .fields(o.getFields())
-                            .keywords(o.getKeywords())
-                            .subQueries(o.getSubQueries());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HighlightGroupsCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("color")) {
+                this.color(model.getColor());
+            }
+            if (model.wasPropertyExplicitlySet("priority")) {
+                this.priority(model.getPriority());
+            }
+            if (model.wasPropertyExplicitlySet("matchOnly")) {
+                this.matchOnly(model.getMatchOnly());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("keywords")) {
+                this.keywords(model.getKeywords());
+            }
+            if (model.wasPropertyExplicitlySet("subQueries")) {
+                this.subQueries(model.getSubQueries());
+            }
+            return this;
         }
     }
 
@@ -371,7 +392,6 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
         sb.append(", fields=").append(String.valueOf(this.fields));
         sb.append(", keywords=").append(String.valueOf(this.keywords));
         sb.append(", subQueries=").append(String.valueOf(this.subQueries));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -392,8 +412,7 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
                 && java.util.Objects.equals(this.fields, other.fields)
                 && java.util.Objects.equals(this.keywords, other.keywords)
                 && java.util.Objects.equals(this.subQueries, other.subQueries)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -406,16 +425,6 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
         result = (result * PRIME) + (this.keywords == null ? 43 : this.keywords.hashCode());
         result = (result * PRIME) + (this.subQueries == null ? 43 : this.subQueries.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

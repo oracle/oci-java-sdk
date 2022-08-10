@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ServiceCategory.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ServiceCategory {
+public final class ServiceCategory extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -184,27 +184,49 @@ public final class ServiceCategory {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ServiceCategory build() {
-            ServiceCategory __instance__ =
+            ServiceCategory model =
                     new ServiceCategory(
-                            key, name, label, description, issueTypeList, scope, unit, limitId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.label,
+                            this.description,
+                            this.issueTypeList,
+                            this.scope,
+                            this.unit,
+                            this.limitId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ServiceCategory o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .label(o.getLabel())
-                            .description(o.getDescription())
-                            .issueTypeList(o.getIssueTypeList())
-                            .scope(o.getScope())
-                            .unit(o.getUnit())
-                            .limitId(o.getLimitId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ServiceCategory model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("issueTypeList")) {
+                this.issueTypeList(model.getIssueTypeList());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("limitId")) {
+                this.limitId(model.getLimitId());
+            }
+            return this;
         }
     }
 
@@ -344,6 +366,7 @@ public final class ServiceCategory {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ServiceCategory(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", label=").append(String.valueOf(this.label));
@@ -352,7 +375,6 @@ public final class ServiceCategory {
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", limitId=").append(String.valueOf(this.limitId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -375,7 +397,7 @@ public final class ServiceCategory {
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.unit, other.unit)
                 && java.util.Objects.equals(this.limitId, other.limitId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -392,16 +414,7 @@ public final class ServiceCategory {
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
         result = (result * PRIME) + (this.limitId == null ? 43 : this.limitId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

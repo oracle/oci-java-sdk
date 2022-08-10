@@ -148,44 +148,69 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentSyslogParser build() {
-            UnifiedAgentSyslogParser __instance__ =
+            UnifiedAgentSyslogParser model =
                     new UnifiedAgentSyslogParser(
-                            fieldTimeKey,
-                            types,
-                            nullValuePattern,
-                            isNullEmptyString,
-                            isEstimateCurrentEvent,
-                            isKeepTimeKey,
-                            timeoutInMilliseconds,
-                            timeFormat,
-                            rfc5424TimeFormat,
-                            messageFormat,
-                            isWithPriority,
-                            isSupportColonlessIdent,
-                            syslogParserType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldTimeKey,
+                            this.types,
+                            this.nullValuePattern,
+                            this.isNullEmptyString,
+                            this.isEstimateCurrentEvent,
+                            this.isKeepTimeKey,
+                            this.timeoutInMilliseconds,
+                            this.timeFormat,
+                            this.rfc5424TimeFormat,
+                            this.messageFormat,
+                            this.isWithPriority,
+                            this.isSupportColonlessIdent,
+                            this.syslogParserType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentSyslogParser o) {
-            Builder copiedBuilder =
-                    fieldTimeKey(o.getFieldTimeKey())
-                            .types(o.getTypes())
-                            .nullValuePattern(o.getNullValuePattern())
-                            .isNullEmptyString(o.getIsNullEmptyString())
-                            .isEstimateCurrentEvent(o.getIsEstimateCurrentEvent())
-                            .isKeepTimeKey(o.getIsKeepTimeKey())
-                            .timeoutInMilliseconds(o.getTimeoutInMilliseconds())
-                            .timeFormat(o.getTimeFormat())
-                            .rfc5424TimeFormat(o.getRfc5424TimeFormat())
-                            .messageFormat(o.getMessageFormat())
-                            .isWithPriority(o.getIsWithPriority())
-                            .isSupportColonlessIdent(o.getIsSupportColonlessIdent())
-                            .syslogParserType(o.getSyslogParserType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentSyslogParser model) {
+            if (model.wasPropertyExplicitlySet("fieldTimeKey")) {
+                this.fieldTimeKey(model.getFieldTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("nullValuePattern")) {
+                this.nullValuePattern(model.getNullValuePattern());
+            }
+            if (model.wasPropertyExplicitlySet("isNullEmptyString")) {
+                this.isNullEmptyString(model.getIsNullEmptyString());
+            }
+            if (model.wasPropertyExplicitlySet("isEstimateCurrentEvent")) {
+                this.isEstimateCurrentEvent(model.getIsEstimateCurrentEvent());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepTimeKey")) {
+                this.isKeepTimeKey(model.getIsKeepTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMilliseconds")) {
+                this.timeoutInMilliseconds(model.getTimeoutInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("timeFormat")) {
+                this.timeFormat(model.getTimeFormat());
+            }
+            if (model.wasPropertyExplicitlySet("rfc5424TimeFormat")) {
+                this.rfc5424TimeFormat(model.getRfc5424TimeFormat());
+            }
+            if (model.wasPropertyExplicitlySet("messageFormat")) {
+                this.messageFormat(model.getMessageFormat());
+            }
+            if (model.wasPropertyExplicitlySet("isWithPriority")) {
+                this.isWithPriority(model.getIsWithPriority());
+            }
+            if (model.wasPropertyExplicitlySet("isSupportColonlessIdent")) {
+                this.isSupportColonlessIdent(model.getIsSupportColonlessIdent());
+            }
+            if (model.wasPropertyExplicitlySet("syslogParserType")) {
+                this.syslogParserType(model.getSyslogParserType());
+            }
+            return this;
         }
     }
 
@@ -391,7 +416,6 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         sb.append(", isSupportColonlessIdent=")
                 .append(String.valueOf(this.isSupportColonlessIdent));
         sb.append(", syslogParserType=").append(String.valueOf(this.syslogParserType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -413,8 +437,7 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
                 && java.util.Objects.equals(
                         this.isSupportColonlessIdent, other.isSupportColonlessIdent)
                 && java.util.Objects.equals(this.syslogParserType, other.syslogParserType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -439,16 +462,6 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         result =
                 (result * PRIME)
                         + (this.syslogParserType == null ? 43 : this.syslogParserType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

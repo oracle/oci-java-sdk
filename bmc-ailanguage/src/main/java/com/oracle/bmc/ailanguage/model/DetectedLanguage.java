@@ -17,7 +17,7 @@ package com.oracle.bmc.ailanguage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DetectedLanguage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectedLanguage {
+public final class DetectedLanguage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "code", "score"})
     public DetectedLanguage(String name, String code, Double score) {
@@ -94,17 +94,25 @@ public final class DetectedLanguage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectedLanguage build() {
-            DetectedLanguage __instance__ = new DetectedLanguage(name, code, score);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetectedLanguage model = new DetectedLanguage(this.name, this.code, this.score);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectedLanguage o) {
-            Builder copiedBuilder = name(o.getName()).code(o.getCode()).score(o.getScore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectedLanguage model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("score")) {
+                this.score(model.getScore());
+            }
+            return this;
         }
     }
 
@@ -186,10 +194,10 @@ public final class DetectedLanguage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectedLanguage(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", code=").append(String.valueOf(this.code));
         sb.append(", score=").append(String.valueOf(this.score));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -207,7 +215,7 @@ public final class DetectedLanguage {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.score, other.score)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -217,16 +225,7 @@ public final class DetectedLanguage {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
         result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

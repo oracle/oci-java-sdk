@@ -53,13 +53,20 @@ public class UpdateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
         return httpMonitor;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "httpMonitor"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "httpMonitor"
+    })
     private UpdateHttpMonitorResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.httpMonitor = httpMonitor;
@@ -70,6 +77,13 @@ public class UpdateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(UpdateHttpMonitorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             httpMonitor(o.getHttpMonitor());
@@ -143,7 +158,7 @@ public class UpdateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public UpdateHttpMonitorResponse build() {
             return new UpdateHttpMonitorResponse(
-                    __httpStatusCode__, opcRequestId, etag, httpMonitor);
+                    __httpStatusCode__, headers, opcRequestId, etag, httpMonitor);
         }
     }
 

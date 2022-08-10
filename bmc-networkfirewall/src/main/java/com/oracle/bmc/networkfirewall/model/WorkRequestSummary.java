@@ -19,7 +19,7 @@ package com.oracle.bmc.networkfirewall.model;
     builder = WorkRequestSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestSummary {
+public final class WorkRequestSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -223,36 +223,53 @@ public final class WorkRequestSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestSummary build() {
-            WorkRequestSummary __instance__ =
+            WorkRequestSummary model =
                     new WorkRequestSummary(
-                            operationType,
-                            status,
-                            id,
-                            compartmentId,
-                            resources,
-                            percentComplete,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operationType,
+                            this.status,
+                            this.id,
+                            this.compartmentId,
+                            this.resources,
+                            this.percentComplete,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestSummary o) {
-            Builder copiedBuilder =
-                    operationType(o.getOperationType())
-                            .status(o.getStatus())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .resources(o.getResources())
-                            .percentComplete(o.getPercentComplete())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestSummary model) {
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resources")) {
+                this.resources(model.getResources());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            return this;
         }
     }
 
@@ -424,6 +441,7 @@ public final class WorkRequestSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("operationType=").append(String.valueOf(this.operationType));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -433,7 +451,6 @@ public final class WorkRequestSummary {
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -457,7 +474,7 @@ public final class WorkRequestSummary {
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -479,16 +496,7 @@ public final class WorkRequestSummary {
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

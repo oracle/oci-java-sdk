@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = MigrationObjectSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrationObjectSummary {
+public final class MigrationObjectSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"owner", "objectName", "type", "objectStatus"})
     public MigrationObjectSummary(
@@ -113,22 +114,30 @@ public final class MigrationObjectSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrationObjectSummary build() {
-            MigrationObjectSummary __instance__ =
-                    new MigrationObjectSummary(owner, objectName, type, objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MigrationObjectSummary model =
+                    new MigrationObjectSummary(
+                            this.owner, this.objectName, this.type, this.objectStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MigrationObjectSummary o) {
-            Builder copiedBuilder =
-                    owner(o.getOwner())
-                            .objectName(o.getObjectName())
-                            .type(o.getType())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MigrationObjectSummary model) {
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            return this;
         }
     }
 
@@ -222,11 +231,11 @@ public final class MigrationObjectSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MigrationObjectSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("owner=").append(String.valueOf(this.owner));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -245,7 +254,7 @@ public final class MigrationObjectSummary {
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -256,16 +265,7 @@ public final class MigrationObjectSummary {
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

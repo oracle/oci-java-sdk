@@ -40,15 +40,17 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "estimateRecallDataSizeResult"
     })
     private EstimateRecallDataSizeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
                     estimateRecallDataSizeResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.estimateRecallDataSizeResult = estimateRecallDataSizeResult;
     }
@@ -58,6 +60,13 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +111,7 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(EstimateRecallDataSizeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             estimateRecallDataSizeResult(o.getEstimateRecallDataSizeResult());
 
@@ -114,7 +124,7 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
          */
         public EstimateRecallDataSizeResponse build() {
             return new EstimateRecallDataSizeResponse(
-                    __httpStatusCode__, opcRequestId, estimateRecallDataSizeResult);
+                    __httpStatusCode__, headers, opcRequestId, estimateRecallDataSizeResult);
         }
     }
 

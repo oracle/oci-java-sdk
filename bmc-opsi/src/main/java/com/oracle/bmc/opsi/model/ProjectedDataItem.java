@@ -21,7 +21,7 @@ package com.oracle.bmc.opsi.model;
     builder = ProjectedDataItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProjectedDataItem {
+public final class ProjectedDataItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endTimestamp", "usage", "highValue", "lowValue"})
     public ProjectedDataItem(
@@ -106,22 +106,30 @@ public final class ProjectedDataItem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProjectedDataItem build() {
-            ProjectedDataItem __instance__ =
-                    new ProjectedDataItem(endTimestamp, usage, highValue, lowValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ProjectedDataItem model =
+                    new ProjectedDataItem(
+                            this.endTimestamp, this.usage, this.highValue, this.lowValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProjectedDataItem o) {
-            Builder copiedBuilder =
-                    endTimestamp(o.getEndTimestamp())
-                            .usage(o.getUsage())
-                            .highValue(o.getHighValue())
-                            .lowValue(o.getLowValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProjectedDataItem model) {
+            if (model.wasPropertyExplicitlySet("endTimestamp")) {
+                this.endTimestamp(model.getEndTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("highValue")) {
+                this.highValue(model.getHighValue());
+            }
+            if (model.wasPropertyExplicitlySet("lowValue")) {
+                this.lowValue(model.getLowValue());
+            }
+            return this;
         }
     }
 
@@ -207,11 +215,11 @@ public final class ProjectedDataItem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProjectedDataItem(");
+        sb.append("super=").append(super.toString());
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
         sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(", highValue=").append(String.valueOf(this.highValue));
         sb.append(", lowValue=").append(String.valueOf(this.lowValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -230,7 +238,7 @@ public final class ProjectedDataItem {
                 && java.util.Objects.equals(this.usage, other.usage)
                 && java.util.Objects.equals(this.highValue, other.highValue)
                 && java.util.Objects.equals(this.lowValue, other.lowValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -241,16 +249,7 @@ public final class ProjectedDataItem {
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + (this.highValue == null ? 43 : this.highValue.hashCode());
         result = (result * PRIME) + (this.lowValue == null ? 43 : this.lowValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

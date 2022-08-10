@@ -133,8 +133,8 @@ public class QueryOpsiDataObjectDataConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .QueryOpsiDataObjectDataResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.queryDataObjectResultSetRowsCollection(response.getItem());
 

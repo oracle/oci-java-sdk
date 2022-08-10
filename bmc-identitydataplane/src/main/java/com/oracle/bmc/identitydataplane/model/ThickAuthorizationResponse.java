@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = ThickAuthorizationResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ThickAuthorizationResponse {
+public final class ThickAuthorizationResponse
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "policy",
@@ -137,28 +138,37 @@ public final class ThickAuthorizationResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ThickAuthorizationResponse build() {
-            ThickAuthorizationResponse __instance__ =
+            ThickAuthorizationResponse model =
                     new ThickAuthorizationResponse(
-                            policy,
-                            policyCacheDuration,
-                            groups,
-                            groupMembershipCacheDuration,
-                            flushAllCaches);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.policy,
+                            this.policyCacheDuration,
+                            this.groups,
+                            this.groupMembershipCacheDuration,
+                            this.flushAllCaches);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ThickAuthorizationResponse o) {
-            Builder copiedBuilder =
-                    policy(o.getPolicy())
-                            .policyCacheDuration(o.getPolicyCacheDuration())
-                            .groups(o.getGroups())
-                            .groupMembershipCacheDuration(o.getGroupMembershipCacheDuration())
-                            .flushAllCaches(o.getFlushAllCaches());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ThickAuthorizationResponse model) {
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("policyCacheDuration")) {
+                this.policyCacheDuration(model.getPolicyCacheDuration());
+            }
+            if (model.wasPropertyExplicitlySet("groups")) {
+                this.groups(model.getGroups());
+            }
+            if (model.wasPropertyExplicitlySet("groupMembershipCacheDuration")) {
+                this.groupMembershipCacheDuration(model.getGroupMembershipCacheDuration());
+            }
+            if (model.wasPropertyExplicitlySet("flushAllCaches")) {
+                this.flushAllCaches(model.getFlushAllCaches());
+            }
+            return this;
         }
     }
 
@@ -264,13 +274,13 @@ public final class ThickAuthorizationResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ThickAuthorizationResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("policy=").append(String.valueOf(this.policy));
         sb.append(", policyCacheDuration=").append(String.valueOf(this.policyCacheDuration));
         sb.append(", groups=").append(String.valueOf(this.groups));
         sb.append(", groupMembershipCacheDuration=")
                 .append(String.valueOf(this.groupMembershipCacheDuration));
         sb.append(", flushAllCaches=").append(String.valueOf(this.flushAllCaches));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -291,7 +301,7 @@ public final class ThickAuthorizationResponse {
                 && java.util.Objects.equals(
                         this.groupMembershipCacheDuration, other.groupMembershipCacheDuration)
                 && java.util.Objects.equals(this.flushAllCaches, other.flushAllCaches)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -313,16 +323,7 @@ public final class ThickAuthorizationResponse {
         result =
                 (result * PRIME)
                         + (this.flushAllCaches == null ? 43 : this.flushAllCaches.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

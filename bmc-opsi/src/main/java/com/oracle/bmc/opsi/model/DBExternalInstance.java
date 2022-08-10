@@ -232,44 +232,69 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DBExternalInstance build() {
-            DBExternalInstance __instance__ =
+            DBExternalInstance model =
                     new DBExternalInstance(
-                            timeCollected,
-                            instanceName,
-                            hostName,
-                            cpuCount,
-                            hostMemoryCapacity,
-                            version,
-                            parallel,
-                            instanceRole,
-                            logins,
-                            databaseStatus,
-                            status,
-                            edition,
-                            startupTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.instanceName,
+                            this.hostName,
+                            this.cpuCount,
+                            this.hostMemoryCapacity,
+                            this.version,
+                            this.parallel,
+                            this.instanceRole,
+                            this.logins,
+                            this.databaseStatus,
+                            this.status,
+                            this.edition,
+                            this.startupTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DBExternalInstance o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .instanceName(o.getInstanceName())
-                            .hostName(o.getHostName())
-                            .cpuCount(o.getCpuCount())
-                            .hostMemoryCapacity(o.getHostMemoryCapacity())
-                            .version(o.getVersion())
-                            .parallel(o.getParallel())
-                            .instanceRole(o.getInstanceRole())
-                            .logins(o.getLogins())
-                            .databaseStatus(o.getDatabaseStatus())
-                            .status(o.getStatus())
-                            .edition(o.getEdition())
-                            .startupTime(o.getStartupTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DBExternalInstance model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("instanceName")) {
+                this.instanceName(model.getInstanceName());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCount")) {
+                this.cpuCount(model.getCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("hostMemoryCapacity")) {
+                this.hostMemoryCapacity(model.getHostMemoryCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parallel")) {
+                this.parallel(model.getParallel());
+            }
+            if (model.wasPropertyExplicitlySet("instanceRole")) {
+                this.instanceRole(model.getInstanceRole());
+            }
+            if (model.wasPropertyExplicitlySet("logins")) {
+                this.logins(model.getLogins());
+            }
+            if (model.wasPropertyExplicitlySet("databaseStatus")) {
+                this.databaseStatus(model.getDatabaseStatus());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("edition")) {
+                this.edition(model.getEdition());
+            }
+            if (model.wasPropertyExplicitlySet("startupTime")) {
+                this.startupTime(model.getStartupTime());
+            }
+            return this;
         }
     }
 
@@ -508,7 +533,6 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", edition=").append(String.valueOf(this.edition));
         sb.append(", startupTime=").append(String.valueOf(this.startupTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -535,8 +559,7 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.edition, other.edition)
                 && java.util.Objects.equals(this.startupTime, other.startupTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -561,16 +584,6 @@ public final class DBExternalInstance extends DatabaseConfigurationMetricGroup {
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.edition == null ? 43 : this.edition.hashCode());
         result = (result * PRIME) + (this.startupTime == null ? 43 : this.startupTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.cloudguard.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DetectorDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectorDetails {
+public final class DetectorDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -196,36 +196,53 @@ public final class DetectorDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectorDetails build() {
-            DetectorDetails __instance__ =
+            DetectorDetails model =
                     new DetectorDetails(
-                            isEnabled,
-                            riskLevel,
-                            configurations,
-                            condition,
-                            labels,
-                            isConfigurationAllowed,
-                            problemThreshold,
-                            targetTypes,
-                            sightingTypes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.riskLevel,
+                            this.configurations,
+                            this.condition,
+                            this.labels,
+                            this.isConfigurationAllowed,
+                            this.problemThreshold,
+                            this.targetTypes,
+                            this.sightingTypes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectorDetails o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .riskLevel(o.getRiskLevel())
-                            .configurations(o.getConfigurations())
-                            .condition(o.getCondition())
-                            .labels(o.getLabels())
-                            .isConfigurationAllowed(o.getIsConfigurationAllowed())
-                            .problemThreshold(o.getProblemThreshold())
-                            .targetTypes(o.getTargetTypes())
-                            .sightingTypes(o.getSightingTypes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectorDetails model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("riskLevel")) {
+                this.riskLevel(model.getRiskLevel());
+            }
+            if (model.wasPropertyExplicitlySet("configurations")) {
+                this.configurations(model.getConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("isConfigurationAllowed")) {
+                this.isConfigurationAllowed(model.getIsConfigurationAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("problemThreshold")) {
+                this.problemThreshold(model.getProblemThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("targetTypes")) {
+                this.targetTypes(model.getTargetTypes());
+            }
+            if (model.wasPropertyExplicitlySet("sightingTypes")) {
+                this.sightingTypes(model.getSightingTypes());
+            }
+            return this;
         }
     }
 
@@ -372,6 +389,7 @@ public final class DetectorDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectorDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
         sb.append(", configurations=").append(String.valueOf(this.configurations));
@@ -381,7 +399,6 @@ public final class DetectorDetails {
         sb.append(", problemThreshold=").append(String.valueOf(this.problemThreshold));
         sb.append(", targetTypes=").append(String.valueOf(this.targetTypes));
         sb.append(", sightingTypes=").append(String.valueOf(this.sightingTypes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -406,7 +423,7 @@ public final class DetectorDetails {
                 && java.util.Objects.equals(this.problemThreshold, other.problemThreshold)
                 && java.util.Objects.equals(this.targetTypes, other.targetTypes)
                 && java.util.Objects.equals(this.sightingTypes, other.sightingTypes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -432,16 +449,7 @@ public final class DetectorDetails {
         result =
                 (result * PRIME)
                         + (this.sightingTypes == null ? 43 : this.sightingTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -156,8 +156,8 @@ public class ListTopUtilizedProductLicensesConverter {
                                                 com.oracle.bmc.licensemanager.responses
                                                         .ListTopUtilizedProductLicensesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.topUtilizedProductLicenseCollection(response.getItem());
 

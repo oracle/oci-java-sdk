@@ -104,8 +104,8 @@ public class GetCaBundleConverter {
                                         builder =
                                                 com.oracle.bmc.certificates.responses
                                                         .GetCaBundleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.caBundle(response.getItem());
 

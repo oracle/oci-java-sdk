@@ -19,7 +19,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Backend.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Backend {
+public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -227,25 +227,45 @@ public final class Backend {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Backend build() {
-            Backend __instance__ =
-                    new Backend(name, ipAddress, port, weight, drain, backup, offline);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Backend model =
+                    new Backend(
+                            this.name,
+                            this.ipAddress,
+                            this.port,
+                            this.weight,
+                            this.drain,
+                            this.backup,
+                            this.offline);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Backend o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .ipAddress(o.getIpAddress())
-                            .port(o.getPort())
-                            .weight(o.getWeight())
-                            .drain(o.getDrain())
-                            .backup(o.getBackup())
-                            .offline(o.getOffline());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Backend model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("weight")) {
+                this.weight(model.getWeight());
+            }
+            if (model.wasPropertyExplicitlySet("drain")) {
+                this.drain(model.getDrain());
+            }
+            if (model.wasPropertyExplicitlySet("backup")) {
+                this.backup(model.getBackup());
+            }
+            if (model.wasPropertyExplicitlySet("offline")) {
+                this.offline(model.getOffline());
+            }
+            return this;
         }
     }
 
@@ -431,6 +451,7 @@ public final class Backend {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Backend(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -438,7 +459,6 @@ public final class Backend {
         sb.append(", drain=").append(String.valueOf(this.drain));
         sb.append(", backup=").append(String.valueOf(this.backup));
         sb.append(", offline=").append(String.valueOf(this.offline));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -460,7 +480,7 @@ public final class Backend {
                 && java.util.Objects.equals(this.drain, other.drain)
                 && java.util.Objects.equals(this.backup, other.backup)
                 && java.util.Objects.equals(this.offline, other.offline)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -474,16 +494,7 @@ public final class Backend {
         result = (result * PRIME) + (this.drain == null ? 43 : this.drain.hashCode());
         result = (result * PRIME) + (this.backup == null ? 43 : this.backup.hashCode());
         result = (result * PRIME) + (this.offline == null ? 43 : this.offline.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

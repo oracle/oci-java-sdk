@@ -102,8 +102,8 @@ public class GetJobTfConfigConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetJobTfConfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

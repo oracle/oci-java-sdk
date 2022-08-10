@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = ResourceCapacityTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceCapacityTrendAggregation {
+public final class ResourceCapacityTrendAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endTimestamp", "capacity", "baseCapacity"})
     public ResourceCapacityTrendAggregation(
@@ -89,21 +90,27 @@ public final class ResourceCapacityTrendAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceCapacityTrendAggregation build() {
-            ResourceCapacityTrendAggregation __instance__ =
-                    new ResourceCapacityTrendAggregation(endTimestamp, capacity, baseCapacity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResourceCapacityTrendAggregation model =
+                    new ResourceCapacityTrendAggregation(
+                            this.endTimestamp, this.capacity, this.baseCapacity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceCapacityTrendAggregation o) {
-            Builder copiedBuilder =
-                    endTimestamp(o.getEndTimestamp())
-                            .capacity(o.getCapacity())
-                            .baseCapacity(o.getBaseCapacity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceCapacityTrendAggregation model) {
+            if (model.wasPropertyExplicitlySet("endTimestamp")) {
+                this.endTimestamp(model.getEndTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("baseCapacity")) {
+                this.baseCapacity(model.getBaseCapacity());
+            }
+            return this;
         }
     }
 
@@ -177,10 +184,10 @@ public final class ResourceCapacityTrendAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceCapacityTrendAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", baseCapacity=").append(String.valueOf(this.baseCapacity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +205,7 @@ public final class ResourceCapacityTrendAggregation {
         return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.baseCapacity, other.baseCapacity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -208,16 +215,7 @@ public final class ResourceCapacityTrendAggregation {
         result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
         result = (result * PRIME) + (this.baseCapacity == null ? 43 : this.baseCapacity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

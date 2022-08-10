@@ -59,16 +59,18 @@ public class ListSecurityPoliciesResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "securityPolicyCollection"
     })
     private ListSecurityPoliciesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.SecurityPolicyCollection securityPolicyCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.securityPolicyCollection = securityPolicyCollection;
@@ -79,6 +81,13 @@ public class ListSecurityPoliciesResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListSecurityPoliciesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListSecurityPoliciesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             securityPolicyCollection(o.getSecurityPolicyCollection());
@@ -157,7 +167,11 @@ public class ListSecurityPoliciesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public ListSecurityPoliciesResponse build() {
             return new ListSecurityPoliciesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, securityPolicyCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    securityPolicyCollection);
         }
     }
 

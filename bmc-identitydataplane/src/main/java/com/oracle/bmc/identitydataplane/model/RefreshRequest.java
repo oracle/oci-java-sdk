@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RefreshRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RefreshRequest {
+public final class RefreshRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currentToken", "newPublicKey"})
     public RefreshRequest(String currentToken, String newPublicKey) {
@@ -65,18 +65,22 @@ public final class RefreshRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RefreshRequest build() {
-            RefreshRequest __instance__ = new RefreshRequest(currentToken, newPublicKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RefreshRequest model = new RefreshRequest(this.currentToken, this.newPublicKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RefreshRequest o) {
-            Builder copiedBuilder =
-                    currentToken(o.getCurrentToken()).newPublicKey(o.getNewPublicKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RefreshRequest model) {
+            if (model.wasPropertyExplicitlySet("currentToken")) {
+                this.currentToken(model.getCurrentToken());
+            }
+            if (model.wasPropertyExplicitlySet("newPublicKey")) {
+                this.newPublicKey(model.getNewPublicKey());
+            }
+            return this;
         }
     }
 
@@ -132,9 +136,9 @@ public final class RefreshRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RefreshRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("currentToken=").append(String.valueOf(this.currentToken));
         sb.append(", newPublicKey=").append(String.valueOf(this.newPublicKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,7 +155,7 @@ public final class RefreshRequest {
         RefreshRequest other = (RefreshRequest) o;
         return java.util.Objects.equals(this.currentToken, other.currentToken)
                 && java.util.Objects.equals(this.newPublicKey, other.newPublicKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -160,16 +164,7 @@ public final class RefreshRequest {
         int result = 1;
         result = (result * PRIME) + (this.currentToken == null ? 43 : this.currentToken.hashCode());
         result = (result * PRIME) + (this.newPublicKey == null ? 43 : this.newPublicKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = CreateExternalPublicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateExternalPublicationDetails {
+public final class CreateExternalPublicationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -134,30 +135,41 @@ public final class CreateExternalPublicationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateExternalPublicationDetails build() {
-            CreateExternalPublicationDetails __instance__ =
+            CreateExternalPublicationDetails model =
                     new CreateExternalPublicationDetails(
-                            applicationId,
-                            applicationCompartmentId,
-                            displayName,
-                            description,
-                            resourceConfiguration,
-                            configurationDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.applicationId,
+                            this.applicationCompartmentId,
+                            this.displayName,
+                            this.description,
+                            this.resourceConfiguration,
+                            this.configurationDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateExternalPublicationDetails o) {
-            Builder copiedBuilder =
-                    applicationId(o.getApplicationId())
-                            .applicationCompartmentId(o.getApplicationCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .resourceConfiguration(o.getResourceConfiguration())
-                            .configurationDetails(o.getConfigurationDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateExternalPublicationDetails model) {
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationCompartmentId")) {
+                this.applicationCompartmentId(model.getApplicationCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("resourceConfiguration")) {
+                this.resourceConfiguration(model.getResourceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("configurationDetails")) {
+                this.configurationDetails(model.getConfigurationDetails());
+            }
+            return this;
         }
     }
 
@@ -255,6 +267,7 @@ public final class CreateExternalPublicationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateExternalPublicationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", applicationCompartmentId=")
                 .append(String.valueOf(this.applicationCompartmentId));
@@ -262,7 +275,6 @@ public final class CreateExternalPublicationDetails {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", resourceConfiguration=").append(String.valueOf(this.resourceConfiguration));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -284,7 +296,7 @@ public final class CreateExternalPublicationDetails {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.resourceConfiguration, other.resourceConfiguration)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -311,16 +323,7 @@ public final class CreateExternalPublicationDetails {
                         + (this.configurationDetails == null
                                 ? 43
                                 : this.configurationDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

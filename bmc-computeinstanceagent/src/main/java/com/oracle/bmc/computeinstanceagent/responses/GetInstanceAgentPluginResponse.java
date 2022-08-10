@@ -38,12 +38,18 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
         return instanceAgentPlugin;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "instanceAgentPlugin"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "instanceAgentPlugin"
+    })
     private GetInstanceAgentPluginResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.instanceAgentPlugin = instanceAgentPlugin;
     }
@@ -53,6 +59,13 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetInstanceAgentPluginResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             instanceAgentPlugin(o.getInstanceAgentPlugin());
 
@@ -109,7 +123,7 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetInstanceAgentPluginResponse build() {
             return new GetInstanceAgentPluginResponse(
-                    __httpStatusCode__, opcRequestId, instanceAgentPlugin);
+                    __httpStatusCode__, headers, opcRequestId, instanceAgentPlugin);
         }
     }
 

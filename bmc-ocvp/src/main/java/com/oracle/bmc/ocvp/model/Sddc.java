@@ -26,7 +26,7 @@ package com.oracle.bmc.ocvp.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Sddc.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Sddc {
+public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,6 +70,7 @@ public final class Sddc {
         "hcxOnPremLicenses",
         "timeHcxBillingCycleEnd",
         "timeHcxLicenseStatusUpdated",
+        "isSingleHostSddc",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -122,6 +123,7 @@ public final class Sddc {
             java.util.List<HcxLicenseSummary> hcxOnPremLicenses,
             java.util.Date timeHcxBillingCycleEnd,
             java.util.Date timeHcxLicenseStatusUpdated,
+            Boolean isSingleHostSddc,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleStates lifecycleState,
@@ -173,6 +175,7 @@ public final class Sddc {
         this.hcxOnPremLicenses = hcxOnPremLicenses;
         this.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
         this.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
+        this.isSingleHostSddc = isSingleHostSddc;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -1243,6 +1246,22 @@ public final class Sddc {
             return this;
         }
         /**
+         * Indicates whether this SDDC is designated for only single ESXi host.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
+        private Boolean isSingleHostSddc;
+
+        /**
+         * Indicates whether this SDDC is designated for only single ESXi host.
+         * @param isSingleHostSddc the value to set
+         * @return this builder
+         **/
+        public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
+            this.isSingleHostSddc = isSingleHostSddc;
+            this.__explicitlySet__.add("isSingleHostSddc");
+            return this;
+        }
+        /**
          * The date and time the SDDC was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          * <p>
@@ -1430,118 +1449,221 @@ public final class Sddc {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Sddc build() {
-            Sddc __instance__ =
+            Sddc model =
                     new Sddc(
-                            id,
-                            computeAvailabilityDomain,
-                            displayName,
-                            instanceDisplayNamePrefix,
-                            vmwareSoftwareVersion,
-                            compartmentId,
-                            esxiHostsCount,
-                            initialSku,
-                            vcenterFqdn,
-                            nsxManagerFqdn,
-                            vcenterPrivateIpId,
-                            nsxManagerPrivateIpId,
-                            vcenterInitialPassword,
-                            nsxManagerInitialPassword,
-                            vcenterUsername,
-                            nsxManagerUsername,
-                            sshAuthorizedKeys,
-                            workloadNetworkCidr,
-                            nsxOverlaySegmentName,
-                            nsxEdgeUplinkIpId,
-                            provisioningSubnetId,
-                            vsphereVlanId,
-                            vmotionVlanId,
-                            vsanVlanId,
-                            nsxVTepVlanId,
-                            nsxEdgeVTepVlanId,
-                            nsxEdgeUplink1VlanId,
-                            nsxEdgeUplink2VlanId,
-                            replicationVlanId,
-                            provisioningVlanId,
-                            hcxPrivateIpId,
-                            hcxFqdn,
-                            hcxInitialPassword,
-                            hcxVlanId,
-                            isHcxEnabled,
-                            hcxOnPremKey,
-                            isHcxEnterpriseEnabled,
-                            isHcxPendingDowngrade,
-                            hcxOnPremLicenses,
-                            timeHcxBillingCycleEnd,
-                            timeHcxLicenseStatusUpdated,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            initialHostShapeName,
-                            initialHostOcpuCount,
-                            isShieldedInstanceEnabled,
-                            capacityReservationId,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.computeAvailabilityDomain,
+                            this.displayName,
+                            this.instanceDisplayNamePrefix,
+                            this.vmwareSoftwareVersion,
+                            this.compartmentId,
+                            this.esxiHostsCount,
+                            this.initialSku,
+                            this.vcenterFqdn,
+                            this.nsxManagerFqdn,
+                            this.vcenterPrivateIpId,
+                            this.nsxManagerPrivateIpId,
+                            this.vcenterInitialPassword,
+                            this.nsxManagerInitialPassword,
+                            this.vcenterUsername,
+                            this.nsxManagerUsername,
+                            this.sshAuthorizedKeys,
+                            this.workloadNetworkCidr,
+                            this.nsxOverlaySegmentName,
+                            this.nsxEdgeUplinkIpId,
+                            this.provisioningSubnetId,
+                            this.vsphereVlanId,
+                            this.vmotionVlanId,
+                            this.vsanVlanId,
+                            this.nsxVTepVlanId,
+                            this.nsxEdgeVTepVlanId,
+                            this.nsxEdgeUplink1VlanId,
+                            this.nsxEdgeUplink2VlanId,
+                            this.replicationVlanId,
+                            this.provisioningVlanId,
+                            this.hcxPrivateIpId,
+                            this.hcxFqdn,
+                            this.hcxInitialPassword,
+                            this.hcxVlanId,
+                            this.isHcxEnabled,
+                            this.hcxOnPremKey,
+                            this.isHcxEnterpriseEnabled,
+                            this.isHcxPendingDowngrade,
+                            this.hcxOnPremLicenses,
+                            this.timeHcxBillingCycleEnd,
+                            this.timeHcxLicenseStatusUpdated,
+                            this.isSingleHostSddc,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.initialHostShapeName,
+                            this.initialHostOcpuCount,
+                            this.isShieldedInstanceEnabled,
+                            this.capacityReservationId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Sddc o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
-                            .displayName(o.getDisplayName())
-                            .instanceDisplayNamePrefix(o.getInstanceDisplayNamePrefix())
-                            .vmwareSoftwareVersion(o.getVmwareSoftwareVersion())
-                            .compartmentId(o.getCompartmentId())
-                            .esxiHostsCount(o.getEsxiHostsCount())
-                            .initialSku(o.getInitialSku())
-                            .vcenterFqdn(o.getVcenterFqdn())
-                            .nsxManagerFqdn(o.getNsxManagerFqdn())
-                            .vcenterPrivateIpId(o.getVcenterPrivateIpId())
-                            .nsxManagerPrivateIpId(o.getNsxManagerPrivateIpId())
-                            .vcenterInitialPassword(o.getVcenterInitialPassword())
-                            .nsxManagerInitialPassword(o.getNsxManagerInitialPassword())
-                            .vcenterUsername(o.getVcenterUsername())
-                            .nsxManagerUsername(o.getNsxManagerUsername())
-                            .sshAuthorizedKeys(o.getSshAuthorizedKeys())
-                            .workloadNetworkCidr(o.getWorkloadNetworkCidr())
-                            .nsxOverlaySegmentName(o.getNsxOverlaySegmentName())
-                            .nsxEdgeUplinkIpId(o.getNsxEdgeUplinkIpId())
-                            .provisioningSubnetId(o.getProvisioningSubnetId())
-                            .vsphereVlanId(o.getVsphereVlanId())
-                            .vmotionVlanId(o.getVmotionVlanId())
-                            .vsanVlanId(o.getVsanVlanId())
-                            .nsxVTepVlanId(o.getNsxVTepVlanId())
-                            .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
-                            .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
-                            .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
-                            .replicationVlanId(o.getReplicationVlanId())
-                            .provisioningVlanId(o.getProvisioningVlanId())
-                            .hcxPrivateIpId(o.getHcxPrivateIpId())
-                            .hcxFqdn(o.getHcxFqdn())
-                            .hcxInitialPassword(o.getHcxInitialPassword())
-                            .hcxVlanId(o.getHcxVlanId())
-                            .isHcxEnabled(o.getIsHcxEnabled())
-                            .hcxOnPremKey(o.getHcxOnPremKey())
-                            .isHcxEnterpriseEnabled(o.getIsHcxEnterpriseEnabled())
-                            .isHcxPendingDowngrade(o.getIsHcxPendingDowngrade())
-                            .hcxOnPremLicenses(o.getHcxOnPremLicenses())
-                            .timeHcxBillingCycleEnd(o.getTimeHcxBillingCycleEnd())
-                            .timeHcxLicenseStatusUpdated(o.getTimeHcxLicenseStatusUpdated())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .initialHostShapeName(o.getInitialHostShapeName())
-                            .initialHostOcpuCount(o.getInitialHostOcpuCount())
-                            .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
-                            .capacityReservationId(o.getCapacityReservationId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Sddc model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
+                this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDisplayNamePrefix")) {
+                this.instanceDisplayNamePrefix(model.getInstanceDisplayNamePrefix());
+            }
+            if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
+                this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("esxiHostsCount")) {
+                this.esxiHostsCount(model.getEsxiHostsCount());
+            }
+            if (model.wasPropertyExplicitlySet("initialSku")) {
+                this.initialSku(model.getInitialSku());
+            }
+            if (model.wasPropertyExplicitlySet("vcenterFqdn")) {
+                this.vcenterFqdn(model.getVcenterFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("nsxManagerFqdn")) {
+                this.nsxManagerFqdn(model.getNsxManagerFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("vcenterPrivateIpId")) {
+                this.vcenterPrivateIpId(model.getVcenterPrivateIpId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxManagerPrivateIpId")) {
+                this.nsxManagerPrivateIpId(model.getNsxManagerPrivateIpId());
+            }
+            if (model.wasPropertyExplicitlySet("vcenterInitialPassword")) {
+                this.vcenterInitialPassword(model.getVcenterInitialPassword());
+            }
+            if (model.wasPropertyExplicitlySet("nsxManagerInitialPassword")) {
+                this.nsxManagerInitialPassword(model.getNsxManagerInitialPassword());
+            }
+            if (model.wasPropertyExplicitlySet("vcenterUsername")) {
+                this.vcenterUsername(model.getVcenterUsername());
+            }
+            if (model.wasPropertyExplicitlySet("nsxManagerUsername")) {
+                this.nsxManagerUsername(model.getNsxManagerUsername());
+            }
+            if (model.wasPropertyExplicitlySet("sshAuthorizedKeys")) {
+                this.sshAuthorizedKeys(model.getSshAuthorizedKeys());
+            }
+            if (model.wasPropertyExplicitlySet("workloadNetworkCidr")) {
+                this.workloadNetworkCidr(model.getWorkloadNetworkCidr());
+            }
+            if (model.wasPropertyExplicitlySet("nsxOverlaySegmentName")) {
+                this.nsxOverlaySegmentName(model.getNsxOverlaySegmentName());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplinkIpId")) {
+                this.nsxEdgeUplinkIpId(model.getNsxEdgeUplinkIpId());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningSubnetId")) {
+                this.provisioningSubnetId(model.getProvisioningSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("vsphereVlanId")) {
+                this.vsphereVlanId(model.getVsphereVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("vmotionVlanId")) {
+                this.vmotionVlanId(model.getVmotionVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("vsanVlanId")) {
+                this.vsanVlanId(model.getVsanVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxVTepVlanId")) {
+                this.nsxVTepVlanId(model.getNsxVTepVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeVTepVlanId")) {
+                this.nsxEdgeVTepVlanId(model.getNsxEdgeVTepVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplink1VlanId")) {
+                this.nsxEdgeUplink1VlanId(model.getNsxEdgeUplink1VlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplink2VlanId")) {
+                this.nsxEdgeUplink2VlanId(model.getNsxEdgeUplink2VlanId());
+            }
+            if (model.wasPropertyExplicitlySet("replicationVlanId")) {
+                this.replicationVlanId(model.getReplicationVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningVlanId")) {
+                this.provisioningVlanId(model.getProvisioningVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("hcxPrivateIpId")) {
+                this.hcxPrivateIpId(model.getHcxPrivateIpId());
+            }
+            if (model.wasPropertyExplicitlySet("hcxFqdn")) {
+                this.hcxFqdn(model.getHcxFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("hcxInitialPassword")) {
+                this.hcxInitialPassword(model.getHcxInitialPassword());
+            }
+            if (model.wasPropertyExplicitlySet("hcxVlanId")) {
+                this.hcxVlanId(model.getHcxVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("isHcxEnabled")) {
+                this.isHcxEnabled(model.getIsHcxEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("hcxOnPremKey")) {
+                this.hcxOnPremKey(model.getHcxOnPremKey());
+            }
+            if (model.wasPropertyExplicitlySet("isHcxEnterpriseEnabled")) {
+                this.isHcxEnterpriseEnabled(model.getIsHcxEnterpriseEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isHcxPendingDowngrade")) {
+                this.isHcxPendingDowngrade(model.getIsHcxPendingDowngrade());
+            }
+            if (model.wasPropertyExplicitlySet("hcxOnPremLicenses")) {
+                this.hcxOnPremLicenses(model.getHcxOnPremLicenses());
+            }
+            if (model.wasPropertyExplicitlySet("timeHcxBillingCycleEnd")) {
+                this.timeHcxBillingCycleEnd(model.getTimeHcxBillingCycleEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeHcxLicenseStatusUpdated")) {
+                this.timeHcxLicenseStatusUpdated(model.getTimeHcxLicenseStatusUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isSingleHostSddc")) {
+                this.isSingleHostSddc(model.getIsSingleHostSddc());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("initialHostShapeName")) {
+                this.initialHostShapeName(model.getInitialHostShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("initialHostOcpuCount")) {
+                this.initialHostOcpuCount(model.getInitialHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("isShieldedInstanceEnabled")) {
+                this.isShieldedInstanceEnabled(model.getIsShieldedInstanceEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -2531,6 +2653,20 @@ public final class Sddc {
     }
 
     /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
+    private final Boolean isSingleHostSddc;
+
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     * @return the value
+     **/
+    public Boolean getIsSingleHostSddc() {
+        return isSingleHostSddc;
+    }
+
+    /**
      * The date and time the SDDC was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
@@ -2707,6 +2843,7 @@ public final class Sddc {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Sddc(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", computeAvailabilityDomain=")
                 .append(String.valueOf(this.computeAvailabilityDomain));
@@ -2752,6 +2889,7 @@ public final class Sddc {
         sb.append(", timeHcxBillingCycleEnd=").append(String.valueOf(this.timeHcxBillingCycleEnd));
         sb.append(", timeHcxLicenseStatusUpdated=")
                 .append(String.valueOf(this.timeHcxLicenseStatusUpdated));
+        sb.append(", isSingleHostSddc=").append(String.valueOf(this.isSingleHostSddc));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -2762,7 +2900,6 @@ public final class Sddc {
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -2825,6 +2962,7 @@ public final class Sddc {
                         this.timeHcxBillingCycleEnd, other.timeHcxBillingCycleEnd)
                 && java.util.Objects.equals(
                         this.timeHcxLicenseStatusUpdated, other.timeHcxLicenseStatusUpdated)
+                && java.util.Objects.equals(this.isSingleHostSddc, other.isSingleHostSddc)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -2835,7 +2973,7 @@ public final class Sddc {
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2985,6 +3123,9 @@ public final class Sddc {
                         + (this.timeHcxLicenseStatusUpdated == null
                                 ? 43
                                 : this.timeHcxLicenseStatusUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSingleHostSddc == null ? 43 : this.isSingleHostSddc.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
@@ -3012,16 +3153,7 @@ public final class Sddc {
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

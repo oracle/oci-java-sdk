@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CustomPropertyGetUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CustomPropertyGetUsage {
+public final class CustomPropertyGetUsage
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -300,46 +301,73 @@ public final class CustomPropertyGetUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomPropertyGetUsage build() {
-            CustomPropertyGetUsage __instance__ =
+            CustomPropertyGetUsage model =
                     new CustomPropertyGetUsage(
-                            key,
-                            displayName,
-                            description,
-                            value,
-                            dataType,
-                            namespaceName,
-                            namespaceKey,
-                            isMultiValued,
-                            isHidden,
-                            isEditable,
-                            isShownInList,
-                            isEventEnabled,
-                            isListType,
-                            allowedValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.value,
+                            this.dataType,
+                            this.namespaceName,
+                            this.namespaceKey,
+                            this.isMultiValued,
+                            this.isHidden,
+                            this.isEditable,
+                            this.isShownInList,
+                            this.isEventEnabled,
+                            this.isListType,
+                            this.allowedValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CustomPropertyGetUsage o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .value(o.getValue())
-                            .dataType(o.getDataType())
-                            .namespaceName(o.getNamespaceName())
-                            .namespaceKey(o.getNamespaceKey())
-                            .isMultiValued(o.getIsMultiValued())
-                            .isHidden(o.getIsHidden())
-                            .isEditable(o.getIsEditable())
-                            .isShownInList(o.getIsShownInList())
-                            .isEventEnabled(o.getIsEventEnabled())
-                            .isListType(o.getIsListType())
-                            .allowedValues(o.getAllowedValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CustomPropertyGetUsage model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceName")) {
+                this.namespaceName(model.getNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceKey")) {
+                this.namespaceKey(model.getNamespaceKey());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiValued")) {
+                this.isMultiValued(model.getIsMultiValued());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
+            if (model.wasPropertyExplicitlySet("isEditable")) {
+                this.isEditable(model.getIsEditable());
+            }
+            if (model.wasPropertyExplicitlySet("isShownInList")) {
+                this.isShownInList(model.getIsShownInList());
+            }
+            if (model.wasPropertyExplicitlySet("isEventEnabled")) {
+                this.isEventEnabled(model.getIsEventEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isListType")) {
+                this.isListType(model.getIsListType());
+            }
+            if (model.wasPropertyExplicitlySet("allowedValues")) {
+                this.allowedValues(model.getAllowedValues());
+            }
+            return this;
         }
     }
 
@@ -563,6 +591,7 @@ public final class CustomPropertyGetUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CustomPropertyGetUsage(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -577,7 +606,6 @@ public final class CustomPropertyGetUsage {
         sb.append(", isEventEnabled=").append(String.valueOf(this.isEventEnabled));
         sb.append(", isListType=").append(String.valueOf(this.isListType));
         sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -606,7 +634,7 @@ public final class CustomPropertyGetUsage {
                 && java.util.Objects.equals(this.isEventEnabled, other.isEventEnabled)
                 && java.util.Objects.equals(this.isListType, other.isListType)
                 && java.util.Objects.equals(this.allowedValues, other.allowedValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -637,16 +665,7 @@ public final class CustomPropertyGetUsage {
         result =
                 (result * PRIME)
                         + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

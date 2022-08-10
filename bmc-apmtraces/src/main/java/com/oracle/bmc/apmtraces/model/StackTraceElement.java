@@ -20,7 +20,7 @@ package com.oracle.bmc.apmtraces.model;
     builder = StackTraceElement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StackTraceElement {
+public final class StackTraceElement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "methodName",
@@ -140,23 +140,37 @@ public final class StackTraceElement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StackTraceElement build() {
-            StackTraceElement __instance__ =
-                    new StackTraceElement(methodName, fileName, lineNumber, className, weightage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StackTraceElement model =
+                    new StackTraceElement(
+                            this.methodName,
+                            this.fileName,
+                            this.lineNumber,
+                            this.className,
+                            this.weightage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StackTraceElement o) {
-            Builder copiedBuilder =
-                    methodName(o.getMethodName())
-                            .fileName(o.getFileName())
-                            .lineNumber(o.getLineNumber())
-                            .className(o.getClassName())
-                            .weightage(o.getWeightage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StackTraceElement model) {
+            if (model.wasPropertyExplicitlySet("methodName")) {
+                this.methodName(model.getMethodName());
+            }
+            if (model.wasPropertyExplicitlySet("fileName")) {
+                this.fileName(model.getFileName());
+            }
+            if (model.wasPropertyExplicitlySet("lineNumber")) {
+                this.lineNumber(model.getLineNumber());
+            }
+            if (model.wasPropertyExplicitlySet("className")) {
+                this.className(model.getClassName());
+            }
+            if (model.wasPropertyExplicitlySet("weightage")) {
+                this.weightage(model.getWeightage());
+            }
+            return this;
         }
     }
 
@@ -264,12 +278,12 @@ public final class StackTraceElement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StackTraceElement(");
+        sb.append("super=").append(super.toString());
         sb.append("methodName=").append(String.valueOf(this.methodName));
         sb.append(", fileName=").append(String.valueOf(this.fileName));
         sb.append(", lineNumber=").append(String.valueOf(this.lineNumber));
         sb.append(", className=").append(String.valueOf(this.className));
         sb.append(", weightage=").append(String.valueOf(this.weightage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -289,7 +303,7 @@ public final class StackTraceElement {
                 && java.util.Objects.equals(this.lineNumber, other.lineNumber)
                 && java.util.Objects.equals(this.className, other.className)
                 && java.util.Objects.equals(this.weightage, other.weightage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -301,16 +315,7 @@ public final class StackTraceElement {
         result = (result * PRIME) + (this.lineNumber == null ? 43 : this.lineNumber.hashCode());
         result = (result * PRIME) + (this.className == null ? 43 : this.className.hashCode());
         result = (result * PRIME) + (this.weightage == null ? 43 : this.weightage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

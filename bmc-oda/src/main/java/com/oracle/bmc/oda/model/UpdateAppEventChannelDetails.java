@@ -101,31 +101,42 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAppEventChannelDetails build() {
-            UpdateAppEventChannelDetails __instance__ =
+            UpdateAppEventChannelDetails model =
                     new UpdateAppEventChannelDetails(
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            outboundUrl,
-                            eventSinkBotIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.outboundUrl,
+                            this.eventSinkBotIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAppEventChannelDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .outboundUrl(o.getOutboundUrl())
-                            .eventSinkBotIds(o.getEventSinkBotIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAppEventChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("outboundUrl")) {
+                this.outboundUrl(model.getOutboundUrl());
+            }
+            if (model.wasPropertyExplicitlySet("eventSinkBotIds")) {
+                this.eventSinkBotIds(model.getEventSinkBotIds());
+            }
+            return this;
         }
     }
 
@@ -197,7 +208,6 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", eventSinkBotIds=").append(String.valueOf(this.eventSinkBotIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -214,8 +224,7 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
         UpdateAppEventChannelDetails other = (UpdateAppEventChannelDetails) o;
         return java.util.Objects.equals(this.outboundUrl, other.outboundUrl)
                 && java.util.Objects.equals(this.eventSinkBotIds, other.eventSinkBotIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -226,16 +235,6 @@ public final class UpdateAppEventChannelDetails extends UpdateChannelDetails {
         result =
                 (result * PRIME)
                         + (this.eventSinkBotIds == null ? 43 : this.eventSinkBotIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

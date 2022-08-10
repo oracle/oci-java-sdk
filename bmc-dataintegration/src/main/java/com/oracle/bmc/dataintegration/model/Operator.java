@@ -108,7 +108,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Operator {
+public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -319,6 +319,7 @@ public class Operator {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Operator(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -356,7 +357,8 @@ public class Operator {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.opConfigValues, other.opConfigValues);
+                && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
+                && super.equals(other);
     }
 
     @Override
@@ -379,6 +381,7 @@ public class Operator {
         result =
                 (result * PRIME)
                         + (this.opConfigValues == null ? 43 : this.opConfigValues.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

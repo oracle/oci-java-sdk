@@ -40,14 +40,16 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "pdbConversionHistoryEntry"
     })
     private GetPdbConversionHistoryEntryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.database.model.PdbConversionHistoryEntry pdbConversionHistoryEntry) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.pdbConversionHistoryEntry = pdbConversionHistoryEntry;
     }
@@ -57,6 +59,13 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
          */
         public Builder copy(GetPdbConversionHistoryEntryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             pdbConversionHistoryEntry(o.getPdbConversionHistoryEntry());
 
@@ -113,7 +123,7 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
          */
         public GetPdbConversionHistoryEntryResponse build() {
             return new GetPdbConversionHistoryEntryResponse(
-                    __httpStatusCode__, opcRequestId, pdbConversionHistoryEntry);
+                    __httpStatusCode__, headers, opcRequestId, pdbConversionHistoryEntry);
         }
     }
 

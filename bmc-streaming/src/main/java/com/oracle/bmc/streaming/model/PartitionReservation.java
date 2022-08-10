@@ -20,7 +20,7 @@ package com.oracle.bmc.streaming.model;
     builder = PartitionReservation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PartitionReservation {
+public final class PartitionReservation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "partition",
@@ -111,23 +111,33 @@ public final class PartitionReservation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PartitionReservation build() {
-            PartitionReservation __instance__ =
+            PartitionReservation model =
                     new PartitionReservation(
-                            partition, committedOffset, reservedInstance, timeReservedUntil);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.partition,
+                            this.committedOffset,
+                            this.reservedInstance,
+                            this.timeReservedUntil);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PartitionReservation o) {
-            Builder copiedBuilder =
-                    partition(o.getPartition())
-                            .committedOffset(o.getCommittedOffset())
-                            .reservedInstance(o.getReservedInstance())
-                            .timeReservedUntil(o.getTimeReservedUntil());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PartitionReservation model) {
+            if (model.wasPropertyExplicitlySet("partition")) {
+                this.partition(model.getPartition());
+            }
+            if (model.wasPropertyExplicitlySet("committedOffset")) {
+                this.committedOffset(model.getCommittedOffset());
+            }
+            if (model.wasPropertyExplicitlySet("reservedInstance")) {
+                this.reservedInstance(model.getReservedInstance());
+            }
+            if (model.wasPropertyExplicitlySet("timeReservedUntil")) {
+                this.timeReservedUntil(model.getTimeReservedUntil());
+            }
+            return this;
         }
     }
 
@@ -211,11 +221,11 @@ public final class PartitionReservation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PartitionReservation(");
+        sb.append("super=").append(super.toString());
         sb.append("partition=").append(String.valueOf(this.partition));
         sb.append(", committedOffset=").append(String.valueOf(this.committedOffset));
         sb.append(", reservedInstance=").append(String.valueOf(this.reservedInstance));
         sb.append(", timeReservedUntil=").append(String.valueOf(this.timeReservedUntil));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -234,7 +244,7 @@ public final class PartitionReservation {
                 && java.util.Objects.equals(this.committedOffset, other.committedOffset)
                 && java.util.Objects.equals(this.reservedInstance, other.reservedInstance)
                 && java.util.Objects.equals(this.timeReservedUntil, other.timeReservedUntil)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -251,16 +261,7 @@ public final class PartitionReservation {
         result =
                 (result * PRIME)
                         + (this.timeReservedUntil == null ? 43 : this.timeReservedUntil.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

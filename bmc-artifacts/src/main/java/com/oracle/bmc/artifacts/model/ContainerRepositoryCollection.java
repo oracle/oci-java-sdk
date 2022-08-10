@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = ContainerRepositoryCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerRepositoryCollection {
+public final class ContainerRepositoryCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "layerCount",
@@ -148,30 +149,41 @@ public final class ContainerRepositoryCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerRepositoryCollection build() {
-            ContainerRepositoryCollection __instance__ =
+            ContainerRepositoryCollection model =
                     new ContainerRepositoryCollection(
-                            layerCount,
-                            layersSizeInBytes,
-                            imageCount,
-                            items,
-                            remainingItemsCount,
-                            repositoryCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.layerCount,
+                            this.layersSizeInBytes,
+                            this.imageCount,
+                            this.items,
+                            this.remainingItemsCount,
+                            this.repositoryCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerRepositoryCollection o) {
-            Builder copiedBuilder =
-                    layerCount(o.getLayerCount())
-                            .layersSizeInBytes(o.getLayersSizeInBytes())
-                            .imageCount(o.getImageCount())
-                            .items(o.getItems())
-                            .remainingItemsCount(o.getRemainingItemsCount())
-                            .repositoryCount(o.getRepositoryCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerRepositoryCollection model) {
+            if (model.wasPropertyExplicitlySet("layerCount")) {
+                this.layerCount(model.getLayerCount());
+            }
+            if (model.wasPropertyExplicitlySet("layersSizeInBytes")) {
+                this.layersSizeInBytes(model.getLayersSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("imageCount")) {
+                this.imageCount(model.getImageCount());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("remainingItemsCount")) {
+                this.remainingItemsCount(model.getRemainingItemsCount());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryCount")) {
+                this.repositoryCount(model.getRepositoryCount());
+            }
+            return this;
         }
     }
 
@@ -283,13 +295,13 @@ public final class ContainerRepositoryCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerRepositoryCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("layerCount=").append(String.valueOf(this.layerCount));
         sb.append(", layersSizeInBytes=").append(String.valueOf(this.layersSizeInBytes));
         sb.append(", imageCount=").append(String.valueOf(this.imageCount));
         sb.append(", items=").append(String.valueOf(this.items));
         sb.append(", remainingItemsCount=").append(String.valueOf(this.remainingItemsCount));
         sb.append(", repositoryCount=").append(String.valueOf(this.repositoryCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,7 +322,7 @@ public final class ContainerRepositoryCollection {
                 && java.util.Objects.equals(this.items, other.items)
                 && java.util.Objects.equals(this.remainingItemsCount, other.remainingItemsCount)
                 && java.util.Objects.equals(this.repositoryCount, other.repositoryCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -331,16 +343,7 @@ public final class ContainerRepositoryCollection {
         result =
                 (result * PRIME)
                         + (this.repositoryCount == null ? 43 : this.repositoryCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

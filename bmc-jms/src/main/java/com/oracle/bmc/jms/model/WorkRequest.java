@@ -17,7 +17,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequest {
+public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -288,44 +288,69 @@ public final class WorkRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequest build() {
-            WorkRequest __instance__ =
+            WorkRequest model =
                     new WorkRequest(
-                            operationType,
-                            status,
-                            id,
-                            compartmentId,
-                            resources,
-                            percentComplete,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished,
-                            createdBy,
-                            timeLastUpdated,
-                            totalTaskCount,
-                            completedTaskCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operationType,
+                            this.status,
+                            this.id,
+                            this.compartmentId,
+                            this.resources,
+                            this.percentComplete,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.createdBy,
+                            this.timeLastUpdated,
+                            this.totalTaskCount,
+                            this.completedTaskCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequest o) {
-            Builder copiedBuilder =
-                    operationType(o.getOperationType())
-                            .status(o.getStatus())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .resources(o.getResources())
-                            .percentComplete(o.getPercentComplete())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .createdBy(o.getCreatedBy())
-                            .timeLastUpdated(o.getTimeLastUpdated())
-                            .totalTaskCount(o.getTotalTaskCount())
-                            .completedTaskCount(o.getCompletedTaskCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequest model) {
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resources")) {
+                this.resources(model.getResources());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastUpdated")) {
+                this.timeLastUpdated(model.getTimeLastUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("totalTaskCount")) {
+                this.totalTaskCount(model.getTotalTaskCount());
+            }
+            if (model.wasPropertyExplicitlySet("completedTaskCount")) {
+                this.completedTaskCount(model.getCompletedTaskCount());
+            }
+            return this;
         }
     }
 
@@ -544,6 +569,7 @@ public final class WorkRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("operationType=").append(String.valueOf(this.operationType));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -557,7 +583,6 @@ public final class WorkRequest {
         sb.append(", timeLastUpdated=").append(String.valueOf(this.timeLastUpdated));
         sb.append(", totalTaskCount=").append(String.valueOf(this.totalTaskCount));
         sb.append(", completedTaskCount=").append(String.valueOf(this.completedTaskCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -585,7 +610,7 @@ public final class WorkRequest {
                 && java.util.Objects.equals(this.timeLastUpdated, other.timeLastUpdated)
                 && java.util.Objects.equals(this.totalTaskCount, other.totalTaskCount)
                 && java.util.Objects.equals(this.completedTaskCount, other.completedTaskCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -619,16 +644,7 @@ public final class WorkRequest {
                         + (this.completedTaskCount == null
                                 ? 43
                                 : this.completedTaskCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -116,8 +116,8 @@ public class UpdateMonitorConverter {
                                         builder =
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .UpdateMonitorResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitor(response.getItem());
 

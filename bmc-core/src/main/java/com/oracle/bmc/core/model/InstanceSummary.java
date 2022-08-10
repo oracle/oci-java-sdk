@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstanceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceSummary {
+public final class InstanceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -260,40 +260,61 @@ public final class InstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceSummary build() {
-            InstanceSummary __instance__ =
+            InstanceSummary model =
                     new InstanceSummary(
-                            id,
-                            availabilityDomain,
-                            compartmentId,
-                            displayName,
-                            faultDomain,
-                            instanceConfigurationId,
-                            region,
-                            shape,
-                            state,
-                            timeCreated,
-                            loadBalancerBackends);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.displayName,
+                            this.faultDomain,
+                            this.instanceConfigurationId,
+                            this.region,
+                            this.shape,
+                            this.state,
+                            this.timeCreated,
+                            this.loadBalancerBackends);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .faultDomain(o.getFaultDomain())
-                            .instanceConfigurationId(o.getInstanceConfigurationId())
-                            .region(o.getRegion())
-                            .shape(o.getShape())
-                            .state(o.getState())
-                            .timeCreated(o.getTimeCreated())
-                            .loadBalancerBackends(o.getLoadBalancerBackends());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerBackends")) {
+                this.loadBalancerBackends(model.getLoadBalancerBackends());
+            }
+            return this;
         }
     }
 
@@ -493,6 +514,7 @@ public final class InstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -505,7 +527,6 @@ public final class InstanceSummary {
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", loadBalancerBackends=").append(String.valueOf(this.loadBalancerBackends));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -532,7 +553,7 @@ public final class InstanceSummary {
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.loadBalancerBackends, other.loadBalancerBackends)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -564,16 +585,7 @@ public final class InstanceSummary {
                         + (this.loadBalancerBackends == null
                                 ? 43
                                 : this.loadBalancerBackends.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

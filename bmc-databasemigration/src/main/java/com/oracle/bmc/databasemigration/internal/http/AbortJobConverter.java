@@ -114,8 +114,8 @@ public class AbortJobConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .AbortJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.job(response.getItem());
 

@@ -129,8 +129,8 @@ public class SetUnprocessedDataBucketConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .SetUnprocessedDataBucketResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.unprocessedDataBucket(response.getItem());
 

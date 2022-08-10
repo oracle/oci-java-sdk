@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafLog.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WafLog {
+public final class WafLog extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "action",
@@ -613,74 +613,129 @@ public final class WafLog {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WafLog build() {
-            WafLog __instance__ =
+            WafLog model =
                     new WafLog(
-                            action,
-                            captchaAction,
-                            captchaExpected,
-                            captchaReceived,
-                            captchaFailCount,
-                            clientAddress,
-                            countryName,
-                            userAgent,
-                            domain,
-                            protectionRuleDetections,
-                            httpMethod,
-                            requestUrl,
-                            httpHeaders,
-                            referrer,
-                            responseCode,
-                            responseSize,
-                            incidentKey,
-                            fingerprint,
-                            device,
-                            countryCode,
-                            requestHeaders,
-                            threatFeedKey,
-                            accessRuleKey,
-                            addressRateLimitingKey,
-                            timestamp,
-                            logType,
-                            originAddress,
-                            originResponseTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.action,
+                            this.captchaAction,
+                            this.captchaExpected,
+                            this.captchaReceived,
+                            this.captchaFailCount,
+                            this.clientAddress,
+                            this.countryName,
+                            this.userAgent,
+                            this.domain,
+                            this.protectionRuleDetections,
+                            this.httpMethod,
+                            this.requestUrl,
+                            this.httpHeaders,
+                            this.referrer,
+                            this.responseCode,
+                            this.responseSize,
+                            this.incidentKey,
+                            this.fingerprint,
+                            this.device,
+                            this.countryCode,
+                            this.requestHeaders,
+                            this.threatFeedKey,
+                            this.accessRuleKey,
+                            this.addressRateLimitingKey,
+                            this.timestamp,
+                            this.logType,
+                            this.originAddress,
+                            this.originResponseTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WafLog o) {
-            Builder copiedBuilder =
-                    action(o.getAction())
-                            .captchaAction(o.getCaptchaAction())
-                            .captchaExpected(o.getCaptchaExpected())
-                            .captchaReceived(o.getCaptchaReceived())
-                            .captchaFailCount(o.getCaptchaFailCount())
-                            .clientAddress(o.getClientAddress())
-                            .countryName(o.getCountryName())
-                            .userAgent(o.getUserAgent())
-                            .domain(o.getDomain())
-                            .protectionRuleDetections(o.getProtectionRuleDetections())
-                            .httpMethod(o.getHttpMethod())
-                            .requestUrl(o.getRequestUrl())
-                            .httpHeaders(o.getHttpHeaders())
-                            .referrer(o.getReferrer())
-                            .responseCode(o.getResponseCode())
-                            .responseSize(o.getResponseSize())
-                            .incidentKey(o.getIncidentKey())
-                            .fingerprint(o.getFingerprint())
-                            .device(o.getDevice())
-                            .countryCode(o.getCountryCode())
-                            .requestHeaders(o.getRequestHeaders())
-                            .threatFeedKey(o.getThreatFeedKey())
-                            .accessRuleKey(o.getAccessRuleKey())
-                            .addressRateLimitingKey(o.getAddressRateLimitingKey())
-                            .timestamp(o.getTimestamp())
-                            .logType(o.getLogType())
-                            .originAddress(o.getOriginAddress())
-                            .originResponseTime(o.getOriginResponseTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WafLog model) {
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("captchaAction")) {
+                this.captchaAction(model.getCaptchaAction());
+            }
+            if (model.wasPropertyExplicitlySet("captchaExpected")) {
+                this.captchaExpected(model.getCaptchaExpected());
+            }
+            if (model.wasPropertyExplicitlySet("captchaReceived")) {
+                this.captchaReceived(model.getCaptchaReceived());
+            }
+            if (model.wasPropertyExplicitlySet("captchaFailCount")) {
+                this.captchaFailCount(model.getCaptchaFailCount());
+            }
+            if (model.wasPropertyExplicitlySet("clientAddress")) {
+                this.clientAddress(model.getClientAddress());
+            }
+            if (model.wasPropertyExplicitlySet("countryName")) {
+                this.countryName(model.getCountryName());
+            }
+            if (model.wasPropertyExplicitlySet("userAgent")) {
+                this.userAgent(model.getUserAgent());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("protectionRuleDetections")) {
+                this.protectionRuleDetections(model.getProtectionRuleDetections());
+            }
+            if (model.wasPropertyExplicitlySet("httpMethod")) {
+                this.httpMethod(model.getHttpMethod());
+            }
+            if (model.wasPropertyExplicitlySet("requestUrl")) {
+                this.requestUrl(model.getRequestUrl());
+            }
+            if (model.wasPropertyExplicitlySet("httpHeaders")) {
+                this.httpHeaders(model.getHttpHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("referrer")) {
+                this.referrer(model.getReferrer());
+            }
+            if (model.wasPropertyExplicitlySet("responseCode")) {
+                this.responseCode(model.getResponseCode());
+            }
+            if (model.wasPropertyExplicitlySet("responseSize")) {
+                this.responseSize(model.getResponseSize());
+            }
+            if (model.wasPropertyExplicitlySet("incidentKey")) {
+                this.incidentKey(model.getIncidentKey());
+            }
+            if (model.wasPropertyExplicitlySet("fingerprint")) {
+                this.fingerprint(model.getFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("device")) {
+                this.device(model.getDevice());
+            }
+            if (model.wasPropertyExplicitlySet("countryCode")) {
+                this.countryCode(model.getCountryCode());
+            }
+            if (model.wasPropertyExplicitlySet("requestHeaders")) {
+                this.requestHeaders(model.getRequestHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("threatFeedKey")) {
+                this.threatFeedKey(model.getThreatFeedKey());
+            }
+            if (model.wasPropertyExplicitlySet("accessRuleKey")) {
+                this.accessRuleKey(model.getAccessRuleKey());
+            }
+            if (model.wasPropertyExplicitlySet("addressRateLimitingKey")) {
+                this.addressRateLimitingKey(model.getAddressRateLimitingKey());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("logType")) {
+                this.logType(model.getLogType());
+            }
+            if (model.wasPropertyExplicitlySet("originAddress")) {
+                this.originAddress(model.getOriginAddress());
+            }
+            if (model.wasPropertyExplicitlySet("originResponseTime")) {
+                this.originResponseTime(model.getOriginResponseTime());
+            }
+            return this;
         }
     }
 
@@ -1148,6 +1203,7 @@ public final class WafLog {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WafLog(");
+        sb.append("super=").append(super.toString());
         sb.append("action=").append(String.valueOf(this.action));
         sb.append(", captchaAction=").append(String.valueOf(this.captchaAction));
         sb.append(", captchaExpected=").append(String.valueOf(this.captchaExpected));
@@ -1177,7 +1233,6 @@ public final class WafLog {
         sb.append(", logType=").append(String.valueOf(this.logType));
         sb.append(", originAddress=").append(String.valueOf(this.originAddress));
         sb.append(", originResponseTime=").append(String.valueOf(this.originResponseTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1222,7 +1277,7 @@ public final class WafLog {
                 && java.util.Objects.equals(this.logType, other.logType)
                 && java.util.Objects.equals(this.originAddress, other.originAddress)
                 && java.util.Objects.equals(this.originResponseTime, other.originResponseTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1287,16 +1342,7 @@ public final class WafLog {
                         + (this.originResponseTime == null
                                 ? 43
                                 : this.originResponseTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -226,6 +226,19 @@ public class SummarizeApplicationUsageRequest
     public java.util.List<com.oracle.bmc.jms.model.OsFamily> getOsFamily() {
         return osFamily;
     }
+    /**
+     * Filter the list with displayName contains the given value.
+     *
+     */
+    private String displayNameContains;
+
+    /**
+     * Filter the list with displayName contains the given value.
+     *
+     */
+    public String getDisplayNameContains() {
+        return displayNameContains;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -544,6 +557,23 @@ public class SummarizeApplicationUsageRequest
         }
 
         /**
+         * Filter the list with displayName contains the given value.
+         *
+         */
+        private String displayNameContains = null;
+
+        /**
+         * Filter the list with displayName contains the given value.
+         *
+         * @param displayNameContains the value to set
+         * @return this builder instance
+         */
+        public Builder displayNameContains(String displayNameContains) {
+            this.displayNameContains = displayNameContains;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -589,6 +619,7 @@ public class SummarizeApplicationUsageRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
+            displayNameContains(o.getDisplayNameContains());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -639,8 +670,9 @@ public class SummarizeApplicationUsageRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.osFamily = osFamily;
+            request.displayNameContains = displayNameContains;
             return request;
-            // new SummarizeApplicationUsageRequest(fleetId, applicationId, displayName, applicationType, jreVendor, jreDistribution, jreVersion, installationPath, managedInstanceId, fields, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily);
+            // new SummarizeApplicationUsageRequest(fleetId, applicationId, displayName, applicationType, jreVendor, jreDistribution, jreVersion, installationPath, managedInstanceId, fields, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily, displayNameContains);
         }
     }
 
@@ -667,7 +699,8 @@ public class SummarizeApplicationUsageRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .osFamily(osFamily);
+                .osFamily(osFamily)
+                .displayNameContains(displayNameContains);
     }
 
     /**
@@ -701,6 +734,7 @@ public class SummarizeApplicationUsageRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(")");
         return sb.toString();
     }
@@ -733,7 +767,8 @@ public class SummarizeApplicationUsageRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.osFamily, other.osFamily);
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains);
     }
 
     @Override
@@ -768,6 +803,11 @@ public class SummarizeApplicationUsageRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.displayNameContains == null
+                                ? 43
+                                : this.displayNameContains.hashCode());
         return result;
     }
 }

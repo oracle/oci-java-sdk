@@ -19,7 +19,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = RevokeCertificateAuthorityVersionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RevokeCertificateAuthorityVersionDetails {
+public final class RevokeCertificateAuthorityVersionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"revocationReason"})
     public RevokeCertificateAuthorityVersionDetails(RevocationReason revocationReason) {
@@ -50,18 +51,20 @@ public final class RevokeCertificateAuthorityVersionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RevokeCertificateAuthorityVersionDetails build() {
-            RevokeCertificateAuthorityVersionDetails __instance__ =
-                    new RevokeCertificateAuthorityVersionDetails(revocationReason);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RevokeCertificateAuthorityVersionDetails model =
+                    new RevokeCertificateAuthorityVersionDetails(this.revocationReason);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RevokeCertificateAuthorityVersionDetails o) {
-            Builder copiedBuilder = revocationReason(o.getRevocationReason());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RevokeCertificateAuthorityVersionDetails model) {
+            if (model.wasPropertyExplicitlySet("revocationReason")) {
+                this.revocationReason(model.getRevocationReason());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class RevokeCertificateAuthorityVersionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RevokeCertificateAuthorityVersionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("revocationReason=").append(String.valueOf(this.revocationReason));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +124,7 @@ public final class RevokeCertificateAuthorityVersionDetails {
         RevokeCertificateAuthorityVersionDetails other =
                 (RevokeCertificateAuthorityVersionDetails) o;
         return java.util.Objects.equals(this.revocationReason, other.revocationReason)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -131,16 +134,7 @@ public final class RevokeCertificateAuthorityVersionDetails {
         result =
                 (result * PRIME)
                         + (this.revocationReason == null ? 43 : this.revocationReason.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

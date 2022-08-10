@@ -17,7 +17,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsagePlansPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UsagePlansPolicy {
+public final class UsagePlansPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tokenLocations"})
     public UsagePlansPolicy(java.util.List<String> tokenLocations) {
@@ -60,17 +60,19 @@ public final class UsagePlansPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UsagePlansPolicy build() {
-            UsagePlansPolicy __instance__ = new UsagePlansPolicy(tokenLocations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UsagePlansPolicy model = new UsagePlansPolicy(this.tokenLocations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UsagePlansPolicy o) {
-            Builder copiedBuilder = tokenLocations(o.getTokenLocations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UsagePlansPolicy model) {
+            if (model.wasPropertyExplicitlySet("tokenLocations")) {
+                this.tokenLocations(model.getTokenLocations());
+            }
+            return this;
         }
     }
 
@@ -124,8 +126,8 @@ public final class UsagePlansPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UsagePlansPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("tokenLocations=").append(String.valueOf(this.tokenLocations));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -141,7 +143,7 @@ public final class UsagePlansPolicy {
 
         UsagePlansPolicy other = (UsagePlansPolicy) o;
         return java.util.Objects.equals(this.tokenLocations, other.tokenLocations)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -151,16 +153,7 @@ public final class UsagePlansPolicy {
         result =
                 (result * PRIME)
                         + (this.tokenLocations == null ? 43 : this.tokenLocations.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

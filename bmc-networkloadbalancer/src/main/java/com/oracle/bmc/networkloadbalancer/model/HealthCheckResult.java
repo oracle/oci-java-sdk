@@ -20,7 +20,7 @@ package com.oracle.bmc.networkloadbalancer.model;
     builder = HealthCheckResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HealthCheckResult {
+public final class HealthCheckResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "healthCheckStatus"})
     public HealthCheckResult(java.util.Date timestamp, HealthCheckStatus healthCheckStatus) {
@@ -76,18 +76,22 @@ public final class HealthCheckResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HealthCheckResult build() {
-            HealthCheckResult __instance__ = new HealthCheckResult(timestamp, healthCheckStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HealthCheckResult model = new HealthCheckResult(this.timestamp, this.healthCheckStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HealthCheckResult o) {
-            Builder copiedBuilder =
-                    timestamp(o.getTimestamp()).healthCheckStatus(o.getHealthCheckStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HealthCheckResult model) {
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("healthCheckStatus")) {
+                this.healthCheckStatus(model.getHealthCheckStatus());
+            }
+            return this;
         }
     }
 
@@ -204,9 +208,9 @@ public final class HealthCheckResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HealthCheckResult(");
+        sb.append("super=").append(super.toString());
         sb.append("timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", healthCheckStatus=").append(String.valueOf(this.healthCheckStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,7 +227,7 @@ public final class HealthCheckResult {
         HealthCheckResult other = (HealthCheckResult) o;
         return java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.healthCheckStatus, other.healthCheckStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -234,16 +238,7 @@ public final class HealthCheckResult {
         result =
                 (result * PRIME)
                         + (this.healthCheckStatus == null ? 43 : this.healthCheckStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

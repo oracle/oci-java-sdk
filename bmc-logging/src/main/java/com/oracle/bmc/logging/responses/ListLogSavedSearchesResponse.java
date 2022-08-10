@@ -80,6 +80,7 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcPreviousPage",
         "opcRequestId",
@@ -87,12 +88,13 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListLogSavedSearchesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPreviousPage,
             String opcRequestId,
             com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
                     logSavedSearchSummaryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcPreviousPage = opcPreviousPage;
         this.opcRequestId = opcRequestId;
@@ -104,6 +106,13 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -192,6 +201,7 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListLogSavedSearchesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcPreviousPage(o.getOpcPreviousPage());
             opcRequestId(o.getOpcRequestId());
@@ -207,6 +217,7 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
         public ListLogSavedSearchesResponse build() {
             return new ListLogSavedSearchesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcPreviousPage,
                     opcRequestId,

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Reference.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Reference {
+public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -222,38 +222,57 @@ public final class Reference {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Reference build() {
-            Reference __instance__ =
+            Reference model =
                     new Reference(
-                            key,
-                            name,
-                            identifier,
-                            identifierPath,
-                            description,
-                            type,
-                            targetObject,
-                            applicationKey,
-                            usedBy,
-                            childReferences);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.identifier,
+                            this.identifierPath,
+                            this.description,
+                            this.type,
+                            this.targetObject,
+                            this.applicationKey,
+                            this.usedBy,
+                            this.childReferences);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Reference o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .identifier(o.getIdentifier())
-                            .identifierPath(o.getIdentifierPath())
-                            .description(o.getDescription())
-                            .type(o.getType())
-                            .targetObject(o.getTargetObject())
-                            .applicationKey(o.getApplicationKey())
-                            .usedBy(o.getUsedBy())
-                            .childReferences(o.getChildReferences());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Reference model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("identifierPath")) {
+                this.identifierPath(model.getIdentifierPath());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("targetObject")) {
+                this.targetObject(model.getTargetObject());
+            }
+            if (model.wasPropertyExplicitlySet("applicationKey")) {
+                this.applicationKey(model.getApplicationKey());
+            }
+            if (model.wasPropertyExplicitlySet("usedBy")) {
+                this.usedBy(model.getUsedBy());
+            }
+            if (model.wasPropertyExplicitlySet("childReferences")) {
+                this.childReferences(model.getChildReferences());
+            }
+            return this;
         }
     }
 
@@ -480,6 +499,7 @@ public final class Reference {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Reference(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
@@ -490,7 +510,6 @@ public final class Reference {
         sb.append(", applicationKey=").append(String.valueOf(this.applicationKey));
         sb.append(", usedBy=").append(String.valueOf(this.usedBy));
         sb.append(", childReferences=").append(String.valueOf(this.childReferences));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -515,7 +534,7 @@ public final class Reference {
                 && java.util.Objects.equals(this.applicationKey, other.applicationKey)
                 && java.util.Objects.equals(this.usedBy, other.usedBy)
                 && java.util.Objects.equals(this.childReferences, other.childReferences)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -538,16 +557,7 @@ public final class Reference {
         result =
                 (result * PRIME)
                         + (this.childReferences == null ? 43 : this.childReferences.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

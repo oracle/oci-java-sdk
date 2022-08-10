@@ -17,7 +17,7 @@ package com.oracle.bmc.dts.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TransferDevice.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferDevice {
+public final class TransferDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "serialNumber",
@@ -128,34 +128,49 @@ public final class TransferDevice {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferDevice build() {
-            TransferDevice __instance__ =
+            TransferDevice model =
                     new TransferDevice(
-                            serialNumber,
-                            iscsiIQN,
-                            label,
-                            lifecycleState,
-                            transferJobId,
-                            attachedTransferPackageLabel,
-                            creationTime,
-                            uploadStatusLogUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.serialNumber,
+                            this.iscsiIQN,
+                            this.label,
+                            this.lifecycleState,
+                            this.transferJobId,
+                            this.attachedTransferPackageLabel,
+                            this.creationTime,
+                            this.uploadStatusLogUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferDevice o) {
-            Builder copiedBuilder =
-                    serialNumber(o.getSerialNumber())
-                            .iscsiIQN(o.getIscsiIQN())
-                            .label(o.getLabel())
-                            .lifecycleState(o.getLifecycleState())
-                            .transferJobId(o.getTransferJobId())
-                            .attachedTransferPackageLabel(o.getAttachedTransferPackageLabel())
-                            .creationTime(o.getCreationTime())
-                            .uploadStatusLogUri(o.getUploadStatusLogUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferDevice model) {
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("iscsiIQN")) {
+                this.iscsiIQN(model.getIscsiIQN());
+            }
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("transferJobId")) {
+                this.transferJobId(model.getTransferJobId());
+            }
+            if (model.wasPropertyExplicitlySet("attachedTransferPackageLabel")) {
+                this.attachedTransferPackageLabel(model.getAttachedTransferPackageLabel());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            if (model.wasPropertyExplicitlySet("uploadStatusLogUri")) {
+                this.uploadStatusLogUri(model.getUploadStatusLogUri());
+            }
+            return this;
         }
     }
 
@@ -295,6 +310,7 @@ public final class TransferDevice {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferDevice(");
+        sb.append("super=").append(super.toString());
         sb.append("serialNumber=").append(String.valueOf(this.serialNumber));
         sb.append(", iscsiIQN=").append(String.valueOf(this.iscsiIQN));
         sb.append(", label=").append(String.valueOf(this.label));
@@ -304,7 +320,6 @@ public final class TransferDevice {
                 .append(String.valueOf(this.attachedTransferPackageLabel));
         sb.append(", creationTime=").append(String.valueOf(this.creationTime));
         sb.append(", uploadStatusLogUri=").append(String.valueOf(this.uploadStatusLogUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -328,7 +343,7 @@ public final class TransferDevice {
                         this.attachedTransferPackageLabel, other.attachedTransferPackageLabel)
                 && java.util.Objects.equals(this.creationTime, other.creationTime)
                 && java.util.Objects.equals(this.uploadStatusLogUri, other.uploadStatusLogUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -355,16 +370,7 @@ public final class TransferDevice {
                         + (this.uploadStatusLogUri == null
                                 ? 43
                                 : this.uploadStatusLogUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

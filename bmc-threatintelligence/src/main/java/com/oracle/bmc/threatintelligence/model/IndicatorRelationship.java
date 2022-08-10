@@ -19,7 +19,8 @@ package com.oracle.bmc.threatintelligence.model;
     builder = IndicatorRelationship.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IndicatorRelationship {
+public final class IndicatorRelationship
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "relatedEntity", "attribution"})
     public IndicatorRelationship(
@@ -80,21 +81,26 @@ public final class IndicatorRelationship {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IndicatorRelationship build() {
-            IndicatorRelationship __instance__ =
-                    new IndicatorRelationship(name, relatedEntity, attribution);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IndicatorRelationship model =
+                    new IndicatorRelationship(this.name, this.relatedEntity, this.attribution);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IndicatorRelationship o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .relatedEntity(o.getRelatedEntity())
-                            .attribution(o.getAttribution());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IndicatorRelationship model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("relatedEntity")) {
+                this.relatedEntity(model.getRelatedEntity());
+            }
+            if (model.wasPropertyExplicitlySet("attribution")) {
+                this.attribution(model.getAttribution());
+            }
+            return this;
         }
     }
 
@@ -157,10 +163,10 @@ public final class IndicatorRelationship {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IndicatorRelationship(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", relatedEntity=").append(String.valueOf(this.relatedEntity));
         sb.append(", attribution=").append(String.valueOf(this.attribution));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -178,7 +184,7 @@ public final class IndicatorRelationship {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.relatedEntity, other.relatedEntity)
                 && java.util.Objects.equals(this.attribution, other.attribution)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -190,16 +196,7 @@ public final class IndicatorRelationship {
                 (result * PRIME)
                         + (this.relatedEntity == null ? 43 : this.relatedEntity.hashCode());
         result = (result * PRIME) + (this.attribution == null ? 43 : this.attribution.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

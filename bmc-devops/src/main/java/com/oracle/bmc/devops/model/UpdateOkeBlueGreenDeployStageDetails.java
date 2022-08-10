@@ -95,32 +95,42 @@ public final class UpdateOkeBlueGreenDeployStageDetails extends UpdateDeployStag
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOkeBlueGreenDeployStageDetails build() {
-            UpdateOkeBlueGreenDeployStageDetails __instance__ =
+            UpdateOkeBlueGreenDeployStageDetails model =
                     new UpdateOkeBlueGreenDeployStageDetails(
-                            description,
-                            displayName,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            kubernetesManifestDeployArtifactIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kubernetesManifestDeployArtifactIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOkeBlueGreenDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .kubernetesManifestDeployArtifactIds(
-                                    o.getKubernetesManifestDeployArtifactIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOkeBlueGreenDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("kubernetesManifestDeployArtifactIds")) {
+                this.kubernetesManifestDeployArtifactIds(
+                        model.getKubernetesManifestDeployArtifactIds());
+            }
+            return this;
         }
     }
 
@@ -182,7 +192,6 @@ public final class UpdateOkeBlueGreenDeployStageDetails extends UpdateDeployStag
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", kubernetesManifestDeployArtifactIds=")
                 .append(String.valueOf(this.kubernetesManifestDeployArtifactIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,8 +209,7 @@ public final class UpdateOkeBlueGreenDeployStageDetails extends UpdateDeployStag
         return java.util.Objects.equals(
                         this.kubernetesManifestDeployArtifactIds,
                         other.kubernetesManifestDeployArtifactIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -213,16 +221,6 @@ public final class UpdateOkeBlueGreenDeployStageDetails extends UpdateDeployStag
                         + (this.kubernetesManifestDeployArtifactIds == null
                                 ? 43
                                 : this.kubernetesManifestDeployArtifactIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

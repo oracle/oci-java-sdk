@@ -138,34 +138,49 @@ public final class OtherPaymentDetail extends PaymentDetail {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OtherPaymentDetail build() {
-            OtherPaymentDetail __instance__ =
+            OtherPaymentDetail model =
                     new OtherPaymentDetail(
-                            timePaidOn,
-                            paidBy,
-                            amountPaid,
-                            echeckRouting,
-                            nameOnCard,
-                            creditCardType,
-                            lastDigits,
-                            timeExpiration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timePaidOn,
+                            this.paidBy,
+                            this.amountPaid,
+                            this.echeckRouting,
+                            this.nameOnCard,
+                            this.creditCardType,
+                            this.lastDigits,
+                            this.timeExpiration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OtherPaymentDetail o) {
-            Builder copiedBuilder =
-                    timePaidOn(o.getTimePaidOn())
-                            .paidBy(o.getPaidBy())
-                            .amountPaid(o.getAmountPaid())
-                            .echeckRouting(o.getEcheckRouting())
-                            .nameOnCard(o.getNameOnCard())
-                            .creditCardType(o.getCreditCardType())
-                            .lastDigits(o.getLastDigits())
-                            .timeExpiration(o.getTimeExpiration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OtherPaymentDetail model) {
+            if (model.wasPropertyExplicitlySet("timePaidOn")) {
+                this.timePaidOn(model.getTimePaidOn());
+            }
+            if (model.wasPropertyExplicitlySet("paidBy")) {
+                this.paidBy(model.getPaidBy());
+            }
+            if (model.wasPropertyExplicitlySet("amountPaid")) {
+                this.amountPaid(model.getAmountPaid());
+            }
+            if (model.wasPropertyExplicitlySet("echeckRouting")) {
+                this.echeckRouting(model.getEcheckRouting());
+            }
+            if (model.wasPropertyExplicitlySet("nameOnCard")) {
+                this.nameOnCard(model.getNameOnCard());
+            }
+            if (model.wasPropertyExplicitlySet("creditCardType")) {
+                this.creditCardType(model.getCreditCardType());
+            }
+            if (model.wasPropertyExplicitlySet("lastDigits")) {
+                this.lastDigits(model.getLastDigits());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpiration")) {
+                this.timeExpiration(model.getTimeExpiration());
+            }
+            return this;
         }
     }
 
@@ -340,7 +355,6 @@ public final class OtherPaymentDetail extends PaymentDetail {
         sb.append(", creditCardType=").append(String.valueOf(this.creditCardType));
         sb.append(", lastDigits=").append(String.valueOf(this.lastDigits));
         sb.append(", timeExpiration=").append(String.valueOf(this.timeExpiration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -360,8 +374,7 @@ public final class OtherPaymentDetail extends PaymentDetail {
                 && java.util.Objects.equals(this.creditCardType, other.creditCardType)
                 && java.util.Objects.equals(this.lastDigits, other.lastDigits)
                 && java.util.Objects.equals(this.timeExpiration, other.timeExpiration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -379,16 +392,6 @@ public final class OtherPaymentDetail extends PaymentDetail {
         result =
                 (result * PRIME)
                         + (this.timeExpiration == null ? 43 : this.timeExpiration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

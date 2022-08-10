@@ -101,8 +101,8 @@ public class GetMaintenanceRunConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetMaintenanceRunResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.maintenanceRun(response.getItem());
 

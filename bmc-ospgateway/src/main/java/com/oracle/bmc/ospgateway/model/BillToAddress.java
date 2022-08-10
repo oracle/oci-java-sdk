@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BillToAddress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BillToAddress {
+public final class BillToAddress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "contactName",
@@ -291,46 +291,73 @@ public final class BillToAddress {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BillToAddress build() {
-            BillToAddress __instance__ =
+            BillToAddress model =
                     new BillToAddress(
-                            contactName,
-                            companyName,
-                            addressLine1,
-                            addressLine2,
-                            addressLine3,
-                            addressLine4,
-                            streetName,
-                            streetNumber,
-                            city,
-                            country,
-                            county,
-                            state,
-                            postalCode,
-                            province);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.contactName,
+                            this.companyName,
+                            this.addressLine1,
+                            this.addressLine2,
+                            this.addressLine3,
+                            this.addressLine4,
+                            this.streetName,
+                            this.streetNumber,
+                            this.city,
+                            this.country,
+                            this.county,
+                            this.state,
+                            this.postalCode,
+                            this.province);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BillToAddress o) {
-            Builder copiedBuilder =
-                    contactName(o.getContactName())
-                            .companyName(o.getCompanyName())
-                            .addressLine1(o.getAddressLine1())
-                            .addressLine2(o.getAddressLine2())
-                            .addressLine3(o.getAddressLine3())
-                            .addressLine4(o.getAddressLine4())
-                            .streetName(o.getStreetName())
-                            .streetNumber(o.getStreetNumber())
-                            .city(o.getCity())
-                            .country(o.getCountry())
-                            .county(o.getCounty())
-                            .state(o.getState())
-                            .postalCode(o.getPostalCode())
-                            .province(o.getProvince());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BillToAddress model) {
+            if (model.wasPropertyExplicitlySet("contactName")) {
+                this.contactName(model.getContactName());
+            }
+            if (model.wasPropertyExplicitlySet("companyName")) {
+                this.companyName(model.getCompanyName());
+            }
+            if (model.wasPropertyExplicitlySet("addressLine1")) {
+                this.addressLine1(model.getAddressLine1());
+            }
+            if (model.wasPropertyExplicitlySet("addressLine2")) {
+                this.addressLine2(model.getAddressLine2());
+            }
+            if (model.wasPropertyExplicitlySet("addressLine3")) {
+                this.addressLine3(model.getAddressLine3());
+            }
+            if (model.wasPropertyExplicitlySet("addressLine4")) {
+                this.addressLine4(model.getAddressLine4());
+            }
+            if (model.wasPropertyExplicitlySet("streetName")) {
+                this.streetName(model.getStreetName());
+            }
+            if (model.wasPropertyExplicitlySet("streetNumber")) {
+                this.streetNumber(model.getStreetNumber());
+            }
+            if (model.wasPropertyExplicitlySet("city")) {
+                this.city(model.getCity());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("county")) {
+                this.county(model.getCounty());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("postalCode")) {
+                this.postalCode(model.getPostalCode());
+            }
+            if (model.wasPropertyExplicitlySet("province")) {
+                this.province(model.getProvince());
+            }
+            return this;
         }
     }
 
@@ -547,6 +574,7 @@ public final class BillToAddress {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BillToAddress(");
+        sb.append("super=").append(super.toString());
         sb.append("contactName=").append(String.valueOf(this.contactName));
         sb.append(", companyName=").append(String.valueOf(this.companyName));
         sb.append(", addressLine1=").append(String.valueOf(this.addressLine1));
@@ -561,7 +589,6 @@ public final class BillToAddress {
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", postalCode=").append(String.valueOf(this.postalCode));
         sb.append(", province=").append(String.valueOf(this.province));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -590,7 +617,7 @@ public final class BillToAddress {
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.postalCode, other.postalCode)
                 && java.util.Objects.equals(this.province, other.province)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -611,16 +638,7 @@ public final class BillToAddress {
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + (this.postalCode == null ? 43 : this.postalCode.hashCode());
         result = (result * PRIME) + (this.province == null ? 43 : this.province.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

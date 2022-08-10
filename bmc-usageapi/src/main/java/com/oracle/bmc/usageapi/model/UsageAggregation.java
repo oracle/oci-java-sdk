@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsageAggregation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UsageAggregation {
+public final class UsageAggregation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"groupBy", "items"})
     public UsageAggregation(java.util.List<String> groupBy, java.util.List<UsageSummary> items) {
@@ -65,17 +65,22 @@ public final class UsageAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UsageAggregation build() {
-            UsageAggregation __instance__ = new UsageAggregation(groupBy, items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UsageAggregation model = new UsageAggregation(this.groupBy, this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UsageAggregation o) {
-            Builder copiedBuilder = groupBy(o.getGroupBy()).items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UsageAggregation model) {
+            if (model.wasPropertyExplicitlySet("groupBy")) {
+                this.groupBy(model.getGroupBy());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class UsageAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UsageAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("groupBy=").append(String.valueOf(this.groupBy));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class UsageAggregation {
         UsageAggregation other = (UsageAggregation) o;
         return java.util.Objects.equals(this.groupBy, other.groupBy)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class UsageAggregation {
         int result = 1;
         result = (result * PRIME) + (this.groupBy == null ? 43 : this.groupBy.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

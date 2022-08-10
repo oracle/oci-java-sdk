@@ -127,8 +127,8 @@ public class DetectLanguageEntitiesConverter {
                                         builder =
                                                 com.oracle.bmc.ailanguage.responses
                                                         .DetectLanguageEntitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectLanguageEntitiesResult(response.getItem());
 

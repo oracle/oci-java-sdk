@@ -106,8 +106,8 @@ public class GetConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses
                                                         .GetConfigurationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.configuration(response.getItem());

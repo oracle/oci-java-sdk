@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AttachBootVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttachBootVolumeDetails {
+public final class AttachBootVolumeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bootVolumeId",
@@ -118,23 +119,33 @@ public final class AttachBootVolumeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachBootVolumeDetails build() {
-            AttachBootVolumeDetails __instance__ =
+            AttachBootVolumeDetails model =
                     new AttachBootVolumeDetails(
-                            bootVolumeId, displayName, instanceId, encryptionInTransitType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bootVolumeId,
+                            this.displayName,
+                            this.instanceId,
+                            this.encryptionInTransitType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachBootVolumeDetails o) {
-            Builder copiedBuilder =
-                    bootVolumeId(o.getBootVolumeId())
-                            .displayName(o.getDisplayName())
-                            .instanceId(o.getInstanceId())
-                            .encryptionInTransitType(o.getEncryptionInTransitType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachBootVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("bootVolumeId")) {
+                this.bootVolumeId(model.getBootVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionInTransitType")) {
+                this.encryptionInTransitType(model.getEncryptionInTransitType());
+            }
+            return this;
         }
     }
 
@@ -226,12 +237,12 @@ public final class AttachBootVolumeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttachBootVolumeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("bootVolumeId=").append(String.valueOf(this.bootVolumeId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", encryptionInTransitType=")
                 .append(String.valueOf(this.encryptionInTransitType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -251,7 +262,7 @@ public final class AttachBootVolumeDetails {
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(
                         this.encryptionInTransitType, other.encryptionInTransitType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -266,16 +277,7 @@ public final class AttachBootVolumeDetails {
                         + (this.encryptionInTransitType == null
                                 ? 43
                                 : this.encryptionInTransitType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

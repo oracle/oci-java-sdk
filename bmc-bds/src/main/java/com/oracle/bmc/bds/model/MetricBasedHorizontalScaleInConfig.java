@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = MetricBasedHorizontalScaleInConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricBasedHorizontalScaleInConfig {
+public final class MetricBasedHorizontalScaleInConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metric", "minNodeCount", "stepSize"})
     public MetricBasedHorizontalScaleInConfig(
@@ -78,21 +79,27 @@ public final class MetricBasedHorizontalScaleInConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricBasedHorizontalScaleInConfig build() {
-            MetricBasedHorizontalScaleInConfig __instance__ =
-                    new MetricBasedHorizontalScaleInConfig(metric, minNodeCount, stepSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MetricBasedHorizontalScaleInConfig model =
+                    new MetricBasedHorizontalScaleInConfig(
+                            this.metric, this.minNodeCount, this.stepSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricBasedHorizontalScaleInConfig o) {
-            Builder copiedBuilder =
-                    metric(o.getMetric())
-                            .minNodeCount(o.getMinNodeCount())
-                            .stepSize(o.getStepSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricBasedHorizontalScaleInConfig model) {
+            if (model.wasPropertyExplicitlySet("metric")) {
+                this.metric(model.getMetric());
+            }
+            if (model.wasPropertyExplicitlySet("minNodeCount")) {
+                this.minNodeCount(model.getMinNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("stepSize")) {
+                this.stepSize(model.getStepSize());
+            }
+            return this;
         }
     }
 
@@ -155,10 +162,10 @@ public final class MetricBasedHorizontalScaleInConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricBasedHorizontalScaleInConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("metric=").append(String.valueOf(this.metric));
         sb.append(", minNodeCount=").append(String.valueOf(this.minNodeCount));
         sb.append(", stepSize=").append(String.valueOf(this.stepSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,7 +183,7 @@ public final class MetricBasedHorizontalScaleInConfig {
         return java.util.Objects.equals(this.metric, other.metric)
                 && java.util.Objects.equals(this.minNodeCount, other.minNodeCount)
                 && java.util.Objects.equals(this.stepSize, other.stepSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -186,16 +193,7 @@ public final class MetricBasedHorizontalScaleInConfig {
         result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
         result = (result * PRIME) + (this.minNodeCount == null ? 43 : this.minNodeCount.hashCode());
         result = (result * PRIME) + (this.stepSize == null ? 43 : this.stepSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

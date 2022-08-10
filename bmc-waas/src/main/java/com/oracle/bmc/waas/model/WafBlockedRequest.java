@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
     builder = WafBlockedRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WafBlockedRequest {
+public final class WafBlockedRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeObserved", "timeRangeInSeconds", "wafFeature", "count"})
     public WafBlockedRequest(
@@ -105,22 +105,33 @@ public final class WafBlockedRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WafBlockedRequest build() {
-            WafBlockedRequest __instance__ =
-                    new WafBlockedRequest(timeObserved, timeRangeInSeconds, wafFeature, count);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WafBlockedRequest model =
+                    new WafBlockedRequest(
+                            this.timeObserved,
+                            this.timeRangeInSeconds,
+                            this.wafFeature,
+                            this.count);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WafBlockedRequest o) {
-            Builder copiedBuilder =
-                    timeObserved(o.getTimeObserved())
-                            .timeRangeInSeconds(o.getTimeRangeInSeconds())
-                            .wafFeature(o.getWafFeature())
-                            .count(o.getCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WafBlockedRequest model) {
+            if (model.wasPropertyExplicitlySet("timeObserved")) {
+                this.timeObserved(model.getTimeObserved());
+            }
+            if (model.wasPropertyExplicitlySet("timeRangeInSeconds")) {
+                this.timeRangeInSeconds(model.getTimeRangeInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("wafFeature")) {
+                this.wafFeature(model.getWafFeature());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            return this;
         }
     }
 
@@ -258,11 +269,11 @@ public final class WafBlockedRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WafBlockedRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
         sb.append(", timeRangeInSeconds=").append(String.valueOf(this.timeRangeInSeconds));
         sb.append(", wafFeature=").append(String.valueOf(this.wafFeature));
         sb.append(", count=").append(String.valueOf(this.count));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -281,7 +292,7 @@ public final class WafBlockedRequest {
                 && java.util.Objects.equals(this.timeRangeInSeconds, other.timeRangeInSeconds)
                 && java.util.Objects.equals(this.wafFeature, other.wafFeature)
                 && java.util.Objects.equals(this.count, other.count)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -296,16 +307,7 @@ public final class WafBlockedRequest {
                                 : this.timeRangeInSeconds.hashCode());
         result = (result * PRIME) + (this.wafFeature == null ? 43 : this.wafFeature.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

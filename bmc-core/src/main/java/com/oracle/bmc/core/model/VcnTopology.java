@@ -72,21 +72,30 @@ public final class VcnTopology extends Topology {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnTopology build() {
-            VcnTopology __instance__ = new VcnTopology(entities, relationships, timeCreated, vcnId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VcnTopology model =
+                    new VcnTopology(
+                            this.entities, this.relationships, this.timeCreated, this.vcnId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VcnTopology o) {
-            Builder copiedBuilder =
-                    entities(o.getEntities())
-                            .relationships(o.getRelationships())
-                            .timeCreated(o.getTimeCreated())
-                            .vcnId(o.getVcnId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VcnTopology model) {
+            if (model.wasPropertyExplicitlySet("entities")) {
+                this.entities(model.getEntities());
+            }
+            if (model.wasPropertyExplicitlySet("relationships")) {
+                this.relationships(model.getRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            return this;
         }
     }
 
@@ -140,7 +149,6 @@ public final class VcnTopology extends Topology {
         sb.append("VcnTopology(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,9 +163,7 @@ public final class VcnTopology extends Topology {
         }
 
         VcnTopology other = (VcnTopology) o;
-        return java.util.Objects.equals(this.vcnId, other.vcnId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.vcnId, other.vcnId) && super.equals(other);
     }
 
     @Override
@@ -165,16 +171,6 @@ public final class VcnTopology extends Topology {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -102,8 +102,8 @@ public class GetKnowledgeBaseConverter {
                                         builder =
                                                 com.oracle.bmc.adm.responses
                                                         .GetKnowledgeBaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.knowledgeBase(response.getItem());
 

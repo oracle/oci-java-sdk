@@ -19,7 +19,7 @@ package com.oracle.bmc.blockchain.model;
     builder = ModifyPeerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModifyPeerDetails {
+public final class ModifyPeerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerName", "ocpuAllocationParam"})
     public ModifyPeerDetails(String peerName, OcpuAllocationNumberParam ocpuAllocationParam) {
@@ -60,18 +60,23 @@ public final class ModifyPeerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModifyPeerDetails build() {
-            ModifyPeerDetails __instance__ = new ModifyPeerDetails(peerName, ocpuAllocationParam);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ModifyPeerDetails model =
+                    new ModifyPeerDetails(this.peerName, this.ocpuAllocationParam);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModifyPeerDetails o) {
-            Builder copiedBuilder =
-                    peerName(o.getPeerName()).ocpuAllocationParam(o.getOcpuAllocationParam());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModifyPeerDetails model) {
+            if (model.wasPropertyExplicitlySet("peerName")) {
+                this.peerName(model.getPeerName());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuAllocationParam")) {
+                this.ocpuAllocationParam(model.getOcpuAllocationParam());
+            }
+            return this;
         }
     }
 
@@ -120,9 +125,9 @@ public final class ModifyPeerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModifyPeerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("peerName=").append(String.valueOf(this.peerName));
         sb.append(", ocpuAllocationParam=").append(String.valueOf(this.ocpuAllocationParam));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -139,7 +144,7 @@ public final class ModifyPeerDetails {
         ModifyPeerDetails other = (ModifyPeerDetails) o;
         return java.util.Objects.equals(this.peerName, other.peerName)
                 && java.util.Objects.equals(this.ocpuAllocationParam, other.ocpuAllocationParam)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -152,16 +157,7 @@ public final class ModifyPeerDetails {
                         + (this.ocpuAllocationParam == null
                                 ? 43
                                 : this.ocpuAllocationParam.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

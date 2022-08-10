@@ -49,16 +49,18 @@ public class GetBuildPipelineResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "buildPipeline"
     })
     private GetBuildPipelineResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.BuildPipeline buildPipeline) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.buildPipeline = buildPipeline;
@@ -69,6 +71,13 @@ public class GetBuildPipelineResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class GetBuildPipelineResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetBuildPipelineResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             buildPipeline(o.getBuildPipeline());
@@ -136,7 +146,7 @@ public class GetBuildPipelineResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetBuildPipelineResponse build() {
             return new GetBuildPipelineResponse(
-                    __httpStatusCode__, etag, opcRequestId, buildPipeline);
+                    __httpStatusCode__, headers, etag, opcRequestId, buildPipeline);
         }
     }
 

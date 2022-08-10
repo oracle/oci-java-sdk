@@ -78,6 +78,7 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "eTag",
         "steeringPolicy",
@@ -85,11 +86,12 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private GetSteeringPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.eTag = eTag;
         this.steeringPolicy = steeringPolicy;
@@ -101,6 +103,13 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -185,6 +194,7 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetSteeringPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
             steeringPolicy(o.getSteeringPolicy());
@@ -198,7 +208,7 @@ public class GetSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetSteeringPolicyResponse build() {
             return new GetSteeringPolicyResponse(
-                    __httpStatusCode__, opcRequestId, eTag, steeringPolicy, isNotModified);
+                    __httpStatusCode__, headers, opcRequestId, eTag, steeringPolicy, isNotModified);
         }
     }
 

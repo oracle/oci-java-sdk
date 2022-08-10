@@ -17,7 +17,7 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TextSpan.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TextSpan {
+public final class TextSpan extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"offset", "length"})
     public TextSpan(java.math.BigDecimal offset, java.math.BigDecimal length) {
@@ -65,17 +65,22 @@ public final class TextSpan {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TextSpan build() {
-            TextSpan __instance__ = new TextSpan(offset, length);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TextSpan model = new TextSpan(this.offset, this.length);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TextSpan o) {
-            Builder copiedBuilder = offset(o.getOffset()).length(o.getLength());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TextSpan model) {
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class TextSpan {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TextSpan(");
+        sb.append("super=").append(super.toString());
         sb.append("offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class TextSpan {
         TextSpan other = (TextSpan) o;
         return java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.length, other.length)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class TextSpan {
         int result = 1;
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

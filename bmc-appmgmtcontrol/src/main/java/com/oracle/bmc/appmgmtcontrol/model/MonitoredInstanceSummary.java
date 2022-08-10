@@ -19,7 +19,8 @@ package com.oracle.bmc.appmgmtcontrol.model;
     builder = MonitoredInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitoredInstanceSummary {
+public final class MonitoredInstanceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceId",
@@ -152,30 +153,41 @@ public final class MonitoredInstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoredInstanceSummary build() {
-            MonitoredInstanceSummary __instance__ =
+            MonitoredInstanceSummary model =
                     new MonitoredInstanceSummary(
-                            instanceId,
-                            compartmentId,
-                            displayName,
-                            managementAgentId,
-                            lifecycleState,
-                            monitoringState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.instanceId,
+                            this.compartmentId,
+                            this.displayName,
+                            this.managementAgentId,
+                            this.lifecycleState,
+                            this.monitoringState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoredInstanceSummary o) {
-            Builder copiedBuilder =
-                    instanceId(o.getInstanceId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .managementAgentId(o.getManagementAgentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .monitoringState(o.getMonitoringState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoredInstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentId")) {
+                this.managementAgentId(model.getManagementAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("monitoringState")) {
+                this.monitoringState(model.getMonitoringState());
+            }
+            return this;
         }
     }
 
@@ -291,13 +303,13 @@ public final class MonitoredInstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitoredInstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", monitoringState=").append(String.valueOf(this.monitoringState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -318,7 +330,7 @@ public final class MonitoredInstanceSummary {
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.monitoringState, other.monitoringState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -339,16 +351,7 @@ public final class MonitoredInstanceSummary {
         result =
                 (result * PRIME)
                         + (this.monitoringState == null ? 43 : this.monitoringState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

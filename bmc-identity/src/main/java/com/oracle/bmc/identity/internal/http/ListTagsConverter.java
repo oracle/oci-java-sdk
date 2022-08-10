@@ -128,7 +128,8 @@ public class ListTagsConverter {
 
                                 com.oracle.bmc.identity.responses.ListTagsResponse.Builder builder =
                                         com.oracle.bmc.identity.responses.ListTagsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

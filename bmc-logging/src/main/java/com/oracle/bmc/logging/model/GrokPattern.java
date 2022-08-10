@@ -17,7 +17,7 @@ package com.oracle.bmc.logging.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GrokPattern.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GrokPattern {
+public final class GrokPattern extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pattern",
@@ -127,23 +127,37 @@ public final class GrokPattern {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GrokPattern build() {
-            GrokPattern __instance__ =
-                    new GrokPattern(pattern, name, fieldTimeKey, fieldTimeFormat, fieldTimeZone);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GrokPattern model =
+                    new GrokPattern(
+                            this.pattern,
+                            this.name,
+                            this.fieldTimeKey,
+                            this.fieldTimeFormat,
+                            this.fieldTimeZone);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GrokPattern o) {
-            Builder copiedBuilder =
-                    pattern(o.getPattern())
-                            .name(o.getName())
-                            .fieldTimeKey(o.getFieldTimeKey())
-                            .fieldTimeFormat(o.getFieldTimeFormat())
-                            .fieldTimeZone(o.getFieldTimeZone());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GrokPattern model) {
+            if (model.wasPropertyExplicitlySet("pattern")) {
+                this.pattern(model.getPattern());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("fieldTimeKey")) {
+                this.fieldTimeKey(model.getFieldTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("fieldTimeFormat")) {
+                this.fieldTimeFormat(model.getFieldTimeFormat());
+            }
+            if (model.wasPropertyExplicitlySet("fieldTimeZone")) {
+                this.fieldTimeZone(model.getFieldTimeZone());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class GrokPattern {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GrokPattern(");
+        sb.append("super=").append(super.toString());
         sb.append("pattern=").append(String.valueOf(this.pattern));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", fieldTimeKey=").append(String.valueOf(this.fieldTimeKey));
         sb.append(", fieldTimeFormat=").append(String.valueOf(this.fieldTimeFormat));
         sb.append(", fieldTimeZone=").append(String.valueOf(this.fieldTimeZone));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class GrokPattern {
                 && java.util.Objects.equals(this.fieldTimeKey, other.fieldTimeKey)
                 && java.util.Objects.equals(this.fieldTimeFormat, other.fieldTimeFormat)
                 && java.util.Objects.equals(this.fieldTimeZone, other.fieldTimeZone)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -282,16 +296,7 @@ public final class GrokPattern {
         result =
                 (result * PRIME)
                         + (this.fieldTimeZone == null ? 43 : this.fieldTimeZone.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

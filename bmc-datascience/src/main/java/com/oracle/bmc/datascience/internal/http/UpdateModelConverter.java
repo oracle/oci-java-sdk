@@ -107,8 +107,8 @@ public class UpdateModelConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .UpdateModelResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.model(response.getItem());
 

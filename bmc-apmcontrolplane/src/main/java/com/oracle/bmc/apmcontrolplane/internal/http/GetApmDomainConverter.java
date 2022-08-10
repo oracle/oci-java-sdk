@@ -106,8 +106,8 @@ public class GetApmDomainConverter {
                                         builder =
                                                 com.oracle.bmc.apmcontrolplane.responses
                                                         .GetApmDomainResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.apmDomain(response.getItem());
 

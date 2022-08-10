@@ -55,16 +55,18 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "databaseInsight"
     })
     private GetDatabaseInsightResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.databaseInsight = databaseInsight;
@@ -75,6 +77,13 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetDatabaseInsightResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             databaseInsight(o.getDatabaseInsight());
@@ -148,7 +158,7 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetDatabaseInsightResponse build() {
             return new GetDatabaseInsightResponse(
-                    __httpStatusCode__, etag, opcRequestId, databaseInsight);
+                    __httpStatusCode__, headers, etag, opcRequestId, databaseInsight);
         }
     }
 

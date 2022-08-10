@@ -110,8 +110,8 @@ public class UpdateIdentityProviderConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateIdentityProviderResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.identityProvider(response.getItem());
 

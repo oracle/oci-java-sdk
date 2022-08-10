@@ -180,46 +180,73 @@ public final class EmManagedExternalDatabaseConfigurationSummary
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmManagedExternalDatabaseConfigurationSummary build() {
-            EmManagedExternalDatabaseConfigurationSummary __instance__ =
+            EmManagedExternalDatabaseConfigurationSummary model =
                     new EmManagedExternalDatabaseConfigurationSummary(
-                            databaseInsightId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion,
-                            cdbName,
-                            definedTags,
-                            freeformTags,
-                            processorCount,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerBridgeId,
-                            instances,
-                            exadataDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseInsightId,
+                            this.compartmentId,
+                            this.databaseName,
+                            this.databaseDisplayName,
+                            this.databaseType,
+                            this.databaseVersion,
+                            this.cdbName,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.processorCount,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerBridgeId,
+                            this.instances,
+                            this.exadataDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EmManagedExternalDatabaseConfigurationSummary o) {
-            Builder copiedBuilder =
-                    databaseInsightId(o.getDatabaseInsightId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .cdbName(o.getCdbName())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .processorCount(o.getProcessorCount())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
-                            .instances(o.getInstances())
-                            .exadataDetails(o.getExadataDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EmManagedExternalDatabaseConfigurationSummary model) {
+            if (model.wasPropertyExplicitlySet("databaseInsightId")) {
+                this.databaseInsightId(model.getDatabaseInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDisplayName")) {
+                this.databaseDisplayName(model.getDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("cdbName")) {
+                this.cdbName(model.getCdbName());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            if (model.wasPropertyExplicitlySet("instances")) {
+                this.instances(model.getInstances());
+            }
+            if (model.wasPropertyExplicitlySet("exadataDetails")) {
+                this.exadataDetails(model.getExadataDetails());
+            }
+            return this;
         }
     }
 
@@ -336,7 +363,6 @@ public final class EmManagedExternalDatabaseConfigurationSummary
                 .append(String.valueOf(this.enterpriseManagerBridgeId));
         sb.append(", instances=").append(String.valueOf(this.instances));
         sb.append(", exadataDetails=").append(String.valueOf(this.exadataDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -358,8 +384,7 @@ public final class EmManagedExternalDatabaseConfigurationSummary
                         this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
                 && java.util.Objects.equals(this.instances, other.instances)
                 && java.util.Objects.equals(this.exadataDetails, other.exadataDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -380,16 +405,6 @@ public final class EmManagedExternalDatabaseConfigurationSummary
         result =
                 (result * PRIME)
                         + (this.exadataDetails == null ? 43 : this.exadataDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

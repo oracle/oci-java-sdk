@@ -18,7 +18,7 @@ package com.oracle.bmc.operatoraccesscontrol.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatorControl.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperatorControl {
+public final class OperatorControl extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -426,56 +426,93 @@ public final class OperatorControl {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperatorControl build() {
-            OperatorControl __instance__ =
+            OperatorControl model =
                     new OperatorControl(
-                            id,
-                            operatorControlName,
-                            description,
-                            approversList,
-                            approverGroupsList,
-                            preApprovedOpActionList,
-                            approvalRequiredOpActionList,
-                            isFullyPreApproved,
-                            emailIdList,
-                            resourceType,
-                            systemMessage,
-                            compartmentId,
-                            lifecycleState,
-                            timeOfCreation,
-                            timeOfModification,
-                            timeOfDeletion,
-                            lastModifiedInfo,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.operatorControlName,
+                            this.description,
+                            this.approversList,
+                            this.approverGroupsList,
+                            this.preApprovedOpActionList,
+                            this.approvalRequiredOpActionList,
+                            this.isFullyPreApproved,
+                            this.emailIdList,
+                            this.resourceType,
+                            this.systemMessage,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.timeOfCreation,
+                            this.timeOfModification,
+                            this.timeOfDeletion,
+                            this.lastModifiedInfo,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperatorControl o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .operatorControlName(o.getOperatorControlName())
-                            .description(o.getDescription())
-                            .approversList(o.getApproversList())
-                            .approverGroupsList(o.getApproverGroupsList())
-                            .preApprovedOpActionList(o.getPreApprovedOpActionList())
-                            .approvalRequiredOpActionList(o.getApprovalRequiredOpActionList())
-                            .isFullyPreApproved(o.getIsFullyPreApproved())
-                            .emailIdList(o.getEmailIdList())
-                            .resourceType(o.getResourceType())
-                            .systemMessage(o.getSystemMessage())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeOfCreation(o.getTimeOfCreation())
-                            .timeOfModification(o.getTimeOfModification())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .lastModifiedInfo(o.getLastModifiedInfo())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperatorControl model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("operatorControlName")) {
+                this.operatorControlName(model.getOperatorControlName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("approversList")) {
+                this.approversList(model.getApproversList());
+            }
+            if (model.wasPropertyExplicitlySet("approverGroupsList")) {
+                this.approverGroupsList(model.getApproverGroupsList());
+            }
+            if (model.wasPropertyExplicitlySet("preApprovedOpActionList")) {
+                this.preApprovedOpActionList(model.getPreApprovedOpActionList());
+            }
+            if (model.wasPropertyExplicitlySet("approvalRequiredOpActionList")) {
+                this.approvalRequiredOpActionList(model.getApprovalRequiredOpActionList());
+            }
+            if (model.wasPropertyExplicitlySet("isFullyPreApproved")) {
+                this.isFullyPreApproved(model.getIsFullyPreApproved());
+            }
+            if (model.wasPropertyExplicitlySet("emailIdList")) {
+                this.emailIdList(model.getEmailIdList());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("systemMessage")) {
+                this.systemMessage(model.getSystemMessage());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfCreation")) {
+                this.timeOfCreation(model.getTimeOfCreation());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfModification")) {
+                this.timeOfModification(model.getTimeOfModification());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("lastModifiedInfo")) {
+                this.lastModifiedInfo(model.getLastModifiedInfo());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -799,6 +836,7 @@ public final class OperatorControl {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperatorControl(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", operatorControlName=").append(String.valueOf(this.operatorControlName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -820,7 +858,6 @@ public final class OperatorControl {
         sb.append(", lastModifiedInfo=").append(String.valueOf(this.lastModifiedInfo));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -856,7 +893,7 @@ public final class OperatorControl {
                 && java.util.Objects.equals(this.lastModifiedInfo, other.lastModifiedInfo)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -920,16 +957,7 @@ public final class OperatorControl {
                         + (this.lastModifiedInfo == null ? 43 : this.lastModifiedInfo.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -122,8 +122,8 @@ public class GetSubscribedServiceConverter {
                                         builder =
                                                 com.oracle.bmc.onesubscription.responses
                                                         .GetSubscribedServiceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.subscribedService(response.getItem());
 

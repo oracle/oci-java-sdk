@@ -23,7 +23,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateDataTransferMediumDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDataTransferMediumDetails {
+public final class UpdateDataTransferMediumDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseLinkDetails",
@@ -74,22 +75,27 @@ public final class UpdateDataTransferMediumDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDataTransferMediumDetails build() {
-            UpdateDataTransferMediumDetails __instance__ =
+            UpdateDataTransferMediumDetails model =
                     new UpdateDataTransferMediumDetails(
-                            databaseLinkDetails, objectStorageDetails, awsS3Details);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseLinkDetails, this.objectStorageDetails, this.awsS3Details);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDataTransferMediumDetails o) {
-            Builder copiedBuilder =
-                    databaseLinkDetails(o.getDatabaseLinkDetails())
-                            .objectStorageDetails(o.getObjectStorageDetails())
-                            .awsS3Details(o.getAwsS3Details());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDataTransferMediumDetails model) {
+            if (model.wasPropertyExplicitlySet("databaseLinkDetails")) {
+                this.databaseLinkDetails(model.getDatabaseLinkDetails());
+            }
+            if (model.wasPropertyExplicitlySet("objectStorageDetails")) {
+                this.objectStorageDetails(model.getObjectStorageDetails());
+            }
+            if (model.wasPropertyExplicitlySet("awsS3Details")) {
+                this.awsS3Details(model.getAwsS3Details());
+            }
+            return this;
         }
     }
 
@@ -138,10 +144,10 @@ public final class UpdateDataTransferMediumDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDataTransferMediumDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseLinkDetails=").append(String.valueOf(this.databaseLinkDetails));
         sb.append(", objectStorageDetails=").append(String.valueOf(this.objectStorageDetails));
         sb.append(", awsS3Details=").append(String.valueOf(this.awsS3Details));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +165,7 @@ public final class UpdateDataTransferMediumDetails {
         return java.util.Objects.equals(this.databaseLinkDetails, other.databaseLinkDetails)
                 && java.util.Objects.equals(this.objectStorageDetails, other.objectStorageDetails)
                 && java.util.Objects.equals(this.awsS3Details, other.awsS3Details)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -177,16 +183,7 @@ public final class UpdateDataTransferMediumDetails {
                                 ? 43
                                 : this.objectStorageDetails.hashCode());
         result = (result * PRIME) + (this.awsS3Details == null ? 43 : this.awsS3Details.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

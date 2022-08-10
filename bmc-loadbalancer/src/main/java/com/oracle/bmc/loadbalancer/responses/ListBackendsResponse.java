@@ -9,20 +9,43 @@ import com.oracle.bmc.loadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+
+    /**
+     * Reflects the current version of the load balancer and the resources it contains.
+     * The value only changes when the load balancer or an associated resource is created,
+     * updated, or delete
+     * <p>
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String eTag;
+
+    /**
+     * Reflects the current version of the load balancer and the resources it contains.
+     * The value only changes when the load balancer or an associated resource is created,
+     * updated, or delete
+     * <p>
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getETag() {
+        return eTag;
     }
 
     /**
@@ -38,13 +61,22 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "eTag",
+        "items"
+    })
     private ListBackendsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
+            String eTag,
             java.util.List<com.oracle.bmc.loadbalancer.model.Backend> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
         this.items = items;
     }
 
@@ -56,22 +88,54 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
+            return this;
+        }
+
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Reflects the current version of the load balancer and the resources it contains.
+         * The value only changes when the load balancer or an associated resource is created,
+         * updated, or delete
+         * <p>
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
+        private String eTag;
+
+        /**
+         * Reflects the current version of the load balancer and the resources it contains.
+         * The value only changes when the load balancer or an associated resource is created,
+         * updated, or delete
+         * <p>
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
+        public Builder eTag(String eTag) {
+            this.eTag = eTag;
             return this;
         }
 
@@ -96,7 +160,9 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListBackendsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            eTag(o.getETag());
             items(o.getItems());
 
             return this;
@@ -107,7 +173,7 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public ListBackendsResponse build() {
-            return new ListBackendsResponse(__httpStatusCode__, opcRequestId, items);
+            return new ListBackendsResponse(__httpStatusCode__, headers, opcRequestId, eTag, items);
         }
     }
 
@@ -125,6 +191,7 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(",items=").append(String.valueOf(items));
         sb.append(")");
         return sb.toString();
@@ -142,6 +209,7 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
         ListBackendsResponse other = (ListBackendsResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.eTag, other.eTag)
                 && java.util.Objects.equals(this.items, other.items);
     }
 
@@ -150,6 +218,7 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
         return result;
     }

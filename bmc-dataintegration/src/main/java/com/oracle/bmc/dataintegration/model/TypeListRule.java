@@ -204,46 +204,73 @@ public final class TypeListRule extends ProjectionRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TypeListRule build() {
-            TypeListRule __instance__ =
+            TypeListRule model =
                     new TypeListRule(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            isJavaRegexSyntax,
-                            configValues,
-                            objectStatus,
-                            description,
-                            isSkipRemainingRulesOnMatch,
-                            scope,
-                            isCascade,
-                            matchingStrategy,
-                            isCaseSensitive,
-                            ruleType,
-                            types);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.isJavaRegexSyntax,
+                            this.configValues,
+                            this.objectStatus,
+                            this.description,
+                            this.isSkipRemainingRulesOnMatch,
+                            this.scope,
+                            this.isCascade,
+                            this.matchingStrategy,
+                            this.isCaseSensitive,
+                            this.ruleType,
+                            this.types);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TypeListRule o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .isJavaRegexSyntax(o.getIsJavaRegexSyntax())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .isSkipRemainingRulesOnMatch(o.getIsSkipRemainingRulesOnMatch())
-                            .scope(o.getScope())
-                            .isCascade(o.getIsCascade())
-                            .matchingStrategy(o.getMatchingStrategy())
-                            .isCaseSensitive(o.getIsCaseSensitive())
-                            .ruleType(o.getRuleType())
-                            .types(o.getTypes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TypeListRule model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("isJavaRegexSyntax")) {
+                this.isJavaRegexSyntax(model.getIsJavaRegexSyntax());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isSkipRemainingRulesOnMatch")) {
+                this.isSkipRemainingRulesOnMatch(model.getIsSkipRemainingRulesOnMatch());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("isCascade")) {
+                this.isCascade(model.getIsCascade());
+            }
+            if (model.wasPropertyExplicitlySet("matchingStrategy")) {
+                this.matchingStrategy(model.getMatchingStrategy());
+            }
+            if (model.wasPropertyExplicitlySet("isCaseSensitive")) {
+                this.isCaseSensitive(model.getIsCaseSensitive());
+            }
+            if (model.wasPropertyExplicitlySet("ruleType")) {
+                this.ruleType(model.getRuleType());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            return this;
         }
     }
 
@@ -508,7 +535,6 @@ public final class TypeListRule extends ProjectionRule {
         sb.append(", isCaseSensitive=").append(String.valueOf(this.isCaseSensitive));
         sb.append(", ruleType=").append(String.valueOf(this.ruleType));
         sb.append(", types=").append(String.valueOf(this.types));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -531,8 +557,7 @@ public final class TypeListRule extends ProjectionRule {
                 && java.util.Objects.equals(this.isCaseSensitive, other.isCaseSensitive)
                 && java.util.Objects.equals(this.ruleType, other.ruleType)
                 && java.util.Objects.equals(this.types, other.types)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -554,16 +579,6 @@ public final class TypeListRule extends ProjectionRule {
                         + (this.isCaseSensitive == null ? 43 : this.isCaseSensitive.hashCode());
         result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
         result = (result * PRIME) + (this.types == null ? 43 : this.types.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

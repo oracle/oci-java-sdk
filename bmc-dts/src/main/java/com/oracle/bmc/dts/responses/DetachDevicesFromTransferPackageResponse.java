@@ -34,10 +34,13 @@ public class DetachDevicesFromTransferPackageResponse extends com.oracle.bmc.res
         return etag;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "etag"})
     private DetachDevicesFromTransferPackageResponse(
-            int __httpStatusCode__, String opcRequestId, String etag) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String etag) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
     }
@@ -47,6 +50,13 @@ public class DetachDevicesFromTransferPackageResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -86,6 +96,7 @@ public class DetachDevicesFromTransferPackageResponse extends com.oracle.bmc.res
          */
         public Builder copy(DetachDevicesFromTransferPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
 
@@ -98,7 +109,7 @@ public class DetachDevicesFromTransferPackageResponse extends com.oracle.bmc.res
          */
         public DetachDevicesFromTransferPackageResponse build() {
             return new DetachDevicesFromTransferPackageResponse(
-                    __httpStatusCode__, opcRequestId, etag);
+                    __httpStatusCode__, headers, opcRequestId, etag);
         }
     }
 

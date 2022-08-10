@@ -98,7 +98,8 @@ public class GetAlertConverter {
 
                                 com.oracle.bmc.datasafe.responses.GetAlertResponse.Builder builder =
                                         com.oracle.bmc.datasafe.responses.GetAlertResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.alert(response.getItem());
 

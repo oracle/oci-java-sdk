@@ -38,12 +38,13 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
         return tenancy;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "tenancy"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "tenancy"})
     private GetTenancyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identity.model.Tenancy tenancy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.tenancy = tenancy;
     }
@@ -53,6 +54,13 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetTenancyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             tenancy(o.getTenancy());
 
@@ -107,7 +116,7 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetTenancyResponse build() {
-            return new GetTenancyResponse(__httpStatusCode__, opcRequestId, tenancy);
+            return new GetTenancyResponse(__httpStatusCode__, headers, opcRequestId, tenancy);
         }
     }
 

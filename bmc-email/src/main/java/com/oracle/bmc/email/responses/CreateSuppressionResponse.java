@@ -38,12 +38,18 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
         return suppression;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "suppression"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "suppression"
+    })
     private CreateSuppressionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.email.model.Suppression suppression) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.suppression = suppression;
     }
@@ -53,6 +59,13 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreateSuppressionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             suppression(o.getSuppression());
 
@@ -107,7 +121,8 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public CreateSuppressionResponse build() {
-            return new CreateSuppressionResponse(__httpStatusCode__, opcRequestId, suppression);
+            return new CreateSuppressionResponse(
+                    __httpStatusCode__, headers, opcRequestId, suppression);
         }
     }
 

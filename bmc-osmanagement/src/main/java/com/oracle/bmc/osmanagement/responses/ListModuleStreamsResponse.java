@@ -78,6 +78,7 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "opcNextPage",
@@ -85,11 +86,12 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListModuleStreamsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
@@ -101,6 +103,13 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -187,6 +196,7 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListModuleStreamsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
@@ -201,7 +211,12 @@ public class ListModuleStreamsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListModuleStreamsResponse build() {
             return new ListModuleStreamsResponse(
-                    __httpStatusCode__, opcWorkRequestId, opcRequestId, opcNextPage, items);
+                    __httpStatusCode__,
+                    headers,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    opcNextPage,
+                    items);
         }
     }
 

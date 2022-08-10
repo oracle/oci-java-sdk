@@ -85,6 +85,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "location",
@@ -93,12 +94,13 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateAccessRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
             String etag,
             com.oracle.bmc.lockbox.model.AccessRequest accessRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.location = location;
@@ -111,6 +113,13 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -205,6 +214,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(CreateAccessRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
@@ -221,6 +231,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         public CreateAccessRequestResponse build() {
             return new CreateAccessRequestResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     opcRequestId,
                     location,

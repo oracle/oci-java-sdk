@@ -49,16 +49,18 @@ public class GetRepoFileLinesResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "repositoryFileLines"
     })
     private GetRepoFileLinesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.repositoryFileLines = repositoryFileLines;
@@ -69,6 +71,13 @@ public class GetRepoFileLinesResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class GetRepoFileLinesResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetRepoFileLinesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             repositoryFileLines(o.getRepositoryFileLines());
@@ -137,7 +147,7 @@ public class GetRepoFileLinesResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetRepoFileLinesResponse build() {
             return new GetRepoFileLinesResponse(
-                    __httpStatusCode__, opcRequestId, etag, repositoryFileLines);
+                    __httpStatusCode__, headers, opcRequestId, etag, repositoryFileLines);
         }
     }
 

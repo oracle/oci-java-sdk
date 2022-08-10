@@ -39,14 +39,16 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "associationSummaryReport"
     })
     private GetAssociationSummaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.associationSummaryReport = associationSummaryReport;
     }
@@ -56,6 +58,13 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -99,6 +108,7 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetAssociationSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             associationSummaryReport(o.getAssociationSummaryReport());
 
@@ -111,7 +121,7 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetAssociationSummaryResponse build() {
             return new GetAssociationSummaryResponse(
-                    __httpStatusCode__, opcRequestId, associationSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, associationSummaryReport);
         }
     }
 

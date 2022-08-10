@@ -36,10 +36,18 @@ public class ExportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
         return inputStream;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "inputStream"
+    })
     private ExportCustomContentResponse(
-            int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            java.io.InputStream inputStream) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.inputStream = inputStream;
     }
@@ -49,6 +57,13 @@ public class ExportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -90,6 +105,7 @@ public class ExportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ExportCustomContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             inputStream(o.getInputStream());
 
@@ -101,7 +117,8 @@ public class ExportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
          * @return the response object
          */
         public ExportCustomContentResponse build() {
-            return new ExportCustomContentResponse(__httpStatusCode__, opcRequestId, inputStream);
+            return new ExportCustomContentResponse(
+                    __httpStatusCode__, headers, opcRequestId, inputStream);
         }
     }
 

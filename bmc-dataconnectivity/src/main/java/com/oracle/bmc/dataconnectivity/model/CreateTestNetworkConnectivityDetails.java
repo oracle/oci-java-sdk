@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CreateTestNetworkConnectivityDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTestNetworkConnectivityDetails {
+public final class CreateTestNetworkConnectivityDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataAssetKey"})
     public CreateTestNetworkConnectivityDetails(String dataAssetKey) {
@@ -50,18 +51,20 @@ public final class CreateTestNetworkConnectivityDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTestNetworkConnectivityDetails build() {
-            CreateTestNetworkConnectivityDetails __instance__ =
-                    new CreateTestNetworkConnectivityDetails(dataAssetKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateTestNetworkConnectivityDetails model =
+                    new CreateTestNetworkConnectivityDetails(this.dataAssetKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTestNetworkConnectivityDetails o) {
-            Builder copiedBuilder = dataAssetKey(o.getDataAssetKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTestNetworkConnectivityDetails model) {
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class CreateTestNetworkConnectivityDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTestNetworkConnectivityDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("dataAssetKey=").append(String.valueOf(this.dataAssetKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class CreateTestNetworkConnectivityDetails {
 
         CreateTestNetworkConnectivityDetails other = (CreateTestNetworkConnectivityDetails) o;
         return java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -128,16 +131,7 @@ public final class CreateTestNetworkConnectivityDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = UpdateBootVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateBootVolumeDetails {
+public final class UpdateBootVolumeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -217,32 +218,45 @@ public final class UpdateBootVolumeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBootVolumeDetails build() {
-            UpdateBootVolumeDetails __instance__ =
+            UpdateBootVolumeDetails model =
                     new UpdateBootVolumeDetails(
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            sizeInGBs,
-                            vpusPerGB,
-                            isAutoTuneEnabled,
-                            bootVolumeReplicas);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.sizeInGBs,
+                            this.vpusPerGB,
+                            this.isAutoTuneEnabled,
+                            this.bootVolumeReplicas);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateBootVolumeDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .vpusPerGB(o.getVpusPerGB())
-                            .isAutoTuneEnabled(o.getIsAutoTuneEnabled())
-                            .bootVolumeReplicas(o.getBootVolumeReplicas());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateBootVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("vpusPerGB")) {
+                this.vpusPerGB(model.getVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoTuneEnabled")) {
+                this.isAutoTuneEnabled(model.getIsAutoTuneEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("bootVolumeReplicas")) {
+                this.bootVolumeReplicas(model.getBootVolumeReplicas());
+            }
+            return this;
         }
     }
 
@@ -416,6 +430,7 @@ public final class UpdateBootVolumeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateBootVolumeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -423,7 +438,6 @@ public final class UpdateBootVolumeDetails {
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", bootVolumeReplicas=").append(String.valueOf(this.bootVolumeReplicas));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -445,7 +459,7 @@ public final class UpdateBootVolumeDetails {
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.bootVolumeReplicas, other.bootVolumeReplicas)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -465,16 +479,7 @@ public final class UpdateBootVolumeDetails {
                         + (this.bootVolumeReplicas == null
                                 ? 43
                                 : this.bootVolumeReplicas.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

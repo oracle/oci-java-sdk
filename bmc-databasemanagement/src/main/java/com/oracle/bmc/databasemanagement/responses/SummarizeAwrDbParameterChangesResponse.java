@@ -61,17 +61,19 @@ public class SummarizeAwrDbParameterChangesResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDbParameterChangeCollection"
     })
     private SummarizeAwrDbParameterChangesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AwrDbParameterChangeCollection
                     awrDbParameterChangeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDbParameterChangeCollection = awrDbParameterChangeCollection;
@@ -82,6 +84,13 @@ public class SummarizeAwrDbParameterChangesResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class SummarizeAwrDbParameterChangesResponse extends com.oracle.bmc.respo
          */
         public Builder copy(SummarizeAwrDbParameterChangesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDbParameterChangeCollection(o.getAwrDbParameterChangeCollection());
@@ -162,7 +172,11 @@ public class SummarizeAwrDbParameterChangesResponse extends com.oracle.bmc.respo
          */
         public SummarizeAwrDbParameterChangesResponse build() {
             return new SummarizeAwrDbParameterChangesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbParameterChangeCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    awrDbParameterChangeCollection);
         }
     }
 

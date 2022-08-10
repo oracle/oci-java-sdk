@@ -59,16 +59,18 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "modelCollection"
     })
     private ListModelsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.aianomalydetection.model.ModelCollection modelCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.modelCollection = modelCollection;
@@ -79,6 +81,13 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListModelsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             modelCollection(o.getModelCollection());
@@ -157,7 +167,7 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListModelsResponse build() {
             return new ListModelsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, modelCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, modelCollection);
         }
     }
 

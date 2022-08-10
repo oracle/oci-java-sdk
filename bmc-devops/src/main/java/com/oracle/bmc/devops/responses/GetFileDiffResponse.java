@@ -62,6 +62,7 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "sunset",
@@ -69,11 +70,12 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetFileDiffResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String sunset,
             com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.sunset = sunset;
@@ -85,6 +87,13 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -155,6 +164,7 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetFileDiffResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             sunset(o.getSunset());
@@ -169,7 +179,7 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public GetFileDiffResponse build() {
             return new GetFileDiffResponse(
-                    __httpStatusCode__, etag, opcRequestId, sunset, fileDiffResponse);
+                    __httpStatusCode__, headers, etag, opcRequestId, sunset, fileDiffResponse);
         }
     }
 

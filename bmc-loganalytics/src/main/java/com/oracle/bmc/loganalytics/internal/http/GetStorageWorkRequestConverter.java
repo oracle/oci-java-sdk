@@ -117,8 +117,8 @@ public class GetStorageWorkRequestConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetStorageWorkRequestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.storageWorkRequest(response.getItem());
 

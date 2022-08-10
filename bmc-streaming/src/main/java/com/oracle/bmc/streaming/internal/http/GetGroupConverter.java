@@ -105,8 +105,8 @@ public class GetGroupConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses.GetGroupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.group(response.getItem());
 

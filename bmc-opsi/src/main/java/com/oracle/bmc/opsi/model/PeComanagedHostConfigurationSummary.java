@@ -235,60 +235,101 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PeComanagedHostConfigurationSummary build() {
-            PeComanagedHostConfigurationSummary __instance__ =
+            PeComanagedHostConfigurationSummary model =
                     new PeComanagedHostConfigurationSummary(
-                            hostInsightId,
-                            compartmentId,
-                            hostName,
-                            platformType,
-                            platformVersion,
-                            platformVendor,
-                            totalCpus,
-                            totalMemoryInGBs,
-                            cpuArchitecture,
-                            cpuCacheInMBs,
-                            cpuVendor,
-                            cpuFrequencyInMhz,
-                            cpuImplementation,
-                            coresPerSocket,
-                            totalSockets,
-                            threadsPerSocket,
-                            isHyperThreadingEnabled,
-                            definedTags,
-                            freeformTags,
-                            opsiPrivateEndpointId,
-                            parentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.hostInsightId,
+                            this.compartmentId,
+                            this.hostName,
+                            this.platformType,
+                            this.platformVersion,
+                            this.platformVendor,
+                            this.totalCpus,
+                            this.totalMemoryInGBs,
+                            this.cpuArchitecture,
+                            this.cpuCacheInMBs,
+                            this.cpuVendor,
+                            this.cpuFrequencyInMhz,
+                            this.cpuImplementation,
+                            this.coresPerSocket,
+                            this.totalSockets,
+                            this.threadsPerSocket,
+                            this.isHyperThreadingEnabled,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.opsiPrivateEndpointId,
+                            this.parentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PeComanagedHostConfigurationSummary o) {
-            Builder copiedBuilder =
-                    hostInsightId(o.getHostInsightId())
-                            .compartmentId(o.getCompartmentId())
-                            .hostName(o.getHostName())
-                            .platformType(o.getPlatformType())
-                            .platformVersion(o.getPlatformVersion())
-                            .platformVendor(o.getPlatformVendor())
-                            .totalCpus(o.getTotalCpus())
-                            .totalMemoryInGBs(o.getTotalMemoryInGBs())
-                            .cpuArchitecture(o.getCpuArchitecture())
-                            .cpuCacheInMBs(o.getCpuCacheInMBs())
-                            .cpuVendor(o.getCpuVendor())
-                            .cpuFrequencyInMhz(o.getCpuFrequencyInMhz())
-                            .cpuImplementation(o.getCpuImplementation())
-                            .coresPerSocket(o.getCoresPerSocket())
-                            .totalSockets(o.getTotalSockets())
-                            .threadsPerSocket(o.getThreadsPerSocket())
-                            .isHyperThreadingEnabled(o.getIsHyperThreadingEnabled())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
-                            .parentId(o.getParentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PeComanagedHostConfigurationSummary model) {
+            if (model.wasPropertyExplicitlySet("hostInsightId")) {
+                this.hostInsightId(model.getHostInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("platformVendor")) {
+                this.platformVendor(model.getPlatformVendor());
+            }
+            if (model.wasPropertyExplicitlySet("totalCpus")) {
+                this.totalCpus(model.getTotalCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalMemoryInGBs")) {
+                this.totalMemoryInGBs(model.getTotalMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuArchitecture")) {
+                this.cpuArchitecture(model.getCpuArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCacheInMBs")) {
+                this.cpuCacheInMBs(model.getCpuCacheInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuVendor")) {
+                this.cpuVendor(model.getCpuVendor());
+            }
+            if (model.wasPropertyExplicitlySet("cpuFrequencyInMhz")) {
+                this.cpuFrequencyInMhz(model.getCpuFrequencyInMhz());
+            }
+            if (model.wasPropertyExplicitlySet("cpuImplementation")) {
+                this.cpuImplementation(model.getCpuImplementation());
+            }
+            if (model.wasPropertyExplicitlySet("coresPerSocket")) {
+                this.coresPerSocket(model.getCoresPerSocket());
+            }
+            if (model.wasPropertyExplicitlySet("totalSockets")) {
+                this.totalSockets(model.getTotalSockets());
+            }
+            if (model.wasPropertyExplicitlySet("threadsPerSocket")) {
+                this.threadsPerSocket(model.getThreadsPerSocket());
+            }
+            if (model.wasPropertyExplicitlySet("isHyperThreadingEnabled")) {
+                this.isHyperThreadingEnabled(model.getIsHyperThreadingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
+                this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            return this;
         }
     }
 
@@ -394,7 +435,6 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", parentId=").append(String.valueOf(this.parentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -411,8 +451,7 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
         PeComanagedHostConfigurationSummary other = (PeComanagedHostConfigurationSummary) o;
         return java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && java.util.Objects.equals(this.parentId, other.parentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -425,16 +464,6 @@ public final class PeComanagedHostConfigurationSummary extends HostConfiguration
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

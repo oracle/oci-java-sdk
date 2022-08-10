@@ -282,52 +282,85 @@ public final class DataEntityFromTable extends DataEntity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataEntityFromTable build() {
-            DataEntityFromTable __instance__ =
+            DataEntityFromTable model =
                     new DataEntityFromTable(
-                            metadata,
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            externalKey,
-                            shape,
-                            shapeId,
-                            entityType,
-                            otherTypeLabel,
-                            uniqueKeys,
-                            foreignKeys,
-                            resourceName,
-                            objectStatus,
-                            identifier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.metadata,
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.externalKey,
+                            this.shape,
+                            this.shapeId,
+                            this.entityType,
+                            this.otherTypeLabel,
+                            this.uniqueKeys,
+                            this.foreignKeys,
+                            this.resourceName,
+                            this.objectStatus,
+                            this.identifier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataEntityFromTable o) {
-            Builder copiedBuilder =
-                    metadata(o.getMetadata())
-                            .key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .externalKey(o.getExternalKey())
-                            .shape(o.getShape())
-                            .shapeId(o.getShapeId())
-                            .entityType(o.getEntityType())
-                            .otherTypeLabel(o.getOtherTypeLabel())
-                            .uniqueKeys(o.getUniqueKeys())
-                            .foreignKeys(o.getForeignKeys())
-                            .resourceName(o.getResourceName())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataEntityFromTable model) {
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("shapeId")) {
+                this.shapeId(model.getShapeId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("otherTypeLabel")) {
+                this.otherTypeLabel(model.getOtherTypeLabel());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueKeys")) {
+                this.uniqueKeys(model.getUniqueKeys());
+            }
+            if (model.wasPropertyExplicitlySet("foreignKeys")) {
+                this.foreignKeys(model.getForeignKeys());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            return this;
         }
     }
 
@@ -671,7 +704,6 @@ public final class DataEntityFromTable extends DataEntity {
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -702,8 +734,7 @@ public final class DataEntityFromTable extends DataEntity {
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -730,16 +761,6 @@ public final class DataEntityFromTable extends DataEntity {
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

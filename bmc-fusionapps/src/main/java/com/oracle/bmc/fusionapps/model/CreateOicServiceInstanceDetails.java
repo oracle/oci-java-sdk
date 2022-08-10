@@ -81,23 +81,30 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOicServiceInstanceDetails build() {
-            CreateOicServiceInstanceDetails __instance__ =
+            CreateOicServiceInstanceDetails model =
                     new CreateOicServiceInstanceDetails(
-                            displayName, compartmentId, messagePacks, edition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName, this.compartmentId, this.messagePacks, this.edition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOicServiceInstanceDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .messagePacks(o.getMessagePacks())
-                            .edition(o.getEdition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOicServiceInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("messagePacks")) {
+                this.messagePacks(model.getMessagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("edition")) {
+                this.edition(model.getEdition());
+            }
+            return this;
         }
     }
 
@@ -199,7 +206,6 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", messagePacks=").append(String.valueOf(this.messagePacks));
         sb.append(", edition=").append(String.valueOf(this.edition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -216,8 +222,7 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
         CreateOicServiceInstanceDetails other = (CreateOicServiceInstanceDetails) o;
         return java.util.Objects.equals(this.messagePacks, other.messagePacks)
                 && java.util.Objects.equals(this.edition, other.edition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -226,16 +231,6 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
         int result = super.hashCode();
         result = (result * PRIME) + (this.messagePacks == null ? 43 : this.messagePacks.hashCode());
         result = (result * PRIME) + (this.edition == null ? 43 : this.edition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class UpdateLicenseRecordResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "licenseRecord"
     })
     private UpdateLicenseRecordResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.licensemanager.model.LicenseRecord licenseRecord) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.licenseRecord = licenseRecord;
@@ -75,6 +77,13 @@ public class UpdateLicenseRecordResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateLicenseRecordResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(UpdateLicenseRecordResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             licenseRecord(o.getLicenseRecord());
@@ -149,7 +159,7 @@ public class UpdateLicenseRecordResponse extends com.oracle.bmc.responses.BmcRes
          */
         public UpdateLicenseRecordResponse build() {
             return new UpdateLicenseRecordResponse(
-                    __httpStatusCode__, etag, opcRequestId, licenseRecord);
+                    __httpStatusCode__, headers, etag, opcRequestId, licenseRecord);
         }
     }
 

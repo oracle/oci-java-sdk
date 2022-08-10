@@ -20,7 +20,8 @@ package com.oracle.bmc.analytics.model;
     builder = CreateVanityUrlDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVanityUrlDetails {
+public final class CreateVanityUrlDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -161,30 +162,41 @@ public final class CreateVanityUrlDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVanityUrlDetails build() {
-            CreateVanityUrlDetails __instance__ =
+            CreateVanityUrlDetails model =
                     new CreateVanityUrlDetails(
-                            description,
-                            hosts,
-                            passphrase,
-                            privateKey,
-                            publicCertificate,
-                            caCertificate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.hosts,
+                            this.passphrase,
+                            this.privateKey,
+                            this.publicCertificate,
+                            this.caCertificate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateVanityUrlDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .hosts(o.getHosts())
-                            .passphrase(o.getPassphrase())
-                            .privateKey(o.getPrivateKey())
-                            .publicCertificate(o.getPublicCertificate())
-                            .caCertificate(o.getCaCertificate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateVanityUrlDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("hosts")) {
+                this.hosts(model.getHosts());
+            }
+            if (model.wasPropertyExplicitlySet("passphrase")) {
+                this.passphrase(model.getPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("privateKey")) {
+                this.privateKey(model.getPrivateKey());
+            }
+            if (model.wasPropertyExplicitlySet("publicCertificate")) {
+                this.publicCertificate(model.getPublicCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("caCertificate")) {
+                this.caCertificate(model.getCaCertificate());
+            }
+            return this;
         }
     }
 
@@ -308,13 +320,13 @@ public final class CreateVanityUrlDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVanityUrlDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", hosts=").append(String.valueOf(this.hosts));
         sb.append(", passphrase=").append(String.valueOf(this.passphrase));
         sb.append(", privateKey=").append(String.valueOf(this.privateKey));
         sb.append(", publicCertificate=").append(String.valueOf(this.publicCertificate));
         sb.append(", caCertificate=").append(String.valueOf(this.caCertificate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -335,7 +347,7 @@ public final class CreateVanityUrlDetails {
                 && java.util.Objects.equals(this.privateKey, other.privateKey)
                 && java.util.Objects.equals(this.publicCertificate, other.publicCertificate)
                 && java.util.Objects.equals(this.caCertificate, other.caCertificate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -352,16 +364,7 @@ public final class CreateVanityUrlDetails {
         result =
                 (result * PRIME)
                         + (this.caCertificate == null ? 43 : this.caCertificate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

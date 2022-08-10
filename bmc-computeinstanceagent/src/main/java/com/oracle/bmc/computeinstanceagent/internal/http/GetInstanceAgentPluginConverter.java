@@ -126,8 +126,8 @@ public class GetInstanceAgentPluginConverter {
                                         builder =
                                                 com.oracle.bmc.computeinstanceagent.responses
                                                         .GetInstanceAgentPluginResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceAgentPlugin(response.getItem());
 

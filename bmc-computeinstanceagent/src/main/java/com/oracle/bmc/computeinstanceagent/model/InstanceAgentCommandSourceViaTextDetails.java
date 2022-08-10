@@ -65,18 +65,23 @@ public final class InstanceAgentCommandSourceViaTextDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentCommandSourceViaTextDetails build() {
-            InstanceAgentCommandSourceViaTextDetails __instance__ =
-                    new InstanceAgentCommandSourceViaTextDetails(text, textSha256);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InstanceAgentCommandSourceViaTextDetails model =
+                    new InstanceAgentCommandSourceViaTextDetails(this.text, this.textSha256);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceAgentCommandSourceViaTextDetails o) {
-            Builder copiedBuilder = text(o.getText()).textSha256(o.getTextSha256());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceAgentCommandSourceViaTextDetails model) {
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("textSha256")) {
+                this.textSha256(model.getTextSha256());
+            }
+            return this;
         }
     }
 
@@ -142,7 +147,6 @@ public final class InstanceAgentCommandSourceViaTextDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", text=").append(String.valueOf(this.text));
         sb.append(", textSha256=").append(String.valueOf(this.textSha256));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -160,8 +164,7 @@ public final class InstanceAgentCommandSourceViaTextDetails
                 (InstanceAgentCommandSourceViaTextDetails) o;
         return java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.textSha256, other.textSha256)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +173,6 @@ public final class InstanceAgentCommandSourceViaTextDetails
         int result = super.hashCode();
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
         result = (result * PRIME) + (this.textSha256 == null ? 43 : this.textSha256.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Outlier.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Outlier {
+public final class Outlier extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"low", "high", "lowCount", "highCount"})
     public Outlier(String low, String high, String lowCount, String highCount) {
@@ -99,21 +99,28 @@ public final class Outlier {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Outlier build() {
-            Outlier __instance__ = new Outlier(low, high, lowCount, highCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Outlier model = new Outlier(this.low, this.high, this.lowCount, this.highCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Outlier o) {
-            Builder copiedBuilder =
-                    low(o.getLow())
-                            .high(o.getHigh())
-                            .lowCount(o.getLowCount())
-                            .highCount(o.getHighCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Outlier model) {
+            if (model.wasPropertyExplicitlySet("low")) {
+                this.low(model.getLow());
+            }
+            if (model.wasPropertyExplicitlySet("high")) {
+                this.high(model.getHigh());
+            }
+            if (model.wasPropertyExplicitlySet("lowCount")) {
+                this.lowCount(model.getLowCount());
+            }
+            if (model.wasPropertyExplicitlySet("highCount")) {
+                this.highCount(model.getHighCount());
+            }
+            return this;
         }
     }
 
@@ -197,11 +204,11 @@ public final class Outlier {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Outlier(");
+        sb.append("super=").append(super.toString());
         sb.append("low=").append(String.valueOf(this.low));
         sb.append(", high=").append(String.valueOf(this.high));
         sb.append(", lowCount=").append(String.valueOf(this.lowCount));
         sb.append(", highCount=").append(String.valueOf(this.highCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +227,7 @@ public final class Outlier {
                 && java.util.Objects.equals(this.high, other.high)
                 && java.util.Objects.equals(this.lowCount, other.lowCount)
                 && java.util.Objects.equals(this.highCount, other.highCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +238,7 @@ public final class Outlier {
         result = (result * PRIME) + (this.high == null ? 43 : this.high.hashCode());
         result = (result * PRIME) + (this.lowCount == null ? 43 : this.lowCount.hashCode());
         result = (result * PRIME) + (this.highCount == null ? 43 : this.highCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

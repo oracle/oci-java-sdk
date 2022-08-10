@@ -193,8 +193,8 @@ public class ListTasksConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListTasksResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taskSummaryCollection(response.getItem());
 

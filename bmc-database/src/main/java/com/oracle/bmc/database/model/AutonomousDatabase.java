@@ -20,7 +20,7 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabase {
+public final class AutonomousDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -1944,203 +1944,384 @@ public final class AutonomousDatabase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabase build() {
-            AutonomousDatabase __instance__ =
+            AutonomousDatabase model =
                     new AutonomousDatabase(
-                            id,
-                            compartmentId,
-                            lifecycleState,
-                            lifecycleDetails,
-                            kmsKeyId,
-                            vaultId,
-                            kmsKeyLifecycleDetails,
-                            kmsKeyVersionId,
-                            dbName,
-                            characterSet,
-                            ncharacterSet,
-                            isFreeTier,
-                            systemTags,
-                            timeReclamationOfFreeAutonomousDatabase,
-                            timeDeletionOfFreeAutonomousDatabase,
-                            backupConfig,
-                            keyHistoryEntry,
-                            cpuCoreCount,
-                            ocpuCount,
-                            provisionableCpus,
-                            dataStorageSizeInTBs,
-                            memoryPerOracleComputeUnitInGBs,
-                            dataStorageSizeInGBs,
-                            infrastructureType,
-                            isDedicated,
-                            autonomousContainerDatabaseId,
-                            timeCreated,
-                            displayName,
-                            serviceConsoleUrl,
-                            connectionStrings,
-                            connectionUrls,
-                            licenseModel,
-                            usedDataStorageSizeInTBs,
-                            freeformTags,
-                            definedTags,
-                            subnetId,
-                            nsgIds,
-                            privateEndpoint,
-                            privateEndpointLabel,
-                            privateEndpointIp,
-                            dbVersion,
-                            isPreview,
-                            dbWorkload,
-                            isAccessControlEnabled,
-                            whitelistedIps,
-                            arePrimaryWhitelistedIpsUsed,
-                            standbyWhitelistedIps,
-                            apexDetails,
-                            isAutoScalingEnabled,
-                            dataSafeStatus,
-                            operationsInsightsStatus,
-                            databaseManagementStatus,
-                            timeMaintenanceBegin,
-                            timeMaintenanceEnd,
-                            isRefreshableClone,
-                            timeOfLastRefresh,
-                            timeOfLastRefreshPoint,
-                            timeOfNextRefresh,
-                            openMode,
-                            refreshableStatus,
-                            refreshableMode,
-                            sourceId,
-                            permissionLevel,
-                            timeOfLastSwitchover,
-                            timeOfLastFailover,
-                            isDataGuardEnabled,
-                            failedDataRecoveryInSeconds,
-                            standbyDb,
-                            isLocalDataGuardEnabled,
-                            isRemoteDataGuardEnabled,
-                            localStandbyDb,
-                            role,
-                            availableUpgradeVersions,
-                            keyStoreId,
-                            keyStoreWalletName,
-                            supportedRegionsToCloneTo,
-                            customerContacts,
-                            timeLocalDataGuardEnabled,
-                            dataguardRegionType,
-                            timeDataGuardRoleChanged,
-                            peerDbIds,
-                            isMtlsConnectionRequired,
-                            isReconnectCloneEnabled,
-                            timeUntilReconnectCloneEnabled,
-                            autonomousMaintenanceScheduleType,
-                            scheduledOperations,
-                            isAutoScalingForStorageEnabled,
-                            allocatedStorageSizeInTBs,
-                            actualUsedDataStorageSizeInTBs,
-                            maxCpuCoreCount,
-                            databaseEdition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.kmsKeyId,
+                            this.vaultId,
+                            this.kmsKeyLifecycleDetails,
+                            this.kmsKeyVersionId,
+                            this.dbName,
+                            this.characterSet,
+                            this.ncharacterSet,
+                            this.isFreeTier,
+                            this.systemTags,
+                            this.timeReclamationOfFreeAutonomousDatabase,
+                            this.timeDeletionOfFreeAutonomousDatabase,
+                            this.backupConfig,
+                            this.keyHistoryEntry,
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.provisionableCpus,
+                            this.dataStorageSizeInTBs,
+                            this.memoryPerOracleComputeUnitInGBs,
+                            this.dataStorageSizeInGBs,
+                            this.infrastructureType,
+                            this.isDedicated,
+                            this.autonomousContainerDatabaseId,
+                            this.timeCreated,
+                            this.displayName,
+                            this.serviceConsoleUrl,
+                            this.connectionStrings,
+                            this.connectionUrls,
+                            this.licenseModel,
+                            this.usedDataStorageSizeInTBs,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.subnetId,
+                            this.nsgIds,
+                            this.privateEndpoint,
+                            this.privateEndpointLabel,
+                            this.privateEndpointIp,
+                            this.dbVersion,
+                            this.isPreview,
+                            this.dbWorkload,
+                            this.isAccessControlEnabled,
+                            this.whitelistedIps,
+                            this.arePrimaryWhitelistedIpsUsed,
+                            this.standbyWhitelistedIps,
+                            this.apexDetails,
+                            this.isAutoScalingEnabled,
+                            this.dataSafeStatus,
+                            this.operationsInsightsStatus,
+                            this.databaseManagementStatus,
+                            this.timeMaintenanceBegin,
+                            this.timeMaintenanceEnd,
+                            this.isRefreshableClone,
+                            this.timeOfLastRefresh,
+                            this.timeOfLastRefreshPoint,
+                            this.timeOfNextRefresh,
+                            this.openMode,
+                            this.refreshableStatus,
+                            this.refreshableMode,
+                            this.sourceId,
+                            this.permissionLevel,
+                            this.timeOfLastSwitchover,
+                            this.timeOfLastFailover,
+                            this.isDataGuardEnabled,
+                            this.failedDataRecoveryInSeconds,
+                            this.standbyDb,
+                            this.isLocalDataGuardEnabled,
+                            this.isRemoteDataGuardEnabled,
+                            this.localStandbyDb,
+                            this.role,
+                            this.availableUpgradeVersions,
+                            this.keyStoreId,
+                            this.keyStoreWalletName,
+                            this.supportedRegionsToCloneTo,
+                            this.customerContacts,
+                            this.timeLocalDataGuardEnabled,
+                            this.dataguardRegionType,
+                            this.timeDataGuardRoleChanged,
+                            this.peerDbIds,
+                            this.isMtlsConnectionRequired,
+                            this.isReconnectCloneEnabled,
+                            this.timeUntilReconnectCloneEnabled,
+                            this.autonomousMaintenanceScheduleType,
+                            this.scheduledOperations,
+                            this.isAutoScalingForStorageEnabled,
+                            this.allocatedStorageSizeInTBs,
+                            this.actualUsedDataStorageSizeInTBs,
+                            this.maxCpuCoreCount,
+                            this.databaseEdition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabase o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .vaultId(o.getVaultId())
-                            .kmsKeyLifecycleDetails(o.getKmsKeyLifecycleDetails())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .dbName(o.getDbName())
-                            .characterSet(o.getCharacterSet())
-                            .ncharacterSet(o.getNcharacterSet())
-                            .isFreeTier(o.getIsFreeTier())
-                            .systemTags(o.getSystemTags())
-                            .timeReclamationOfFreeAutonomousDatabase(
-                                    o.getTimeReclamationOfFreeAutonomousDatabase())
-                            .timeDeletionOfFreeAutonomousDatabase(
-                                    o.getTimeDeletionOfFreeAutonomousDatabase())
-                            .backupConfig(o.getBackupConfig())
-                            .keyHistoryEntry(o.getKeyHistoryEntry())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .provisionableCpus(o.getProvisionableCpus())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .infrastructureType(o.getInfrastructureType())
-                            .isDedicated(o.getIsDedicated())
-                            .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
-                            .timeCreated(o.getTimeCreated())
-                            .displayName(o.getDisplayName())
-                            .serviceConsoleUrl(o.getServiceConsoleUrl())
-                            .connectionStrings(o.getConnectionStrings())
-                            .connectionUrls(o.getConnectionUrls())
-                            .licenseModel(o.getLicenseModel())
-                            .usedDataStorageSizeInTBs(o.getUsedDataStorageSizeInTBs())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .subnetId(o.getSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .privateEndpoint(o.getPrivateEndpoint())
-                            .privateEndpointLabel(o.getPrivateEndpointLabel())
-                            .privateEndpointIp(o.getPrivateEndpointIp())
-                            .dbVersion(o.getDbVersion())
-                            .isPreview(o.getIsPreview())
-                            .dbWorkload(o.getDbWorkload())
-                            .isAccessControlEnabled(o.getIsAccessControlEnabled())
-                            .whitelistedIps(o.getWhitelistedIps())
-                            .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
-                            .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
-                            .apexDetails(o.getApexDetails())
-                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
-                            .dataSafeStatus(o.getDataSafeStatus())
-                            .operationsInsightsStatus(o.getOperationsInsightsStatus())
-                            .databaseManagementStatus(o.getDatabaseManagementStatus())
-                            .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
-                            .timeMaintenanceEnd(o.getTimeMaintenanceEnd())
-                            .isRefreshableClone(o.getIsRefreshableClone())
-                            .timeOfLastRefresh(o.getTimeOfLastRefresh())
-                            .timeOfLastRefreshPoint(o.getTimeOfLastRefreshPoint())
-                            .timeOfNextRefresh(o.getTimeOfNextRefresh())
-                            .openMode(o.getOpenMode())
-                            .refreshableStatus(o.getRefreshableStatus())
-                            .refreshableMode(o.getRefreshableMode())
-                            .sourceId(o.getSourceId())
-                            .permissionLevel(o.getPermissionLevel())
-                            .timeOfLastSwitchover(o.getTimeOfLastSwitchover())
-                            .timeOfLastFailover(o.getTimeOfLastFailover())
-                            .isDataGuardEnabled(o.getIsDataGuardEnabled())
-                            .failedDataRecoveryInSeconds(o.getFailedDataRecoveryInSeconds())
-                            .standbyDb(o.getStandbyDb())
-                            .isLocalDataGuardEnabled(o.getIsLocalDataGuardEnabled())
-                            .isRemoteDataGuardEnabled(o.getIsRemoteDataGuardEnabled())
-                            .localStandbyDb(o.getLocalStandbyDb())
-                            .role(o.getRole())
-                            .availableUpgradeVersions(o.getAvailableUpgradeVersions())
-                            .keyStoreId(o.getKeyStoreId())
-                            .keyStoreWalletName(o.getKeyStoreWalletName())
-                            .supportedRegionsToCloneTo(o.getSupportedRegionsToCloneTo())
-                            .customerContacts(o.getCustomerContacts())
-                            .timeLocalDataGuardEnabled(o.getTimeLocalDataGuardEnabled())
-                            .dataguardRegionType(o.getDataguardRegionType())
-                            .timeDataGuardRoleChanged(o.getTimeDataGuardRoleChanged())
-                            .peerDbIds(o.getPeerDbIds())
-                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
-                            .isReconnectCloneEnabled(o.getIsReconnectCloneEnabled())
-                            .timeUntilReconnectCloneEnabled(o.getTimeUntilReconnectCloneEnabled())
-                            .autonomousMaintenanceScheduleType(
-                                    o.getAutonomousMaintenanceScheduleType())
-                            .scheduledOperations(o.getScheduledOperations())
-                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
-                            .allocatedStorageSizeInTBs(o.getAllocatedStorageSizeInTBs())
-                            .actualUsedDataStorageSizeInTBs(o.getActualUsedDataStorageSizeInTBs())
-                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
-                            .databaseEdition(o.getDatabaseEdition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabase model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyLifecycleDetails")) {
+                this.kmsKeyLifecycleDetails(model.getKmsKeyLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("characterSet")) {
+                this.characterSet(model.getCharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("ncharacterSet")) {
+                this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("isFreeTier")) {
+                this.isFreeTier(model.getIsFreeTier());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeReclamationOfFreeAutonomousDatabase")) {
+                this.timeReclamationOfFreeAutonomousDatabase(
+                        model.getTimeReclamationOfFreeAutonomousDatabase());
+            }
+            if (model.wasPropertyExplicitlySet("timeDeletionOfFreeAutonomousDatabase")) {
+                this.timeDeletionOfFreeAutonomousDatabase(
+                        model.getTimeDeletionOfFreeAutonomousDatabase());
+            }
+            if (model.wasPropertyExplicitlySet("backupConfig")) {
+                this.backupConfig(model.getBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("keyHistoryEntry")) {
+                this.keyHistoryEntry(model.getKeyHistoryEntry());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("provisionableCpus")) {
+                this.provisionableCpus(model.getProvisionableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
+                this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("isDedicated")) {
+                this.isDedicated(model.getIsDedicated());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
+                this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("serviceConsoleUrl")) {
+                this.serviceConsoleUrl(model.getServiceConsoleUrl());
+            }
+            if (model.wasPropertyExplicitlySet("connectionStrings")) {
+                this.connectionStrings(model.getConnectionStrings());
+            }
+            if (model.wasPropertyExplicitlySet("connectionUrls")) {
+                this.connectionUrls(model.getConnectionUrls());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("usedDataStorageSizeInTBs")) {
+                this.usedDataStorageSizeInTBs(model.getUsedDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpoint")) {
+                this.privateEndpoint(model.getPrivateEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointLabel")) {
+                this.privateEndpointLabel(model.getPrivateEndpointLabel());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
+                this.privateEndpointIp(model.getPrivateEndpointIp());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isPreview")) {
+                this.isPreview(model.getIsPreview());
+            }
+            if (model.wasPropertyExplicitlySet("dbWorkload")) {
+                this.dbWorkload(model.getDbWorkload());
+            }
+            if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
+                this.isAccessControlEnabled(model.getIsAccessControlEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("whitelistedIps")) {
+                this.whitelistedIps(model.getWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("arePrimaryWhitelistedIpsUsed")) {
+                this.arePrimaryWhitelistedIpsUsed(model.getArePrimaryWhitelistedIpsUsed());
+            }
+            if (model.wasPropertyExplicitlySet("standbyWhitelistedIps")) {
+                this.standbyWhitelistedIps(model.getStandbyWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("apexDetails")) {
+                this.apexDetails(model.getApexDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
+                this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeStatus")) {
+                this.dataSafeStatus(model.getDataSafeStatus());
+            }
+            if (model.wasPropertyExplicitlySet("operationsInsightsStatus")) {
+                this.operationsInsightsStatus(model.getOperationsInsightsStatus());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagementStatus")) {
+                this.databaseManagementStatus(model.getDatabaseManagementStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenanceBegin")) {
+                this.timeMaintenanceBegin(model.getTimeMaintenanceBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenanceEnd")) {
+                this.timeMaintenanceEnd(model.getTimeMaintenanceEnd());
+            }
+            if (model.wasPropertyExplicitlySet("isRefreshableClone")) {
+                this.isRefreshableClone(model.getIsRefreshableClone());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastRefresh")) {
+                this.timeOfLastRefresh(model.getTimeOfLastRefresh());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastRefreshPoint")) {
+                this.timeOfLastRefreshPoint(model.getTimeOfLastRefreshPoint());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfNextRefresh")) {
+                this.timeOfNextRefresh(model.getTimeOfNextRefresh());
+            }
+            if (model.wasPropertyExplicitlySet("openMode")) {
+                this.openMode(model.getOpenMode());
+            }
+            if (model.wasPropertyExplicitlySet("refreshableStatus")) {
+                this.refreshableStatus(model.getRefreshableStatus());
+            }
+            if (model.wasPropertyExplicitlySet("refreshableMode")) {
+                this.refreshableMode(model.getRefreshableMode());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("permissionLevel")) {
+                this.permissionLevel(model.getPermissionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastSwitchover")) {
+                this.timeOfLastSwitchover(model.getTimeOfLastSwitchover());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastFailover")) {
+                this.timeOfLastFailover(model.getTimeOfLastFailover());
+            }
+            if (model.wasPropertyExplicitlySet("isDataGuardEnabled")) {
+                this.isDataGuardEnabled(model.getIsDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("failedDataRecoveryInSeconds")) {
+                this.failedDataRecoveryInSeconds(model.getFailedDataRecoveryInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("standbyDb")) {
+                this.standbyDb(model.getStandbyDb());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalDataGuardEnabled")) {
+                this.isLocalDataGuardEnabled(model.getIsLocalDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRemoteDataGuardEnabled")) {
+                this.isRemoteDataGuardEnabled(model.getIsRemoteDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("localStandbyDb")) {
+                this.localStandbyDb(model.getLocalStandbyDb());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("availableUpgradeVersions")) {
+                this.availableUpgradeVersions(model.getAvailableUpgradeVersions());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
+                this.keyStoreWalletName(model.getKeyStoreWalletName());
+            }
+            if (model.wasPropertyExplicitlySet("supportedRegionsToCloneTo")) {
+                this.supportedRegionsToCloneTo(model.getSupportedRegionsToCloneTo());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("timeLocalDataGuardEnabled")) {
+                this.timeLocalDataGuardEnabled(model.getTimeLocalDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dataguardRegionType")) {
+                this.dataguardRegionType(model.getDataguardRegionType());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataGuardRoleChanged")) {
+                this.timeDataGuardRoleChanged(model.getTimeDataGuardRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbIds")) {
+                this.peerDbIds(model.getPeerDbIds());
+            }
+            if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
+                this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isReconnectCloneEnabled")) {
+                this.isReconnectCloneEnabled(model.getIsReconnectCloneEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("timeUntilReconnectCloneEnabled")) {
+                this.timeUntilReconnectCloneEnabled(model.getTimeUntilReconnectCloneEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousMaintenanceScheduleType")) {
+                this.autonomousMaintenanceScheduleType(
+                        model.getAutonomousMaintenanceScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledOperations")) {
+                this.scheduledOperations(model.getScheduledOperations());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
+                this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("allocatedStorageSizeInTBs")) {
+                this.allocatedStorageSizeInTBs(model.getAllocatedStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("actualUsedDataStorageSizeInTBs")) {
+                this.actualUsedDataStorageSizeInTBs(model.getActualUsedDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
+                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            return this;
         }
     }
 
@@ -4380,6 +4561,7 @@ public final class AutonomousDatabase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabase(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -4493,7 +4675,6 @@ public final class AutonomousDatabase {
                 .append(String.valueOf(this.actualUsedDataStorageSizeInTBs));
         sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -4627,7 +4808,7 @@ public final class AutonomousDatabase {
                         this.actualUsedDataStorageSizeInTBs, other.actualUsedDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -4931,16 +5112,7 @@ public final class AutonomousDatabase {
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

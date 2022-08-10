@@ -171,8 +171,8 @@ public class ListManagedDatabaseGroupsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListManagedDatabaseGroupsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedDatabaseGroupCollection(response.getItem());
 

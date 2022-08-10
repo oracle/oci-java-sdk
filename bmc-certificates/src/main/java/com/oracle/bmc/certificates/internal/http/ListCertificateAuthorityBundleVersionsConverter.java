@@ -139,8 +139,8 @@ public class ListCertificateAuthorityBundleVersionsConverter {
                                                 com.oracle.bmc.certificates.responses
                                                         .ListCertificateAuthorityBundleVersionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateAuthorityBundleVersionCollection(
                                         response.getItem());

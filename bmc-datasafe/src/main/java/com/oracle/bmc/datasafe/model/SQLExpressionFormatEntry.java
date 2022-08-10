@@ -71,19 +71,23 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SQLExpressionFormatEntry build() {
-            SQLExpressionFormatEntry __instance__ =
-                    new SQLExpressionFormatEntry(description, sqlExpression);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SQLExpressionFormatEntry model =
+                    new SQLExpressionFormatEntry(this.description, this.sqlExpression);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SQLExpressionFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription()).sqlExpression(o.getSqlExpression());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SQLExpressionFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sqlExpression")) {
+                this.sqlExpression(model.getSqlExpression());
+            }
+            return this;
         }
     }
 
@@ -143,7 +147,6 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
         sb.append("SQLExpressionFormatEntry(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sqlExpression=").append(String.valueOf(this.sqlExpression));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,8 +162,7 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
 
         SQLExpressionFormatEntry other = (SQLExpressionFormatEntry) o;
         return java.util.Objects.equals(this.sqlExpression, other.sqlExpression)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +172,6 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
         result =
                 (result * PRIME)
                         + (this.sqlExpression == null ? 43 : this.sqlExpression.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -59,16 +59,18 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "redeemableUserCollection"
     })
     private ListRedeemableUsersResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.redeemableUserCollection = redeemableUserCollection;
@@ -79,6 +81,13 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListRedeemableUsersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             redeemableUserCollection(o.getRedeemableUserCollection());
@@ -157,7 +167,11 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListRedeemableUsersResponse build() {
             return new ListRedeemableUsersResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, redeemableUserCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    redeemableUserCollection);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OciFunction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OciFunction {
+public final class OciFunction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "functionId",
@@ -106,24 +106,37 @@ public final class OciFunction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OciFunction build() {
-            OciFunction __instance__ =
+            OciFunction model =
                     new OciFunction(
-                            functionId, regionId, fnConfigDefinition, inputShape, outputShape);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.functionId,
+                            this.regionId,
+                            this.fnConfigDefinition,
+                            this.inputShape,
+                            this.outputShape);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OciFunction o) {
-            Builder copiedBuilder =
-                    functionId(o.getFunctionId())
-                            .regionId(o.getRegionId())
-                            .fnConfigDefinition(o.getFnConfigDefinition())
-                            .inputShape(o.getInputShape())
-                            .outputShape(o.getOutputShape());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OciFunction model) {
+            if (model.wasPropertyExplicitlySet("functionId")) {
+                this.functionId(model.getFunctionId());
+            }
+            if (model.wasPropertyExplicitlySet("regionId")) {
+                this.regionId(model.getRegionId());
+            }
+            if (model.wasPropertyExplicitlySet("fnConfigDefinition")) {
+                this.fnConfigDefinition(model.getFnConfigDefinition());
+            }
+            if (model.wasPropertyExplicitlySet("inputShape")) {
+                this.inputShape(model.getInputShape());
+            }
+            if (model.wasPropertyExplicitlySet("outputShape")) {
+                this.outputShape(model.getOutputShape());
+            }
+            return this;
         }
     }
 
@@ -200,12 +213,12 @@ public final class OciFunction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OciFunction(");
+        sb.append("super=").append(super.toString());
         sb.append("functionId=").append(String.valueOf(this.functionId));
         sb.append(", regionId=").append(String.valueOf(this.regionId));
         sb.append(", fnConfigDefinition=").append(String.valueOf(this.fnConfigDefinition));
         sb.append(", inputShape=").append(String.valueOf(this.inputShape));
         sb.append(", outputShape=").append(String.valueOf(this.outputShape));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -225,7 +238,7 @@ public final class OciFunction {
                 && java.util.Objects.equals(this.fnConfigDefinition, other.fnConfigDefinition)
                 && java.util.Objects.equals(this.inputShape, other.inputShape)
                 && java.util.Objects.equals(this.outputShape, other.outputShape)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -241,16 +254,7 @@ public final class OciFunction {
                                 : this.fnConfigDefinition.hashCode());
         result = (result * PRIME) + (this.inputShape == null ? 43 : this.inputShape.hashCode());
         result = (result * PRIME) + (this.outputShape == null ? 43 : this.outputShape.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

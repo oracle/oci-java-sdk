@@ -140,8 +140,8 @@ public class ListAutonomousDatabaseDataguardAssociationsConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousDatabaseDataguardAssociationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

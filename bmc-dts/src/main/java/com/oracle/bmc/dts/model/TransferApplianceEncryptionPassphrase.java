@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = TransferApplianceEncryptionPassphrase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferApplianceEncryptionPassphrase {
+public final class TransferApplianceEncryptionPassphrase
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"encryptionPassphrase"})
     public TransferApplianceEncryptionPassphrase(String encryptionPassphrase) {
@@ -43,18 +44,20 @@ public final class TransferApplianceEncryptionPassphrase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferApplianceEncryptionPassphrase build() {
-            TransferApplianceEncryptionPassphrase __instance__ =
-                    new TransferApplianceEncryptionPassphrase(encryptionPassphrase);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TransferApplianceEncryptionPassphrase model =
+                    new TransferApplianceEncryptionPassphrase(this.encryptionPassphrase);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferApplianceEncryptionPassphrase o) {
-            Builder copiedBuilder = encryptionPassphrase(o.getEncryptionPassphrase());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferApplianceEncryptionPassphrase model) {
+            if (model.wasPropertyExplicitlySet("encryptionPassphrase")) {
+                this.encryptionPassphrase(model.getEncryptionPassphrase());
+            }
+            return this;
         }
     }
 
@@ -89,8 +92,8 @@ public final class TransferApplianceEncryptionPassphrase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferApplianceEncryptionPassphrase(");
+        sb.append("super=").append(super.toString());
         sb.append("encryptionPassphrase=").append(String.valueOf(this.encryptionPassphrase));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -106,7 +109,7 @@ public final class TransferApplianceEncryptionPassphrase {
 
         TransferApplianceEncryptionPassphrase other = (TransferApplianceEncryptionPassphrase) o;
         return java.util.Objects.equals(this.encryptionPassphrase, other.encryptionPassphrase)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -118,16 +121,7 @@ public final class TransferApplianceEncryptionPassphrase {
                         + (this.encryptionPassphrase == null
                                 ? 43
                                 : this.encryptionPassphrase.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

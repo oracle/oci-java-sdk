@@ -122,6 +122,19 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Filter the list with displayName contains the given value.
+     *
+     */
+    private String displayNameContains;
+
+    /**
+     * Filter the list with displayName contains the given value.
+     *
+     */
+    public String getDisplayNameContains() {
+        return displayNameContains;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -278,6 +291,23 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
+         * Filter the list with displayName contains the given value.
+         *
+         */
+        private String displayNameContains = null;
+
+        /**
+         * Filter the list with displayName contains the given value.
+         *
+         * @param displayNameContains the value to set
+         * @return this builder instance
+         */
+        public Builder displayNameContains(String displayNameContains) {
+            this.displayNameContains = displayNameContains;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -314,6 +344,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            displayNameContains(o.getDisplayNameContains());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -355,8 +386,9 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.displayNameContains = displayNameContains;
             return request;
-            // new ListFleetsRequest(compartmentId, id, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListFleetsRequest(compartmentId, id, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId, displayNameContains);
         }
     }
 
@@ -374,7 +406,8 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .displayNameContains(displayNameContains);
     }
 
     /**
@@ -399,6 +432,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(")");
         return sb.toString();
     }
@@ -422,7 +456,8 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains);
     }
 
     @Override
@@ -442,6 +477,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.displayNameContains == null
+                                ? 43
+                                : this.displayNameContains.hashCode());
         return result;
     }
 }

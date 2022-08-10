@@ -53,13 +53,20 @@ public class GetVolumeGroupResponse extends com.oracle.bmc.responses.BmcResponse
         return volumeGroup;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "volumeGroup"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "volumeGroup"
+    })
     private GetVolumeGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.VolumeGroup volumeGroup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.volumeGroup = volumeGroup;
@@ -70,6 +77,13 @@ public class GetVolumeGroupResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetVolumeGroupResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetVolumeGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             volumeGroup(o.getVolumeGroup());
@@ -142,7 +157,8 @@ public class GetVolumeGroupResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetVolumeGroupResponse build() {
-            return new GetVolumeGroupResponse(__httpStatusCode__, etag, opcRequestId, volumeGroup);
+            return new GetVolumeGroupResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, volumeGroup);
         }
     }
 

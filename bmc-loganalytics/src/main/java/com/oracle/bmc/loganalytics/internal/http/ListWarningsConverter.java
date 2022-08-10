@@ -228,8 +228,8 @@ public class ListWarningsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListWarningsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsWarningCollection(response.getItem());
 

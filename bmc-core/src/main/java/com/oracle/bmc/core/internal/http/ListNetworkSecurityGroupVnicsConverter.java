@@ -147,8 +147,8 @@ public class ListNetworkSecurityGroupVnicsConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ListNetworkSecurityGroupVnicsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

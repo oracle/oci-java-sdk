@@ -112,8 +112,8 @@ public class GetUnsubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.ons.responses
                                                         .GetUnsubscriptionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.value(response.getItem());
 

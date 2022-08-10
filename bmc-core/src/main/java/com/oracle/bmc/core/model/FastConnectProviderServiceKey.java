@@ -21,7 +21,8 @@ package com.oracle.bmc.core.model;
     builder = FastConnectProviderServiceKey.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FastConnectProviderServiceKey {
+public final class FastConnectProviderServiceKey
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "bandwidthShapeName", "peeringLocation"})
     public FastConnectProviderServiceKey(
@@ -105,21 +106,27 @@ public final class FastConnectProviderServiceKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FastConnectProviderServiceKey build() {
-            FastConnectProviderServiceKey __instance__ =
-                    new FastConnectProviderServiceKey(name, bandwidthShapeName, peeringLocation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FastConnectProviderServiceKey model =
+                    new FastConnectProviderServiceKey(
+                            this.name, this.bandwidthShapeName, this.peeringLocation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FastConnectProviderServiceKey o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .bandwidthShapeName(o.getBandwidthShapeName())
-                            .peeringLocation(o.getPeeringLocation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FastConnectProviderServiceKey model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("bandwidthShapeName")) {
+                this.bandwidthShapeName(model.getBandwidthShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("peeringLocation")) {
+                this.peeringLocation(model.getPeeringLocation());
+            }
+            return this;
         }
     }
 
@@ -207,10 +214,10 @@ public final class FastConnectProviderServiceKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FastConnectProviderServiceKey(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", bandwidthShapeName=").append(String.valueOf(this.bandwidthShapeName));
         sb.append(", peeringLocation=").append(String.valueOf(this.peeringLocation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -228,7 +235,7 @@ public final class FastConnectProviderServiceKey {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.bandwidthShapeName, other.bandwidthShapeName)
                 && java.util.Objects.equals(this.peeringLocation, other.peeringLocation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -244,16 +251,7 @@ public final class FastConnectProviderServiceKey {
         result =
                 (result * PRIME)
                         + (this.peeringLocation == null ? 43 : this.peeringLocation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

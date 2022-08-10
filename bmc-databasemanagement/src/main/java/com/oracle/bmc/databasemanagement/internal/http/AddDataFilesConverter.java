@@ -122,8 +122,8 @@ public class AddDataFilesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .AddDataFilesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tablespaceAdminStatus(response.getItem());
 

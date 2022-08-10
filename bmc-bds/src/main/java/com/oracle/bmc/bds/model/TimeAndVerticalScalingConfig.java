@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = TimeAndVerticalScalingConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TimeAndVerticalScalingConfig {
+public final class TimeAndVerticalScalingConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeRecurrence",
@@ -118,23 +119,33 @@ public final class TimeAndVerticalScalingConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TimeAndVerticalScalingConfig build() {
-            TimeAndVerticalScalingConfig __instance__ =
+            TimeAndVerticalScalingConfig model =
                     new TimeAndVerticalScalingConfig(
-                            timeRecurrence, targetShape, targetOcpusPerNode, targetMemoryPerNode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeRecurrence,
+                            this.targetShape,
+                            this.targetOcpusPerNode,
+                            this.targetMemoryPerNode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TimeAndVerticalScalingConfig o) {
-            Builder copiedBuilder =
-                    timeRecurrence(o.getTimeRecurrence())
-                            .targetShape(o.getTargetShape())
-                            .targetOcpusPerNode(o.getTargetOcpusPerNode())
-                            .targetMemoryPerNode(o.getTargetMemoryPerNode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TimeAndVerticalScalingConfig model) {
+            if (model.wasPropertyExplicitlySet("timeRecurrence")) {
+                this.timeRecurrence(model.getTimeRecurrence());
+            }
+            if (model.wasPropertyExplicitlySet("targetShape")) {
+                this.targetShape(model.getTargetShape());
+            }
+            if (model.wasPropertyExplicitlySet("targetOcpusPerNode")) {
+                this.targetOcpusPerNode(model.getTargetOcpusPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("targetMemoryPerNode")) {
+                this.targetMemoryPerNode(model.getTargetMemoryPerNode());
+            }
+            return this;
         }
     }
 
@@ -226,11 +237,11 @@ public final class TimeAndVerticalScalingConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TimeAndVerticalScalingConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("timeRecurrence=").append(String.valueOf(this.timeRecurrence));
         sb.append(", targetShape=").append(String.valueOf(this.targetShape));
         sb.append(", targetOcpusPerNode=").append(String.valueOf(this.targetOcpusPerNode));
         sb.append(", targetMemoryPerNode=").append(String.valueOf(this.targetMemoryPerNode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,7 +260,7 @@ public final class TimeAndVerticalScalingConfig {
                 && java.util.Objects.equals(this.targetShape, other.targetShape)
                 && java.util.Objects.equals(this.targetOcpusPerNode, other.targetOcpusPerNode)
                 && java.util.Objects.equals(this.targetMemoryPerNode, other.targetMemoryPerNode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -270,16 +281,7 @@ public final class TimeAndVerticalScalingConfig {
                         + (this.targetMemoryPerNode == null
                                 ? 43
                                 : this.targetMemoryPerNode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

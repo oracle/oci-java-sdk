@@ -166,8 +166,8 @@ public class ListHttpProbeResultsConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .ListHttpProbeResultsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

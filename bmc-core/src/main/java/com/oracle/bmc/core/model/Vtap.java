@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vtap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Vtap {
+public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -509,62 +509,105 @@ public final class Vtap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Vtap build() {
-            Vtap __instance__ =
+            Vtap model =
                     new Vtap(
-                            compartmentId,
-                            vcnId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            lifecycleStateDetails,
-                            timeCreated,
-                            sourceId,
-                            targetId,
-                            targetIp,
-                            captureFilterId,
-                            encapsulationProtocol,
-                            vxlanNetworkIdentifier,
-                            isVtapEnabled,
-                            sourceType,
-                            trafficMode,
-                            maxPacketSize,
-                            targetType,
-                            sourcePrivateEndpointIp,
-                            sourcePrivateEndpointSubnetId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.vcnId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.lifecycleStateDetails,
+                            this.timeCreated,
+                            this.sourceId,
+                            this.targetId,
+                            this.targetIp,
+                            this.captureFilterId,
+                            this.encapsulationProtocol,
+                            this.vxlanNetworkIdentifier,
+                            this.isVtapEnabled,
+                            this.sourceType,
+                            this.trafficMode,
+                            this.maxPacketSize,
+                            this.targetType,
+                            this.sourcePrivateEndpointIp,
+                            this.sourcePrivateEndpointSubnetId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Vtap o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .vcnId(o.getVcnId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleStateDetails(o.getLifecycleStateDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .sourceId(o.getSourceId())
-                            .targetId(o.getTargetId())
-                            .targetIp(o.getTargetIp())
-                            .captureFilterId(o.getCaptureFilterId())
-                            .encapsulationProtocol(o.getEncapsulationProtocol())
-                            .vxlanNetworkIdentifier(o.getVxlanNetworkIdentifier())
-                            .isVtapEnabled(o.getIsVtapEnabled())
-                            .sourceType(o.getSourceType())
-                            .trafficMode(o.getTrafficMode())
-                            .maxPacketSize(o.getMaxPacketSize())
-                            .targetType(o.getTargetType())
-                            .sourcePrivateEndpointIp(o.getSourcePrivateEndpointIp())
-                            .sourcePrivateEndpointSubnetId(o.getSourcePrivateEndpointSubnetId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Vtap model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
+                this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetIp")) {
+                this.targetIp(model.getTargetIp());
+            }
+            if (model.wasPropertyExplicitlySet("captureFilterId")) {
+                this.captureFilterId(model.getCaptureFilterId());
+            }
+            if (model.wasPropertyExplicitlySet("encapsulationProtocol")) {
+                this.encapsulationProtocol(model.getEncapsulationProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("vxlanNetworkIdentifier")) {
+                this.vxlanNetworkIdentifier(model.getVxlanNetworkIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("isVtapEnabled")) {
+                this.isVtapEnabled(model.getIsVtapEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("trafficMode")) {
+                this.trafficMode(model.getTrafficMode());
+            }
+            if (model.wasPropertyExplicitlySet("maxPacketSize")) {
+                this.maxPacketSize(model.getMaxPacketSize());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
+            }
+            if (model.wasPropertyExplicitlySet("sourcePrivateEndpointIp")) {
+                this.sourcePrivateEndpointIp(model.getSourcePrivateEndpointIp());
+            }
+            if (model.wasPropertyExplicitlySet("sourcePrivateEndpointSubnetId")) {
+                this.sourcePrivateEndpointSubnetId(model.getSourcePrivateEndpointSubnetId());
+            }
+            return this;
         }
     }
 
@@ -1252,6 +1295,7 @@ public final class Vtap {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Vtap(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1276,7 +1320,6 @@ public final class Vtap {
                 .append(String.valueOf(this.sourcePrivateEndpointIp));
         sb.append(", sourcePrivateEndpointSubnetId=")
                 .append(String.valueOf(this.sourcePrivateEndpointSubnetId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1316,7 +1359,7 @@ public final class Vtap {
                         this.sourcePrivateEndpointIp, other.sourcePrivateEndpointIp)
                 && java.util.Objects.equals(
                         this.sourcePrivateEndpointSubnetId, other.sourcePrivateEndpointSubnetId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1375,16 +1418,7 @@ public final class Vtap {
                         + (this.sourcePrivateEndpointSubnetId == null
                                 ? 43
                                 : this.sourcePrivateEndpointSubnetId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

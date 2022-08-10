@@ -114,30 +114,41 @@ public final class UpdateCertificateByImportingConfigDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCertificateByImportingConfigDetails build() {
-            UpdateCertificateByImportingConfigDetails __instance__ =
+            UpdateCertificateByImportingConfigDetails model =
                     new UpdateCertificateByImportingConfigDetails(
-                            versionName,
-                            stage,
-                            certChainPem,
-                            privateKeyPem,
-                            certificatePem,
-                            privateKeyPemPassphrase);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.versionName,
+                            this.stage,
+                            this.certChainPem,
+                            this.privateKeyPem,
+                            this.certificatePem,
+                            this.privateKeyPemPassphrase);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateCertificateByImportingConfigDetails o) {
-            Builder copiedBuilder =
-                    versionName(o.getVersionName())
-                            .stage(o.getStage())
-                            .certChainPem(o.getCertChainPem())
-                            .privateKeyPem(o.getPrivateKeyPem())
-                            .certificatePem(o.getCertificatePem())
-                            .privateKeyPemPassphrase(o.getPrivateKeyPemPassphrase());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateCertificateByImportingConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("stage")) {
+                this.stage(model.getStage());
+            }
+            if (model.wasPropertyExplicitlySet("certChainPem")) {
+                this.certChainPem(model.getCertChainPem());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPem")) {
+                this.privateKeyPem(model.getPrivateKeyPem());
+            }
+            if (model.wasPropertyExplicitlySet("certificatePem")) {
+                this.certificatePem(model.getCertificatePem());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPemPassphrase")) {
+                this.privateKeyPemPassphrase(model.getPrivateKeyPemPassphrase());
+            }
+            return this;
         }
     }
 
@@ -242,7 +253,6 @@ public final class UpdateCertificateByImportingConfigDetails
         sb.append(", certificatePem=").append(String.valueOf(this.certificatePem));
         sb.append(", privateKeyPemPassphrase=")
                 .append(String.valueOf(this.privateKeyPemPassphrase));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -263,8 +273,7 @@ public final class UpdateCertificateByImportingConfigDetails
                 && java.util.Objects.equals(this.certificatePem, other.certificatePem)
                 && java.util.Objects.equals(
                         this.privateKeyPemPassphrase, other.privateKeyPemPassphrase)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -283,16 +292,6 @@ public final class UpdateCertificateByImportingConfigDetails
                         + (this.privateKeyPemPassphrase == null
                                 ? 43
                                 : this.privateKeyPemPassphrase.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

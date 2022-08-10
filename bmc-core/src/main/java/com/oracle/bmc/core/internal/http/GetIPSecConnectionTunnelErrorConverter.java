@@ -115,8 +115,8 @@ public class GetIPSecConnectionTunnelErrorConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetIPSecConnectionTunnelErrorResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.iPSecConnectionTunnelErrorDetails(response.getItem());
 

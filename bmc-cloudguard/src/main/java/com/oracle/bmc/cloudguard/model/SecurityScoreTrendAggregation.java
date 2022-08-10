@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = SecurityScoreTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityScoreTrendAggregation {
+public final class SecurityScoreTrendAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dimensionsMap",
@@ -129,28 +130,37 @@ public final class SecurityScoreTrendAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityScoreTrendAggregation build() {
-            SecurityScoreTrendAggregation __instance__ =
+            SecurityScoreTrendAggregation model =
                     new SecurityScoreTrendAggregation(
-                            dimensionsMap,
-                            startTimestamp,
-                            durationInSeconds,
-                            securityRating,
-                            securityScore);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dimensionsMap,
+                            this.startTimestamp,
+                            this.durationInSeconds,
+                            this.securityRating,
+                            this.securityScore);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityScoreTrendAggregation o) {
-            Builder copiedBuilder =
-                    dimensionsMap(o.getDimensionsMap())
-                            .startTimestamp(o.getStartTimestamp())
-                            .durationInSeconds(o.getDurationInSeconds())
-                            .securityRating(o.getSecurityRating())
-                            .securityScore(o.getSecurityScore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityScoreTrendAggregation model) {
+            if (model.wasPropertyExplicitlySet("dimensionsMap")) {
+                this.dimensionsMap(model.getDimensionsMap());
+            }
+            if (model.wasPropertyExplicitlySet("startTimestamp")) {
+                this.startTimestamp(model.getStartTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("durationInSeconds")) {
+                this.durationInSeconds(model.getDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("securityRating")) {
+                this.securityRating(model.getSecurityRating());
+            }
+            if (model.wasPropertyExplicitlySet("securityScore")) {
+                this.securityScore(model.getSecurityScore());
+            }
+            return this;
         }
     }
 
@@ -248,12 +258,12 @@ public final class SecurityScoreTrendAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityScoreTrendAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("dimensionsMap=").append(String.valueOf(this.dimensionsMap));
         sb.append(", startTimestamp=").append(String.valueOf(this.startTimestamp));
         sb.append(", durationInSeconds=").append(String.valueOf(this.durationInSeconds));
         sb.append(", securityRating=").append(String.valueOf(this.securityRating));
         sb.append(", securityScore=").append(String.valueOf(this.securityScore));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +283,7 @@ public final class SecurityScoreTrendAggregation {
                 && java.util.Objects.equals(this.durationInSeconds, other.durationInSeconds)
                 && java.util.Objects.equals(this.securityRating, other.securityRating)
                 && java.util.Objects.equals(this.securityScore, other.securityScore)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -295,16 +305,7 @@ public final class SecurityScoreTrendAggregation {
         result =
                 (result * PRIME)
                         + (this.securityScore == null ? 43 : this.securityScore.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

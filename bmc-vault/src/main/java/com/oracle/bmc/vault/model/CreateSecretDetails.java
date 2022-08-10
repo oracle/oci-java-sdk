@@ -19,7 +19,7 @@ package com.oracle.bmc.vault.model;
     builder = CreateSecretDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSecretDetails {
+public final class CreateSecretDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -240,38 +240,57 @@ public final class CreateSecretDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSecretDetails build() {
-            CreateSecretDetails __instance__ =
+            CreateSecretDetails model =
                     new CreateSecretDetails(
-                            compartmentId,
-                            definedTags,
-                            description,
-                            freeformTags,
-                            keyId,
-                            metadata,
-                            secretContent,
-                            secretName,
-                            secretRules,
-                            vaultId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.description,
+                            this.freeformTags,
+                            this.keyId,
+                            this.metadata,
+                            this.secretContent,
+                            this.secretName,
+                            this.secretRules,
+                            this.vaultId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSecretDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .freeformTags(o.getFreeformTags())
-                            .keyId(o.getKeyId())
-                            .metadata(o.getMetadata())
-                            .secretContent(o.getSecretContent())
-                            .secretName(o.getSecretName())
-                            .secretRules(o.getSecretRules())
-                            .vaultId(o.getVaultId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSecretDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("secretContent")) {
+                this.secretContent(model.getSecretContent());
+            }
+            if (model.wasPropertyExplicitlySet("secretName")) {
+                this.secretName(model.getSecretName());
+            }
+            if (model.wasPropertyExplicitlySet("secretRules")) {
+                this.secretRules(model.getSecretRules());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            return this;
         }
     }
 
@@ -454,6 +473,7 @@ public final class CreateSecretDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSecretDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -464,7 +484,6 @@ public final class CreateSecretDetails {
         sb.append(", secretName=").append(String.valueOf(this.secretName));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -489,7 +508,7 @@ public final class CreateSecretDetails {
                 && java.util.Objects.equals(this.secretName, other.secretName)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -510,16 +529,7 @@ public final class CreateSecretDetails {
         result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

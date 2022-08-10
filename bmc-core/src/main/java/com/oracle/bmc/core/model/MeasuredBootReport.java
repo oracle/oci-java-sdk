@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = MeasuredBootReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MeasuredBootReport {
+public final class MeasuredBootReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isPolicyVerificationSuccessful", "measurements"})
     public MeasuredBootReport(
@@ -63,20 +63,23 @@ public final class MeasuredBootReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MeasuredBootReport build() {
-            MeasuredBootReport __instance__ =
-                    new MeasuredBootReport(isPolicyVerificationSuccessful, measurements);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MeasuredBootReport model =
+                    new MeasuredBootReport(this.isPolicyVerificationSuccessful, this.measurements);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MeasuredBootReport o) {
-            Builder copiedBuilder =
-                    isPolicyVerificationSuccessful(o.getIsPolicyVerificationSuccessful())
-                            .measurements(o.getMeasurements());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MeasuredBootReport model) {
+            if (model.wasPropertyExplicitlySet("isPolicyVerificationSuccessful")) {
+                this.isPolicyVerificationSuccessful(model.getIsPolicyVerificationSuccessful());
+            }
+            if (model.wasPropertyExplicitlySet("measurements")) {
+                this.measurements(model.getMeasurements());
+            }
+            return this;
         }
     }
 
@@ -127,10 +130,10 @@ public final class MeasuredBootReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MeasuredBootReport(");
+        sb.append("super=").append(super.toString());
         sb.append("isPolicyVerificationSuccessful=")
                 .append(String.valueOf(this.isPolicyVerificationSuccessful));
         sb.append(", measurements=").append(String.valueOf(this.measurements));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -148,7 +151,7 @@ public final class MeasuredBootReport {
         return java.util.Objects.equals(
                         this.isPolicyVerificationSuccessful, other.isPolicyVerificationSuccessful)
                 && java.util.Objects.equals(this.measurements, other.measurements)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +164,7 @@ public final class MeasuredBootReport {
                                 ? 43
                                 : this.isPolicyVerificationSuccessful.hashCode());
         result = (result * PRIME) + (this.measurements == null ? 43 : this.measurements.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = CreateAdminCredentials.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAdminCredentials {
+public final class CreateAdminCredentials
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "password"})
     public CreateAdminCredentials(String username, String password) {
@@ -72,17 +73,22 @@ public final class CreateAdminCredentials {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAdminCredentials build() {
-            CreateAdminCredentials __instance__ = new CreateAdminCredentials(username, password);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateAdminCredentials model = new CreateAdminCredentials(this.username, this.password);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAdminCredentials o) {
-            Builder copiedBuilder = username(o.getUsername()).password(o.getPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAdminCredentials model) {
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            return this;
         }
     }
 
@@ -142,9 +148,9 @@ public final class CreateAdminCredentials {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAdminCredentials(");
+        sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
         sb.append(", password=").append(String.valueOf(this.password));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +167,7 @@ public final class CreateAdminCredentials {
         CreateAdminCredentials other = (CreateAdminCredentials) o;
         return java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +176,7 @@ public final class CreateAdminCredentials {
         int result = 1;
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

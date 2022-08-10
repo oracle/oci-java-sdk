@@ -174,8 +174,8 @@ public class ListWebAppAccelerationsConverter {
                                         builder =
                                                 com.oracle.bmc.waa.responses
                                                         .ListWebAppAccelerationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.webAppAccelerationCollection(response.getItem());
 

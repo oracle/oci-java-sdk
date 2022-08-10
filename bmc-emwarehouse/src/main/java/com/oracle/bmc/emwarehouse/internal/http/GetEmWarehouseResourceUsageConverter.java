@@ -112,8 +112,8 @@ public class GetEmWarehouseResourceUsageConverter {
                                                 com.oracle.bmc.emwarehouse.responses
                                                         .GetEmWarehouseResourceUsageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceUsage(response.getItem());
 

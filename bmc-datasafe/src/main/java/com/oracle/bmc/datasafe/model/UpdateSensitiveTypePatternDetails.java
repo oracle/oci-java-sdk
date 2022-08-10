@@ -170,40 +170,61 @@ public final class UpdateSensitiveTypePatternDetails extends UpdateSensitiveType
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSensitiveTypePatternDetails build() {
-            UpdateSensitiveTypePatternDetails __instance__ =
+            UpdateSensitiveTypePatternDetails model =
                     new UpdateSensitiveTypePatternDetails(
-                            displayName,
-                            shortName,
-                            description,
-                            parentCategoryId,
-                            freeformTags,
-                            definedTags,
-                            namePattern,
-                            commentPattern,
-                            dataPattern,
-                            searchType,
-                            defaultMaskingFormatId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.shortName,
+                            this.description,
+                            this.parentCategoryId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.namePattern,
+                            this.commentPattern,
+                            this.dataPattern,
+                            this.searchType,
+                            this.defaultMaskingFormatId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSensitiveTypePatternDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .shortName(o.getShortName())
-                            .description(o.getDescription())
-                            .parentCategoryId(o.getParentCategoryId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .namePattern(o.getNamePattern())
-                            .commentPattern(o.getCommentPattern())
-                            .dataPattern(o.getDataPattern())
-                            .searchType(o.getSearchType())
-                            .defaultMaskingFormatId(o.getDefaultMaskingFormatId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSensitiveTypePatternDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("shortName")) {
+                this.shortName(model.getShortName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("parentCategoryId")) {
+                this.parentCategoryId(model.getParentCategoryId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("namePattern")) {
+                this.namePattern(model.getNamePattern());
+            }
+            if (model.wasPropertyExplicitlySet("commentPattern")) {
+                this.commentPattern(model.getCommentPattern());
+            }
+            if (model.wasPropertyExplicitlySet("dataPattern")) {
+                this.dataPattern(model.getDataPattern());
+            }
+            if (model.wasPropertyExplicitlySet("searchType")) {
+                this.searchType(model.getSearchType());
+            }
+            if (model.wasPropertyExplicitlySet("defaultMaskingFormatId")) {
+                this.defaultMaskingFormatId(model.getDefaultMaskingFormatId());
+            }
+            return this;
         }
     }
 
@@ -332,7 +353,6 @@ public final class UpdateSensitiveTypePatternDetails extends UpdateSensitiveType
         sb.append(", dataPattern=").append(String.valueOf(this.dataPattern));
         sb.append(", searchType=").append(String.valueOf(this.searchType));
         sb.append(", defaultMaskingFormatId=").append(String.valueOf(this.defaultMaskingFormatId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -353,8 +373,7 @@ public final class UpdateSensitiveTypePatternDetails extends UpdateSensitiveType
                 && java.util.Objects.equals(this.searchType, other.searchType)
                 && java.util.Objects.equals(
                         this.defaultMaskingFormatId, other.defaultMaskingFormatId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -372,16 +391,6 @@ public final class UpdateSensitiveTypePatternDetails extends UpdateSensitiveType
                         + (this.defaultMaskingFormatId == null
                                 ? 43
                                 : this.defaultMaskingFormatId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

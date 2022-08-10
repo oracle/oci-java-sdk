@@ -141,7 +141,8 @@ public class QueryConverter {
 
                                 com.oracle.bmc.apmtraces.responses.QueryResponse.Builder builder =
                                         com.oracle.bmc.apmtraces.responses.QueryResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.queryResultResponse(response.getItem());
 

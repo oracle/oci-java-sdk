@@ -19,7 +19,8 @@ package com.oracle.bmc.apigateway.model;
     builder = HeaderValidationRequestPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HeaderValidationRequestPolicy {
+public final class HeaderValidationRequestPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headers", "validationMode"})
     public HeaderValidationRequestPolicy(
@@ -79,18 +80,23 @@ public final class HeaderValidationRequestPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HeaderValidationRequestPolicy build() {
-            HeaderValidationRequestPolicy __instance__ =
-                    new HeaderValidationRequestPolicy(headers, validationMode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HeaderValidationRequestPolicy model =
+                    new HeaderValidationRequestPolicy(this.headers, this.validationMode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HeaderValidationRequestPolicy o) {
-            Builder copiedBuilder = headers(o.getHeaders()).validationMode(o.getValidationMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HeaderValidationRequestPolicy model) {
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("validationMode")) {
+                this.validationMode(model.getValidationMode());
+            }
+            return this;
         }
     }
 
@@ -202,9 +208,9 @@ public final class HeaderValidationRequestPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HeaderValidationRequestPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("headers=").append(String.valueOf(this.headers));
         sb.append(", validationMode=").append(String.valueOf(this.validationMode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +227,7 @@ public final class HeaderValidationRequestPolicy {
         HeaderValidationRequestPolicy other = (HeaderValidationRequestPolicy) o;
         return java.util.Objects.equals(this.headers, other.headers)
                 && java.util.Objects.equals(this.validationMode, other.validationMode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -232,16 +238,7 @@ public final class HeaderValidationRequestPolicy {
         result =
                 (result * PRIME)
                         + (this.validationMode == null ? 43 : this.validationMode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

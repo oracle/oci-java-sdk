@@ -84,21 +84,27 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VirtualDeploymentTrafficRuleTarget build() {
-            VirtualDeploymentTrafficRuleTarget __instance__ =
-                    new VirtualDeploymentTrafficRuleTarget(virtualDeploymentId, port, weight);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VirtualDeploymentTrafficRuleTarget model =
+                    new VirtualDeploymentTrafficRuleTarget(
+                            this.virtualDeploymentId, this.port, this.weight);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VirtualDeploymentTrafficRuleTarget o) {
-            Builder copiedBuilder =
-                    virtualDeploymentId(o.getVirtualDeploymentId())
-                            .port(o.getPort())
-                            .weight(o.getWeight());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VirtualDeploymentTrafficRuleTarget model) {
+            if (model.wasPropertyExplicitlySet("virtualDeploymentId")) {
+                this.virtualDeploymentId(model.getVirtualDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("weight")) {
+                this.weight(model.getWeight());
+            }
+            return this;
         }
     }
 
@@ -185,7 +191,6 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
         sb.append(", virtualDeploymentId=").append(String.valueOf(this.virtualDeploymentId));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", weight=").append(String.valueOf(this.weight));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -203,8 +208,7 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
         return java.util.Objects.equals(this.virtualDeploymentId, other.virtualDeploymentId)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.weight, other.weight)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -218,16 +222,6 @@ public final class VirtualDeploymentTrafficRuleTarget extends TrafficRuleTarget 
                                 : this.virtualDeploymentId.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

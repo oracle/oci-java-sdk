@@ -162,7 +162,8 @@ public class GetRRSetConverter {
 
                                 com.oracle.bmc.dns.responses.GetRRSetResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.GetRRSetResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.rRSet(response.getItem());
 

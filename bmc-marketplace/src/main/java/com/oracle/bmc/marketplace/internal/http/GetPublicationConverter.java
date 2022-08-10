@@ -105,8 +105,8 @@ public class GetPublicationConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .GetPublicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publication(response.getItem());
 

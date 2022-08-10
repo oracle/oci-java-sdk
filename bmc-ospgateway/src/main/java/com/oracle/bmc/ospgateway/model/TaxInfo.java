@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaxInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaxInfo {
+public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taxPayerId",
@@ -127,28 +127,37 @@ public final class TaxInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaxInfo build() {
-            TaxInfo __instance__ =
+            TaxInfo model =
                     new TaxInfo(
-                            taxPayerId,
-                            taxRegNumber,
-                            noTaxReasonCode,
-                            noTaxReasonCodeDetails,
-                            taxCnpj);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.taxPayerId,
+                            this.taxRegNumber,
+                            this.noTaxReasonCode,
+                            this.noTaxReasonCodeDetails,
+                            this.taxCnpj);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaxInfo o) {
-            Builder copiedBuilder =
-                    taxPayerId(o.getTaxPayerId())
-                            .taxRegNumber(o.getTaxRegNumber())
-                            .noTaxReasonCode(o.getNoTaxReasonCode())
-                            .noTaxReasonCodeDetails(o.getNoTaxReasonCodeDetails())
-                            .taxCnpj(o.getTaxCnpj());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaxInfo model) {
+            if (model.wasPropertyExplicitlySet("taxPayerId")) {
+                this.taxPayerId(model.getTaxPayerId());
+            }
+            if (model.wasPropertyExplicitlySet("taxRegNumber")) {
+                this.taxRegNumber(model.getTaxRegNumber());
+            }
+            if (model.wasPropertyExplicitlySet("noTaxReasonCode")) {
+                this.noTaxReasonCode(model.getNoTaxReasonCode());
+            }
+            if (model.wasPropertyExplicitlySet("noTaxReasonCodeDetails")) {
+                this.noTaxReasonCodeDetails(model.getNoTaxReasonCodeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("taxCnpj")) {
+                this.taxCnpj(model.getTaxCnpj());
+            }
+            return this;
         }
     }
 
@@ -246,12 +255,12 @@ public final class TaxInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TaxInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("taxPayerId=").append(String.valueOf(this.taxPayerId));
         sb.append(", taxRegNumber=").append(String.valueOf(this.taxRegNumber));
         sb.append(", noTaxReasonCode=").append(String.valueOf(this.noTaxReasonCode));
         sb.append(", noTaxReasonCodeDetails=").append(String.valueOf(this.noTaxReasonCodeDetails));
         sb.append(", taxCnpj=").append(String.valueOf(this.taxCnpj));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -272,7 +281,7 @@ public final class TaxInfo {
                 && java.util.Objects.equals(
                         this.noTaxReasonCodeDetails, other.noTaxReasonCodeDetails)
                 && java.util.Objects.equals(this.taxCnpj, other.taxCnpj)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -290,16 +299,7 @@ public final class TaxInfo {
                                 ? 43
                                 : this.noTaxReasonCodeDetails.hashCode());
         result = (result * PRIME) + (this.taxCnpj == null ? 43 : this.taxCnpj.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -104,8 +104,8 @@ public class GetSubscriberConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .GetSubscriberResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.subscriber(response.getItem());
 

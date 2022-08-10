@@ -38,12 +38,18 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
         return entityCollection;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "entityCollection"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "entityCollection"
+    })
     private ListDerivedLogicalEntitiesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.EntityCollection entityCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.entityCollection = entityCollection;
     }
@@ -53,6 +59,13 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
          */
         public Builder copy(ListDerivedLogicalEntitiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             entityCollection(o.getEntityCollection());
 
@@ -109,7 +123,7 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
          */
         public ListDerivedLogicalEntitiesResponse build() {
             return new ListDerivedLogicalEntitiesResponse(
-                    __httpStatusCode__, opcRequestId, entityCollection);
+                    __httpStatusCode__, headers, opcRequestId, entityCollection);
         }
     }
 

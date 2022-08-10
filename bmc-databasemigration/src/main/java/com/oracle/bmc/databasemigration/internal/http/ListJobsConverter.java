@@ -157,8 +157,8 @@ public class ListJobsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListJobsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobCollection(response.getItem());
 

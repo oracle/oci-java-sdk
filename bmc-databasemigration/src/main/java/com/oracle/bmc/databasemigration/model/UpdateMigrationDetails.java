@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateMigrationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateMigrationDetails {
+public final class UpdateMigrationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -332,51 +333,82 @@ public final class UpdateMigrationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMigrationDetails build() {
-            UpdateMigrationDetails __instance__ =
+            UpdateMigrationDetails model =
                     new UpdateMigrationDetails(
-                            type,
-                            displayName,
-                            agentId,
-                            sourceDatabaseConnectionId,
-                            sourceContainerDatabaseConnectionId,
-                            targetDatabaseConnectionId,
-                            dataTransferMediumDetails,
-                            dumpTransferDetails,
-                            datapumpSettings,
-                            advisorSettings,
-                            excludeObjects,
-                            includeObjects,
-                            goldenGateDetails,
-                            vaultDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.type,
+                            this.displayName,
+                            this.agentId,
+                            this.sourceDatabaseConnectionId,
+                            this.sourceContainerDatabaseConnectionId,
+                            this.targetDatabaseConnectionId,
+                            this.dataTransferMediumDetails,
+                            this.dumpTransferDetails,
+                            this.datapumpSettings,
+                            this.advisorSettings,
+                            this.excludeObjects,
+                            this.includeObjects,
+                            this.goldenGateDetails,
+                            this.vaultDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateMigrationDetails o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .displayName(o.getDisplayName())
-                            .agentId(o.getAgentId())
-                            .sourceDatabaseConnectionId(o.getSourceDatabaseConnectionId())
-                            .sourceContainerDatabaseConnectionId(
-                                    o.getSourceContainerDatabaseConnectionId())
-                            .targetDatabaseConnectionId(o.getTargetDatabaseConnectionId())
-                            .dataTransferMediumDetails(o.getDataTransferMediumDetails())
-                            .dumpTransferDetails(o.getDumpTransferDetails())
-                            .datapumpSettings(o.getDatapumpSettings())
-                            .advisorSettings(o.getAdvisorSettings())
-                            .excludeObjects(o.getExcludeObjects())
-                            .includeObjects(o.getIncludeObjects())
-                            .goldenGateDetails(o.getGoldenGateDetails())
-                            .vaultDetails(o.getVaultDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateMigrationDetails model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDatabaseConnectionId")) {
+                this.sourceDatabaseConnectionId(model.getSourceDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceContainerDatabaseConnectionId")) {
+                this.sourceContainerDatabaseConnectionId(
+                        model.getSourceContainerDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseConnectionId")) {
+                this.targetDatabaseConnectionId(model.getTargetDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
+                this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dumpTransferDetails")) {
+                this.dumpTransferDetails(model.getDumpTransferDetails());
+            }
+            if (model.wasPropertyExplicitlySet("datapumpSettings")) {
+                this.datapumpSettings(model.getDatapumpSettings());
+            }
+            if (model.wasPropertyExplicitlySet("advisorSettings")) {
+                this.advisorSettings(model.getAdvisorSettings());
+            }
+            if (model.wasPropertyExplicitlySet("excludeObjects")) {
+                this.excludeObjects(model.getExcludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("includeObjects")) {
+                this.includeObjects(model.getIncludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
+                this.goldenGateDetails(model.getGoldenGateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vaultDetails")) {
+                this.vaultDetails(model.getVaultDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -618,6 +650,7 @@ public final class UpdateMigrationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateMigrationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", agentId=").append(String.valueOf(this.agentId));
@@ -638,7 +671,6 @@ public final class UpdateMigrationDetails {
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -674,7 +706,7 @@ public final class UpdateMigrationDetails {
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -727,16 +759,7 @@ public final class UpdateMigrationDetails {
         result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

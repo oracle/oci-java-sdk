@@ -95,30 +95,41 @@ public final class AddFieldsCommandDescriptor extends AbstractCommandDescriptor 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddFieldsCommandDescriptor build() {
-            AddFieldsCommandDescriptor __instance__ =
+            AddFieldsCommandDescriptor model =
                     new AddFieldsCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            subQueries);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.subQueries);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddFieldsCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .subQueries(o.getSubQueries());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddFieldsCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("subQueries")) {
+                this.subQueries(model.getSubQueries());
+            }
+            return this;
         }
     }
 
@@ -176,7 +187,6 @@ public final class AddFieldsCommandDescriptor extends AbstractCommandDescriptor 
         sb.append("AddFieldsCommandDescriptor(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", subQueries=").append(String.valueOf(this.subQueries));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,9 +201,7 @@ public final class AddFieldsCommandDescriptor extends AbstractCommandDescriptor 
         }
 
         AddFieldsCommandDescriptor other = (AddFieldsCommandDescriptor) o;
-        return java.util.Objects.equals(this.subQueries, other.subQueries)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.subQueries, other.subQueries) && super.equals(other);
     }
 
     @Override
@@ -201,16 +209,6 @@ public final class AddFieldsCommandDescriptor extends AbstractCommandDescriptor 
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.subQueries == null ? 43 : this.subQueries.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

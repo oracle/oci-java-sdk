@@ -138,7 +138,8 @@ public class ListIpv6sConverter {
 
                                 com.oracle.bmc.core.responses.ListIpv6sResponse.Builder builder =
                                         com.oracle.bmc.core.responses.ListIpv6sResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

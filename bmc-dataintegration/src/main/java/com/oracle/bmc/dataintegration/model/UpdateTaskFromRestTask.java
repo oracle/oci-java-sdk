@@ -325,74 +325,129 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTaskFromRestTask build() {
-            UpdateTaskFromRestTask __instance__ =
+            UpdateTaskFromRestTask model =
                     new UpdateTaskFromRestTask(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectStatus,
-                            objectVersion,
-                            identifier,
-                            inputPorts,
-                            outputPorts,
-                            parameters,
-                            opConfigValues,
-                            configProviderDelegate,
-                            registryMetadata,
-                            authDetails,
-                            authConfig,
-                            endpoint,
-                            methodType,
-                            headers,
-                            additionalProperties,
-                            jsonData,
-                            apiCallMode,
-                            cancelEndpoint,
-                            cancelMethodType,
-                            executeRestCallConfig,
-                            cancelRestCallConfig,
-                            pollRestCallConfig,
-                            typedExpressions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.objectVersion,
+                            this.identifier,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.configProviderDelegate,
+                            this.registryMetadata,
+                            this.authDetails,
+                            this.authConfig,
+                            this.endpoint,
+                            this.methodType,
+                            this.headers,
+                            this.additionalProperties,
+                            this.jsonData,
+                            this.apiCallMode,
+                            this.cancelEndpoint,
+                            this.cancelMethodType,
+                            this.executeRestCallConfig,
+                            this.cancelRestCallConfig,
+                            this.pollRestCallConfig,
+                            this.typedExpressions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTaskFromRestTask o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .objectVersion(o.getObjectVersion())
-                            .identifier(o.getIdentifier())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .configProviderDelegate(o.getConfigProviderDelegate())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .authDetails(o.getAuthDetails())
-                            .authConfig(o.getAuthConfig())
-                            .endpoint(o.getEndpoint())
-                            .methodType(o.getMethodType())
-                            .headers(o.getHeaders())
-                            .additionalProperties(o.getAdditionalProperties())
-                            .jsonData(o.getJsonData())
-                            .apiCallMode(o.getApiCallMode())
-                            .cancelEndpoint(o.getCancelEndpoint())
-                            .cancelMethodType(o.getCancelMethodType())
-                            .executeRestCallConfig(o.getExecuteRestCallConfig())
-                            .cancelRestCallConfig(o.getCancelRestCallConfig())
-                            .pollRestCallConfig(o.getPollRestCallConfig())
-                            .typedExpressions(o.getTypedExpressions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTaskFromRestTask model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
+                this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("authDetails")) {
+                this.authDetails(model.getAuthDetails());
+            }
+            if (model.wasPropertyExplicitlySet("authConfig")) {
+                this.authConfig(model.getAuthConfig());
+            }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("methodType")) {
+                this.methodType(model.getMethodType());
+            }
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("additionalProperties")) {
+                this.additionalProperties(model.getAdditionalProperties());
+            }
+            if (model.wasPropertyExplicitlySet("jsonData")) {
+                this.jsonData(model.getJsonData());
+            }
+            if (model.wasPropertyExplicitlySet("apiCallMode")) {
+                this.apiCallMode(model.getApiCallMode());
+            }
+            if (model.wasPropertyExplicitlySet("cancelEndpoint")) {
+                this.cancelEndpoint(model.getCancelEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("cancelMethodType")) {
+                this.cancelMethodType(model.getCancelMethodType());
+            }
+            if (model.wasPropertyExplicitlySet("executeRestCallConfig")) {
+                this.executeRestCallConfig(model.getExecuteRestCallConfig());
+            }
+            if (model.wasPropertyExplicitlySet("cancelRestCallConfig")) {
+                this.cancelRestCallConfig(model.getCancelRestCallConfig());
+            }
+            if (model.wasPropertyExplicitlySet("pollRestCallConfig")) {
+                this.pollRestCallConfig(model.getPollRestCallConfig());
+            }
+            if (model.wasPropertyExplicitlySet("typedExpressions")) {
+                this.typedExpressions(model.getTypedExpressions());
+            }
+            return this;
         }
     }
 
@@ -748,7 +803,6 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
         sb.append(", cancelRestCallConfig=").append(String.valueOf(this.cancelRestCallConfig));
         sb.append(", pollRestCallConfig=").append(String.valueOf(this.pollRestCallConfig));
         sb.append(", typedExpressions=").append(String.valueOf(this.typedExpressions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -777,8 +831,7 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
                 && java.util.Objects.equals(this.cancelRestCallConfig, other.cancelRestCallConfig)
                 && java.util.Objects.equals(this.pollRestCallConfig, other.pollRestCallConfig)
                 && java.util.Objects.equals(this.typedExpressions, other.typedExpressions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -821,16 +874,6 @@ public final class UpdateTaskFromRestTask extends UpdateTaskDetails {
         result =
                 (result * PRIME)
                         + (this.typedExpressions == null ? 43 : this.typedExpressions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

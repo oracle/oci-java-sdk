@@ -23,7 +23,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = DataAssetExportScope.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataAssetExportScope {
+public final class DataAssetExportScope extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectKey", "exportTypeIds"})
     public DataAssetExportScope(String objectKey, java.util.List<String> exportTypeIds) {
@@ -71,17 +71,23 @@ public final class DataAssetExportScope {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataAssetExportScope build() {
-            DataAssetExportScope __instance__ = new DataAssetExportScope(objectKey, exportTypeIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataAssetExportScope model =
+                    new DataAssetExportScope(this.objectKey, this.exportTypeIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataAssetExportScope o) {
-            Builder copiedBuilder = objectKey(o.getObjectKey()).exportTypeIds(o.getExportTypeIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataAssetExportScope model) {
+            if (model.wasPropertyExplicitlySet("objectKey")) {
+                this.objectKey(model.getObjectKey());
+            }
+            if (model.wasPropertyExplicitlySet("exportTypeIds")) {
+                this.exportTypeIds(model.getExportTypeIds());
+            }
+            return this;
         }
     }
 
@@ -137,9 +143,9 @@ public final class DataAssetExportScope {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAssetExportScope(");
+        sb.append("super=").append(super.toString());
         sb.append("objectKey=").append(String.valueOf(this.objectKey));
         sb.append(", exportTypeIds=").append(String.valueOf(this.exportTypeIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,7 +162,7 @@ public final class DataAssetExportScope {
         DataAssetExportScope other = (DataAssetExportScope) o;
         return java.util.Objects.equals(this.objectKey, other.objectKey)
                 && java.util.Objects.equals(this.exportTypeIds, other.exportTypeIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +173,7 @@ public final class DataAssetExportScope {
         result =
                 (result * PRIME)
                         + (this.exportTypeIds == null ? 43 : this.exportTypeIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

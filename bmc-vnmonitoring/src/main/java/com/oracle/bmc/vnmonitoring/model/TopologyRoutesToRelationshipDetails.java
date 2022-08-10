@@ -19,7 +19,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = TopologyRoutesToRelationshipDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TopologyRoutesToRelationshipDetails {
+public final class TopologyRoutesToRelationshipDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "destinationType",
@@ -119,23 +120,33 @@ public final class TopologyRoutesToRelationshipDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopologyRoutesToRelationshipDetails build() {
-            TopologyRoutesToRelationshipDetails __instance__ =
+            TopologyRoutesToRelationshipDetails model =
                     new TopologyRoutesToRelationshipDetails(
-                            destinationType, destination, routeTableId, routeType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.destinationType,
+                            this.destination,
+                            this.routeTableId,
+                            this.routeType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TopologyRoutesToRelationshipDetails o) {
-            Builder copiedBuilder =
-                    destinationType(o.getDestinationType())
-                            .destination(o.getDestination())
-                            .routeTableId(o.getRouteTableId())
-                            .routeType(o.getRouteType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TopologyRoutesToRelationshipDetails model) {
+            if (model.wasPropertyExplicitlySet("destinationType")) {
+                this.destinationType(model.getDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("routeType")) {
+                this.routeType(model.getRouteType());
+            }
+            return this;
         }
     }
 
@@ -280,11 +291,11 @@ public final class TopologyRoutesToRelationshipDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TopologyRoutesToRelationshipDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", routeType=").append(String.valueOf(this.routeType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -303,7 +314,7 @@ public final class TopologyRoutesToRelationshipDetails {
                 && java.util.Objects.equals(this.destination, other.destination)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.routeType, other.routeType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -316,16 +327,7 @@ public final class TopologyRoutesToRelationshipDetails {
         result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.routeType == null ? 43 : this.routeType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

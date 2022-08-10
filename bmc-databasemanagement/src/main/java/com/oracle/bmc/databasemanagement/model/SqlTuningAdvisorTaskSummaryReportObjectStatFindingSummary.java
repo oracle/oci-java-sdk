@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
+public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "objectHashValue",
@@ -148,30 +149,41 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary build() {
-            SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary __instance__ =
+            SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary model =
                     new SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary(
-                            objectHashValue,
-                            objectName,
-                            objectType,
-                            schema,
-                            problemType,
-                            referenceCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.objectHashValue,
+                            this.objectName,
+                            this.objectType,
+                            this.schema,
+                            this.problemType,
+                            this.referenceCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary o) {
-            Builder copiedBuilder =
-                    objectHashValue(o.getObjectHashValue())
-                            .objectName(o.getObjectName())
-                            .objectType(o.getObjectType())
-                            .schema(o.getSchema())
-                            .problemType(o.getProblemType())
-                            .referenceCount(o.getReferenceCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary model) {
+            if (model.wasPropertyExplicitlySet("objectHashValue")) {
+                this.objectHashValue(model.getObjectHashValue());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("schema")) {
+                this.schema(model.getSchema());
+            }
+            if (model.wasPropertyExplicitlySet("problemType")) {
+                this.problemType(model.getProblemType());
+            }
+            if (model.wasPropertyExplicitlySet("referenceCount")) {
+                this.referenceCount(model.getReferenceCount());
+            }
+            return this;
         }
     }
 
@@ -331,13 +343,13 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("objectHashValue=").append(String.valueOf(this.objectHashValue));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", objectType=").append(String.valueOf(this.objectType));
         sb.append(", schema=").append(String.valueOf(this.schema));
         sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(", referenceCount=").append(String.valueOf(this.referenceCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -359,7 +371,7 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
                 && java.util.Objects.equals(this.schema, other.schema)
                 && java.util.Objects.equals(this.problemType, other.problemType)
                 && java.util.Objects.equals(this.referenceCount, other.referenceCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -376,16 +388,7 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary {
         result =
                 (result * PRIME)
                         + (this.referenceCount == null ? 43 : this.referenceCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

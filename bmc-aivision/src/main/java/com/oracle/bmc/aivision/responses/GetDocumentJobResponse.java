@@ -53,13 +53,20 @@ public class GetDocumentJobResponse extends com.oracle.bmc.responses.BmcResponse
         return documentJob;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "documentJob"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "documentJob"
+    })
     private GetDocumentJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.aivision.model.DocumentJob documentJob) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.documentJob = documentJob;
@@ -70,6 +77,13 @@ public class GetDocumentJobResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetDocumentJobResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetDocumentJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             documentJob(o.getDocumentJob());
@@ -142,7 +157,8 @@ public class GetDocumentJobResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetDocumentJobResponse build() {
-            return new GetDocumentJobResponse(__httpStatusCode__, etag, opcRequestId, documentJob);
+            return new GetDocumentJobResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, documentJob);
         }
     }
 

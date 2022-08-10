@@ -102,8 +102,8 @@ public class GetKeyStoreConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetKeyStoreResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.keyStore(response.getItem());
 

@@ -129,8 +129,8 @@ public class ListAgentImagesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListAgentImagesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.agentImageCollection(response.getItem());
 

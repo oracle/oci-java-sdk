@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CustomPropertyTypeUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CustomPropertyTypeUsage {
+public final class CustomPropertyTypeUsage
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"typeId", "typeName", "count", "isEventEnabled"})
     public CustomPropertyTypeUsage(
@@ -102,22 +103,30 @@ public final class CustomPropertyTypeUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomPropertyTypeUsage build() {
-            CustomPropertyTypeUsage __instance__ =
-                    new CustomPropertyTypeUsage(typeId, typeName, count, isEventEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CustomPropertyTypeUsage model =
+                    new CustomPropertyTypeUsage(
+                            this.typeId, this.typeName, this.count, this.isEventEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CustomPropertyTypeUsage o) {
-            Builder copiedBuilder =
-                    typeId(o.getTypeId())
-                            .typeName(o.getTypeName())
-                            .count(o.getCount())
-                            .isEventEnabled(o.getIsEventEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CustomPropertyTypeUsage model) {
+            if (model.wasPropertyExplicitlySet("typeId")) {
+                this.typeId(model.getTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            if (model.wasPropertyExplicitlySet("isEventEnabled")) {
+                this.isEventEnabled(model.getIsEventEnabled());
+            }
+            return this;
         }
     }
 
@@ -201,11 +210,11 @@ public final class CustomPropertyTypeUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CustomPropertyTypeUsage(");
+        sb.append("super=").append(super.toString());
         sb.append("typeId=").append(String.valueOf(this.typeId));
         sb.append(", typeName=").append(String.valueOf(this.typeName));
         sb.append(", count=").append(String.valueOf(this.count));
         sb.append(", isEventEnabled=").append(String.valueOf(this.isEventEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +233,7 @@ public final class CustomPropertyTypeUsage {
                 && java.util.Objects.equals(this.typeName, other.typeName)
                 && java.util.Objects.equals(this.count, other.count)
                 && java.util.Objects.equals(this.isEventEnabled, other.isEventEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -237,16 +246,7 @@ public final class CustomPropertyTypeUsage {
         result =
                 (result * PRIME)
                         + (this.isEventEnabled == null ? 43 : this.isEventEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

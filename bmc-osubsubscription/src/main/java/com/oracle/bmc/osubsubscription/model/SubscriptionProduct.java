@@ -20,7 +20,7 @@ package com.oracle.bmc.osubsubscription.model;
     builder = SubscriptionProduct.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SubscriptionProduct {
+public final class SubscriptionProduct extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"partNumber", "name", "unitOfMeasure", "provisioningGroup"})
     public SubscriptionProduct(
@@ -111,22 +111,30 @@ public final class SubscriptionProduct {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SubscriptionProduct build() {
-            SubscriptionProduct __instance__ =
-                    new SubscriptionProduct(partNumber, name, unitOfMeasure, provisioningGroup);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SubscriptionProduct model =
+                    new SubscriptionProduct(
+                            this.partNumber, this.name, this.unitOfMeasure, this.provisioningGroup);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SubscriptionProduct o) {
-            Builder copiedBuilder =
-                    partNumber(o.getPartNumber())
-                            .name(o.getName())
-                            .unitOfMeasure(o.getUnitOfMeasure())
-                            .provisioningGroup(o.getProvisioningGroup());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SubscriptionProduct model) {
+            if (model.wasPropertyExplicitlySet("partNumber")) {
+                this.partNumber(model.getPartNumber());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("unitOfMeasure")) {
+                this.unitOfMeasure(model.getUnitOfMeasure());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningGroup")) {
+                this.provisioningGroup(model.getProvisioningGroup());
+            }
+            return this;
         }
     }
 
@@ -218,11 +226,11 @@ public final class SubscriptionProduct {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SubscriptionProduct(");
+        sb.append("super=").append(super.toString());
         sb.append("partNumber=").append(String.valueOf(this.partNumber));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", unitOfMeasure=").append(String.valueOf(this.unitOfMeasure));
         sb.append(", provisioningGroup=").append(String.valueOf(this.provisioningGroup));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,7 +249,7 @@ public final class SubscriptionProduct {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.unitOfMeasure, other.unitOfMeasure)
                 && java.util.Objects.equals(this.provisioningGroup, other.provisioningGroup)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -256,16 +264,7 @@ public final class SubscriptionProduct {
         result =
                 (result * PRIME)
                         + (this.provisioningGroup == null ? 43 : this.provisioningGroup.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

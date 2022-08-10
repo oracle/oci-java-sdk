@@ -23,7 +23,7 @@ package com.oracle.bmc.loadbalancer.model;
     builder = LoadBalancerHealth.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LoadBalancerHealth {
+public final class LoadBalancerHealth extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -204,28 +204,37 @@ public final class LoadBalancerHealth {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoadBalancerHealth build() {
-            LoadBalancerHealth __instance__ =
+            LoadBalancerHealth model =
                     new LoadBalancerHealth(
-                            status,
-                            warningStateBackendSetNames,
-                            criticalStateBackendSetNames,
-                            unknownStateBackendSetNames,
-                            totalBackendSetCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.status,
+                            this.warningStateBackendSetNames,
+                            this.criticalStateBackendSetNames,
+                            this.unknownStateBackendSetNames,
+                            this.totalBackendSetCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LoadBalancerHealth o) {
-            Builder copiedBuilder =
-                    status(o.getStatus())
-                            .warningStateBackendSetNames(o.getWarningStateBackendSetNames())
-                            .criticalStateBackendSetNames(o.getCriticalStateBackendSetNames())
-                            .unknownStateBackendSetNames(o.getUnknownStateBackendSetNames())
-                            .totalBackendSetCount(o.getTotalBackendSetCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LoadBalancerHealth model) {
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("warningStateBackendSetNames")) {
+                this.warningStateBackendSetNames(model.getWarningStateBackendSetNames());
+            }
+            if (model.wasPropertyExplicitlySet("criticalStateBackendSetNames")) {
+                this.criticalStateBackendSetNames(model.getCriticalStateBackendSetNames());
+            }
+            if (model.wasPropertyExplicitlySet("unknownStateBackendSetNames")) {
+                this.unknownStateBackendSetNames(model.getUnknownStateBackendSetNames());
+            }
+            if (model.wasPropertyExplicitlySet("totalBackendSetCount")) {
+                this.totalBackendSetCount(model.getTotalBackendSetCount());
+            }
+            return this;
         }
     }
 
@@ -459,6 +468,7 @@ public final class LoadBalancerHealth {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LoadBalancerHealth(");
+        sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", warningStateBackendSetNames=")
                 .append(String.valueOf(this.warningStateBackendSetNames));
@@ -467,7 +477,6 @@ public final class LoadBalancerHealth {
         sb.append(", unknownStateBackendSetNames=")
                 .append(String.valueOf(this.unknownStateBackendSetNames));
         sb.append(", totalBackendSetCount=").append(String.valueOf(this.totalBackendSetCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -490,7 +499,7 @@ public final class LoadBalancerHealth {
                 && java.util.Objects.equals(
                         this.unknownStateBackendSetNames, other.unknownStateBackendSetNames)
                 && java.util.Objects.equals(this.totalBackendSetCount, other.totalBackendSetCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -518,16 +527,7 @@ public final class LoadBalancerHealth {
                         + (this.totalBackendSetCount == null
                                 ? 43
                                 : this.totalBackendSetCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

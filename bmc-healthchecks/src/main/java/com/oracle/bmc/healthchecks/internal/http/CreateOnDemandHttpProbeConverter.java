@@ -106,8 +106,8 @@ public class CreateOnDemandHttpProbeConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .CreateOnDemandHttpProbeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.httpProbe(response.getItem());
 

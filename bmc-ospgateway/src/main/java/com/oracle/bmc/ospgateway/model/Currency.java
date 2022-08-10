@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Currency.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Currency {
+public final class Currency extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "currencyCode",
@@ -127,24 +127,37 @@ public final class Currency {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Currency build() {
-            Currency __instance__ =
+            Currency model =
                     new Currency(
-                            currencyCode, currencySymbol, name, usdConversion, roundDecimalPoint);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.currencyCode,
+                            this.currencySymbol,
+                            this.name,
+                            this.usdConversion,
+                            this.roundDecimalPoint);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Currency o) {
-            Builder copiedBuilder =
-                    currencyCode(o.getCurrencyCode())
-                            .currencySymbol(o.getCurrencySymbol())
-                            .name(o.getName())
-                            .usdConversion(o.getUsdConversion())
-                            .roundDecimalPoint(o.getRoundDecimalPoint());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Currency model) {
+            if (model.wasPropertyExplicitlySet("currencyCode")) {
+                this.currencyCode(model.getCurrencyCode());
+            }
+            if (model.wasPropertyExplicitlySet("currencySymbol")) {
+                this.currencySymbol(model.getCurrencySymbol());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("usdConversion")) {
+                this.usdConversion(model.getUsdConversion());
+            }
+            if (model.wasPropertyExplicitlySet("roundDecimalPoint")) {
+                this.roundDecimalPoint(model.getRoundDecimalPoint());
+            }
+            return this;
         }
     }
 
@@ -242,12 +255,12 @@ public final class Currency {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Currency(");
+        sb.append("super=").append(super.toString());
         sb.append("currencyCode=").append(String.valueOf(this.currencyCode));
         sb.append(", currencySymbol=").append(String.valueOf(this.currencySymbol));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", usdConversion=").append(String.valueOf(this.usdConversion));
         sb.append(", roundDecimalPoint=").append(String.valueOf(this.roundDecimalPoint));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +280,7 @@ public final class Currency {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.usdConversion, other.usdConversion)
                 && java.util.Objects.equals(this.roundDecimalPoint, other.roundDecimalPoint)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -285,16 +298,7 @@ public final class Currency {
         result =
                 (result * PRIME)
                         + (this.roundDecimalPoint == null ? 43 : this.roundDecimalPoint.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

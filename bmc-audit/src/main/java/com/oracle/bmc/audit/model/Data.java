@@ -18,7 +18,7 @@ package com.oracle.bmc.audit.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Data.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Data {
+public final class Data extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "eventGroupingId",
@@ -346,46 +346,73 @@ public final class Data {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Data build() {
-            Data __instance__ =
+            Data model =
                     new Data(
-                            eventGroupingId,
-                            eventName,
-                            compartmentId,
-                            compartmentName,
-                            resourceName,
-                            resourceId,
-                            availabilityDomain,
-                            freeformTags,
-                            definedTags,
-                            identity,
-                            request,
-                            response,
-                            stateChange,
-                            additionalDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.eventGroupingId,
+                            this.eventName,
+                            this.compartmentId,
+                            this.compartmentName,
+                            this.resourceName,
+                            this.resourceId,
+                            this.availabilityDomain,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.identity,
+                            this.request,
+                            this.response,
+                            this.stateChange,
+                            this.additionalDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Data o) {
-            Builder copiedBuilder =
-                    eventGroupingId(o.getEventGroupingId())
-                            .eventName(o.getEventName())
-                            .compartmentId(o.getCompartmentId())
-                            .compartmentName(o.getCompartmentName())
-                            .resourceName(o.getResourceName())
-                            .resourceId(o.getResourceId())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .identity(o.getIdentity())
-                            .request(o.getRequest())
-                            .response(o.getResponse())
-                            .stateChange(o.getStateChange())
-                            .additionalDetails(o.getAdditionalDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Data model) {
+            if (model.wasPropertyExplicitlySet("eventGroupingId")) {
+                this.eventGroupingId(model.getEventGroupingId());
+            }
+            if (model.wasPropertyExplicitlySet("eventName")) {
+                this.eventName(model.getEventName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("identity")) {
+                this.identity(model.getIdentity());
+            }
+            if (model.wasPropertyExplicitlySet("request")) {
+                this.request(model.getRequest());
+            }
+            if (model.wasPropertyExplicitlySet("response")) {
+                this.response(model.getResponse());
+            }
+            if (model.wasPropertyExplicitlySet("stateChange")) {
+                this.stateChange(model.getStateChange());
+            }
+            if (model.wasPropertyExplicitlySet("additionalDetails")) {
+                this.additionalDetails(model.getAdditionalDetails());
+            }
+            return this;
         }
     }
 
@@ -655,6 +682,7 @@ public final class Data {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Data(");
+        sb.append("super=").append(super.toString());
         sb.append("eventGroupingId=").append(String.valueOf(this.eventGroupingId));
         sb.append(", eventName=").append(String.valueOf(this.eventName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -669,7 +697,6 @@ public final class Data {
         sb.append(", response=").append(String.valueOf(this.response));
         sb.append(", stateChange=").append(String.valueOf(this.stateChange));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -698,7 +725,7 @@ public final class Data {
                 && java.util.Objects.equals(this.response, other.response)
                 && java.util.Objects.equals(this.stateChange, other.stateChange)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -731,16 +758,7 @@ public final class Data {
         result =
                 (result * PRIME)
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

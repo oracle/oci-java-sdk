@@ -19,7 +19,7 @@ package com.oracle.bmc.dataintegration.model;
     builder = DataflowApplication.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataflowApplication {
+public final class DataflowApplication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"applicationId", "compartmentId"})
     public DataflowApplication(String applicationId, String compartmentId) {
@@ -67,19 +67,23 @@ public final class DataflowApplication {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataflowApplication build() {
-            DataflowApplication __instance__ =
-                    new DataflowApplication(applicationId, compartmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataflowApplication model =
+                    new DataflowApplication(this.applicationId, this.compartmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataflowApplication o) {
-            Builder copiedBuilder =
-                    applicationId(o.getApplicationId()).compartmentId(o.getCompartmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataflowApplication model) {
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            return this;
         }
     }
 
@@ -135,9 +139,9 @@ public final class DataflowApplication {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataflowApplication(");
+        sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +158,7 @@ public final class DataflowApplication {
         DataflowApplication other = (DataflowApplication) o;
         return java.util.Objects.equals(this.applicationId, other.applicationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +171,7 @@ public final class DataflowApplication {
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

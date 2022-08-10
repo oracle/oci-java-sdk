@@ -128,8 +128,8 @@ public class GetClusterCacheMetricConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .GetClusterCacheMetricResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.clusterCacheMetric(response.getItem());
 

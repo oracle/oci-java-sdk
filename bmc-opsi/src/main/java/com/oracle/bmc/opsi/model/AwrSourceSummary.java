@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwrSourceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrSourceSummary {
+public final class AwrSourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "awrHubId",
@@ -203,36 +203,53 @@ public final class AwrSourceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrSourceSummary build() {
-            AwrSourceSummary __instance__ =
+            AwrSourceSummary model =
                     new AwrSourceSummary(
-                            awrHubId,
-                            name,
-                            awrSourceDatabaseId,
-                            snapshotsUploaded,
-                            minSnapshotIdentifier,
-                            maxSnapshotIdentifier,
-                            timeFirstSnapshotGenerated,
-                            timeLastSnapshotGenerated,
-                            hoursSinceLastImport);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.awrHubId,
+                            this.name,
+                            this.awrSourceDatabaseId,
+                            this.snapshotsUploaded,
+                            this.minSnapshotIdentifier,
+                            this.maxSnapshotIdentifier,
+                            this.timeFirstSnapshotGenerated,
+                            this.timeLastSnapshotGenerated,
+                            this.hoursSinceLastImport);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrSourceSummary o) {
-            Builder copiedBuilder =
-                    awrHubId(o.getAwrHubId())
-                            .name(o.getName())
-                            .awrSourceDatabaseId(o.getAwrSourceDatabaseId())
-                            .snapshotsUploaded(o.getSnapshotsUploaded())
-                            .minSnapshotIdentifier(o.getMinSnapshotIdentifier())
-                            .maxSnapshotIdentifier(o.getMaxSnapshotIdentifier())
-                            .timeFirstSnapshotGenerated(o.getTimeFirstSnapshotGenerated())
-                            .timeLastSnapshotGenerated(o.getTimeLastSnapshotGenerated())
-                            .hoursSinceLastImport(o.getHoursSinceLastImport());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrSourceSummary model) {
+            if (model.wasPropertyExplicitlySet("awrHubId")) {
+                this.awrHubId(model.getAwrHubId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("awrSourceDatabaseId")) {
+                this.awrSourceDatabaseId(model.getAwrSourceDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotsUploaded")) {
+                this.snapshotsUploaded(model.getSnapshotsUploaded());
+            }
+            if (model.wasPropertyExplicitlySet("minSnapshotIdentifier")) {
+                this.minSnapshotIdentifier(model.getMinSnapshotIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("maxSnapshotIdentifier")) {
+                this.maxSnapshotIdentifier(model.getMaxSnapshotIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSnapshotGenerated")) {
+                this.timeFirstSnapshotGenerated(model.getTimeFirstSnapshotGenerated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSnapshotGenerated")) {
+                this.timeLastSnapshotGenerated(model.getTimeLastSnapshotGenerated());
+            }
+            if (model.wasPropertyExplicitlySet("hoursSinceLastImport")) {
+                this.hoursSinceLastImport(model.getHoursSinceLastImport());
+            }
+            return this;
         }
     }
 
@@ -386,6 +403,7 @@ public final class AwrSourceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrSourceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("awrHubId=").append(String.valueOf(this.awrHubId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", awrSourceDatabaseId=").append(String.valueOf(this.awrSourceDatabaseId));
@@ -397,7 +415,6 @@ public final class AwrSourceSummary {
         sb.append(", timeLastSnapshotGenerated=")
                 .append(String.valueOf(this.timeLastSnapshotGenerated));
         sb.append(", hoursSinceLastImport=").append(String.valueOf(this.hoursSinceLastImport));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -423,7 +440,7 @@ public final class AwrSourceSummary {
                 && java.util.Objects.equals(
                         this.timeLastSnapshotGenerated, other.timeLastSnapshotGenerated)
                 && java.util.Objects.equals(this.hoursSinceLastImport, other.hoursSinceLastImport)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -465,16 +482,7 @@ public final class AwrSourceSummary {
                         + (this.hoursSinceLastImport == null
                                 ? 43
                                 : this.hoursSinceLastImport.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

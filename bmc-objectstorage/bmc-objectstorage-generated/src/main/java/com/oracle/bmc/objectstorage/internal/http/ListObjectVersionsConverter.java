@@ -180,8 +180,8 @@ public class ListObjectVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .ListObjectVersionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.objectVersionCollection(response.getItem());
 

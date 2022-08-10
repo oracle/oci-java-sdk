@@ -17,7 +17,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListenerDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ListenerDetails {
+public final class ListenerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "defaultBackendSetName",
@@ -235,36 +235,53 @@ public final class ListenerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ListenerDetails build() {
-            ListenerDetails __instance__ =
+            ListenerDetails model =
                     new ListenerDetails(
-                            defaultBackendSetName,
-                            port,
-                            protocol,
-                            hostnameNames,
-                            pathRouteSetName,
-                            sslConfiguration,
-                            connectionConfiguration,
-                            routingPolicyName,
-                            ruleSetNames);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.defaultBackendSetName,
+                            this.port,
+                            this.protocol,
+                            this.hostnameNames,
+                            this.pathRouteSetName,
+                            this.sslConfiguration,
+                            this.connectionConfiguration,
+                            this.routingPolicyName,
+                            this.ruleSetNames);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ListenerDetails o) {
-            Builder copiedBuilder =
-                    defaultBackendSetName(o.getDefaultBackendSetName())
-                            .port(o.getPort())
-                            .protocol(o.getProtocol())
-                            .hostnameNames(o.getHostnameNames())
-                            .pathRouteSetName(o.getPathRouteSetName())
-                            .sslConfiguration(o.getSslConfiguration())
-                            .connectionConfiguration(o.getConnectionConfiguration())
-                            .routingPolicyName(o.getRoutingPolicyName())
-                            .ruleSetNames(o.getRuleSetNames());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ListenerDetails model) {
+            if (model.wasPropertyExplicitlySet("defaultBackendSetName")) {
+                this.defaultBackendSetName(model.getDefaultBackendSetName());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("hostnameNames")) {
+                this.hostnameNames(model.getHostnameNames());
+            }
+            if (model.wasPropertyExplicitlySet("pathRouteSetName")) {
+                this.pathRouteSetName(model.getPathRouteSetName());
+            }
+            if (model.wasPropertyExplicitlySet("sslConfiguration")) {
+                this.sslConfiguration(model.getSslConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("connectionConfiguration")) {
+                this.connectionConfiguration(model.getConnectionConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("routingPolicyName")) {
+                this.routingPolicyName(model.getRoutingPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("ruleSetNames")) {
+                this.ruleSetNames(model.getRuleSetNames());
+            }
+            return this;
         }
     }
 
@@ -450,6 +467,7 @@ public final class ListenerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ListenerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("defaultBackendSetName=").append(String.valueOf(this.defaultBackendSetName));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
@@ -460,7 +478,6 @@ public final class ListenerDetails {
                 .append(String.valueOf(this.connectionConfiguration));
         sb.append(", routingPolicyName=").append(String.valueOf(this.routingPolicyName));
         sb.append(", ruleSetNames=").append(String.valueOf(this.ruleSetNames));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -485,7 +502,7 @@ public final class ListenerDetails {
                         this.connectionConfiguration, other.connectionConfiguration)
                 && java.util.Objects.equals(this.routingPolicyName, other.routingPolicyName)
                 && java.util.Objects.equals(this.ruleSetNames, other.ruleSetNames)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -517,16 +534,7 @@ public final class ListenerDetails {
                 (result * PRIME)
                         + (this.routingPolicyName == null ? 43 : this.routingPolicyName.hashCode());
         result = (result * PRIME) + (this.ruleSetNames == null ? 43 : this.ruleSetNames.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

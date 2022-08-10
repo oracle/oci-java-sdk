@@ -107,8 +107,8 @@ public class CreateScheduledJobConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .CreateScheduledJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scheduledJob(response.getItem());
 

@@ -117,8 +117,8 @@ public class UpdateTermConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .UpdateTermResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.term(response.getItem());
 

@@ -105,8 +105,8 @@ public class CreateDeployArtifactConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CreateDeployArtifactResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployArtifact(response.getItem());
 

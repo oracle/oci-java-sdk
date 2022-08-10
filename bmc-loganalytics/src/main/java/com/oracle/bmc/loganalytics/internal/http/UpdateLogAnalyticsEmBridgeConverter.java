@@ -127,8 +127,8 @@ public class UpdateLogAnalyticsEmBridgeConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateLogAnalyticsEmBridgeResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsEmBridge(response.getItem());
 

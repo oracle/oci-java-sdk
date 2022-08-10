@@ -115,8 +115,8 @@ public class CreateManagedInstanceGroupConverter {
                                                 com.oracle.bmc.osmanagement.responses
                                                         .CreateManagedInstanceGroupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedInstanceGroup(response.getItem());
 

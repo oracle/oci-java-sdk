@@ -59,16 +59,18 @@ public class ListContainerImagesResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "containerImageCollection"
     })
     private ListContainerImagesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.artifacts.model.ContainerImageCollection containerImageCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.containerImageCollection = containerImageCollection;
@@ -79,6 +81,13 @@ public class ListContainerImagesResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListContainerImagesResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListContainerImagesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             containerImageCollection(o.getContainerImageCollection());
@@ -157,7 +167,11 @@ public class ListContainerImagesResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListContainerImagesResponse build() {
             return new ListContainerImagesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, containerImageCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcRequestId,
+                    containerImageCollection);
         }
     }
 

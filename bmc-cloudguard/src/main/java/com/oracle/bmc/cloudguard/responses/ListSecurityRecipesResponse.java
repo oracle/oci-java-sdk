@@ -59,16 +59,18 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "securityRecipeCollection"
     })
     private ListSecurityRecipesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.SecurityRecipeCollection securityRecipeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.securityRecipeCollection = securityRecipeCollection;
@@ -79,6 +81,13 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListSecurityRecipesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             securityRecipeCollection(o.getSecurityRecipeCollection());
@@ -157,7 +167,11 @@ public class ListSecurityRecipesResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListSecurityRecipesResponse build() {
             return new ListSecurityRecipesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, securityRecipeCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    securityRecipeCollection);
         }
     }
 

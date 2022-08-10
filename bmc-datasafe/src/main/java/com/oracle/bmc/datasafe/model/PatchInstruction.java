@@ -36,7 +36,7 @@ package com.oracle.bmc.datasafe.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PatchInstruction {
+public class PatchInstruction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"selection"})
     protected PatchInstruction(String selection) {
@@ -71,6 +71,7 @@ public class PatchInstruction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PatchInstruction(");
+        sb.append("super=").append(super.toString());
         sb.append("selection=").append(String.valueOf(this.selection));
         sb.append(")");
         return sb.toString();
@@ -86,7 +87,7 @@ public class PatchInstruction {
         }
 
         PatchInstruction other = (PatchInstruction) o;
-        return java.util.Objects.equals(this.selection, other.selection);
+        return java.util.Objects.equals(this.selection, other.selection) && super.equals(other);
     }
 
     @Override
@@ -94,6 +95,7 @@ public class PatchInstruction {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.selection == null ? 43 : this.selection.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

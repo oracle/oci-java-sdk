@@ -71,18 +71,23 @@ public final class PathAnalysisWorkRequestResult extends WorkRequestResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PathAnalysisWorkRequestResult build() {
-            PathAnalysisWorkRequestResult __instance__ =
-                    new PathAnalysisWorkRequestResult(paths, timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PathAnalysisWorkRequestResult model =
+                    new PathAnalysisWorkRequestResult(this.paths, this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PathAnalysisWorkRequestResult o) {
-            Builder copiedBuilder = paths(o.getPaths()).timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PathAnalysisWorkRequestResult model) {
+            if (model.wasPropertyExplicitlySet("paths")) {
+                this.paths(model.getPaths());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -154,7 +159,6 @@ public final class PathAnalysisWorkRequestResult extends WorkRequestResult {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", paths=").append(String.valueOf(this.paths));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -171,8 +175,7 @@ public final class PathAnalysisWorkRequestResult extends WorkRequestResult {
         PathAnalysisWorkRequestResult other = (PathAnalysisWorkRequestResult) o;
         return java.util.Objects.equals(this.paths, other.paths)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -181,16 +184,6 @@ public final class PathAnalysisWorkRequestResult extends WorkRequestResult {
         int result = super.hashCode();
         result = (result * PRIME) + (this.paths == null ? 43 : this.paths.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

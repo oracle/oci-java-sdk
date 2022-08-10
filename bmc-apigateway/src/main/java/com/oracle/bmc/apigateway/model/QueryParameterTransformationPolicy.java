@@ -20,7 +20,8 @@ package com.oracle.bmc.apigateway.model;
     builder = QueryParameterTransformationPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryParameterTransformationPolicy {
+public final class QueryParameterTransformationPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "setQueryParameters",
@@ -71,22 +72,29 @@ public final class QueryParameterTransformationPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryParameterTransformationPolicy build() {
-            QueryParameterTransformationPolicy __instance__ =
+            QueryParameterTransformationPolicy model =
                     new QueryParameterTransformationPolicy(
-                            setQueryParameters, renameQueryParameters, filterQueryParameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.setQueryParameters,
+                            this.renameQueryParameters,
+                            this.filterQueryParameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryParameterTransformationPolicy o) {
-            Builder copiedBuilder =
-                    setQueryParameters(o.getSetQueryParameters())
-                            .renameQueryParameters(o.getRenameQueryParameters())
-                            .filterQueryParameters(o.getFilterQueryParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryParameterTransformationPolicy model) {
+            if (model.wasPropertyExplicitlySet("setQueryParameters")) {
+                this.setQueryParameters(model.getSetQueryParameters());
+            }
+            if (model.wasPropertyExplicitlySet("renameQueryParameters")) {
+                this.renameQueryParameters(model.getRenameQueryParameters());
+            }
+            if (model.wasPropertyExplicitlySet("filterQueryParameters")) {
+                this.filterQueryParameters(model.getFilterQueryParameters());
+            }
+            return this;
         }
     }
 
@@ -135,10 +143,10 @@ public final class QueryParameterTransformationPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryParameterTransformationPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("setQueryParameters=").append(String.valueOf(this.setQueryParameters));
         sb.append(", renameQueryParameters=").append(String.valueOf(this.renameQueryParameters));
         sb.append(", filterQueryParameters=").append(String.valueOf(this.filterQueryParameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,7 +164,7 @@ public final class QueryParameterTransformationPolicy {
         return java.util.Objects.equals(this.setQueryParameters, other.setQueryParameters)
                 && java.util.Objects.equals(this.renameQueryParameters, other.renameQueryParameters)
                 && java.util.Objects.equals(this.filterQueryParameters, other.filterQueryParameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -178,16 +186,7 @@ public final class QueryParameterTransformationPolicy {
                         + (this.filterQueryParameters == null
                                 ? 43
                                 : this.filterQueryParameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

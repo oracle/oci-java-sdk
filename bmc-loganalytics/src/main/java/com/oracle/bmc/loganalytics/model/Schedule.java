@@ -29,7 +29,7 @@ package com.oracle.bmc.loganalytics.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Schedule {
+public class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"misfirePolicy", "timeOfFirstExecution"})
     protected Schedule(MisfirePolicy misfirePolicy, java.util.Date timeOfFirstExecution) {
@@ -132,6 +132,7 @@ public class Schedule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Schedule(");
+        sb.append("super=").append(super.toString());
         sb.append("misfirePolicy=").append(String.valueOf(this.misfirePolicy));
         sb.append(", timeOfFirstExecution=").append(String.valueOf(this.timeOfFirstExecution));
         sb.append(")");
@@ -149,7 +150,8 @@ public class Schedule {
 
         Schedule other = (Schedule) o;
         return java.util.Objects.equals(this.misfirePolicy, other.misfirePolicy)
-                && java.util.Objects.equals(this.timeOfFirstExecution, other.timeOfFirstExecution);
+                && java.util.Objects.equals(this.timeOfFirstExecution, other.timeOfFirstExecution)
+                && super.equals(other);
     }
 
     @Override
@@ -164,6 +166,7 @@ public class Schedule {
                         + (this.timeOfFirstExecution == null
                                 ? 43
                                 : this.timeOfFirstExecution.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

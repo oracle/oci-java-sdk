@@ -113,8 +113,8 @@ public class GetDatasetConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservicedataplane
                                                         .responses.GetDatasetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataset(response.getItem());
 

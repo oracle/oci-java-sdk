@@ -108,7 +108,8 @@ public class DeleteViewConverter {
 
                                 com.oracle.bmc.dns.responses.DeleteViewResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.DeleteViewResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -19,7 +19,8 @@ package com.oracle.bmc.datascience.model;
     builder = ModelConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModelConfigurationDetails {
+public final class ModelConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "modelId",
@@ -96,23 +97,33 @@ public final class ModelConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModelConfigurationDetails build() {
-            ModelConfigurationDetails __instance__ =
+            ModelConfigurationDetails model =
                     new ModelConfigurationDetails(
-                            modelId, instanceConfiguration, scalingPolicy, bandwidthMbps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.modelId,
+                            this.instanceConfiguration,
+                            this.scalingPolicy,
+                            this.bandwidthMbps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModelConfigurationDetails o) {
-            Builder copiedBuilder =
-                    modelId(o.getModelId())
-                            .instanceConfiguration(o.getInstanceConfiguration())
-                            .scalingPolicy(o.getScalingPolicy())
-                            .bandwidthMbps(o.getBandwidthMbps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModelConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfiguration")) {
+                this.instanceConfiguration(model.getInstanceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("scalingPolicy")) {
+                this.scalingPolicy(model.getScalingPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("bandwidthMbps")) {
+                this.bandwidthMbps(model.getBandwidthMbps());
+            }
+            return this;
         }
     }
 
@@ -182,11 +193,11 @@ public final class ModelConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModelConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("modelId=").append(String.valueOf(this.modelId));
         sb.append(", instanceConfiguration=").append(String.valueOf(this.instanceConfiguration));
         sb.append(", scalingPolicy=").append(String.valueOf(this.scalingPolicy));
         sb.append(", bandwidthMbps=").append(String.valueOf(this.bandwidthMbps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +216,7 @@ public final class ModelConfigurationDetails {
                 && java.util.Objects.equals(this.instanceConfiguration, other.instanceConfiguration)
                 && java.util.Objects.equals(this.scalingPolicy, other.scalingPolicy)
                 && java.util.Objects.equals(this.bandwidthMbps, other.bandwidthMbps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +235,7 @@ public final class ModelConfigurationDetails {
         result =
                 (result * PRIME)
                         + (this.bandwidthMbps == null ? 43 : this.bandwidthMbps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

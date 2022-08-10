@@ -17,7 +17,7 @@ package com.oracle.bmc.apmsynthetics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GeoSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GeoSummary {
+public final class GeoSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "adminDivCode",
@@ -150,25 +150,41 @@ public final class GeoSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GeoSummary build() {
-            GeoSummary __instance__ =
+            GeoSummary model =
                     new GeoSummary(
-                            adminDivCode, cityName, countryCode, countryName, latitude, longitude);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.adminDivCode,
+                            this.cityName,
+                            this.countryCode,
+                            this.countryName,
+                            this.latitude,
+                            this.longitude);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GeoSummary o) {
-            Builder copiedBuilder =
-                    adminDivCode(o.getAdminDivCode())
-                            .cityName(o.getCityName())
-                            .countryCode(o.getCountryCode())
-                            .countryName(o.getCountryName())
-                            .latitude(o.getLatitude())
-                            .longitude(o.getLongitude());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GeoSummary model) {
+            if (model.wasPropertyExplicitlySet("adminDivCode")) {
+                this.adminDivCode(model.getAdminDivCode());
+            }
+            if (model.wasPropertyExplicitlySet("cityName")) {
+                this.cityName(model.getCityName());
+            }
+            if (model.wasPropertyExplicitlySet("countryCode")) {
+                this.countryCode(model.getCountryCode());
+            }
+            if (model.wasPropertyExplicitlySet("countryName")) {
+                this.countryName(model.getCountryName());
+            }
+            if (model.wasPropertyExplicitlySet("latitude")) {
+                this.latitude(model.getLatitude());
+            }
+            if (model.wasPropertyExplicitlySet("longitude")) {
+                this.longitude(model.getLongitude());
+            }
+            return this;
         }
     }
 
@@ -284,13 +300,13 @@ public final class GeoSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GeoSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("adminDivCode=").append(String.valueOf(this.adminDivCode));
         sb.append(", cityName=").append(String.valueOf(this.cityName));
         sb.append(", countryCode=").append(String.valueOf(this.countryCode));
         sb.append(", countryName=").append(String.valueOf(this.countryName));
         sb.append(", latitude=").append(String.valueOf(this.latitude));
         sb.append(", longitude=").append(String.valueOf(this.longitude));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -311,7 +327,7 @@ public final class GeoSummary {
                 && java.util.Objects.equals(this.countryName, other.countryName)
                 && java.util.Objects.equals(this.latitude, other.latitude)
                 && java.util.Objects.equals(this.longitude, other.longitude)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -324,16 +340,7 @@ public final class GeoSummary {
         result = (result * PRIME) + (this.countryName == null ? 43 : this.countryName.hashCode());
         result = (result * PRIME) + (this.latitude == null ? 43 : this.latitude.hashCode());
         result = (result * PRIME) + (this.longitude == null ? 43 : this.longitude.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

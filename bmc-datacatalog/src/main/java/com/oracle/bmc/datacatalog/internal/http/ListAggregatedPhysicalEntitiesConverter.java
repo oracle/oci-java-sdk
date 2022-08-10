@@ -182,8 +182,8 @@ public class ListAggregatedPhysicalEntitiesConverter {
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListAggregatedPhysicalEntitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.entityCollection(response.getItem());
 

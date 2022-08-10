@@ -19,7 +19,8 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyFilterAnswerData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicyFilterAnswerData {
+public final class SteeringPolicyFilterAnswerData
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"answerCondition", "shouldKeep"})
     public SteeringPolicyFilterAnswerData(String answerCondition, Boolean shouldKeep) {
@@ -69,19 +70,23 @@ public final class SteeringPolicyFilterAnswerData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicyFilterAnswerData build() {
-            SteeringPolicyFilterAnswerData __instance__ =
-                    new SteeringPolicyFilterAnswerData(answerCondition, shouldKeep);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SteeringPolicyFilterAnswerData model =
+                    new SteeringPolicyFilterAnswerData(this.answerCondition, this.shouldKeep);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicyFilterAnswerData o) {
-            Builder copiedBuilder =
-                    answerCondition(o.getAnswerCondition()).shouldKeep(o.getShouldKeep());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicyFilterAnswerData model) {
+            if (model.wasPropertyExplicitlySet("answerCondition")) {
+                this.answerCondition(model.getAnswerCondition());
+            }
+            if (model.wasPropertyExplicitlySet("shouldKeep")) {
+                this.shouldKeep(model.getShouldKeep());
+            }
+            return this;
         }
     }
 
@@ -139,9 +144,9 @@ public final class SteeringPolicyFilterAnswerData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyFilterAnswerData(");
+        sb.append("super=").append(super.toString());
         sb.append("answerCondition=").append(String.valueOf(this.answerCondition));
         sb.append(", shouldKeep=").append(String.valueOf(this.shouldKeep));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -158,7 +163,7 @@ public final class SteeringPolicyFilterAnswerData {
         SteeringPolicyFilterAnswerData other = (SteeringPolicyFilterAnswerData) o;
         return java.util.Objects.equals(this.answerCondition, other.answerCondition)
                 && java.util.Objects.equals(this.shouldKeep, other.shouldKeep)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -169,16 +174,7 @@ public final class SteeringPolicyFilterAnswerData {
                 (result * PRIME)
                         + (this.answerCondition == null ? 43 : this.answerCondition.hashCode());
         result = (result * PRIME) + (this.shouldKeep == null ? 43 : this.shouldKeep.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

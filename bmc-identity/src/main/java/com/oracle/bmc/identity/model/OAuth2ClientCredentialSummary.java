@@ -20,7 +20,8 @@ package com.oracle.bmc.identity.model;
     builder = OAuth2ClientCredentialSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OAuth2ClientCredentialSummary {
+public final class OAuth2ClientCredentialSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "scopes",
@@ -224,36 +225,53 @@ public final class OAuth2ClientCredentialSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OAuth2ClientCredentialSummary build() {
-            OAuth2ClientCredentialSummary __instance__ =
+            OAuth2ClientCredentialSummary model =
                     new OAuth2ClientCredentialSummary(
-                            scopes,
-                            userId,
-                            expiresOn,
-                            id,
-                            compartmentId,
-                            name,
-                            description,
-                            lifecycleState,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.scopes,
+                            this.userId,
+                            this.expiresOn,
+                            this.id,
+                            this.compartmentId,
+                            this.name,
+                            this.description,
+                            this.lifecycleState,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OAuth2ClientCredentialSummary o) {
-            Builder copiedBuilder =
-                    scopes(o.getScopes())
-                            .userId(o.getUserId())
-                            .expiresOn(o.getExpiresOn())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OAuth2ClientCredentialSummary model) {
+            if (model.wasPropertyExplicitlySet("scopes")) {
+                this.scopes(model.getScopes());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("expiresOn")) {
+                this.expiresOn(model.getExpiresOn());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -478,6 +496,7 @@ public final class OAuth2ClientCredentialSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OAuth2ClientCredentialSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("scopes=").append(String.valueOf(this.scopes));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
@@ -487,7 +506,6 @@ public final class OAuth2ClientCredentialSummary {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -511,7 +529,7 @@ public final class OAuth2ClientCredentialSummary {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -531,16 +549,7 @@ public final class OAuth2ClientCredentialSummary {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

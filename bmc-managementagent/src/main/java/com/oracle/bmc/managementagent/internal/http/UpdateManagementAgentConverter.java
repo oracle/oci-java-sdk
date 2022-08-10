@@ -123,8 +123,8 @@ public class UpdateManagementAgentConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .UpdateManagementAgentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementAgent(response.getItem());
 

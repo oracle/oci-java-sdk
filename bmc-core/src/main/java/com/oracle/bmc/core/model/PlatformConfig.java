@@ -53,7 +53,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PlatformConfig {
+public class PlatformConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isSecureBootEnabled",
@@ -131,6 +131,7 @@ public class PlatformConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PlatformConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("isSecureBootEnabled=").append(String.valueOf(this.isSecureBootEnabled));
         sb.append(", isTrustedPlatformModuleEnabled=")
                 .append(String.valueOf(this.isTrustedPlatformModuleEnabled));
@@ -152,8 +153,8 @@ public class PlatformConfig {
         return java.util.Objects.equals(this.isSecureBootEnabled, other.isSecureBootEnabled)
                 && java.util.Objects.equals(
                         this.isTrustedPlatformModuleEnabled, other.isTrustedPlatformModuleEnabled)
-                && java.util.Objects.equals(
-                        this.isMeasuredBootEnabled, other.isMeasuredBootEnabled);
+                && java.util.Objects.equals(this.isMeasuredBootEnabled, other.isMeasuredBootEnabled)
+                && super.equals(other);
     }
 
     @Override
@@ -175,6 +176,7 @@ public class PlatformConfig {
                         + (this.isMeasuredBootEnabled == null
                                 ? 43
                                 : this.isMeasuredBootEnabled.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

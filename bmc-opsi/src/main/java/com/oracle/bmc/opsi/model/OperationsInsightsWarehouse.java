@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = OperationsInsightsWarehouse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperationsInsightsWarehouse {
+public final class OperationsInsightsWarehouse
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -378,52 +379,85 @@ public final class OperationsInsightsWarehouse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperationsInsightsWarehouse build() {
-            OperationsInsightsWarehouse __instance__ =
+            OperationsInsightsWarehouse model =
                     new OperationsInsightsWarehouse(
-                            id,
-                            compartmentId,
-                            displayName,
-                            cpuAllocated,
-                            cpuUsed,
-                            storageAllocatedInGBs,
-                            storageUsedInGBs,
-                            dynamicGroupId,
-                            operationsInsightsTenancyId,
-                            timeLastWalletRotated,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.cpuAllocated,
+                            this.cpuUsed,
+                            this.storageAllocatedInGBs,
+                            this.storageUsedInGBs,
+                            this.dynamicGroupId,
+                            this.operationsInsightsTenancyId,
+                            this.timeLastWalletRotated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperationsInsightsWarehouse o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .cpuAllocated(o.getCpuAllocated())
-                            .cpuUsed(o.getCpuUsed())
-                            .storageAllocatedInGBs(o.getStorageAllocatedInGBs())
-                            .storageUsedInGBs(o.getStorageUsedInGBs())
-                            .dynamicGroupId(o.getDynamicGroupId())
-                            .operationsInsightsTenancyId(o.getOperationsInsightsTenancyId())
-                            .timeLastWalletRotated(o.getTimeLastWalletRotated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperationsInsightsWarehouse model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("cpuAllocated")) {
+                this.cpuAllocated(model.getCpuAllocated());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUsed")) {
+                this.cpuUsed(model.getCpuUsed());
+            }
+            if (model.wasPropertyExplicitlySet("storageAllocatedInGBs")) {
+                this.storageAllocatedInGBs(model.getStorageAllocatedInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("storageUsedInGBs")) {
+                this.storageUsedInGBs(model.getStorageUsedInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dynamicGroupId")) {
+                this.dynamicGroupId(model.getDynamicGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("operationsInsightsTenancyId")) {
+                this.operationsInsightsTenancyId(model.getOperationsInsightsTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastWalletRotated")) {
+                this.timeLastWalletRotated(model.getTimeLastWalletRotated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            return this;
         }
     }
 
@@ -709,6 +743,7 @@ public final class OperationsInsightsWarehouse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperationsInsightsWarehouse(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -727,7 +762,6 @@ public final class OperationsInsightsWarehouse {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -760,7 +794,7 @@ public final class OperationsInsightsWarehouse {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -806,16 +840,7 @@ public final class OperationsInsightsWarehouse {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

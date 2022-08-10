@@ -97,8 +97,8 @@ public class CreateDhcpOptionsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateDhcpOptionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dhcpOptions(response.getItem());
 

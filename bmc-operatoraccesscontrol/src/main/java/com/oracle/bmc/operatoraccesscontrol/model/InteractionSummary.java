@@ -19,7 +19,7 @@ package com.oracle.bmc.operatoraccesscontrol.model;
     builder = InteractionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InteractionSummary {
+public final class InteractionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -150,25 +150,41 @@ public final class InteractionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InteractionSummary build() {
-            InteractionSummary __instance__ =
+            InteractionSummary model =
                     new InteractionSummary(
-                            id, userId, userName, message, userType, timeOfConversation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.userId,
+                            this.userName,
+                            this.message,
+                            this.userType,
+                            this.timeOfConversation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InteractionSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .userId(o.getUserId())
-                            .userName(o.getUserName())
-                            .message(o.getMessage())
-                            .userType(o.getUserType())
-                            .timeOfConversation(o.getTimeOfConversation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InteractionSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("userType")) {
+                this.userType(model.getUserType());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfConversation")) {
+                this.timeOfConversation(model.getTimeOfConversation());
+            }
+            return this;
         }
     }
 
@@ -282,13 +298,13 @@ public final class InteractionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InteractionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", userType=").append(String.valueOf(this.userType));
         sb.append(", timeOfConversation=").append(String.valueOf(this.timeOfConversation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,7 +325,7 @@ public final class InteractionSummary {
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.userType, other.userType)
                 && java.util.Objects.equals(this.timeOfConversation, other.timeOfConversation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -326,16 +342,7 @@ public final class InteractionSummary {
                         + (this.timeOfConversation == null
                                 ? 43
                                 : this.timeOfConversation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

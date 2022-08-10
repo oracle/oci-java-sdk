@@ -56,17 +56,19 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "subscriptionMapping"
     })
     private GetSubscriptionMappingResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping
                     subscriptionMapping) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.subscriptionMapping = subscriptionMapping;
@@ -77,6 +79,13 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetSubscriptionMappingResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             subscriptionMapping(o.getSubscriptionMapping());
@@ -153,7 +163,7 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetSubscriptionMappingResponse build() {
             return new GetSubscriptionMappingResponse(
-                    __httpStatusCode__, opcRequestId, etag, subscriptionMapping);
+                    __httpStatusCode__, headers, opcRequestId, etag, subscriptionMapping);
         }
     }
 

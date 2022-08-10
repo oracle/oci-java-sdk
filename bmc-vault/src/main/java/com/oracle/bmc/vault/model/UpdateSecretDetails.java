@@ -19,7 +19,7 @@ package com.oracle.bmc.vault.model;
     builder = UpdateSecretDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSecretDetails {
+public final class UpdateSecretDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "currentVersionNumber",
@@ -185,32 +185,45 @@ public final class UpdateSecretDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSecretDetails build() {
-            UpdateSecretDetails __instance__ =
+            UpdateSecretDetails model =
                     new UpdateSecretDetails(
-                            currentVersionNumber,
-                            definedTags,
-                            description,
-                            freeformTags,
-                            metadata,
-                            secretContent,
-                            secretRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.currentVersionNumber,
+                            this.definedTags,
+                            this.description,
+                            this.freeformTags,
+                            this.metadata,
+                            this.secretContent,
+                            this.secretRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSecretDetails o) {
-            Builder copiedBuilder =
-                    currentVersionNumber(o.getCurrentVersionNumber())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .freeformTags(o.getFreeformTags())
-                            .metadata(o.getMetadata())
-                            .secretContent(o.getSecretContent())
-                            .secretRules(o.getSecretRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSecretDetails model) {
+            if (model.wasPropertyExplicitlySet("currentVersionNumber")) {
+                this.currentVersionNumber(model.getCurrentVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("secretContent")) {
+                this.secretContent(model.getSecretContent());
+            }
+            if (model.wasPropertyExplicitlySet("secretRules")) {
+                this.secretRules(model.getSecretRules());
+            }
+            return this;
         }
     }
 
@@ -353,6 +366,7 @@ public final class UpdateSecretDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSecretDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("currentVersionNumber=").append(String.valueOf(this.currentVersionNumber));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -360,7 +374,6 @@ public final class UpdateSecretDetails {
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -382,7 +395,7 @@ public final class UpdateSecretDetails {
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -402,16 +415,7 @@ public final class UpdateSecretDetails {
                 (result * PRIME)
                         + (this.secretContent == null ? 43 : this.secretContent.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

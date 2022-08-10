@@ -57,17 +57,19 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "ingestSqlPlanLinesResponseDetails"
     })
     private IngestSqlPlanLinesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.opsi.model.IngestSqlPlanLinesResponseDetails
                     ingestSqlPlanLinesResponseDetails) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.ingestSqlPlanLinesResponseDetails = ingestSqlPlanLinesResponseDetails;
@@ -78,6 +80,13 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(IngestSqlPlanLinesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             ingestSqlPlanLinesResponseDetails(o.getIngestSqlPlanLinesResponseDetails());
@@ -154,7 +164,11 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public IngestSqlPlanLinesResponse build() {
             return new IngestSqlPlanLinesResponse(
-                    __httpStatusCode__, opcRequestId, etag, ingestSqlPlanLinesResponseDetails);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    etag,
+                    ingestSqlPlanLinesResponseDetails);
         }
     }
 

@@ -59,16 +59,18 @@ public class ListWorkItemsResponse extends com.oracle.bmc.responses.BmcResponse 
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "workItemCollection"
     })
     private ListWorkItemsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.jms.model.WorkItemCollection workItemCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.workItemCollection = workItemCollection;
@@ -79,6 +81,13 @@ public class ListWorkItemsResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListWorkItemsResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(ListWorkItemsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             workItemCollection(o.getWorkItemCollection());
@@ -157,7 +167,7 @@ public class ListWorkItemsResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public ListWorkItemsResponse build() {
             return new ListWorkItemsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, workItemCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, workItemCollection);
         }
     }
 

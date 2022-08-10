@@ -21,7 +21,8 @@ package com.oracle.bmc.identity.model;
     builder = CustomerSecretKeySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CustomerSecretKeySummary {
+public final class CustomerSecretKeySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -187,32 +188,45 @@ public final class CustomerSecretKeySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomerSecretKeySummary build() {
-            CustomerSecretKeySummary __instance__ =
+            CustomerSecretKeySummary model =
                     new CustomerSecretKeySummary(
-                            id,
-                            userId,
-                            displayName,
-                            timeCreated,
-                            timeExpires,
-                            lifecycleState,
-                            inactiveStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.userId,
+                            this.displayName,
+                            this.timeCreated,
+                            this.timeExpires,
+                            this.lifecycleState,
+                            this.inactiveStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CustomerSecretKeySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .userId(o.getUserId())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeExpires(o.getTimeExpires())
-                            .lifecycleState(o.getLifecycleState())
-                            .inactiveStatus(o.getInactiveStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CustomerSecretKeySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpires")) {
+                this.timeExpires(model.getTimeExpires());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("inactiveStatus")) {
+                this.inactiveStatus(model.getInactiveStatus());
+            }
+            return this;
         }
     }
 
@@ -409,6 +423,7 @@ public final class CustomerSecretKeySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CustomerSecretKeySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -416,7 +431,6 @@ public final class CustomerSecretKeySummary {
         sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", inactiveStatus=").append(String.valueOf(this.inactiveStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -438,7 +452,7 @@ public final class CustomerSecretKeySummary {
                 && java.util.Objects.equals(this.timeExpires, other.timeExpires)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.inactiveStatus, other.inactiveStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -456,16 +470,7 @@ public final class CustomerSecretKeySummary {
         result =
                 (result * PRIME)
                         + (this.inactiveStatus == null ? 43 : this.inactiveStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

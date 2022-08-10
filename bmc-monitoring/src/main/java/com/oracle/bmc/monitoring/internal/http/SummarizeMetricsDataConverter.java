@@ -129,8 +129,8 @@ public class SummarizeMetricsDataConverter {
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
                                                         .SummarizeMetricsDataResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

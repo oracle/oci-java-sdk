@@ -19,7 +19,8 @@ package com.oracle.bmc.mysql.model;
     builder = ConfigurationVariables.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConfigurationVariables {
+public final class ConfigurationVariables
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "completionType",
@@ -1141,133 +1142,238 @@ public final class ConfigurationVariables {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfigurationVariables build() {
-            ConfigurationVariables __instance__ =
+            ConfigurationVariables model =
                     new ConfigurationVariables(
-                            completionType,
-                            defaultAuthenticationPlugin,
-                            transactionIsolation,
-                            innodbFtServerStopwordTable,
-                            mandatoryRoles,
-                            autocommit,
-                            foreignKeyChecks,
-                            groupReplicationConsistency,
-                            innodbFtEnableStopword,
-                            localInfile,
-                            mysqlFirewallMode,
-                            mysqlxEnableHelloNotice,
-                            sqlRequirePrimaryKey,
-                            sqlWarnings,
-                            binlogExpireLogsSeconds,
-                            binlogRowMetadata,
-                            binlogRowValueOptions,
-                            binlogTransactionCompression,
-                            innodbBufferPoolSize,
-                            innodbFtResultCacheLimit,
-                            maxConnections,
-                            maxPreparedStmtCount,
-                            connectTimeout,
-                            cteMaxRecursionDepth,
-                            generatedRandomPasswordLength,
-                            informationSchemaStatsExpiry,
-                            innodbBufferPoolInstances,
-                            innodbFtMaxTokenSize,
-                            innodbFtMinTokenSize,
-                            innodbFtNumWordOptimize,
-                            innodbLockWaitTimeout,
-                            innodbMaxPurgeLag,
-                            innodbMaxPurgeLagDelay,
-                            maxExecutionTime,
-                            mysqlxConnectTimeout,
-                            mysqlxDocumentIdUniquePrefix,
-                            mysqlxIdleWorkerThreadTimeout,
-                            mysqlxInteractiveTimeout,
-                            mysqlxMaxAllowedPacket,
-                            mysqlxMinWorkerThreads,
-                            mysqlxReadTimeout,
-                            mysqlxWaitTimeout,
-                            mysqlxWriteTimeout,
-                            parserMaxMemSize,
-                            queryAllocBlockSize,
-                            queryPreallocSize,
-                            sqlMode,
-                            mysqlxDeflateDefaultCompressionLevel,
-                            mysqlxDeflateMaxClientCompressionLevel,
-                            mysqlxLz4MaxClientCompressionLevel,
-                            mysqlxLz4DefaultCompressionLevel,
-                            mysqlxZstdMaxClientCompressionLevel,
-                            mysqlxZstdDefaultCompressionLevel,
-                            mysqlZstdDefaultCompressionLevel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.completionType,
+                            this.defaultAuthenticationPlugin,
+                            this.transactionIsolation,
+                            this.innodbFtServerStopwordTable,
+                            this.mandatoryRoles,
+                            this.autocommit,
+                            this.foreignKeyChecks,
+                            this.groupReplicationConsistency,
+                            this.innodbFtEnableStopword,
+                            this.localInfile,
+                            this.mysqlFirewallMode,
+                            this.mysqlxEnableHelloNotice,
+                            this.sqlRequirePrimaryKey,
+                            this.sqlWarnings,
+                            this.binlogExpireLogsSeconds,
+                            this.binlogRowMetadata,
+                            this.binlogRowValueOptions,
+                            this.binlogTransactionCompression,
+                            this.innodbBufferPoolSize,
+                            this.innodbFtResultCacheLimit,
+                            this.maxConnections,
+                            this.maxPreparedStmtCount,
+                            this.connectTimeout,
+                            this.cteMaxRecursionDepth,
+                            this.generatedRandomPasswordLength,
+                            this.informationSchemaStatsExpiry,
+                            this.innodbBufferPoolInstances,
+                            this.innodbFtMaxTokenSize,
+                            this.innodbFtMinTokenSize,
+                            this.innodbFtNumWordOptimize,
+                            this.innodbLockWaitTimeout,
+                            this.innodbMaxPurgeLag,
+                            this.innodbMaxPurgeLagDelay,
+                            this.maxExecutionTime,
+                            this.mysqlxConnectTimeout,
+                            this.mysqlxDocumentIdUniquePrefix,
+                            this.mysqlxIdleWorkerThreadTimeout,
+                            this.mysqlxInteractiveTimeout,
+                            this.mysqlxMaxAllowedPacket,
+                            this.mysqlxMinWorkerThreads,
+                            this.mysqlxReadTimeout,
+                            this.mysqlxWaitTimeout,
+                            this.mysqlxWriteTimeout,
+                            this.parserMaxMemSize,
+                            this.queryAllocBlockSize,
+                            this.queryPreallocSize,
+                            this.sqlMode,
+                            this.mysqlxDeflateDefaultCompressionLevel,
+                            this.mysqlxDeflateMaxClientCompressionLevel,
+                            this.mysqlxLz4MaxClientCompressionLevel,
+                            this.mysqlxLz4DefaultCompressionLevel,
+                            this.mysqlxZstdMaxClientCompressionLevel,
+                            this.mysqlxZstdDefaultCompressionLevel,
+                            this.mysqlZstdDefaultCompressionLevel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConfigurationVariables o) {
-            Builder copiedBuilder =
-                    completionType(o.getCompletionType())
-                            .defaultAuthenticationPlugin(o.getDefaultAuthenticationPlugin())
-                            .transactionIsolation(o.getTransactionIsolation())
-                            .innodbFtServerStopwordTable(o.getInnodbFtServerStopwordTable())
-                            .mandatoryRoles(o.getMandatoryRoles())
-                            .autocommit(o.getAutocommit())
-                            .foreignKeyChecks(o.getForeignKeyChecks())
-                            .groupReplicationConsistency(o.getGroupReplicationConsistency())
-                            .innodbFtEnableStopword(o.getInnodbFtEnableStopword())
-                            .localInfile(o.getLocalInfile())
-                            .mysqlFirewallMode(o.getMysqlFirewallMode())
-                            .mysqlxEnableHelloNotice(o.getMysqlxEnableHelloNotice())
-                            .sqlRequirePrimaryKey(o.getSqlRequirePrimaryKey())
-                            .sqlWarnings(o.getSqlWarnings())
-                            .binlogExpireLogsSeconds(o.getBinlogExpireLogsSeconds())
-                            .binlogRowMetadata(o.getBinlogRowMetadata())
-                            .binlogRowValueOptions(o.getBinlogRowValueOptions())
-                            .binlogTransactionCompression(o.getBinlogTransactionCompression())
-                            .innodbBufferPoolSize(o.getInnodbBufferPoolSize())
-                            .innodbFtResultCacheLimit(o.getInnodbFtResultCacheLimit())
-                            .maxConnections(o.getMaxConnections())
-                            .maxPreparedStmtCount(o.getMaxPreparedStmtCount())
-                            .connectTimeout(o.getConnectTimeout())
-                            .cteMaxRecursionDepth(o.getCteMaxRecursionDepth())
-                            .generatedRandomPasswordLength(o.getGeneratedRandomPasswordLength())
-                            .informationSchemaStatsExpiry(o.getInformationSchemaStatsExpiry())
-                            .innodbBufferPoolInstances(o.getInnodbBufferPoolInstances())
-                            .innodbFtMaxTokenSize(o.getInnodbFtMaxTokenSize())
-                            .innodbFtMinTokenSize(o.getInnodbFtMinTokenSize())
-                            .innodbFtNumWordOptimize(o.getInnodbFtNumWordOptimize())
-                            .innodbLockWaitTimeout(o.getInnodbLockWaitTimeout())
-                            .innodbMaxPurgeLag(o.getInnodbMaxPurgeLag())
-                            .innodbMaxPurgeLagDelay(o.getInnodbMaxPurgeLagDelay())
-                            .maxExecutionTime(o.getMaxExecutionTime())
-                            .mysqlxConnectTimeout(o.getMysqlxConnectTimeout())
-                            .mysqlxDocumentIdUniquePrefix(o.getMysqlxDocumentIdUniquePrefix())
-                            .mysqlxIdleWorkerThreadTimeout(o.getMysqlxIdleWorkerThreadTimeout())
-                            .mysqlxInteractiveTimeout(o.getMysqlxInteractiveTimeout())
-                            .mysqlxMaxAllowedPacket(o.getMysqlxMaxAllowedPacket())
-                            .mysqlxMinWorkerThreads(o.getMysqlxMinWorkerThreads())
-                            .mysqlxReadTimeout(o.getMysqlxReadTimeout())
-                            .mysqlxWaitTimeout(o.getMysqlxWaitTimeout())
-                            .mysqlxWriteTimeout(o.getMysqlxWriteTimeout())
-                            .parserMaxMemSize(o.getParserMaxMemSize())
-                            .queryAllocBlockSize(o.getQueryAllocBlockSize())
-                            .queryPreallocSize(o.getQueryPreallocSize())
-                            .sqlMode(o.getSqlMode())
-                            .mysqlxDeflateDefaultCompressionLevel(
-                                    o.getMysqlxDeflateDefaultCompressionLevel())
-                            .mysqlxDeflateMaxClientCompressionLevel(
-                                    o.getMysqlxDeflateMaxClientCompressionLevel())
-                            .mysqlxLz4MaxClientCompressionLevel(
-                                    o.getMysqlxLz4MaxClientCompressionLevel())
-                            .mysqlxLz4DefaultCompressionLevel(
-                                    o.getMysqlxLz4DefaultCompressionLevel())
-                            .mysqlxZstdMaxClientCompressionLevel(
-                                    o.getMysqlxZstdMaxClientCompressionLevel())
-                            .mysqlxZstdDefaultCompressionLevel(
-                                    o.getMysqlxZstdDefaultCompressionLevel())
-                            .mysqlZstdDefaultCompressionLevel(
-                                    o.getMysqlZstdDefaultCompressionLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConfigurationVariables model) {
+            if (model.wasPropertyExplicitlySet("completionType")) {
+                this.completionType(model.getCompletionType());
+            }
+            if (model.wasPropertyExplicitlySet("defaultAuthenticationPlugin")) {
+                this.defaultAuthenticationPlugin(model.getDefaultAuthenticationPlugin());
+            }
+            if (model.wasPropertyExplicitlySet("transactionIsolation")) {
+                this.transactionIsolation(model.getTransactionIsolation());
+            }
+            if (model.wasPropertyExplicitlySet("innodbFtServerStopwordTable")) {
+                this.innodbFtServerStopwordTable(model.getInnodbFtServerStopwordTable());
+            }
+            if (model.wasPropertyExplicitlySet("mandatoryRoles")) {
+                this.mandatoryRoles(model.getMandatoryRoles());
+            }
+            if (model.wasPropertyExplicitlySet("autocommit")) {
+                this.autocommit(model.getAutocommit());
+            }
+            if (model.wasPropertyExplicitlySet("foreignKeyChecks")) {
+                this.foreignKeyChecks(model.getForeignKeyChecks());
+            }
+            if (model.wasPropertyExplicitlySet("groupReplicationConsistency")) {
+                this.groupReplicationConsistency(model.getGroupReplicationConsistency());
+            }
+            if (model.wasPropertyExplicitlySet("innodbFtEnableStopword")) {
+                this.innodbFtEnableStopword(model.getInnodbFtEnableStopword());
+            }
+            if (model.wasPropertyExplicitlySet("localInfile")) {
+                this.localInfile(model.getLocalInfile());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlFirewallMode")) {
+                this.mysqlFirewallMode(model.getMysqlFirewallMode());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxEnableHelloNotice")) {
+                this.mysqlxEnableHelloNotice(model.getMysqlxEnableHelloNotice());
+            }
+            if (model.wasPropertyExplicitlySet("sqlRequirePrimaryKey")) {
+                this.sqlRequirePrimaryKey(model.getSqlRequirePrimaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("sqlWarnings")) {
+                this.sqlWarnings(model.getSqlWarnings());
+            }
+            if (model.wasPropertyExplicitlySet("binlogExpireLogsSeconds")) {
+                this.binlogExpireLogsSeconds(model.getBinlogExpireLogsSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("binlogRowMetadata")) {
+                this.binlogRowMetadata(model.getBinlogRowMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("binlogRowValueOptions")) {
+                this.binlogRowValueOptions(model.getBinlogRowValueOptions());
+            }
+            if (model.wasPropertyExplicitlySet("binlogTransactionCompression")) {
+                this.binlogTransactionCompression(model.getBinlogTransactionCompression());
+            }
+            if (model.wasPropertyExplicitlySet("innodbBufferPoolSize")) {
+                this.innodbBufferPoolSize(model.getInnodbBufferPoolSize());
+            }
+            if (model.wasPropertyExplicitlySet("innodbFtResultCacheLimit")) {
+                this.innodbFtResultCacheLimit(model.getInnodbFtResultCacheLimit());
+            }
+            if (model.wasPropertyExplicitlySet("maxConnections")) {
+                this.maxConnections(model.getMaxConnections());
+            }
+            if (model.wasPropertyExplicitlySet("maxPreparedStmtCount")) {
+                this.maxPreparedStmtCount(model.getMaxPreparedStmtCount());
+            }
+            if (model.wasPropertyExplicitlySet("connectTimeout")) {
+                this.connectTimeout(model.getConnectTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("cteMaxRecursionDepth")) {
+                this.cteMaxRecursionDepth(model.getCteMaxRecursionDepth());
+            }
+            if (model.wasPropertyExplicitlySet("generatedRandomPasswordLength")) {
+                this.generatedRandomPasswordLength(model.getGeneratedRandomPasswordLength());
+            }
+            if (model.wasPropertyExplicitlySet("informationSchemaStatsExpiry")) {
+                this.informationSchemaStatsExpiry(model.getInformationSchemaStatsExpiry());
+            }
+            if (model.wasPropertyExplicitlySet("innodbBufferPoolInstances")) {
+                this.innodbBufferPoolInstances(model.getInnodbBufferPoolInstances());
+            }
+            if (model.wasPropertyExplicitlySet("innodbFtMaxTokenSize")) {
+                this.innodbFtMaxTokenSize(model.getInnodbFtMaxTokenSize());
+            }
+            if (model.wasPropertyExplicitlySet("innodbFtMinTokenSize")) {
+                this.innodbFtMinTokenSize(model.getInnodbFtMinTokenSize());
+            }
+            if (model.wasPropertyExplicitlySet("innodbFtNumWordOptimize")) {
+                this.innodbFtNumWordOptimize(model.getInnodbFtNumWordOptimize());
+            }
+            if (model.wasPropertyExplicitlySet("innodbLockWaitTimeout")) {
+                this.innodbLockWaitTimeout(model.getInnodbLockWaitTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("innodbMaxPurgeLag")) {
+                this.innodbMaxPurgeLag(model.getInnodbMaxPurgeLag());
+            }
+            if (model.wasPropertyExplicitlySet("innodbMaxPurgeLagDelay")) {
+                this.innodbMaxPurgeLagDelay(model.getInnodbMaxPurgeLagDelay());
+            }
+            if (model.wasPropertyExplicitlySet("maxExecutionTime")) {
+                this.maxExecutionTime(model.getMaxExecutionTime());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxConnectTimeout")) {
+                this.mysqlxConnectTimeout(model.getMysqlxConnectTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxDocumentIdUniquePrefix")) {
+                this.mysqlxDocumentIdUniquePrefix(model.getMysqlxDocumentIdUniquePrefix());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxIdleWorkerThreadTimeout")) {
+                this.mysqlxIdleWorkerThreadTimeout(model.getMysqlxIdleWorkerThreadTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxInteractiveTimeout")) {
+                this.mysqlxInteractiveTimeout(model.getMysqlxInteractiveTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxMaxAllowedPacket")) {
+                this.mysqlxMaxAllowedPacket(model.getMysqlxMaxAllowedPacket());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxMinWorkerThreads")) {
+                this.mysqlxMinWorkerThreads(model.getMysqlxMinWorkerThreads());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxReadTimeout")) {
+                this.mysqlxReadTimeout(model.getMysqlxReadTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxWaitTimeout")) {
+                this.mysqlxWaitTimeout(model.getMysqlxWaitTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxWriteTimeout")) {
+                this.mysqlxWriteTimeout(model.getMysqlxWriteTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("parserMaxMemSize")) {
+                this.parserMaxMemSize(model.getParserMaxMemSize());
+            }
+            if (model.wasPropertyExplicitlySet("queryAllocBlockSize")) {
+                this.queryAllocBlockSize(model.getQueryAllocBlockSize());
+            }
+            if (model.wasPropertyExplicitlySet("queryPreallocSize")) {
+                this.queryPreallocSize(model.getQueryPreallocSize());
+            }
+            if (model.wasPropertyExplicitlySet("sqlMode")) {
+                this.sqlMode(model.getSqlMode());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxDeflateDefaultCompressionLevel")) {
+                this.mysqlxDeflateDefaultCompressionLevel(
+                        model.getMysqlxDeflateDefaultCompressionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxDeflateMaxClientCompressionLevel")) {
+                this.mysqlxDeflateMaxClientCompressionLevel(
+                        model.getMysqlxDeflateMaxClientCompressionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxLz4MaxClientCompressionLevel")) {
+                this.mysqlxLz4MaxClientCompressionLevel(
+                        model.getMysqlxLz4MaxClientCompressionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxLz4DefaultCompressionLevel")) {
+                this.mysqlxLz4DefaultCompressionLevel(model.getMysqlxLz4DefaultCompressionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxZstdMaxClientCompressionLevel")) {
+                this.mysqlxZstdMaxClientCompressionLevel(
+                        model.getMysqlxZstdMaxClientCompressionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlxZstdDefaultCompressionLevel")) {
+                this.mysqlxZstdDefaultCompressionLevel(
+                        model.getMysqlxZstdDefaultCompressionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("mysqlZstdDefaultCompressionLevel")) {
+                this.mysqlZstdDefaultCompressionLevel(model.getMysqlZstdDefaultCompressionLevel());
+            }
+            return this;
         }
     }
 
@@ -2404,6 +2510,7 @@ public final class ConfigurationVariables {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfigurationVariables(");
+        sb.append("super=").append(super.toString());
         sb.append("completionType=").append(String.valueOf(this.completionType));
         sb.append(", defaultAuthenticationPlugin=")
                 .append(String.valueOf(this.defaultAuthenticationPlugin));
@@ -2479,7 +2586,6 @@ public final class ConfigurationVariables {
                 .append(String.valueOf(this.mysqlxZstdDefaultCompressionLevel));
         sb.append(", mysqlZstdDefaultCompressionLevel=")
                 .append(String.valueOf(this.mysqlZstdDefaultCompressionLevel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -2580,7 +2686,7 @@ public final class ConfigurationVariables {
                 && java.util.Objects.equals(
                         this.mysqlZstdDefaultCompressionLevel,
                         other.mysqlZstdDefaultCompressionLevel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2815,16 +2921,7 @@ public final class ConfigurationVariables {
                         + (this.mysqlZstdDefaultCompressionLevel == null
                                 ? 43
                                 : this.mysqlZstdDefaultCompressionLevel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

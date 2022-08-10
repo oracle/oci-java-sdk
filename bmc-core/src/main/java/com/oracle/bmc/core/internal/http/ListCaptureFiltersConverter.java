@@ -160,8 +160,8 @@ public class ListCaptureFiltersConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListCaptureFiltersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

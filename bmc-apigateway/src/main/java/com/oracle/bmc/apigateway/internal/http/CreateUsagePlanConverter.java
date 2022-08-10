@@ -102,8 +102,8 @@ public class CreateUsagePlanConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .CreateUsagePlanResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.usagePlan(response.getItem());
 

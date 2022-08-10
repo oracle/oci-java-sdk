@@ -53,16 +53,18 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "preauthenticatedRequest"
     })
     private CreatePreauthenticatedRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             com.oracle.bmc.objectstorage.model.PreauthenticatedRequest preauthenticatedRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.preauthenticatedRequest = preauthenticatedRequest;
@@ -73,6 +75,13 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -133,6 +142,7 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
          */
         public Builder copy(CreatePreauthenticatedRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             preauthenticatedRequest(o.getPreauthenticatedRequest());
@@ -146,7 +156,11 @@ public class CreatePreauthenticatedRequestResponse extends com.oracle.bmc.respon
          */
         public CreatePreauthenticatedRequestResponse build() {
             return new CreatePreauthenticatedRequestResponse(
-                    __httpStatusCode__, opcClientRequestId, opcRequestId, preauthenticatedRequest);
+                    __httpStatusCode__,
+                    headers,
+                    opcClientRequestId,
+                    opcRequestId,
+                    preauthenticatedRequest);
         }
     }
 

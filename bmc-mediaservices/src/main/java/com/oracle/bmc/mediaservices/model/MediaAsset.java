@@ -17,7 +17,7 @@ package com.oracle.bmc.mediaservices.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MediaAsset.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MediaAsset {
+public final class MediaAsset extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -482,64 +482,109 @@ public final class MediaAsset {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MediaAsset build() {
-            MediaAsset __instance__ =
+            MediaAsset model =
                     new MediaAsset(
-                            id,
-                            compartmentId,
-                            sourceMediaWorkflowId,
-                            mediaWorkflowJobId,
-                            sourceMediaWorkflowVersion,
-                            displayName,
-                            timeCreated,
-                            lifecycleState,
-                            type,
-                            parentMediaAssetId,
-                            masterMediaAssetId,
-                            bucketName,
-                            namespaceName,
-                            objectName,
-                            objectEtag,
-                            timeUpdated,
-                            segmentRangeStartIndex,
-                            segmentRangeEndIndex,
-                            metadata,
-                            mediaAssetTags,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.sourceMediaWorkflowId,
+                            this.mediaWorkflowJobId,
+                            this.sourceMediaWorkflowVersion,
+                            this.displayName,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.type,
+                            this.parentMediaAssetId,
+                            this.masterMediaAssetId,
+                            this.bucketName,
+                            this.namespaceName,
+                            this.objectName,
+                            this.objectEtag,
+                            this.timeUpdated,
+                            this.segmentRangeStartIndex,
+                            this.segmentRangeEndIndex,
+                            this.metadata,
+                            this.mediaAssetTags,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MediaAsset o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .sourceMediaWorkflowId(o.getSourceMediaWorkflowId())
-                            .mediaWorkflowJobId(o.getMediaWorkflowJobId())
-                            .sourceMediaWorkflowVersion(o.getSourceMediaWorkflowVersion())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .type(o.getType())
-                            .parentMediaAssetId(o.getParentMediaAssetId())
-                            .masterMediaAssetId(o.getMasterMediaAssetId())
-                            .bucketName(o.getBucketName())
-                            .namespaceName(o.getNamespaceName())
-                            .objectName(o.getObjectName())
-                            .objectEtag(o.getObjectEtag())
-                            .timeUpdated(o.getTimeUpdated())
-                            .segmentRangeStartIndex(o.getSegmentRangeStartIndex())
-                            .segmentRangeEndIndex(o.getSegmentRangeEndIndex())
-                            .metadata(o.getMetadata())
-                            .mediaAssetTags(o.getMediaAssetTags())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MediaAsset model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceMediaWorkflowId")) {
+                this.sourceMediaWorkflowId(model.getSourceMediaWorkflowId());
+            }
+            if (model.wasPropertyExplicitlySet("mediaWorkflowJobId")) {
+                this.mediaWorkflowJobId(model.getMediaWorkflowJobId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceMediaWorkflowVersion")) {
+                this.sourceMediaWorkflowVersion(model.getSourceMediaWorkflowVersion());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("parentMediaAssetId")) {
+                this.parentMediaAssetId(model.getParentMediaAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("masterMediaAssetId")) {
+                this.masterMediaAssetId(model.getMasterMediaAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceName")) {
+                this.namespaceName(model.getNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectEtag")) {
+                this.objectEtag(model.getObjectEtag());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("segmentRangeStartIndex")) {
+                this.segmentRangeStartIndex(model.getSegmentRangeStartIndex());
+            }
+            if (model.wasPropertyExplicitlySet("segmentRangeEndIndex")) {
+                this.segmentRangeEndIndex(model.getSegmentRangeEndIndex());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("mediaAssetTags")) {
+                this.mediaAssetTags(model.getMediaAssetTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -901,6 +946,7 @@ public final class MediaAsset {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MediaAsset(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sourceMediaWorkflowId=").append(String.valueOf(this.sourceMediaWorkflowId));
@@ -925,7 +971,6 @@ public final class MediaAsset {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -965,7 +1010,7 @@ public final class MediaAsset {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1031,16 +1076,7 @@ public final class MediaAsset {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

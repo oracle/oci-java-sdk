@@ -19,7 +19,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = ScheduleCertificateVersionDeletionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScheduleCertificateVersionDeletionDetails {
+public final class ScheduleCertificateVersionDeletionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeOfDeletion"})
     public ScheduleCertificateVersionDeletionDetails(java.util.Date timeOfDeletion) {
@@ -52,18 +53,20 @@ public final class ScheduleCertificateVersionDeletionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScheduleCertificateVersionDeletionDetails build() {
-            ScheduleCertificateVersionDeletionDetails __instance__ =
-                    new ScheduleCertificateVersionDeletionDetails(timeOfDeletion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ScheduleCertificateVersionDeletionDetails model =
+                    new ScheduleCertificateVersionDeletionDetails(this.timeOfDeletion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScheduleCertificateVersionDeletionDetails o) {
-            Builder copiedBuilder = timeOfDeletion(o.getTimeOfDeletion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScheduleCertificateVersionDeletionDetails model) {
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            return this;
         }
     }
 
@@ -107,8 +110,8 @@ public final class ScheduleCertificateVersionDeletionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScheduleCertificateVersionDeletionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -125,7 +128,7 @@ public final class ScheduleCertificateVersionDeletionDetails {
         ScheduleCertificateVersionDeletionDetails other =
                 (ScheduleCertificateVersionDeletionDetails) o;
         return java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -135,16 +138,7 @@ public final class ScheduleCertificateVersionDeletionDetails {
         result =
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

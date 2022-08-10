@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CreateExecuteOperationJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateExecuteOperationJobDetails {
+public final class CreateExecuteOperationJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operation", "callOperationConfig", "inputRecords"})
     public CreateExecuteOperationJobDetails(
@@ -73,22 +74,27 @@ public final class CreateExecuteOperationJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateExecuteOperationJobDetails build() {
-            CreateExecuteOperationJobDetails __instance__ =
+            CreateExecuteOperationJobDetails model =
                     new CreateExecuteOperationJobDetails(
-                            operation, callOperationConfig, inputRecords);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operation, this.callOperationConfig, this.inputRecords);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateExecuteOperationJobDetails o) {
-            Builder copiedBuilder =
-                    operation(o.getOperation())
-                            .callOperationConfig(o.getCallOperationConfig())
-                            .inputRecords(o.getInputRecords());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateExecuteOperationJobDetails model) {
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("callOperationConfig")) {
+                this.callOperationConfig(model.getCallOperationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("inputRecords")) {
+                this.inputRecords(model.getInputRecords());
+            }
+            return this;
         }
     }
 
@@ -144,10 +150,10 @@ public final class CreateExecuteOperationJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateExecuteOperationJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("operation=").append(String.valueOf(this.operation));
         sb.append(", callOperationConfig=").append(String.valueOf(this.callOperationConfig));
         sb.append(", inputRecords=").append(String.valueOf(this.inputRecords));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -165,7 +171,7 @@ public final class CreateExecuteOperationJobDetails {
         return java.util.Objects.equals(this.operation, other.operation)
                 && java.util.Objects.equals(this.callOperationConfig, other.callOperationConfig)
                 && java.util.Objects.equals(this.inputRecords, other.inputRecords)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -179,16 +185,7 @@ public final class CreateExecuteOperationJobDetails {
                                 ? 43
                                 : this.callOperationConfig.hashCode());
         result = (result * PRIME) + (this.inputRecords == null ? 43 : this.inputRecords.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

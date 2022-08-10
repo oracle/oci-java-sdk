@@ -19,7 +19,8 @@ package com.oracle.bmc.integration.model;
     builder = CreateCustomEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateCustomEndpointDetails {
+public final class CreateCustomEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname", "certificateSecretId"})
     public CreateCustomEndpointDetails(String hostname, String certificateSecretId) {
@@ -73,19 +74,23 @@ public final class CreateCustomEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCustomEndpointDetails build() {
-            CreateCustomEndpointDetails __instance__ =
-                    new CreateCustomEndpointDetails(hostname, certificateSecretId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateCustomEndpointDetails model =
+                    new CreateCustomEndpointDetails(this.hostname, this.certificateSecretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCustomEndpointDetails o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname()).certificateSecretId(o.getCertificateSecretId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateCustomEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("certificateSecretId")) {
+                this.certificateSecretId(model.getCertificateSecretId());
+            }
+            return this;
         }
     }
 
@@ -147,9 +152,9 @@ public final class CreateCustomEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateCustomEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", certificateSecretId=").append(String.valueOf(this.certificateSecretId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -166,7 +171,7 @@ public final class CreateCustomEndpointDetails {
         CreateCustomEndpointDetails other = (CreateCustomEndpointDetails) o;
         return java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.certificateSecretId, other.certificateSecretId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -179,16 +184,7 @@ public final class CreateCustomEndpointDetails {
                         + (this.certificateSecretId == null
                                 ? 43
                                 : this.certificateSecretId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

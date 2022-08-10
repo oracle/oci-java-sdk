@@ -70,21 +70,27 @@ public final class ManagedDatabaseSecretCredential extends ManagedDatabaseCreden
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedDatabaseSecretCredential build() {
-            ManagedDatabaseSecretCredential __instance__ =
-                    new ManagedDatabaseSecretCredential(username, role, passwordSecretId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ManagedDatabaseSecretCredential model =
+                    new ManagedDatabaseSecretCredential(
+                            this.username, this.role, this.passwordSecretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagedDatabaseSecretCredential o) {
-            Builder copiedBuilder =
-                    username(o.getUsername())
-                            .role(o.getRole())
-                            .passwordSecretId(o.getPasswordSecretId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagedDatabaseSecretCredential model) {
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            return this;
         }
     }
 
@@ -138,7 +144,6 @@ public final class ManagedDatabaseSecretCredential extends ManagedDatabaseCreden
         sb.append("ManagedDatabaseSecretCredential(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,8 +159,7 @@ public final class ManagedDatabaseSecretCredential extends ManagedDatabaseCreden
 
         ManagedDatabaseSecretCredential other = (ManagedDatabaseSecretCredential) o;
         return java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +169,6 @@ public final class ManagedDatabaseSecretCredential extends ManagedDatabaseCreden
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

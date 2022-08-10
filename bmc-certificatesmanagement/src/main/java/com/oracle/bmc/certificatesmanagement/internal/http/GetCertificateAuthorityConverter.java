@@ -115,8 +115,8 @@ public class GetCertificateAuthorityConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .GetCertificateAuthorityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateAuthority(response.getItem());
 

@@ -88,30 +88,41 @@ public final class CreateComputeInstanceGroupDeployEnvironmentDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateComputeInstanceGroupDeployEnvironmentDetails build() {
-            CreateComputeInstanceGroupDeployEnvironmentDetails __instance__ =
+            CreateComputeInstanceGroupDeployEnvironmentDetails model =
                     new CreateComputeInstanceGroupDeployEnvironmentDetails(
-                            description,
-                            displayName,
-                            projectId,
-                            freeformTags,
-                            definedTags,
-                            computeInstanceGroupSelectors);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.projectId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.computeInstanceGroupSelectors);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateComputeInstanceGroupDeployEnvironmentDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .computeInstanceGroupSelectors(o.getComputeInstanceGroupSelectors());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateComputeInstanceGroupDeployEnvironmentDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("computeInstanceGroupSelectors")) {
+                this.computeInstanceGroupSelectors(model.getComputeInstanceGroupSelectors());
+            }
+            return this;
         }
     }
 
@@ -161,7 +172,6 @@ public final class CreateComputeInstanceGroupDeployEnvironmentDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", computeInstanceGroupSelectors=")
                 .append(String.valueOf(this.computeInstanceGroupSelectors));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -179,8 +189,7 @@ public final class CreateComputeInstanceGroupDeployEnvironmentDetails
                 (CreateComputeInstanceGroupDeployEnvironmentDetails) o;
         return java.util.Objects.equals(
                         this.computeInstanceGroupSelectors, other.computeInstanceGroupSelectors)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -192,16 +201,6 @@ public final class CreateComputeInstanceGroupDeployEnvironmentDetails
                         + (this.computeInstanceGroupSelectors == null
                                 ? 43
                                 : this.computeInstanceGroupSelectors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

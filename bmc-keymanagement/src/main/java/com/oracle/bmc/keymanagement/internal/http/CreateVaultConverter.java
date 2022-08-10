@@ -101,8 +101,8 @@ public class CreateVaultConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .CreateVaultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vault(response.getItem());
 

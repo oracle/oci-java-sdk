@@ -204,8 +204,8 @@ public class ListDataAssetTagsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListDataAssetTagsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataAssetTagCollection(response.getItem());
 

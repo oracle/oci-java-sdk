@@ -115,8 +115,8 @@ public class RequestSummarizedConfigurationsConverter {
                                                 com.oracle.bmc.usageapi.responses
                                                         .RequestSummarizedConfigurationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.configurationAggregation(response.getItem());
 

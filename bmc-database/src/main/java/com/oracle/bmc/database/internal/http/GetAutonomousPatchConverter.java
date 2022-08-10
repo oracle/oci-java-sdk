@@ -101,8 +101,8 @@ public class GetAutonomousPatchConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetAutonomousPatchResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousPatch(response.getItem());
 

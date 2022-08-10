@@ -95,32 +95,45 @@ public final class DeliverArtifactStageRunProgress extends BuildPipelineStageRun
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeliverArtifactStageRunProgress build() {
-            DeliverArtifactStageRunProgress __instance__ =
+            DeliverArtifactStageRunProgress model =
                     new DeliverArtifactStageRunProgress(
-                            stageDisplayName,
-                            buildPipelineStageId,
-                            timeStarted,
-                            timeFinished,
-                            status,
-                            buildPipelineStagePredecessors,
-                            deliveredArtifacts);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.stageDisplayName,
+                            this.buildPipelineStageId,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.status,
+                            this.buildPipelineStagePredecessors,
+                            this.deliveredArtifacts);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeliverArtifactStageRunProgress o) {
-            Builder copiedBuilder =
-                    stageDisplayName(o.getStageDisplayName())
-                            .buildPipelineStageId(o.getBuildPipelineStageId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .status(o.getStatus())
-                            .buildPipelineStagePredecessors(o.getBuildPipelineStagePredecessors())
-                            .deliveredArtifacts(o.getDeliveredArtifacts());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeliverArtifactStageRunProgress model) {
+            if (model.wasPropertyExplicitlySet("stageDisplayName")) {
+                this.stageDisplayName(model.getStageDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStageId")) {
+                this.buildPipelineStageId(model.getBuildPipelineStageId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessors")) {
+                this.buildPipelineStagePredecessors(model.getBuildPipelineStagePredecessors());
+            }
+            if (model.wasPropertyExplicitlySet("deliveredArtifacts")) {
+                this.deliveredArtifacts(model.getDeliveredArtifacts());
+            }
+            return this;
         }
     }
 
@@ -176,7 +189,6 @@ public final class DeliverArtifactStageRunProgress extends BuildPipelineStageRun
         sb.append("DeliverArtifactStageRunProgress(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", deliveredArtifacts=").append(String.valueOf(this.deliveredArtifacts));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,8 +204,7 @@ public final class DeliverArtifactStageRunProgress extends BuildPipelineStageRun
 
         DeliverArtifactStageRunProgress other = (DeliverArtifactStageRunProgress) o;
         return java.util.Objects.equals(this.deliveredArtifacts, other.deliveredArtifacts)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -205,16 +216,6 @@ public final class DeliverArtifactStageRunProgress extends BuildPipelineStageRun
                         + (this.deliveredArtifacts == null
                                 ? 43
                                 : this.deliveredArtifacts.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

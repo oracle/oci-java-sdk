@@ -91,30 +91,41 @@ public final class RepositoryTag extends RepositoryRef {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RepositoryTag build() {
-            RepositoryTag __instance__ =
+            RepositoryTag model =
                     new RepositoryTag(
-                            refName,
-                            fullRefName,
-                            repositoryId,
-                            freeformTags,
-                            definedTags,
-                            objectId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.refName,
+                            this.fullRefName,
+                            this.repositoryId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.objectId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RepositoryTag o) {
-            Builder copiedBuilder =
-                    refName(o.getRefName())
-                            .fullRefName(o.getFullRefName())
-                            .repositoryId(o.getRepositoryId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .objectId(o.getObjectId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RepositoryTag model) {
+            if (model.wasPropertyExplicitlySet("refName")) {
+                this.refName(model.getRefName());
+            }
+            if (model.wasPropertyExplicitlySet("fullRefName")) {
+                this.fullRefName(model.getFullRefName());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryId")) {
+                this.repositoryId(model.getRepositoryId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("objectId")) {
+                this.objectId(model.getObjectId());
+            }
+            return this;
         }
     }
 
@@ -170,7 +181,6 @@ public final class RepositoryTag extends RepositoryRef {
         sb.append("RepositoryTag(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", objectId=").append(String.valueOf(this.objectId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -185,9 +195,7 @@ public final class RepositoryTag extends RepositoryRef {
         }
 
         RepositoryTag other = (RepositoryTag) o;
-        return java.util.Objects.equals(this.objectId, other.objectId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.objectId, other.objectId) && super.equals(other);
     }
 
     @Override
@@ -195,16 +203,6 @@ public final class RepositoryTag extends RepositoryRef {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.objectId == null ? 43 : this.objectId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

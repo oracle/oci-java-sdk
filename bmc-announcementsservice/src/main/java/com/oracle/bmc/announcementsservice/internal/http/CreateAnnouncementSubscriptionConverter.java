@@ -120,8 +120,8 @@ public class CreateAnnouncementSubscriptionConverter {
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .CreateAnnouncementSubscriptionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcementSubscription(response.getItem());
 

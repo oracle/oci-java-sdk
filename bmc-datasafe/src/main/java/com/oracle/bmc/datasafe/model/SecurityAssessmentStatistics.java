@@ -25,7 +25,8 @@ package com.oracle.bmc.datasafe.model;
     builder = SecurityAssessmentStatistics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityAssessmentStatistics {
+public final class SecurityAssessmentStatistics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetsCount",
@@ -131,26 +132,45 @@ public final class SecurityAssessmentStatistics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityAssessmentStatistics build() {
-            SecurityAssessmentStatistics __instance__ =
+            SecurityAssessmentStatistics model =
                     new SecurityAssessmentStatistics(
-                            targetsCount, highRisk, mediumRisk, lowRisk, advisory, evaluate, pass);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.targetsCount,
+                            this.highRisk,
+                            this.mediumRisk,
+                            this.lowRisk,
+                            this.advisory,
+                            this.evaluate,
+                            this.pass);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityAssessmentStatistics o) {
-            Builder copiedBuilder =
-                    targetsCount(o.getTargetsCount())
-                            .highRisk(o.getHighRisk())
-                            .mediumRisk(o.getMediumRisk())
-                            .lowRisk(o.getLowRisk())
-                            .advisory(o.getAdvisory())
-                            .evaluate(o.getEvaluate())
-                            .pass(o.getPass());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityAssessmentStatistics model) {
+            if (model.wasPropertyExplicitlySet("targetsCount")) {
+                this.targetsCount(model.getTargetsCount());
+            }
+            if (model.wasPropertyExplicitlySet("highRisk")) {
+                this.highRisk(model.getHighRisk());
+            }
+            if (model.wasPropertyExplicitlySet("mediumRisk")) {
+                this.mediumRisk(model.getMediumRisk());
+            }
+            if (model.wasPropertyExplicitlySet("lowRisk")) {
+                this.lowRisk(model.getLowRisk());
+            }
+            if (model.wasPropertyExplicitlySet("advisory")) {
+                this.advisory(model.getAdvisory());
+            }
+            if (model.wasPropertyExplicitlySet("evaluate")) {
+                this.evaluate(model.getEvaluate());
+            }
+            if (model.wasPropertyExplicitlySet("pass")) {
+                this.pass(model.getPass());
+            }
+            return this;
         }
     }
 
@@ -234,6 +254,7 @@ public final class SecurityAssessmentStatistics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityAssessmentStatistics(");
+        sb.append("super=").append(super.toString());
         sb.append("targetsCount=").append(String.valueOf(this.targetsCount));
         sb.append(", highRisk=").append(String.valueOf(this.highRisk));
         sb.append(", mediumRisk=").append(String.valueOf(this.mediumRisk));
@@ -241,7 +262,6 @@ public final class SecurityAssessmentStatistics {
         sb.append(", advisory=").append(String.valueOf(this.advisory));
         sb.append(", evaluate=").append(String.valueOf(this.evaluate));
         sb.append(", pass=").append(String.valueOf(this.pass));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -263,7 +283,7 @@ public final class SecurityAssessmentStatistics {
                 && java.util.Objects.equals(this.advisory, other.advisory)
                 && java.util.Objects.equals(this.evaluate, other.evaluate)
                 && java.util.Objects.equals(this.pass, other.pass)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -277,16 +297,7 @@ public final class SecurityAssessmentStatistics {
         result = (result * PRIME) + (this.advisory == null ? 43 : this.advisory.hashCode());
         result = (result * PRIME) + (this.evaluate == null ? 43 : this.evaluate.hashCode());
         result = (result * PRIME) + (this.pass == null ? 43 : this.pass.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

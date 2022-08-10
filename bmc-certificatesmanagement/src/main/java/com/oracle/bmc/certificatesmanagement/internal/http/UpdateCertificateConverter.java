@@ -119,8 +119,8 @@ public class UpdateCertificateConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .UpdateCertificateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificate(response.getItem());
 

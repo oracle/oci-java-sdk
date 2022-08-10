@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatusSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StatusSummary {
+public final class StatusSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "chunksProcessed",
@@ -127,24 +127,37 @@ public final class StatusSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StatusSummary build() {
-            StatusSummary __instance__ =
+            StatusSummary model =
                     new StatusSummary(
-                            chunksProcessed, failureDetails, filename, status, totalChunks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.chunksProcessed,
+                            this.failureDetails,
+                            this.filename,
+                            this.status,
+                            this.totalChunks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StatusSummary o) {
-            Builder copiedBuilder =
-                    chunksProcessed(o.getChunksProcessed())
-                            .failureDetails(o.getFailureDetails())
-                            .filename(o.getFilename())
-                            .status(o.getStatus())
-                            .totalChunks(o.getTotalChunks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StatusSummary model) {
+            if (model.wasPropertyExplicitlySet("chunksProcessed")) {
+                this.chunksProcessed(model.getChunksProcessed());
+            }
+            if (model.wasPropertyExplicitlySet("failureDetails")) {
+                this.failureDetails(model.getFailureDetails());
+            }
+            if (model.wasPropertyExplicitlySet("filename")) {
+                this.filename(model.getFilename());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("totalChunks")) {
+                this.totalChunks(model.getTotalChunks());
+            }
+            return this;
         }
     }
 
@@ -242,12 +255,12 @@ public final class StatusSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StatusSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("chunksProcessed=").append(String.valueOf(this.chunksProcessed));
         sb.append(", failureDetails=").append(String.valueOf(this.failureDetails));
         sb.append(", filename=").append(String.valueOf(this.filename));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", totalChunks=").append(String.valueOf(this.totalChunks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +280,7 @@ public final class StatusSummary {
                 && java.util.Objects.equals(this.filename, other.filename)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.totalChunks, other.totalChunks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -283,16 +296,7 @@ public final class StatusSummary {
         result = (result * PRIME) + (this.filename == null ? 43 : this.filename.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.totalChunks == null ? 43 : this.totalChunks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

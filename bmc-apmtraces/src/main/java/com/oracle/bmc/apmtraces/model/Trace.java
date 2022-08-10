@@ -18,7 +18,7 @@ package com.oracle.bmc.apmtraces.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Trace.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Trace {
+public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -424,54 +424,89 @@ public final class Trace {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Trace build() {
-            Trace __instance__ =
+            Trace model =
                     new Trace(
-                            key,
-                            rootSpanOperationName,
-                            timeEarliestSpanStarted,
-                            timeLatestSpanEnded,
-                            spanCount,
-                            errorSpanCount,
-                            rootSpanServiceName,
-                            timeRootSpanStarted,
-                            timeRootSpanEnded,
-                            rootSpanDurationInMs,
-                            traceDurationInMs,
-                            isFault,
-                            traceStatus,
-                            traceErrorType,
-                            traceErrorCode,
-                            serviceSummaries,
-                            spanSummary,
-                            spans);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.rootSpanOperationName,
+                            this.timeEarliestSpanStarted,
+                            this.timeLatestSpanEnded,
+                            this.spanCount,
+                            this.errorSpanCount,
+                            this.rootSpanServiceName,
+                            this.timeRootSpanStarted,
+                            this.timeRootSpanEnded,
+                            this.rootSpanDurationInMs,
+                            this.traceDurationInMs,
+                            this.isFault,
+                            this.traceStatus,
+                            this.traceErrorType,
+                            this.traceErrorCode,
+                            this.serviceSummaries,
+                            this.spanSummary,
+                            this.spans);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Trace o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .rootSpanOperationName(o.getRootSpanOperationName())
-                            .timeEarliestSpanStarted(o.getTimeEarliestSpanStarted())
-                            .timeLatestSpanEnded(o.getTimeLatestSpanEnded())
-                            .spanCount(o.getSpanCount())
-                            .errorSpanCount(o.getErrorSpanCount())
-                            .rootSpanServiceName(o.getRootSpanServiceName())
-                            .timeRootSpanStarted(o.getTimeRootSpanStarted())
-                            .timeRootSpanEnded(o.getTimeRootSpanEnded())
-                            .rootSpanDurationInMs(o.getRootSpanDurationInMs())
-                            .traceDurationInMs(o.getTraceDurationInMs())
-                            .isFault(o.getIsFault())
-                            .traceStatus(o.getTraceStatus())
-                            .traceErrorType(o.getTraceErrorType())
-                            .traceErrorCode(o.getTraceErrorCode())
-                            .serviceSummaries(o.getServiceSummaries())
-                            .spanSummary(o.getSpanSummary())
-                            .spans(o.getSpans());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Trace model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("rootSpanOperationName")) {
+                this.rootSpanOperationName(model.getRootSpanOperationName());
+            }
+            if (model.wasPropertyExplicitlySet("timeEarliestSpanStarted")) {
+                this.timeEarliestSpanStarted(model.getTimeEarliestSpanStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestSpanEnded")) {
+                this.timeLatestSpanEnded(model.getTimeLatestSpanEnded());
+            }
+            if (model.wasPropertyExplicitlySet("spanCount")) {
+                this.spanCount(model.getSpanCount());
+            }
+            if (model.wasPropertyExplicitlySet("errorSpanCount")) {
+                this.errorSpanCount(model.getErrorSpanCount());
+            }
+            if (model.wasPropertyExplicitlySet("rootSpanServiceName")) {
+                this.rootSpanServiceName(model.getRootSpanServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("timeRootSpanStarted")) {
+                this.timeRootSpanStarted(model.getTimeRootSpanStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeRootSpanEnded")) {
+                this.timeRootSpanEnded(model.getTimeRootSpanEnded());
+            }
+            if (model.wasPropertyExplicitlySet("rootSpanDurationInMs")) {
+                this.rootSpanDurationInMs(model.getRootSpanDurationInMs());
+            }
+            if (model.wasPropertyExplicitlySet("traceDurationInMs")) {
+                this.traceDurationInMs(model.getTraceDurationInMs());
+            }
+            if (model.wasPropertyExplicitlySet("isFault")) {
+                this.isFault(model.getIsFault());
+            }
+            if (model.wasPropertyExplicitlySet("traceStatus")) {
+                this.traceStatus(model.getTraceStatus());
+            }
+            if (model.wasPropertyExplicitlySet("traceErrorType")) {
+                this.traceErrorType(model.getTraceErrorType());
+            }
+            if (model.wasPropertyExplicitlySet("traceErrorCode")) {
+                this.traceErrorCode(model.getTraceErrorCode());
+            }
+            if (model.wasPropertyExplicitlySet("serviceSummaries")) {
+                this.serviceSummaries(model.getServiceSummaries());
+            }
+            if (model.wasPropertyExplicitlySet("spanSummary")) {
+                this.spanSummary(model.getSpanSummary());
+            }
+            if (model.wasPropertyExplicitlySet("spans")) {
+                this.spans(model.getSpans());
+            }
+            return this;
         }
     }
 
@@ -800,6 +835,7 @@ public final class Trace {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Trace(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", rootSpanOperationName=").append(String.valueOf(this.rootSpanOperationName));
         sb.append(", timeEarliestSpanStarted=")
@@ -819,7 +855,6 @@ public final class Trace {
         sb.append(", serviceSummaries=").append(String.valueOf(this.serviceSummaries));
         sb.append(", spanSummary=").append(String.valueOf(this.spanSummary));
         sb.append(", spans=").append(String.valueOf(this.spans));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -853,7 +888,7 @@ public final class Trace {
                 && java.util.Objects.equals(this.serviceSummaries, other.serviceSummaries)
                 && java.util.Objects.equals(this.spanSummary, other.spanSummary)
                 && java.util.Objects.equals(this.spans, other.spans)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -914,16 +949,7 @@ public final class Trace {
                         + (this.serviceSummaries == null ? 43 : this.serviceSummaries.hashCode());
         result = (result * PRIME) + (this.spanSummary == null ? 43 : this.spanSummary.hashCode());
         result = (result * PRIME) + (this.spans == null ? 43 : this.spans.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

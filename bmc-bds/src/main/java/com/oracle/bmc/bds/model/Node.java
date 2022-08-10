@@ -17,7 +17,7 @@ package com.oracle.bmc.bds.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Node.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Node {
+public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceId",
@@ -356,52 +356,85 @@ public final class Node {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Node build() {
-            Node __instance__ =
+            Node model =
                     new Node(
-                            instanceId,
-                            displayName,
-                            lifecycleState,
-                            nodeType,
-                            shape,
-                            attachedBlockVolumes,
-                            subnetId,
-                            ipAddress,
-                            hostname,
-                            imageId,
-                            sshFingerprint,
-                            availabilityDomain,
-                            faultDomain,
-                            timeCreated,
-                            timeUpdated,
-                            ocpus,
-                            memoryInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.instanceId,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.nodeType,
+                            this.shape,
+                            this.attachedBlockVolumes,
+                            this.subnetId,
+                            this.ipAddress,
+                            this.hostname,
+                            this.imageId,
+                            this.sshFingerprint,
+                            this.availabilityDomain,
+                            this.faultDomain,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.ocpus,
+                            this.memoryInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Node o) {
-            Builder copiedBuilder =
-                    instanceId(o.getInstanceId())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .nodeType(o.getNodeType())
-                            .shape(o.getShape())
-                            .attachedBlockVolumes(o.getAttachedBlockVolumes())
-                            .subnetId(o.getSubnetId())
-                            .ipAddress(o.getIpAddress())
-                            .hostname(o.getHostname())
-                            .imageId(o.getImageId())
-                            .sshFingerprint(o.getSshFingerprint())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .faultDomain(o.getFaultDomain())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .ocpus(o.getOcpus())
-                            .memoryInGBs(o.getMemoryInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Node model) {
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("nodeType")) {
+                this.nodeType(model.getNodeType());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("attachedBlockVolumes")) {
+                this.attachedBlockVolumes(model.getAttachedBlockVolumes());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("sshFingerprint")) {
+                this.sshFingerprint(model.getSshFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("ocpus")) {
+                this.ocpus(model.getOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            return this;
         }
     }
 
@@ -773,6 +806,7 @@ public final class Node {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Node(");
+        sb.append("super=").append(super.toString());
         sb.append("instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -790,7 +824,6 @@ public final class Node {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -822,7 +855,7 @@ public final class Node {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -858,16 +891,7 @@ public final class Node {
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

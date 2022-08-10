@@ -19,7 +19,7 @@ package com.oracle.bmc.loggingsearch.model;
     builder = SearchLogsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchLogsDetails {
+public final class SearchLogsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeStart", "timeEnd", "searchQuery", "isReturnFieldInfo"})
     public SearchLogsDetails(
@@ -117,22 +117,30 @@ public final class SearchLogsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchLogsDetails build() {
-            SearchLogsDetails __instance__ =
-                    new SearchLogsDetails(timeStart, timeEnd, searchQuery, isReturnFieldInfo);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SearchLogsDetails model =
+                    new SearchLogsDetails(
+                            this.timeStart, this.timeEnd, this.searchQuery, this.isReturnFieldInfo);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchLogsDetails o) {
-            Builder copiedBuilder =
-                    timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .searchQuery(o.getSearchQuery())
-                            .isReturnFieldInfo(o.getIsReturnFieldInfo());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchLogsDetails model) {
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("searchQuery")) {
+                this.searchQuery(model.getSearchQuery());
+            }
+            if (model.wasPropertyExplicitlySet("isReturnFieldInfo")) {
+                this.isReturnFieldInfo(model.getIsReturnFieldInfo());
+            }
+            return this;
         }
     }
 
@@ -228,11 +236,11 @@ public final class SearchLogsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchLogsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", searchQuery=").append(String.valueOf(this.searchQuery));
         sb.append(", isReturnFieldInfo=").append(String.valueOf(this.isReturnFieldInfo));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -251,7 +259,7 @@ public final class SearchLogsDetails {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.searchQuery, other.searchQuery)
                 && java.util.Objects.equals(this.isReturnFieldInfo, other.isReturnFieldInfo)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -264,16 +272,7 @@ public final class SearchLogsDetails {
         result =
                 (result * PRIME)
                         + (this.isReturnFieldInfo == null ? 43 : this.isReturnFieldInfo.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

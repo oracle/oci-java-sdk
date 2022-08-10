@@ -133,8 +133,8 @@ public class ListModelDeploymentShapesConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .ListModelDeploymentShapesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

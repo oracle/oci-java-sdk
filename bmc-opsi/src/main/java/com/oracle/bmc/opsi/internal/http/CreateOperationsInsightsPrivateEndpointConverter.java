@@ -118,8 +118,8 @@ public class CreateOperationsInsightsPrivateEndpointConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .CreateOperationsInsightsPrivateEndpointResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operationsInsightsPrivateEndpoint(response.getItem());
 

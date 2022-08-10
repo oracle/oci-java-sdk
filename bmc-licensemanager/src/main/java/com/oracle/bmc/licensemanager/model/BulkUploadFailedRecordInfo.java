@@ -19,7 +19,8 @@ package com.oracle.bmc.licensemanager.model;
     builder = BulkUploadFailedRecordInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkUploadFailedRecordInfo {
+public final class BulkUploadFailedRecordInfo
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rowNumber", "productName", "error"})
     public BulkUploadFailedRecordInfo(Integer rowNumber, String productName, String error) {
@@ -84,19 +85,26 @@ public final class BulkUploadFailedRecordInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkUploadFailedRecordInfo build() {
-            BulkUploadFailedRecordInfo __instance__ =
-                    new BulkUploadFailedRecordInfo(rowNumber, productName, error);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BulkUploadFailedRecordInfo model =
+                    new BulkUploadFailedRecordInfo(this.rowNumber, this.productName, this.error);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkUploadFailedRecordInfo o) {
-            Builder copiedBuilder =
-                    rowNumber(o.getRowNumber()).productName(o.getProductName()).error(o.getError());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkUploadFailedRecordInfo model) {
+            if (model.wasPropertyExplicitlySet("rowNumber")) {
+                this.rowNumber(model.getRowNumber());
+            }
+            if (model.wasPropertyExplicitlySet("productName")) {
+                this.productName(model.getProductName());
+            }
+            if (model.wasPropertyExplicitlySet("error")) {
+                this.error(model.getError());
+            }
+            return this;
         }
     }
 
@@ -166,10 +174,10 @@ public final class BulkUploadFailedRecordInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkUploadFailedRecordInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("rowNumber=").append(String.valueOf(this.rowNumber));
         sb.append(", productName=").append(String.valueOf(this.productName));
         sb.append(", error=").append(String.valueOf(this.error));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +195,7 @@ public final class BulkUploadFailedRecordInfo {
         return java.util.Objects.equals(this.rowNumber, other.rowNumber)
                 && java.util.Objects.equals(this.productName, other.productName)
                 && java.util.Objects.equals(this.error, other.error)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -197,16 +205,7 @@ public final class BulkUploadFailedRecordInfo {
         result = (result * PRIME) + (this.rowNumber == null ? 43 : this.rowNumber.hashCode());
         result = (result * PRIME) + (this.productName == null ? 43 : this.productName.hashCode());
         result = (result * PRIME) + (this.error == null ? 43 : this.error.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

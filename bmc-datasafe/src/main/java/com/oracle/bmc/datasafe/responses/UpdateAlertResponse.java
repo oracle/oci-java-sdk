@@ -51,13 +51,20 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
         return alert;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "alert"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "alert"
+    })
     private UpdateAlertResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.Alert alert) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.alert = alert;
@@ -68,6 +75,13 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateAlertResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             alert(o.getAlert());
@@ -138,7 +153,7 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateAlertResponse build() {
-            return new UpdateAlertResponse(__httpStatusCode__, etag, opcRequestId, alert);
+            return new UpdateAlertResponse(__httpStatusCode__, headers, etag, opcRequestId, alert);
         }
     }
 

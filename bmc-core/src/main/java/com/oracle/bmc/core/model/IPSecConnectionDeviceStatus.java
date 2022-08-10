@@ -21,7 +21,8 @@ package com.oracle.bmc.core.model;
     builder = IPSecConnectionDeviceStatus.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IPSecConnectionDeviceStatus {
+public final class IPSecConnectionDeviceStatus
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "id", "timeCreated", "tunnels"})
     public IPSecConnectionDeviceStatus(
@@ -113,22 +114,30 @@ public final class IPSecConnectionDeviceStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IPSecConnectionDeviceStatus build() {
-            IPSecConnectionDeviceStatus __instance__ =
-                    new IPSecConnectionDeviceStatus(compartmentId, id, timeCreated, tunnels);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IPSecConnectionDeviceStatus model =
+                    new IPSecConnectionDeviceStatus(
+                            this.compartmentId, this.id, this.timeCreated, this.tunnels);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IPSecConnectionDeviceStatus o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .tunnels(o.getTunnels());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IPSecConnectionDeviceStatus model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("tunnels")) {
+                this.tunnels(model.getTunnels());
+            }
+            return this;
         }
     }
 
@@ -218,11 +227,11 @@ public final class IPSecConnectionDeviceStatus {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IPSecConnectionDeviceStatus(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", tunnels=").append(String.valueOf(this.tunnels));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,7 +250,7 @@ public final class IPSecConnectionDeviceStatus {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.tunnels, other.tunnels)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -254,16 +263,7 @@ public final class IPSecConnectionDeviceStatus {
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.tunnels == null ? 43 : this.tunnels.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

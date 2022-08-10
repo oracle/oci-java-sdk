@@ -170,8 +170,8 @@ public class ListResourceCategoriesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListResourceCategoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsResourceCategoryCollection(response.getItem());
 

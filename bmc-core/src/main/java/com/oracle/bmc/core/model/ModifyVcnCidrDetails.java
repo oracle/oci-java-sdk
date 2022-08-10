@@ -20,7 +20,7 @@ package com.oracle.bmc.core.model;
     builder = ModifyVcnCidrDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModifyVcnCidrDetails {
+public final class ModifyVcnCidrDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"originalCidrBlock", "newCidrBlock"})
     public ModifyVcnCidrDetails(String originalCidrBlock, String newCidrBlock) {
@@ -72,19 +72,23 @@ public final class ModifyVcnCidrDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModifyVcnCidrDetails build() {
-            ModifyVcnCidrDetails __instance__ =
-                    new ModifyVcnCidrDetails(originalCidrBlock, newCidrBlock);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ModifyVcnCidrDetails model =
+                    new ModifyVcnCidrDetails(this.originalCidrBlock, this.newCidrBlock);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModifyVcnCidrDetails o) {
-            Builder copiedBuilder =
-                    originalCidrBlock(o.getOriginalCidrBlock()).newCidrBlock(o.getNewCidrBlock());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModifyVcnCidrDetails model) {
+            if (model.wasPropertyExplicitlySet("originalCidrBlock")) {
+                this.originalCidrBlock(model.getOriginalCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("newCidrBlock")) {
+                this.newCidrBlock(model.getNewCidrBlock());
+            }
+            return this;
         }
     }
 
@@ -144,9 +148,9 @@ public final class ModifyVcnCidrDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModifyVcnCidrDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("originalCidrBlock=").append(String.valueOf(this.originalCidrBlock));
         sb.append(", newCidrBlock=").append(String.valueOf(this.newCidrBlock));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -163,7 +167,7 @@ public final class ModifyVcnCidrDetails {
         ModifyVcnCidrDetails other = (ModifyVcnCidrDetails) o;
         return java.util.Objects.equals(this.originalCidrBlock, other.originalCidrBlock)
                 && java.util.Objects.equals(this.newCidrBlock, other.newCidrBlock)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +178,7 @@ public final class ModifyVcnCidrDetails {
                 (result * PRIME)
                         + (this.originalCidrBlock == null ? 43 : this.originalCidrBlock.hashCode());
         result = (result * PRIME) + (this.newCidrBlock == null ? 43 : this.newCidrBlock.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -60,17 +60,19 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "responderActivityCollection"
     })
     private ListResponderActivitiesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ResponderActivityCollection
                     responderActivityCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.responderActivityCollection = responderActivityCollection;
@@ -81,6 +83,13 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListResponderActivitiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             responderActivityCollection(o.getResponderActivityCollection());
@@ -161,7 +171,11 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
          */
         public ListResponderActivitiesResponse build() {
             return new ListResponderActivitiesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, responderActivityCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    responderActivityCollection);
         }
     }
 

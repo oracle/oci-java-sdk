@@ -75,20 +75,23 @@ public final class NotificationsTargetDetails extends TargetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NotificationsTargetDetails build() {
-            NotificationsTargetDetails __instance__ =
-                    new NotificationsTargetDetails(topicId, enableFormattedMessaging);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NotificationsTargetDetails model =
+                    new NotificationsTargetDetails(this.topicId, this.enableFormattedMessaging);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NotificationsTargetDetails o) {
-            Builder copiedBuilder =
-                    topicId(o.getTopicId())
-                            .enableFormattedMessaging(o.getEnableFormattedMessaging());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NotificationsTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("topicId")) {
+                this.topicId(model.getTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("enableFormattedMessaging")) {
+                this.enableFormattedMessaging(model.getEnableFormattedMessaging());
+            }
+            return this;
         }
     }
 
@@ -163,7 +166,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
         sb.append(", topicId=").append(String.valueOf(this.topicId));
         sb.append(", enableFormattedMessaging=")
                 .append(String.valueOf(this.enableFormattedMessaging));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -181,8 +183,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
         return java.util.Objects.equals(this.topicId, other.topicId)
                 && java.util.Objects.equals(
                         this.enableFormattedMessaging, other.enableFormattedMessaging)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +196,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
                         + (this.enableFormattedMessaging == null
                                 ? 43
                                 : this.enableFormattedMessaging.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

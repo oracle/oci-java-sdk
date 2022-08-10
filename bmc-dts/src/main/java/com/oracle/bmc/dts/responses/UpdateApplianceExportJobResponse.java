@@ -49,16 +49,18 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "applianceExportJob"
     })
     private UpdateApplianceExportJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.applianceExportJob = applianceExportJob;
@@ -69,6 +71,13 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(UpdateApplianceExportJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             applianceExportJob(o.getApplianceExportJob());
@@ -137,7 +147,7 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
          */
         public UpdateApplianceExportJobResponse build() {
             return new UpdateApplianceExportJobResponse(
-                    __httpStatusCode__, opcRequestId, etag, applianceExportJob);
+                    __httpStatusCode__, headers, opcRequestId, etag, applianceExportJob);
         }
     }
 

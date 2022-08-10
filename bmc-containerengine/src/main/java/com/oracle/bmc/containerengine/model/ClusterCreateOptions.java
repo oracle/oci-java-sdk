@@ -19,7 +19,7 @@ package com.oracle.bmc.containerengine.model;
     builder = ClusterCreateOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterCreateOptions {
+public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "serviceLbSubnetIds",
@@ -136,30 +136,41 @@ public final class ClusterCreateOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterCreateOptions build() {
-            ClusterCreateOptions __instance__ =
+            ClusterCreateOptions model =
                     new ClusterCreateOptions(
-                            serviceLbSubnetIds,
-                            kubernetesNetworkConfig,
-                            addOns,
-                            admissionControllerOptions,
-                            persistentVolumeConfig,
-                            serviceLbConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.serviceLbSubnetIds,
+                            this.kubernetesNetworkConfig,
+                            this.addOns,
+                            this.admissionControllerOptions,
+                            this.persistentVolumeConfig,
+                            this.serviceLbConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterCreateOptions o) {
-            Builder copiedBuilder =
-                    serviceLbSubnetIds(o.getServiceLbSubnetIds())
-                            .kubernetesNetworkConfig(o.getKubernetesNetworkConfig())
-                            .addOns(o.getAddOns())
-                            .admissionControllerOptions(o.getAdmissionControllerOptions())
-                            .persistentVolumeConfig(o.getPersistentVolumeConfig())
-                            .serviceLbConfig(o.getServiceLbConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterCreateOptions model) {
+            if (model.wasPropertyExplicitlySet("serviceLbSubnetIds")) {
+                this.serviceLbSubnetIds(model.getServiceLbSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("kubernetesNetworkConfig")) {
+                this.kubernetesNetworkConfig(model.getKubernetesNetworkConfig());
+            }
+            if (model.wasPropertyExplicitlySet("addOns")) {
+                this.addOns(model.getAddOns());
+            }
+            if (model.wasPropertyExplicitlySet("admissionControllerOptions")) {
+                this.admissionControllerOptions(model.getAdmissionControllerOptions());
+            }
+            if (model.wasPropertyExplicitlySet("persistentVolumeConfig")) {
+                this.persistentVolumeConfig(model.getPersistentVolumeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("serviceLbConfig")) {
+                this.serviceLbConfig(model.getServiceLbConfig());
+            }
+            return this;
         }
     }
 
@@ -257,6 +268,7 @@ public final class ClusterCreateOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterCreateOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("serviceLbSubnetIds=").append(String.valueOf(this.serviceLbSubnetIds));
         sb.append(", kubernetesNetworkConfig=")
                 .append(String.valueOf(this.kubernetesNetworkConfig));
@@ -265,7 +277,6 @@ public final class ClusterCreateOptions {
                 .append(String.valueOf(this.admissionControllerOptions));
         sb.append(", persistentVolumeConfig=").append(String.valueOf(this.persistentVolumeConfig));
         sb.append(", serviceLbConfig=").append(String.valueOf(this.serviceLbConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -289,7 +300,7 @@ public final class ClusterCreateOptions {
                 && java.util.Objects.equals(
                         this.persistentVolumeConfig, other.persistentVolumeConfig)
                 && java.util.Objects.equals(this.serviceLbConfig, other.serviceLbConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -320,16 +331,7 @@ public final class ClusterCreateOptions {
         result =
                 (result * PRIME)
                         + (this.serviceLbConfig == null ? 43 : this.serviceLbConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.mediaservices.model;
     builder = GenerateSessionTokenDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GenerateSessionTokenDetails {
+public final class GenerateSessionTokenDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeExpires", "scopes", "packagingConfigId", "assetIds"})
     public GenerateSessionTokenDetails(
@@ -105,23 +106,30 @@ public final class GenerateSessionTokenDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateSessionTokenDetails build() {
-            GenerateSessionTokenDetails __instance__ =
+            GenerateSessionTokenDetails model =
                     new GenerateSessionTokenDetails(
-                            timeExpires, scopes, packagingConfigId, assetIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeExpires, this.scopes, this.packagingConfigId, this.assetIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenerateSessionTokenDetails o) {
-            Builder copiedBuilder =
-                    timeExpires(o.getTimeExpires())
-                            .scopes(o.getScopes())
-                            .packagingConfigId(o.getPackagingConfigId())
-                            .assetIds(o.getAssetIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GenerateSessionTokenDetails model) {
+            if (model.wasPropertyExplicitlySet("timeExpires")) {
+                this.timeExpires(model.getTimeExpires());
+            }
+            if (model.wasPropertyExplicitlySet("scopes")) {
+                this.scopes(model.getScopes());
+            }
+            if (model.wasPropertyExplicitlySet("packagingConfigId")) {
+                this.packagingConfigId(model.getPackagingConfigId());
+            }
+            if (model.wasPropertyExplicitlySet("assetIds")) {
+                this.assetIds(model.getAssetIds());
+            }
+            return this;
         }
     }
 
@@ -239,11 +247,11 @@ public final class GenerateSessionTokenDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenerateSessionTokenDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeExpires=").append(String.valueOf(this.timeExpires));
         sb.append(", scopes=").append(String.valueOf(this.scopes));
         sb.append(", packagingConfigId=").append(String.valueOf(this.packagingConfigId));
         sb.append(", assetIds=").append(String.valueOf(this.assetIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -262,7 +270,7 @@ public final class GenerateSessionTokenDetails {
                 && java.util.Objects.equals(this.scopes, other.scopes)
                 && java.util.Objects.equals(this.packagingConfigId, other.packagingConfigId)
                 && java.util.Objects.equals(this.assetIds, other.assetIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -275,16 +283,7 @@ public final class GenerateSessionTokenDetails {
                 (result * PRIME)
                         + (this.packagingConfigId == null ? 43 : this.packagingConfigId.hashCode());
         result = (result * PRIME) + (this.assetIds == null ? 43 : this.assetIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

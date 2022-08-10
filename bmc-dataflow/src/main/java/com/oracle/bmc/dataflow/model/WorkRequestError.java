@@ -18,7 +18,7 @@ package com.oracle.bmc.dataflow.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestError {
+public final class WorkRequestError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "id", "message", "timestamp", "workRequestid"})
     public WorkRequestError(
@@ -124,23 +124,33 @@ public final class WorkRequestError {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestError build() {
-            WorkRequestError __instance__ =
-                    new WorkRequestError(code, id, message, timestamp, workRequestid);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkRequestError model =
+                    new WorkRequestError(
+                            this.code, this.id, this.message, this.timestamp, this.workRequestid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestError o) {
-            Builder copiedBuilder =
-                    code(o.getCode())
-                            .id(o.getId())
-                            .message(o.getMessage())
-                            .timestamp(o.getTimestamp())
-                            .workRequestid(o.getWorkRequestid());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestError model) {
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestid")) {
+                this.workRequestid(model.getWorkRequestid());
+            }
+            return this;
         }
     }
 
@@ -244,12 +254,12 @@ public final class WorkRequestError {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestError(");
+        sb.append("super=").append(super.toString());
         sb.append("code=").append(String.valueOf(this.code));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", workRequestid=").append(String.valueOf(this.workRequestid));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -269,7 +279,7 @@ public final class WorkRequestError {
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.workRequestid, other.workRequestid)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -283,16 +293,7 @@ public final class WorkRequestError {
         result =
                 (result * PRIME)
                         + (this.workRequestid == null ? 43 : this.workRequestid.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

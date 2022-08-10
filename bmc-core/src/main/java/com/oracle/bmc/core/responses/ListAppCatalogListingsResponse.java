@@ -59,16 +59,18 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "items"
     })
     private ListAppCatalogListingsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.AppCatalogListingSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.items = items;
@@ -79,6 +81,13 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListAppCatalogListingsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
@@ -157,7 +167,7 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListAppCatalogListingsResponse build() {
             return new ListAppCatalogListingsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, items);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
         }
     }
 

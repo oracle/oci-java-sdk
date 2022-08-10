@@ -117,6 +117,7 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "contentLength",
@@ -127,6 +128,7 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetJobArtifactContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
@@ -134,7 +136,7 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
             java.util.Date lastModified,
             String contentDisposition,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
@@ -149,6 +151,13 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -279,6 +288,7 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetJobArtifactContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
@@ -297,6 +307,7 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
         public GetJobArtifactContentResponse build() {
             return new GetJobArtifactContentResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     contentLength,

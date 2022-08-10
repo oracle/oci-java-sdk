@@ -118,7 +118,8 @@ public class GetObjectConverter {
 
                                 com.oracle.bmc.devops.responses.GetObjectResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.GetObjectResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.repositoryObject(response.getItem());
 

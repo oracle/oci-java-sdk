@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsFieldSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsFieldSummary {
+public final class LogAnalyticsFieldSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ceeAlias",
@@ -461,60 +462,101 @@ public final class LogAnalyticsFieldSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsFieldSummary build() {
-            LogAnalyticsFieldSummary __instance__ =
+            LogAnalyticsFieldSummary model =
                     new LogAnalyticsFieldSummary(
-                            ceeAlias,
-                            dataType,
-                            regularExpression,
-                            description,
-                            displayName,
-                            editVersion,
-                            facetPriority,
-                            name,
-                            isFacetEligible,
-                            isHighCardinality,
-                            isLargeData,
-                            isMultiValued,
-                            isPrimary,
-                            isSystem,
-                            isSummarizable,
-                            mappedValue,
-                            isMetricKeyEligible,
-                            isMetricValueEligible,
-                            rangeFacetEligible,
-                            isTableEligible,
-                            unitType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.ceeAlias,
+                            this.dataType,
+                            this.regularExpression,
+                            this.description,
+                            this.displayName,
+                            this.editVersion,
+                            this.facetPriority,
+                            this.name,
+                            this.isFacetEligible,
+                            this.isHighCardinality,
+                            this.isLargeData,
+                            this.isMultiValued,
+                            this.isPrimary,
+                            this.isSystem,
+                            this.isSummarizable,
+                            this.mappedValue,
+                            this.isMetricKeyEligible,
+                            this.isMetricValueEligible,
+                            this.rangeFacetEligible,
+                            this.isTableEligible,
+                            this.unitType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsFieldSummary o) {
-            Builder copiedBuilder =
-                    ceeAlias(o.getCeeAlias())
-                            .dataType(o.getDataType())
-                            .regularExpression(o.getRegularExpression())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .editVersion(o.getEditVersion())
-                            .facetPriority(o.getFacetPriority())
-                            .name(o.getName())
-                            .isFacetEligible(o.getIsFacetEligible())
-                            .isHighCardinality(o.getIsHighCardinality())
-                            .isLargeData(o.getIsLargeData())
-                            .isMultiValued(o.getIsMultiValued())
-                            .isPrimary(o.getIsPrimary())
-                            .isSystem(o.getIsSystem())
-                            .isSummarizable(o.getIsSummarizable())
-                            .mappedValue(o.getMappedValue())
-                            .isMetricKeyEligible(o.getIsMetricKeyEligible())
-                            .isMetricValueEligible(o.getIsMetricValueEligible())
-                            .rangeFacetEligible(o.getRangeFacetEligible())
-                            .isTableEligible(o.getIsTableEligible())
-                            .unitType(o.getUnitType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsFieldSummary model) {
+            if (model.wasPropertyExplicitlySet("ceeAlias")) {
+                this.ceeAlias(model.getCeeAlias());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("regularExpression")) {
+                this.regularExpression(model.getRegularExpression());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("facetPriority")) {
+                this.facetPriority(model.getFacetPriority());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isFacetEligible")) {
+                this.isFacetEligible(model.getIsFacetEligible());
+            }
+            if (model.wasPropertyExplicitlySet("isHighCardinality")) {
+                this.isHighCardinality(model.getIsHighCardinality());
+            }
+            if (model.wasPropertyExplicitlySet("isLargeData")) {
+                this.isLargeData(model.getIsLargeData());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiValued")) {
+                this.isMultiValued(model.getIsMultiValued());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("isSummarizable")) {
+                this.isSummarizable(model.getIsSummarizable());
+            }
+            if (model.wasPropertyExplicitlySet("mappedValue")) {
+                this.mappedValue(model.getMappedValue());
+            }
+            if (model.wasPropertyExplicitlySet("isMetricKeyEligible")) {
+                this.isMetricKeyEligible(model.getIsMetricKeyEligible());
+            }
+            if (model.wasPropertyExplicitlySet("isMetricValueEligible")) {
+                this.isMetricValueEligible(model.getIsMetricValueEligible());
+            }
+            if (model.wasPropertyExplicitlySet("rangeFacetEligible")) {
+                this.rangeFacetEligible(model.getRangeFacetEligible());
+            }
+            if (model.wasPropertyExplicitlySet("isTableEligible")) {
+                this.isTableEligible(model.getIsTableEligible());
+            }
+            if (model.wasPropertyExplicitlySet("unitType")) {
+                this.unitType(model.getUnitType());
+            }
+            return this;
         }
     }
 
@@ -864,6 +906,7 @@ public final class LogAnalyticsFieldSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsFieldSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("ceeAlias=").append(String.valueOf(this.ceeAlias));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", regularExpression=").append(String.valueOf(this.regularExpression));
@@ -885,7 +928,6 @@ public final class LogAnalyticsFieldSummary {
         sb.append(", rangeFacetEligible=").append(String.valueOf(this.rangeFacetEligible));
         sb.append(", isTableEligible=").append(String.valueOf(this.isTableEligible));
         sb.append(", unitType=").append(String.valueOf(this.unitType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -921,7 +963,7 @@ public final class LogAnalyticsFieldSummary {
                 && java.util.Objects.equals(this.rangeFacetEligible, other.rangeFacetEligible)
                 && java.util.Objects.equals(this.isTableEligible, other.isTableEligible)
                 && java.util.Objects.equals(this.unitType, other.unitType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -975,16 +1017,7 @@ public final class LogAnalyticsFieldSummary {
                 (result * PRIME)
                         + (this.isTableEligible == null ? 43 : this.isTableEligible.hashCode());
         result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

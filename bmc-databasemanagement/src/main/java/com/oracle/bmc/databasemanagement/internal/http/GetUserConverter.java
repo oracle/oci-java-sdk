@@ -110,8 +110,8 @@ public class GetUserConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .GetUserResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.user(response.getItem());
 

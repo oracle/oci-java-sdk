@@ -20,7 +20,7 @@ package com.oracle.bmc.database.model;
     builder = ExadataIormConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExadataIormConfig {
+public final class ExadataIormConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -123,22 +123,33 @@ public final class ExadataIormConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataIormConfig build() {
-            ExadataIormConfig __instance__ =
-                    new ExadataIormConfig(lifecycleState, lifecycleDetails, objective, dbPlans);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExadataIormConfig model =
+                    new ExadataIormConfig(
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.objective,
+                            this.dbPlans);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataIormConfig o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .objective(o.getObjective())
-                            .dbPlans(o.getDbPlans());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataIormConfig model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("objective")) {
+                this.objective(model.getObjective());
+            }
+            if (model.wasPropertyExplicitlySet("dbPlans")) {
+                this.dbPlans(model.getDbPlans());
+            }
+            return this;
         }
     }
 
@@ -339,11 +350,11 @@ public final class ExadataIormConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataIormConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", objective=").append(String.valueOf(this.objective));
         sb.append(", dbPlans=").append(String.valueOf(this.dbPlans));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -362,7 +373,7 @@ public final class ExadataIormConfig {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.objective, other.objective)
                 && java.util.Objects.equals(this.dbPlans, other.dbPlans)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -377,16 +388,7 @@ public final class ExadataIormConfig {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.objective == null ? 43 : this.objective.hashCode());
         result = (result * PRIME) + (this.dbPlans == null ? 43 : this.dbPlans.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

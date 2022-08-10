@@ -126,8 +126,8 @@ public class GetCommitDiffConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .GetCommitDiffResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.diffResponse(response.getItem());
 

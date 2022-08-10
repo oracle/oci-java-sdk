@@ -179,8 +179,8 @@ public class ListKeysConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ListKeysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

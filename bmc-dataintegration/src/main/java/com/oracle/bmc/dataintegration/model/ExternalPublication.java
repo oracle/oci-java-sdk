@@ -19,7 +19,7 @@ package com.oracle.bmc.dataintegration.model;
     builder = ExternalPublication.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExternalPublication {
+public final class ExternalPublication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -348,54 +348,89 @@ public final class ExternalPublication {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalPublication build() {
-            ExternalPublication __instance__ =
+            ExternalPublication model =
                     new ExternalPublication(
-                            applicationId,
-                            applicationCompartmentId,
-                            displayName,
-                            resourceConfiguration,
-                            configurationDetails,
-                            status,
-                            errorMessage,
-                            key,
-                            modelType,
-                            modelVersion,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            parentRef,
-                            metadata,
-                            keyMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.applicationId,
+                            this.applicationCompartmentId,
+                            this.displayName,
+                            this.resourceConfiguration,
+                            this.configurationDetails,
+                            this.status,
+                            this.errorMessage,
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parentRef,
+                            this.metadata,
+                            this.keyMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalPublication o) {
-            Builder copiedBuilder =
-                    applicationId(o.getApplicationId())
-                            .applicationCompartmentId(o.getApplicationCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .resourceConfiguration(o.getResourceConfiguration())
-                            .configurationDetails(o.getConfigurationDetails())
-                            .status(o.getStatus())
-                            .errorMessage(o.getErrorMessage())
-                            .key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parentRef(o.getParentRef())
-                            .metadata(o.getMetadata())
-                            .keyMap(o.getKeyMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalPublication model) {
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationCompartmentId")) {
+                this.applicationCompartmentId(model.getApplicationCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceConfiguration")) {
+                this.resourceConfiguration(model.getResourceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("configurationDetails")) {
+                this.configurationDetails(model.getConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("keyMap")) {
+                this.keyMap(model.getKeyMap());
+            }
+            return this;
         }
     }
 
@@ -695,6 +730,7 @@ public final class ExternalPublication {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalPublication(");
+        sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", applicationCompartmentId=")
                 .append(String.valueOf(this.applicationCompartmentId));
@@ -714,7 +750,6 @@ public final class ExternalPublication {
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -748,7 +783,7 @@ public final class ExternalPublication {
                 && java.util.Objects.equals(this.parentRef, other.parentRef)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -789,16 +824,7 @@ public final class ExternalPublication {
         result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class ListAttributeTagsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "attributeTagCollection"
     })
     private ListAttributeTagsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.AttributeTagCollection attributeTagCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.attributeTagCollection = attributeTagCollection;
@@ -75,6 +77,13 @@ public class ListAttributeTagsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class ListAttributeTagsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListAttributeTagsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             attributeTagCollection(o.getAttributeTagCollection());
@@ -149,7 +159,7 @@ public class ListAttributeTagsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListAttributeTagsResponse build() {
             return new ListAttributeTagsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, attributeTagCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, attributeTagCollection);
         }
     }
 

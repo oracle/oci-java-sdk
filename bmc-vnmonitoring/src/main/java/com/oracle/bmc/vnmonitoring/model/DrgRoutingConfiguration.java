@@ -62,19 +62,23 @@ public final class DrgRoutingConfiguration extends ForwardedRoutingConfiguration
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrgRoutingConfiguration build() {
-            DrgRoutingConfiguration __instance__ =
-                    new DrgRoutingConfiguration(drgRouteTableId, routeRule);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DrgRoutingConfiguration model =
+                    new DrgRoutingConfiguration(this.drgRouteTableId, this.routeRule);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DrgRoutingConfiguration o) {
-            Builder copiedBuilder =
-                    drgRouteTableId(o.getDrgRouteTableId()).routeRule(o.getRouteRule());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DrgRoutingConfiguration model) {
+            if (model.wasPropertyExplicitlySet("drgRouteTableId")) {
+                this.drgRouteTableId(model.getDrgRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("routeRule")) {
+                this.routeRule(model.getRouteRule());
+            }
+            return this;
         }
     }
 
@@ -137,7 +141,6 @@ public final class DrgRoutingConfiguration extends ForwardedRoutingConfiguration
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
         sb.append(", routeRule=").append(String.valueOf(this.routeRule));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,8 +157,7 @@ public final class DrgRoutingConfiguration extends ForwardedRoutingConfiguration
         DrgRoutingConfiguration other = (DrgRoutingConfiguration) o;
         return java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
                 && java.util.Objects.equals(this.routeRule, other.routeRule)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -166,16 +168,6 @@ public final class DrgRoutingConfiguration extends ForwardedRoutingConfiguration
                 (result * PRIME)
                         + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
         result = (result * PRIME) + (this.routeRule == null ? 43 : this.routeRule.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

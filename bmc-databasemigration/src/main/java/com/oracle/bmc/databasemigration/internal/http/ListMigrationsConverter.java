@@ -167,8 +167,8 @@ public class ListMigrationsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListMigrationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.migrationCollection(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.datasafe.model;
     builder = SecurityAssessmentComparisonPerTarget.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityAssessmentComparisonPerTarget {
+public final class SecurityAssessmentComparisonPerTarget
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baselineTargetId",
@@ -206,36 +207,53 @@ public final class SecurityAssessmentComparisonPerTarget {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityAssessmentComparisonPerTarget build() {
-            SecurityAssessmentComparisonPerTarget __instance__ =
+            SecurityAssessmentComparisonPerTarget model =
                     new SecurityAssessmentComparisonPerTarget(
-                            baselineTargetId,
-                            currentTargetId,
-                            auditing,
-                            authorizationControl,
-                            dataEncryption,
-                            dbConfiguration,
-                            fineGrainedAccessControl,
-                            privilegesAndRoles,
-                            userAccounts);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.baselineTargetId,
+                            this.currentTargetId,
+                            this.auditing,
+                            this.authorizationControl,
+                            this.dataEncryption,
+                            this.dbConfiguration,
+                            this.fineGrainedAccessControl,
+                            this.privilegesAndRoles,
+                            this.userAccounts);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityAssessmentComparisonPerTarget o) {
-            Builder copiedBuilder =
-                    baselineTargetId(o.getBaselineTargetId())
-                            .currentTargetId(o.getCurrentTargetId())
-                            .auditing(o.getAuditing())
-                            .authorizationControl(o.getAuthorizationControl())
-                            .dataEncryption(o.getDataEncryption())
-                            .dbConfiguration(o.getDbConfiguration())
-                            .fineGrainedAccessControl(o.getFineGrainedAccessControl())
-                            .privilegesAndRoles(o.getPrivilegesAndRoles())
-                            .userAccounts(o.getUserAccounts());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityAssessmentComparisonPerTarget model) {
+            if (model.wasPropertyExplicitlySet("baselineTargetId")) {
+                this.baselineTargetId(model.getBaselineTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("currentTargetId")) {
+                this.currentTargetId(model.getCurrentTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("auditing")) {
+                this.auditing(model.getAuditing());
+            }
+            if (model.wasPropertyExplicitlySet("authorizationControl")) {
+                this.authorizationControl(model.getAuthorizationControl());
+            }
+            if (model.wasPropertyExplicitlySet("dataEncryption")) {
+                this.dataEncryption(model.getDataEncryption());
+            }
+            if (model.wasPropertyExplicitlySet("dbConfiguration")) {
+                this.dbConfiguration(model.getDbConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("fineGrainedAccessControl")) {
+                this.fineGrainedAccessControl(model.getFineGrainedAccessControl());
+            }
+            if (model.wasPropertyExplicitlySet("privilegesAndRoles")) {
+                this.privilegesAndRoles(model.getPrivilegesAndRoles());
+            }
+            if (model.wasPropertyExplicitlySet("userAccounts")) {
+                this.userAccounts(model.getUserAccounts());
+            }
+            return this;
         }
     }
 
@@ -389,6 +407,7 @@ public final class SecurityAssessmentComparisonPerTarget {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityAssessmentComparisonPerTarget(");
+        sb.append("super=").append(super.toString());
         sb.append("baselineTargetId=").append(String.valueOf(this.baselineTargetId));
         sb.append(", currentTargetId=").append(String.valueOf(this.currentTargetId));
         sb.append(", auditing=").append(String.valueOf(this.auditing));
@@ -399,7 +418,6 @@ public final class SecurityAssessmentComparisonPerTarget {
                 .append(String.valueOf(this.fineGrainedAccessControl));
         sb.append(", privilegesAndRoles=").append(String.valueOf(this.privilegesAndRoles));
         sb.append(", userAccounts=").append(String.valueOf(this.userAccounts));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -424,7 +442,7 @@ public final class SecurityAssessmentComparisonPerTarget {
                         this.fineGrainedAccessControl, other.fineGrainedAccessControl)
                 && java.util.Objects.equals(this.privilegesAndRoles, other.privilegesAndRoles)
                 && java.util.Objects.equals(this.userAccounts, other.userAccounts)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -460,16 +478,7 @@ public final class SecurityAssessmentComparisonPerTarget {
                                 ? 43
                                 : this.privilegesAndRoles.hashCode());
         result = (result * PRIME) + (this.userAccounts == null ? 43 : this.userAccounts.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

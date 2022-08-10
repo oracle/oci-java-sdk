@@ -51,13 +51,20 @@ public class GetAlertPolicyResponse extends com.oracle.bmc.responses.BmcResponse
         return alertPolicy;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "alertPolicy"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "alertPolicy"
+    })
     private GetAlertPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.AlertPolicy alertPolicy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.alertPolicy = alertPolicy;
@@ -68,6 +75,13 @@ public class GetAlertPolicyResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetAlertPolicyResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetAlertPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             alertPolicy(o.getAlertPolicy());
@@ -138,7 +153,8 @@ public class GetAlertPolicyResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetAlertPolicyResponse build() {
-            return new GetAlertPolicyResponse(__httpStatusCode__, etag, opcRequestId, alertPolicy);
+            return new GetAlertPolicyResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, alertPolicy);
         }
     }
 

@@ -43,15 +43,17 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "instancePoolLoadBalancerAttachment"
     })
     private GetInstancePoolLoadBalancerAttachmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment
                     instancePoolLoadBalancerAttachment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.instancePoolLoadBalancerAttachment = instancePoolLoadBalancerAttachment;
     }
@@ -61,6 +63,13 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -107,6 +116,7 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
          */
         public Builder copy(GetInstancePoolLoadBalancerAttachmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             instancePoolLoadBalancerAttachment(o.getInstancePoolLoadBalancerAttachment());
 
@@ -119,7 +129,7 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
          */
         public GetInstancePoolLoadBalancerAttachmentResponse build() {
             return new GetInstancePoolLoadBalancerAttachmentResponse(
-                    __httpStatusCode__, opcRequestId, instancePoolLoadBalancerAttachment);
+                    __httpStatusCode__, headers, opcRequestId, instancePoolLoadBalancerAttachment);
         }
     }
 

@@ -81,23 +81,37 @@ public final class ValueNumber extends FieldValue {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValueNumber build() {
-            ValueNumber __instance__ =
-                    new ValueNumber(text, confidence, boundingPolygon, wordIndexes, value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ValueNumber model =
+                    new ValueNumber(
+                            this.text,
+                            this.confidence,
+                            this.boundingPolygon,
+                            this.wordIndexes,
+                            this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValueNumber o) {
-            Builder copiedBuilder =
-                    text(o.getText())
-                            .confidence(o.getConfidence())
-                            .boundingPolygon(o.getBoundingPolygon())
-                            .wordIndexes(o.getWordIndexes())
-                            .value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValueNumber model) {
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("boundingPolygon")) {
+                this.boundingPolygon(model.getBoundingPolygon());
+            }
+            if (model.wasPropertyExplicitlySet("wordIndexes")) {
+                this.wordIndexes(model.getWordIndexes());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -152,7 +166,6 @@ public final class ValueNumber extends FieldValue {
         sb.append("ValueNumber(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -167,9 +180,7 @@ public final class ValueNumber extends FieldValue {
         }
 
         ValueNumber other = (ValueNumber) o;
-        return java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.value, other.value) && super.equals(other);
     }
 
     @Override
@@ -177,16 +188,6 @@ public final class ValueNumber extends FieldValue {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

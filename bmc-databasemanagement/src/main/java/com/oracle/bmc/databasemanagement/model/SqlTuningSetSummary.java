@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningSetSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningSetSummary {
+public final class SqlTuningSetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "owner", "description", "statementCounts"})
     public SqlTuningSetSummary(
@@ -102,22 +102,30 @@ public final class SqlTuningSetSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningSetSummary build() {
-            SqlTuningSetSummary __instance__ =
-                    new SqlTuningSetSummary(name, owner, description, statementCounts);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlTuningSetSummary model =
+                    new SqlTuningSetSummary(
+                            this.name, this.owner, this.description, this.statementCounts);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningSetSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .owner(o.getOwner())
-                            .description(o.getDescription())
-                            .statementCounts(o.getStatementCounts());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningSetSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("statementCounts")) {
+                this.statementCounts(model.getStatementCounts());
+            }
+            return this;
         }
     }
 
@@ -201,11 +209,11 @@ public final class SqlTuningSetSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningSetSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", statementCounts=").append(String.valueOf(this.statementCounts));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +232,7 @@ public final class SqlTuningSetSummary {
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.statementCounts, other.statementCounts)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -237,16 +245,7 @@ public final class SqlTuningSetSummary {
         result =
                 (result * PRIME)
                         + (this.statementCounts == null ? 43 : this.statementCounts.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

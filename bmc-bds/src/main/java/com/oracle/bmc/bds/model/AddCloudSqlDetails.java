@@ -19,7 +19,7 @@ package com.oracle.bmc.bds.model;
     builder = AddCloudSqlDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddCloudSqlDetails {
+public final class AddCloudSqlDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "shape",
@@ -105,23 +105,33 @@ public final class AddCloudSqlDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddCloudSqlDetails build() {
-            AddCloudSqlDetails __instance__ =
+            AddCloudSqlDetails model =
                     new AddCloudSqlDetails(
-                            shape, shapeConfig, blockVolumeSizeInGBs, clusterAdminPassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.shape,
+                            this.shapeConfig,
+                            this.blockVolumeSizeInGBs,
+                            this.clusterAdminPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddCloudSqlDetails o) {
-            Builder copiedBuilder =
-                    shape(o.getShape())
-                            .shapeConfig(o.getShapeConfig())
-                            .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs())
-                            .clusterAdminPassword(o.getClusterAdminPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddCloudSqlDetails model) {
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("shapeConfig")) {
+                this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("blockVolumeSizeInGBs")) {
+                this.blockVolumeSizeInGBs(model.getBlockVolumeSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
+                this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            return this;
         }
     }
 
@@ -200,11 +210,11 @@ public final class AddCloudSqlDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddCloudSqlDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
         sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,7 +233,7 @@ public final class AddCloudSqlDetails {
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
                 && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -242,16 +252,7 @@ public final class AddCloudSqlDetails {
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

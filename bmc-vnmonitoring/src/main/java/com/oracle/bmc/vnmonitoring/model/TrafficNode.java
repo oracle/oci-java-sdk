@@ -33,7 +33,7 @@ package com.oracle.bmc.vnmonitoring.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TrafficNode {
+public class TrafficNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "egressTraffic",
@@ -94,6 +94,7 @@ public class TrafficNode {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TrafficNode(");
+        sb.append("super=").append(super.toString());
         sb.append("egressTraffic=").append(String.valueOf(this.egressTraffic));
         sb.append(", nextHopRoutingAction=").append(String.valueOf(this.nextHopRoutingAction));
         sb.append(", egressSecurityAction=").append(String.valueOf(this.egressSecurityAction));
@@ -115,8 +116,8 @@ public class TrafficNode {
         return java.util.Objects.equals(this.egressTraffic, other.egressTraffic)
                 && java.util.Objects.equals(this.nextHopRoutingAction, other.nextHopRoutingAction)
                 && java.util.Objects.equals(this.egressSecurityAction, other.egressSecurityAction)
-                && java.util.Objects.equals(
-                        this.ingressSecurityAction, other.ingressSecurityAction);
+                && java.util.Objects.equals(this.ingressSecurityAction, other.ingressSecurityAction)
+                && super.equals(other);
     }
 
     @Override
@@ -141,6 +142,7 @@ public class TrafficNode {
                         + (this.ingressSecurityAction == null
                                 ? 43
                                 : this.ingressSecurityAction.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

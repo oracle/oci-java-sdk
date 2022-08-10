@@ -211,8 +211,8 @@ public class SummarizeAwrDbSysstatsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAwrDbSysstatsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbSysstatCollection(response.getItem());
 

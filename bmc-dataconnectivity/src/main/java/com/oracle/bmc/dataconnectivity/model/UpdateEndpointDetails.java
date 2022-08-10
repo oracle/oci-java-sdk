@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = UpdateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateEndpointDetails {
+public final class UpdateEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "freeformTags",
@@ -157,30 +158,41 @@ public final class UpdateEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateEndpointDetails build() {
-            UpdateEndpointDetails __instance__ =
+            UpdateEndpointDetails model =
                     new UpdateEndpointDetails(
-                            freeformTags,
-                            definedTags,
-                            description,
-                            displayName,
-                            endpointSize,
-                            nsgIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.freeformTags,
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.endpointSize,
+                            this.nsgIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateEndpointDetails o) {
-            Builder copiedBuilder =
-                    freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .endpointSize(o.getEndpointSize())
-                            .nsgIds(o.getNsgIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("endpointSize")) {
+                this.endpointSize(model.getEndpointSize());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            return this;
         }
     }
 
@@ -300,13 +312,13 @@ public final class UpdateEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", endpointSize=").append(String.valueOf(this.endpointSize));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -327,7 +339,7 @@ public final class UpdateEndpointDetails {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.endpointSize, other.endpointSize)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -340,16 +352,7 @@ public final class UpdateEndpointDetails {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.endpointSize == null ? 43 : this.endpointSize.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

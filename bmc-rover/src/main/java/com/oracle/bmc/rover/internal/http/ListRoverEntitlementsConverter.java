@@ -165,8 +165,8 @@ public class ListRoverEntitlementsConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .ListRoverEntitlementsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverEntitlementCollection(response.getItem());
 

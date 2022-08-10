@@ -24,7 +24,8 @@ package com.oracle.bmc.objectstorage.model;
     builder = UpdateObjectStorageTierDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateObjectStorageTierDetails {
+public final class UpdateObjectStorageTierDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectName", "storageTier", "versionId"})
     public UpdateObjectStorageTierDetails(
@@ -92,21 +93,27 @@ public final class UpdateObjectStorageTierDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateObjectStorageTierDetails build() {
-            UpdateObjectStorageTierDetails __instance__ =
-                    new UpdateObjectStorageTierDetails(objectName, storageTier, versionId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateObjectStorageTierDetails model =
+                    new UpdateObjectStorageTierDetails(
+                            this.objectName, this.storageTier, this.versionId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateObjectStorageTierDetails o) {
-            Builder copiedBuilder =
-                    objectName(o.getObjectName())
-                            .storageTier(o.getStorageTier())
-                            .versionId(o.getVersionId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateObjectStorageTierDetails model) {
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("storageTier")) {
+                this.storageTier(model.getStorageTier());
+            }
+            if (model.wasPropertyExplicitlySet("versionId")) {
+                this.versionId(model.getVersionId());
+            }
+            return this;
         }
     }
 
@@ -178,10 +185,10 @@ public final class UpdateObjectStorageTierDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateObjectStorageTierDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("objectName=").append(String.valueOf(this.objectName));
         sb.append(", storageTier=").append(String.valueOf(this.storageTier));
         sb.append(", versionId=").append(String.valueOf(this.versionId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +206,7 @@ public final class UpdateObjectStorageTierDetails {
         return java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.storageTier, other.storageTier)
                 && java.util.Objects.equals(this.versionId, other.versionId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +216,7 @@ public final class UpdateObjectStorageTierDetails {
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.storageTier == null ? 43 : this.storageTier.hashCode());
         result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

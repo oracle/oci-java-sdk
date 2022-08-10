@@ -36,7 +36,8 @@ package com.oracle.bmc.servicemesh.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class IngressGatewayTrafficRouteRule {
+public class IngressGatewayTrafficRouteRule
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ingressGatewayHost", "destinations"})
     protected IngressGatewayTrafficRouteRule(
@@ -81,6 +82,7 @@ public class IngressGatewayTrafficRouteRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IngressGatewayTrafficRouteRule(");
+        sb.append("super=").append(super.toString());
         sb.append("ingressGatewayHost=").append(String.valueOf(this.ingressGatewayHost));
         sb.append(", destinations=").append(String.valueOf(this.destinations));
         sb.append(")");
@@ -98,7 +100,8 @@ public class IngressGatewayTrafficRouteRule {
 
         IngressGatewayTrafficRouteRule other = (IngressGatewayTrafficRouteRule) o;
         return java.util.Objects.equals(this.ingressGatewayHost, other.ingressGatewayHost)
-                && java.util.Objects.equals(this.destinations, other.destinations);
+                && java.util.Objects.equals(this.destinations, other.destinations)
+                && super.equals(other);
     }
 
     @Override
@@ -111,6 +114,7 @@ public class IngressGatewayTrafficRouteRule {
                                 ? 43
                                 : this.ingressGatewayHost.hashCode());
         result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = UpdateLogAnalyticsObjectCollectionRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
+public final class UpdateLogAnalyticsObjectCollectionRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -261,38 +262,57 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLogAnalyticsObjectCollectionRuleDetails build() {
-            UpdateLogAnalyticsObjectCollectionRuleDetails __instance__ =
+            UpdateLogAnalyticsObjectCollectionRuleDetails model =
                     new UpdateLogAnalyticsObjectCollectionRuleDetails(
-                            description,
-                            logGroupId,
-                            logSourceName,
-                            entityId,
-                            charEncoding,
-                            isEnabled,
-                            overrides,
-                            objectNameFilters,
-                            definedTags,
-                            freeformTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.logGroupId,
+                            this.logSourceName,
+                            this.entityId,
+                            this.charEncoding,
+                            this.isEnabled,
+                            this.overrides,
+                            this.objectNameFilters,
+                            this.definedTags,
+                            this.freeformTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateLogAnalyticsObjectCollectionRuleDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .logGroupId(o.getLogGroupId())
-                            .logSourceName(o.getLogSourceName())
-                            .entityId(o.getEntityId())
-                            .charEncoding(o.getCharEncoding())
-                            .isEnabled(o.getIsEnabled())
-                            .overrides(o.getOverrides())
-                            .objectNameFilters(o.getObjectNameFilters())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateLogAnalyticsObjectCollectionRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logSourceName")) {
+                this.logSourceName(model.getLogSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("charEncoding")) {
+                this.charEncoding(model.getCharEncoding());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("overrides")) {
+                this.overrides(model.getOverrides());
+            }
+            if (model.wasPropertyExplicitlySet("objectNameFilters")) {
+                this.objectNameFilters(model.getObjectNameFilters());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            return this;
         }
     }
 
@@ -494,6 +514,7 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateLogAnalyticsObjectCollectionRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", logSourceName=").append(String.valueOf(this.logSourceName));
@@ -504,7 +525,6 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
         sb.append(", objectNameFilters=").append(String.valueOf(this.objectNameFilters));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -530,7 +550,7 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
                 && java.util.Objects.equals(this.objectNameFilters, other.objectNameFilters)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -551,16 +571,7 @@ public final class UpdateLogAnalyticsObjectCollectionRuleDetails {
                         + (this.objectNameFilters == null ? 43 : this.objectNameFilters.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

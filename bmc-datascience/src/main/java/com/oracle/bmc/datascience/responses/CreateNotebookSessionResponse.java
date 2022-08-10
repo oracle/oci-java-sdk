@@ -87,6 +87,7 @@ public class CreateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "location",
         "opcRequestId",
@@ -95,12 +96,13 @@ public class CreateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateNotebookSessionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String location,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.datascience.model.NotebookSession notebookSession) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.location = location;
         this.opcRequestId = opcRequestId;
@@ -113,6 +115,13 @@ public class CreateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -210,6 +219,7 @@ public class CreateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(CreateNotebookSessionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
@@ -226,6 +236,7 @@ public class CreateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
         public CreateNotebookSessionResponse build() {
             return new CreateNotebookSessionResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     location,
                     opcRequestId,

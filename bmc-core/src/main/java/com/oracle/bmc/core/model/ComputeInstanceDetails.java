@@ -61,21 +61,27 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceDetails build() {
-            ComputeInstanceDetails __instance__ =
-                    new ComputeInstanceDetails(blockVolumes, launchDetails, secondaryVnics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ComputeInstanceDetails model =
+                    new ComputeInstanceDetails(
+                            this.blockVolumes, this.launchDetails, this.secondaryVnics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceDetails o) {
-            Builder copiedBuilder =
-                    blockVolumes(o.getBlockVolumes())
-                            .launchDetails(o.getLaunchDetails())
-                            .secondaryVnics(o.getSecondaryVnics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("blockVolumes")) {
+                this.blockVolumes(model.getBlockVolumes());
+            }
+            if (model.wasPropertyExplicitlySet("launchDetails")) {
+                this.launchDetails(model.getLaunchDetails());
+            }
+            if (model.wasPropertyExplicitlySet("secondaryVnics")) {
+                this.secondaryVnics(model.getSecondaryVnics());
+            }
+            return this;
         }
     }
 
@@ -139,7 +145,6 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         sb.append(", blockVolumes=").append(String.valueOf(this.blockVolumes));
         sb.append(", launchDetails=").append(String.valueOf(this.launchDetails));
         sb.append(", secondaryVnics=").append(String.valueOf(this.secondaryVnics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,8 +162,7 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         return java.util.Objects.equals(this.blockVolumes, other.blockVolumes)
                 && java.util.Objects.equals(this.launchDetails, other.launchDetails)
                 && java.util.Objects.equals(this.secondaryVnics, other.secondaryVnics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -172,16 +176,6 @@ public final class ComputeInstanceDetails extends InstanceConfigurationInstanceD
         result =
                 (result * PRIME)
                         + (this.secondaryVnics == null ? 43 : this.secondaryVnics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

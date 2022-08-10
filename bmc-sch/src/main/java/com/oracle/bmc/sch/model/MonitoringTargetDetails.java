@@ -115,22 +115,30 @@ public final class MonitoringTargetDetails extends TargetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoringTargetDetails build() {
-            MonitoringTargetDetails __instance__ =
-                    new MonitoringTargetDetails(compartmentId, metricNamespace, metric, dimensions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitoringTargetDetails model =
+                    new MonitoringTargetDetails(
+                            this.compartmentId, this.metricNamespace, this.metric, this.dimensions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoringTargetDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .metricNamespace(o.getMetricNamespace())
-                            .metric(o.getMetric())
-                            .dimensions(o.getDimensions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoringTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("metricNamespace")) {
+                this.metricNamespace(model.getMetricNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("metric")) {
+                this.metric(model.getMetric());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            return this;
         }
     }
 
@@ -248,7 +256,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
         sb.append(", metricNamespace=").append(String.valueOf(this.metricNamespace));
         sb.append(", metric=").append(String.valueOf(this.metric));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -267,8 +274,7 @@ public final class MonitoringTargetDetails extends TargetDetails {
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
                 && java.util.Objects.equals(this.metric, other.metric)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -283,16 +289,6 @@ public final class MonitoringTargetDetails extends TargetDetails {
                         + (this.metricNamespace == null ? 43 : this.metricNamespace.hashCode());
         result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

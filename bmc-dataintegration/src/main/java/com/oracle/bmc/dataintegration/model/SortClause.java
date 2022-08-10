@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SortClause.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SortClause {
+public final class SortClause extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"field", "order"})
     public SortClause(ShapeField field, Order order) {
@@ -58,17 +58,22 @@ public final class SortClause {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SortClause build() {
-            SortClause __instance__ = new SortClause(field, order);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SortClause model = new SortClause(this.field, this.order);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SortClause o) {
-            Builder copiedBuilder = field(o.getField()).order(o.getOrder());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SortClause model) {
+            if (model.wasPropertyExplicitlySet("field")) {
+                this.field(model.getField());
+            }
+            if (model.wasPropertyExplicitlySet("order")) {
+                this.order(model.getOrder());
+            }
+            return this;
         }
     }
 
@@ -164,9 +169,9 @@ public final class SortClause {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SortClause(");
+        sb.append("super=").append(super.toString());
         sb.append("field=").append(String.valueOf(this.field));
         sb.append(", order=").append(String.valueOf(this.order));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -183,7 +188,7 @@ public final class SortClause {
         SortClause other = (SortClause) o;
         return java.util.Objects.equals(this.field, other.field)
                 && java.util.Objects.equals(this.order, other.order)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -192,16 +197,7 @@ public final class SortClause {
         int result = 1;
         result = (result * PRIME) + (this.field == null ? 43 : this.field.hashCode());
         result = (result * PRIME) + (this.order == null ? 43 : this.order.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

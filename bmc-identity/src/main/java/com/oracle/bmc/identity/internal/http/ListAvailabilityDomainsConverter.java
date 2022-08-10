@@ -111,8 +111,8 @@ public class ListAvailabilityDomainsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListAvailabilityDomainsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

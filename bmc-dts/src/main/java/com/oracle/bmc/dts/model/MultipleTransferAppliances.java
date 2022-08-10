@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = MultipleTransferAppliances.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MultipleTransferAppliances {
+public final class MultipleTransferAppliances
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"transferApplianceObjects"})
     public MultipleTransferAppliances(
@@ -52,18 +53,20 @@ public final class MultipleTransferAppliances {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MultipleTransferAppliances build() {
-            MultipleTransferAppliances __instance__ =
-                    new MultipleTransferAppliances(transferApplianceObjects);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MultipleTransferAppliances model =
+                    new MultipleTransferAppliances(this.transferApplianceObjects);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MultipleTransferAppliances o) {
-            Builder copiedBuilder = transferApplianceObjects(o.getTransferApplianceObjects());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MultipleTransferAppliances model) {
+            if (model.wasPropertyExplicitlySet("transferApplianceObjects")) {
+                this.transferApplianceObjects(model.getTransferApplianceObjects());
+            }
+            return this;
         }
     }
 
@@ -105,9 +108,9 @@ public final class MultipleTransferAppliances {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MultipleTransferAppliances(");
+        sb.append("super=").append(super.toString());
         sb.append("transferApplianceObjects=")
                 .append(String.valueOf(this.transferApplianceObjects));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,7 +127,7 @@ public final class MultipleTransferAppliances {
         MultipleTransferAppliances other = (MultipleTransferAppliances) o;
         return java.util.Objects.equals(
                         this.transferApplianceObjects, other.transferApplianceObjects)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -136,16 +139,7 @@ public final class MultipleTransferAppliances {
                         + (this.transferApplianceObjects == null
                                 ? 43
                                 : this.transferApplianceObjects.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

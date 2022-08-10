@@ -18,7 +18,7 @@ package com.oracle.bmc.dataflow.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RunSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RunSummary {
+public final class RunSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -447,56 +447,93 @@ public final class RunSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RunSummary build() {
-            RunSummary __instance__ =
+            RunSummary model =
                     new RunSummary(
-                            applicationId,
-                            compartmentId,
-                            dataReadInBytes,
-                            dataWrittenInBytes,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            language,
-                            lifecycleDetails,
-                            lifecycleState,
-                            opcRequestId,
-                            ownerPrincipalId,
-                            ownerUserName,
-                            runDurationInMilliseconds,
-                            totalOCpu,
-                            timeCreated,
-                            timeUpdated,
-                            type);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.applicationId,
+                            this.compartmentId,
+                            this.dataReadInBytes,
+                            this.dataWrittenInBytes,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.language,
+                            this.lifecycleDetails,
+                            this.lifecycleState,
+                            this.opcRequestId,
+                            this.ownerPrincipalId,
+                            this.ownerUserName,
+                            this.runDurationInMilliseconds,
+                            this.totalOCpu,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.type);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RunSummary o) {
-            Builder copiedBuilder =
-                    applicationId(o.getApplicationId())
-                            .compartmentId(o.getCompartmentId())
-                            .dataReadInBytes(o.getDataReadInBytes())
-                            .dataWrittenInBytes(o.getDataWrittenInBytes())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .language(o.getLanguage())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .opcRequestId(o.getOpcRequestId())
-                            .ownerPrincipalId(o.getOwnerPrincipalId())
-                            .ownerUserName(o.getOwnerUserName())
-                            .runDurationInMilliseconds(o.getRunDurationInMilliseconds())
-                            .totalOCpu(o.getTotalOCpu())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .type(o.getType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RunSummary model) {
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("dataReadInBytes")) {
+                this.dataReadInBytes(model.getDataReadInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("dataWrittenInBytes")) {
+                this.dataWrittenInBytes(model.getDataWrittenInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("opcRequestId")) {
+                this.opcRequestId(model.getOpcRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("ownerPrincipalId")) {
+                this.ownerPrincipalId(model.getOwnerPrincipalId());
+            }
+            if (model.wasPropertyExplicitlySet("ownerUserName")) {
+                this.ownerUserName(model.getOwnerUserName());
+            }
+            if (model.wasPropertyExplicitlySet("runDurationInMilliseconds")) {
+                this.runDurationInMilliseconds(model.getRunDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("totalOCpu")) {
+                this.totalOCpu(model.getTotalOCpu());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            return this;
         }
     }
 
@@ -842,6 +879,7 @@ public final class RunSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RunSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataReadInBytes=").append(String.valueOf(this.dataReadInBytes));
@@ -862,7 +900,6 @@ public final class RunSummary {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -897,7 +934,7 @@ public final class RunSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -945,16 +982,7 @@ public final class RunSummary {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

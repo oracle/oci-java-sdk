@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LookupSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LookupSummaryReport {
+public final class LookupSummaryReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userCreatedCount", "oracleDefinedCount", "totalCount"})
     public LookupSummaryReport(
@@ -85,21 +85,27 @@ public final class LookupSummaryReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LookupSummaryReport build() {
-            LookupSummaryReport __instance__ =
-                    new LookupSummaryReport(userCreatedCount, oracleDefinedCount, totalCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LookupSummaryReport model =
+                    new LookupSummaryReport(
+                            this.userCreatedCount, this.oracleDefinedCount, this.totalCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LookupSummaryReport o) {
-            Builder copiedBuilder =
-                    userCreatedCount(o.getUserCreatedCount())
-                            .oracleDefinedCount(o.getOracleDefinedCount())
-                            .totalCount(o.getTotalCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LookupSummaryReport model) {
+            if (model.wasPropertyExplicitlySet("userCreatedCount")) {
+                this.userCreatedCount(model.getUserCreatedCount());
+            }
+            if (model.wasPropertyExplicitlySet("oracleDefinedCount")) {
+                this.oracleDefinedCount(model.getOracleDefinedCount());
+            }
+            if (model.wasPropertyExplicitlySet("totalCount")) {
+                this.totalCount(model.getTotalCount());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class LookupSummaryReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LookupSummaryReport(");
+        sb.append("super=").append(super.toString());
         sb.append("userCreatedCount=").append(String.valueOf(this.userCreatedCount));
         sb.append(", oracleDefinedCount=").append(String.valueOf(this.oracleDefinedCount));
         sb.append(", totalCount=").append(String.valueOf(this.totalCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class LookupSummaryReport {
         return java.util.Objects.equals(this.userCreatedCount, other.userCreatedCount)
                 && java.util.Objects.equals(this.oracleDefinedCount, other.oracleDefinedCount)
                 && java.util.Objects.equals(this.totalCount, other.totalCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +212,7 @@ public final class LookupSummaryReport {
                                 ? 43
                                 : this.oracleDefinedCount.hashCode());
         result = (result * PRIME) + (this.totalCount == null ? 43 : this.totalCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

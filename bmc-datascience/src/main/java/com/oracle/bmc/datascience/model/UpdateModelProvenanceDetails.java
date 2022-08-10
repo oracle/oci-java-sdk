@@ -19,7 +19,8 @@ package com.oracle.bmc.datascience.model;
     builder = UpdateModelProvenanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateModelProvenanceDetails {
+public final class UpdateModelProvenanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "repositoryUrl",
@@ -150,30 +151,41 @@ public final class UpdateModelProvenanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateModelProvenanceDetails build() {
-            UpdateModelProvenanceDetails __instance__ =
+            UpdateModelProvenanceDetails model =
                     new UpdateModelProvenanceDetails(
-                            repositoryUrl,
-                            gitBranch,
-                            gitCommit,
-                            scriptDir,
-                            trainingScript,
-                            trainingId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.repositoryUrl,
+                            this.gitBranch,
+                            this.gitCommit,
+                            this.scriptDir,
+                            this.trainingScript,
+                            this.trainingId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateModelProvenanceDetails o) {
-            Builder copiedBuilder =
-                    repositoryUrl(o.getRepositoryUrl())
-                            .gitBranch(o.getGitBranch())
-                            .gitCommit(o.getGitCommit())
-                            .scriptDir(o.getScriptDir())
-                            .trainingScript(o.getTrainingScript())
-                            .trainingId(o.getTrainingId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateModelProvenanceDetails model) {
+            if (model.wasPropertyExplicitlySet("repositoryUrl")) {
+                this.repositoryUrl(model.getRepositoryUrl());
+            }
+            if (model.wasPropertyExplicitlySet("gitBranch")) {
+                this.gitBranch(model.getGitBranch());
+            }
+            if (model.wasPropertyExplicitlySet("gitCommit")) {
+                this.gitCommit(model.getGitCommit());
+            }
+            if (model.wasPropertyExplicitlySet("scriptDir")) {
+                this.scriptDir(model.getScriptDir());
+            }
+            if (model.wasPropertyExplicitlySet("trainingScript")) {
+                this.trainingScript(model.getTrainingScript());
+            }
+            if (model.wasPropertyExplicitlySet("trainingId")) {
+                this.trainingId(model.getTrainingId());
+            }
+            return this;
         }
     }
 
@@ -287,13 +299,13 @@ public final class UpdateModelProvenanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateModelProvenanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("repositoryUrl=").append(String.valueOf(this.repositoryUrl));
         sb.append(", gitBranch=").append(String.valueOf(this.gitBranch));
         sb.append(", gitCommit=").append(String.valueOf(this.gitCommit));
         sb.append(", scriptDir=").append(String.valueOf(this.scriptDir));
         sb.append(", trainingScript=").append(String.valueOf(this.trainingScript));
         sb.append(", trainingId=").append(String.valueOf(this.trainingId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -314,7 +326,7 @@ public final class UpdateModelProvenanceDetails {
                 && java.util.Objects.equals(this.scriptDir, other.scriptDir)
                 && java.util.Objects.equals(this.trainingScript, other.trainingScript)
                 && java.util.Objects.equals(this.trainingId, other.trainingId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -331,16 +343,7 @@ public final class UpdateModelProvenanceDetails {
                 (result * PRIME)
                         + (this.trainingScript == null ? 43 : this.trainingScript.hashCode());
         result = (result * PRIME) + (this.trainingId == null ? 43 : this.trainingId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -21,7 +21,8 @@ package com.oracle.bmc.database.model;
     builder = CreateConsoleConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateConsoleConnectionDetails {
+public final class CreateConsoleConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"publicKey"})
     public CreateConsoleConnectionDetails(String publicKey) {
@@ -52,18 +53,20 @@ public final class CreateConsoleConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateConsoleConnectionDetails build() {
-            CreateConsoleConnectionDetails __instance__ =
-                    new CreateConsoleConnectionDetails(publicKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateConsoleConnectionDetails model =
+                    new CreateConsoleConnectionDetails(this.publicKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateConsoleConnectionDetails o) {
-            Builder copiedBuilder = publicKey(o.getPublicKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateConsoleConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("publicKey")) {
+                this.publicKey(model.getPublicKey());
+            }
+            return this;
         }
     }
 
@@ -105,8 +108,8 @@ public final class CreateConsoleConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateConsoleConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("publicKey=").append(String.valueOf(this.publicKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,8 +124,7 @@ public final class CreateConsoleConnectionDetails {
         }
 
         CreateConsoleConnectionDetails other = (CreateConsoleConnectionDetails) o;
-        return java.util.Objects.equals(this.publicKey, other.publicKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.publicKey, other.publicKey) && super.equals(other);
     }
 
     @Override
@@ -130,16 +132,7 @@ public final class CreateConsoleConnectionDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

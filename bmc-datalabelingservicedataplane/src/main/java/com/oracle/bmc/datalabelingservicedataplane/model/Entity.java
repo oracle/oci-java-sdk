@@ -37,7 +37,7 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Entity {
+public class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected Entity() {
@@ -57,6 +57,7 @@ public class Entity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Entity(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -71,13 +72,14 @@ public class Entity {
         }
 
         Entity other = (Entity) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

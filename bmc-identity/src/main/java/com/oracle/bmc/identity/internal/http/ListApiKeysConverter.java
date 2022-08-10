@@ -108,8 +108,8 @@ public class ListApiKeysConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListApiKeysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

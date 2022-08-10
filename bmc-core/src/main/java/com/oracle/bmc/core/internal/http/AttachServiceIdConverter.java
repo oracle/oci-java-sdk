@@ -105,8 +105,8 @@ public class AttachServiceIdConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .AttachServiceIdResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceGateway(response.getItem());
 

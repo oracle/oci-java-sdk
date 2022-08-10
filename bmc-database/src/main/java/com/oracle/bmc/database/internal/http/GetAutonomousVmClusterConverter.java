@@ -110,8 +110,8 @@ public class GetAutonomousVmClusterConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetAutonomousVmClusterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousVmCluster(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.functions.model;
     builder = CreateFunctionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateFunctionDetails {
+public final class CreateFunctionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -272,40 +273,61 @@ public final class CreateFunctionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateFunctionDetails build() {
-            CreateFunctionDetails __instance__ =
+            CreateFunctionDetails model =
                     new CreateFunctionDetails(
-                            displayName,
-                            applicationId,
-                            image,
-                            imageDigest,
-                            memoryInMBs,
-                            config,
-                            timeoutInSeconds,
-                            provisionedConcurrencyConfig,
-                            traceConfig,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.applicationId,
+                            this.image,
+                            this.imageDigest,
+                            this.memoryInMBs,
+                            this.config,
+                            this.timeoutInSeconds,
+                            this.provisionedConcurrencyConfig,
+                            this.traceConfig,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateFunctionDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .applicationId(o.getApplicationId())
-                            .image(o.getImage())
-                            .imageDigest(o.getImageDigest())
-                            .memoryInMBs(o.getMemoryInMBs())
-                            .config(o.getConfig())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .provisionedConcurrencyConfig(o.getProvisionedConcurrencyConfig())
-                            .traceConfig(o.getTraceConfig())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateFunctionDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("image")) {
+                this.image(model.getImage());
+            }
+            if (model.wasPropertyExplicitlySet("imageDigest")) {
+                this.imageDigest(model.getImageDigest());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInMBs")) {
+                this.memoryInMBs(model.getMemoryInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("config")) {
+                this.config(model.getConfig());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedConcurrencyConfig")) {
+                this.provisionedConcurrencyConfig(model.getProvisionedConcurrencyConfig());
+            }
+            if (model.wasPropertyExplicitlySet("traceConfig")) {
+                this.traceConfig(model.getTraceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -513,6 +535,7 @@ public final class CreateFunctionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFunctionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", image=").append(String.valueOf(this.image));
@@ -525,7 +548,6 @@ public final class CreateFunctionDetails {
         sb.append(", traceConfig=").append(String.valueOf(this.traceConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -552,7 +574,7 @@ public final class CreateFunctionDetails {
                 && java.util.Objects.equals(this.traceConfig, other.traceConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -578,16 +600,7 @@ public final class CreateFunctionDetails {
         result = (result * PRIME) + (this.traceConfig == null ? 43 : this.traceConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

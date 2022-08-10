@@ -19,7 +19,7 @@ package com.oracle.bmc.apigateway.model;
     builder = ApiValidationDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiValidationDetail {
+public final class ApiValidationDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"msg", "severity", "src"})
     public ApiValidationDetail(
@@ -87,17 +87,25 @@ public final class ApiValidationDetail {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiValidationDetail build() {
-            ApiValidationDetail __instance__ = new ApiValidationDetail(msg, severity, src);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApiValidationDetail model = new ApiValidationDetail(this.msg, this.severity, this.src);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiValidationDetail o) {
-            Builder copiedBuilder = msg(o.getMsg()).severity(o.getSeverity()).src(o.getSrc());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiValidationDetail model) {
+            if (model.wasPropertyExplicitlySet("msg")) {
+                this.msg(model.getMsg());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("src")) {
+                this.src(model.getSrc());
+            }
+            return this;
         }
     }
 
@@ -216,10 +224,10 @@ public final class ApiValidationDetail {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiValidationDetail(");
+        sb.append("super=").append(super.toString());
         sb.append("msg=").append(String.valueOf(this.msg));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", src=").append(String.valueOf(this.src));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -237,7 +245,7 @@ public final class ApiValidationDetail {
         return java.util.Objects.equals(this.msg, other.msg)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.src, other.src)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -247,16 +255,7 @@ public final class ApiValidationDetail {
         result = (result * PRIME) + (this.msg == null ? 43 : this.msg.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result = (result * PRIME) + (this.src == null ? 43 : this.src.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

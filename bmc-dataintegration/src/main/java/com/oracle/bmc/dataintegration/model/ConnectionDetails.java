@@ -60,7 +60,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ConnectionDetails {
+public class ConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -264,6 +264,7 @@ public class ConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -301,7 +302,8 @@ public class ConnectionDetails {
                 && java.util.Objects.equals(this.primarySchema, other.primarySchema)
                 && java.util.Objects.equals(this.connectionProperties, other.connectionProperties)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
-                && java.util.Objects.equals(this.metadata, other.metadata);
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && super.equals(other);
     }
 
     @Override
@@ -328,6 +330,7 @@ public class ConnectionDetails {
                                 : this.connectionProperties.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

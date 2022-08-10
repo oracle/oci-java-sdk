@@ -104,8 +104,8 @@ public class DownloadMaskingLogConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadMaskingLogResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

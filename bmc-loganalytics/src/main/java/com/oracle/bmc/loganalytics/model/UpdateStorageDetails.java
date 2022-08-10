@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = UpdateStorageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateStorageDetails {
+public final class UpdateStorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"archivingConfiguration"})
     public UpdateStorageDetails(ArchivingConfiguration archivingConfiguration) {
@@ -43,17 +43,19 @@ public final class UpdateStorageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateStorageDetails build() {
-            UpdateStorageDetails __instance__ = new UpdateStorageDetails(archivingConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateStorageDetails model = new UpdateStorageDetails(this.archivingConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateStorageDetails o) {
-            Builder copiedBuilder = archivingConfiguration(o.getArchivingConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateStorageDetails model) {
+            if (model.wasPropertyExplicitlySet("archivingConfiguration")) {
+                this.archivingConfiguration(model.getArchivingConfiguration());
+            }
+            return this;
         }
     }
 
@@ -88,8 +90,8 @@ public final class UpdateStorageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateStorageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("archivingConfiguration=").append(String.valueOf(this.archivingConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -105,7 +107,7 @@ public final class UpdateStorageDetails {
 
         UpdateStorageDetails other = (UpdateStorageDetails) o;
         return java.util.Objects.equals(this.archivingConfiguration, other.archivingConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -117,16 +119,7 @@ public final class UpdateStorageDetails {
                         + (this.archivingConfiguration == null
                                 ? 43
                                 : this.archivingConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

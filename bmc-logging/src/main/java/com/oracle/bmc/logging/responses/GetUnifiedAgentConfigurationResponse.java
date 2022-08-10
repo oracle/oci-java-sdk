@@ -55,16 +55,18 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "unifiedAgentConfiguration"
     })
     private GetUnifiedAgentConfigurationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.logging.model.UnifiedAgentConfiguration unifiedAgentConfiguration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.unifiedAgentConfiguration = unifiedAgentConfiguration;
@@ -75,6 +77,13 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
          */
         public Builder copy(GetUnifiedAgentConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             unifiedAgentConfiguration(o.getUnifiedAgentConfiguration());
@@ -149,7 +159,7 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
          */
         public GetUnifiedAgentConfigurationResponse build() {
             return new GetUnifiedAgentConfigurationResponse(
-                    __httpStatusCode__, opcRequestId, etag, unifiedAgentConfiguration);
+                    __httpStatusCode__, headers, opcRequestId, etag, unifiedAgentConfiguration);
         }
     }
 

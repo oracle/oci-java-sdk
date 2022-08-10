@@ -171,7 +171,8 @@ public class ListAwrHubsConverter {
 
                                 com.oracle.bmc.opsi.responses.ListAwrHubsResponse.Builder builder =
                                         com.oracle.bmc.opsi.responses.ListAwrHubsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.awrHubSummaryCollection(response.getItem());
 

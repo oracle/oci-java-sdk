@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = CreateDisApplicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDisApplicationDetails {
+public final class CreateDisApplicationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -276,44 +277,69 @@ public final class CreateDisApplicationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDisApplicationDetails build() {
-            CreateDisApplicationDetails __instance__ =
+            CreateDisApplicationDetails model =
                     new CreateDisApplicationDetails(
-                            key,
-                            modelVersion,
-                            modelType,
-                            name,
-                            description,
-                            objectStatus,
-                            identifier,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            lifecycleState,
-                            sourceApplicationInfo,
-                            registryMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.modelType,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.identifier,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lifecycleState,
+                            this.sourceApplicationInfo,
+                            this.registryMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDisApplicationDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .modelType(o.getModelType())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .lifecycleState(o.getLifecycleState())
-                            .sourceApplicationInfo(o.getSourceApplicationInfo())
-                            .registryMetadata(o.getRegistryMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDisApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("sourceApplicationInfo")) {
+                this.sourceApplicationInfo(model.getSourceApplicationInfo());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            return this;
         }
     }
 
@@ -590,6 +616,7 @@ public final class CreateDisApplicationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDisApplicationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
@@ -603,7 +630,6 @@ public final class CreateDisApplicationDetails {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", sourceApplicationInfo=").append(String.valueOf(this.sourceApplicationInfo));
         sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -631,7 +657,7 @@ public final class CreateDisApplicationDetails {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.sourceApplicationInfo, other.sourceApplicationInfo)
                 && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -659,16 +685,7 @@ public final class CreateDisApplicationDetails {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

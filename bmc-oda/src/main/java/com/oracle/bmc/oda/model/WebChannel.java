@@ -199,47 +199,74 @@ public final class WebChannel extends Channel {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WebChannel build() {
-            WebChannel __instance__ =
+            WebChannel model =
                     new WebChannel(
-                            id,
-                            name,
-                            description,
-                            category,
-                            sessionExpiryDurationInMilliseconds,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            maxTokenExpirationTimeInMinutes,
-                            isClientAuthenticationEnabled,
-                            allowedDomains,
-                            botId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.description,
+                            this.category,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.maxTokenExpirationTimeInMinutes,
+                            this.isClientAuthenticationEnabled,
+                            this.allowedDomains,
+                            this.botId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WebChannel o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .category(o.getCategory())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .maxTokenExpirationTimeInMinutes(o.getMaxTokenExpirationTimeInMinutes())
-                            .isClientAuthenticationEnabled(o.getIsClientAuthenticationEnabled())
-                            .allowedDomains(o.getAllowedDomains())
-                            .botId(o.getBotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WebChannel model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("maxTokenExpirationTimeInMinutes")) {
+                this.maxTokenExpirationTimeInMinutes(model.getMaxTokenExpirationTimeInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("isClientAuthenticationEnabled")) {
+                this.isClientAuthenticationEnabled(model.getIsClientAuthenticationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("allowedDomains")) {
+                this.allowedDomains(model.getAllowedDomains());
+            }
+            if (model.wasPropertyExplicitlySet("botId")) {
+                this.botId(model.getBotId());
+            }
+            return this;
         }
     }
 
@@ -377,7 +404,6 @@ public final class WebChannel extends Channel {
                 .append(String.valueOf(this.isClientAuthenticationEnabled));
         sb.append(", allowedDomains=").append(String.valueOf(this.allowedDomains));
         sb.append(", botId=").append(String.valueOf(this.botId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -398,8 +424,7 @@ public final class WebChannel extends Channel {
                         this.isClientAuthenticationEnabled, other.isClientAuthenticationEnabled)
                 && java.util.Objects.equals(this.allowedDomains, other.allowedDomains)
                 && java.util.Objects.equals(this.botId, other.botId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -420,16 +445,6 @@ public final class WebChannel extends Channel {
                 (result * PRIME)
                         + (this.allowedDomains == null ? 43 : this.allowedDomains.hashCode());
         result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

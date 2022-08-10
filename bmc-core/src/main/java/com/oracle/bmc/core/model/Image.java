@@ -26,7 +26,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Image.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Image {
+public final class Image extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baseImageId",
@@ -424,52 +424,85 @@ public final class Image {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Image build() {
-            Image __instance__ =
+            Image model =
                     new Image(
-                            baseImageId,
-                            compartmentId,
-                            createImageAllowed,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            launchMode,
-                            launchOptions,
-                            lifecycleState,
-                            operatingSystem,
-                            operatingSystemVersion,
-                            agentFeatures,
-                            listingType,
-                            sizeInMBs,
-                            billableSizeInGBs,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.baseImageId,
+                            this.compartmentId,
+                            this.createImageAllowed,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.launchMode,
+                            this.launchOptions,
+                            this.lifecycleState,
+                            this.operatingSystem,
+                            this.operatingSystemVersion,
+                            this.agentFeatures,
+                            this.listingType,
+                            this.sizeInMBs,
+                            this.billableSizeInGBs,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Image o) {
-            Builder copiedBuilder =
-                    baseImageId(o.getBaseImageId())
-                            .compartmentId(o.getCompartmentId())
-                            .createImageAllowed(o.getCreateImageAllowed())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .launchMode(o.getLaunchMode())
-                            .launchOptions(o.getLaunchOptions())
-                            .lifecycleState(o.getLifecycleState())
-                            .operatingSystem(o.getOperatingSystem())
-                            .operatingSystemVersion(o.getOperatingSystemVersion())
-                            .agentFeatures(o.getAgentFeatures())
-                            .listingType(o.getListingType())
-                            .sizeInMBs(o.getSizeInMBs())
-                            .billableSizeInGBs(o.getBillableSizeInGBs())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Image model) {
+            if (model.wasPropertyExplicitlySet("baseImageId")) {
+                this.baseImageId(model.getBaseImageId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("createImageAllowed")) {
+                this.createImageAllowed(model.getCreateImageAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("launchMode")) {
+                this.launchMode(model.getLaunchMode());
+            }
+            if (model.wasPropertyExplicitlySet("launchOptions")) {
+                this.launchOptions(model.getLaunchOptions());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystemVersion")) {
+                this.operatingSystemVersion(model.getOperatingSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("agentFeatures")) {
+                this.agentFeatures(model.getAgentFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("listingType")) {
+                this.listingType(model.getListingType());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInMBs")) {
+                this.sizeInMBs(model.getSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("billableSizeInGBs")) {
+                this.billableSizeInGBs(model.getBillableSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -949,6 +982,7 @@ public final class Image {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Image(");
+        sb.append("super=").append(super.toString());
         sb.append("baseImageId=").append(String.valueOf(this.baseImageId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", createImageAllowed=").append(String.valueOf(this.createImageAllowed));
@@ -966,7 +1000,6 @@ public final class Image {
         sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
         sb.append(", billableSizeInGBs=").append(String.valueOf(this.billableSizeInGBs));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -999,7 +1032,7 @@ public final class Image {
                 && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
                 && java.util.Objects.equals(this.billableSizeInGBs, other.billableSizeInGBs)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1043,16 +1076,7 @@ public final class Image {
                 (result * PRIME)
                         + (this.billableSizeInGBs == null ? 43 : this.billableSizeInGBs.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -67,21 +67,27 @@ public final class CreateNotificationServiceActionDetails extends ActionDetails 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNotificationServiceActionDetails build() {
-            CreateNotificationServiceActionDetails __instance__ =
-                    new CreateNotificationServiceActionDetails(isEnabled, description, topicId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateNotificationServiceActionDetails model =
+                    new CreateNotificationServiceActionDetails(
+                            this.isEnabled, this.description, this.topicId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNotificationServiceActionDetails o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .description(o.getDescription())
-                            .topicId(o.getTopicId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateNotificationServiceActionDetails model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("topicId")) {
+                this.topicId(model.getTopicId());
+            }
+            return this;
         }
     }
 
@@ -134,7 +140,6 @@ public final class CreateNotificationServiceActionDetails extends ActionDetails 
         sb.append("CreateNotificationServiceActionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", topicId=").append(String.valueOf(this.topicId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -149,9 +154,7 @@ public final class CreateNotificationServiceActionDetails extends ActionDetails 
         }
 
         CreateNotificationServiceActionDetails other = (CreateNotificationServiceActionDetails) o;
-        return java.util.Objects.equals(this.topicId, other.topicId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.topicId, other.topicId) && super.equals(other);
     }
 
     @Override
@@ -159,16 +162,6 @@ public final class CreateNotificationServiceActionDetails extends ActionDetails 
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.topicId == null ? 43 : this.topicId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

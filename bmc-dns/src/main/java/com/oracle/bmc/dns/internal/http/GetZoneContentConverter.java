@@ -123,8 +123,8 @@ public class GetZoneContentConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses.GetZoneContentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

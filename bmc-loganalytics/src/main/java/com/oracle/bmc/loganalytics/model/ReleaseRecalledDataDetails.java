@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = ReleaseRecalledDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReleaseRecalledDataDetails {
+public final class ReleaseRecalledDataDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -111,23 +112,33 @@ public final class ReleaseRecalledDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReleaseRecalledDataDetails build() {
-            ReleaseRecalledDataDetails __instance__ =
+            ReleaseRecalledDataDetails model =
                     new ReleaseRecalledDataDetails(
-                            compartmentId, timeDataEnded, timeDataStarted, dataType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.timeDataEnded,
+                            this.timeDataStarted,
+                            this.dataType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReleaseRecalledDataDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .timeDataEnded(o.getTimeDataEnded())
-                            .timeDataStarted(o.getTimeDataStarted())
-                            .dataType(o.getDataType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReleaseRecalledDataDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataEnded")) {
+                this.timeDataEnded(model.getTimeDataEnded());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataStarted")) {
+                this.timeDataStarted(model.getTimeDataStarted());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            return this;
         }
     }
 
@@ -211,11 +222,11 @@ public final class ReleaseRecalledDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReleaseRecalledDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
         sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -234,7 +245,7 @@ public final class ReleaseRecalledDataDetails {
                 && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
                 && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
                 && java.util.Objects.equals(this.dataType, other.dataType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -251,16 +262,7 @@ public final class ReleaseRecalledDataDetails {
                 (result * PRIME)
                         + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

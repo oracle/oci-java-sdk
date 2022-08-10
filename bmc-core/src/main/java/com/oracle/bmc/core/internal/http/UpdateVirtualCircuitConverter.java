@@ -105,8 +105,8 @@ public class UpdateVirtualCircuitConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateVirtualCircuitResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualCircuit(response.getItem());
 

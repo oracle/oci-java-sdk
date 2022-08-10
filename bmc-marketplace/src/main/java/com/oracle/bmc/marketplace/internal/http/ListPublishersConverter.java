@@ -138,8 +138,8 @@ public class ListPublishersConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .ListPublishersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

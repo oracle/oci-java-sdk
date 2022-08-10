@@ -28,7 +28,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractCallAttribute {
+public class AbstractCallAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fetchSize"})
     protected AbstractCallAttribute(Integer fetchSize) {
@@ -63,6 +63,7 @@ public class AbstractCallAttribute {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractCallAttribute(");
+        sb.append("super=").append(super.toString());
         sb.append("fetchSize=").append(String.valueOf(this.fetchSize));
         sb.append(")");
         return sb.toString();
@@ -78,7 +79,7 @@ public class AbstractCallAttribute {
         }
 
         AbstractCallAttribute other = (AbstractCallAttribute) o;
-        return java.util.Objects.equals(this.fetchSize, other.fetchSize);
+        return java.util.Objects.equals(this.fetchSize, other.fetchSize) && super.equals(other);
     }
 
     @Override
@@ -86,6 +87,7 @@ public class AbstractCallAttribute {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.fetchSize == null ? 43 : this.fetchSize.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

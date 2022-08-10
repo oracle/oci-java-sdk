@@ -17,7 +17,7 @@ package com.oracle.bmc.datascience.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobShapeSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobShapeSummary {
+public final class JobShapeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "coreCount", "memoryInGBs", "shapeSeries"})
     public JobShapeSummary(
@@ -108,22 +108,30 @@ public final class JobShapeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobShapeSummary build() {
-            JobShapeSummary __instance__ =
-                    new JobShapeSummary(name, coreCount, memoryInGBs, shapeSeries);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JobShapeSummary model =
+                    new JobShapeSummary(
+                            this.name, this.coreCount, this.memoryInGBs, this.shapeSeries);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobShapeSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .coreCount(o.getCoreCount())
-                            .memoryInGBs(o.getMemoryInGBs())
-                            .shapeSeries(o.getShapeSeries());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobShapeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("coreCount")) {
+                this.coreCount(model.getCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("shapeSeries")) {
+                this.shapeSeries(model.getShapeSeries());
+            }
+            return this;
         }
     }
 
@@ -266,11 +274,11 @@ public final class JobShapeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobShapeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", coreCount=").append(String.valueOf(this.coreCount));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", shapeSeries=").append(String.valueOf(this.shapeSeries));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -289,7 +297,7 @@ public final class JobShapeSummary {
                 && java.util.Objects.equals(this.coreCount, other.coreCount)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && java.util.Objects.equals(this.shapeSeries, other.shapeSeries)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -300,16 +308,7 @@ public final class JobShapeSummary {
         result = (result * PRIME) + (this.coreCount == null ? 43 : this.coreCount.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
         result = (result * PRIME) + (this.shapeSeries == null ? 43 : this.shapeSeries.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

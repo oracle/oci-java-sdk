@@ -113,8 +113,8 @@ public class GetConsoleHistoryContentConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetConsoleHistoryContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.value(response.getItem());
 

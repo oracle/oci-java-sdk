@@ -242,8 +242,8 @@ public class ListResponderExecutionsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListResponderExecutionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.responderExecutionCollection(response.getItem());
 

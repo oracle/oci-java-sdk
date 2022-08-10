@@ -20,7 +20,7 @@ package com.oracle.bmc.filestorage.model;
     builder = FileSystemSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FileSystemSummary {
+public final class FileSystemSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -355,46 +355,73 @@ public final class FileSystemSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FileSystemSummary build() {
-            FileSystemSummary __instance__ =
+            FileSystemSummary model =
                     new FileSystemSummary(
-                            availabilityDomain,
-                            meteredBytes,
-                            compartmentId,
-                            displayName,
-                            id,
-                            lifecycleState,
-                            timeCreated,
-                            freeformTags,
-                            definedTags,
-                            kmsKeyId,
-                            sourceDetails,
-                            isCloneParent,
-                            isHydrated,
-                            lifecycleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.meteredBytes,
+                            this.compartmentId,
+                            this.displayName,
+                            this.id,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kmsKeyId,
+                            this.sourceDetails,
+                            this.isCloneParent,
+                            this.isHydrated,
+                            this.lifecycleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FileSystemSummary o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .meteredBytes(o.getMeteredBytes())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .sourceDetails(o.getSourceDetails())
-                            .isCloneParent(o.getIsCloneParent())
-                            .isHydrated(o.getIsHydrated())
-                            .lifecycleDetails(o.getLifecycleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FileSystemSummary model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("meteredBytes")) {
+                this.meteredBytes(model.getMeteredBytes());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isCloneParent")) {
+                this.isCloneParent(model.getIsCloneParent());
+            }
+            if (model.wasPropertyExplicitlySet("isHydrated")) {
+                this.isHydrated(model.getIsHydrated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            return this;
         }
     }
 
@@ -721,6 +748,7 @@ public final class FileSystemSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FileSystemSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", meteredBytes=").append(String.valueOf(this.meteredBytes));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -735,7 +763,6 @@ public final class FileSystemSummary {
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -764,7 +791,7 @@ public final class FileSystemSummary {
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -799,16 +826,7 @@ public final class FileSystemSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

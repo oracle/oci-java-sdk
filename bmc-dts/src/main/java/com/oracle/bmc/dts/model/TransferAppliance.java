@@ -19,7 +19,7 @@ package com.oracle.bmc.dts.model;
     builder = TransferAppliance.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferAppliance {
+public final class TransferAppliance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "label",
@@ -311,60 +311,99 @@ public final class TransferAppliance {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferAppliance build() {
-            TransferAppliance __instance__ =
+            TransferAppliance model =
                     new TransferAppliance(
-                            label,
-                            lifecycleState,
-                            transferJobId,
-                            serialNumber,
-                            creationTime,
-                            customerReceivedTime,
-                            customerReturnedTime,
-                            nextBillingTime,
-                            deliverySecurityTieId,
-                            returnSecurityTieId,
-                            applianceDeliveryTrackingNumber,
-                            applianceReturnDeliveryTrackingNumber,
-                            applianceDeliveryVendor,
-                            customerShippingAddress,
-                            uploadStatusLogUri,
-                            returnShippingLabelUri,
-                            expectedReturnDate,
-                            pickupWindowStartTime,
-                            pickupWindowEndTime,
-                            minimumStorageCapacityInTerabytes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.label,
+                            this.lifecycleState,
+                            this.transferJobId,
+                            this.serialNumber,
+                            this.creationTime,
+                            this.customerReceivedTime,
+                            this.customerReturnedTime,
+                            this.nextBillingTime,
+                            this.deliverySecurityTieId,
+                            this.returnSecurityTieId,
+                            this.applianceDeliveryTrackingNumber,
+                            this.applianceReturnDeliveryTrackingNumber,
+                            this.applianceDeliveryVendor,
+                            this.customerShippingAddress,
+                            this.uploadStatusLogUri,
+                            this.returnShippingLabelUri,
+                            this.expectedReturnDate,
+                            this.pickupWindowStartTime,
+                            this.pickupWindowEndTime,
+                            this.minimumStorageCapacityInTerabytes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferAppliance o) {
-            Builder copiedBuilder =
-                    label(o.getLabel())
-                            .lifecycleState(o.getLifecycleState())
-                            .transferJobId(o.getTransferJobId())
-                            .serialNumber(o.getSerialNumber())
-                            .creationTime(o.getCreationTime())
-                            .customerReceivedTime(o.getCustomerReceivedTime())
-                            .customerReturnedTime(o.getCustomerReturnedTime())
-                            .nextBillingTime(o.getNextBillingTime())
-                            .deliverySecurityTieId(o.getDeliverySecurityTieId())
-                            .returnSecurityTieId(o.getReturnSecurityTieId())
-                            .applianceDeliveryTrackingNumber(o.getApplianceDeliveryTrackingNumber())
-                            .applianceReturnDeliveryTrackingNumber(
-                                    o.getApplianceReturnDeliveryTrackingNumber())
-                            .applianceDeliveryVendor(o.getApplianceDeliveryVendor())
-                            .customerShippingAddress(o.getCustomerShippingAddress())
-                            .uploadStatusLogUri(o.getUploadStatusLogUri())
-                            .returnShippingLabelUri(o.getReturnShippingLabelUri())
-                            .expectedReturnDate(o.getExpectedReturnDate())
-                            .pickupWindowStartTime(o.getPickupWindowStartTime())
-                            .pickupWindowEndTime(o.getPickupWindowEndTime())
-                            .minimumStorageCapacityInTerabytes(
-                                    o.getMinimumStorageCapacityInTerabytes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferAppliance model) {
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("transferJobId")) {
+                this.transferJobId(model.getTransferJobId());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            if (model.wasPropertyExplicitlySet("customerReceivedTime")) {
+                this.customerReceivedTime(model.getCustomerReceivedTime());
+            }
+            if (model.wasPropertyExplicitlySet("customerReturnedTime")) {
+                this.customerReturnedTime(model.getCustomerReturnedTime());
+            }
+            if (model.wasPropertyExplicitlySet("nextBillingTime")) {
+                this.nextBillingTime(model.getNextBillingTime());
+            }
+            if (model.wasPropertyExplicitlySet("deliverySecurityTieId")) {
+                this.deliverySecurityTieId(model.getDeliverySecurityTieId());
+            }
+            if (model.wasPropertyExplicitlySet("returnSecurityTieId")) {
+                this.returnSecurityTieId(model.getReturnSecurityTieId());
+            }
+            if (model.wasPropertyExplicitlySet("applianceDeliveryTrackingNumber")) {
+                this.applianceDeliveryTrackingNumber(model.getApplianceDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("applianceReturnDeliveryTrackingNumber")) {
+                this.applianceReturnDeliveryTrackingNumber(
+                        model.getApplianceReturnDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("applianceDeliveryVendor")) {
+                this.applianceDeliveryVendor(model.getApplianceDeliveryVendor());
+            }
+            if (model.wasPropertyExplicitlySet("customerShippingAddress")) {
+                this.customerShippingAddress(model.getCustomerShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("uploadStatusLogUri")) {
+                this.uploadStatusLogUri(model.getUploadStatusLogUri());
+            }
+            if (model.wasPropertyExplicitlySet("returnShippingLabelUri")) {
+                this.returnShippingLabelUri(model.getReturnShippingLabelUri());
+            }
+            if (model.wasPropertyExplicitlySet("expectedReturnDate")) {
+                this.expectedReturnDate(model.getExpectedReturnDate());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowStartTime")) {
+                this.pickupWindowStartTime(model.getPickupWindowStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowEndTime")) {
+                this.pickupWindowEndTime(model.getPickupWindowEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("minimumStorageCapacityInTerabytes")) {
+                this.minimumStorageCapacityInTerabytes(
+                        model.getMinimumStorageCapacityInTerabytes());
+            }
+            return this;
         }
     }
 
@@ -636,6 +675,7 @@ public final class TransferAppliance {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferAppliance(");
+        sb.append("super=").append(super.toString());
         sb.append("label=").append(String.valueOf(this.label));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", transferJobId=").append(String.valueOf(this.transferJobId));
@@ -661,7 +701,6 @@ public final class TransferAppliance {
         sb.append(", pickupWindowEndTime=").append(String.valueOf(this.pickupWindowEndTime));
         sb.append(", minimumStorageCapacityInTerabytes=")
                 .append(String.valueOf(this.minimumStorageCapacityInTerabytes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -704,7 +743,7 @@ public final class TransferAppliance {
                 && java.util.Objects.equals(
                         this.minimumStorageCapacityInTerabytes,
                         other.minimumStorageCapacityInTerabytes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -793,16 +832,7 @@ public final class TransferAppliance {
                         + (this.minimumStorageCapacityInTerabytes == null
                                 ? 43
                                 : this.minimumStorageCapacityInTerabytes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

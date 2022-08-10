@@ -19,7 +19,7 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = EgressTrafficSpec.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EgressTrafficSpec {
+public final class EgressTrafficSpec extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "protocol",
@@ -104,23 +104,33 @@ public final class EgressTrafficSpec {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EgressTrafficSpec build() {
-            EgressTrafficSpec __instance__ =
+            EgressTrafficSpec model =
                     new EgressTrafficSpec(
-                            protocol, sourceAddress, destinationAddress, trafficProtocolParameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.protocol,
+                            this.sourceAddress,
+                            this.destinationAddress,
+                            this.trafficProtocolParameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EgressTrafficSpec o) {
-            Builder copiedBuilder =
-                    protocol(o.getProtocol())
-                            .sourceAddress(o.getSourceAddress())
-                            .destinationAddress(o.getDestinationAddress())
-                            .trafficProtocolParameters(o.getTrafficProtocolParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EgressTrafficSpec model) {
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("sourceAddress")) {
+                this.sourceAddress(model.getSourceAddress());
+            }
+            if (model.wasPropertyExplicitlySet("destinationAddress")) {
+                this.destinationAddress(model.getDestinationAddress());
+            }
+            if (model.wasPropertyExplicitlySet("trafficProtocolParameters")) {
+                this.trafficProtocolParameters(model.getTrafficProtocolParameters());
+            }
+            return this;
         }
     }
 
@@ -197,12 +207,12 @@ public final class EgressTrafficSpec {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EgressTrafficSpec(");
+        sb.append("super=").append(super.toString());
         sb.append("protocol=").append(String.valueOf(this.protocol));
         sb.append(", sourceAddress=").append(String.valueOf(this.sourceAddress));
         sb.append(", destinationAddress=").append(String.valueOf(this.destinationAddress));
         sb.append(", trafficProtocolParameters=")
                 .append(String.valueOf(this.trafficProtocolParameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -222,7 +232,7 @@ public final class EgressTrafficSpec {
                 && java.util.Objects.equals(this.destinationAddress, other.destinationAddress)
                 && java.util.Objects.equals(
                         this.trafficProtocolParameters, other.trafficProtocolParameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -243,16 +253,7 @@ public final class EgressTrafficSpec {
                         + (this.trafficProtocolParameters == null
                                 ? 43
                                 : this.trafficProtocolParameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

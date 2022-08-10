@@ -116,8 +116,8 @@ public class GetApiDeploymentSpecificationConverter {
                                                 com.oracle.bmc.apigateway.responses
                                                         .GetApiDeploymentSpecificationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.apiSpecification(response.getItem());
 

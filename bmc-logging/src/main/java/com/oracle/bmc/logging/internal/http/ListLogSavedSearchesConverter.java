@@ -158,8 +158,8 @@ public class ListLogSavedSearchesConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses
                                                         .ListLogSavedSearchesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logSavedSearchSummaryCollection(response.getItem());
 

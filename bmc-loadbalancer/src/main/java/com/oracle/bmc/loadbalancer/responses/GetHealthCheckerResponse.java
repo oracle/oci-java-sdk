@@ -9,20 +9,43 @@ import com.oracle.bmc.loadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+
+    /**
+     * Reflects the current version of the load balancer and the resources it contains.
+     * The value only changes when the load balancer or an associated resource is created,
+     * updated, or delete
+     * <p>
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String eTag;
+
+    /**
+     * Reflects the current version of the load balancer and the resources it contains.
+     * The value only changes when the load balancer or an associated resource is created,
+     * updated, or delete
+     * <p>
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getETag() {
+        return eTag;
     }
 
     /**
@@ -38,13 +61,22 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
         return healthChecker;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "healthChecker"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "eTag",
+        "healthChecker"
+    })
     private GetHealthCheckerResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
+            String eTag,
             com.oracle.bmc.loadbalancer.model.HealthChecker healthChecker) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.eTag = eTag;
         this.healthChecker = healthChecker;
     }
 
@@ -56,22 +88,54 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
+            return this;
+        }
+
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Reflects the current version of the load balancer and the resources it contains.
+         * The value only changes when the load balancer or an associated resource is created,
+         * updated, or delete
+         * <p>
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
+        private String eTag;
+
+        /**
+         * Reflects the current version of the load balancer and the resources it contains.
+         * The value only changes when the load balancer or an associated resource is created,
+         * updated, or delete
+         * <p>
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param eTag the value to set
+         * @return this builder
+         */
+        public Builder eTag(String eTag) {
+            this.eTag = eTag;
             return this;
         }
 
@@ -97,7 +161,9 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetHealthCheckerResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            eTag(o.getETag());
             healthChecker(o.getHealthChecker());
 
             return this;
@@ -108,7 +174,8 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public GetHealthCheckerResponse build() {
-            return new GetHealthCheckerResponse(__httpStatusCode__, opcRequestId, healthChecker);
+            return new GetHealthCheckerResponse(
+                    __httpStatusCode__, headers, opcRequestId, eTag, healthChecker);
         }
     }
 
@@ -126,6 +193,7 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(",healthChecker=").append(String.valueOf(healthChecker));
         sb.append(")");
         return sb.toString();
@@ -143,6 +211,7 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
         GetHealthCheckerResponse other = (GetHealthCheckerResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.eTag, other.eTag)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker);
     }
 
@@ -151,6 +220,7 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         result =
                 (result * PRIME)
                         + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());

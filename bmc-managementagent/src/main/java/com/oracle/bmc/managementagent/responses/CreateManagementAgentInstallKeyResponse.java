@@ -57,17 +57,19 @@ public class CreateManagementAgentInstallKeyResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "managementAgentInstallKey"
     })
     private CreateManagementAgentInstallKeyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
                     managementAgentInstallKey) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.managementAgentInstallKey = managementAgentInstallKey;
@@ -78,6 +80,13 @@ public class CreateManagementAgentInstallKeyResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class CreateManagementAgentInstallKeyResponse extends com.oracle.bmc.resp
          */
         public Builder copy(CreateManagementAgentInstallKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             managementAgentInstallKey(o.getManagementAgentInstallKey());
@@ -154,7 +164,7 @@ public class CreateManagementAgentInstallKeyResponse extends com.oracle.bmc.resp
          */
         public CreateManagementAgentInstallKeyResponse build() {
             return new CreateManagementAgentInstallKeyResponse(
-                    __httpStatusCode__, opcRequestId, etag, managementAgentInstallKey);
+                    __httpStatusCode__, headers, opcRequestId, etag, managementAgentInstallKey);
         }
     }
 

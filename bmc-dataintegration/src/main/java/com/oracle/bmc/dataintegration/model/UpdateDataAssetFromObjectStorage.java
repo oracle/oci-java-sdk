@@ -194,48 +194,77 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDataAssetFromObjectStorage build() {
-            UpdateDataAssetFromObjectStorage __instance__ =
+            UpdateDataAssetFromObjectStorage model =
                     new UpdateDataAssetFromObjectStorage(
-                            key,
-                            modelVersion,
-                            name,
-                            description,
-                            objectStatus,
-                            objectVersion,
-                            identifier,
-                            externalKey,
-                            assetProperties,
-                            registryMetadata,
-                            ociRegion,
-                            url,
-                            tenancyId,
-                            namespace,
-                            defaultConnection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.objectVersion,
+                            this.identifier,
+                            this.externalKey,
+                            this.assetProperties,
+                            this.registryMetadata,
+                            this.ociRegion,
+                            this.url,
+                            this.tenancyId,
+                            this.namespace,
+                            this.defaultConnection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDataAssetFromObjectStorage o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .objectVersion(o.getObjectVersion())
-                            .identifier(o.getIdentifier())
-                            .externalKey(o.getExternalKey())
-                            .assetProperties(o.getAssetProperties())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .ociRegion(o.getOciRegion())
-                            .url(o.getUrl())
-                            .tenancyId(o.getTenancyId())
-                            .namespace(o.getNamespace())
-                            .defaultConnection(o.getDefaultConnection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDataAssetFromObjectStorage model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("assetProperties")) {
+                this.assetProperties(model.getAssetProperties());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("ociRegion")) {
+                this.ociRegion(model.getOciRegion());
+            }
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("defaultConnection")) {
+                this.defaultConnection(model.getDefaultConnection());
+            }
+            return this;
         }
     }
 
@@ -367,7 +396,6 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -387,8 +415,7 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -402,16 +429,6 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
         result =
                 (result * PRIME)
                         + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

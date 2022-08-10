@@ -3,6 +3,46 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.39.0 - 2022-08-09
+### Added
+- Support for single-host software-defined data centers in the VMWare Solution service
+- Support for Java download and installation in the Java Management service
+- Support for lifecycle management for Windows in the Java Management service
+- Support for installation scripts in the Java Management service
+- Support for unlimited-installation keys in the Java Management service
+- Support for configuring automatic usage tracking in the Java Management service
+- Support for STANDARDX and ENTERPRISEX instance types in Integration service
+- Support for additional languages and multimedia formats in transcription jobs in the AI Speech service
+- Support for maintenance run history for Exadata Cloud at Customer in the Database service
+- Support for Optimizer statistics monitoring and management on various database administration operations in the Database Management service
+- Support for OCI Compute instances in the Operations Insights service
+- Support for moving resources in the Console Dashboard service
+- Support for round-robin alerting in the Application Performance Monitoring service
+- Support for aggregated network data of synthetic monitors in the Application Performance Monitoring service
+- Support for etags on operations in the Load Balancing service
+
+### Breaking Changes
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceStatisticsAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceStatisticsAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageTrendAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUsageTrendAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendCollection` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceForecastTrendAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceForecastTrendAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceForecastTrendAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceForecastTrendCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceForecastTrendCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceStatisticsAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceStatisticsAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUsageCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceCapacityTrendAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceCapacityTrendAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceForecastTrendAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceForecastTrendAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceStatisticsAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceStatisticsAggregationCollection` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation` in the Operations Insights service
+- Return type of method `public com.oracle.bmc.opsi.model.UsageUnit getUsageUnit()` has been changed to `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageTrendAggregationCollection$UsageUnit` in `com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageTrendAggregationCollection` in the Operations Insights service
+- Class `com.oracle.bmc.opsi.model.UsageUnit` has been removed in the Operations Insights service
+- Class `com.oracle.bmc.opsi.requests.ListHostInsightsRequest$HostType` has been removed in the Operations Insights service
+
 ## 2.38.0 - 2022-08-02
 ### Added
 - Support for OpenSearch in the Search service

@@ -64,6 +64,7 @@ public class ListWaasPolicyCustomProtectionRulesResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcNextPage",
         "opcRequestId",
@@ -71,11 +72,12 @@ public class ListWaasPolicyCustomProtectionRulesResponse
     })
     private ListWaasPolicyCustomProtectionRulesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
@@ -87,6 +89,13 @@ public class ListWaasPolicyCustomProtectionRulesResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -159,6 +168,7 @@ public class ListWaasPolicyCustomProtectionRulesResponse
          */
         public Builder copy(ListWaasPolicyCustomProtectionRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
@@ -173,7 +183,7 @@ public class ListWaasPolicyCustomProtectionRulesResponse
          */
         public ListWaasPolicyCustomProtectionRulesResponse build() {
             return new ListWaasPolicyCustomProtectionRulesResponse(
-                    __httpStatusCode__, etag, opcNextPage, opcRequestId, items);
+                    __httpStatusCode__, headers, etag, opcNextPage, opcRequestId, items);
         }
     }
 

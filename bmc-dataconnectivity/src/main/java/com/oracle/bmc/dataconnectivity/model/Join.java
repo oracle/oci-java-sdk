@@ -62,17 +62,22 @@ public final class Join extends PushDownOperation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Join build() {
-            Join __instance__ = new Join(condition, policy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Join model = new Join(this.condition, this.policy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Join o) {
-            Builder copiedBuilder = condition(o.getCondition()).policy(o.getPolicy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Join model) {
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            return this;
         }
     }
 
@@ -175,7 +180,6 @@ public final class Join extends PushDownOperation {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", condition=").append(String.valueOf(this.condition));
         sb.append(", policy=").append(String.valueOf(this.policy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,8 +196,7 @@ public final class Join extends PushDownOperation {
         Join other = (Join) o;
         return java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.policy, other.policy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +205,6 @@ public final class Join extends PushDownOperation {
         int result = super.hashCode();
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

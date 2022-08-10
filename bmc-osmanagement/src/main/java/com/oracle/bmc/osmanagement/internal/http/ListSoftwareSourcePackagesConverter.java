@@ -169,8 +169,8 @@ public class ListSoftwareSourcePackagesConverter {
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListSoftwareSourcePackagesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

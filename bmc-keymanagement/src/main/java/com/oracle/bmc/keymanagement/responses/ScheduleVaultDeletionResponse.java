@@ -51,13 +51,20 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
         return vault;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vault"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "vault"
+    })
     private ScheduleVaultDeletionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.Vault vault) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.vault = vault;
@@ -68,6 +75,13 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ScheduleVaultDeletionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             vault(o.getVault());
@@ -138,7 +153,8 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
          * @return the response object
          */
         public ScheduleVaultDeletionResponse build() {
-            return new ScheduleVaultDeletionResponse(__httpStatusCode__, etag, opcRequestId, vault);
+            return new ScheduleVaultDeletionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, vault);
         }
     }
 

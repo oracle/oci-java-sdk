@@ -108,7 +108,8 @@ public class UpdateChannelConverter {
 
                                 com.oracle.bmc.oda.responses.UpdateChannelResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.UpdateChannelResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.channel(response.getItem());
 

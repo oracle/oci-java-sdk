@@ -42,15 +42,17 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "postMetricDataResponseDetails"
     })
     private PostMetricDataResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
                     postMetricDataResponseDetails) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.postMetricDataResponseDetails = postMetricDataResponseDetails;
     }
@@ -60,6 +62,13 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(PostMetricDataResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             postMetricDataResponseDetails(o.getPostMetricDataResponseDetails());
 
@@ -118,7 +128,7 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public PostMetricDataResponse build() {
             return new PostMetricDataResponse(
-                    __httpStatusCode__, opcRequestId, postMetricDataResponseDetails);
+                    __httpStatusCode__, headers, opcRequestId, postMetricDataResponseDetails);
         }
     }
 

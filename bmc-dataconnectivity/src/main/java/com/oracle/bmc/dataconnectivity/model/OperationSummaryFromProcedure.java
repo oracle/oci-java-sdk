@@ -161,36 +161,53 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperationSummaryFromProcedure build() {
-            OperationSummaryFromProcedure __instance__ =
+            OperationSummaryFromProcedure model =
                     new OperationSummaryFromProcedure(
-                            metadata,
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            objectVersion,
-                            externalKey,
-                            resourceName,
-                            objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.metadata,
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.objectVersion,
+                            this.externalKey,
+                            this.resourceName,
+                            this.objectStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperationSummaryFromProcedure o) {
-            Builder copiedBuilder =
-                    metadata(o.getMetadata())
-                            .key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .objectVersion(o.getObjectVersion())
-                            .externalKey(o.getExternalKey())
-                            .resourceName(o.getResourceName())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperationSummaryFromProcedure model) {
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            return this;
         }
     }
 
@@ -354,7 +371,6 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
         sb.append(", externalKey=").append(String.valueOf(this.externalKey));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -377,8 +393,7 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
                 && java.util.Objects.equals(this.externalKey, other.externalKey)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -395,16 +410,6 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
         result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

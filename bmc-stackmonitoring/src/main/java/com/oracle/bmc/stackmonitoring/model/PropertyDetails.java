@@ -17,7 +17,7 @@ package com.oracle.bmc.stackmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PropertyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PropertyDetails {
+public final class PropertyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"propertiesMap"})
     public PropertyDetails(java.util.Map<String, String> propertiesMap) {
@@ -48,17 +48,19 @@ public final class PropertyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PropertyDetails build() {
-            PropertyDetails __instance__ = new PropertyDetails(propertiesMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PropertyDetails model = new PropertyDetails(this.propertiesMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PropertyDetails o) {
-            Builder copiedBuilder = propertiesMap(o.getPropertiesMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PropertyDetails model) {
+            if (model.wasPropertyExplicitlySet("propertiesMap")) {
+                this.propertiesMap(model.getPropertiesMap());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class PropertyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PropertyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("propertiesMap=").append(String.valueOf(this.propertiesMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -117,7 +119,7 @@ public final class PropertyDetails {
 
         PropertyDetails other = (PropertyDetails) o;
         return java.util.Objects.equals(this.propertiesMap, other.propertiesMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class PropertyDetails {
         result =
                 (result * PRIME)
                         + (this.propertiesMap == null ? 43 : this.propertiesMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

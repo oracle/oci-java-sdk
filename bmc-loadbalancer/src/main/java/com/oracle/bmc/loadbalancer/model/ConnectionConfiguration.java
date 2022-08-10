@@ -20,7 +20,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = ConnectionConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectionConfiguration {
+public final class ConnectionConfiguration
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"idleTimeout", "backendTcpProxyProtocolVersion"})
     public ConnectionConfiguration(Long idleTimeout, Integer backendTcpProxyProtocolVersion) {
@@ -88,20 +89,24 @@ public final class ConnectionConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectionConfiguration build() {
-            ConnectionConfiguration __instance__ =
-                    new ConnectionConfiguration(idleTimeout, backendTcpProxyProtocolVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ConnectionConfiguration model =
+                    new ConnectionConfiguration(
+                            this.idleTimeout, this.backendTcpProxyProtocolVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectionConfiguration o) {
-            Builder copiedBuilder =
-                    idleTimeout(o.getIdleTimeout())
-                            .backendTcpProxyProtocolVersion(o.getBackendTcpProxyProtocolVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConnectionConfiguration model) {
+            if (model.wasPropertyExplicitlySet("idleTimeout")) {
+                this.idleTimeout(model.getIdleTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("backendTcpProxyProtocolVersion")) {
+                this.backendTcpProxyProtocolVersion(model.getBackendTcpProxyProtocolVersion());
+            }
+            return this;
         }
     }
 
@@ -177,10 +182,10 @@ public final class ConnectionConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConnectionConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("idleTimeout=").append(String.valueOf(this.idleTimeout));
         sb.append(", backendTcpProxyProtocolVersion=")
                 .append(String.valueOf(this.backendTcpProxyProtocolVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +203,7 @@ public final class ConnectionConfiguration {
         return java.util.Objects.equals(this.idleTimeout, other.idleTimeout)
                 && java.util.Objects.equals(
                         this.backendTcpProxyProtocolVersion, other.backendTcpProxyProtocolVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -211,16 +216,7 @@ public final class ConnectionConfiguration {
                         + (this.backendTcpProxyProtocolVersion == null
                                 ? 43
                                 : this.backendTcpProxyProtocolVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

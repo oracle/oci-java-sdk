@@ -17,7 +17,7 @@ package com.oracle.bmc.datascience.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobRun.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobRun {
+public final class JobRun extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -339,54 +339,87 @@ public final class JobRun {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobRun build() {
-            JobRun __instance__ =
+            JobRun model =
                     new JobRun(
-                            id,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished,
-                            createdBy,
-                            projectId,
-                            compartmentId,
-                            jobId,
-                            displayName,
-                            jobConfigurationOverrideDetails,
-                            jobInfrastructureConfigurationDetails,
-                            jobLogConfigurationOverrideDetails,
-                            logDetails,
-                            lifecycleState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.createdBy,
+                            this.projectId,
+                            this.compartmentId,
+                            this.jobId,
+                            this.displayName,
+                            this.jobConfigurationOverrideDetails,
+                            this.jobInfrastructureConfigurationDetails,
+                            this.jobLogConfigurationOverrideDetails,
+                            this.logDetails,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobRun o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .createdBy(o.getCreatedBy())
-                            .projectId(o.getProjectId())
-                            .compartmentId(o.getCompartmentId())
-                            .jobId(o.getJobId())
-                            .displayName(o.getDisplayName())
-                            .jobConfigurationOverrideDetails(o.getJobConfigurationOverrideDetails())
-                            .jobInfrastructureConfigurationDetails(
-                                    o.getJobInfrastructureConfigurationDetails())
-                            .jobLogConfigurationOverrideDetails(
-                                    o.getJobLogConfigurationOverrideDetails())
-                            .logDetails(o.getLogDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobRun model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("jobId")) {
+                this.jobId(model.getJobId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("jobConfigurationOverrideDetails")) {
+                this.jobConfigurationOverrideDetails(model.getJobConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobInfrastructureConfigurationDetails")) {
+                this.jobInfrastructureConfigurationDetails(
+                        model.getJobInfrastructureConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobLogConfigurationOverrideDetails")) {
+                this.jobLogConfigurationOverrideDetails(
+                        model.getJobLogConfigurationOverrideDetails());
+            }
+            if (model.wasPropertyExplicitlySet("logDetails")) {
+                this.logDetails(model.getLogDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -632,6 +665,7 @@ public final class JobRun {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobRun(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -652,7 +686,6 @@ public final class JobRun {
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -689,7 +722,7 @@ public final class JobRun {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -731,16 +764,7 @@ public final class JobRun {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

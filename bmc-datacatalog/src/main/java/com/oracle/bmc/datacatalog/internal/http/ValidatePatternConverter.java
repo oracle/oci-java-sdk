@@ -120,8 +120,8 @@ public class ValidatePatternConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ValidatePatternResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.validatePatternResult(response.getItem());
 

@@ -104,7 +104,8 @@ public class InstallPatchConverter {
 
                                 com.oracle.bmc.bds.responses.InstallPatchResponse.Builder builder =
                                         com.oracle.bmc.bds.responses.InstallPatchResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

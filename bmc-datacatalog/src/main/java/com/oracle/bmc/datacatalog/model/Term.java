@@ -20,7 +20,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Term.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Term {
+public final class Term extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -388,54 +388,89 @@ public final class Term {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Term build() {
-            Term __instance__ =
+            Term model =
                     new Term(
-                            key,
-                            displayName,
-                            description,
-                            glossaryKey,
-                            parentTermKey,
-                            isAllowedToHaveChildTerms,
-                            path,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            createdById,
-                            updatedById,
-                            owner,
-                            workflowStatus,
-                            uri,
-                            associatedObjectCount,
-                            associatedObjects,
-                            customPropertyMembers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.glossaryKey,
+                            this.parentTermKey,
+                            this.isAllowedToHaveChildTerms,
+                            this.path,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.createdById,
+                            this.updatedById,
+                            this.owner,
+                            this.workflowStatus,
+                            this.uri,
+                            this.associatedObjectCount,
+                            this.associatedObjects,
+                            this.customPropertyMembers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Term o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .glossaryKey(o.getGlossaryKey())
-                            .parentTermKey(o.getParentTermKey())
-                            .isAllowedToHaveChildTerms(o.getIsAllowedToHaveChildTerms())
-                            .path(o.getPath())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .createdById(o.getCreatedById())
-                            .updatedById(o.getUpdatedById())
-                            .owner(o.getOwner())
-                            .workflowStatus(o.getWorkflowStatus())
-                            .uri(o.getUri())
-                            .associatedObjectCount(o.getAssociatedObjectCount())
-                            .associatedObjects(o.getAssociatedObjects())
-                            .customPropertyMembers(o.getCustomPropertyMembers());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Term model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentTermKey")) {
+                this.parentTermKey(model.getParentTermKey());
+            }
+            if (model.wasPropertyExplicitlySet("isAllowedToHaveChildTerms")) {
+                this.isAllowedToHaveChildTerms(model.getIsAllowedToHaveChildTerms());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("workflowStatus")) {
+                this.workflowStatus(model.getWorkflowStatus());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("associatedObjectCount")) {
+                this.associatedObjectCount(model.getAssociatedObjectCount());
+            }
+            if (model.wasPropertyExplicitlySet("associatedObjects")) {
+                this.associatedObjects(model.getAssociatedObjects());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            return this;
         }
     }
 
@@ -725,6 +760,7 @@ public final class Term {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Term(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -744,7 +780,6 @@ public final class Term {
         sb.append(", associatedObjectCount=").append(String.valueOf(this.associatedObjectCount));
         sb.append(", associatedObjects=").append(String.valueOf(this.associatedObjects));
         sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -778,7 +813,7 @@ public final class Term {
                 && java.util.Objects.equals(this.associatedObjectCount, other.associatedObjectCount)
                 && java.util.Objects.equals(this.associatedObjects, other.associatedObjects)
                 && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -823,16 +858,7 @@ public final class Term {
                         + (this.customPropertyMembers == null
                                 ? 43
                                 : this.customPropertyMembers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

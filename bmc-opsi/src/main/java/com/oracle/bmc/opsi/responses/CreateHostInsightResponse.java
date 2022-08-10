@@ -96,6 +96,7 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "location",
@@ -105,13 +106,14 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreateHostInsightResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
             String contentLocation,
             String etag,
             com.oracle.bmc.opsi.model.HostInsight hostInsight) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.location = location;
@@ -125,6 +127,13 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -232,6 +241,7 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreateHostInsightResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
@@ -249,6 +259,7 @@ public class CreateHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
         public CreateHostInsightResponse build() {
             return new CreateHostInsightResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     opcRequestId,
                     location,

@@ -47,13 +47,20 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
         return transferJob;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "transferJob"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "transferJob"
+    })
     private GetTransferJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferJob transferJob) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.transferJob = transferJob;
@@ -64,6 +71,13 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetTransferJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             transferJob(o.getTransferJob());
@@ -130,7 +145,8 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetTransferJobResponse build() {
-            return new GetTransferJobResponse(__httpStatusCode__, opcRequestId, etag, transferJob);
+            return new GetTransferJobResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, transferJob);
         }
     }
 

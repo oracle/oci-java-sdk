@@ -130,8 +130,8 @@ public class GetOperationConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetOperationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operation(response.getItem());
 

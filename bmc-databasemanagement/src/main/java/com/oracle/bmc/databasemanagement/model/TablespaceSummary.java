@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = TablespaceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TablespaceSummary {
+public final class TablespaceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -777,96 +777,173 @@ public final class TablespaceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TablespaceSummary build() {
-            TablespaceSummary __instance__ =
+            TablespaceSummary model =
                     new TablespaceSummary(
-                            name,
-                            type,
-                            status,
-                            blockSizeBytes,
-                            logging,
-                            isForceLogging,
-                            extentManagement,
-                            allocationType,
-                            isPluggedIn,
-                            segmentSpaceManagement,
-                            defaultTableCompression,
-                            retention,
-                            isBigfile,
-                            predicateEvaluation,
-                            isEncrypted,
-                            compressFor,
-                            defaultInMemory,
-                            defaultInMemoryPriority,
-                            defaultInMemoryDistribute,
-                            defaultInMemoryCompression,
-                            defaultInMemoryDuplicate,
-                            shared,
-                            defaultIndexCompression,
-                            indexCompressFor,
-                            defaultCellMemory,
-                            defaultInMemoryService,
-                            defaultInMemoryServiceName,
-                            lostWriteProtect,
-                            isChunkTablespace,
-                            tempGroup,
-                            maxSizeKB,
-                            allocatedSizeKB,
-                            userSizeKB,
-                            freeSpaceKB,
-                            usedSpaceKB,
-                            usedPercentAvailable,
-                            usedPercentAllocated,
-                            isDefault,
-                            datafiles);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.type,
+                            this.status,
+                            this.blockSizeBytes,
+                            this.logging,
+                            this.isForceLogging,
+                            this.extentManagement,
+                            this.allocationType,
+                            this.isPluggedIn,
+                            this.segmentSpaceManagement,
+                            this.defaultTableCompression,
+                            this.retention,
+                            this.isBigfile,
+                            this.predicateEvaluation,
+                            this.isEncrypted,
+                            this.compressFor,
+                            this.defaultInMemory,
+                            this.defaultInMemoryPriority,
+                            this.defaultInMemoryDistribute,
+                            this.defaultInMemoryCompression,
+                            this.defaultInMemoryDuplicate,
+                            this.shared,
+                            this.defaultIndexCompression,
+                            this.indexCompressFor,
+                            this.defaultCellMemory,
+                            this.defaultInMemoryService,
+                            this.defaultInMemoryServiceName,
+                            this.lostWriteProtect,
+                            this.isChunkTablespace,
+                            this.tempGroup,
+                            this.maxSizeKB,
+                            this.allocatedSizeKB,
+                            this.userSizeKB,
+                            this.freeSpaceKB,
+                            this.usedSpaceKB,
+                            this.usedPercentAvailable,
+                            this.usedPercentAllocated,
+                            this.isDefault,
+                            this.datafiles);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TablespaceSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .type(o.getType())
-                            .status(o.getStatus())
-                            .blockSizeBytes(o.getBlockSizeBytes())
-                            .logging(o.getLogging())
-                            .isForceLogging(o.getIsForceLogging())
-                            .extentManagement(o.getExtentManagement())
-                            .allocationType(o.getAllocationType())
-                            .isPluggedIn(o.getIsPluggedIn())
-                            .segmentSpaceManagement(o.getSegmentSpaceManagement())
-                            .defaultTableCompression(o.getDefaultTableCompression())
-                            .retention(o.getRetention())
-                            .isBigfile(o.getIsBigfile())
-                            .predicateEvaluation(o.getPredicateEvaluation())
-                            .isEncrypted(o.getIsEncrypted())
-                            .compressFor(o.getCompressFor())
-                            .defaultInMemory(o.getDefaultInMemory())
-                            .defaultInMemoryPriority(o.getDefaultInMemoryPriority())
-                            .defaultInMemoryDistribute(o.getDefaultInMemoryDistribute())
-                            .defaultInMemoryCompression(o.getDefaultInMemoryCompression())
-                            .defaultInMemoryDuplicate(o.getDefaultInMemoryDuplicate())
-                            .shared(o.getShared())
-                            .defaultIndexCompression(o.getDefaultIndexCompression())
-                            .indexCompressFor(o.getIndexCompressFor())
-                            .defaultCellMemory(o.getDefaultCellMemory())
-                            .defaultInMemoryService(o.getDefaultInMemoryService())
-                            .defaultInMemoryServiceName(o.getDefaultInMemoryServiceName())
-                            .lostWriteProtect(o.getLostWriteProtect())
-                            .isChunkTablespace(o.getIsChunkTablespace())
-                            .tempGroup(o.getTempGroup())
-                            .maxSizeKB(o.getMaxSizeKB())
-                            .allocatedSizeKB(o.getAllocatedSizeKB())
-                            .userSizeKB(o.getUserSizeKB())
-                            .freeSpaceKB(o.getFreeSpaceKB())
-                            .usedSpaceKB(o.getUsedSpaceKB())
-                            .usedPercentAvailable(o.getUsedPercentAvailable())
-                            .usedPercentAllocated(o.getUsedPercentAllocated())
-                            .isDefault(o.getIsDefault())
-                            .datafiles(o.getDatafiles());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TablespaceSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("blockSizeBytes")) {
+                this.blockSizeBytes(model.getBlockSizeBytes());
+            }
+            if (model.wasPropertyExplicitlySet("logging")) {
+                this.logging(model.getLogging());
+            }
+            if (model.wasPropertyExplicitlySet("isForceLogging")) {
+                this.isForceLogging(model.getIsForceLogging());
+            }
+            if (model.wasPropertyExplicitlySet("extentManagement")) {
+                this.extentManagement(model.getExtentManagement());
+            }
+            if (model.wasPropertyExplicitlySet("allocationType")) {
+                this.allocationType(model.getAllocationType());
+            }
+            if (model.wasPropertyExplicitlySet("isPluggedIn")) {
+                this.isPluggedIn(model.getIsPluggedIn());
+            }
+            if (model.wasPropertyExplicitlySet("segmentSpaceManagement")) {
+                this.segmentSpaceManagement(model.getSegmentSpaceManagement());
+            }
+            if (model.wasPropertyExplicitlySet("defaultTableCompression")) {
+                this.defaultTableCompression(model.getDefaultTableCompression());
+            }
+            if (model.wasPropertyExplicitlySet("retention")) {
+                this.retention(model.getRetention());
+            }
+            if (model.wasPropertyExplicitlySet("isBigfile")) {
+                this.isBigfile(model.getIsBigfile());
+            }
+            if (model.wasPropertyExplicitlySet("predicateEvaluation")) {
+                this.predicateEvaluation(model.getPredicateEvaluation());
+            }
+            if (model.wasPropertyExplicitlySet("isEncrypted")) {
+                this.isEncrypted(model.getIsEncrypted());
+            }
+            if (model.wasPropertyExplicitlySet("compressFor")) {
+                this.compressFor(model.getCompressFor());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemory")) {
+                this.defaultInMemory(model.getDefaultInMemory());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemoryPriority")) {
+                this.defaultInMemoryPriority(model.getDefaultInMemoryPriority());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemoryDistribute")) {
+                this.defaultInMemoryDistribute(model.getDefaultInMemoryDistribute());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemoryCompression")) {
+                this.defaultInMemoryCompression(model.getDefaultInMemoryCompression());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemoryDuplicate")) {
+                this.defaultInMemoryDuplicate(model.getDefaultInMemoryDuplicate());
+            }
+            if (model.wasPropertyExplicitlySet("shared")) {
+                this.shared(model.getShared());
+            }
+            if (model.wasPropertyExplicitlySet("defaultIndexCompression")) {
+                this.defaultIndexCompression(model.getDefaultIndexCompression());
+            }
+            if (model.wasPropertyExplicitlySet("indexCompressFor")) {
+                this.indexCompressFor(model.getIndexCompressFor());
+            }
+            if (model.wasPropertyExplicitlySet("defaultCellMemory")) {
+                this.defaultCellMemory(model.getDefaultCellMemory());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemoryService")) {
+                this.defaultInMemoryService(model.getDefaultInMemoryService());
+            }
+            if (model.wasPropertyExplicitlySet("defaultInMemoryServiceName")) {
+                this.defaultInMemoryServiceName(model.getDefaultInMemoryServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("lostWriteProtect")) {
+                this.lostWriteProtect(model.getLostWriteProtect());
+            }
+            if (model.wasPropertyExplicitlySet("isChunkTablespace")) {
+                this.isChunkTablespace(model.getIsChunkTablespace());
+            }
+            if (model.wasPropertyExplicitlySet("tempGroup")) {
+                this.tempGroup(model.getTempGroup());
+            }
+            if (model.wasPropertyExplicitlySet("maxSizeKB")) {
+                this.maxSizeKB(model.getMaxSizeKB());
+            }
+            if (model.wasPropertyExplicitlySet("allocatedSizeKB")) {
+                this.allocatedSizeKB(model.getAllocatedSizeKB());
+            }
+            if (model.wasPropertyExplicitlySet("userSizeKB")) {
+                this.userSizeKB(model.getUserSizeKB());
+            }
+            if (model.wasPropertyExplicitlySet("freeSpaceKB")) {
+                this.freeSpaceKB(model.getFreeSpaceKB());
+            }
+            if (model.wasPropertyExplicitlySet("usedSpaceKB")) {
+                this.usedSpaceKB(model.getUsedSpaceKB());
+            }
+            if (model.wasPropertyExplicitlySet("usedPercentAvailable")) {
+                this.usedPercentAvailable(model.getUsedPercentAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("usedPercentAllocated")) {
+                this.usedPercentAllocated(model.getUsedPercentAllocated());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("datafiles")) {
+                this.datafiles(model.getDatafiles());
+            }
+            return this;
         }
     }
 
@@ -2422,6 +2499,7 @@ public final class TablespaceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TablespaceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", status=").append(String.valueOf(this.status));
@@ -2468,7 +2546,6 @@ public final class TablespaceSummary {
         sb.append(", usedPercentAllocated=").append(String.valueOf(this.usedPercentAllocated));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
         sb.append(", datafiles=").append(String.valueOf(this.datafiles));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -2531,7 +2608,7 @@ public final class TablespaceSummary {
                 && java.util.Objects.equals(this.usedPercentAllocated, other.usedPercentAllocated)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
                 && java.util.Objects.equals(this.datafiles, other.datafiles)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2645,16 +2722,7 @@ public final class TablespaceSummary {
                                 : this.usedPercentAllocated.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
         result = (result * PRIME) + (this.datafiles == null ? 43 : this.datafiles.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

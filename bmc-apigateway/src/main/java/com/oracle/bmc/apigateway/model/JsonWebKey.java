@@ -142,24 +142,39 @@ public final class JsonWebKey extends StaticPublicKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JsonWebKey build() {
-            JsonWebKey __instance__ = new JsonWebKey(kid, kty, use, keyOps, alg, n, e);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JsonWebKey model =
+                    new JsonWebKey(
+                            this.kid, this.kty, this.use, this.keyOps, this.alg, this.n, this.e);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JsonWebKey o) {
-            Builder copiedBuilder =
-                    kid(o.getKid())
-                            .kty(o.getKty())
-                            .use(o.getUse())
-                            .keyOps(o.getKeyOps())
-                            .alg(o.getAlg())
-                            .n(o.getN())
-                            .e(o.getE());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JsonWebKey model) {
+            if (model.wasPropertyExplicitlySet("kid")) {
+                this.kid(model.getKid());
+            }
+            if (model.wasPropertyExplicitlySet("kty")) {
+                this.kty(model.getKty());
+            }
+            if (model.wasPropertyExplicitlySet("use")) {
+                this.use(model.getUse());
+            }
+            if (model.wasPropertyExplicitlySet("keyOps")) {
+                this.keyOps(model.getKeyOps());
+            }
+            if (model.wasPropertyExplicitlySet("alg")) {
+                this.alg(model.getAlg());
+            }
+            if (model.wasPropertyExplicitlySet("n")) {
+                this.n(model.getN());
+            }
+            if (model.wasPropertyExplicitlySet("e")) {
+                this.e(model.getE());
+            }
+            return this;
         }
     }
 
@@ -437,7 +452,6 @@ public final class JsonWebKey extends StaticPublicKey {
         sb.append(", alg=").append(String.valueOf(this.alg));
         sb.append(", n=").append(String.valueOf(this.n));
         sb.append(", e=").append(String.valueOf(this.e));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -458,8 +472,7 @@ public final class JsonWebKey extends StaticPublicKey {
                 && java.util.Objects.equals(this.alg, other.alg)
                 && java.util.Objects.equals(this.n, other.n)
                 && java.util.Objects.equals(this.e, other.e)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -472,16 +485,6 @@ public final class JsonWebKey extends StaticPublicKey {
         result = (result * PRIME) + (this.alg == null ? 43 : this.alg.hashCode());
         result = (result * PRIME) + (this.n == null ? 43 : this.n.hashCode());
         result = (result * PRIME) + (this.e == null ? 43 : this.e.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -18,7 +18,7 @@ package com.oracle.bmc.apmtraces.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SpanSnapshot.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SpanSnapshot {
+public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -180,32 +180,45 @@ public final class SpanSnapshot {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SpanSnapshot build() {
-            SpanSnapshot __instance__ =
+            SpanSnapshot model =
                     new SpanSnapshot(
-                            key,
-                            spanName,
-                            timeStarted,
-                            timeEnded,
-                            spanSnapshotDetails,
-                            threadSnapshots,
-                            children);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.spanName,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.spanSnapshotDetails,
+                            this.threadSnapshots,
+                            this.children);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SpanSnapshot o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .spanName(o.getSpanName())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .spanSnapshotDetails(o.getSpanSnapshotDetails())
-                            .threadSnapshots(o.getThreadSnapshots())
-                            .children(o.getChildren());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SpanSnapshot model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("spanName")) {
+                this.spanName(model.getSpanName());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("spanSnapshotDetails")) {
+                this.spanSnapshotDetails(model.getSpanSnapshotDetails());
+            }
+            if (model.wasPropertyExplicitlySet("threadSnapshots")) {
+                this.threadSnapshots(model.getThreadSnapshots());
+            }
+            if (model.wasPropertyExplicitlySet("children")) {
+                this.children(model.getChildren());
+            }
+            return this;
         }
     }
 
@@ -345,6 +358,7 @@ public final class SpanSnapshot {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SpanSnapshot(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", spanName=").append(String.valueOf(this.spanName));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -352,7 +366,6 @@ public final class SpanSnapshot {
         sb.append(", spanSnapshotDetails=").append(String.valueOf(this.spanSnapshotDetails));
         sb.append(", threadSnapshots=").append(String.valueOf(this.threadSnapshots));
         sb.append(", children=").append(String.valueOf(this.children));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -374,7 +387,7 @@ public final class SpanSnapshot {
                 && java.util.Objects.equals(this.spanSnapshotDetails, other.spanSnapshotDetails)
                 && java.util.Objects.equals(this.threadSnapshots, other.threadSnapshots)
                 && java.util.Objects.equals(this.children, other.children)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -394,16 +407,7 @@ public final class SpanSnapshot {
                 (result * PRIME)
                         + (this.threadSnapshots == null ? 43 : this.threadSnapshots.hashCode());
         result = (result * PRIME) + (this.children == null ? 43 : this.children.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

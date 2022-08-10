@@ -53,16 +53,18 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "paySubscriptionReceipt"
     })
     private PaySubscriptionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.ospgateway.model.PaySubscriptionReceipt paySubscriptionReceipt) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.paySubscriptionReceipt = paySubscriptionReceipt;
@@ -73,6 +75,13 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(PaySubscriptionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             paySubscriptionReceipt(o.getPaySubscriptionReceipt());
@@ -145,7 +155,7 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public PaySubscriptionResponse build() {
             return new PaySubscriptionResponse(
-                    __httpStatusCode__, opcRequestId, etag, paySubscriptionReceipt);
+                    __httpStatusCode__, headers, opcRequestId, etag, paySubscriptionReceipt);
         }
     }
 

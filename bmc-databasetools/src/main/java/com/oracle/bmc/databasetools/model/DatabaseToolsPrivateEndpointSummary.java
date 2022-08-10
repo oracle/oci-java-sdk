@@ -19,7 +19,8 @@ package com.oracle.bmc.databasetools.model;
     builder = DatabaseToolsPrivateEndpointSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseToolsPrivateEndpointSummary {
+public final class DatabaseToolsPrivateEndpointSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -430,58 +431,97 @@ public final class DatabaseToolsPrivateEndpointSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseToolsPrivateEndpointSummary build() {
-            DatabaseToolsPrivateEndpointSummary __instance__ =
+            DatabaseToolsPrivateEndpointSummary model =
                     new DatabaseToolsPrivateEndpointSummary(
-                            compartmentId,
-                            definedTags,
-                            freeformTags,
-                            systemTags,
-                            displayName,
-                            description,
-                            id,
-                            endpointServiceId,
-                            timeCreated,
-                            timeUpdated,
-                            vcnId,
-                            subnetId,
-                            privateEndpointVnicId,
-                            privateEndpointIp,
-                            endpointFqdn,
-                            additionalFqdns,
-                            lifecycleState,
-                            lifecycleDetails,
-                            nsgIds,
-                            reverseConnectionConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.systemTags,
+                            this.displayName,
+                            this.description,
+                            this.id,
+                            this.endpointServiceId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.vcnId,
+                            this.subnetId,
+                            this.privateEndpointVnicId,
+                            this.privateEndpointIp,
+                            this.endpointFqdn,
+                            this.additionalFqdns,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.nsgIds,
+                            this.reverseConnectionConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseToolsPrivateEndpointSummary o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .systemTags(o.getSystemTags())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .id(o.getId())
-                            .endpointServiceId(o.getEndpointServiceId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .privateEndpointVnicId(o.getPrivateEndpointVnicId())
-                            .privateEndpointIp(o.getPrivateEndpointIp())
-                            .endpointFqdn(o.getEndpointFqdn())
-                            .additionalFqdns(o.getAdditionalFqdns())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .nsgIds(o.getNsgIds())
-                            .reverseConnectionConfiguration(o.getReverseConnectionConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseToolsPrivateEndpointSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointServiceId")) {
+                this.endpointServiceId(model.getEndpointServiceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointVnicId")) {
+                this.privateEndpointVnicId(model.getPrivateEndpointVnicId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
+                this.privateEndpointIp(model.getPrivateEndpointIp());
+            }
+            if (model.wasPropertyExplicitlySet("endpointFqdn")) {
+                this.endpointFqdn(model.getEndpointFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("additionalFqdns")) {
+                this.additionalFqdns(model.getAdditionalFqdns());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("reverseConnectionConfiguration")) {
+                this.reverseConnectionConfiguration(model.getReverseConnectionConfiguration());
+            }
+            return this;
         }
     }
 
@@ -802,6 +842,7 @@ public final class DatabaseToolsPrivateEndpointSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseToolsPrivateEndpointSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -823,7 +864,6 @@ public final class DatabaseToolsPrivateEndpointSummary {
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", reverseConnectionConfiguration=")
                 .append(String.valueOf(this.reverseConnectionConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -859,7 +899,7 @@ public final class DatabaseToolsPrivateEndpointSummary {
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(
                         this.reverseConnectionConfiguration, other.reverseConnectionConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -906,16 +946,7 @@ public final class DatabaseToolsPrivateEndpointSummary {
                         + (this.reverseConnectionConfiguration == null
                                 ? 43
                                 : this.reverseConnectionConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

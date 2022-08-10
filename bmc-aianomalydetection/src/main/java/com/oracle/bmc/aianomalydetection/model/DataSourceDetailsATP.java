@@ -208,40 +208,61 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataSourceDetailsATP build() {
-            DataSourceDetailsATP __instance__ =
+            DataSourceDetailsATP model =
                     new DataSourceDetailsATP(
-                            walletPasswordSecretId,
-                            atpUserName,
-                            atpPasswordSecretId,
-                            cwalletFileSecretId,
-                            ewalletFileSecretId,
-                            keyStoreFileSecretId,
-                            ojdbcFileSecretId,
-                            tnsnamesFileSecretId,
-                            truststoreFileSecretId,
-                            databaseName,
-                            tableName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.walletPasswordSecretId,
+                            this.atpUserName,
+                            this.atpPasswordSecretId,
+                            this.cwalletFileSecretId,
+                            this.ewalletFileSecretId,
+                            this.keyStoreFileSecretId,
+                            this.ojdbcFileSecretId,
+                            this.tnsnamesFileSecretId,
+                            this.truststoreFileSecretId,
+                            this.databaseName,
+                            this.tableName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataSourceDetailsATP o) {
-            Builder copiedBuilder =
-                    walletPasswordSecretId(o.getWalletPasswordSecretId())
-                            .atpUserName(o.getAtpUserName())
-                            .atpPasswordSecretId(o.getAtpPasswordSecretId())
-                            .cwalletFileSecretId(o.getCwalletFileSecretId())
-                            .ewalletFileSecretId(o.getEwalletFileSecretId())
-                            .keyStoreFileSecretId(o.getKeyStoreFileSecretId())
-                            .ojdbcFileSecretId(o.getOjdbcFileSecretId())
-                            .tnsnamesFileSecretId(o.getTnsnamesFileSecretId())
-                            .truststoreFileSecretId(o.getTruststoreFileSecretId())
-                            .databaseName(o.getDatabaseName())
-                            .tableName(o.getTableName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataSourceDetailsATP model) {
+            if (model.wasPropertyExplicitlySet("walletPasswordSecretId")) {
+                this.walletPasswordSecretId(model.getWalletPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("atpUserName")) {
+                this.atpUserName(model.getAtpUserName());
+            }
+            if (model.wasPropertyExplicitlySet("atpPasswordSecretId")) {
+                this.atpPasswordSecretId(model.getAtpPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("cwalletFileSecretId")) {
+                this.cwalletFileSecretId(model.getCwalletFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("ewalletFileSecretId")) {
+                this.ewalletFileSecretId(model.getEwalletFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreFileSecretId")) {
+                this.keyStoreFileSecretId(model.getKeyStoreFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("ojdbcFileSecretId")) {
+                this.ojdbcFileSecretId(model.getOjdbcFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("tnsnamesFileSecretId")) {
+                this.tnsnamesFileSecretId(model.getTnsnamesFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("truststoreFileSecretId")) {
+                this.truststoreFileSecretId(model.getTruststoreFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("tableName")) {
+                this.tableName(model.getTableName());
+            }
+            return this;
         }
     }
 
@@ -462,7 +483,6 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
         sb.append(", truststoreFileSecretId=").append(String.valueOf(this.truststoreFileSecretId));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", tableName=").append(String.valueOf(this.tableName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -489,8 +509,7 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
                         this.truststoreFileSecretId, other.truststoreFileSecretId)
                 && java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.tableName, other.tableName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -538,16 +557,6 @@ public final class DataSourceDetailsATP extends DataSourceDetails {
                                 : this.truststoreFileSecretId.hashCode());
         result = (result * PRIME) + (this.databaseName == null ? 43 : this.databaseName.hashCode());
         result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

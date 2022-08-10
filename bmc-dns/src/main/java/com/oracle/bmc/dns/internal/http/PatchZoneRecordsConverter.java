@@ -138,8 +138,8 @@ public class PatchZoneRecordsConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .PatchZoneRecordsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recordCollection(response.getItem());
 

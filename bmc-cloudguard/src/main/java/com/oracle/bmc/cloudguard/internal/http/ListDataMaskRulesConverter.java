@@ -198,8 +198,8 @@ public class ListDataMaskRulesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListDataMaskRulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataMaskRuleCollection(response.getItem());
 

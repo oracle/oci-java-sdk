@@ -97,24 +97,37 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonthlyRuleFrequencyDetails build() {
-            MonthlyRuleFrequencyDetails __instance__ =
+            MonthlyRuleFrequencyDetails model =
                     new MonthlyRuleFrequencyDetails(
-                            frequency, weekOfMonth, interval, time, dayOfWeek);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.frequency,
+                            this.weekOfMonth,
+                            this.interval,
+                            this.time,
+                            this.dayOfWeek);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonthlyRuleFrequencyDetails o) {
-            Builder copiedBuilder =
-                    frequency(o.getFrequency())
-                            .weekOfMonth(o.getWeekOfMonth())
-                            .interval(o.getInterval())
-                            .time(o.getTime())
-                            .dayOfWeek(o.getDayOfWeek());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonthlyRuleFrequencyDetails model) {
+            if (model.wasPropertyExplicitlySet("frequency")) {
+                this.frequency(model.getFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("weekOfMonth")) {
+                this.weekOfMonth(model.getWeekOfMonth());
+            }
+            if (model.wasPropertyExplicitlySet("interval")) {
+                this.interval(model.getInterval());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            if (model.wasPropertyExplicitlySet("dayOfWeek")) {
+                this.dayOfWeek(model.getDayOfWeek());
+            }
+            return this;
         }
     }
 
@@ -315,7 +328,6 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         sb.append(", interval=").append(String.valueOf(this.interval));
         sb.append(", time=").append(String.valueOf(this.time));
         sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -334,8 +346,7 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
                 && java.util.Objects.equals(this.interval, other.interval)
                 && java.util.Objects.equals(this.time, other.time)
                 && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -346,16 +357,6 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         result = (result * PRIME) + (this.interval == null ? 43 : this.interval.hashCode());
         result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
         result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

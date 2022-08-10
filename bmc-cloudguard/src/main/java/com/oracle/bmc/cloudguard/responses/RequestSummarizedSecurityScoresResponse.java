@@ -61,17 +61,19 @@ public class RequestSummarizedSecurityScoresResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "securityScoreAggregationCollection"
     })
     private RequestSummarizedSecurityScoresResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.SecurityScoreAggregationCollection
                     securityScoreAggregationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.securityScoreAggregationCollection = securityScoreAggregationCollection;
@@ -82,6 +84,13 @@ public class RequestSummarizedSecurityScoresResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class RequestSummarizedSecurityScoresResponse extends com.oracle.bmc.resp
          */
         public Builder copy(RequestSummarizedSecurityScoresResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             securityScoreAggregationCollection(o.getSecurityScoreAggregationCollection());
@@ -163,6 +173,7 @@ public class RequestSummarizedSecurityScoresResponse extends com.oracle.bmc.resp
         public RequestSummarizedSecurityScoresResponse build() {
             return new RequestSummarizedSecurityScoresResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     securityScoreAggregationCollection);

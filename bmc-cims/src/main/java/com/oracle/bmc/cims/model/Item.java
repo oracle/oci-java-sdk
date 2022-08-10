@@ -33,7 +33,7 @@ package com.oracle.bmc.cims.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Item {
+public class Item extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"itemKey", "name", "category", "subCategory", "issueType"})
     protected Item(
@@ -112,6 +112,7 @@ public class Item {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Item(");
+        sb.append("super=").append(super.toString());
         sb.append("itemKey=").append(String.valueOf(this.itemKey));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", category=").append(String.valueOf(this.category));
@@ -135,7 +136,8 @@ public class Item {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.subCategory, other.subCategory)
-                && java.util.Objects.equals(this.issueType, other.issueType);
+                && java.util.Objects.equals(this.issueType, other.issueType)
+                && super.equals(other);
     }
 
     @Override
@@ -147,6 +149,7 @@ public class Item {
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.subCategory == null ? 43 : this.subCategory.hashCode());
         result = (result * PRIME) + (this.issueType == null ? 43 : this.issueType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

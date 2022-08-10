@@ -109,8 +109,8 @@ public class GetUserUIPasswordInformationConverter {
                                                 com.oracle.bmc.identity.responses
                                                         .GetUserUIPasswordInformationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.uIPasswordInformation(response.getItem());
 

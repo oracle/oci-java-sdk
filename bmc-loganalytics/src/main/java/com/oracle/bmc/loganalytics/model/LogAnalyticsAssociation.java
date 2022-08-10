@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsAssociation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsAssociation {
+public final class LogAnalyticsAssociation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "failureMessage",
@@ -365,52 +366,85 @@ public final class LogAnalyticsAssociation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsAssociation build() {
-            LogAnalyticsAssociation __instance__ =
+            LogAnalyticsAssociation model =
                     new LogAnalyticsAssociation(
-                            failureMessage,
-                            agentId,
-                            timeLastAttempted,
-                            retryCount,
-                            sourceName,
-                            sourceDisplayName,
-                            sourceTypeName,
-                            lifeCycleState,
-                            entityId,
-                            entityName,
-                            entityTypeName,
-                            host,
-                            agentEntityName,
-                            entityTypeDisplayName,
-                            logGroupId,
-                            logGroupName,
-                            logGroupCompartment);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.failureMessage,
+                            this.agentId,
+                            this.timeLastAttempted,
+                            this.retryCount,
+                            this.sourceName,
+                            this.sourceDisplayName,
+                            this.sourceTypeName,
+                            this.lifeCycleState,
+                            this.entityId,
+                            this.entityName,
+                            this.entityTypeName,
+                            this.host,
+                            this.agentEntityName,
+                            this.entityTypeDisplayName,
+                            this.logGroupId,
+                            this.logGroupName,
+                            this.logGroupCompartment);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsAssociation o) {
-            Builder copiedBuilder =
-                    failureMessage(o.getFailureMessage())
-                            .agentId(o.getAgentId())
-                            .timeLastAttempted(o.getTimeLastAttempted())
-                            .retryCount(o.getRetryCount())
-                            .sourceName(o.getSourceName())
-                            .sourceDisplayName(o.getSourceDisplayName())
-                            .sourceTypeName(o.getSourceTypeName())
-                            .lifeCycleState(o.getLifeCycleState())
-                            .entityId(o.getEntityId())
-                            .entityName(o.getEntityName())
-                            .entityTypeName(o.getEntityTypeName())
-                            .host(o.getHost())
-                            .agentEntityName(o.getAgentEntityName())
-                            .entityTypeDisplayName(o.getEntityTypeDisplayName())
-                            .logGroupId(o.getLogGroupId())
-                            .logGroupName(o.getLogGroupName())
-                            .logGroupCompartment(o.getLogGroupCompartment());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsAssociation model) {
+            if (model.wasPropertyExplicitlySet("failureMessage")) {
+                this.failureMessage(model.getFailureMessage());
+            }
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastAttempted")) {
+                this.timeLastAttempted(model.getTimeLastAttempted());
+            }
+            if (model.wasPropertyExplicitlySet("retryCount")) {
+                this.retryCount(model.getRetryCount());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDisplayName")) {
+                this.sourceDisplayName(model.getSourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceTypeName")) {
+                this.sourceTypeName(model.getSourceTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("lifeCycleState")) {
+                this.lifeCycleState(model.getLifeCycleState());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeName")) {
+                this.entityTypeName(model.getEntityTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("agentEntityName")) {
+                this.agentEntityName(model.getAgentEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeDisplayName")) {
+                this.entityTypeDisplayName(model.getEntityTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupName")) {
+                this.logGroupName(model.getLogGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupCompartment")) {
+                this.logGroupCompartment(model.getLogGroupCompartment());
+            }
+            return this;
         }
     }
 
@@ -736,6 +770,7 @@ public final class LogAnalyticsAssociation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsAssociation(");
+        sb.append("super=").append(super.toString());
         sb.append("failureMessage=").append(String.valueOf(this.failureMessage));
         sb.append(", agentId=").append(String.valueOf(this.agentId));
         sb.append(", timeLastAttempted=").append(String.valueOf(this.timeLastAttempted));
@@ -753,7 +788,6 @@ public final class LogAnalyticsAssociation {
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", logGroupName=").append(String.valueOf(this.logGroupName));
         sb.append(", logGroupCompartment=").append(String.valueOf(this.logGroupCompartment));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -785,7 +819,7 @@ public final class LogAnalyticsAssociation {
                 && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.logGroupName, other.logGroupName)
                 && java.util.Objects.equals(this.logGroupCompartment, other.logGroupCompartment)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -831,16 +865,7 @@ public final class LogAnalyticsAssociation {
                         + (this.logGroupCompartment == null
                                 ? 43
                                 : this.logGroupCompartment.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

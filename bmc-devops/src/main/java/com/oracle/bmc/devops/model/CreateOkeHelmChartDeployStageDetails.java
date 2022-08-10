@@ -192,45 +192,69 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOkeHelmChartDeployStageDetails build() {
-            CreateOkeHelmChartDeployStageDetails __instance__ =
+            CreateOkeHelmChartDeployStageDetails model =
                     new CreateOkeHelmChartDeployStageDetails(
-                            description,
-                            displayName,
-                            deployPipelineId,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            okeClusterDeployEnvironmentId,
-                            helmChartDeployArtifactId,
-                            valuesArtifactIds,
-                            releaseName,
-                            namespace,
-                            timeoutInSeconds,
-                            rollbackPolicy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployPipelineId,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.okeClusterDeployEnvironmentId,
+                            this.helmChartDeployArtifactId,
+                            this.valuesArtifactIds,
+                            this.releaseName,
+                            this.namespace,
+                            this.timeoutInSeconds,
+                            this.rollbackPolicy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOkeHelmChartDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .okeClusterDeployEnvironmentId(o.getOkeClusterDeployEnvironmentId())
-                            .helmChartDeployArtifactId(o.getHelmChartDeployArtifactId())
-                            .valuesArtifactIds(o.getValuesArtifactIds())
-                            .releaseName(o.getReleaseName())
-                            .namespace(o.getNamespace())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .rollbackPolicy(o.getRollbackPolicy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOkeHelmChartDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("okeClusterDeployEnvironmentId")) {
+                this.okeClusterDeployEnvironmentId(model.getOkeClusterDeployEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("helmChartDeployArtifactId")) {
+                this.helmChartDeployArtifactId(model.getHelmChartDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("valuesArtifactIds")) {
+                this.valuesArtifactIds(model.getValuesArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("releaseName")) {
+                this.releaseName(model.getReleaseName());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackPolicy")) {
+                this.rollbackPolicy(model.getRollbackPolicy());
+            }
+            return this;
         }
     }
 
@@ -390,7 +414,6 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -414,8 +437,7 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -443,16 +465,6 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         result =
                 (result * PRIME)
                         + (this.rollbackPolicy == null ? 43 : this.rollbackPolicy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.containerengine.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterMetadata {
+public final class ClusterMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeCreated",
@@ -203,36 +203,53 @@ public final class ClusterMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterMetadata build() {
-            ClusterMetadata __instance__ =
+            ClusterMetadata model =
                     new ClusterMetadata(
-                            timeCreated,
-                            createdByUserId,
-                            createdByWorkRequestId,
-                            timeDeleted,
-                            deletedByUserId,
-                            deletedByWorkRequestId,
-                            timeUpdated,
-                            updatedByUserId,
-                            updatedByWorkRequestId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCreated,
+                            this.createdByUserId,
+                            this.createdByWorkRequestId,
+                            this.timeDeleted,
+                            this.deletedByUserId,
+                            this.deletedByWorkRequestId,
+                            this.timeUpdated,
+                            this.updatedByUserId,
+                            this.updatedByWorkRequestId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterMetadata o) {
-            Builder copiedBuilder =
-                    timeCreated(o.getTimeCreated())
-                            .createdByUserId(o.getCreatedByUserId())
-                            .createdByWorkRequestId(o.getCreatedByWorkRequestId())
-                            .timeDeleted(o.getTimeDeleted())
-                            .deletedByUserId(o.getDeletedByUserId())
-                            .deletedByWorkRequestId(o.getDeletedByWorkRequestId())
-                            .timeUpdated(o.getTimeUpdated())
-                            .updatedByUserId(o.getUpdatedByUserId())
-                            .updatedByWorkRequestId(o.getUpdatedByWorkRequestId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterMetadata model) {
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("createdByUserId")) {
+                this.createdByUserId(model.getCreatedByUserId());
+            }
+            if (model.wasPropertyExplicitlySet("createdByWorkRequestId")) {
+                this.createdByWorkRequestId(model.getCreatedByWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("timeDeleted")) {
+                this.timeDeleted(model.getTimeDeleted());
+            }
+            if (model.wasPropertyExplicitlySet("deletedByUserId")) {
+                this.deletedByUserId(model.getDeletedByUserId());
+            }
+            if (model.wasPropertyExplicitlySet("deletedByWorkRequestId")) {
+                this.deletedByWorkRequestId(model.getDeletedByWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("updatedByUserId")) {
+                this.updatedByUserId(model.getUpdatedByUserId());
+            }
+            if (model.wasPropertyExplicitlySet("updatedByWorkRequestId")) {
+                this.updatedByWorkRequestId(model.getUpdatedByWorkRequestId());
+            }
+            return this;
         }
     }
 
@@ -386,6 +403,7 @@ public final class ClusterMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", createdByUserId=").append(String.valueOf(this.createdByUserId));
         sb.append(", createdByWorkRequestId=").append(String.valueOf(this.createdByWorkRequestId));
@@ -395,7 +413,6 @@ public final class ClusterMetadata {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", updatedByUserId=").append(String.valueOf(this.updatedByUserId));
         sb.append(", updatedByWorkRequestId=").append(String.valueOf(this.updatedByWorkRequestId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -422,7 +439,7 @@ public final class ClusterMetadata {
                 && java.util.Objects.equals(this.updatedByUserId, other.updatedByUserId)
                 && java.util.Objects.equals(
                         this.updatedByWorkRequestId, other.updatedByWorkRequestId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -456,16 +473,7 @@ public final class ClusterMetadata {
                         + (this.updatedByWorkRequestId == null
                                 ? 43
                                 : this.updatedByWorkRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

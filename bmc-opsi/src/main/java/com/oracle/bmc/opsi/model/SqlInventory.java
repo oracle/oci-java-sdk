@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlInventory.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlInventory {
+public final class SqlInventory extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"totalSqls", "totalDatabases", "sqlsAnalyzed"})
     public SqlInventory(Long totalSqls, Integer totalDatabases, Long sqlsAnalyzed) {
@@ -82,20 +82,26 @@ public final class SqlInventory {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlInventory build() {
-            SqlInventory __instance__ = new SqlInventory(totalSqls, totalDatabases, sqlsAnalyzed);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlInventory model =
+                    new SqlInventory(this.totalSqls, this.totalDatabases, this.sqlsAnalyzed);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlInventory o) {
-            Builder copiedBuilder =
-                    totalSqls(o.getTotalSqls())
-                            .totalDatabases(o.getTotalDatabases())
-                            .sqlsAnalyzed(o.getSqlsAnalyzed());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlInventory model) {
+            if (model.wasPropertyExplicitlySet("totalSqls")) {
+                this.totalSqls(model.getTotalSqls());
+            }
+            if (model.wasPropertyExplicitlySet("totalDatabases")) {
+                this.totalDatabases(model.getTotalDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("sqlsAnalyzed")) {
+                this.sqlsAnalyzed(model.getSqlsAnalyzed());
+            }
+            return this;
         }
     }
 
@@ -165,10 +171,10 @@ public final class SqlInventory {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlInventory(");
+        sb.append("super=").append(super.toString());
         sb.append("totalSqls=").append(String.valueOf(this.totalSqls));
         sb.append(", totalDatabases=").append(String.valueOf(this.totalDatabases));
         sb.append(", sqlsAnalyzed=").append(String.valueOf(this.sqlsAnalyzed));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +192,7 @@ public final class SqlInventory {
         return java.util.Objects.equals(this.totalSqls, other.totalSqls)
                 && java.util.Objects.equals(this.totalDatabases, other.totalDatabases)
                 && java.util.Objects.equals(this.sqlsAnalyzed, other.sqlsAnalyzed)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +204,7 @@ public final class SqlInventory {
                 (result * PRIME)
                         + (this.totalDatabases == null ? 43 : this.totalDatabases.hashCode());
         result = (result * PRIME) + (this.sqlsAnalyzed == null ? 43 : this.sqlsAnalyzed.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -106,8 +106,8 @@ public class UpdateAddressListConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .UpdateAddressListResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.addressList(response.getItem());
 

@@ -110,8 +110,8 @@ public class CreateTagConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses.CreateTagResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tag(response.getItem());
 

@@ -40,15 +40,17 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "estimateReleaseDataSizeResult"
     })
     private EstimateReleaseDataSizeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeResult
                     estimateReleaseDataSizeResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.estimateReleaseDataSizeResult = estimateReleaseDataSizeResult;
     }
@@ -58,6 +60,13 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +111,7 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(EstimateReleaseDataSizeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             estimateReleaseDataSizeResult(o.getEstimateReleaseDataSizeResult());
 
@@ -114,7 +124,7 @@ public class EstimateReleaseDataSizeResponse extends com.oracle.bmc.responses.Bm
          */
         public EstimateReleaseDataSizeResponse build() {
             return new EstimateReleaseDataSizeResponse(
-                    __httpStatusCode__, opcRequestId, estimateReleaseDataSizeResult);
+                    __httpStatusCode__, headers, opcRequestId, estimateReleaseDataSizeResult);
         }
     }
 

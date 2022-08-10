@@ -68,6 +68,7 @@ public class CreateCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "etag",
         "opcRequestId",
@@ -75,11 +76,12 @@ public class CreateCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateCloudVmClusterResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.CloudVmCluster cloudVmCluster) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
         this.opcRequestId = opcRequestId;
@@ -91,6 +93,13 @@ public class CreateCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -166,6 +175,7 @@ public class CreateCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(CreateCloudVmClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
@@ -180,7 +190,12 @@ public class CreateCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRe
          */
         public CreateCloudVmClusterResponse build() {
             return new CreateCloudVmClusterResponse(
-                    __httpStatusCode__, opcWorkRequestId, etag, opcRequestId, cloudVmCluster);
+                    __httpStatusCode__,
+                    headers,
+                    opcWorkRequestId,
+                    etag,
+                    opcRequestId,
+                    cloudVmCluster);
         }
     }
 

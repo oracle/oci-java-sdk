@@ -19,7 +19,7 @@ package com.oracle.bmc.objectstorage.model;
     builder = ReplicationSource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicationSource {
+public final class ReplicationSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"policyName", "sourceRegionName", "sourceBucketName"})
     public ReplicationSource(String policyName, String sourceRegionName, String sourceBucketName) {
@@ -84,21 +84,27 @@ public final class ReplicationSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReplicationSource build() {
-            ReplicationSource __instance__ =
-                    new ReplicationSource(policyName, sourceRegionName, sourceBucketName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ReplicationSource model =
+                    new ReplicationSource(
+                            this.policyName, this.sourceRegionName, this.sourceBucketName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReplicationSource o) {
-            Builder copiedBuilder =
-                    policyName(o.getPolicyName())
-                            .sourceRegionName(o.getSourceRegionName())
-                            .sourceBucketName(o.getSourceBucketName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReplicationSource model) {
+            if (model.wasPropertyExplicitlySet("policyName")) {
+                this.policyName(model.getPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceRegionName")) {
+                this.sourceRegionName(model.getSourceRegionName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceBucketName")) {
+                this.sourceBucketName(model.getSourceBucketName());
+            }
+            return this;
         }
     }
 
@@ -168,10 +174,10 @@ public final class ReplicationSource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReplicationSource(");
+        sb.append("super=").append(super.toString());
         sb.append("policyName=").append(String.valueOf(this.policyName));
         sb.append(", sourceRegionName=").append(String.valueOf(this.sourceRegionName));
         sb.append(", sourceBucketName=").append(String.valueOf(this.sourceBucketName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +195,7 @@ public final class ReplicationSource {
         return java.util.Objects.equals(this.policyName, other.policyName)
                 && java.util.Objects.equals(this.sourceRegionName, other.sourceRegionName)
                 && java.util.Objects.equals(this.sourceBucketName, other.sourceBucketName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -203,16 +209,7 @@ public final class ReplicationSource {
         result =
                 (result * PRIME)
                         + (this.sourceBucketName == null ? 43 : this.sourceBucketName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

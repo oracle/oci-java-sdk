@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DropTablespaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DropTablespaceDetails {
+public final class DropTablespaceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -109,26 +110,33 @@ public final class DropTablespaceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DropTablespaceDetails build() {
-            DropTablespaceDetails __instance__ =
+            DropTablespaceDetails model =
                     new DropTablespaceDetails(
-                            credentialDetails,
-                            isIncludingContents,
-                            isDroppingDataFiles,
-                            isCascadeConstraints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialDetails,
+                            this.isIncludingContents,
+                            this.isDroppingDataFiles,
+                            this.isCascadeConstraints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DropTablespaceDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .isIncludingContents(o.getIsIncludingContents())
-                            .isDroppingDataFiles(o.getIsDroppingDataFiles())
-                            .isCascadeConstraints(o.getIsCascadeConstraints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DropTablespaceDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isIncludingContents")) {
+                this.isIncludingContents(model.getIsIncludingContents());
+            }
+            if (model.wasPropertyExplicitlySet("isDroppingDataFiles")) {
+                this.isDroppingDataFiles(model.getIsDroppingDataFiles());
+            }
+            if (model.wasPropertyExplicitlySet("isCascadeConstraints")) {
+                this.isCascadeConstraints(model.getIsCascadeConstraints());
+            }
+            return this;
         }
     }
 
@@ -211,11 +219,11 @@ public final class DropTablespaceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DropTablespaceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", isIncludingContents=").append(String.valueOf(this.isIncludingContents));
         sb.append(", isDroppingDataFiles=").append(String.valueOf(this.isDroppingDataFiles));
         sb.append(", isCascadeConstraints=").append(String.valueOf(this.isCascadeConstraints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -234,7 +242,7 @@ public final class DropTablespaceDetails {
                 && java.util.Objects.equals(this.isIncludingContents, other.isIncludingContents)
                 && java.util.Objects.equals(this.isDroppingDataFiles, other.isDroppingDataFiles)
                 && java.util.Objects.equals(this.isCascadeConstraints, other.isCascadeConstraints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +267,7 @@ public final class DropTablespaceDetails {
                         + (this.isCascadeConstraints == null
                                 ? 43
                                 : this.isCascadeConstraints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

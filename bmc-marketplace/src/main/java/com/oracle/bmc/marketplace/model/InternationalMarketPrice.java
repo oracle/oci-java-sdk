@@ -19,7 +19,8 @@ package com.oracle.bmc.marketplace.model;
     builder = InternationalMarketPrice.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InternationalMarketPrice {
+public final class InternationalMarketPrice
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currencyCode", "currencySymbol", "rate"})
     public InternationalMarketPrice(
@@ -85,21 +86,26 @@ public final class InternationalMarketPrice {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InternationalMarketPrice build() {
-            InternationalMarketPrice __instance__ =
-                    new InternationalMarketPrice(currencyCode, currencySymbol, rate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InternationalMarketPrice model =
+                    new InternationalMarketPrice(this.currencyCode, this.currencySymbol, this.rate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InternationalMarketPrice o) {
-            Builder copiedBuilder =
-                    currencyCode(o.getCurrencyCode())
-                            .currencySymbol(o.getCurrencySymbol())
-                            .rate(o.getRate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InternationalMarketPrice model) {
+            if (model.wasPropertyExplicitlySet("currencyCode")) {
+                this.currencyCode(model.getCurrencyCode());
+            }
+            if (model.wasPropertyExplicitlySet("currencySymbol")) {
+                this.currencySymbol(model.getCurrencySymbol());
+            }
+            if (model.wasPropertyExplicitlySet("rate")) {
+                this.rate(model.getRate());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class InternationalMarketPrice {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InternationalMarketPrice(");
+        sb.append("super=").append(super.toString());
         sb.append("currencyCode=").append(String.valueOf(this.currencyCode));
         sb.append(", currencySymbol=").append(String.valueOf(this.currencySymbol));
         sb.append(", rate=").append(String.valueOf(this.rate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class InternationalMarketPrice {
         return java.util.Objects.equals(this.currencyCode, other.currencyCode)
                 && java.util.Objects.equals(this.currencySymbol, other.currencySymbol)
                 && java.util.Objects.equals(this.rate, other.rate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +208,7 @@ public final class InternationalMarketPrice {
                 (result * PRIME)
                         + (this.currencySymbol == null ? 43 : this.currencySymbol.hashCode());
         result = (result * PRIME) + (this.rate == null ? 43 : this.rate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

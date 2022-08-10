@@ -437,6 +437,48 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
 
     /**
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetOptimizerStatisticsAdvisorExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOptimizerStatisticsAdvisorExecution API.
+     */
+    GetOptimizerStatisticsAdvisorExecutionResponse getOptimizerStatisticsAdvisorExecution(
+            GetOptimizerStatisticsAdvisorExecutionRequest request);
+
+    /**
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetOptimizerStatisticsAdvisorExecutionScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOptimizerStatisticsAdvisorExecutionScript API.
+     */
+    GetOptimizerStatisticsAdvisorExecutionScriptResponse
+            getOptimizerStatisticsAdvisorExecutionScript(
+                    GetOptimizerStatisticsAdvisorExecutionScriptRequest request);
+
+    /**
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetOptimizerStatisticsCollectionOperationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOptimizerStatisticsCollectionOperation API.
+     */
+    GetOptimizerStatisticsCollectionOperationResponse getOptimizerStatisticsCollectionOperation(
+            GetOptimizerStatisticsCollectionOperationRequest request);
+
+    /**
      * Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each
      * PDB within a specific CDB. If comparmentId is specified, then the metrics for
      * each PDB (within the CDB) in the specified compartment are retrieved.
@@ -489,6 +531,20 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Asynchronously implements the findings and recommendations of the Optimizer Statistics Advisor execution.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ImplementOptimizerStatisticsAdvisorRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImplementOptimizerStatisticsAdvisorRecommendations API.
+     */
+    ImplementOptimizerStatisticsAdvisorRecommendationsResponse
+            implementOptimizerStatisticsAdvisorRecommendations(
+                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest request);
 
     /**
      * Gets the list of ASM properties for the specified managedDatabaseId.
@@ -689,6 +745,62 @@ public interface DbManagement extends AutoCloseable {
     ListObjectPrivilegesResponse listObjectPrivileges(ListObjectPrivilegesRequest request);
 
     /**
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListOptimizerStatisticsAdvisorExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOptimizerStatisticsAdvisorExecutions API.
+     */
+    ListOptimizerStatisticsAdvisorExecutionsResponse listOptimizerStatisticsAdvisorExecutions(
+            ListOptimizerStatisticsAdvisorExecutionsRequest request);
+
+    /**
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type not provided, then both Auto and Manual tasks are considered for aggregation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListOptimizerStatisticsCollectionAggregationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOptimizerStatisticsCollectionAggregations API.
+     */
+    ListOptimizerStatisticsCollectionAggregationsResponse
+            listOptimizerStatisticsCollectionAggregations(
+                    ListOptimizerStatisticsCollectionAggregationsRequest request);
+
+    /**
+     * Lists the Optimizer Statistics Collection (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListOptimizerStatisticsCollectionOperationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOptimizerStatisticsCollectionOperations API.
+     */
+    ListOptimizerStatisticsCollectionOperationsResponse listOptimizerStatisticsCollectionOperations(
+            ListOptimizerStatisticsCollectionOperationsRequest request);
+
+    /**
      * Gets the list of users on whose behalf the current user acts as proxy.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -735,6 +847,20 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSystemPrivilegesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemPrivileges API.
      */
     ListSystemPrivilegesResponse listSystemPrivileges(ListSystemPrivilegesRequest request);
+
+    /**
+     * Lists the database table statistics grouped by different statuses such as Not Stale Stats, Stale Stats, and No Stats.
+     * This also includes the percentage of each status.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListTableStatisticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTableStatistics API.
+     */
+    ListTableStatisticsResponse listTableStatistics(ListTableStatisticsRequest request);
 
     /**
      * Gets the list of tablespaces for the specified managedDatabaseId.

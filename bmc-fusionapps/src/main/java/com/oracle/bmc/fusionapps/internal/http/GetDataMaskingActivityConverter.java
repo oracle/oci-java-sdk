@@ -117,8 +117,8 @@ public class GetDataMaskingActivityConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .GetDataMaskingActivityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataMaskingActivity(response.getItem());
 

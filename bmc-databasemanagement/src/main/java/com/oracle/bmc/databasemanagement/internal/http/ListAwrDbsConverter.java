@@ -170,8 +170,8 @@ public class ListAwrDbsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListAwrDbsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbCollection(response.getItem());
 

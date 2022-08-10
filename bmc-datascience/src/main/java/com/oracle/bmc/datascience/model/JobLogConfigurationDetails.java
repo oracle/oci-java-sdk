@@ -20,7 +20,8 @@ package com.oracle.bmc.datascience.model;
     builder = JobLogConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobLogConfigurationDetails {
+public final class JobLogConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "enableLogging",
@@ -114,23 +115,33 @@ public final class JobLogConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobLogConfigurationDetails build() {
-            JobLogConfigurationDetails __instance__ =
+            JobLogConfigurationDetails model =
                     new JobLogConfigurationDetails(
-                            enableLogging, enableAutoLogCreation, logGroupId, logId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.enableLogging,
+                            this.enableAutoLogCreation,
+                            this.logGroupId,
+                            this.logId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobLogConfigurationDetails o) {
-            Builder copiedBuilder =
-                    enableLogging(o.getEnableLogging())
-                            .enableAutoLogCreation(o.getEnableAutoLogCreation())
-                            .logGroupId(o.getLogGroupId())
-                            .logId(o.getLogId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobLogConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("enableLogging")) {
+                this.enableLogging(model.getEnableLogging());
+            }
+            if (model.wasPropertyExplicitlySet("enableAutoLogCreation")) {
+                this.enableAutoLogCreation(model.getEnableAutoLogCreation());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logId")) {
+                this.logId(model.getLogId());
+            }
+            return this;
         }
     }
 
@@ -220,11 +231,11 @@ public final class JobLogConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobLogConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("enableLogging=").append(String.valueOf(this.enableLogging));
         sb.append(", enableAutoLogCreation=").append(String.valueOf(this.enableAutoLogCreation));
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", logId=").append(String.valueOf(this.logId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -243,7 +254,7 @@ public final class JobLogConfigurationDetails {
                 && java.util.Objects.equals(this.enableAutoLogCreation, other.enableAutoLogCreation)
                 && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.logId, other.logId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -260,16 +271,7 @@ public final class JobLogConfigurationDetails {
                                 : this.enableAutoLogCreation.hashCode());
         result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + (this.logId == null ? 43 : this.logId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

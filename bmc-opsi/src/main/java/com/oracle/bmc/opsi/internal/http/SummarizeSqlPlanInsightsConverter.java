@@ -168,8 +168,8 @@ public class SummarizeSqlPlanInsightsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeSqlPlanInsightsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlPlanInsightAggregationCollection(response.getItem());
 

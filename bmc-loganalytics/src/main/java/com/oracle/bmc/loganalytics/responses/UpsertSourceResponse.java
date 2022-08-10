@@ -53,16 +53,18 @@ public class UpsertSourceResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "logAnalyticsSource"
     })
     private UpsertSourceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsSource logAnalyticsSource) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.logAnalyticsSource = logAnalyticsSource;
@@ -73,6 +75,13 @@ public class UpsertSourceResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class UpsertSourceResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpsertSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsSource(o.getLogAnalyticsSource());
@@ -145,7 +155,7 @@ public class UpsertSourceResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public UpsertSourceResponse build() {
             return new UpsertSourceResponse(
-                    __httpStatusCode__, etag, opcRequestId, logAnalyticsSource);
+                    __httpStatusCode__, headers, etag, opcRequestId, logAnalyticsSource);
         }
     }
 

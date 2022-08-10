@@ -54,13 +54,18 @@ public class ChangeAutonomousDatabaseCompartmentResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId"
     })
     private ChangeAutonomousDatabaseCompartmentResponse(
-            int __httpStatusCode__, String etag, String opcWorkRequestId, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcWorkRequestId,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -71,6 +76,13 @@ public class ChangeAutonomousDatabaseCompartmentResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -129,6 +141,7 @@ public class ChangeAutonomousDatabaseCompartmentResponse
          */
         public Builder copy(ChangeAutonomousDatabaseCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -142,7 +155,7 @@ public class ChangeAutonomousDatabaseCompartmentResponse
          */
         public ChangeAutonomousDatabaseCompartmentResponse build() {
             return new ChangeAutonomousDatabaseCompartmentResponse(
-                    __httpStatusCode__, etag, opcWorkRequestId, opcRequestId);
+                    __httpStatusCode__, headers, etag, opcWorkRequestId, opcRequestId);
         }
     }
 

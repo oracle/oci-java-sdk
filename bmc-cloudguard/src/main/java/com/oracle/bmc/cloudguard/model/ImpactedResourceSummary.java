@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = ImpactedResourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImpactedResourceSummary {
+public final class ImpactedResourceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -224,38 +225,57 @@ public final class ImpactedResourceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImpactedResourceSummary build() {
-            ImpactedResourceSummary __instance__ =
+            ImpactedResourceSummary model =
                     new ImpactedResourceSummary(
-                            id,
-                            resourceId,
-                            problemId,
-                            compartmentId,
-                            sightingType,
-                            sightingTypeDisplayName,
-                            resourceName,
-                            resourceType,
-                            region,
-                            timeIdentified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.resourceId,
+                            this.problemId,
+                            this.compartmentId,
+                            this.sightingType,
+                            this.sightingTypeDisplayName,
+                            this.resourceName,
+                            this.resourceType,
+                            this.region,
+                            this.timeIdentified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImpactedResourceSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .resourceId(o.getResourceId())
-                            .problemId(o.getProblemId())
-                            .compartmentId(o.getCompartmentId())
-                            .sightingType(o.getSightingType())
-                            .sightingTypeDisplayName(o.getSightingTypeDisplayName())
-                            .resourceName(o.getResourceName())
-                            .resourceType(o.getResourceType())
-                            .region(o.getRegion())
-                            .timeIdentified(o.getTimeIdentified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImpactedResourceSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("problemId")) {
+                this.problemId(model.getProblemId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("sightingType")) {
+                this.sightingType(model.getSightingType());
+            }
+            if (model.wasPropertyExplicitlySet("sightingTypeDisplayName")) {
+                this.sightingTypeDisplayName(model.getSightingTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("timeIdentified")) {
+                this.timeIdentified(model.getTimeIdentified());
+            }
+            return this;
         }
     }
 
@@ -423,6 +443,7 @@ public final class ImpactedResourceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImpactedResourceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", problemId=").append(String.valueOf(this.problemId));
@@ -434,7 +455,6 @@ public final class ImpactedResourceSummary {
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", timeIdentified=").append(String.valueOf(this.timeIdentified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -460,7 +480,7 @@ public final class ImpactedResourceSummary {
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.timeIdentified, other.timeIdentified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -485,16 +505,7 @@ public final class ImpactedResourceSummary {
         result =
                 (result * PRIME)
                         + (this.timeIdentified == null ? 43 : this.timeIdentified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

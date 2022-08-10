@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatternSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PatternSummary {
+public final class PatternSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -206,34 +206,49 @@ public final class PatternSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatternSummary build() {
-            PatternSummary __instance__ =
+            PatternSummary model =
                     new PatternSummary(
-                            key,
-                            displayName,
-                            description,
-                            catalogId,
-                            timeCreated,
-                            expression,
-                            filePathPrefix,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.catalogId,
+                            this.timeCreated,
+                            this.expression,
+                            this.filePathPrefix,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PatternSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .catalogId(o.getCatalogId())
-                            .timeCreated(o.getTimeCreated())
-                            .expression(o.getExpression())
-                            .filePathPrefix(o.getFilePathPrefix())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PatternSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("filePathPrefix")) {
+                this.filePathPrefix(model.getFilePathPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -393,6 +408,7 @@ public final class PatternSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PatternSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -401,7 +417,6 @@ public final class PatternSummary {
         sb.append(", expression=").append(String.valueOf(this.expression));
         sb.append(", filePathPrefix=").append(String.valueOf(this.filePathPrefix));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -424,7 +439,7 @@ public final class PatternSummary {
                 && java.util.Objects.equals(this.expression, other.expression)
                 && java.util.Objects.equals(this.filePathPrefix, other.filePathPrefix)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -443,16 +458,7 @@ public final class PatternSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

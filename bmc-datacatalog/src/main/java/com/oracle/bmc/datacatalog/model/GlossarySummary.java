@@ -25,7 +25,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GlossarySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GlossarySummary {
+public final class GlossarySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -280,42 +280,65 @@ public final class GlossarySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GlossarySummary build() {
-            GlossarySummary __instance__ =
+            GlossarySummary model =
                     new GlossarySummary(
-                            key,
-                            displayName,
-                            catalogId,
-                            timeCreated,
-                            description,
-                            uri,
-                            workflowStatus,
-                            lifecycleState,
-                            importJobDefinitionKey,
-                            importJobKey,
-                            latestImportJobExecutionKey,
-                            latestImportJobExecutionStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.catalogId,
+                            this.timeCreated,
+                            this.description,
+                            this.uri,
+                            this.workflowStatus,
+                            this.lifecycleState,
+                            this.importJobDefinitionKey,
+                            this.importJobKey,
+                            this.latestImportJobExecutionKey,
+                            this.latestImportJobExecutionStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GlossarySummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .catalogId(o.getCatalogId())
-                            .timeCreated(o.getTimeCreated())
-                            .description(o.getDescription())
-                            .uri(o.getUri())
-                            .workflowStatus(o.getWorkflowStatus())
-                            .lifecycleState(o.getLifecycleState())
-                            .importJobDefinitionKey(o.getImportJobDefinitionKey())
-                            .importJobKey(o.getImportJobKey())
-                            .latestImportJobExecutionKey(o.getLatestImportJobExecutionKey())
-                            .latestImportJobExecutionStatus(o.getLatestImportJobExecutionStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GlossarySummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("workflowStatus")) {
+                this.workflowStatus(model.getWorkflowStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("importJobDefinitionKey")) {
+                this.importJobDefinitionKey(model.getImportJobDefinitionKey());
+            }
+            if (model.wasPropertyExplicitlySet("importJobKey")) {
+                this.importJobKey(model.getImportJobKey());
+            }
+            if (model.wasPropertyExplicitlySet("latestImportJobExecutionKey")) {
+                this.latestImportJobExecutionKey(model.getLatestImportJobExecutionKey());
+            }
+            if (model.wasPropertyExplicitlySet("latestImportJobExecutionStatus")) {
+                this.latestImportJobExecutionStatus(model.getLatestImportJobExecutionStatus());
+            }
+            return this;
         }
     }
 
@@ -523,6 +546,7 @@ public final class GlossarySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GlossarySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", catalogId=").append(String.valueOf(this.catalogId));
@@ -537,7 +561,6 @@ public final class GlossarySummary {
                 .append(String.valueOf(this.latestImportJobExecutionKey));
         sb.append(", latestImportJobExecutionStatus=")
                 .append(String.valueOf(this.latestImportJobExecutionStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -567,7 +590,7 @@ public final class GlossarySummary {
                         this.latestImportJobExecutionKey, other.latestImportJobExecutionKey)
                 && java.util.Objects.equals(
                         this.latestImportJobExecutionStatus, other.latestImportJobExecutionStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -602,16 +625,7 @@ public final class GlossarySummary {
                         + (this.latestImportJobExecutionStatus == null
                                 ? 43
                                 : this.latestImportJobExecutionStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

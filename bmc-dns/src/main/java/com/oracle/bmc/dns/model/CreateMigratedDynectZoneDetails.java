@@ -80,24 +80,37 @@ public final class CreateMigratedDynectZoneDetails extends CreateZoneBaseDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMigratedDynectZoneDetails build() {
-            CreateMigratedDynectZoneDetails __instance__ =
+            CreateMigratedDynectZoneDetails model =
                     new CreateMigratedDynectZoneDetails(
-                            name, compartmentId, freeformTags, definedTags, dynectMigrationDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.dynectMigrationDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMigratedDynectZoneDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .dynectMigrationDetails(o.getDynectMigrationDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMigratedDynectZoneDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dynectMigrationDetails")) {
+                this.dynectMigrationDetails(model.getDynectMigrationDetails());
+            }
+            return this;
         }
     }
 
@@ -145,7 +158,6 @@ public final class CreateMigratedDynectZoneDetails extends CreateZoneBaseDetails
         sb.append("CreateMigratedDynectZoneDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dynectMigrationDetails=").append(String.valueOf(this.dynectMigrationDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,8 +173,7 @@ public final class CreateMigratedDynectZoneDetails extends CreateZoneBaseDetails
 
         CreateMigratedDynectZoneDetails other = (CreateMigratedDynectZoneDetails) o;
         return java.util.Objects.equals(this.dynectMigrationDetails, other.dynectMigrationDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +185,6 @@ public final class CreateMigratedDynectZoneDetails extends CreateZoneBaseDetails
                         + (this.dynectMigrationDetails == null
                                 ? 43
                                 : this.dynectMigrationDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

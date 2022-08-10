@@ -109,8 +109,8 @@ public class CreateInstanceConsoleConnectionConverter {
                                                 com.oracle.bmc.core.responses
                                                         .CreateInstanceConsoleConnectionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceConsoleConnection(response.getItem());
 

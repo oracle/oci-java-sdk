@@ -110,33 +110,46 @@ public final class CreateApplicationChannelDetails extends CreateChannelDetails 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateApplicationChannelDetails build() {
-            CreateApplicationChannelDetails __instance__ =
+            CreateApplicationChannelDetails model =
                     new CreateApplicationChannelDetails(
-                            name,
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            outboundUrl,
-                            isAuthenticatedUserId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.outboundUrl,
+                            this.isAuthenticatedUserId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateApplicationChannelDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .outboundUrl(o.getOutboundUrl())
-                            .isAuthenticatedUserId(o.getIsAuthenticatedUserId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateApplicationChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("outboundUrl")) {
+                this.outboundUrl(model.getOutboundUrl());
+            }
+            if (model.wasPropertyExplicitlySet("isAuthenticatedUserId")) {
+                this.isAuthenticatedUserId(model.getIsAuthenticatedUserId());
+            }
+            return this;
         }
     }
 
@@ -209,7 +222,6 @@ public final class CreateApplicationChannelDetails extends CreateChannelDetails 
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", outboundUrl=").append(String.valueOf(this.outboundUrl));
         sb.append(", isAuthenticatedUserId=").append(String.valueOf(this.isAuthenticatedUserId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,8 +238,7 @@ public final class CreateApplicationChannelDetails extends CreateChannelDetails 
         CreateApplicationChannelDetails other = (CreateApplicationChannelDetails) o;
         return java.util.Objects.equals(this.outboundUrl, other.outboundUrl)
                 && java.util.Objects.equals(this.isAuthenticatedUserId, other.isAuthenticatedUserId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -240,16 +251,6 @@ public final class CreateApplicationChannelDetails extends CreateChannelDetails 
                         + (this.isAuthenticatedUserId == null
                                 ? 43
                                 : this.isAuthenticatedUserId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

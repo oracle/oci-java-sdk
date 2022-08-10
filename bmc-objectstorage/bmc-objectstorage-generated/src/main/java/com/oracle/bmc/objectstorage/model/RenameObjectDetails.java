@@ -22,7 +22,7 @@ package com.oracle.bmc.objectstorage.model;
     builder = RenameObjectDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RenameObjectDetails {
+public final class RenameObjectDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceName",
@@ -136,28 +136,37 @@ public final class RenameObjectDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RenameObjectDetails build() {
-            RenameObjectDetails __instance__ =
+            RenameObjectDetails model =
                     new RenameObjectDetails(
-                            sourceName,
-                            newName,
-                            srcObjIfMatchETag,
-                            newObjIfMatchETag,
-                            newObjIfNoneMatchETag);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sourceName,
+                            this.newName,
+                            this.srcObjIfMatchETag,
+                            this.newObjIfMatchETag,
+                            this.newObjIfNoneMatchETag);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RenameObjectDetails o) {
-            Builder copiedBuilder =
-                    sourceName(o.getSourceName())
-                            .newName(o.getNewName())
-                            .srcObjIfMatchETag(o.getSrcObjIfMatchETag())
-                            .newObjIfMatchETag(o.getNewObjIfMatchETag())
-                            .newObjIfNoneMatchETag(o.getNewObjIfNoneMatchETag());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RenameObjectDetails model) {
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("newName")) {
+                this.newName(model.getNewName());
+            }
+            if (model.wasPropertyExplicitlySet("srcObjIfMatchETag")) {
+                this.srcObjIfMatchETag(model.getSrcObjIfMatchETag());
+            }
+            if (model.wasPropertyExplicitlySet("newObjIfMatchETag")) {
+                this.newObjIfMatchETag(model.getNewObjIfMatchETag());
+            }
+            if (model.wasPropertyExplicitlySet("newObjIfNoneMatchETag")) {
+                this.newObjIfNoneMatchETag(model.getNewObjIfNoneMatchETag());
+            }
+            return this;
         }
     }
 
@@ -259,12 +268,12 @@ public final class RenameObjectDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RenameObjectDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceName=").append(String.valueOf(this.sourceName));
         sb.append(", newName=").append(String.valueOf(this.newName));
         sb.append(", srcObjIfMatchETag=").append(String.valueOf(this.srcObjIfMatchETag));
         sb.append(", newObjIfMatchETag=").append(String.valueOf(this.newObjIfMatchETag));
         sb.append(", newObjIfNoneMatchETag=").append(String.valueOf(this.newObjIfNoneMatchETag));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -284,7 +293,7 @@ public final class RenameObjectDetails {
                 && java.util.Objects.equals(this.srcObjIfMatchETag, other.srcObjIfMatchETag)
                 && java.util.Objects.equals(this.newObjIfMatchETag, other.newObjIfMatchETag)
                 && java.util.Objects.equals(this.newObjIfNoneMatchETag, other.newObjIfNoneMatchETag)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -304,16 +313,7 @@ public final class RenameObjectDetails {
                         + (this.newObjIfNoneMatchETag == null
                                 ? 43
                                 : this.newObjIfNoneMatchETag.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

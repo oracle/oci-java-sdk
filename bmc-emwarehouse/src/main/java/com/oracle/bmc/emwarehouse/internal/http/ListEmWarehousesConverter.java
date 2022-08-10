@@ -175,8 +175,8 @@ public class ListEmWarehousesConverter {
                                         builder =
                                                 com.oracle.bmc.emwarehouse.responses
                                                         .ListEmWarehousesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.emWarehouseCollection(response.getItem());
 

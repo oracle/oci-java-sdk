@@ -134,8 +134,8 @@ public class CreateRedeemableUserConverter {
                                         builder =
                                                 com.oracle.bmc.usage.responses
                                                         .CreateRedeemableUserResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.redeemableUserCollection(response.getItem());
 

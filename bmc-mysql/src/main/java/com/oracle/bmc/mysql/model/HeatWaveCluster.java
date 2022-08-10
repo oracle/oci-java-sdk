@@ -18,7 +18,7 @@ package com.oracle.bmc.mysql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HeatWaveCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HeatWaveCluster {
+public final class HeatWaveCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbSystemId",
@@ -201,34 +201,49 @@ public final class HeatWaveCluster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HeatWaveCluster build() {
-            HeatWaveCluster __instance__ =
+            HeatWaveCluster model =
                     new HeatWaveCluster(
-                            dbSystemId,
-                            shapeName,
-                            clusterSize,
-                            clusterNodes,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated,
-                            timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dbSystemId,
+                            this.shapeName,
+                            this.clusterSize,
+                            this.clusterNodes,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HeatWaveCluster o) {
-            Builder copiedBuilder =
-                    dbSystemId(o.getDbSystemId())
-                            .shapeName(o.getShapeName())
-                            .clusterSize(o.getClusterSize())
-                            .clusterNodes(o.getClusterNodes())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HeatWaveCluster model) {
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("clusterSize")) {
+                this.clusterSize(model.getClusterSize());
+            }
+            if (model.wasPropertyExplicitlySet("clusterNodes")) {
+                this.clusterNodes(model.getClusterNodes());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -437,6 +452,7 @@ public final class HeatWaveCluster {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HeatWaveCluster(");
+        sb.append("super=").append(super.toString());
         sb.append("dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
@@ -445,7 +461,6 @@ public final class HeatWaveCluster {
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -468,7 +483,7 @@ public final class HeatWaveCluster {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -487,16 +502,7 @@ public final class HeatWaveCluster {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

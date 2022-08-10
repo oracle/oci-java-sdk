@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = CredentialAuthenticatorInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CredentialAuthenticatorInfo {
+public final class CredentialAuthenticatorInfo
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rawCredential",
@@ -205,36 +206,53 @@ public final class CredentialAuthenticatorInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CredentialAuthenticatorInfo build() {
-            CredentialAuthenticatorInfo __instance__ =
+            CredentialAuthenticatorInfo model =
                     new CredentialAuthenticatorInfo(
-                            rawCredential,
-                            userId,
-                            tenantId,
-                            userName,
-                            tenantName,
-                            credentialIdentifier,
-                            credentialList,
-                            service,
-                            clientId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.rawCredential,
+                            this.userId,
+                            this.tenantId,
+                            this.userName,
+                            this.tenantName,
+                            this.credentialIdentifier,
+                            this.credentialList,
+                            this.service,
+                            this.clientId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CredentialAuthenticatorInfo o) {
-            Builder copiedBuilder =
-                    rawCredential(o.getRawCredential())
-                            .userId(o.getUserId())
-                            .tenantId(o.getTenantId())
-                            .userName(o.getUserName())
-                            .tenantName(o.getTenantName())
-                            .credentialIdentifier(o.getCredentialIdentifier())
-                            .credentialList(o.getCredentialList())
-                            .service(o.getService())
-                            .clientId(o.getClientId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CredentialAuthenticatorInfo model) {
+            if (model.wasPropertyExplicitlySet("rawCredential")) {
+                this.rawCredential(model.getRawCredential());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("tenantName")) {
+                this.tenantName(model.getTenantName());
+            }
+            if (model.wasPropertyExplicitlySet("credentialIdentifier")) {
+                this.credentialIdentifier(model.getCredentialIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("credentialList")) {
+                this.credentialList(model.getCredentialList());
+            }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            return this;
         }
     }
 
@@ -388,6 +406,7 @@ public final class CredentialAuthenticatorInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CredentialAuthenticatorInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("rawCredential=").append(String.valueOf(this.rawCredential));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
@@ -397,7 +416,6 @@ public final class CredentialAuthenticatorInfo {
         sb.append(", credentialList=").append(String.valueOf(this.credentialList));
         sb.append(", service=").append(String.valueOf(this.service));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -421,7 +439,7 @@ public final class CredentialAuthenticatorInfo {
                 && java.util.Objects.equals(this.credentialList, other.credentialList)
                 && java.util.Objects.equals(this.service, other.service)
                 && java.util.Objects.equals(this.clientId, other.clientId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -445,16 +463,7 @@ public final class CredentialAuthenticatorInfo {
                         + (this.credentialList == null ? 43 : this.credentialList.hashCode());
         result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
         result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

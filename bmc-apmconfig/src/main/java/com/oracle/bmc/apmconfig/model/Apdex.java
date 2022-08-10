@@ -33,7 +33,7 @@ package com.oracle.bmc.apmconfig.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Apdex.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Apdex {
+public final class Apdex extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "filterText",
@@ -207,32 +207,45 @@ public final class Apdex {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Apdex build() {
-            Apdex __instance__ =
+            Apdex model =
                     new Apdex(
-                            filterText,
-                            priority,
-                            isEnabled,
-                            satisfiedResponseTime,
-                            toleratingResponseTime,
-                            isApplyToErrorSpans,
-                            displayName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.filterText,
+                            this.priority,
+                            this.isEnabled,
+                            this.satisfiedResponseTime,
+                            this.toleratingResponseTime,
+                            this.isApplyToErrorSpans,
+                            this.displayName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Apdex o) {
-            Builder copiedBuilder =
-                    filterText(o.getFilterText())
-                            .priority(o.getPriority())
-                            .isEnabled(o.getIsEnabled())
-                            .satisfiedResponseTime(o.getSatisfiedResponseTime())
-                            .toleratingResponseTime(o.getToleratingResponseTime())
-                            .isApplyToErrorSpans(o.getIsApplyToErrorSpans())
-                            .displayName(o.getDisplayName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Apdex model) {
+            if (model.wasPropertyExplicitlySet("filterText")) {
+                this.filterText(model.getFilterText());
+            }
+            if (model.wasPropertyExplicitlySet("priority")) {
+                this.priority(model.getPriority());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("satisfiedResponseTime")) {
+                this.satisfiedResponseTime(model.getSatisfiedResponseTime());
+            }
+            if (model.wasPropertyExplicitlySet("toleratingResponseTime")) {
+                this.toleratingResponseTime(model.getToleratingResponseTime());
+            }
+            if (model.wasPropertyExplicitlySet("isApplyToErrorSpans")) {
+                this.isApplyToErrorSpans(model.getIsApplyToErrorSpans());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            return this;
         }
     }
 
@@ -384,6 +397,7 @@ public final class Apdex {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Apdex(");
+        sb.append("super=").append(super.toString());
         sb.append("filterText=").append(String.valueOf(this.filterText));
         sb.append(", priority=").append(String.valueOf(this.priority));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
@@ -391,7 +405,6 @@ public final class Apdex {
         sb.append(", toleratingResponseTime=").append(String.valueOf(this.toleratingResponseTime));
         sb.append(", isApplyToErrorSpans=").append(String.valueOf(this.isApplyToErrorSpans));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -414,7 +427,7 @@ public final class Apdex {
                         this.toleratingResponseTime, other.toleratingResponseTime)
                 && java.util.Objects.equals(this.isApplyToErrorSpans, other.isApplyToErrorSpans)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -440,16 +453,7 @@ public final class Apdex {
                                 ? 43
                                 : this.isApplyToErrorSpans.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

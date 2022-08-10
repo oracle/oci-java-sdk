@@ -87,6 +87,7 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcContentMd5",
         "opcRequestId",
@@ -95,12 +96,13 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
     })
     private RestoreVaultFromFileResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcContentMd5,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.keymanagement.model.Vault vault) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcContentMd5 = opcContentMd5;
         this.opcRequestId = opcRequestId;
@@ -113,6 +115,13 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -209,6 +218,7 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(RestoreVaultFromFileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcContentMd5(o.getOpcContentMd5());
             opcRequestId(o.getOpcRequestId());
@@ -224,7 +234,13 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
          */
         public RestoreVaultFromFileResponse build() {
             return new RestoreVaultFromFileResponse(
-                    __httpStatusCode__, etag, opcContentMd5, opcRequestId, opcWorkRequestId, vault);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcContentMd5,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    vault);
         }
     }
 

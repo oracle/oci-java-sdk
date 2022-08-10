@@ -105,8 +105,8 @@ public class CreateDrgRouteDistributionConverter {
                                                 com.oracle.bmc.core.responses
                                                         .CreateDrgRouteDistributionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.drgRouteDistribution(response.getItem());
 

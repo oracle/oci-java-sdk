@@ -109,8 +109,8 @@ public class ListAdminUsersConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListAdminUsersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.adminUserCollection(response.getItem());
 

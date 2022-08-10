@@ -94,32 +94,45 @@ public final class UnifiedAgentApache2Parser extends UnifiedAgentParser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentApache2Parser build() {
-            UnifiedAgentApache2Parser __instance__ =
+            UnifiedAgentApache2Parser model =
                     new UnifiedAgentApache2Parser(
-                            fieldTimeKey,
-                            types,
-                            nullValuePattern,
-                            isNullEmptyString,
-                            isEstimateCurrentEvent,
-                            isKeepTimeKey,
-                            timeoutInMilliseconds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldTimeKey,
+                            this.types,
+                            this.nullValuePattern,
+                            this.isNullEmptyString,
+                            this.isEstimateCurrentEvent,
+                            this.isKeepTimeKey,
+                            this.timeoutInMilliseconds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UnifiedAgentApache2Parser o) {
-            Builder copiedBuilder =
-                    fieldTimeKey(o.getFieldTimeKey())
-                            .types(o.getTypes())
-                            .nullValuePattern(o.getNullValuePattern())
-                            .isNullEmptyString(o.getIsNullEmptyString())
-                            .isEstimateCurrentEvent(o.getIsEstimateCurrentEvent())
-                            .isKeepTimeKey(o.getIsKeepTimeKey())
-                            .timeoutInMilliseconds(o.getTimeoutInMilliseconds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UnifiedAgentApache2Parser model) {
+            if (model.wasPropertyExplicitlySet("fieldTimeKey")) {
+                this.fieldTimeKey(model.getFieldTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("nullValuePattern")) {
+                this.nullValuePattern(model.getNullValuePattern());
+            }
+            if (model.wasPropertyExplicitlySet("isNullEmptyString")) {
+                this.isNullEmptyString(model.getIsNullEmptyString());
+            }
+            if (model.wasPropertyExplicitlySet("isEstimateCurrentEvent")) {
+                this.isEstimateCurrentEvent(model.getIsEstimateCurrentEvent());
+            }
+            if (model.wasPropertyExplicitlySet("isKeepTimeKey")) {
+                this.isKeepTimeKey(model.getIsKeepTimeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMilliseconds")) {
+                this.timeoutInMilliseconds(model.getTimeoutInMilliseconds());
+            }
+            return this;
         }
     }
 
@@ -167,7 +180,6 @@ public final class UnifiedAgentApache2Parser extends UnifiedAgentParser {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UnifiedAgentApache2Parser(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -182,24 +194,13 @@ public final class UnifiedAgentApache2Parser extends UnifiedAgentParser {
         }
 
         UnifiedAgentApache2Parser other = (UnifiedAgentApache2Parser) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

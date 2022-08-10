@@ -166,8 +166,8 @@ public class ListBillingSchedulesConverter {
                                         builder =
                                                 com.oracle.bmc.onesubscription.responses
                                                         .ListBillingSchedulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

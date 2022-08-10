@@ -55,16 +55,18 @@ public class GetNotebookSessionResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "notebookSession"
     })
     private GetNotebookSessionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datascience.model.NotebookSession notebookSession) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.notebookSession = notebookSession;
@@ -75,6 +77,13 @@ public class GetNotebookSessionResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetNotebookSessionResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetNotebookSessionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             notebookSession(o.getNotebookSession());
@@ -149,7 +159,7 @@ public class GetNotebookSessionResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetNotebookSessionResponse build() {
             return new GetNotebookSessionResponse(
-                    __httpStatusCode__, etag, opcRequestId, notebookSession);
+                    __httpStatusCode__, headers, etag, opcRequestId, notebookSession);
         }
     }
 

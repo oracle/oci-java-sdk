@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = ResponderExecutionTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResponderExecutionTrendAggregation {
+public final class ResponderExecutionTrendAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dimensionsMap",
@@ -110,23 +111,33 @@ public final class ResponderExecutionTrendAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResponderExecutionTrendAggregation build() {
-            ResponderExecutionTrendAggregation __instance__ =
+            ResponderExecutionTrendAggregation model =
                     new ResponderExecutionTrendAggregation(
-                            dimensionsMap, startTimestamp, durationInSeconds, count);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dimensionsMap,
+                            this.startTimestamp,
+                            this.durationInSeconds,
+                            this.count);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResponderExecutionTrendAggregation o) {
-            Builder copiedBuilder =
-                    dimensionsMap(o.getDimensionsMap())
-                            .startTimestamp(o.getStartTimestamp())
-                            .durationInSeconds(o.getDurationInSeconds())
-                            .count(o.getCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResponderExecutionTrendAggregation model) {
+            if (model.wasPropertyExplicitlySet("dimensionsMap")) {
+                this.dimensionsMap(model.getDimensionsMap());
+            }
+            if (model.wasPropertyExplicitlySet("startTimestamp")) {
+                this.startTimestamp(model.getStartTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("durationInSeconds")) {
+                this.durationInSeconds(model.getDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            return this;
         }
     }
 
@@ -210,11 +221,11 @@ public final class ResponderExecutionTrendAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResponderExecutionTrendAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("dimensionsMap=").append(String.valueOf(this.dimensionsMap));
         sb.append(", startTimestamp=").append(String.valueOf(this.startTimestamp));
         sb.append(", durationInSeconds=").append(String.valueOf(this.durationInSeconds));
         sb.append(", count=").append(String.valueOf(this.count));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +244,7 @@ public final class ResponderExecutionTrendAggregation {
                 && java.util.Objects.equals(this.startTimestamp, other.startTimestamp)
                 && java.util.Objects.equals(this.durationInSeconds, other.durationInSeconds)
                 && java.util.Objects.equals(this.count, other.count)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -250,16 +261,7 @@ public final class ResponderExecutionTrendAggregation {
                 (result * PRIME)
                         + (this.durationInSeconds == null ? 43 : this.durationInSeconds.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

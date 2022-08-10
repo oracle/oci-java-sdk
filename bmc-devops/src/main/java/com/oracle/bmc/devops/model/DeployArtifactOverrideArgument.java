@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = DeployArtifactOverrideArgument.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeployArtifactOverrideArgument {
+public final class DeployArtifactOverrideArgument
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"deployArtifactId", "name", "value"})
     public DeployArtifactOverrideArgument(String deployArtifactId, String name, String value) {
@@ -84,19 +85,27 @@ public final class DeployArtifactOverrideArgument {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeployArtifactOverrideArgument build() {
-            DeployArtifactOverrideArgument __instance__ =
-                    new DeployArtifactOverrideArgument(deployArtifactId, name, value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DeployArtifactOverrideArgument model =
+                    new DeployArtifactOverrideArgument(
+                            this.deployArtifactId, this.name, this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeployArtifactOverrideArgument o) {
-            Builder copiedBuilder =
-                    deployArtifactId(o.getDeployArtifactId()).name(o.getName()).value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeployArtifactOverrideArgument model) {
+            if (model.wasPropertyExplicitlySet("deployArtifactId")) {
+                this.deployArtifactId(model.getDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -166,10 +175,10 @@ public final class DeployArtifactOverrideArgument {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeployArtifactOverrideArgument(");
+        sb.append("super=").append(super.toString());
         sb.append("deployArtifactId=").append(String.valueOf(this.deployArtifactId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +196,7 @@ public final class DeployArtifactOverrideArgument {
         return java.util.Objects.equals(this.deployArtifactId, other.deployArtifactId)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +208,7 @@ public final class DeployArtifactOverrideArgument {
                         + (this.deployArtifactId == null ? 43 : this.deployArtifactId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

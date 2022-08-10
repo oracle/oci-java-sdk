@@ -162,8 +162,8 @@ public class ListProductLicenseConsumersConverter {
                                                 com.oracle.bmc.licensemanager.responses
                                                         .ListProductLicenseConsumersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.productLicenseConsumerCollection(response.getItem());
 

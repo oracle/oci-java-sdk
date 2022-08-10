@@ -53,16 +53,18 @@ public class RotateChannelKeysResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "createChannelResult"
     })
     private RotateChannelKeysResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.CreateChannelResult createChannelResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.createChannelResult = createChannelResult;
@@ -73,6 +75,13 @@ public class RotateChannelKeysResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class RotateChannelKeysResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(RotateChannelKeysResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             createChannelResult(o.getCreateChannelResult());
@@ -145,7 +155,7 @@ public class RotateChannelKeysResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public RotateChannelKeysResponse build() {
             return new RotateChannelKeysResponse(
-                    __httpStatusCode__, etag, opcRequestId, createChannelResult);
+                    __httpStatusCode__, headers, etag, opcRequestId, createChannelResult);
         }
     }
 

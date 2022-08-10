@@ -160,8 +160,8 @@ public class ListQueryWorkRequestsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListQueryWorkRequestsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.queryWorkRequestCollection(response.getItem());
 

@@ -115,8 +115,8 @@ public class UpdateScriptConverter {
                                         builder =
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .UpdateScriptResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.script(response.getItem());
 

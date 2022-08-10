@@ -235,8 +235,8 @@ public class ListConnectionsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListConnectionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.connectionCollection(response.getItem());
 

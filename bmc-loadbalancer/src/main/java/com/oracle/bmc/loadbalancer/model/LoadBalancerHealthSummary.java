@@ -19,7 +19,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = LoadBalancerHealthSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LoadBalancerHealthSummary {
+public final class LoadBalancerHealthSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"loadBalancerId", "status"})
     public LoadBalancerHealthSummary(String loadBalancerId, Status status) {
@@ -107,18 +108,23 @@ public final class LoadBalancerHealthSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoadBalancerHealthSummary build() {
-            LoadBalancerHealthSummary __instance__ =
-                    new LoadBalancerHealthSummary(loadBalancerId, status);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LoadBalancerHealthSummary model =
+                    new LoadBalancerHealthSummary(this.loadBalancerId, this.status);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LoadBalancerHealthSummary o) {
-            Builder copiedBuilder = loadBalancerId(o.getLoadBalancerId()).status(o.getStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LoadBalancerHealthSummary model) {
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            return this;
         }
     }
 
@@ -282,9 +288,9 @@ public final class LoadBalancerHealthSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LoadBalancerHealthSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", status=").append(String.valueOf(this.status));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -301,7 +307,7 @@ public final class LoadBalancerHealthSummary {
         LoadBalancerHealthSummary other = (LoadBalancerHealthSummary) o;
         return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.status, other.status)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -312,16 +318,7 @@ public final class LoadBalancerHealthSummary {
                 (result * PRIME)
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

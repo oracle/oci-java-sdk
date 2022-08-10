@@ -20,7 +20,7 @@ package com.oracle.bmc.onesubscription.model;
     builder = InvoicingLocation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoicingLocation {
+public final class InvoicingLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "address1",
@@ -182,26 +182,45 @@ public final class InvoicingLocation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InvoicingLocation build() {
-            InvoicingLocation __instance__ =
+            InvoicingLocation model =
                     new InvoicingLocation(
-                            address1, address2, postalCode, city, country, region, tcaLocationId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.address1,
+                            this.address2,
+                            this.postalCode,
+                            this.city,
+                            this.country,
+                            this.region,
+                            this.tcaLocationId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InvoicingLocation o) {
-            Builder copiedBuilder =
-                    address1(o.getAddress1())
-                            .address2(o.getAddress2())
-                            .postalCode(o.getPostalCode())
-                            .city(o.getCity())
-                            .country(o.getCountry())
-                            .region(o.getRegion())
-                            .tcaLocationId(o.getTcaLocationId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InvoicingLocation model) {
+            if (model.wasPropertyExplicitlySet("address1")) {
+                this.address1(model.getAddress1());
+            }
+            if (model.wasPropertyExplicitlySet("address2")) {
+                this.address2(model.getAddress2());
+            }
+            if (model.wasPropertyExplicitlySet("postalCode")) {
+                this.postalCode(model.getPostalCode());
+            }
+            if (model.wasPropertyExplicitlySet("city")) {
+                this.city(model.getCity());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("tcaLocationId")) {
+                this.tcaLocationId(model.getTcaLocationId());
+            }
+            return this;
         }
     }
 
@@ -341,6 +360,7 @@ public final class InvoicingLocation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InvoicingLocation(");
+        sb.append("super=").append(super.toString());
         sb.append("address1=").append(String.valueOf(this.address1));
         sb.append(", address2=").append(String.valueOf(this.address2));
         sb.append(", postalCode=").append(String.valueOf(this.postalCode));
@@ -348,7 +368,6 @@ public final class InvoicingLocation {
         sb.append(", country=").append(String.valueOf(this.country));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", tcaLocationId=").append(String.valueOf(this.tcaLocationId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -370,7 +389,7 @@ public final class InvoicingLocation {
                 && java.util.Objects.equals(this.country, other.country)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.tcaLocationId, other.tcaLocationId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -386,16 +405,7 @@ public final class InvoicingLocation {
         result =
                 (result * PRIME)
                         + (this.tcaLocationId == null ? 43 : this.tcaLocationId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

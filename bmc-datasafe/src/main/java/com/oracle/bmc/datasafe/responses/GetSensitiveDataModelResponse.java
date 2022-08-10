@@ -53,16 +53,18 @@ public class GetSensitiveDataModelResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "sensitiveDataModel"
     })
     private GetSensitiveDataModelResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.SensitiveDataModel sensitiveDataModel) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.sensitiveDataModel = sensitiveDataModel;
@@ -73,6 +75,13 @@ public class GetSensitiveDataModelResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetSensitiveDataModelResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetSensitiveDataModelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             sensitiveDataModel(o.getSensitiveDataModel());
@@ -145,7 +155,7 @@ public class GetSensitiveDataModelResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetSensitiveDataModelResponse build() {
             return new GetSensitiveDataModelResponse(
-                    __httpStatusCode__, etag, opcRequestId, sensitiveDataModel);
+                    __httpStatusCode__, headers, etag, opcRequestId, sensitiveDataModel);
         }
     }
 

@@ -131,34 +131,49 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbCpuUsageCollection build() {
-            AwrDbCpuUsageCollection __instance__ =
+            AwrDbCpuUsageCollection model =
                     new AwrDbCpuUsageCollection(
-                            name,
-                            version,
-                            queryKey,
-                            dbQueryTimeInSecs,
-                            numCpuCores,
-                            cpuCount,
-                            numCpus,
-                            items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.version,
+                            this.queryKey,
+                            this.dbQueryTimeInSecs,
+                            this.numCpuCores,
+                            this.cpuCount,
+                            this.numCpus,
+                            this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbCpuUsageCollection o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .version(o.getVersion())
-                            .queryKey(o.getQueryKey())
-                            .dbQueryTimeInSecs(o.getDbQueryTimeInSecs())
-                            .numCpuCores(o.getNumCpuCores())
-                            .cpuCount(o.getCpuCount())
-                            .numCpus(o.getNumCpus())
-                            .items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbCpuUsageCollection model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("queryKey")) {
+                this.queryKey(model.getQueryKey());
+            }
+            if (model.wasPropertyExplicitlySet("dbQueryTimeInSecs")) {
+                this.dbQueryTimeInSecs(model.getDbQueryTimeInSecs());
+            }
+            if (model.wasPropertyExplicitlySet("numCpuCores")) {
+                this.numCpuCores(model.getNumCpuCores());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCount")) {
+                this.cpuCount(model.getCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("numCpus")) {
+                this.numCpus(model.getNumCpus());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -264,7 +279,6 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
         sb.append(", cpuCount=").append(String.valueOf(this.cpuCount));
         sb.append(", numCpus=").append(String.valueOf(this.numCpus));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -283,8 +297,7 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
                 && java.util.Objects.equals(this.cpuCount, other.cpuCount)
                 && java.util.Objects.equals(this.numCpus, other.numCpus)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -295,16 +308,6 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
         result = (result * PRIME) + (this.cpuCount == null ? 43 : this.cpuCount.hashCode());
         result = (result * PRIME) + (this.numCpus == null ? 43 : this.numCpus.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

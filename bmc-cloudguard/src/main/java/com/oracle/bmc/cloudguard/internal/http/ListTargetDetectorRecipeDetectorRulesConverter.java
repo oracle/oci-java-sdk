@@ -181,8 +181,8 @@ public class ListTargetDetectorRecipeDetectorRulesConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListTargetDetectorRecipeDetectorRulesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.targetDetectorRecipeDetectorRuleCollection(
                                         response.getItem());

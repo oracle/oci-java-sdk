@@ -18,7 +18,7 @@ package com.oracle.bmc.secrets.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SecretBundle.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecretBundle {
+public final class SecretBundle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "secretId",
@@ -209,36 +209,53 @@ public final class SecretBundle {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecretBundle build() {
-            SecretBundle __instance__ =
+            SecretBundle model =
                     new SecretBundle(
-                            secretId,
-                            timeCreated,
-                            versionNumber,
-                            versionName,
-                            secretBundleContent,
-                            timeOfDeletion,
-                            timeOfExpiry,
-                            stages,
-                            metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.secretId,
+                            this.timeCreated,
+                            this.versionNumber,
+                            this.versionName,
+                            this.secretBundleContent,
+                            this.timeOfDeletion,
+                            this.timeOfExpiry,
+                            this.stages,
+                            this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecretBundle o) {
-            Builder copiedBuilder =
-                    secretId(o.getSecretId())
-                            .timeCreated(o.getTimeCreated())
-                            .versionNumber(o.getVersionNumber())
-                            .versionName(o.getVersionName())
-                            .secretBundleContent(o.getSecretBundleContent())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .timeOfExpiry(o.getTimeOfExpiry())
-                            .stages(o.getStages())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecretBundle model) {
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("versionNumber")) {
+                this.versionNumber(model.getVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("secretBundleContent")) {
+                this.secretBundleContent(model.getSecretBundleContent());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfExpiry")) {
+                this.timeOfExpiry(model.getTimeOfExpiry());
+            }
+            if (model.wasPropertyExplicitlySet("stages")) {
+                this.stages(model.getStages());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -446,6 +463,7 @@ public final class SecretBundle {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecretBundle(");
+        sb.append("super=").append(super.toString());
         sb.append("secretId=").append(String.valueOf(this.secretId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
@@ -455,7 +473,6 @@ public final class SecretBundle {
         sb.append(", timeOfExpiry=").append(String.valueOf(this.timeOfExpiry));
         sb.append(", stages=").append(String.valueOf(this.stages));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -479,7 +496,7 @@ public final class SecretBundle {
                 && java.util.Objects.equals(this.timeOfExpiry, other.timeOfExpiry)
                 && java.util.Objects.equals(this.stages, other.stages)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -503,16 +520,7 @@ public final class SecretBundle {
         result = (result * PRIME) + (this.timeOfExpiry == null ? 43 : this.timeOfExpiry.hashCode());
         result = (result * PRIME) + (this.stages == null ? 43 : this.stages.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

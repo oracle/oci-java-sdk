@@ -123,8 +123,8 @@ public class UpdateExternalContainerDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .UpdateExternalContainerDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalContainerDatabase(response.getItem());
 

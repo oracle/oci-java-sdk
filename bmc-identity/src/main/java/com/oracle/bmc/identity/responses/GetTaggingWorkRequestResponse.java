@@ -55,16 +55,18 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "retryAfter",
         "taggingWorkRequest"
     })
     private GetTaggingWorkRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Float retryAfter,
             com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.retryAfter = retryAfter;
         this.taggingWorkRequest = taggingWorkRequest;
@@ -75,6 +77,13 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetTaggingWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());
             taggingWorkRequest(o.getTaggingWorkRequest());
@@ -149,7 +159,7 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetTaggingWorkRequestResponse build() {
             return new GetTaggingWorkRequestResponse(
-                    __httpStatusCode__, opcRequestId, retryAfter, taggingWorkRequest);
+                    __httpStatusCode__, headers, opcRequestId, retryAfter, taggingWorkRequest);
         }
     }
 

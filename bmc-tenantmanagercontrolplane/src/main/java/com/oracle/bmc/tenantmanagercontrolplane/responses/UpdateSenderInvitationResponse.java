@@ -55,16 +55,18 @@ public class UpdateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "senderInvitation"
     })
     private UpdateSenderInvitationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.senderInvitation = senderInvitation;
@@ -75,6 +77,13 @@ public class UpdateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(UpdateSenderInvitationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             senderInvitation(o.getSenderInvitation());
@@ -149,7 +159,7 @@ public class UpdateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
          */
         public UpdateSenderInvitationResponse build() {
             return new UpdateSenderInvitationResponse(
-                    __httpStatusCode__, opcRequestId, etag, senderInvitation);
+                    __httpStatusCode__, headers, opcRequestId, etag, senderInvitation);
         }
     }
 

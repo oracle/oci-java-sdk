@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditConditions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditConditions {
+public final class AuditConditions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditPolicyName",
@@ -110,26 +110,33 @@ public final class AuditConditions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditConditions build() {
-            AuditConditions __instance__ =
+            AuditConditions model =
                     new AuditConditions(
-                            auditPolicyName,
-                            isPrivUsersManagedByDataSafe,
-                            isDataSafeServiceAccountAudited,
-                            enableConditions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.auditPolicyName,
+                            this.isPrivUsersManagedByDataSafe,
+                            this.isDataSafeServiceAccountAudited,
+                            this.enableConditions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuditConditions o) {
-            Builder copiedBuilder =
-                    auditPolicyName(o.getAuditPolicyName())
-                            .isPrivUsersManagedByDataSafe(o.getIsPrivUsersManagedByDataSafe())
-                            .isDataSafeServiceAccountAudited(o.getIsDataSafeServiceAccountAudited())
-                            .enableConditions(o.getEnableConditions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuditConditions model) {
+            if (model.wasPropertyExplicitlySet("auditPolicyName")) {
+                this.auditPolicyName(model.getAuditPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivUsersManagedByDataSafe")) {
+                this.isPrivUsersManagedByDataSafe(model.getIsPrivUsersManagedByDataSafe());
+            }
+            if (model.wasPropertyExplicitlySet("isDataSafeServiceAccountAudited")) {
+                this.isDataSafeServiceAccountAudited(model.getIsDataSafeServiceAccountAudited());
+            }
+            if (model.wasPropertyExplicitlySet("enableConditions")) {
+                this.enableConditions(model.getEnableConditions());
+            }
+            return this;
         }
     }
 
@@ -215,13 +222,13 @@ public final class AuditConditions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditConditions(");
+        sb.append("super=").append(super.toString());
         sb.append("auditPolicyName=").append(String.valueOf(this.auditPolicyName));
         sb.append(", isPrivUsersManagedByDataSafe=")
                 .append(String.valueOf(this.isPrivUsersManagedByDataSafe));
         sb.append(", isDataSafeServiceAccountAudited=")
                 .append(String.valueOf(this.isDataSafeServiceAccountAudited));
         sb.append(", enableConditions=").append(String.valueOf(this.enableConditions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -242,7 +249,7 @@ public final class AuditConditions {
                 && java.util.Objects.equals(
                         this.isDataSafeServiceAccountAudited, other.isDataSafeServiceAccountAudited)
                 && java.util.Objects.equals(this.enableConditions, other.enableConditions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -265,16 +272,7 @@ public final class AuditConditions {
         result =
                 (result * PRIME)
                         + (this.enableConditions == null ? 43 : this.enableConditions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

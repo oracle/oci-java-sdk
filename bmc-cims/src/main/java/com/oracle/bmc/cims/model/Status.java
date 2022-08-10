@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Status.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Status {
+public final class Status extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message"})
     public Status(String code, String message) {
@@ -65,17 +65,22 @@ public final class Status {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Status build() {
-            Status __instance__ = new Status(code, message);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Status model = new Status(this.code, this.message);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Status o) {
-            Builder copiedBuilder = code(o.getCode()).message(o.getMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Status model) {
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class Status {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Status(");
+        sb.append("super=").append(super.toString());
         sb.append("code=").append(String.valueOf(this.code));
         sb.append(", message=").append(String.valueOf(this.message));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class Status {
         Status other = (Status) o;
         return java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.message, other.message)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class Status {
         int result = 1;
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

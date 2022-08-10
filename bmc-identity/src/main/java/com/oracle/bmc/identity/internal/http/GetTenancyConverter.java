@@ -96,8 +96,8 @@ public class GetTenancyConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses.GetTenancyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tenancy(response.getItem());
 

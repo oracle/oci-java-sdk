@@ -221,56 +221,93 @@ public final class Source extends CreateConnectivityValidationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Source build() {
-            Source __instance__ =
+            Source model =
                     new Source(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            inputPorts,
-                            outputPorts,
-                            objectStatus,
-                            identifier,
-                            parameters,
-                            opConfigValues,
-                            entity,
-                            isReadAccess,
-                            isCopyFields,
-                            isPredefinedShape,
-                            schemaDriftConfig,
-                            fixedDataShape,
-                            readOperationConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.entity,
+                            this.isReadAccess,
+                            this.isCopyFields,
+                            this.isPredefinedShape,
+                            this.schemaDriftConfig,
+                            this.fixedDataShape,
+                            this.readOperationConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Source o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .entity(o.getEntity())
-                            .isReadAccess(o.getIsReadAccess())
-                            .isCopyFields(o.getIsCopyFields())
-                            .isPredefinedShape(o.getIsPredefinedShape())
-                            .schemaDriftConfig(o.getSchemaDriftConfig())
-                            .fixedDataShape(o.getFixedDataShape())
-                            .readOperationConfig(o.getReadOperationConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Source model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("entity")) {
+                this.entity(model.getEntity());
+            }
+            if (model.wasPropertyExplicitlySet("isReadAccess")) {
+                this.isReadAccess(model.getIsReadAccess());
+            }
+            if (model.wasPropertyExplicitlySet("isCopyFields")) {
+                this.isCopyFields(model.getIsCopyFields());
+            }
+            if (model.wasPropertyExplicitlySet("isPredefinedShape")) {
+                this.isPredefinedShape(model.getIsPredefinedShape());
+            }
+            if (model.wasPropertyExplicitlySet("schemaDriftConfig")) {
+                this.schemaDriftConfig(model.getSchemaDriftConfig());
+            }
+            if (model.wasPropertyExplicitlySet("fixedDataShape")) {
+                this.fixedDataShape(model.getFixedDataShape());
+            }
+            if (model.wasPropertyExplicitlySet("readOperationConfig")) {
+                this.readOperationConfig(model.getReadOperationConfig());
+            }
+            return this;
         }
     }
 
@@ -419,7 +456,6 @@ public final class Source extends CreateConnectivityValidationDetails {
         sb.append(", schemaDriftConfig=").append(String.valueOf(this.schemaDriftConfig));
         sb.append(", fixedDataShape=").append(String.valueOf(this.fixedDataShape));
         sb.append(", readOperationConfig=").append(String.valueOf(this.readOperationConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -441,8 +477,7 @@ public final class Source extends CreateConnectivityValidationDetails {
                 && java.util.Objects.equals(this.schemaDriftConfig, other.schemaDriftConfig)
                 && java.util.Objects.equals(this.fixedDataShape, other.fixedDataShape)
                 && java.util.Objects.equals(this.readOperationConfig, other.readOperationConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -466,16 +501,6 @@ public final class Source extends CreateConnectivityValidationDetails {
                         + (this.readOperationConfig == null
                                 ? 43
                                 : this.readOperationConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

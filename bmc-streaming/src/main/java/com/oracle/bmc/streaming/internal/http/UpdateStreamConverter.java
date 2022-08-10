@@ -107,8 +107,8 @@ public class UpdateStreamConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .UpdateStreamResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.stream(response.getItem());
 

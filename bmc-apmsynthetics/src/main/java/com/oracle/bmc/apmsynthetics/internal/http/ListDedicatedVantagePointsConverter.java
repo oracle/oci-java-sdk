@@ -171,8 +171,8 @@ public class ListDedicatedVantagePointsConverter {
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .ListDedicatedVantagePointsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dedicatedVantagePointCollection(response.getItem());
 

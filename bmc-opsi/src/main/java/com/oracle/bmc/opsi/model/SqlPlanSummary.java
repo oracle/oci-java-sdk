@@ -18,7 +18,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlPlanSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlPlanSummary {
+public final class SqlPlanSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"planHash", "planContent"})
     public SqlPlanSummary(Long planHash, String planContent) {
@@ -66,17 +66,22 @@ public final class SqlPlanSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlPlanSummary build() {
-            SqlPlanSummary __instance__ = new SqlPlanSummary(planHash, planContent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlPlanSummary model = new SqlPlanSummary(this.planHash, this.planContent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlPlanSummary o) {
-            Builder copiedBuilder = planHash(o.getPlanHash()).planContent(o.getPlanContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlPlanSummary model) {
+            if (model.wasPropertyExplicitlySet("planHash")) {
+                this.planHash(model.getPlanHash());
+            }
+            if (model.wasPropertyExplicitlySet("planContent")) {
+                this.planContent(model.getPlanContent());
+            }
+            return this;
         }
     }
 
@@ -132,9 +137,9 @@ public final class SqlPlanSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlPlanSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("planHash=").append(String.valueOf(this.planHash));
         sb.append(", planContent=").append(String.valueOf(this.planContent));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,7 +156,7 @@ public final class SqlPlanSummary {
         SqlPlanSummary other = (SqlPlanSummary) o;
         return java.util.Objects.equals(this.planHash, other.planHash)
                 && java.util.Objects.equals(this.planContent, other.planContent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -160,16 +165,7 @@ public final class SqlPlanSummary {
         int result = 1;
         result = (result * PRIME) + (this.planHash == null ? 43 : this.planHash.hashCode());
         result = (result * PRIME) + (this.planContent == null ? 43 : this.planContent.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

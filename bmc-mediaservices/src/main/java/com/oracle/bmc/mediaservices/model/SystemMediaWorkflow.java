@@ -19,7 +19,7 @@ package com.oracle.bmc.mediaservices.model;
     builder = SystemMediaWorkflow.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SystemMediaWorkflow {
+public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "description", "parameters", "tasks"})
     public SystemMediaWorkflow(
@@ -121,22 +121,30 @@ public final class SystemMediaWorkflow {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SystemMediaWorkflow build() {
-            SystemMediaWorkflow __instance__ =
-                    new SystemMediaWorkflow(name, description, parameters, tasks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SystemMediaWorkflow model =
+                    new SystemMediaWorkflow(
+                            this.name, this.description, this.parameters, this.tasks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SystemMediaWorkflow o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .parameters(o.getParameters())
-                            .tasks(o.getTasks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SystemMediaWorkflow model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("tasks")) {
+                this.tasks(model.getTasks());
+            }
+            return this;
         }
     }
 
@@ -236,11 +244,11 @@ public final class SystemMediaWorkflow {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SystemMediaWorkflow(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", tasks=").append(String.valueOf(this.tasks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,7 +267,7 @@ public final class SystemMediaWorkflow {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.tasks, other.tasks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -270,16 +278,7 @@ public final class SystemMediaWorkflow {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.tasks == null ? 43 : this.tasks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

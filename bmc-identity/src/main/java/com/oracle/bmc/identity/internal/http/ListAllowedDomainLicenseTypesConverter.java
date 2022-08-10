@@ -119,8 +119,8 @@ public class ListAllowedDomainLicenseTypesConverter {
                                                 com.oracle.bmc.identity.responses
                                                         .ListAllowedDomainLicenseTypesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -169,8 +169,8 @@ public class ListModelsConverter {
                                         builder =
                                                 com.oracle.bmc.aivision.responses.ListModelsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.modelCollection(response.getItem());
 

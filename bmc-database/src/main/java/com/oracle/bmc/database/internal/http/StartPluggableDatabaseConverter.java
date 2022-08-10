@@ -118,8 +118,8 @@ public class StartPluggableDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .StartPluggableDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pluggableDatabase(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = RemoveContainerVersionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RemoveContainerVersionDetails {
+public final class RemoveContainerVersionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version"})
     public RemoveContainerVersionDetails(String version) {
@@ -50,17 +51,19 @@ public final class RemoveContainerVersionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RemoveContainerVersionDetails build() {
-            RemoveContainerVersionDetails __instance__ = new RemoveContainerVersionDetails(version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RemoveContainerVersionDetails model = new RemoveContainerVersionDetails(this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RemoveContainerVersionDetails o) {
-            Builder copiedBuilder = version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RemoveContainerVersionDetails model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class RemoveContainerVersionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RemoveContainerVersionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +121,7 @@ public final class RemoveContainerVersionDetails {
         }
 
         RemoveContainerVersionDetails other = (RemoveContainerVersionDetails) o;
-        return java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class RemoveContainerVersionDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

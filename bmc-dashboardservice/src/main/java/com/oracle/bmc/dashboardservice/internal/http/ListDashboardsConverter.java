@@ -171,8 +171,8 @@ public class ListDashboardsConverter {
                                         builder =
                                                 com.oracle.bmc.dashboardservice.responses
                                                         .ListDashboardsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dashboardCollection(response.getItem());
 

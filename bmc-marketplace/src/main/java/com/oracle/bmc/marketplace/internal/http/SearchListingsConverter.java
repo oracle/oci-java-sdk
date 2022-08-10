@@ -123,8 +123,8 @@ public class SearchListingsConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .SearchListingsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

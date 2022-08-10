@@ -19,7 +19,7 @@ package com.oracle.bmc.oda.model;
     builder = WorkRequestLogEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestLogEntry {
+public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"message", "timeStamp"})
     public WorkRequestLogEntry(String message, java.util.Date timeStamp) {
@@ -67,17 +67,22 @@ public final class WorkRequestLogEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestLogEntry build() {
-            WorkRequestLogEntry __instance__ = new WorkRequestLogEntry(message, timeStamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkRequestLogEntry model = new WorkRequestLogEntry(this.message, this.timeStamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestLogEntry o) {
-            Builder copiedBuilder = message(o.getMessage()).timeStamp(o.getTimeStamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestLogEntry model) {
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timeStamp")) {
+                this.timeStamp(model.getTimeStamp());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class WorkRequestLogEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestLogEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("message=").append(String.valueOf(this.message));
         sb.append(", timeStamp=").append(String.valueOf(this.timeStamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class WorkRequestLogEntry {
         WorkRequestLogEntry other = (WorkRequestLogEntry) o;
         return java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.timeStamp, other.timeStamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class WorkRequestLogEntry {
         int result = 1;
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.timeStamp == null ? 43 : this.timeStamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

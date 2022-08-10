@@ -43,15 +43,17 @@ public class SummarizeHostInsightResourceUsageResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "summarizeHostInsightResourceUsageAggregation"
     })
     private SummarizeHostInsightResourceUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation
                     summarizeHostInsightResourceUsageAggregation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.summarizeHostInsightResourceUsageAggregation =
                 summarizeHostInsightResourceUsageAggregation;
@@ -62,6 +64,13 @@ public class SummarizeHostInsightResourceUsageResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -109,6 +118,7 @@ public class SummarizeHostInsightResourceUsageResponse
          */
         public Builder copy(SummarizeHostInsightResourceUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             summarizeHostInsightResourceUsageAggregation(
                     o.getSummarizeHostInsightResourceUsageAggregation());
@@ -122,7 +132,10 @@ public class SummarizeHostInsightResourceUsageResponse
          */
         public SummarizeHostInsightResourceUsageResponse build() {
             return new SummarizeHostInsightResourceUsageResponse(
-                    __httpStatusCode__, opcRequestId, summarizeHostInsightResourceUsageAggregation);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    summarizeHostInsightResourceUsageAggregation);
         }
     }
 

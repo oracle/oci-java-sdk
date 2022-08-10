@@ -19,7 +19,7 @@ package com.oracle.bmc.marketplace.model;
     builder = ReportTypeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReportTypeSummary {
+public final class ReportTypeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reportType", "name", "description", "columns"})
     public ReportTypeSummary(
@@ -102,22 +102,30 @@ public final class ReportTypeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReportTypeSummary build() {
-            ReportTypeSummary __instance__ =
-                    new ReportTypeSummary(reportType, name, description, columns);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ReportTypeSummary model =
+                    new ReportTypeSummary(
+                            this.reportType, this.name, this.description, this.columns);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReportTypeSummary o) {
-            Builder copiedBuilder =
-                    reportType(o.getReportType())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .columns(o.getColumns());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReportTypeSummary model) {
+            if (model.wasPropertyExplicitlySet("reportType")) {
+                this.reportType(model.getReportType());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("columns")) {
+                this.columns(model.getColumns());
+            }
+            return this;
         }
     }
 
@@ -201,11 +209,11 @@ public final class ReportTypeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReportTypeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("reportType=").append(String.valueOf(this.reportType));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", columns=").append(String.valueOf(this.columns));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +232,7 @@ public final class ReportTypeSummary {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.columns, other.columns)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -235,16 +243,7 @@ public final class ReportTypeSummary {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

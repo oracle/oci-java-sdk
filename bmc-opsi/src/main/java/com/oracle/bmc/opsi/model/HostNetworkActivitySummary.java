@@ -89,26 +89,33 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostNetworkActivitySummary build() {
-            HostNetworkActivitySummary __instance__ =
+            HostNetworkActivitySummary model =
                     new HostNetworkActivitySummary(
-                            timeCollected,
-                            allNetworkReadInMbps,
-                            allNetworkWriteInMbps,
-                            allNetworkIoInMbps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.allNetworkReadInMbps,
+                            this.allNetworkWriteInMbps,
+                            this.allNetworkIoInMbps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostNetworkActivitySummary o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .allNetworkReadInMbps(o.getAllNetworkReadInMbps())
-                            .allNetworkWriteInMbps(o.getAllNetworkWriteInMbps())
-                            .allNetworkIoInMbps(o.getAllNetworkIoInMbps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostNetworkActivitySummary model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("allNetworkReadInMbps")) {
+                this.allNetworkReadInMbps(model.getAllNetworkReadInMbps());
+            }
+            if (model.wasPropertyExplicitlySet("allNetworkWriteInMbps")) {
+                this.allNetworkWriteInMbps(model.getAllNetworkWriteInMbps());
+            }
+            if (model.wasPropertyExplicitlySet("allNetworkIoInMbps")) {
+                this.allNetworkIoInMbps(model.getAllNetworkIoInMbps());
+            }
+            return this;
         }
     }
 
@@ -194,7 +201,6 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         sb.append(", allNetworkReadInMbps=").append(String.valueOf(this.allNetworkReadInMbps));
         sb.append(", allNetworkWriteInMbps=").append(String.valueOf(this.allNetworkWriteInMbps));
         sb.append(", allNetworkIoInMbps=").append(String.valueOf(this.allNetworkIoInMbps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,8 +218,7 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         return java.util.Objects.equals(this.allNetworkReadInMbps, other.allNetworkReadInMbps)
                 && java.util.Objects.equals(this.allNetworkWriteInMbps, other.allNetworkWriteInMbps)
                 && java.util.Objects.equals(this.allNetworkIoInMbps, other.allNetworkIoInMbps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -235,16 +240,6 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
                         + (this.allNetworkIoInMbps == null
                                 ? 43
                                 : this.allNetworkIoInMbps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

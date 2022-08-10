@@ -86,6 +86,7 @@ public class CreateDatabaseToolsPrivateEndpointResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "etag",
         "opcWorkRequestId",
@@ -94,13 +95,14 @@ public class CreateDatabaseToolsPrivateEndpointResponse
     })
     private CreateDatabaseToolsPrivateEndpointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint
                     databaseToolsPrivateEndpoint) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -113,6 +115,13 @@ public class CreateDatabaseToolsPrivateEndpointResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -208,6 +217,7 @@ public class CreateDatabaseToolsPrivateEndpointResponse
          */
         public Builder copy(CreateDatabaseToolsPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -224,6 +234,7 @@ public class CreateDatabaseToolsPrivateEndpointResponse
         public CreateDatabaseToolsPrivateEndpointResponse build() {
             return new CreateDatabaseToolsPrivateEndpointResponse(
                     __httpStatusCode__,
+                    headers,
                     location,
                     etag,
                     opcWorkRequestId,

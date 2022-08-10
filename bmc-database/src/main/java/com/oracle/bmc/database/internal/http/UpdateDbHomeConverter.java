@@ -103,8 +103,8 @@ public class UpdateDbHomeConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpdateDbHomeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbHome(response.getItem());
 

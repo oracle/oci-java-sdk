@@ -107,7 +107,8 @@ public class UpdateSkillConverter {
 
                                 com.oracle.bmc.oda.responses.UpdateSkillResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.UpdateSkillResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.skill(response.getItem());
 

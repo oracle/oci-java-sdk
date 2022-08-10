@@ -36,12 +36,18 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
         return verifyOutput;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "verifyOutput"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "verifyOutput"
+    })
     private VerifyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.VerifyOutput verifyOutput) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.verifyOutput = verifyOutput;
     }
@@ -51,6 +57,13 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -92,6 +105,7 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(VerifyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             verifyOutput(o.getVerifyOutput());
 
@@ -103,7 +117,7 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public VerifyResponse build() {
-            return new VerifyResponse(__httpStatusCode__, opcRequestId, verifyOutput);
+            return new VerifyResponse(__httpStatusCode__, headers, opcRequestId, verifyOutput);
         }
     }
 

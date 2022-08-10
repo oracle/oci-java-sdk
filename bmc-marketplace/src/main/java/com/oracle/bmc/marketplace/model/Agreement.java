@@ -17,7 +17,7 @@ package com.oracle.bmc.marketplace.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Agreement.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Agreement {
+public final class Agreement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -150,24 +150,41 @@ public final class Agreement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Agreement build() {
-            Agreement __instance__ =
-                    new Agreement(id, contentUrl, signature, compartmentId, author, prompt);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Agreement model =
+                    new Agreement(
+                            this.id,
+                            this.contentUrl,
+                            this.signature,
+                            this.compartmentId,
+                            this.author,
+                            this.prompt);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Agreement o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .contentUrl(o.getContentUrl())
-                            .signature(o.getSignature())
-                            .compartmentId(o.getCompartmentId())
-                            .author(o.getAuthor())
-                            .prompt(o.getPrompt());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Agreement model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("contentUrl")) {
+                this.contentUrl(model.getContentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("signature")) {
+                this.signature(model.getSignature());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("author")) {
+                this.author(model.getAuthor());
+            }
+            if (model.wasPropertyExplicitlySet("prompt")) {
+                this.prompt(model.getPrompt());
+            }
+            return this;
         }
     }
 
@@ -330,13 +347,13 @@ public final class Agreement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Agreement(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
         sb.append(", signature=").append(String.valueOf(this.signature));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", author=").append(String.valueOf(this.author));
         sb.append(", prompt=").append(String.valueOf(this.prompt));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -357,7 +374,7 @@ public final class Agreement {
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.author, other.author)
                 && java.util.Objects.equals(this.prompt, other.prompt)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -372,16 +389,7 @@ public final class Agreement {
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.author == null ? 43 : this.author.hashCode());
         result = (result * PRIME) + (this.prompt == null ? 43 : this.prompt.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

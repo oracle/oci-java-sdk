@@ -55,16 +55,18 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "autoScalingConfiguration"
     })
     private GetAutoScalingConfigurationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.autoScalingConfiguration = autoScalingConfiguration;
@@ -75,6 +77,13 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
          */
         public Builder copy(GetAutoScalingConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             autoScalingConfiguration(o.getAutoScalingConfiguration());
@@ -149,7 +159,7 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
          */
         public GetAutoScalingConfigurationResponse build() {
             return new GetAutoScalingConfigurationResponse(
-                    __httpStatusCode__, opcRequestId, etag, autoScalingConfiguration);
+                    __httpStatusCode__, headers, opcRequestId, etag, autoScalingConfiguration);
         }
     }
 

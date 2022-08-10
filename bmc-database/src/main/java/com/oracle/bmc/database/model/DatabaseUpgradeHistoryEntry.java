@@ -27,7 +27,8 @@ package com.oracle.bmc.database.model;
     builder = DatabaseUpgradeHistoryEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseUpgradeHistoryEntry {
+public final class DatabaseUpgradeHistoryEntry
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -282,42 +283,65 @@ public final class DatabaseUpgradeHistoryEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseUpgradeHistoryEntry build() {
-            DatabaseUpgradeHistoryEntry __instance__ =
+            DatabaseUpgradeHistoryEntry model =
                     new DatabaseUpgradeHistoryEntry(
-                            id,
-                            action,
-                            source,
-                            lifecycleState,
-                            lifecycleDetails,
-                            targetDBVersion,
-                            targetDatabaseSoftwareImageId,
-                            targetDbHomeId,
-                            sourceDbHomeId,
-                            timeStarted,
-                            timeEnded,
-                            options);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.action,
+                            this.source,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.targetDBVersion,
+                            this.targetDatabaseSoftwareImageId,
+                            this.targetDbHomeId,
+                            this.sourceDbHomeId,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.options);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseUpgradeHistoryEntry o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .action(o.getAction())
-                            .source(o.getSource())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .targetDBVersion(o.getTargetDBVersion())
-                            .targetDatabaseSoftwareImageId(o.getTargetDatabaseSoftwareImageId())
-                            .targetDbHomeId(o.getTargetDbHomeId())
-                            .sourceDbHomeId(o.getSourceDbHomeId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .options(o.getOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseUpgradeHistoryEntry model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("targetDBVersion")) {
+                this.targetDBVersion(model.getTargetDBVersion());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseSoftwareImageId")) {
+                this.targetDatabaseSoftwareImageId(model.getTargetDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("targetDbHomeId")) {
+                this.targetDbHomeId(model.getTargetDbHomeId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDbHomeId")) {
+                this.sourceDbHomeId(model.getSourceDbHomeId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            return this;
         }
     }
 
@@ -674,6 +698,7 @@ public final class DatabaseUpgradeHistoryEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseUpgradeHistoryEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", source=").append(String.valueOf(this.source));
@@ -687,7 +712,6 @@ public final class DatabaseUpgradeHistoryEntry {
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", options=").append(String.valueOf(this.options));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -715,7 +739,7 @@ public final class DatabaseUpgradeHistoryEntry {
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
                 && java.util.Objects.equals(this.options, other.options)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -748,16 +772,7 @@ public final class DatabaseUpgradeHistoryEntry {
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

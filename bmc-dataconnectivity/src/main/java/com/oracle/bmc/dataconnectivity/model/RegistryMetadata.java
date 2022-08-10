@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RegistryMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RegistryMetadata {
+public final class RegistryMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "aggregatorKey",
@@ -241,40 +241,61 @@ public final class RegistryMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RegistryMetadata build() {
-            RegistryMetadata __instance__ =
+            RegistryMetadata model =
                     new RegistryMetadata(
-                            aggregatorKey,
-                            labels,
-                            registryVersion,
-                            key,
-                            isFavorite,
-                            createdByUserId,
-                            createdByUserName,
-                            updatedByUserId,
-                            updatedByUserName,
-                            timeCreated,
-                            timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.aggregatorKey,
+                            this.labels,
+                            this.registryVersion,
+                            this.key,
+                            this.isFavorite,
+                            this.createdByUserId,
+                            this.createdByUserName,
+                            this.updatedByUserId,
+                            this.updatedByUserName,
+                            this.timeCreated,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RegistryMetadata o) {
-            Builder copiedBuilder =
-                    aggregatorKey(o.getAggregatorKey())
-                            .labels(o.getLabels())
-                            .registryVersion(o.getRegistryVersion())
-                            .key(o.getKey())
-                            .isFavorite(o.getIsFavorite())
-                            .createdByUserId(o.getCreatedByUserId())
-                            .createdByUserName(o.getCreatedByUserName())
-                            .updatedByUserId(o.getUpdatedByUserId())
-                            .updatedByUserName(o.getUpdatedByUserName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RegistryMetadata model) {
+            if (model.wasPropertyExplicitlySet("aggregatorKey")) {
+                this.aggregatorKey(model.getAggregatorKey());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("registryVersion")) {
+                this.registryVersion(model.getRegistryVersion());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("isFavorite")) {
+                this.isFavorite(model.getIsFavorite());
+            }
+            if (model.wasPropertyExplicitlySet("createdByUserId")) {
+                this.createdByUserId(model.getCreatedByUserId());
+            }
+            if (model.wasPropertyExplicitlySet("createdByUserName")) {
+                this.createdByUserName(model.getCreatedByUserName());
+            }
+            if (model.wasPropertyExplicitlySet("updatedByUserId")) {
+                this.updatedByUserId(model.getUpdatedByUserId());
+            }
+            if (model.wasPropertyExplicitlySet("updatedByUserName")) {
+                this.updatedByUserName(model.getUpdatedByUserName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -456,6 +477,7 @@ public final class RegistryMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RegistryMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("aggregatorKey=").append(String.valueOf(this.aggregatorKey));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", registryVersion=").append(String.valueOf(this.registryVersion));
@@ -467,7 +489,6 @@ public final class RegistryMetadata {
         sb.append(", updatedByUserName=").append(String.valueOf(this.updatedByUserName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -493,7 +514,7 @@ public final class RegistryMetadata {
                 && java.util.Objects.equals(this.updatedByUserName, other.updatedByUserName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -523,16 +544,7 @@ public final class RegistryMetadata {
                         + (this.updatedByUserName == null ? 43 : this.updatedByUserName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

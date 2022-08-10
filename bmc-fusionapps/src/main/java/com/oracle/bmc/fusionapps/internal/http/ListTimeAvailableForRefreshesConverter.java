@@ -148,8 +148,8 @@ public class ListTimeAvailableForRefreshesConverter {
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListTimeAvailableForRefreshesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.timeAvailableForRefreshCollection(response.getItem());
 

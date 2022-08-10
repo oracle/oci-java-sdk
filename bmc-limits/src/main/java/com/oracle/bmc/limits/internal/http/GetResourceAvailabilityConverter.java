@@ -128,8 +128,8 @@ public class GetResourceAvailabilityConverter {
                                         builder =
                                                 com.oracle.bmc.limits.responses
                                                         .GetResourceAvailabilityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceAvailability(response.getItem());
 

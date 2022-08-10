@@ -17,7 +17,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JreUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JreUsage {
+public final class JreUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -29,6 +29,7 @@ public final class JreUsage {
         "vendor",
         "distribution",
         "version",
+        "daysUnderSecurityBaseline",
         "operatingSystems",
         "approximateInstallationCount",
         "approximateApplicationCount",
@@ -49,6 +50,7 @@ public final class JreUsage {
             String vendor,
             String distribution,
             String version,
+            Integer daysUnderSecurityBaseline,
             java.util.List<OperatingSystem> operatingSystems,
             Integer approximateInstallationCount,
             Integer approximateApplicationCount,
@@ -68,6 +70,7 @@ public final class JreUsage {
         this.vendor = vendor;
         this.distribution = distribution;
         this.version = version;
+        this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
         this.operatingSystems = operatingSystems;
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateApplicationCount = approximateApplicationCount;
@@ -98,13 +101,13 @@ public final class JreUsage {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
          * @param fleetId the value to set
          * @return this builder
          **/
@@ -114,13 +117,13 @@ public final class JreUsage {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
          * @param managedInstanceId the value to set
          * @return this builder
          **/
@@ -223,6 +226,22 @@ public final class JreUsage {
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
+            return this;
+        }
+        /**
+         * The number of days since this release has been under the security baseline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("daysUnderSecurityBaseline")
+        private Integer daysUnderSecurityBaseline;
+
+        /**
+         * The number of days since this release has been under the security baseline.
+         * @param daysUnderSecurityBaseline the value to set
+         * @return this builder
+         **/
+        public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
+            this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
+            this.__explicitlySet__.add("daysUnderSecurityBaseline");
             return this;
         }
         /**
@@ -391,55 +410,94 @@ public final class JreUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JreUsage build() {
-            JreUsage __instance__ =
+            JreUsage model =
                     new JreUsage(
-                            id,
-                            fleetId,
-                            managedInstanceId,
-                            securityStatus,
-                            releaseDate,
-                            endOfSupportLifeDate,
-                            vendor,
-                            distribution,
-                            version,
-                            operatingSystems,
-                            approximateInstallationCount,
-                            approximateApplicationCount,
-                            approximateManagedInstanceCount,
-                            approximatePendingWorkRequestCount,
-                            timeStart,
-                            timeEnd,
-                            timeFirstSeen,
-                            timeLastSeen);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.fleetId,
+                            this.managedInstanceId,
+                            this.securityStatus,
+                            this.releaseDate,
+                            this.endOfSupportLifeDate,
+                            this.vendor,
+                            this.distribution,
+                            this.version,
+                            this.daysUnderSecurityBaseline,
+                            this.operatingSystems,
+                            this.approximateInstallationCount,
+                            this.approximateApplicationCount,
+                            this.approximateManagedInstanceCount,
+                            this.approximatePendingWorkRequestCount,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.timeFirstSeen,
+                            this.timeLastSeen);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JreUsage o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .fleetId(o.getFleetId())
-                            .managedInstanceId(o.getManagedInstanceId())
-                            .securityStatus(o.getSecurityStatus())
-                            .releaseDate(o.getReleaseDate())
-                            .endOfSupportLifeDate(o.getEndOfSupportLifeDate())
-                            .vendor(o.getVendor())
-                            .distribution(o.getDistribution())
-                            .version(o.getVersion())
-                            .operatingSystems(o.getOperatingSystems())
-                            .approximateInstallationCount(o.getApproximateInstallationCount())
-                            .approximateApplicationCount(o.getApproximateApplicationCount())
-                            .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
-                            .approximatePendingWorkRequestCount(
-                                    o.getApproximatePendingWorkRequestCount())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .timeFirstSeen(o.getTimeFirstSeen())
-                            .timeLastSeen(o.getTimeLastSeen());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JreUsage model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("fleetId")) {
+                this.fleetId(model.getFleetId());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceId")) {
+                this.managedInstanceId(model.getManagedInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("securityStatus")) {
+                this.securityStatus(model.getSecurityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("releaseDate")) {
+                this.releaseDate(model.getReleaseDate());
+            }
+            if (model.wasPropertyExplicitlySet("endOfSupportLifeDate")) {
+                this.endOfSupportLifeDate(model.getEndOfSupportLifeDate());
+            }
+            if (model.wasPropertyExplicitlySet("vendor")) {
+                this.vendor(model.getVendor());
+            }
+            if (model.wasPropertyExplicitlySet("distribution")) {
+                this.distribution(model.getDistribution());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("daysUnderSecurityBaseline")) {
+                this.daysUnderSecurityBaseline(model.getDaysUnderSecurityBaseline());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystems")) {
+                this.operatingSystems(model.getOperatingSystems());
+            }
+            if (model.wasPropertyExplicitlySet("approximateInstallationCount")) {
+                this.approximateInstallationCount(model.getApproximateInstallationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
+                this.approximateApplicationCount(model.getApproximateApplicationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
+                this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximatePendingWorkRequestCount")) {
+                this.approximatePendingWorkRequestCount(
+                        model.getApproximatePendingWorkRequestCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSeen")) {
+                this.timeFirstSeen(model.getTimeFirstSeen());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            return this;
         }
     }
 
@@ -469,13 +527,13 @@ public final class JreUsage {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.
      * @return the value
      **/
     public String getFleetId() {
@@ -483,13 +541,13 @@ public final class JreUsage {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
      * @return the value
      **/
     public String getManagedInstanceId() {
@@ -578,6 +636,20 @@ public final class JreUsage {
      **/
     public String getVersion() {
         return version;
+    }
+
+    /**
+     * The number of days since this release has been under the security baseline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("daysUnderSecurityBaseline")
+    private final Integer daysUnderSecurityBaseline;
+
+    /**
+     * The number of days since this release has been under the security baseline.
+     * @return the value
+     **/
+    public Integer getDaysUnderSecurityBaseline() {
+        return daysUnderSecurityBaseline;
     }
 
     /**
@@ -735,6 +807,7 @@ public final class JreUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JreUsage(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
         sb.append(", managedInstanceId=").append(String.valueOf(this.managedInstanceId));
@@ -744,6 +817,8 @@ public final class JreUsage {
         sb.append(", vendor=").append(String.valueOf(this.vendor));
         sb.append(", distribution=").append(String.valueOf(this.distribution));
         sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", daysUnderSecurityBaseline=")
+                .append(String.valueOf(this.daysUnderSecurityBaseline));
         sb.append(", operatingSystems=").append(String.valueOf(this.operatingSystems));
         sb.append(", approximateInstallationCount=")
                 .append(String.valueOf(this.approximateInstallationCount));
@@ -757,7 +832,6 @@ public final class JreUsage {
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -781,6 +855,8 @@ public final class JreUsage {
                 && java.util.Objects.equals(this.vendor, other.vendor)
                 && java.util.Objects.equals(this.distribution, other.distribution)
                 && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.daysUnderSecurityBaseline, other.daysUnderSecurityBaseline)
                 && java.util.Objects.equals(this.operatingSystems, other.operatingSystems)
                 && java.util.Objects.equals(
                         this.approximateInstallationCount, other.approximateInstallationCount)
@@ -795,7 +871,7 @@ public final class JreUsage {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -819,6 +895,11 @@ public final class JreUsage {
         result = (result * PRIME) + (this.vendor == null ? 43 : this.vendor.hashCode());
         result = (result * PRIME) + (this.distribution == null ? 43 : this.distribution.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.daysUnderSecurityBaseline == null
+                                ? 43
+                                : this.daysUnderSecurityBaseline.hashCode());
         result =
                 (result * PRIME)
                         + (this.operatingSystems == null ? 43 : this.operatingSystems.hashCode());
@@ -848,16 +929,7 @@ public final class JreUsage {
                 (result * PRIME)
                         + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
         result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

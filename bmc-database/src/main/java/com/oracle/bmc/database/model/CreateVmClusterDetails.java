@@ -21,7 +21,8 @@ package com.oracle.bmc.database.model;
     builder = CreateVmClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVmClusterDetails {
+public final class CreateVmClusterDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -428,58 +429,97 @@ public final class CreateVmClusterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVmClusterDetails build() {
-            CreateVmClusterDetails __instance__ =
+            CreateVmClusterDetails model =
                     new CreateVmClusterDetails(
-                            compartmentId,
-                            displayName,
-                            exadataInfrastructureId,
-                            cpuCoreCount,
-                            ocpuCount,
-                            memorySizeInGBs,
-                            dbNodeStorageSizeInGBs,
-                            dataStorageSizeInTBs,
-                            dataStorageSizeInGBs,
-                            sshPublicKeys,
-                            vmClusterNetworkId,
-                            licenseModel,
-                            isSparseDiskgroupEnabled,
-                            isLocalBackupEnabled,
-                            timeZone,
-                            giVersion,
-                            dbServers,
-                            freeformTags,
-                            definedTags,
-                            dataCollectionOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.exadataInfrastructureId,
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.memorySizeInGBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.dataStorageSizeInTBs,
+                            this.dataStorageSizeInGBs,
+                            this.sshPublicKeys,
+                            this.vmClusterNetworkId,
+                            this.licenseModel,
+                            this.isSparseDiskgroupEnabled,
+                            this.isLocalBackupEnabled,
+                            this.timeZone,
+                            this.giVersion,
+                            this.dbServers,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.dataCollectionOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateVmClusterDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .exadataInfrastructureId(o.getExadataInfrastructureId())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .memorySizeInGBs(o.getMemorySizeInGBs())
-                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .vmClusterNetworkId(o.getVmClusterNetworkId())
-                            .licenseModel(o.getLicenseModel())
-                            .isSparseDiskgroupEnabled(o.getIsSparseDiskgroupEnabled())
-                            .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
-                            .timeZone(o.getTimeZone())
-                            .giVersion(o.getGiVersion())
-                            .dbServers(o.getDbServers())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .dataCollectionOptions(o.getDataCollectionOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateVmClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInfrastructureId")) {
+                this.exadataInfrastructureId(model.getExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKeys")) {
+                this.sshPublicKeys(model.getSshPublicKeys());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterNetworkId")) {
+                this.vmClusterNetworkId(model.getVmClusterNetworkId());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isSparseDiskgroupEnabled")) {
+                this.isSparseDiskgroupEnabled(model.getIsSparseDiskgroupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalBackupEnabled")) {
+                this.isLocalBackupEnabled(model.getIsLocalBackupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("giVersion")) {
+                this.giVersion(model.getGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
+                this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            return this;
         }
     }
 
@@ -834,6 +874,7 @@ public final class CreateVmClusterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVmClusterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", exadataInfrastructureId=")
@@ -856,7 +897,6 @@ public final class CreateVmClusterDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -894,7 +934,7 @@ public final class CreateVmClusterDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -959,16 +999,7 @@ public final class CreateVmClusterDetails {
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

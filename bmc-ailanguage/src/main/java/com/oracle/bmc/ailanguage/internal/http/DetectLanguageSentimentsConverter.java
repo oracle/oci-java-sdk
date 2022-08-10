@@ -112,8 +112,8 @@ public class DetectLanguageSentimentsConverter {
                                         builder =
                                                 com.oracle.bmc.ailanguage.responses
                                                         .DetectLanguageSentimentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectLanguageSentimentsResult(response.getItem());
 

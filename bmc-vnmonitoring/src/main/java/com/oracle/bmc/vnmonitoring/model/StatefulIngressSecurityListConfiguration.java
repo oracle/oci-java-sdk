@@ -62,19 +62,24 @@ public final class StatefulIngressSecurityListConfiguration extends AllowedSecur
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StatefulIngressSecurityListConfiguration build() {
-            StatefulIngressSecurityListConfiguration __instance__ =
-                    new StatefulIngressSecurityListConfiguration(securityListId, securityRule);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StatefulIngressSecurityListConfiguration model =
+                    new StatefulIngressSecurityListConfiguration(
+                            this.securityListId, this.securityRule);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StatefulIngressSecurityListConfiguration o) {
-            Builder copiedBuilder =
-                    securityListId(o.getSecurityListId()).securityRule(o.getSecurityRule());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StatefulIngressSecurityListConfiguration model) {
+            if (model.wasPropertyExplicitlySet("securityListId")) {
+                this.securityListId(model.getSecurityListId());
+            }
+            if (model.wasPropertyExplicitlySet("securityRule")) {
+                this.securityRule(model.getSecurityRule());
+            }
+            return this;
         }
     }
 
@@ -138,7 +143,6 @@ public final class StatefulIngressSecurityListConfiguration extends AllowedSecur
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", securityListId=").append(String.valueOf(this.securityListId));
         sb.append(", securityRule=").append(String.valueOf(this.securityRule));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,8 +160,7 @@ public final class StatefulIngressSecurityListConfiguration extends AllowedSecur
                 (StatefulIngressSecurityListConfiguration) o;
         return java.util.Objects.equals(this.securityListId, other.securityListId)
                 && java.util.Objects.equals(this.securityRule, other.securityRule)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +171,6 @@ public final class StatefulIngressSecurityListConfiguration extends AllowedSecur
                 (result * PRIME)
                         + (this.securityListId == null ? 43 : this.securityListId.hashCode());
         result = (result * PRIME) + (this.securityRule == null ? 43 : this.securityRule.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

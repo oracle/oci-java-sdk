@@ -29,14 +29,16 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+         * An invalid IP or CIDR block will result in a 400 response.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
         private java.util.List<String> allowlistedHttpIps;
 
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+         * An invalid IP or CIDR block will result in a 400 response.
          *
          * @param allowlistedHttpIps the value to set
          * @return this builder
@@ -86,22 +88,29 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublicEndpointDetails build() {
-            PublicEndpointDetails __instance__ =
+            PublicEndpointDetails model =
                     new PublicEndpointDetails(
-                            allowlistedHttpIps, allowlistedHttpVcns, isIntegrationVcnAllowlisted);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.allowlistedHttpIps,
+                            this.allowlistedHttpVcns,
+                            this.isIntegrationVcnAllowlisted);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PublicEndpointDetails o) {
-            Builder copiedBuilder =
-                    allowlistedHttpIps(o.getAllowlistedHttpIps())
-                            .allowlistedHttpVcns(o.getAllowlistedHttpVcns())
-                            .isIntegrationVcnAllowlisted(o.getIsIntegrationVcnAllowlisted());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PublicEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("allowlistedHttpIps")) {
+                this.allowlistedHttpIps(model.getAllowlistedHttpIps());
+            }
+            if (model.wasPropertyExplicitlySet("allowlistedHttpVcns")) {
+                this.allowlistedHttpVcns(model.getAllowlistedHttpVcns());
+            }
+            if (model.wasPropertyExplicitlySet("isIntegrationVcnAllowlisted")) {
+                this.isIntegrationVcnAllowlisted(model.getIsIntegrationVcnAllowlisted());
+            }
+            return this;
         }
     }
 
@@ -128,14 +137,16 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     }
 
     /**
-     * Source IP addresses or IP address ranges ingress rules.
+     * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+     * An invalid IP or CIDR block will result in a 400 response.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
     private final java.util.List<String> allowlistedHttpIps;
 
     /**
-     * Source IP addresses or IP address ranges ingress rules.
+     * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+     * An invalid IP or CIDR block will result in a 400 response.
      *
      * @return the value
      **/
@@ -191,7 +202,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         sb.append(", allowlistedHttpVcns=").append(String.valueOf(this.allowlistedHttpVcns));
         sb.append(", isIntegrationVcnAllowlisted=")
                 .append(String.valueOf(this.isIntegrationVcnAllowlisted));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -210,8 +220,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
                 && java.util.Objects.equals(this.allowlistedHttpVcns, other.allowlistedHttpVcns)
                 && java.util.Objects.equals(
                         this.isIntegrationVcnAllowlisted, other.isIntegrationVcnAllowlisted)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -233,16 +242,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
                         + (this.isIntegrationVcnAllowlisted == null
                                 ? 43
                                 : this.isIntegrationVcnAllowlisted.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

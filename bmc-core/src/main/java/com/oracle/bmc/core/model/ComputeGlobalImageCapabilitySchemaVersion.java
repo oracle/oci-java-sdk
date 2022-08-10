@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ComputeGlobalImageCapabilitySchemaVersion.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputeGlobalImageCapabilitySchemaVersion {
+public final class ComputeGlobalImageCapabilitySchemaVersion
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -148,29 +149,38 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeGlobalImageCapabilitySchemaVersion build() {
-            ComputeGlobalImageCapabilitySchemaVersion __instance__ =
+            ComputeGlobalImageCapabilitySchemaVersion model =
                     new ComputeGlobalImageCapabilitySchemaVersion(
-                            name,
-                            computeGlobalImageCapabilitySchemaId,
-                            displayName,
-                            schemaData,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.computeGlobalImageCapabilitySchemaId,
+                            this.displayName,
+                            this.schemaData,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeGlobalImageCapabilitySchemaVersion o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .computeGlobalImageCapabilitySchemaId(
-                                    o.getComputeGlobalImageCapabilitySchemaId())
-                            .displayName(o.getDisplayName())
-                            .schemaData(o.getSchemaData())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeGlobalImageCapabilitySchemaVersion model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("computeGlobalImageCapabilitySchemaId")) {
+                this.computeGlobalImageCapabilitySchemaId(
+                        model.getComputeGlobalImageCapabilitySchemaId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaData")) {
+                this.schemaData(model.getSchemaData());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -284,13 +294,13 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputeGlobalImageCapabilitySchemaVersion(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", computeGlobalImageCapabilitySchemaId=")
                 .append(String.valueOf(this.computeGlobalImageCapabilitySchemaId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", schemaData=").append(String.valueOf(this.schemaData));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,7 +323,7 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.schemaData, other.schemaData)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +339,7 @@ public final class ComputeGlobalImageCapabilitySchemaVersion {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.schemaData == null ? 43 : this.schemaData.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

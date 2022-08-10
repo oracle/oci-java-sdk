@@ -80,6 +80,7 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcPreviousPage",
         "opcRequestId",
@@ -87,12 +88,13 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
     })
     private ListLogIncludedSearchesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPreviousPage,
             String opcRequestId,
             com.oracle.bmc.logging.model.LogIncludedSearchSummaryCollection
                     logIncludedSearchSummaryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcPreviousPage = opcPreviousPage;
         this.opcRequestId = opcRequestId;
@@ -104,6 +106,13 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -192,6 +201,7 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListLogIncludedSearchesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcPreviousPage(o.getOpcPreviousPage());
             opcRequestId(o.getOpcRequestId());
@@ -207,6 +217,7 @@ public class ListLogIncludedSearchesResponse extends com.oracle.bmc.responses.Bm
         public ListLogIncludedSearchesResponse build() {
             return new ListLogIncludedSearchesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcPreviousPage,
                     opcRequestId,

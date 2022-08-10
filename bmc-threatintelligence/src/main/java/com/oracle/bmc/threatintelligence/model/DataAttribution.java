@@ -17,7 +17,7 @@ package com.oracle.bmc.threatintelligence.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataAttribution.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataAttribution {
+public final class DataAttribution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "confidence",
@@ -113,24 +113,37 @@ public final class DataAttribution {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataAttribution build() {
-            DataAttribution __instance__ =
+            DataAttribution model =
                     new DataAttribution(
-                            confidence, source, visibility, timeFirstSeen, timeLastSeen);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.confidence,
+                            this.source,
+                            this.visibility,
+                            this.timeFirstSeen,
+                            this.timeLastSeen);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataAttribution o) {
-            Builder copiedBuilder =
-                    confidence(o.getConfidence())
-                            .source(o.getSource())
-                            .visibility(o.getVisibility())
-                            .timeFirstSeen(o.getTimeFirstSeen())
-                            .timeLastSeen(o.getTimeLastSeen());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataAttribution model) {
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("visibility")) {
+                this.visibility(model.getVisibility());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSeen")) {
+                this.timeFirstSeen(model.getTimeFirstSeen());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            return this;
         }
     }
 
@@ -214,12 +227,12 @@ public final class DataAttribution {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAttribution(");
+        sb.append("super=").append(super.toString());
         sb.append("confidence=").append(String.valueOf(this.confidence));
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", visibility=").append(String.valueOf(this.visibility));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -239,7 +252,7 @@ public final class DataAttribution {
                 && java.util.Objects.equals(this.visibility, other.visibility)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -253,16 +266,7 @@ public final class DataAttribution {
                 (result * PRIME)
                         + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
         result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

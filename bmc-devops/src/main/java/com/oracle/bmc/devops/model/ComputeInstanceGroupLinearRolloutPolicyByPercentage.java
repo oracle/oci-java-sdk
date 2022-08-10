@@ -57,21 +57,24 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByPercentage
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceGroupLinearRolloutPolicyByPercentage build() {
-            ComputeInstanceGroupLinearRolloutPolicyByPercentage __instance__ =
+            ComputeInstanceGroupLinearRolloutPolicyByPercentage model =
                     new ComputeInstanceGroupLinearRolloutPolicyByPercentage(
-                            batchDelayInSeconds, batchPercentage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.batchDelayInSeconds, this.batchPercentage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceGroupLinearRolloutPolicyByPercentage o) {
-            Builder copiedBuilder =
-                    batchDelayInSeconds(o.getBatchDelayInSeconds())
-                            .batchPercentage(o.getBatchPercentage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceGroupLinearRolloutPolicyByPercentage model) {
+            if (model.wasPropertyExplicitlySet("batchDelayInSeconds")) {
+                this.batchDelayInSeconds(model.getBatchDelayInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("batchPercentage")) {
+                this.batchPercentage(model.getBatchPercentage());
+            }
+            return this;
         }
     }
 
@@ -122,7 +125,6 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByPercentage
         sb.append("ComputeInstanceGroupLinearRolloutPolicyByPercentage(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", batchPercentage=").append(String.valueOf(this.batchPercentage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -139,8 +141,7 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByPercentage
         ComputeInstanceGroupLinearRolloutPolicyByPercentage other =
                 (ComputeInstanceGroupLinearRolloutPolicyByPercentage) o;
         return java.util.Objects.equals(this.batchPercentage, other.batchPercentage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -150,16 +151,6 @@ public final class ComputeInstanceGroupLinearRolloutPolicyByPercentage
         result =
                 (result * PRIME)
                         + (this.batchPercentage == null ? 43 : this.batchPercentage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

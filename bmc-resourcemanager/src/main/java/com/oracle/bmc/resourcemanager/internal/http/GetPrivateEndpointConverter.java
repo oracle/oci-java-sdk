@@ -112,8 +112,8 @@ public class GetPrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetPrivateEndpointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateEndpoint(response.getItem());
 

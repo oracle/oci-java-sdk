@@ -205,8 +205,8 @@ public class ListGlossariesConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListGlossariesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.glossaryCollection(response.getItem());
 

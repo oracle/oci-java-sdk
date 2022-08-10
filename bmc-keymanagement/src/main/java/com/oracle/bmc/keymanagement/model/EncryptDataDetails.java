@@ -19,7 +19,7 @@ package com.oracle.bmc.keymanagement.model;
     builder = EncryptDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EncryptDataDetails {
+public final class EncryptDataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "associatedData",
@@ -170,30 +170,41 @@ public final class EncryptDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EncryptDataDetails build() {
-            EncryptDataDetails __instance__ =
+            EncryptDataDetails model =
                     new EncryptDataDetails(
-                            associatedData,
-                            keyId,
-                            loggingContext,
-                            plaintext,
-                            keyVersionId,
-                            encryptionAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.associatedData,
+                            this.keyId,
+                            this.loggingContext,
+                            this.plaintext,
+                            this.keyVersionId,
+                            this.encryptionAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EncryptDataDetails o) {
-            Builder copiedBuilder =
-                    associatedData(o.getAssociatedData())
-                            .keyId(o.getKeyId())
-                            .loggingContext(o.getLoggingContext())
-                            .plaintext(o.getPlaintext())
-                            .keyVersionId(o.getKeyVersionId())
-                            .encryptionAlgorithm(o.getEncryptionAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EncryptDataDetails model) {
+            if (model.wasPropertyExplicitlySet("associatedData")) {
+                this.associatedData(model.getAssociatedData());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("loggingContext")) {
+                this.loggingContext(model.getLoggingContext());
+            }
+            if (model.wasPropertyExplicitlySet("plaintext")) {
+                this.plaintext(model.getPlaintext());
+            }
+            if (model.wasPropertyExplicitlySet("keyVersionId")) {
+                this.keyVersionId(model.getKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionAlgorithm")) {
+                this.encryptionAlgorithm(model.getEncryptionAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -369,13 +380,13 @@ public final class EncryptDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EncryptDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("associatedData=").append(String.valueOf(this.associatedData));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
         sb.append(", plaintext=").append(String.valueOf(this.plaintext));
         sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
         sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -396,7 +407,7 @@ public final class EncryptDataDetails {
                 && java.util.Objects.equals(this.plaintext, other.plaintext)
                 && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
                 && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -417,16 +428,7 @@ public final class EncryptDataDetails {
                         + (this.encryptionAlgorithm == null
                                 ? 43
                                 : this.encryptionAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

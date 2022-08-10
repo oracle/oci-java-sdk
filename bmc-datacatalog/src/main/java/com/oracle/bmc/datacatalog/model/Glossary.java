@@ -25,7 +25,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Glossary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Glossary {
+public final class Glossary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -378,52 +378,85 @@ public final class Glossary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Glossary build() {
-            Glossary __instance__ =
+            Glossary model =
                     new Glossary(
-                            key,
-                            displayName,
-                            description,
-                            catalogId,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            createdById,
-                            updatedById,
-                            owner,
-                            workflowStatus,
-                            customPropertyMembers,
-                            importJobDefinitionKey,
-                            importJobKey,
-                            latestImportJobExecutionKey,
-                            latestImportJobExecutionStatus,
-                            uri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.catalogId,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.createdById,
+                            this.updatedById,
+                            this.owner,
+                            this.workflowStatus,
+                            this.customPropertyMembers,
+                            this.importJobDefinitionKey,
+                            this.importJobKey,
+                            this.latestImportJobExecutionKey,
+                            this.latestImportJobExecutionStatus,
+                            this.uri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Glossary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .catalogId(o.getCatalogId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .createdById(o.getCreatedById())
-                            .updatedById(o.getUpdatedById())
-                            .owner(o.getOwner())
-                            .workflowStatus(o.getWorkflowStatus())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .importJobDefinitionKey(o.getImportJobDefinitionKey())
-                            .importJobKey(o.getImportJobKey())
-                            .latestImportJobExecutionKey(o.getLatestImportJobExecutionKey())
-                            .latestImportJobExecutionStatus(o.getLatestImportJobExecutionStatus())
-                            .uri(o.getUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Glossary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("workflowStatus")) {
+                this.workflowStatus(model.getWorkflowStatus());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("importJobDefinitionKey")) {
+                this.importJobDefinitionKey(model.getImportJobDefinitionKey());
+            }
+            if (model.wasPropertyExplicitlySet("importJobKey")) {
+                this.importJobKey(model.getImportJobKey());
+            }
+            if (model.wasPropertyExplicitlySet("latestImportJobExecutionKey")) {
+                this.latestImportJobExecutionKey(model.getLatestImportJobExecutionKey());
+            }
+            if (model.wasPropertyExplicitlySet("latestImportJobExecutionStatus")) {
+                this.latestImportJobExecutionStatus(model.getLatestImportJobExecutionStatus());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            return this;
         }
     }
 
@@ -703,6 +736,7 @@ public final class Glossary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Glossary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -722,7 +756,6 @@ public final class Glossary {
         sb.append(", latestImportJobExecutionStatus=")
                 .append(String.valueOf(this.latestImportJobExecutionStatus));
         sb.append(", uri=").append(String.valueOf(this.uri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -757,7 +790,7 @@ public final class Glossary {
                 && java.util.Objects.equals(
                         this.latestImportJobExecutionStatus, other.latestImportJobExecutionStatus)
                 && java.util.Objects.equals(this.uri, other.uri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -801,16 +834,7 @@ public final class Glossary {
                                 ? 43
                                 : this.latestImportJobExecutionStatus.hashCode());
         result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

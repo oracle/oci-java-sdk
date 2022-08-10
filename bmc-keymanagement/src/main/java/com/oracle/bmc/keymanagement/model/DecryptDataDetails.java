@@ -19,7 +19,7 @@ package com.oracle.bmc.keymanagement.model;
     builder = DecryptDataDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DecryptDataDetails {
+public final class DecryptDataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "associatedData",
@@ -168,30 +168,41 @@ public final class DecryptDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DecryptDataDetails build() {
-            DecryptDataDetails __instance__ =
+            DecryptDataDetails model =
                     new DecryptDataDetails(
-                            associatedData,
-                            ciphertext,
-                            keyId,
-                            loggingContext,
-                            keyVersionId,
-                            encryptionAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.associatedData,
+                            this.ciphertext,
+                            this.keyId,
+                            this.loggingContext,
+                            this.keyVersionId,
+                            this.encryptionAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DecryptDataDetails o) {
-            Builder copiedBuilder =
-                    associatedData(o.getAssociatedData())
-                            .ciphertext(o.getCiphertext())
-                            .keyId(o.getKeyId())
-                            .loggingContext(o.getLoggingContext())
-                            .keyVersionId(o.getKeyVersionId())
-                            .encryptionAlgorithm(o.getEncryptionAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DecryptDataDetails model) {
+            if (model.wasPropertyExplicitlySet("associatedData")) {
+                this.associatedData(model.getAssociatedData());
+            }
+            if (model.wasPropertyExplicitlySet("ciphertext")) {
+                this.ciphertext(model.getCiphertext());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("loggingContext")) {
+                this.loggingContext(model.getLoggingContext());
+            }
+            if (model.wasPropertyExplicitlySet("keyVersionId")) {
+                this.keyVersionId(model.getKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionAlgorithm")) {
+                this.encryptionAlgorithm(model.getEncryptionAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -365,13 +376,13 @@ public final class DecryptDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DecryptDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("associatedData=").append(String.valueOf(this.associatedData));
         sb.append(", ciphertext=").append(String.valueOf(this.ciphertext));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
         sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
         sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -392,7 +403,7 @@ public final class DecryptDataDetails {
                 && java.util.Objects.equals(this.loggingContext, other.loggingContext)
                 && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
                 && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -413,16 +424,7 @@ public final class DecryptDataDetails {
                         + (this.encryptionAlgorithm == null
                                 ? 43
                                 : this.encryptionAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

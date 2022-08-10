@@ -56,17 +56,19 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "termRelationshipCollection"
     })
     private ListTermRelationshipsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.TermRelationshipCollection
                     termRelationshipCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.termRelationshipCollection = termRelationshipCollection;
@@ -77,6 +79,13 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ListTermRelationshipsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             termRelationshipCollection(o.getTermRelationshipCollection());
@@ -153,7 +163,11 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
          */
         public ListTermRelationshipsResponse build() {
             return new ListTermRelationshipsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, termRelationshipCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    termRelationshipCollection);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.ailanguage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Entity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Entity {
+public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"offset", "length", "text", "type", "isPii", "score"})
     public Entity(
@@ -138,23 +138,36 @@ public final class Entity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Entity build() {
-            Entity __instance__ = new Entity(offset, length, text, type, isPii, score);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Entity model =
+                    new Entity(
+                            this.offset, this.length, this.text, this.type, this.isPii, this.score);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Entity o) {
-            Builder copiedBuilder =
-                    offset(o.getOffset())
-                            .length(o.getLength())
-                            .text(o.getText())
-                            .type(o.getType())
-                            .isPii(o.getIsPii())
-                            .score(o.getScore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Entity model) {
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isPii")) {
+                this.isPii(model.getIsPii());
+            }
+            if (model.wasPropertyExplicitlySet("score")) {
+                this.score(model.getScore());
+            }
+            return this;
         }
     }
 
@@ -270,13 +283,13 @@ public final class Entity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Entity(");
+        sb.append("super=").append(super.toString());
         sb.append("offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
         sb.append(", text=").append(String.valueOf(this.text));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isPii=").append(String.valueOf(this.isPii));
         sb.append(", score=").append(String.valueOf(this.score));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -297,7 +310,7 @@ public final class Entity {
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isPii, other.isPii)
                 && java.util.Objects.equals(this.score, other.score)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -310,16 +323,7 @@ public final class Entity {
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.isPii == null ? 43 : this.isPii.hashCode());
         result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

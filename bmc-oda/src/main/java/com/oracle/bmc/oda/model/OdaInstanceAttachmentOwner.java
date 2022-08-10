@@ -19,7 +19,8 @@ package com.oracle.bmc.oda.model;
     builder = OdaInstanceAttachmentOwner.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OdaInstanceAttachmentOwner {
+public final class OdaInstanceAttachmentOwner
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ownerServiceName", "ownerServiceTenancy"})
     public OdaInstanceAttachmentOwner(String ownerServiceName, String ownerServiceTenancy) {
@@ -67,20 +68,23 @@ public final class OdaInstanceAttachmentOwner {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OdaInstanceAttachmentOwner build() {
-            OdaInstanceAttachmentOwner __instance__ =
-                    new OdaInstanceAttachmentOwner(ownerServiceName, ownerServiceTenancy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OdaInstanceAttachmentOwner model =
+                    new OdaInstanceAttachmentOwner(this.ownerServiceName, this.ownerServiceTenancy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OdaInstanceAttachmentOwner o) {
-            Builder copiedBuilder =
-                    ownerServiceName(o.getOwnerServiceName())
-                            .ownerServiceTenancy(o.getOwnerServiceTenancy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OdaInstanceAttachmentOwner model) {
+            if (model.wasPropertyExplicitlySet("ownerServiceName")) {
+                this.ownerServiceName(model.getOwnerServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("ownerServiceTenancy")) {
+                this.ownerServiceTenancy(model.getOwnerServiceTenancy());
+            }
+            return this;
         }
     }
 
@@ -136,9 +140,9 @@ public final class OdaInstanceAttachmentOwner {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OdaInstanceAttachmentOwner(");
+        sb.append("super=").append(super.toString());
         sb.append("ownerServiceName=").append(String.valueOf(this.ownerServiceName));
         sb.append(", ownerServiceTenancy=").append(String.valueOf(this.ownerServiceTenancy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +159,7 @@ public final class OdaInstanceAttachmentOwner {
         OdaInstanceAttachmentOwner other = (OdaInstanceAttachmentOwner) o;
         return java.util.Objects.equals(this.ownerServiceName, other.ownerServiceName)
                 && java.util.Objects.equals(this.ownerServiceTenancy, other.ownerServiceTenancy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +174,7 @@ public final class OdaInstanceAttachmentOwner {
                         + (this.ownerServiceTenancy == null
                                 ? 43
                                 : this.ownerServiceTenancy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

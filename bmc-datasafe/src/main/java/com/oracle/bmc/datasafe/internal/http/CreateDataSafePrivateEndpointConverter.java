@@ -114,8 +114,8 @@ public class CreateDataSafePrivateEndpointConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .CreateDataSafePrivateEndpointResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataSafePrivateEndpoint(response.getItem());
 

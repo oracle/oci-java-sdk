@@ -54,16 +54,18 @@ public class GenerateRecommendedVmClusterNetworkResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "vmClusterNetworkDetails"
     })
     private GenerateRecommendedVmClusterNetworkResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.vmClusterNetworkDetails = vmClusterNetworkDetails;
@@ -74,6 +76,13 @@ public class GenerateRecommendedVmClusterNetworkResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -133,6 +142,7 @@ public class GenerateRecommendedVmClusterNetworkResponse
          */
         public Builder copy(GenerateRecommendedVmClusterNetworkResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             vmClusterNetworkDetails(o.getVmClusterNetworkDetails());
@@ -146,7 +156,7 @@ public class GenerateRecommendedVmClusterNetworkResponse
          */
         public GenerateRecommendedVmClusterNetworkResponse build() {
             return new GenerateRecommendedVmClusterNetworkResponse(
-                    __httpStatusCode__, etag, opcRequestId, vmClusterNetworkDetails);
+                    __httpStatusCode__, headers, etag, opcRequestId, vmClusterNetworkDetails);
         }
     }
 

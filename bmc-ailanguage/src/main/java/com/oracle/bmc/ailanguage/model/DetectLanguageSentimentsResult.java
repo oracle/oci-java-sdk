@@ -19,7 +19,8 @@ package com.oracle.bmc.ailanguage.model;
     builder = DetectLanguageSentimentsResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectLanguageSentimentsResult {
+public final class DetectLanguageSentimentsResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"aspects"})
     public DetectLanguageSentimentsResult(java.util.List<SentimentAspect> aspects) {
@@ -50,18 +51,19 @@ public final class DetectLanguageSentimentsResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectLanguageSentimentsResult build() {
-            DetectLanguageSentimentsResult __instance__ =
-                    new DetectLanguageSentimentsResult(aspects);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetectLanguageSentimentsResult model = new DetectLanguageSentimentsResult(this.aspects);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectLanguageSentimentsResult o) {
-            Builder copiedBuilder = aspects(o.getAspects());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectLanguageSentimentsResult model) {
+            if (model.wasPropertyExplicitlySet("aspects")) {
+                this.aspects(model.getAspects());
+            }
+            return this;
         }
     }
 
@@ -103,8 +105,8 @@ public final class DetectLanguageSentimentsResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectLanguageSentimentsResult(");
+        sb.append("super=").append(super.toString());
         sb.append("aspects=").append(String.valueOf(this.aspects));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,8 +121,7 @@ public final class DetectLanguageSentimentsResult {
         }
 
         DetectLanguageSentimentsResult other = (DetectLanguageSentimentsResult) o;
-        return java.util.Objects.equals(this.aspects, other.aspects)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.aspects, other.aspects) && super.equals(other);
     }
 
     @Override
@@ -128,16 +129,7 @@ public final class DetectLanguageSentimentsResult {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.aspects == null ? 43 : this.aspects.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -162,41 +162,61 @@ public final class ImageListingPackage extends ListingPackage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageListingPackage build() {
-            ImageListingPackage __instance__ =
+            ImageListingPackage model =
                     new ImageListingPackage(
-                            description,
-                            listingId,
-                            version,
-                            pricing,
-                            resourceId,
-                            timeCreated,
-                            operatingSystem,
-                            appCatalogListingId,
-                            appCatalogListingResourceVersion,
-                            imageId,
-                            regions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.listingId,
+                            this.version,
+                            this.pricing,
+                            this.resourceId,
+                            this.timeCreated,
+                            this.operatingSystem,
+                            this.appCatalogListingId,
+                            this.appCatalogListingResourceVersion,
+                            this.imageId,
+                            this.regions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageListingPackage o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .listingId(o.getListingId())
-                            .version(o.getVersion())
-                            .pricing(o.getPricing())
-                            .resourceId(o.getResourceId())
-                            .timeCreated(o.getTimeCreated())
-                            .operatingSystem(o.getOperatingSystem())
-                            .appCatalogListingId(o.getAppCatalogListingId())
-                            .appCatalogListingResourceVersion(
-                                    o.getAppCatalogListingResourceVersion())
-                            .imageId(o.getImageId())
-                            .regions(o.getRegions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageListingPackage model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("pricing")) {
+                this.pricing(model.getPricing());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("appCatalogListingId")) {
+                this.appCatalogListingId(model.getAppCatalogListingId());
+            }
+            if (model.wasPropertyExplicitlySet("appCatalogListingResourceVersion")) {
+                this.appCatalogListingResourceVersion(model.getAppCatalogListingResourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            return this;
         }
     }
 
@@ -310,7 +330,6 @@ public final class ImageListingPackage extends ListingPackage {
                 .append(String.valueOf(this.appCatalogListingResourceVersion));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", regions=").append(String.valueOf(this.regions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -331,8 +350,7 @@ public final class ImageListingPackage extends ListingPackage {
                         other.appCatalogListingResourceVersion)
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.regions, other.regions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -351,16 +369,6 @@ public final class ImageListingPackage extends ListingPackage {
                                 : this.appCatalogListingResourceVersion.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

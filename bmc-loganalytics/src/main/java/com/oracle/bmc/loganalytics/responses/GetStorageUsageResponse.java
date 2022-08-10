@@ -36,12 +36,18 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
         return storageUsage;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "storageUsage"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "storageUsage"
+    })
     private GetStorageUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.StorageUsage storageUsage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.storageUsage = storageUsage;
     }
@@ -51,6 +57,13 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -92,6 +105,7 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetStorageUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             storageUsage(o.getStorageUsage());
 
@@ -103,7 +117,8 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public GetStorageUsageResponse build() {
-            return new GetStorageUsageResponse(__httpStatusCode__, opcRequestId, storageUsage);
+            return new GetStorageUsageResponse(
+                    __httpStatusCode__, headers, opcRequestId, storageUsage);
         }
     }
 

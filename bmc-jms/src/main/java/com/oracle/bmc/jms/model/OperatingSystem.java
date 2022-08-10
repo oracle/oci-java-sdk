@@ -18,15 +18,27 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatingSystem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperatingSystem {
+public final class OperatingSystem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"family", "name", "version", "architecture"})
-    public OperatingSystem(OsFamily family, String name, String version, String architecture) {
+    @java.beans.ConstructorProperties({
+        "family",
+        "name",
+        "version",
+        "architecture",
+        "managedInstanceCount"
+    })
+    public OperatingSystem(
+            OsFamily family,
+            String name,
+            String version,
+            String architecture,
+            Integer managedInstanceCount) {
         super();
         this.family = family;
         this.name = name;
         this.version = version;
         this.architecture = architecture;
+        this.managedInstanceCount = managedInstanceCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -95,26 +107,58 @@ public final class OperatingSystem {
             this.__explicitlySet__.add("architecture");
             return this;
         }
+        /**
+         * Number of instances running the operating system
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
+        private Integer managedInstanceCount;
+
+        /**
+         * Number of instances running the operating system
+         * @param managedInstanceCount the value to set
+         * @return this builder
+         **/
+        public Builder managedInstanceCount(Integer managedInstanceCount) {
+            this.managedInstanceCount = managedInstanceCount;
+            this.__explicitlySet__.add("managedInstanceCount");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperatingSystem build() {
-            OperatingSystem __instance__ = new OperatingSystem(family, name, version, architecture);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OperatingSystem model =
+                    new OperatingSystem(
+                            this.family,
+                            this.name,
+                            this.version,
+                            this.architecture,
+                            this.managedInstanceCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperatingSystem o) {
-            Builder copiedBuilder =
-                    family(o.getFamily())
-                            .name(o.getName())
-                            .version(o.getVersion())
-                            .architecture(o.getArchitecture());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperatingSystem model) {
+            if (model.wasPropertyExplicitlySet("family")) {
+                this.family(model.getFamily());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceCount")) {
+                this.managedInstanceCount(model.getManagedInstanceCount());
+            }
+            return this;
         }
     }
 
@@ -185,6 +229,20 @@ public final class OperatingSystem {
         return architecture;
     }
 
+    /**
+     * Number of instances running the operating system
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
+    private final Integer managedInstanceCount;
+
+    /**
+     * Number of instances running the operating system
+     * @return the value
+     **/
+    public Integer getManagedInstanceCount() {
+        return managedInstanceCount;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -198,11 +256,12 @@ public final class OperatingSystem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperatingSystem(");
+        sb.append("super=").append(super.toString());
         sb.append("family=").append(String.valueOf(this.family));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +280,8 @@ public final class OperatingSystem {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.architecture, other.architecture)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
+                && super.equals(other);
     }
 
     @Override
@@ -234,14 +294,10 @@ public final class OperatingSystem {
         result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
         result =
                 (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+                        + (this.managedInstanceCount == null
+                                ? 43
+                                : this.managedInstanceCount.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

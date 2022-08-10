@@ -103,8 +103,8 @@ public class UpdateDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpdateDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.database(response.getItem());
 

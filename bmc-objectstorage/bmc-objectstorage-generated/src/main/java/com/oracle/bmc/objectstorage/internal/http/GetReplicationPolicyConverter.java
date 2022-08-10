@@ -122,8 +122,8 @@ public class GetReplicationPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .GetReplicationPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.replicationPolicy(response.getItem());
 

@@ -130,8 +130,8 @@ public class ScheduleKeyVersionDeletionConverter {
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ScheduleKeyVersionDeletionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.keyVersion(response.getItem());
 

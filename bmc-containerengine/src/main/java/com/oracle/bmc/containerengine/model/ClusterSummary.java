@@ -17,7 +17,7 @@ package com.oracle.bmc.containerengine.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterSummary {
+public final class ClusterSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -378,52 +378,85 @@ public final class ClusterSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterSummary build() {
-            ClusterSummary __instance__ =
+            ClusterSummary model =
                     new ClusterSummary(
-                            id,
-                            name,
-                            compartmentId,
-                            endpointConfig,
-                            vcnId,
-                            kubernetesVersion,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            options,
-                            metadata,
-                            lifecycleState,
-                            lifecycleDetails,
-                            endpoints,
-                            availableKubernetesUpgrades,
-                            imagePolicyConfig,
-                            clusterPodNetworkOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.compartmentId,
+                            this.endpointConfig,
+                            this.vcnId,
+                            this.kubernetesVersion,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.options,
+                            this.metadata,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.endpoints,
+                            this.availableKubernetesUpgrades,
+                            this.imagePolicyConfig,
+                            this.clusterPodNetworkOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .endpointConfig(o.getEndpointConfig())
-                            .vcnId(o.getVcnId())
-                            .kubernetesVersion(o.getKubernetesVersion())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .options(o.getOptions())
-                            .metadata(o.getMetadata())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .endpoints(o.getEndpoints())
-                            .availableKubernetesUpgrades(o.getAvailableKubernetesUpgrades())
-                            .imagePolicyConfig(o.getImagePolicyConfig())
-                            .clusterPodNetworkOptions(o.getClusterPodNetworkOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointConfig")) {
+                this.endpointConfig(model.getEndpointConfig());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("kubernetesVersion")) {
+                this.kubernetesVersion(model.getKubernetesVersion());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("endpoints")) {
+                this.endpoints(model.getEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("availableKubernetesUpgrades")) {
+                this.availableKubernetesUpgrades(model.getAvailableKubernetesUpgrades());
+            }
+            if (model.wasPropertyExplicitlySet("imagePolicyConfig")) {
+                this.imagePolicyConfig(model.getImagePolicyConfig());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPodNetworkOptions")) {
+                this.clusterPodNetworkOptions(model.getClusterPodNetworkOptions());
+            }
+            return this;
         }
     }
 
@@ -709,6 +742,7 @@ public final class ClusterSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -728,7 +762,6 @@ public final class ClusterSummary {
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
         sb.append(", clusterPodNetworkOptions=")
                 .append(String.valueOf(this.clusterPodNetworkOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -762,7 +795,7 @@ public final class ClusterSummary {
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
                 && java.util.Objects.equals(
                         this.clusterPodNetworkOptions, other.clusterPodNetworkOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -806,16 +839,7 @@ public final class ClusterSummary {
                         + (this.clusterPodNetworkOptions == null
                                 ? 43
                                 : this.clusterPodNetworkOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

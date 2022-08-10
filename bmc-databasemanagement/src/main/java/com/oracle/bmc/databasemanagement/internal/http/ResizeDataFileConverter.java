@@ -123,8 +123,8 @@ public class ResizeDataFileConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ResizeDataFileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tablespaceAdminStatus(response.getItem());
 

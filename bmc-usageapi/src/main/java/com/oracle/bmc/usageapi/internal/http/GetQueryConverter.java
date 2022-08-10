@@ -98,7 +98,8 @@ public class GetQueryConverter {
 
                                 com.oracle.bmc.usageapi.responses.GetQueryResponse.Builder builder =
                                         com.oracle.bmc.usageapi.responses.GetQueryResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.query(response.getItem());
 

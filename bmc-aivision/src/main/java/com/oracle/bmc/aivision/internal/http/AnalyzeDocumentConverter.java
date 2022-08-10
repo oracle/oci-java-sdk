@@ -102,8 +102,8 @@ public class AnalyzeDocumentConverter {
                                         builder =
                                                 com.oracle.bmc.aivision.responses
                                                         .AnalyzeDocumentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.analyzeDocumentResult(response.getItem());
 

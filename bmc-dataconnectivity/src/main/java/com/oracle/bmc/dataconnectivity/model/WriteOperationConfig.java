@@ -173,40 +173,61 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WriteOperationConfig build() {
-            WriteOperationConfig __instance__ =
+            WriteOperationConfig model =
                     new WriteOperationConfig(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            operations,
-                            dataFormat,
-                            partitionConfig,
-                            writeAttribute,
-                            writeMode,
-                            mergeKey,
-                            objectStatus,
-                            rejectLimit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.operations,
+                            this.dataFormat,
+                            this.partitionConfig,
+                            this.writeAttribute,
+                            this.writeMode,
+                            this.mergeKey,
+                            this.objectStatus,
+                            this.rejectLimit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WriteOperationConfig o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .operations(o.getOperations())
-                            .dataFormat(o.getDataFormat())
-                            .partitionConfig(o.getPartitionConfig())
-                            .writeAttribute(o.getWriteAttribute())
-                            .writeMode(o.getWriteMode())
-                            .mergeKey(o.getMergeKey())
-                            .objectStatus(o.getObjectStatus())
-                            .rejectLimit(o.getRejectLimit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WriteOperationConfig model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("operations")) {
+                this.operations(model.getOperations());
+            }
+            if (model.wasPropertyExplicitlySet("dataFormat")) {
+                this.dataFormat(model.getDataFormat());
+            }
+            if (model.wasPropertyExplicitlySet("partitionConfig")) {
+                this.partitionConfig(model.getPartitionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("writeAttribute")) {
+                this.writeAttribute(model.getWriteAttribute());
+            }
+            if (model.wasPropertyExplicitlySet("writeMode")) {
+                this.writeMode(model.getWriteMode());
+            }
+            if (model.wasPropertyExplicitlySet("mergeKey")) {
+                this.mergeKey(model.getMergeKey());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("rejectLimit")) {
+                this.rejectLimit(model.getRejectLimit());
+            }
+            return this;
         }
     }
 
@@ -430,7 +451,6 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         sb.append(", mergeKey=").append(String.valueOf(this.mergeKey));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", rejectLimit=").append(String.valueOf(this.rejectLimit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -456,8 +476,7 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
                 && java.util.Objects.equals(this.mergeKey, other.mergeKey)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.rejectLimit, other.rejectLimit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -479,16 +498,6 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         result = (result * PRIME) + (this.mergeKey == null ? 43 : this.mergeKey.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.rejectLimit == null ? 43 : this.rejectLimit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsEntityTopologyLink.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsEntityTopologyLink {
+public final class LogAnalyticsEntityTopologyLink
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceEntityId", "destinationEntityId"})
     public LogAnalyticsEntityTopologyLink(String sourceEntityId, String destinationEntityId) {
@@ -76,20 +77,24 @@ public final class LogAnalyticsEntityTopologyLink {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsEntityTopologyLink build() {
-            LogAnalyticsEntityTopologyLink __instance__ =
-                    new LogAnalyticsEntityTopologyLink(sourceEntityId, destinationEntityId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogAnalyticsEntityTopologyLink model =
+                    new LogAnalyticsEntityTopologyLink(
+                            this.sourceEntityId, this.destinationEntityId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsEntityTopologyLink o) {
-            Builder copiedBuilder =
-                    sourceEntityId(o.getSourceEntityId())
-                            .destinationEntityId(o.getDestinationEntityId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsEntityTopologyLink model) {
+            if (model.wasPropertyExplicitlySet("sourceEntityId")) {
+                this.sourceEntityId(model.getSourceEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("destinationEntityId")) {
+                this.destinationEntityId(model.getDestinationEntityId());
+            }
+            return this;
         }
     }
 
@@ -153,9 +158,9 @@ public final class LogAnalyticsEntityTopologyLink {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsEntityTopologyLink(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceEntityId=").append(String.valueOf(this.sourceEntityId));
         sb.append(", destinationEntityId=").append(String.valueOf(this.destinationEntityId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -172,7 +177,7 @@ public final class LogAnalyticsEntityTopologyLink {
         LogAnalyticsEntityTopologyLink other = (LogAnalyticsEntityTopologyLink) o;
         return java.util.Objects.equals(this.sourceEntityId, other.sourceEntityId)
                 && java.util.Objects.equals(this.destinationEntityId, other.destinationEntityId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -187,16 +192,7 @@ public final class LogAnalyticsEntityTopologyLink {
                         + (this.destinationEntityId == null
                                 ? 43
                                 : this.destinationEntityId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

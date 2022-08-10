@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseHomeMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseHomeMetrics {
+public final class DatabaseHomeMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseHomeMetrics", "databaseInstanceHomeMetrics"})
     public DatabaseHomeMetrics(
@@ -63,20 +63,24 @@ public final class DatabaseHomeMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseHomeMetrics build() {
-            DatabaseHomeMetrics __instance__ =
-                    new DatabaseHomeMetrics(databaseHomeMetrics, databaseInstanceHomeMetrics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DatabaseHomeMetrics model =
+                    new DatabaseHomeMetrics(
+                            this.databaseHomeMetrics, this.databaseInstanceHomeMetrics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseHomeMetrics o) {
-            Builder copiedBuilder =
-                    databaseHomeMetrics(o.getDatabaseHomeMetrics())
-                            .databaseInstanceHomeMetrics(o.getDatabaseInstanceHomeMetrics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseHomeMetrics model) {
+            if (model.wasPropertyExplicitlySet("databaseHomeMetrics")) {
+                this.databaseHomeMetrics(model.getDatabaseHomeMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("databaseInstanceHomeMetrics")) {
+                this.databaseInstanceHomeMetrics(model.getDatabaseInstanceHomeMetrics());
+            }
+            return this;
         }
     }
 
@@ -125,10 +129,10 @@ public final class DatabaseHomeMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseHomeMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseHomeMetrics=").append(String.valueOf(this.databaseHomeMetrics));
         sb.append(", databaseInstanceHomeMetrics=")
                 .append(String.valueOf(this.databaseInstanceHomeMetrics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -146,7 +150,7 @@ public final class DatabaseHomeMetrics {
         return java.util.Objects.equals(this.databaseHomeMetrics, other.databaseHomeMetrics)
                 && java.util.Objects.equals(
                         this.databaseInstanceHomeMetrics, other.databaseInstanceHomeMetrics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +167,7 @@ public final class DatabaseHomeMetrics {
                         + (this.databaseInstanceHomeMetrics == null
                                 ? 43
                                 : this.databaseInstanceHomeMetrics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

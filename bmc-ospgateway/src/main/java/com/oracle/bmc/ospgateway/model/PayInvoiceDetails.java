@@ -19,7 +19,7 @@ package com.oracle.bmc.ospgateway.model;
     builder = PayInvoiceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PayInvoiceDetails {
+public final class PayInvoiceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"languageCode", "returnUrl", "email"})
     public PayInvoiceDetails(String languageCode, String returnUrl, String email) {
@@ -84,20 +84,26 @@ public final class PayInvoiceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PayInvoiceDetails build() {
-            PayInvoiceDetails __instance__ = new PayInvoiceDetails(languageCode, returnUrl, email);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PayInvoiceDetails model =
+                    new PayInvoiceDetails(this.languageCode, this.returnUrl, this.email);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PayInvoiceDetails o) {
-            Builder copiedBuilder =
-                    languageCode(o.getLanguageCode())
-                            .returnUrl(o.getReturnUrl())
-                            .email(o.getEmail());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PayInvoiceDetails model) {
+            if (model.wasPropertyExplicitlySet("languageCode")) {
+                this.languageCode(model.getLanguageCode());
+            }
+            if (model.wasPropertyExplicitlySet("returnUrl")) {
+                this.returnUrl(model.getReturnUrl());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            return this;
         }
     }
 
@@ -167,10 +173,10 @@ public final class PayInvoiceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PayInvoiceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("languageCode=").append(String.valueOf(this.languageCode));
         sb.append(", returnUrl=").append(String.valueOf(this.returnUrl));
         sb.append(", email=").append(String.valueOf(this.email));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +194,7 @@ public final class PayInvoiceDetails {
         return java.util.Objects.equals(this.languageCode, other.languageCode)
                 && java.util.Objects.equals(this.returnUrl, other.returnUrl)
                 && java.util.Objects.equals(this.email, other.email)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +204,7 @@ public final class PayInvoiceDetails {
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
         result = (result * PRIME) + (this.returnUrl == null ? 43 : this.returnUrl.hashCode());
         result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

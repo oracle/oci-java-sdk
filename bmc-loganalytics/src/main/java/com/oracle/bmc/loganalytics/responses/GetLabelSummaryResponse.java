@@ -36,12 +36,18 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
         return labelSummaryReport;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "labelSummaryReport"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "labelSummaryReport"
+    })
     private GetLabelSummaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.labelSummaryReport = labelSummaryReport;
     }
@@ -51,6 +57,13 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +106,7 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetLabelSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             labelSummaryReport(o.getLabelSummaryReport());
 
@@ -105,7 +119,7 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetLabelSummaryResponse build() {
             return new GetLabelSummaryResponse(
-                    __httpStatusCode__, opcRequestId, labelSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, labelSummaryReport);
         }
     }
 

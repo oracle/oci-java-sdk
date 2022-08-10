@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateRowDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateRowDetails {
+public final class UpdateRowDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -231,36 +231,53 @@ public final class UpdateRowDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRowDetails build() {
-            UpdateRowDetails __instance__ =
+            UpdateRowDetails model =
                     new UpdateRowDetails(
-                            compartmentId,
-                            value,
-                            option,
-                            isGetReturnRow,
-                            timeoutInMs,
-                            ttl,
-                            isTtlUseTableDefault,
-                            identityCacheSize,
-                            isExactMatch);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.value,
+                            this.option,
+                            this.isGetReturnRow,
+                            this.timeoutInMs,
+                            this.ttl,
+                            this.isTtlUseTableDefault,
+                            this.identityCacheSize,
+                            this.isExactMatch);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateRowDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .value(o.getValue())
-                            .option(o.getOption())
-                            .isGetReturnRow(o.getIsGetReturnRow())
-                            .timeoutInMs(o.getTimeoutInMs())
-                            .ttl(o.getTtl())
-                            .isTtlUseTableDefault(o.getIsTtlUseTableDefault())
-                            .identityCacheSize(o.getIdentityCacheSize())
-                            .isExactMatch(o.getIsExactMatch());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateRowDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("option")) {
+                this.option(model.getOption());
+            }
+            if (model.wasPropertyExplicitlySet("isGetReturnRow")) {
+                this.isGetReturnRow(model.getIsGetReturnRow());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMs")) {
+                this.timeoutInMs(model.getTimeoutInMs());
+            }
+            if (model.wasPropertyExplicitlySet("ttl")) {
+                this.ttl(model.getTtl());
+            }
+            if (model.wasPropertyExplicitlySet("isTtlUseTableDefault")) {
+                this.isTtlUseTableDefault(model.getIsTtlUseTableDefault());
+            }
+            if (model.wasPropertyExplicitlySet("identityCacheSize")) {
+                this.identityCacheSize(model.getIdentityCacheSize());
+            }
+            if (model.wasPropertyExplicitlySet("isExactMatch")) {
+                this.isExactMatch(model.getIsExactMatch());
+            }
+            return this;
         }
     }
 
@@ -477,6 +494,7 @@ public final class UpdateRowDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateRowDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", option=").append(String.valueOf(this.option));
@@ -486,7 +504,6 @@ public final class UpdateRowDetails {
         sb.append(", isTtlUseTableDefault=").append(String.valueOf(this.isTtlUseTableDefault));
         sb.append(", identityCacheSize=").append(String.valueOf(this.identityCacheSize));
         sb.append(", isExactMatch=").append(String.valueOf(this.isExactMatch));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -510,7 +527,7 @@ public final class UpdateRowDetails {
                 && java.util.Objects.equals(this.isTtlUseTableDefault, other.isTtlUseTableDefault)
                 && java.util.Objects.equals(this.identityCacheSize, other.identityCacheSize)
                 && java.util.Objects.equals(this.isExactMatch, other.isExactMatch)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -536,16 +553,7 @@ public final class UpdateRowDetails {
                 (result * PRIME)
                         + (this.identityCacheSize == null ? 43 : this.identityCacheSize.hashCode());
         result = (result * PRIME) + (this.isExactMatch == null ? 43 : this.isExactMatch.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

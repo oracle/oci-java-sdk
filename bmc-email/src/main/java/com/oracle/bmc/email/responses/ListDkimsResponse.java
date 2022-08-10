@@ -57,16 +57,18 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "dkimCollection"
     })
     private ListDkimsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.email.model.DkimCollection dkimCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.dkimCollection = dkimCollection;
@@ -77,6 +79,13 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -139,6 +148,7 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListDkimsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             dkimCollection(o.getDkimCollection());
@@ -152,7 +162,7 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListDkimsResponse build() {
             return new ListDkimsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, dkimCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, dkimCollection);
         }
     }
 

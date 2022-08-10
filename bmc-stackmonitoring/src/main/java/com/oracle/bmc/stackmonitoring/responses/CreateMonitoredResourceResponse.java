@@ -111,6 +111,7 @@ public class CreateMonitoredResourceResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "opcMonitoredResourceId",
@@ -121,6 +122,7 @@ public class CreateMonitoredResourceResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateMonitoredResourceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String opcMonitoredResourceId,
@@ -128,7 +130,7 @@ public class CreateMonitoredResourceResponse extends com.oracle.bmc.responses.Bm
             String contentLocation,
             String etag,
             com.oracle.bmc.stackmonitoring.model.MonitoredResource monitoredResource) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.opcMonitoredResourceId = opcMonitoredResourceId;
@@ -143,6 +145,13 @@ public class CreateMonitoredResourceResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -268,6 +277,7 @@ public class CreateMonitoredResourceResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(CreateMonitoredResourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             opcMonitoredResourceId(o.getOpcMonitoredResourceId());
@@ -286,6 +296,7 @@ public class CreateMonitoredResourceResponse extends com.oracle.bmc.responses.Bm
         public CreateMonitoredResourceResponse build() {
             return new CreateMonitoredResourceResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     opcRequestId,
                     opcMonitoredResourceId,

@@ -17,7 +17,7 @@ package com.oracle.bmc.bastion.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PublicKeyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PublicKeyDetails {
+public final class PublicKeyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"publicKeyContent"})
     public PublicKeyDetails(String publicKeyContent) {
@@ -48,17 +48,19 @@ public final class PublicKeyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublicKeyDetails build() {
-            PublicKeyDetails __instance__ = new PublicKeyDetails(publicKeyContent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PublicKeyDetails model = new PublicKeyDetails(this.publicKeyContent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PublicKeyDetails o) {
-            Builder copiedBuilder = publicKeyContent(o.getPublicKeyContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PublicKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("publicKeyContent")) {
+                this.publicKeyContent(model.getPublicKeyContent());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class PublicKeyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PublicKeyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("publicKeyContent=").append(String.valueOf(this.publicKeyContent));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -117,7 +119,7 @@ public final class PublicKeyDetails {
 
         PublicKeyDetails other = (PublicKeyDetails) o;
         return java.util.Objects.equals(this.publicKeyContent, other.publicKeyContent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class PublicKeyDetails {
         result =
                 (result * PRIME)
                         + (this.publicKeyContent == null ? 43 : this.publicKeyContent.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

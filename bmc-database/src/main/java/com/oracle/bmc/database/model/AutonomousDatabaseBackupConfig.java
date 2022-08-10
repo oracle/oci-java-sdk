@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabaseBackupConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabaseBackupConfig {
+public final class AutonomousDatabaseBackupConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"manualBackupBucketName", "manualBackupType"})
     public AutonomousDatabaseBackupConfig(
@@ -69,20 +70,24 @@ public final class AutonomousDatabaseBackupConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseBackupConfig build() {
-            AutonomousDatabaseBackupConfig __instance__ =
-                    new AutonomousDatabaseBackupConfig(manualBackupBucketName, manualBackupType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutonomousDatabaseBackupConfig model =
+                    new AutonomousDatabaseBackupConfig(
+                            this.manualBackupBucketName, this.manualBackupType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseBackupConfig o) {
-            Builder copiedBuilder =
-                    manualBackupBucketName(o.getManualBackupBucketName())
-                            .manualBackupType(o.getManualBackupType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseBackupConfig model) {
+            if (model.wasPropertyExplicitlySet("manualBackupBucketName")) {
+                this.manualBackupBucketName(model.getManualBackupBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("manualBackupType")) {
+                this.manualBackupType(model.getManualBackupType());
+            }
+            return this;
         }
     }
 
@@ -186,9 +191,9 @@ public final class AutonomousDatabaseBackupConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseBackupConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("manualBackupBucketName=").append(String.valueOf(this.manualBackupBucketName));
         sb.append(", manualBackupType=").append(String.valueOf(this.manualBackupType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +210,7 @@ public final class AutonomousDatabaseBackupConfig {
         AutonomousDatabaseBackupConfig other = (AutonomousDatabaseBackupConfig) o;
         return java.util.Objects.equals(this.manualBackupBucketName, other.manualBackupBucketName)
                 && java.util.Objects.equals(this.manualBackupType, other.manualBackupType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -220,16 +225,7 @@ public final class AutonomousDatabaseBackupConfig {
         result =
                 (result * PRIME)
                         + (this.manualBackupType == null ? 43 : this.manualBackupType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

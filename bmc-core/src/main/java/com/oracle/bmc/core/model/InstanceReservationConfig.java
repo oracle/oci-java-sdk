@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = InstanceReservationConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceReservationConfig {
+public final class InstanceReservationConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "faultDomain",
@@ -136,28 +137,37 @@ public final class InstanceReservationConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceReservationConfig build() {
-            InstanceReservationConfig __instance__ =
+            InstanceReservationConfig model =
                     new InstanceReservationConfig(
-                            faultDomain,
-                            instanceShape,
-                            instanceShapeConfig,
-                            reservedCount,
-                            usedCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.faultDomain,
+                            this.instanceShape,
+                            this.instanceShapeConfig,
+                            this.reservedCount,
+                            this.usedCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceReservationConfig o) {
-            Builder copiedBuilder =
-                    faultDomain(o.getFaultDomain())
-                            .instanceShape(o.getInstanceShape())
-                            .instanceShapeConfig(o.getInstanceShapeConfig())
-                            .reservedCount(o.getReservedCount())
-                            .usedCount(o.getUsedCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceReservationConfig model) {
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("instanceShape")) {
+                this.instanceShape(model.getInstanceShape());
+            }
+            if (model.wasPropertyExplicitlySet("instanceShapeConfig")) {
+                this.instanceShapeConfig(model.getInstanceShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("reservedCount")) {
+                this.reservedCount(model.getReservedCount());
+            }
+            if (model.wasPropertyExplicitlySet("usedCount")) {
+                this.usedCount(model.getUsedCount());
+            }
+            return this;
         }
     }
 
@@ -260,12 +270,12 @@ public final class InstanceReservationConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceReservationConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", instanceShape=").append(String.valueOf(this.instanceShape));
         sb.append(", instanceShapeConfig=").append(String.valueOf(this.instanceShapeConfig));
         sb.append(", reservedCount=").append(String.valueOf(this.reservedCount));
         sb.append(", usedCount=").append(String.valueOf(this.usedCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -285,7 +295,7 @@ public final class InstanceReservationConfig {
                 && java.util.Objects.equals(this.instanceShapeConfig, other.instanceShapeConfig)
                 && java.util.Objects.equals(this.reservedCount, other.reservedCount)
                 && java.util.Objects.equals(this.usedCount, other.usedCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -305,16 +315,7 @@ public final class InstanceReservationConfig {
                 (result * PRIME)
                         + (this.reservedCount == null ? 43 : this.reservedCount.hashCode());
         result = (result * PRIME) + (this.usedCount == null ? 43 : this.usedCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

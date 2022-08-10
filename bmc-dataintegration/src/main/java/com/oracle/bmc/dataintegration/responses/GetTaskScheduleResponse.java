@@ -55,16 +55,18 @@ public class GetTaskScheduleResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "taskSchedule"
     })
     private GetTaskScheduleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.taskSchedule = taskSchedule;
@@ -75,6 +77,13 @@ public class GetTaskScheduleResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetTaskScheduleResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetTaskScheduleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             taskSchedule(o.getTaskSchedule());
@@ -149,7 +159,7 @@ public class GetTaskScheduleResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetTaskScheduleResponse build() {
             return new GetTaskScheduleResponse(
-                    __httpStatusCode__, etag, opcRequestId, taskSchedule);
+                    __httpStatusCode__, headers, etag, opcRequestId, taskSchedule);
         }
     }
 

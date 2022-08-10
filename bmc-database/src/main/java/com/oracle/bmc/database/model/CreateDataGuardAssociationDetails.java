@@ -39,7 +39,8 @@ package com.oracle.bmc.database.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDataGuardAssociationDetails {
+public class CreateDataGuardAssociationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseSoftwareImageId",
@@ -329,6 +330,7 @@ public class CreateDataGuardAssociationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDataGuardAssociationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseSoftwareImageId=").append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
@@ -358,7 +360,8 @@ public class CreateDataGuardAssociationDetails {
                 && java.util.Objects.equals(
                         this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
                 && java.util.Objects.equals(this.peerDbUniqueName, other.peerDbUniqueName)
-                && java.util.Objects.equals(this.peerSidPrefix, other.peerSidPrefix);
+                && java.util.Objects.equals(this.peerSidPrefix, other.peerSidPrefix)
+                && super.equals(other);
     }
 
     @Override
@@ -392,6 +395,7 @@ public class CreateDataGuardAssociationDetails {
         result =
                 (result * PRIME)
                         + (this.peerSidPrefix == null ? 43 : this.peerSidPrefix.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

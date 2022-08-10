@@ -165,8 +165,8 @@ public class ListIdentityProvidersConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListIdentityProvidersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

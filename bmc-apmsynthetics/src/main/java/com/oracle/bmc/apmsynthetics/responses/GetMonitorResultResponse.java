@@ -38,12 +38,18 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
         return monitorResult;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "monitorResult"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "monitorResult"
+    })
     private GetMonitorResultResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.apmsynthetics.model.MonitorResult monitorResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.monitorResult = monitorResult;
     }
@@ -53,6 +59,13 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetMonitorResultResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             monitorResult(o.getMonitorResult());
 
@@ -108,7 +122,8 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public GetMonitorResultResponse build() {
-            return new GetMonitorResultResponse(__httpStatusCode__, opcRequestId, monitorResult);
+            return new GetMonitorResultResponse(
+                    __httpStatusCode__, headers, opcRequestId, monitorResult);
         }
     }
 

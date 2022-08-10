@@ -109,8 +109,8 @@ public class GetDiscoveryJobConverter {
                                         builder =
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .GetDiscoveryJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.discoveryJob(response.getItem());
 

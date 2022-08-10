@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = InstancePoolLoadBalancerAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstancePoolLoadBalancerAttachment {
+public final class InstancePoolLoadBalancerAttachment
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -177,32 +178,45 @@ public final class InstancePoolLoadBalancerAttachment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstancePoolLoadBalancerAttachment build() {
-            InstancePoolLoadBalancerAttachment __instance__ =
+            InstancePoolLoadBalancerAttachment model =
                     new InstancePoolLoadBalancerAttachment(
-                            id,
-                            instancePoolId,
-                            loadBalancerId,
-                            backendSetName,
-                            port,
-                            vnicSelection,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.instancePoolId,
+                            this.loadBalancerId,
+                            this.backendSetName,
+                            this.port,
+                            this.vnicSelection,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstancePoolLoadBalancerAttachment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .instancePoolId(o.getInstancePoolId())
-                            .loadBalancerId(o.getLoadBalancerId())
-                            .backendSetName(o.getBackendSetName())
-                            .port(o.getPort())
-                            .vnicSelection(o.getVnicSelection())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstancePoolLoadBalancerAttachment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instancePoolId")) {
+                this.instancePoolId(model.getInstancePoolId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
+            if (model.wasPropertyExplicitlySet("backendSetName")) {
+                this.backendSetName(model.getBackendSetName());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("vnicSelection")) {
+                this.vnicSelection(model.getVnicSelection());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -388,6 +402,7 @@ public final class InstancePoolLoadBalancerAttachment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstancePoolLoadBalancerAttachment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", instancePoolId=").append(String.valueOf(this.instancePoolId));
         sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
@@ -395,7 +410,6 @@ public final class InstancePoolLoadBalancerAttachment {
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", vnicSelection=").append(String.valueOf(this.vnicSelection));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -417,7 +431,7 @@ public final class InstancePoolLoadBalancerAttachment {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.vnicSelection, other.vnicSelection)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -441,16 +455,7 @@ public final class InstancePoolLoadBalancerAttachment {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

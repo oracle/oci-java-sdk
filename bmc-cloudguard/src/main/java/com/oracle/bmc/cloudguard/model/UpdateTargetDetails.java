@@ -19,7 +19,7 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateTargetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTargetDetails {
+public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -169,30 +169,41 @@ public final class UpdateTargetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTargetDetails build() {
-            UpdateTargetDetails __instance__ =
+            UpdateTargetDetails model =
                     new UpdateTargetDetails(
-                            displayName,
-                            lifecycleState,
-                            targetDetectorRecipes,
-                            targetResponderRecipes,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.lifecycleState,
+                            this.targetDetectorRecipes,
+                            this.targetResponderRecipes,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTargetDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .targetDetectorRecipes(o.getTargetDetectorRecipes())
-                            .targetResponderRecipes(o.getTargetResponderRecipes())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("targetDetectorRecipes")) {
+                this.targetDetectorRecipes(model.getTargetDetectorRecipes());
+            }
+            if (model.wasPropertyExplicitlySet("targetResponderRecipes")) {
+                this.targetResponderRecipes(model.getTargetResponderRecipes());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -322,13 +333,13 @@ public final class UpdateTargetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTargetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", targetDetectorRecipes=").append(String.valueOf(this.targetDetectorRecipes));
         sb.append(", targetResponderRecipes=").append(String.valueOf(this.targetResponderRecipes));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -350,7 +361,7 @@ public final class UpdateTargetDetails {
                         this.targetResponderRecipes, other.targetResponderRecipes)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -373,16 +384,7 @@ public final class UpdateTargetDetails {
                                 : this.targetResponderRecipes.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

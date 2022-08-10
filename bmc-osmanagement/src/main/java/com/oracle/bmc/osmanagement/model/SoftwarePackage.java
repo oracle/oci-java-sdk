@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SoftwarePackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SoftwarePackage {
+public final class SoftwarePackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -279,44 +279,69 @@ public final class SoftwarePackage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoftwarePackage build() {
-            SoftwarePackage __instance__ =
+            SoftwarePackage model =
                     new SoftwarePackage(
-                            displayName,
-                            name,
-                            type,
-                            version,
-                            architecture,
-                            lastModifiedDate,
-                            checksum,
-                            checksumType,
-                            description,
-                            sizeInBytes,
-                            dependencies,
-                            files,
-                            softwareSources);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.name,
+                            this.type,
+                            this.version,
+                            this.architecture,
+                            this.lastModifiedDate,
+                            this.checksum,
+                            this.checksumType,
+                            this.description,
+                            this.sizeInBytes,
+                            this.dependencies,
+                            this.files,
+                            this.softwareSources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SoftwarePackage o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .name(o.getName())
-                            .type(o.getType())
-                            .version(o.getVersion())
-                            .architecture(o.getArchitecture())
-                            .lastModifiedDate(o.getLastModifiedDate())
-                            .checksum(o.getChecksum())
-                            .checksumType(o.getChecksumType())
-                            .description(o.getDescription())
-                            .sizeInBytes(o.getSizeInBytes())
-                            .dependencies(o.getDependencies())
-                            .files(o.getFiles())
-                            .softwareSources(o.getSoftwareSources());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SoftwarePackage model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("lastModifiedDate")) {
+                this.lastModifiedDate(model.getLastModifiedDate());
+            }
+            if (model.wasPropertyExplicitlySet("checksum")) {
+                this.checksum(model.getChecksum());
+            }
+            if (model.wasPropertyExplicitlySet("checksumType")) {
+                this.checksumType(model.getChecksumType());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInBytes")) {
+                this.sizeInBytes(model.getSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("dependencies")) {
+                this.dependencies(model.getDependencies());
+            }
+            if (model.wasPropertyExplicitlySet("files")) {
+                this.files(model.getFiles());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSources")) {
+                this.softwareSources(model.getSoftwareSources());
+            }
+            return this;
         }
     }
 
@@ -526,6 +551,7 @@ public final class SoftwarePackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SoftwarePackage(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -539,7 +565,6 @@ public final class SoftwarePackage {
         sb.append(", dependencies=").append(String.valueOf(this.dependencies));
         sb.append(", files=").append(String.valueOf(this.files));
         sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -567,7 +592,7 @@ public final class SoftwarePackage {
                 && java.util.Objects.equals(this.dependencies, other.dependencies)
                 && java.util.Objects.equals(this.files, other.files)
                 && java.util.Objects.equals(this.softwareSources, other.softwareSources)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -591,16 +616,7 @@ public final class SoftwarePackage {
         result =
                 (result * PRIME)
                         + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

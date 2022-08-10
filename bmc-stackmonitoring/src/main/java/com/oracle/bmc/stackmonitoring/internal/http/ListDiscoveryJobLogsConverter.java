@@ -153,8 +153,8 @@ public class ListDiscoveryJobLogsConverter {
                                         builder =
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .ListDiscoveryJobLogsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.discoveryJobLogCollection(response.getItem());
 

@@ -109,8 +109,8 @@ public class ListNamespacesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListNamespacesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.namespaceCollection(response.getItem());
 

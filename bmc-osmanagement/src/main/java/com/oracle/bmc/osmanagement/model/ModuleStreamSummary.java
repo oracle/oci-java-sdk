@@ -19,7 +19,7 @@ package com.oracle.bmc.osmanagement.model;
     builder = ModuleStreamSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModuleStreamSummary {
+public final class ModuleStreamSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"moduleName", "streamName", "softwareSourceId"})
     public ModuleStreamSummary(String moduleName, String streamName, String softwareSourceId) {
@@ -88,21 +88,27 @@ public final class ModuleStreamSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModuleStreamSummary build() {
-            ModuleStreamSummary __instance__ =
-                    new ModuleStreamSummary(moduleName, streamName, softwareSourceId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ModuleStreamSummary model =
+                    new ModuleStreamSummary(
+                            this.moduleName, this.streamName, this.softwareSourceId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModuleStreamSummary o) {
-            Builder copiedBuilder =
-                    moduleName(o.getModuleName())
-                            .streamName(o.getStreamName())
-                            .softwareSourceId(o.getSoftwareSourceId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModuleStreamSummary model) {
+            if (model.wasPropertyExplicitlySet("moduleName")) {
+                this.moduleName(model.getModuleName());
+            }
+            if (model.wasPropertyExplicitlySet("streamName")) {
+                this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceId")) {
+                this.softwareSourceId(model.getSoftwareSourceId());
+            }
+            return this;
         }
     }
 
@@ -176,10 +182,10 @@ public final class ModuleStreamSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModuleStreamSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
         sb.append(", softwareSourceId=").append(String.valueOf(this.softwareSourceId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -197,7 +203,7 @@ public final class ModuleStreamSummary {
         return java.util.Objects.equals(this.moduleName, other.moduleName)
                 && java.util.Objects.equals(this.streamName, other.streamName)
                 && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +215,7 @@ public final class ModuleStreamSummary {
         result =
                 (result * PRIME)
                         + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

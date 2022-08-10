@@ -143,8 +143,8 @@ public class ListCommitDiffsConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListCommitDiffsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.diffCollection(response.getItem());
 

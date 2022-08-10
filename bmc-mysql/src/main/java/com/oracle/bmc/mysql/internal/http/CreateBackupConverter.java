@@ -99,8 +99,8 @@ public class CreateBackupConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses.CreateBackupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.backup(response.getItem());
 

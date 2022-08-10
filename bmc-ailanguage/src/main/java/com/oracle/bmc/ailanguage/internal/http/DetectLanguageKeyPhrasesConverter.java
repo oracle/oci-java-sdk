@@ -112,8 +112,8 @@ public class DetectLanguageKeyPhrasesConverter {
                                         builder =
                                                 com.oracle.bmc.ailanguage.responses
                                                         .DetectLanguageKeyPhrasesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectLanguageKeyPhrasesResult(response.getItem());
 

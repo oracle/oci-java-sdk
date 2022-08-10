@@ -92,7 +92,8 @@ public class CreateDrgConverter {
 
                                 com.oracle.bmc.core.responses.CreateDrgResponse.Builder builder =
                                         com.oracle.bmc.core.responses.CreateDrgResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.drg(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.datascience.model;
     builder = NotebookSessionGitConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NotebookSessionGitConfigDetails {
+public final class NotebookSessionGitConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"notebookSessionGitRepoConfigCollection"})
     public NotebookSessionGitConfigDetails(
@@ -55,20 +56,22 @@ public final class NotebookSessionGitConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NotebookSessionGitConfigDetails build() {
-            NotebookSessionGitConfigDetails __instance__ =
-                    new NotebookSessionGitConfigDetails(notebookSessionGitRepoConfigCollection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NotebookSessionGitConfigDetails model =
+                    new NotebookSessionGitConfigDetails(
+                            this.notebookSessionGitRepoConfigCollection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NotebookSessionGitConfigDetails o) {
-            Builder copiedBuilder =
-                    notebookSessionGitRepoConfigCollection(
-                            o.getNotebookSessionGitRepoConfigCollection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NotebookSessionGitConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("notebookSessionGitRepoConfigCollection")) {
+                this.notebookSessionGitRepoConfigCollection(
+                        model.getNotebookSessionGitRepoConfigCollection());
+            }
+            return this;
         }
     }
 
@@ -112,9 +115,9 @@ public final class NotebookSessionGitConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NotebookSessionGitConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("notebookSessionGitRepoConfigCollection=")
                 .append(String.valueOf(this.notebookSessionGitRepoConfigCollection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -132,7 +135,7 @@ public final class NotebookSessionGitConfigDetails {
         return java.util.Objects.equals(
                         this.notebookSessionGitRepoConfigCollection,
                         other.notebookSessionGitRepoConfigCollection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -144,16 +147,7 @@ public final class NotebookSessionGitConfigDetails {
                         + (this.notebookSessionGitRepoConfigCollection == null
                                 ? 43
                                 : this.notebookSessionGitRepoConfigCollection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

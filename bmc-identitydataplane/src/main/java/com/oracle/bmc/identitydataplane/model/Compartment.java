@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Compartment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Compartment {
+public final class Compartment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -165,32 +165,45 @@ public final class Compartment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Compartment build() {
-            Compartment __instance__ =
+            Compartment model =
                     new Compartment(
-                            id,
-                            name,
-                            displayName,
-                            fullName,
-                            parentCompartmentId,
-                            status,
-                            propertyMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.displayName,
+                            this.fullName,
+                            this.parentCompartmentId,
+                            this.status,
+                            this.propertyMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Compartment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .fullName(o.getFullName())
-                            .parentCompartmentId(o.getParentCompartmentId())
-                            .status(o.getStatus())
-                            .propertyMap(o.getPropertyMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Compartment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("fullName")) {
+                this.fullName(model.getFullName());
+            }
+            if (model.wasPropertyExplicitlySet("parentCompartmentId")) {
+                this.parentCompartmentId(model.getParentCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("propertyMap")) {
+                this.propertyMap(model.getPropertyMap());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class Compartment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Compartment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -323,7 +337,6 @@ public final class Compartment {
         sb.append(", parentCompartmentId=").append(String.valueOf(this.parentCompartmentId));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", propertyMap=").append(String.valueOf(this.propertyMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class Compartment {
                 && java.util.Objects.equals(this.parentCompartmentId, other.parentCompartmentId)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.propertyMap, other.propertyMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -363,16 +376,7 @@ public final class Compartment {
                                 : this.parentCompartmentId.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.propertyMap == null ? 43 : this.propertyMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -124,36 +124,53 @@ public final class OutputPort extends TypedObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OutputPort build() {
-            OutputPort __instance__ =
+            OutputPort model =
                     new OutputPort(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            objectStatus,
-                            name,
-                            description,
-                            portType,
-                            fields);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.objectStatus,
+                            this.name,
+                            this.description,
+                            this.portType,
+                            this.fields);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OutputPort o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .portType(o.getPortType())
-                            .fields(o.getFields());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OutputPort model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("portType")) {
+                this.portType(model.getPortType());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            return this;
         }
     }
 
@@ -264,7 +281,6 @@ public final class OutputPort extends TypedObject {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", portType=").append(String.valueOf(this.portType));
         sb.append(", fields=").append(String.valueOf(this.fields));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -281,8 +297,7 @@ public final class OutputPort extends TypedObject {
         OutputPort other = (OutputPort) o;
         return java.util.Objects.equals(this.portType, other.portType)
                 && java.util.Objects.equals(this.fields, other.fields)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +306,6 @@ public final class OutputPort extends TypedObject {
         int result = super.hashCode();
         result = (result * PRIME) + (this.portType == null ? 43 : this.portType.hashCode());
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

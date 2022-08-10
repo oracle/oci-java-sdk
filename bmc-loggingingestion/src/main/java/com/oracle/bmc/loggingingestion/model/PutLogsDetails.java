@@ -17,7 +17,7 @@ package com.oracle.bmc.loggingingestion.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PutLogsDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PutLogsDetails {
+public final class PutLogsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"specversion", "logEntryBatches"})
     public PutLogsDetails(String specversion, java.util.List<LogEntryBatch> logEntryBatches) {
@@ -71,18 +71,22 @@ public final class PutLogsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PutLogsDetails build() {
-            PutLogsDetails __instance__ = new PutLogsDetails(specversion, logEntryBatches);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PutLogsDetails model = new PutLogsDetails(this.specversion, this.logEntryBatches);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PutLogsDetails o) {
-            Builder copiedBuilder =
-                    specversion(o.getSpecversion()).logEntryBatches(o.getLogEntryBatches());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PutLogsDetails model) {
+            if (model.wasPropertyExplicitlySet("specversion")) {
+                this.specversion(model.getSpecversion());
+            }
+            if (model.wasPropertyExplicitlySet("logEntryBatches")) {
+                this.logEntryBatches(model.getLogEntryBatches());
+            }
+            return this;
         }
     }
 
@@ -144,9 +148,9 @@ public final class PutLogsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PutLogsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("specversion=").append(String.valueOf(this.specversion));
         sb.append(", logEntryBatches=").append(String.valueOf(this.logEntryBatches));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -163,7 +167,7 @@ public final class PutLogsDetails {
         PutLogsDetails other = (PutLogsDetails) o;
         return java.util.Objects.equals(this.specversion, other.specversion)
                 && java.util.Objects.equals(this.logEntryBatches, other.logEntryBatches)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +178,7 @@ public final class PutLogsDetails {
         result =
                 (result * PRIME)
                         + (this.logEntryBatches == null ? 43 : this.logEntryBatches.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

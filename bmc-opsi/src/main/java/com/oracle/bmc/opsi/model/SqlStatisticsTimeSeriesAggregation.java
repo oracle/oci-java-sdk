@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = SqlStatisticsTimeSeriesAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlStatisticsTimeSeriesAggregation {
+public final class SqlStatisticsTimeSeriesAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseDetails", "statistics"})
     public SqlStatisticsTimeSeriesAggregation(
@@ -63,19 +64,23 @@ public final class SqlStatisticsTimeSeriesAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlStatisticsTimeSeriesAggregation build() {
-            SqlStatisticsTimeSeriesAggregation __instance__ =
-                    new SqlStatisticsTimeSeriesAggregation(databaseDetails, statistics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlStatisticsTimeSeriesAggregation model =
+                    new SqlStatisticsTimeSeriesAggregation(this.databaseDetails, this.statistics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlStatisticsTimeSeriesAggregation o) {
-            Builder copiedBuilder =
-                    databaseDetails(o.getDatabaseDetails()).statistics(o.getStatistics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlStatisticsTimeSeriesAggregation model) {
+            if (model.wasPropertyExplicitlySet("databaseDetails")) {
+                this.databaseDetails(model.getDatabaseDetails());
+            }
+            if (model.wasPropertyExplicitlySet("statistics")) {
+                this.statistics(model.getStatistics());
+            }
+            return this;
         }
     }
 
@@ -126,9 +131,9 @@ public final class SqlStatisticsTimeSeriesAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlStatisticsTimeSeriesAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseDetails=").append(String.valueOf(this.databaseDetails));
         sb.append(", statistics=").append(String.valueOf(this.statistics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -145,7 +150,7 @@ public final class SqlStatisticsTimeSeriesAggregation {
         SqlStatisticsTimeSeriesAggregation other = (SqlStatisticsTimeSeriesAggregation) o;
         return java.util.Objects.equals(this.databaseDetails, other.databaseDetails)
                 && java.util.Objects.equals(this.statistics, other.statistics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -156,16 +161,7 @@ public final class SqlStatisticsTimeSeriesAggregation {
                 (result * PRIME)
                         + (this.databaseDetails == null ? 43 : this.databaseDetails.hashCode());
         result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

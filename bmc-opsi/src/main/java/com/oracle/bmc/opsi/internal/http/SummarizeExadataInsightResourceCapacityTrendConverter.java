@@ -256,8 +256,8 @@ public class SummarizeExadataInsightResourceCapacityTrendConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeExadataInsightResourceCapacityTrendResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.summarizeExadataInsightResourceCapacityTrendCollection(
                                         response.getItem());

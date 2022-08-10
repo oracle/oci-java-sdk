@@ -192,8 +192,8 @@ public class ListFileSystemsConverter {
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
                                                         .ListFileSystemsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -115,8 +115,8 @@ public class GetPublicationPackageConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .GetPublicationPackageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publicationPackage(response.getItem());
 

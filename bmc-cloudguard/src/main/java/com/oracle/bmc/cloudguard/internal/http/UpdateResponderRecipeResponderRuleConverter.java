@@ -127,8 +127,8 @@ public class UpdateResponderRecipeResponderRuleConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateResponderRecipeResponderRuleResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.responderRecipeResponderRule(response.getItem());
 

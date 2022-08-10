@@ -40,7 +40,8 @@ package com.oracle.bmc.autoscaling.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateAutoScalingPolicyDetails {
+public class CreateAutoScalingPolicyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"capacity", "displayName", "isEnabled"})
     protected CreateAutoScalingPolicyDetails(
@@ -108,6 +109,7 @@ public class CreateAutoScalingPolicyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutoScalingPolicyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("capacity=").append(String.valueOf(this.capacity));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
@@ -127,7 +129,8 @@ public class CreateAutoScalingPolicyDetails {
         CreateAutoScalingPolicyDetails other = (CreateAutoScalingPolicyDetails) o;
         return java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.isEnabled, other.isEnabled);
+                && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && super.equals(other);
     }
 
     @Override
@@ -137,6 +140,7 @@ public class CreateAutoScalingPolicyDetails {
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

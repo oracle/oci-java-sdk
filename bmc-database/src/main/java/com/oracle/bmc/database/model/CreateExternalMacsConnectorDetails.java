@@ -109,32 +109,45 @@ public final class CreateExternalMacsConnectorDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateExternalMacsConnectorDetails build() {
-            CreateExternalMacsConnectorDetails __instance__ =
+            CreateExternalMacsConnectorDetails model =
                     new CreateExternalMacsConnectorDetails(
-                            freeformTags,
-                            definedTags,
-                            displayName,
-                            externalDatabaseId,
-                            connectionString,
-                            connectionCredentials,
-                            connectorAgentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.freeformTags,
+                            this.definedTags,
+                            this.displayName,
+                            this.externalDatabaseId,
+                            this.connectionString,
+                            this.connectionCredentials,
+                            this.connectorAgentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateExternalMacsConnectorDetails o) {
-            Builder copiedBuilder =
-                    freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .externalDatabaseId(o.getExternalDatabaseId())
-                            .connectionString(o.getConnectionString())
-                            .connectionCredentials(o.getConnectionCredentials())
-                            .connectorAgentId(o.getConnectorAgentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateExternalMacsConnectorDetails model) {
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("externalDatabaseId")) {
+                this.externalDatabaseId(model.getExternalDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("connectionCredentials")) {
+                this.connectionCredentials(model.getConnectionCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("connectorAgentId")) {
+                this.connectorAgentId(model.getConnectorAgentId());
+            }
+            return this;
         }
     }
 
@@ -213,7 +226,6 @@ public final class CreateExternalMacsConnectorDetails
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", connectionCredentials=").append(String.valueOf(this.connectionCredentials));
         sb.append(", connectorAgentId=").append(String.valueOf(this.connectorAgentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -231,8 +243,7 @@ public final class CreateExternalMacsConnectorDetails
         return java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.connectionCredentials, other.connectionCredentials)
                 && java.util.Objects.equals(this.connectorAgentId, other.connectorAgentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -250,16 +261,6 @@ public final class CreateExternalMacsConnectorDetails
         result =
                 (result * PRIME)
                         + (this.connectorAgentId == null ? 43 : this.connectorAgentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

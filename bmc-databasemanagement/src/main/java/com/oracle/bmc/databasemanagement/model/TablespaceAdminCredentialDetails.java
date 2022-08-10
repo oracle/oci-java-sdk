@@ -32,7 +32,8 @@ package com.oracle.bmc.databasemanagement.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TablespaceAdminCredentialDetails {
+public class TablespaceAdminCredentialDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "role"})
     protected TablespaceAdminCredentialDetails(String username, Role role) {
@@ -117,6 +118,7 @@ public class TablespaceAdminCredentialDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TablespaceAdminCredentialDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(")");
@@ -134,7 +136,8 @@ public class TablespaceAdminCredentialDetails {
 
         TablespaceAdminCredentialDetails other = (TablespaceAdminCredentialDetails) o;
         return java.util.Objects.equals(this.username, other.username)
-                && java.util.Objects.equals(this.role, other.role);
+                && java.util.Objects.equals(this.role, other.role)
+                && super.equals(other);
     }
 
     @Override
@@ -143,6 +146,7 @@ public class TablespaceAdminCredentialDetails {
         int result = 1;
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -56,18 +56,23 @@ public final class AvroFormatAttribute extends AbstractFormatAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AvroFormatAttribute build() {
-            AvroFormatAttribute __instance__ = new AvroFormatAttribute(isFilePattern, compression);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AvroFormatAttribute model =
+                    new AvroFormatAttribute(this.isFilePattern, this.compression);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AvroFormatAttribute o) {
-            Builder copiedBuilder =
-                    isFilePattern(o.getIsFilePattern()).compression(o.getCompression());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AvroFormatAttribute model) {
+            if (model.wasPropertyExplicitlySet("isFilePattern")) {
+                this.isFilePattern(model.getIsFilePattern());
+            }
+            if (model.wasPropertyExplicitlySet("compression")) {
+                this.compression(model.getCompression());
+            }
+            return this;
         }
     }
 
@@ -117,7 +122,6 @@ public final class AvroFormatAttribute extends AbstractFormatAttribute {
         sb.append("AvroFormatAttribute(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", compression=").append(String.valueOf(this.compression));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -132,9 +136,7 @@ public final class AvroFormatAttribute extends AbstractFormatAttribute {
         }
 
         AvroFormatAttribute other = (AvroFormatAttribute) o;
-        return java.util.Objects.equals(this.compression, other.compression)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.compression, other.compression) && super.equals(other);
     }
 
     @Override
@@ -142,16 +144,6 @@ public final class AvroFormatAttribute extends AbstractFormatAttribute {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.compression == null ? 43 : this.compression.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

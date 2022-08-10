@@ -96,7 +96,8 @@ public class DeleteTopicConverter {
 
                                 com.oracle.bmc.ons.responses.DeleteTopicResponse.Builder builder =
                                         com.oracle.bmc.ons.responses.DeleteTopicResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

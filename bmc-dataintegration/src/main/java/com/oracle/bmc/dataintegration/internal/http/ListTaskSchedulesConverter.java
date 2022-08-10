@@ -192,8 +192,8 @@ public class ListTaskSchedulesConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListTaskSchedulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taskScheduleSummaryCollection(response.getItem());
 

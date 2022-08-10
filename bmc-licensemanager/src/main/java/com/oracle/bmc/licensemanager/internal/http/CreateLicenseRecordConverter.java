@@ -118,8 +118,8 @@ public class CreateLicenseRecordConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .CreateLicenseRecordResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.licenseRecord(response.getItem());
 

@@ -118,8 +118,8 @@ public class UpdateScheduledTaskConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateScheduledTaskResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.scheduledTask(response.getItem());

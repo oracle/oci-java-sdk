@@ -40,18 +40,20 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VirtualCircuitDrgAttachmentNetworkDetails build() {
-            VirtualCircuitDrgAttachmentNetworkDetails __instance__ =
-                    new VirtualCircuitDrgAttachmentNetworkDetails(id);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VirtualCircuitDrgAttachmentNetworkDetails model =
+                    new VirtualCircuitDrgAttachmentNetworkDetails(this.id);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VirtualCircuitDrgAttachmentNetworkDetails o) {
-            Builder copiedBuilder = id(o.getId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VirtualCircuitDrgAttachmentNetworkDetails model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            return this;
         }
     }
 
@@ -85,7 +87,6 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VirtualCircuitDrgAttachmentNetworkDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -101,24 +102,13 @@ public final class VirtualCircuitDrgAttachmentNetworkDetails extends DrgAttachme
 
         VirtualCircuitDrgAttachmentNetworkDetails other =
                 (VirtualCircuitDrgAttachmentNetworkDetails) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

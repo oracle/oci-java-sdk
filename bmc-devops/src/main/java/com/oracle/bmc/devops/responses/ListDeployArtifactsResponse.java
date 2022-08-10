@@ -49,16 +49,18 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "deployArtifactCollection"
     })
     private ListDeployArtifactsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.devops.model.DeployArtifactCollection deployArtifactCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.deployArtifactCollection = deployArtifactCollection;
@@ -69,6 +71,13 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListDeployArtifactsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             deployArtifactCollection(o.getDeployArtifactCollection());
@@ -137,7 +147,11 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListDeployArtifactsResponse build() {
             return new ListDeployArtifactsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, deployArtifactCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    deployArtifactCollection);
         }
     }
 

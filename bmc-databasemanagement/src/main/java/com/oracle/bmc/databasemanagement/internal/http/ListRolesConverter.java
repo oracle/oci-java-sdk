@@ -155,8 +155,8 @@ public class ListRolesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListRolesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roleCollection(response.getItem());
 

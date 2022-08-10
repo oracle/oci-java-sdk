@@ -17,7 +17,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Sdk.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Sdk {
+public final class Sdk extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -363,46 +363,73 @@ public final class Sdk {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Sdk build() {
-            Sdk __instance__ =
+            Sdk model =
                     new Sdk(
-                            id,
-                            apiId,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            displayName,
-                            targetLanguage,
-                            artifactUrl,
-                            timeArtifactUrlExpiresAt,
-                            lifecycleState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            parameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.apiId,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.displayName,
+                            this.targetLanguage,
+                            this.artifactUrl,
+                            this.timeArtifactUrlExpiresAt,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.parameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Sdk o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .apiId(o.getApiId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .displayName(o.getDisplayName())
-                            .targetLanguage(o.getTargetLanguage())
-                            .artifactUrl(o.getArtifactUrl())
-                            .timeArtifactUrlExpiresAt(o.getTimeArtifactUrlExpiresAt())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .parameters(o.getParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Sdk model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("apiId")) {
+                this.apiId(model.getApiId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("targetLanguage")) {
+                this.targetLanguage(model.getTargetLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("artifactUrl")) {
+                this.artifactUrl(model.getArtifactUrl());
+            }
+            if (model.wasPropertyExplicitlySet("timeArtifactUrlExpiresAt")) {
+                this.timeArtifactUrlExpiresAt(model.getTimeArtifactUrlExpiresAt());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            return this;
         }
     }
 
@@ -747,6 +774,7 @@ public final class Sdk {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Sdk(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", apiId=").append(String.valueOf(this.apiId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -762,7 +790,6 @@ public final class Sdk {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -792,7 +819,7 @@ public final class Sdk {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -825,16 +852,7 @@ public final class Sdk {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

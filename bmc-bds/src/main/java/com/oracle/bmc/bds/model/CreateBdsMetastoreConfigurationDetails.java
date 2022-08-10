@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = CreateBdsMetastoreConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBdsMetastoreConfigurationDetails {
+public final class CreateBdsMetastoreConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -129,28 +130,37 @@ public final class CreateBdsMetastoreConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBdsMetastoreConfigurationDetails build() {
-            CreateBdsMetastoreConfigurationDetails __instance__ =
+            CreateBdsMetastoreConfigurationDetails model =
                     new CreateBdsMetastoreConfigurationDetails(
-                            displayName,
-                            metastoreId,
-                            bdsApiKeyId,
-                            bdsApiKeyPassphrase,
-                            clusterAdminPassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.metastoreId,
+                            this.bdsApiKeyId,
+                            this.bdsApiKeyPassphrase,
+                            this.clusterAdminPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBdsMetastoreConfigurationDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .metastoreId(o.getMetastoreId())
-                            .bdsApiKeyId(o.getBdsApiKeyId())
-                            .bdsApiKeyPassphrase(o.getBdsApiKeyPassphrase())
-                            .clusterAdminPassword(o.getClusterAdminPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBdsMetastoreConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("metastoreId")) {
+                this.metastoreId(model.getMetastoreId());
+            }
+            if (model.wasPropertyExplicitlySet("bdsApiKeyId")) {
+                this.bdsApiKeyId(model.getBdsApiKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("bdsApiKeyPassphrase")) {
+                this.bdsApiKeyPassphrase(model.getBdsApiKeyPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
+                this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            return this;
         }
     }
 
@@ -248,12 +258,12 @@ public final class CreateBdsMetastoreConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBdsMetastoreConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", metastoreId=").append(String.valueOf(this.metastoreId));
         sb.append(", bdsApiKeyId=").append(String.valueOf(this.bdsApiKeyId));
         sb.append(", bdsApiKeyPassphrase=").append(String.valueOf(this.bdsApiKeyPassphrase));
         sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +283,7 @@ public final class CreateBdsMetastoreConfigurationDetails {
                 && java.util.Objects.equals(this.bdsApiKeyId, other.bdsApiKeyId)
                 && java.util.Objects.equals(this.bdsApiKeyPassphrase, other.bdsApiKeyPassphrase)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -293,16 +303,7 @@ public final class CreateBdsMetastoreConfigurationDetails {
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

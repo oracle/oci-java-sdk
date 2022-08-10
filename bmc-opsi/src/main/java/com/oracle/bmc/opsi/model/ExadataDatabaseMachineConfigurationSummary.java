@@ -136,38 +136,57 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataDatabaseMachineConfigurationSummary build() {
-            ExadataDatabaseMachineConfigurationSummary __instance__ =
+            ExadataDatabaseMachineConfigurationSummary model =
                     new ExadataDatabaseMachineConfigurationSummary(
-                            exadataInsightId,
-                            compartmentId,
-                            exadataName,
-                            exadataDisplayName,
-                            exadataType,
-                            exadataRackType,
-                            definedTags,
-                            freeformTags,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerBridgeId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.exadataInsightId,
+                            this.compartmentId,
+                            this.exadataName,
+                            this.exadataDisplayName,
+                            this.exadataType,
+                            this.exadataRackType,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerBridgeId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataDatabaseMachineConfigurationSummary o) {
-            Builder copiedBuilder =
-                    exadataInsightId(o.getExadataInsightId())
-                            .compartmentId(o.getCompartmentId())
-                            .exadataName(o.getExadataName())
-                            .exadataDisplayName(o.getExadataDisplayName())
-                            .exadataType(o.getExadataType())
-                            .exadataRackType(o.getExadataRackType())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataDatabaseMachineConfigurationSummary model) {
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataName")) {
+                this.exadataName(model.getExadataName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataDisplayName")) {
+                this.exadataDisplayName(model.getExadataDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataType")) {
+                this.exadataType(model.getExadataType());
+            }
+            if (model.wasPropertyExplicitlySet("exadataRackType")) {
+                this.exadataRackType(model.getExadataRackType());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            return this;
         }
     }
 
@@ -253,7 +272,6 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                 .append(String.valueOf(this.enterpriseManagerIdentifier));
         sb.append(", enterpriseManagerBridgeId=")
                 .append(String.valueOf(this.enterpriseManagerBridgeId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,8 +291,7 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                         this.enterpriseManagerIdentifier, other.enterpriseManagerIdentifier)
                 && java.util.Objects.equals(
                         this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +308,6 @@ public final class ExadataDatabaseMachineConfigurationSummary extends ExadataCon
                         + (this.enterpriseManagerBridgeId == null
                                 ? 43
                                 : this.enterpriseManagerBridgeId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

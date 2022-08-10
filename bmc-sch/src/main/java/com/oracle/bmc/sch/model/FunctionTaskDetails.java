@@ -90,21 +90,27 @@ public final class FunctionTaskDetails extends TaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FunctionTaskDetails build() {
-            FunctionTaskDetails __instance__ =
-                    new FunctionTaskDetails(functionId, batchSizeInKbs, batchTimeInSec);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FunctionTaskDetails model =
+                    new FunctionTaskDetails(
+                            this.functionId, this.batchSizeInKbs, this.batchTimeInSec);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FunctionTaskDetails o) {
-            Builder copiedBuilder =
-                    functionId(o.getFunctionId())
-                            .batchSizeInKbs(o.getBatchSizeInKbs())
-                            .batchTimeInSec(o.getBatchTimeInSec());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FunctionTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("functionId")) {
+                this.functionId(model.getFunctionId());
+            }
+            if (model.wasPropertyExplicitlySet("batchSizeInKbs")) {
+                this.batchSizeInKbs(model.getBatchSizeInKbs());
+            }
+            if (model.wasPropertyExplicitlySet("batchTimeInSec")) {
+                this.batchTimeInSec(model.getBatchTimeInSec());
+            }
+            return this;
         }
     }
 
@@ -192,7 +198,6 @@ public final class FunctionTaskDetails extends TaskDetails {
         sb.append(", functionId=").append(String.valueOf(this.functionId));
         sb.append(", batchSizeInKbs=").append(String.valueOf(this.batchSizeInKbs));
         sb.append(", batchTimeInSec=").append(String.valueOf(this.batchTimeInSec));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -210,8 +215,7 @@ public final class FunctionTaskDetails extends TaskDetails {
         return java.util.Objects.equals(this.functionId, other.functionId)
                 && java.util.Objects.equals(this.batchSizeInKbs, other.batchSizeInKbs)
                 && java.util.Objects.equals(this.batchTimeInSec, other.batchTimeInSec)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -225,16 +229,6 @@ public final class FunctionTaskDetails extends TaskDetails {
         result =
                 (result * PRIME)
                         + (this.batchTimeInSec == null ? 43 : this.batchTimeInSec.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

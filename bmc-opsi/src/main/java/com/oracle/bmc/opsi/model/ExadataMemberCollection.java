@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = ExadataMemberCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExadataMemberCollection {
+public final class ExadataMemberCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
@@ -148,30 +149,41 @@ public final class ExadataMemberCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataMemberCollection build() {
-            ExadataMemberCollection __instance__ =
+            ExadataMemberCollection model =
                     new ExadataMemberCollection(
-                            exadataInsightId,
-                            exadataName,
-                            exadataDisplayName,
-                            exadataType,
-                            exadataRackType,
-                            items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.exadataInsightId,
+                            this.exadataName,
+                            this.exadataDisplayName,
+                            this.exadataType,
+                            this.exadataRackType,
+                            this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataMemberCollection o) {
-            Builder copiedBuilder =
-                    exadataInsightId(o.getExadataInsightId())
-                            .exadataName(o.getExadataName())
-                            .exadataDisplayName(o.getExadataDisplayName())
-                            .exadataType(o.getExadataType())
-                            .exadataRackType(o.getExadataRackType())
-                            .items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataMemberCollection model) {
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataName")) {
+                this.exadataName(model.getExadataName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataDisplayName")) {
+                this.exadataDisplayName(model.getExadataDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("exadataType")) {
+                this.exadataType(model.getExadataType());
+            }
+            if (model.wasPropertyExplicitlySet("exadataRackType")) {
+                this.exadataRackType(model.getExadataRackType());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -283,13 +295,13 @@ public final class ExadataMemberCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataMemberCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
         sb.append(", exadataName=").append(String.valueOf(this.exadataName));
         sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
         sb.append(", exadataType=").append(String.valueOf(this.exadataType));
         sb.append(", exadataRackType=").append(String.valueOf(this.exadataRackType));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,7 +322,7 @@ public final class ExadataMemberCollection {
                 && java.util.Objects.equals(this.exadataType, other.exadataType)
                 && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -331,16 +343,7 @@ public final class ExadataMemberCollection {
                 (result * PRIME)
                         + (this.exadataRackType == null ? 43 : this.exadataRackType.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

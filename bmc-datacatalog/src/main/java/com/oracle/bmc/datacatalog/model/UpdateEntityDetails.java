@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = UpdateEntityDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateEntityDetails {
+public final class UpdateEntityDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -310,44 +310,69 @@ public final class UpdateEntityDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateEntityDetails build() {
-            UpdateEntityDetails __instance__ =
+            UpdateEntityDetails model =
                     new UpdateEntityDetails(
-                            displayName,
-                            businessName,
-                            description,
-                            timeExternal,
-                            isLogical,
-                            isPartition,
-                            folderKey,
-                            patternKey,
-                            realizedExpression,
-                            harvestStatus,
-                            lastJobKey,
-                            customPropertyMembers,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.businessName,
+                            this.description,
+                            this.timeExternal,
+                            this.isLogical,
+                            this.isPartition,
+                            this.folderKey,
+                            this.patternKey,
+                            this.realizedExpression,
+                            this.harvestStatus,
+                            this.lastJobKey,
+                            this.customPropertyMembers,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateEntityDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .businessName(o.getBusinessName())
-                            .description(o.getDescription())
-                            .timeExternal(o.getTimeExternal())
-                            .isLogical(o.getIsLogical())
-                            .isPartition(o.getIsPartition())
-                            .folderKey(o.getFolderKey())
-                            .patternKey(o.getPatternKey())
-                            .realizedExpression(o.getRealizedExpression())
-                            .harvestStatus(o.getHarvestStatus())
-                            .lastJobKey(o.getLastJobKey())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateEntityDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("timeExternal")) {
+                this.timeExternal(model.getTimeExternal());
+            }
+            if (model.wasPropertyExplicitlySet("isLogical")) {
+                this.isLogical(model.getIsLogical());
+            }
+            if (model.wasPropertyExplicitlySet("isPartition")) {
+                this.isPartition(model.getIsPartition());
+            }
+            if (model.wasPropertyExplicitlySet("folderKey")) {
+                this.folderKey(model.getFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("patternKey")) {
+                this.patternKey(model.getPatternKey());
+            }
+            if (model.wasPropertyExplicitlySet("realizedExpression")) {
+                this.realizedExpression(model.getRealizedExpression());
+            }
+            if (model.wasPropertyExplicitlySet("harvestStatus")) {
+                this.harvestStatus(model.getHarvestStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lastJobKey")) {
+                this.lastJobKey(model.getLastJobKey());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -585,6 +610,7 @@ public final class UpdateEntityDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateEntityDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", businessName=").append(String.valueOf(this.businessName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -598,7 +624,6 @@ public final class UpdateEntityDetails {
         sb.append(", lastJobKey=").append(String.valueOf(this.lastJobKey));
         sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -626,7 +651,7 @@ public final class UpdateEntityDetails {
                 && java.util.Objects.equals(this.lastJobKey, other.lastJobKey)
                 && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -656,16 +681,7 @@ public final class UpdateEntityDetails {
                                 ? 43
                                 : this.customPropertyMembers.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

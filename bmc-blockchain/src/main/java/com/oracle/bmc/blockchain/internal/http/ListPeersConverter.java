@@ -151,8 +151,8 @@ public class ListPeersConverter {
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
                                                         .ListPeersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.peerCollection(response.getItem());
 

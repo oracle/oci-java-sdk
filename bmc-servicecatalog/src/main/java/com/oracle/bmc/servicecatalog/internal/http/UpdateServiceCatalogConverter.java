@@ -118,8 +118,8 @@ public class UpdateServiceCatalogConverter {
                                         builder =
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .UpdateServiceCatalogResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceCatalog(response.getItem());
 

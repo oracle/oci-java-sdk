@@ -131,34 +131,49 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClassifyCommandDescriptor build() {
-            ClassifyCommandDescriptor __instance__ =
+            ClassifyCommandDescriptor model =
                     new ClassifyCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            topCount,
-                            bottomCount,
-                            correlate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.topCount,
+                            this.bottomCount,
+                            this.correlate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClassifyCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .topCount(o.getTopCount())
-                            .bottomCount(o.getBottomCount())
-                            .correlate(o.getCorrelate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClassifyCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("topCount")) {
+                this.topCount(model.getTopCount());
+            }
+            if (model.wasPropertyExplicitlySet("bottomCount")) {
+                this.bottomCount(model.getBottomCount());
+            }
+            if (model.wasPropertyExplicitlySet("correlate")) {
+                this.correlate(model.getCorrelate());
+            }
+            return this;
         }
     }
 
@@ -254,7 +269,6 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
         sb.append(", topCount=").append(String.valueOf(this.topCount));
         sb.append(", bottomCount=").append(String.valueOf(this.bottomCount));
         sb.append(", correlate=").append(String.valueOf(this.correlate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -272,8 +286,7 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
         return java.util.Objects.equals(this.topCount, other.topCount)
                 && java.util.Objects.equals(this.bottomCount, other.bottomCount)
                 && java.util.Objects.equals(this.correlate, other.correlate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -283,16 +296,6 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
         result = (result * PRIME) + (this.topCount == null ? 43 : this.topCount.hashCode());
         result = (result * PRIME) + (this.bottomCount == null ? 43 : this.bottomCount.hashCode());
         result = (result * PRIME) + (this.correlate == null ? 43 : this.correlate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

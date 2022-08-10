@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = UpdateApplianceExportJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateApplianceExportJobDetails {
+public final class UpdateApplianceExportJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bucketName",
@@ -403,58 +404,97 @@ public final class UpdateApplianceExportJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateApplianceExportJobDetails build() {
-            UpdateApplianceExportJobDetails __instance__ =
+            UpdateApplianceExportJobDetails model =
                     new UpdateApplianceExportJobDetails(
-                            bucketName,
-                            prefix,
-                            rangeStart,
-                            rangeEnd,
-                            displayName,
-                            lifecycleState,
-                            lifecycleStateDetails,
-                            manifestFile,
-                            manifestMd5,
-                            numberOfObjects,
-                            totalSizeInBytes,
-                            firstObject,
-                            lastObject,
-                            nextObject,
-                            expectedReturnDate,
-                            pickupWindowStartTime,
-                            pickupWindowEndTime,
-                            customerShippingAddress,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bucketName,
+                            this.prefix,
+                            this.rangeStart,
+                            this.rangeEnd,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.lifecycleStateDetails,
+                            this.manifestFile,
+                            this.manifestMd5,
+                            this.numberOfObjects,
+                            this.totalSizeInBytes,
+                            this.firstObject,
+                            this.lastObject,
+                            this.nextObject,
+                            this.expectedReturnDate,
+                            this.pickupWindowStartTime,
+                            this.pickupWindowEndTime,
+                            this.customerShippingAddress,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateApplianceExportJobDetails o) {
-            Builder copiedBuilder =
-                    bucketName(o.getBucketName())
-                            .prefix(o.getPrefix())
-                            .rangeStart(o.getRangeStart())
-                            .rangeEnd(o.getRangeEnd())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleStateDetails(o.getLifecycleStateDetails())
-                            .manifestFile(o.getManifestFile())
-                            .manifestMd5(o.getManifestMd5())
-                            .numberOfObjects(o.getNumberOfObjects())
-                            .totalSizeInBytes(o.getTotalSizeInBytes())
-                            .firstObject(o.getFirstObject())
-                            .lastObject(o.getLastObject())
-                            .nextObject(o.getNextObject())
-                            .expectedReturnDate(o.getExpectedReturnDate())
-                            .pickupWindowStartTime(o.getPickupWindowStartTime())
-                            .pickupWindowEndTime(o.getPickupWindowEndTime())
-                            .customerShippingAddress(o.getCustomerShippingAddress())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateApplianceExportJobDetails model) {
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("rangeStart")) {
+                this.rangeStart(model.getRangeStart());
+            }
+            if (model.wasPropertyExplicitlySet("rangeEnd")) {
+                this.rangeEnd(model.getRangeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
+                this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("manifestFile")) {
+                this.manifestFile(model.getManifestFile());
+            }
+            if (model.wasPropertyExplicitlySet("manifestMd5")) {
+                this.manifestMd5(model.getManifestMd5());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfObjects")) {
+                this.numberOfObjects(model.getNumberOfObjects());
+            }
+            if (model.wasPropertyExplicitlySet("totalSizeInBytes")) {
+                this.totalSizeInBytes(model.getTotalSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("firstObject")) {
+                this.firstObject(model.getFirstObject());
+            }
+            if (model.wasPropertyExplicitlySet("lastObject")) {
+                this.lastObject(model.getLastObject());
+            }
+            if (model.wasPropertyExplicitlySet("nextObject")) {
+                this.nextObject(model.getNextObject());
+            }
+            if (model.wasPropertyExplicitlySet("expectedReturnDate")) {
+                this.expectedReturnDate(model.getExpectedReturnDate());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowStartTime")) {
+                this.pickupWindowStartTime(model.getPickupWindowStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowEndTime")) {
+                this.pickupWindowEndTime(model.getPickupWindowEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("customerShippingAddress")) {
+                this.customerShippingAddress(model.getCustomerShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -790,6 +830,7 @@ public final class UpdateApplianceExportJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateApplianceExportJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
         sb.append(", rangeStart=").append(String.valueOf(this.rangeStart));
@@ -811,7 +852,6 @@ public final class UpdateApplianceExportJobDetails {
                 .append(String.valueOf(this.customerShippingAddress));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -847,7 +887,7 @@ public final class UpdateApplianceExportJobDetails {
                         this.customerShippingAddress, other.customerShippingAddress)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -900,16 +940,7 @@ public final class UpdateApplianceExportJobDetails {
                                 : this.customerShippingAddress.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

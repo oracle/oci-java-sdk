@@ -22,7 +22,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = JobDefinitionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobDefinitionSummary {
+public final class JobDefinitionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -336,48 +336,77 @@ public final class JobDefinitionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobDefinitionSummary build() {
-            JobDefinitionSummary __instance__ =
+            JobDefinitionSummary model =
                     new JobDefinitionSummary(
-                            key,
-                            displayName,
-                            description,
-                            catalogId,
-                            uri,
-                            jobType,
-                            lifecycleState,
-                            isSampleDataExtracted,
-                            timeCreated,
-                            connectionKey,
-                            timeLatestExecutionStarted,
-                            timeLatestExecutionEnded,
-                            jobExecutionState,
-                            scheduleType,
-                            dataAssetKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.catalogId,
+                            this.uri,
+                            this.jobType,
+                            this.lifecycleState,
+                            this.isSampleDataExtracted,
+                            this.timeCreated,
+                            this.connectionKey,
+                            this.timeLatestExecutionStarted,
+                            this.timeLatestExecutionEnded,
+                            this.jobExecutionState,
+                            this.scheduleType,
+                            this.dataAssetKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobDefinitionSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .catalogId(o.getCatalogId())
-                            .uri(o.getUri())
-                            .jobType(o.getJobType())
-                            .lifecycleState(o.getLifecycleState())
-                            .isSampleDataExtracted(o.getIsSampleDataExtracted())
-                            .timeCreated(o.getTimeCreated())
-                            .connectionKey(o.getConnectionKey())
-                            .timeLatestExecutionStarted(o.getTimeLatestExecutionStarted())
-                            .timeLatestExecutionEnded(o.getTimeLatestExecutionEnded())
-                            .jobExecutionState(o.getJobExecutionState())
-                            .scheduleType(o.getScheduleType())
-                            .dataAssetKey(o.getDataAssetKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobDefinitionSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("jobType")) {
+                this.jobType(model.getJobType());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isSampleDataExtracted")) {
+                this.isSampleDataExtracted(model.getIsSampleDataExtracted());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("connectionKey")) {
+                this.connectionKey(model.getConnectionKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestExecutionStarted")) {
+                this.timeLatestExecutionStarted(model.getTimeLatestExecutionStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestExecutionEnded")) {
+                this.timeLatestExecutionEnded(model.getTimeLatestExecutionEnded());
+            }
+            if (model.wasPropertyExplicitlySet("jobExecutionState")) {
+                this.jobExecutionState(model.getJobExecutionState());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleType")) {
+                this.scheduleType(model.getScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            return this;
         }
     }
 
@@ -629,6 +658,7 @@ public final class JobDefinitionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobDefinitionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -646,7 +676,6 @@ public final class JobDefinitionSummary {
         sb.append(", jobExecutionState=").append(String.valueOf(this.jobExecutionState));
         sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
         sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -678,7 +707,7 @@ public final class JobDefinitionSummary {
                 && java.util.Objects.equals(this.jobExecutionState, other.jobExecutionState)
                 && java.util.Objects.equals(this.scheduleType, other.scheduleType)
                 && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -718,16 +747,7 @@ public final class JobDefinitionSummary {
                         + (this.jobExecutionState == null ? 43 : this.jobExecutionState.hashCode());
         result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

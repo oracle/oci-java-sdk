@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataFormat.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataFormat {
+public final class DataFormat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"formatAttribute", "type", "compressionConfig"})
     public DataFormat(
@@ -69,20 +69,26 @@ public final class DataFormat {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataFormat build() {
-            DataFormat __instance__ = new DataFormat(formatAttribute, type, compressionConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataFormat model =
+                    new DataFormat(this.formatAttribute, this.type, this.compressionConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataFormat o) {
-            Builder copiedBuilder =
-                    formatAttribute(o.getFormatAttribute())
-                            .type(o.getType())
-                            .compressionConfig(o.getCompressionConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataFormat model) {
+            if (model.wasPropertyExplicitlySet("formatAttribute")) {
+                this.formatAttribute(model.getFormatAttribute());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("compressionConfig")) {
+                this.compressionConfig(model.getCompressionConfig());
+            }
+            return this;
         }
     }
 
@@ -188,10 +194,10 @@ public final class DataFormat {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataFormat(");
+        sb.append("super=").append(super.toString());
         sb.append("formatAttribute=").append(String.valueOf(this.formatAttribute));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", compressionConfig=").append(String.valueOf(this.compressionConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -209,7 +215,7 @@ public final class DataFormat {
         return java.util.Objects.equals(this.formatAttribute, other.formatAttribute)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.compressionConfig, other.compressionConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -223,16 +229,7 @@ public final class DataFormat {
         result =
                 (result * PRIME)
                         + (this.compressionConfig == null ? 43 : this.compressionConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

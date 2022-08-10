@@ -19,7 +19,8 @@ package com.oracle.bmc.mediaservices.model;
     builder = CreateStreamPackagingConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateStreamPackagingConfigDetails {
+public final class CreateStreamPackagingConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "distributionChannelId",
@@ -169,32 +170,45 @@ public final class CreateStreamPackagingConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateStreamPackagingConfigDetails build() {
-            CreateStreamPackagingConfigDetails __instance__ =
+            CreateStreamPackagingConfigDetails model =
                     new CreateStreamPackagingConfigDetails(
-                            distributionChannelId,
-                            displayName,
-                            streamPackagingFormat,
-                            segmentTimeInSeconds,
-                            encryption,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.distributionChannelId,
+                            this.displayName,
+                            this.streamPackagingFormat,
+                            this.segmentTimeInSeconds,
+                            this.encryption,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateStreamPackagingConfigDetails o) {
-            Builder copiedBuilder =
-                    distributionChannelId(o.getDistributionChannelId())
-                            .displayName(o.getDisplayName())
-                            .streamPackagingFormat(o.getStreamPackagingFormat())
-                            .segmentTimeInSeconds(o.getSegmentTimeInSeconds())
-                            .encryption(o.getEncryption())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateStreamPackagingConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("distributionChannelId")) {
+                this.distributionChannelId(model.getDistributionChannelId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("streamPackagingFormat")) {
+                this.streamPackagingFormat(model.getStreamPackagingFormat());
+            }
+            if (model.wasPropertyExplicitlySet("segmentTimeInSeconds")) {
+                this.segmentTimeInSeconds(model.getSegmentTimeInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("encryption")) {
+                this.encryption(model.getEncryption());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -356,6 +370,7 @@ public final class CreateStreamPackagingConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateStreamPackagingConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("distributionChannelId=").append(String.valueOf(this.distributionChannelId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", streamPackagingFormat=").append(String.valueOf(this.streamPackagingFormat));
@@ -363,7 +378,6 @@ public final class CreateStreamPackagingConfigDetails {
         sb.append(", encryption=").append(String.valueOf(this.encryption));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -385,7 +399,7 @@ public final class CreateStreamPackagingConfigDetails {
                 && java.util.Objects.equals(this.encryption, other.encryption)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -411,16 +425,7 @@ public final class CreateStreamPackagingConfigDetails {
         result = (result * PRIME) + (this.encryption == null ? 43 : this.encryption.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

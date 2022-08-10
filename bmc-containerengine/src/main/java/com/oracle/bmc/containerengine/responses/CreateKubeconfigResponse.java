@@ -38,10 +38,18 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
         return inputStream;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "inputStream"
+    })
     private CreateKubeconfigResponse(
-            int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            java.io.InputStream inputStream) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.inputStream = inputStream;
     }
@@ -51,6 +59,13 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -94,6 +109,7 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(CreateKubeconfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             inputStream(o.getInputStream());
 
@@ -105,7 +121,8 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public CreateKubeconfigResponse build() {
-            return new CreateKubeconfigResponse(__httpStatusCode__, opcRequestId, inputStream);
+            return new CreateKubeconfigResponse(
+                    __httpStatusCode__, headers, opcRequestId, inputStream);
         }
     }
 

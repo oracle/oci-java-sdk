@@ -18,7 +18,7 @@ package com.oracle.bmc.autoscaling.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Metric {
+public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metricType", "threshold"})
     public Metric(MetricType metricType, Threshold threshold) {
@@ -52,17 +52,22 @@ public final class Metric {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Metric build() {
-            Metric __instance__ = new Metric(metricType, threshold);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Metric model = new Metric(this.metricType, this.threshold);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Metric o) {
-            Builder copiedBuilder = metricType(o.getMetricType()).threshold(o.getThreshold());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Metric model) {
+            if (model.wasPropertyExplicitlySet("metricType")) {
+                this.metricType(model.getMetricType());
+            }
+            if (model.wasPropertyExplicitlySet("threshold")) {
+                this.threshold(model.getThreshold());
+            }
+            return this;
         }
     }
 
@@ -152,9 +157,9 @@ public final class Metric {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Metric(");
+        sb.append("super=").append(super.toString());
         sb.append("metricType=").append(String.valueOf(this.metricType));
         sb.append(", threshold=").append(String.valueOf(this.threshold));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -171,7 +176,7 @@ public final class Metric {
         Metric other = (Metric) o;
         return java.util.Objects.equals(this.metricType, other.metricType)
                 && java.util.Objects.equals(this.threshold, other.threshold)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -180,16 +185,7 @@ public final class Metric {
         int result = 1;
         result = (result * PRIME) + (this.metricType == null ? 43 : this.metricType.hashCode());
         result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

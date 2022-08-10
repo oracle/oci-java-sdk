@@ -28,7 +28,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AuthConfig {
+public class AuthConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "modelVersion", "parentRef"})
     protected AuthConfig(String key, String modelVersion, ParentReference parentRef) {
@@ -86,6 +86,7 @@ public class AuthConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -105,7 +106,8 @@ public class AuthConfig {
         AuthConfig other = (AuthConfig) o;
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
-                && java.util.Objects.equals(this.parentRef, other.parentRef);
+                && java.util.Objects.equals(this.parentRef, other.parentRef)
+                && super.equals(other);
     }
 
     @Override
@@ -115,6 +117,7 @@ public class AuthConfig {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
         result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

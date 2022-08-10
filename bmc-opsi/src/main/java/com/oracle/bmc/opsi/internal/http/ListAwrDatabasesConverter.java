@@ -162,8 +162,8 @@ public class ListAwrDatabasesConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListAwrDatabasesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseCollection(response.getItem());
 

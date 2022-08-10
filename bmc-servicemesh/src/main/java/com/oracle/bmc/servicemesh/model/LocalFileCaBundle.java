@@ -54,17 +54,19 @@ public final class LocalFileCaBundle extends CaBundle {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LocalFileCaBundle build() {
-            LocalFileCaBundle __instance__ = new LocalFileCaBundle(secretName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LocalFileCaBundle model = new LocalFileCaBundle(this.secretName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LocalFileCaBundle o) {
-            Builder copiedBuilder = secretName(o.getSecretName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LocalFileCaBundle model) {
+            if (model.wasPropertyExplicitlySet("secretName")) {
+                this.secretName(model.getSecretName());
+            }
+            return this;
         }
     }
 
@@ -120,7 +122,6 @@ public final class LocalFileCaBundle extends CaBundle {
         sb.append("LocalFileCaBundle(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -135,9 +136,7 @@ public final class LocalFileCaBundle extends CaBundle {
         }
 
         LocalFileCaBundle other = (LocalFileCaBundle) o;
-        return java.util.Objects.equals(this.secretName, other.secretName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.secretName, other.secretName) && super.equals(other);
     }
 
     @Override
@@ -145,16 +144,6 @@ public final class LocalFileCaBundle extends CaBundle {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

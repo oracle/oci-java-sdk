@@ -53,13 +53,20 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
         return oceInstance;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "oceInstance"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "oceInstance"
+    })
     private GetOceInstanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oce.model.OceInstance oceInstance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.oceInstance = oceInstance;
@@ -70,6 +77,13 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetOceInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             oceInstance(o.getOceInstance());
@@ -142,7 +157,8 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetOceInstanceResponse build() {
-            return new GetOceInstanceResponse(__httpStatusCode__, etag, opcRequestId, oceInstance);
+            return new GetOceInstanceResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, oceInstance);
         }
     }
 

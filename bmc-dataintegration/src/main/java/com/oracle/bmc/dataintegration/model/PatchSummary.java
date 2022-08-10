@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatchSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PatchSummary {
+public final class PatchSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -362,54 +362,89 @@ public final class PatchSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchSummary build() {
-            PatchSummary __instance__ =
+            PatchSummary model =
                     new PatchSummary(
-                            key,
-                            modelType,
-                            modelVersion,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            timePatched,
-                            errorMessages,
-                            applicationVersion,
-                            patchType,
-                            patchStatus,
-                            dependentObjectMetadata,
-                            patchObjectMetadata,
-                            parentRef,
-                            metadata,
-                            keyMap);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.timePatched,
+                            this.errorMessages,
+                            this.applicationVersion,
+                            this.patchType,
+                            this.patchStatus,
+                            this.dependentObjectMetadata,
+                            this.patchObjectMetadata,
+                            this.parentRef,
+                            this.metadata,
+                            this.keyMap);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PatchSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .timePatched(o.getTimePatched())
-                            .errorMessages(o.getErrorMessages())
-                            .applicationVersion(o.getApplicationVersion())
-                            .patchType(o.getPatchType())
-                            .patchStatus(o.getPatchStatus())
-                            .dependentObjectMetadata(o.getDependentObjectMetadata())
-                            .patchObjectMetadata(o.getPatchObjectMetadata())
-                            .parentRef(o.getParentRef())
-                            .metadata(o.getMetadata())
-                            .keyMap(o.getKeyMap());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PatchSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("timePatched")) {
+                this.timePatched(model.getTimePatched());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessages")) {
+                this.errorMessages(model.getErrorMessages());
+            }
+            if (model.wasPropertyExplicitlySet("applicationVersion")) {
+                this.applicationVersion(model.getApplicationVersion());
+            }
+            if (model.wasPropertyExplicitlySet("patchType")) {
+                this.patchType(model.getPatchType());
+            }
+            if (model.wasPropertyExplicitlySet("patchStatus")) {
+                this.patchStatus(model.getPatchStatus());
+            }
+            if (model.wasPropertyExplicitlySet("dependentObjectMetadata")) {
+                this.dependentObjectMetadata(model.getDependentObjectMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("patchObjectMetadata")) {
+                this.patchObjectMetadata(model.getPatchObjectMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("keyMap")) {
+                this.keyMap(model.getKeyMap());
+            }
+            return this;
         }
     }
 
@@ -774,6 +809,7 @@ public final class PatchSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PatchSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -793,7 +829,6 @@ public final class PatchSummary {
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -827,7 +862,7 @@ public final class PatchSummary {
                 && java.util.Objects.equals(this.parentRef, other.parentRef)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -868,16 +903,7 @@ public final class PatchSummary {
         result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QuerySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QuerySummary {
+public final class QuerySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "queryDefinition"})
     public QuerySummary(String id, QueryDefinition queryDefinition) {
@@ -58,17 +58,22 @@ public final class QuerySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QuerySummary build() {
-            QuerySummary __instance__ = new QuerySummary(id, queryDefinition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            QuerySummary model = new QuerySummary(this.id, this.queryDefinition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QuerySummary o) {
-            Builder copiedBuilder = id(o.getId()).queryDefinition(o.getQueryDefinition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QuerySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("queryDefinition")) {
+                this.queryDefinition(model.getQueryDefinition());
+            }
+            return this;
         }
     }
 
@@ -117,9 +122,9 @@ public final class QuerySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QuerySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", queryDefinition=").append(String.valueOf(this.queryDefinition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -136,7 +141,7 @@ public final class QuerySummary {
         QuerySummary other = (QuerySummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.queryDefinition, other.queryDefinition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -147,16 +152,7 @@ public final class QuerySummary {
         result =
                 (result * PRIME)
                         + (this.queryDefinition == null ? 43 : this.queryDefinition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

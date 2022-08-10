@@ -209,8 +209,8 @@ public class ListLibraryMaskingFormatsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListLibraryMaskingFormatsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.libraryMaskingFormatCollection(response.getItem());
 

@@ -56,16 +56,18 @@ public class CreateConnectivityValidationResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "connectivityValidation"
     })
     private CreateConnectivityValidationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.ConnectivityValidation connectivityValidation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.connectivityValidation = connectivityValidation;
@@ -76,6 +78,13 @@ public class CreateConnectivityValidationResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -138,6 +147,7 @@ public class CreateConnectivityValidationResponse extends com.oracle.bmc.respons
          */
         public Builder copy(CreateConnectivityValidationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             connectivityValidation(o.getConnectivityValidation());
@@ -151,7 +161,7 @@ public class CreateConnectivityValidationResponse extends com.oracle.bmc.respons
          */
         public CreateConnectivityValidationResponse build() {
             return new CreateConnectivityValidationResponse(
-                    __httpStatusCode__, etag, opcRequestId, connectivityValidation);
+                    __httpStatusCode__, headers, etag, opcRequestId, connectivityValidation);
         }
     }
 

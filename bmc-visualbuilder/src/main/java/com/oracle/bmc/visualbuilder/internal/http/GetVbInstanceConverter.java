@@ -105,8 +105,8 @@ public class GetVbInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.visualbuilder.responses
                                                         .GetVbInstanceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vbInstance(response.getItem());
 

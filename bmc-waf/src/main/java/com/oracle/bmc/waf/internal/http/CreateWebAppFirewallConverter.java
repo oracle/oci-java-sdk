@@ -103,8 +103,8 @@ public class CreateWebAppFirewallConverter {
                                         builder =
                                                 com.oracle.bmc.waf.responses
                                                         .CreateWebAppFirewallResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.webAppFirewall(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TableCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TableCollection {
+public final class TableCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "items",
@@ -127,28 +127,37 @@ public final class TableCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableCollection build() {
-            TableCollection __instance__ =
+            TableCollection model =
                     new TableCollection(
-                            items,
-                            maxAutoReclaimableTables,
-                            autoReclaimableTables,
-                            onDemandCapacityTables,
-                            maxOnDemandCapacityTables);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.items,
+                            this.maxAutoReclaimableTables,
+                            this.autoReclaimableTables,
+                            this.onDemandCapacityTables,
+                            this.maxOnDemandCapacityTables);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TableCollection o) {
-            Builder copiedBuilder =
-                    items(o.getItems())
-                            .maxAutoReclaimableTables(o.getMaxAutoReclaimableTables())
-                            .autoReclaimableTables(o.getAutoReclaimableTables())
-                            .onDemandCapacityTables(o.getOnDemandCapacityTables())
-                            .maxOnDemandCapacityTables(o.getMaxOnDemandCapacityTables());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TableCollection model) {
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("maxAutoReclaimableTables")) {
+                this.maxAutoReclaimableTables(model.getMaxAutoReclaimableTables());
+            }
+            if (model.wasPropertyExplicitlySet("autoReclaimableTables")) {
+                this.autoReclaimableTables(model.getAutoReclaimableTables());
+            }
+            if (model.wasPropertyExplicitlySet("onDemandCapacityTables")) {
+                this.onDemandCapacityTables(model.getOnDemandCapacityTables());
+            }
+            if (model.wasPropertyExplicitlySet("maxOnDemandCapacityTables")) {
+                this.maxOnDemandCapacityTables(model.getMaxOnDemandCapacityTables());
+            }
+            return this;
         }
     }
 
@@ -246,6 +255,7 @@ public final class TableCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TableCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
         sb.append(", maxAutoReclaimableTables=")
                 .append(String.valueOf(this.maxAutoReclaimableTables));
@@ -253,7 +263,6 @@ public final class TableCollection {
         sb.append(", onDemandCapacityTables=").append(String.valueOf(this.onDemandCapacityTables));
         sb.append(", maxOnDemandCapacityTables=")
                 .append(String.valueOf(this.maxOnDemandCapacityTables));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -276,7 +285,7 @@ public final class TableCollection {
                         this.onDemandCapacityTables, other.onDemandCapacityTables)
                 && java.util.Objects.equals(
                         this.maxOnDemandCapacityTables, other.maxOnDemandCapacityTables)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -304,16 +313,7 @@ public final class TableCollection {
                         + (this.maxOnDemandCapacityTables == null
                                 ? 43
                                 : this.maxOnDemandCapacityTables.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

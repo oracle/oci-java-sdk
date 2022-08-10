@@ -22,7 +22,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VolumeGroup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeGroup {
+public final class VolumeGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -322,46 +322,73 @@ public final class VolumeGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeGroup build() {
-            VolumeGroup __instance__ =
+            VolumeGroup model =
                     new VolumeGroup(
-                            availabilityDomain,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            sizeInMBs,
-                            sizeInGBs,
-                            sourceDetails,
-                            timeCreated,
-                            volumeIds,
-                            isHydrated,
-                            volumeGroupReplicas);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.sizeInMBs,
+                            this.sizeInGBs,
+                            this.sourceDetails,
+                            this.timeCreated,
+                            this.volumeIds,
+                            this.isHydrated,
+                            this.volumeGroupReplicas);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeGroup o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .sizeInMBs(o.getSizeInMBs())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .sourceDetails(o.getSourceDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .volumeIds(o.getVolumeIds())
-                            .isHydrated(o.getIsHydrated())
-                            .volumeGroupReplicas(o.getVolumeGroupReplicas());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeGroup model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInMBs")) {
+                this.sizeInMBs(model.getSizeInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("volumeIds")) {
+                this.volumeIds(model.getVolumeIds());
+            }
+            if (model.wasPropertyExplicitlySet("isHydrated")) {
+                this.isHydrated(model.getIsHydrated());
+            }
+            if (model.wasPropertyExplicitlySet("volumeGroupReplicas")) {
+                this.volumeGroupReplicas(model.getVolumeGroupReplicas());
+            }
+            return this;
         }
     }
 
@@ -654,6 +681,7 @@ public final class VolumeGroup {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeGroup(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -668,7 +696,6 @@ public final class VolumeGroup {
         sb.append(", volumeIds=").append(String.valueOf(this.volumeIds));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
         sb.append(", volumeGroupReplicas=").append(String.valueOf(this.volumeGroupReplicas));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -697,7 +724,7 @@ public final class VolumeGroup {
                 && java.util.Objects.equals(this.volumeIds, other.volumeIds)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
                 && java.util.Objects.equals(this.volumeGroupReplicas, other.volumeGroupReplicas)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -732,16 +759,7 @@ public final class VolumeGroup {
                         + (this.volumeGroupReplicas == null
                                 ? 43
                                 : this.volumeGroupReplicas.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

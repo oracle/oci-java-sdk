@@ -28,7 +28,8 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UpdateExadataInsightDetails {
+public class UpdateExadataInsightDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"freeformTags", "definedTags"})
     protected UpdateExadataInsightDetails(
@@ -88,6 +89,7 @@ public class UpdateExadataInsightDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateExadataInsightDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -105,7 +107,8 @@ public class UpdateExadataInsightDetails {
 
         UpdateExadataInsightDetails other = (UpdateExadataInsightDetails) o;
         return java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -114,6 +117,7 @@ public class UpdateExadataInsightDetails {
         int result = 1;
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

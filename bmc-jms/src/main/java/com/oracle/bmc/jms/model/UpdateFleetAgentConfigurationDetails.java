@@ -19,7 +19,8 @@ package com.oracle.bmc.jms.model;
     builder = UpdateFleetAgentConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateFleetAgentConfigurationDetails {
+public final class UpdateFleetAgentConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jreScanFrequencyInMinutes",
@@ -104,27 +105,34 @@ public final class UpdateFleetAgentConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateFleetAgentConfigurationDetails build() {
-            UpdateFleetAgentConfigurationDetails __instance__ =
+            UpdateFleetAgentConfigurationDetails model =
                     new UpdateFleetAgentConfigurationDetails(
-                            jreScanFrequencyInMinutes,
-                            javaUsageTrackerProcessingFrequencyInMinutes,
-                            linuxConfiguration,
-                            windowsConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.jreScanFrequencyInMinutes,
+                            this.javaUsageTrackerProcessingFrequencyInMinutes,
+                            this.linuxConfiguration,
+                            this.windowsConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateFleetAgentConfigurationDetails o) {
-            Builder copiedBuilder =
-                    jreScanFrequencyInMinutes(o.getJreScanFrequencyInMinutes())
-                            .javaUsageTrackerProcessingFrequencyInMinutes(
-                                    o.getJavaUsageTrackerProcessingFrequencyInMinutes())
-                            .linuxConfiguration(o.getLinuxConfiguration())
-                            .windowsConfiguration(o.getWindowsConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateFleetAgentConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("jreScanFrequencyInMinutes")) {
+                this.jreScanFrequencyInMinutes(model.getJreScanFrequencyInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("javaUsageTrackerProcessingFrequencyInMinutes")) {
+                this.javaUsageTrackerProcessingFrequencyInMinutes(
+                        model.getJavaUsageTrackerProcessingFrequencyInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("linuxConfiguration")) {
+                this.linuxConfiguration(model.getLinuxConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("windowsConfiguration")) {
+                this.windowsConfiguration(model.getWindowsConfiguration());
+            }
+            return this;
         }
     }
 
@@ -198,13 +206,13 @@ public final class UpdateFleetAgentConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateFleetAgentConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("jreScanFrequencyInMinutes=")
                 .append(String.valueOf(this.jreScanFrequencyInMinutes));
         sb.append(", javaUsageTrackerProcessingFrequencyInMinutes=")
                 .append(String.valueOf(this.javaUsageTrackerProcessingFrequencyInMinutes));
         sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
         sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +234,7 @@ public final class UpdateFleetAgentConfigurationDetails {
                         other.javaUsageTrackerProcessingFrequencyInMinutes)
                 && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
                 && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -253,16 +261,7 @@ public final class UpdateFleetAgentConfigurationDetails {
                         + (this.windowsConfiguration == null
                                 ? 43
                                 : this.windowsConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

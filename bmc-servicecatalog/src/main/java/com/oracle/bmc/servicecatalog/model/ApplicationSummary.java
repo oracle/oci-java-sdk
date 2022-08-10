@@ -19,7 +19,7 @@ package com.oracle.bmc.servicecatalog.model;
     builder = ApplicationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplicationSummary {
+public final class ApplicationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityId",
@@ -191,36 +191,53 @@ public final class ApplicationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplicationSummary build() {
-            ApplicationSummary __instance__ =
+            ApplicationSummary model =
                     new ApplicationSummary(
-                            entityId,
-                            entityType,
-                            displayName,
-                            isFeatured,
-                            publisher,
-                            shortDescription,
-                            logo,
-                            pricingType,
-                            packageType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.entityId,
+                            this.entityType,
+                            this.displayName,
+                            this.isFeatured,
+                            this.publisher,
+                            this.shortDescription,
+                            this.logo,
+                            this.pricingType,
+                            this.packageType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplicationSummary o) {
-            Builder copiedBuilder =
-                    entityId(o.getEntityId())
-                            .entityType(o.getEntityType())
-                            .displayName(o.getDisplayName())
-                            .isFeatured(o.getIsFeatured())
-                            .publisher(o.getPublisher())
-                            .shortDescription(o.getShortDescription())
-                            .logo(o.getLogo())
-                            .pricingType(o.getPricingType())
-                            .packageType(o.getPackageType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplicationSummary model) {
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isFeatured")) {
+                this.isFeatured(model.getIsFeatured());
+            }
+            if (model.wasPropertyExplicitlySet("publisher")) {
+                this.publisher(model.getPublisher());
+            }
+            if (model.wasPropertyExplicitlySet("shortDescription")) {
+                this.shortDescription(model.getShortDescription());
+            }
+            if (model.wasPropertyExplicitlySet("logo")) {
+                this.logo(model.getLogo());
+            }
+            if (model.wasPropertyExplicitlySet("pricingType")) {
+                this.pricingType(model.getPricingType());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            return this;
         }
     }
 
@@ -360,6 +377,7 @@ public final class ApplicationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplicationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("entityId=").append(String.valueOf(this.entityId));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -369,7 +387,6 @@ public final class ApplicationSummary {
         sb.append(", logo=").append(String.valueOf(this.logo));
         sb.append(", pricingType=").append(String.valueOf(this.pricingType));
         sb.append(", packageType=").append(String.valueOf(this.packageType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -393,7 +410,7 @@ public final class ApplicationSummary {
                 && java.util.Objects.equals(this.logo, other.logo)
                 && java.util.Objects.equals(this.pricingType, other.pricingType)
                 && java.util.Objects.equals(this.packageType, other.packageType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -411,16 +428,7 @@ public final class ApplicationSummary {
         result = (result * PRIME) + (this.logo == null ? 43 : this.logo.hashCode());
         result = (result * PRIME) + (this.pricingType == null ? 43 : this.pricingType.hashCode());
         result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

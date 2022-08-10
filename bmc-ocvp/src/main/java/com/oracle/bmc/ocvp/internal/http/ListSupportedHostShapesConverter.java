@@ -142,8 +142,8 @@ public class ListSupportedHostShapesConverter {
                                         builder =
                                                 com.oracle.bmc.ocvp.responses
                                                         .ListSupportedHostShapesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.supportedHostShapeCollection(response.getItem());
 

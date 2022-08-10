@@ -135,8 +135,8 @@ public class GetRepositoryFileLinesConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .GetRepositoryFileLinesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repositoryFileLines(response.getItem());
 

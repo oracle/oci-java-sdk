@@ -58,19 +58,23 @@ public final class StructuredSearchDetails extends SearchDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StructuredSearchDetails build() {
-            StructuredSearchDetails __instance__ =
-                    new StructuredSearchDetails(matchingContextType, query);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StructuredSearchDetails model =
+                    new StructuredSearchDetails(this.matchingContextType, this.query);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StructuredSearchDetails o) {
-            Builder copiedBuilder =
-                    matchingContextType(o.getMatchingContextType()).query(o.getQuery());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StructuredSearchDetails model) {
+            if (model.wasPropertyExplicitlySet("matchingContextType")) {
+                this.matchingContextType(model.getMatchingContextType());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            return this;
         }
     }
 
@@ -120,7 +124,6 @@ public final class StructuredSearchDetails extends SearchDetails {
         sb.append("StructuredSearchDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", query=").append(String.valueOf(this.query));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -135,9 +138,7 @@ public final class StructuredSearchDetails extends SearchDetails {
         }
 
         StructuredSearchDetails other = (StructuredSearchDetails) o;
-        return java.util.Objects.equals(this.query, other.query)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.query, other.query) && super.equals(other);
     }
 
     @Override
@@ -145,16 +146,6 @@ public final class StructuredSearchDetails extends SearchDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

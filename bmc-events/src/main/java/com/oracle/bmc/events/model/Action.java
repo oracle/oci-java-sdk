@@ -34,7 +34,7 @@ package com.oracle.bmc.events.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = FaaSAction.class, name = "FAAS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Action {
+public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -210,6 +210,7 @@ public class Action {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Action(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", lifecycleMessage=").append(String.valueOf(this.lifecycleMessage));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -233,7 +234,8 @@ public class Action {
                 && java.util.Objects.equals(this.lifecycleMessage, other.lifecycleMessage)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
-                && java.util.Objects.equals(this.description, other.description);
+                && java.util.Objects.equals(this.description, other.description)
+                && super.equals(other);
     }
 
     @Override
@@ -249,6 +251,7 @@ public class Action {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -201,8 +201,8 @@ public class ListReferenceArtifactsConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListReferenceArtifactsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.referenceArtifactSummaryCollection(response.getItem());
 

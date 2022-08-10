@@ -20,7 +20,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NormalizedVertex.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NormalizedVertex {
+public final class NormalizedVertex extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"x", "y"})
     public NormalizedVertex(Double x, Double y) {
@@ -68,17 +68,22 @@ public final class NormalizedVertex {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NormalizedVertex build() {
-            NormalizedVertex __instance__ = new NormalizedVertex(x, y);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NormalizedVertex model = new NormalizedVertex(this.x, this.y);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NormalizedVertex o) {
-            Builder copiedBuilder = x(o.getX()).y(o.getY());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NormalizedVertex model) {
+            if (model.wasPropertyExplicitlySet("x")) {
+                this.x(model.getX());
+            }
+            if (model.wasPropertyExplicitlySet("y")) {
+                this.y(model.getY());
+            }
+            return this;
         }
     }
 
@@ -134,9 +139,9 @@ public final class NormalizedVertex {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NormalizedVertex(");
+        sb.append("super=").append(super.toString());
         sb.append("x=").append(String.valueOf(this.x));
         sb.append(", y=").append(String.valueOf(this.y));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +158,7 @@ public final class NormalizedVertex {
         NormalizedVertex other = (NormalizedVertex) o;
         return java.util.Objects.equals(this.x, other.x)
                 && java.util.Objects.equals(this.y, other.y)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +167,7 @@ public final class NormalizedVertex {
         int result = 1;
         result = (result * PRIME) + (this.x == null ? 43 : this.x.hashCode());
         result = (result * PRIME) + (this.y == null ? 43 : this.y.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

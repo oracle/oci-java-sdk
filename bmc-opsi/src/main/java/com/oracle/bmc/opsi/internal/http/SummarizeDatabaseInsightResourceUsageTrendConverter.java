@@ -276,8 +276,8 @@ public class SummarizeDatabaseInsightResourceUsageTrendConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeDatabaseInsightResourceUsageTrendResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder
                                         .summarizeDatabaseInsightResourceUsageTrendAggregationCollection(

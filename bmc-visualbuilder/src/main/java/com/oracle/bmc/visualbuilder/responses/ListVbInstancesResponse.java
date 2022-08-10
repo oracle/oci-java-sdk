@@ -74,6 +74,7 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPreviousPage",
@@ -81,12 +82,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private ListVbInstancesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPreviousPage,
             com.oracle.bmc.visualbuilder.model.VbInstanceSummaryCollection
                     vbInstanceSummaryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPreviousPage = opcPreviousPage;
@@ -98,6 +100,13 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -180,6 +189,7 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ListVbInstancesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPreviousPage(o.getOpcPreviousPage());
@@ -195,6 +205,7 @@ public class ListVbInstancesResponse extends com.oracle.bmc.responses.BmcRespons
         public ListVbInstancesResponse build() {
             return new ListVbInstancesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPreviousPage,

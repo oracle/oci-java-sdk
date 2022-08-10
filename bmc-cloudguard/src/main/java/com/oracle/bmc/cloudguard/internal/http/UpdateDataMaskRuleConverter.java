@@ -112,8 +112,8 @@ public class UpdateDataMaskRuleConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateDataMaskRuleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataMaskRule(response.getItem());
 

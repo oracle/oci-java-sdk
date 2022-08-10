@@ -123,8 +123,8 @@ public class RemoveDataFileConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .RemoveDataFileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tablespaceAdminStatus(response.getItem());
 

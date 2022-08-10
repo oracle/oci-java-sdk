@@ -6,6 +6,11 @@ package com.oracle.bmc.integration.model;
 
 /**
  * The information to be updated.
+ * <p>
+ * Some properties may not be applicable to specific integration types,
+ * see [Differences in Instance Management](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E)
+ * for details.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -19,7 +24,8 @@ package com.oracle.bmc.integration.model;
     builder = UpdateIntegrationInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateIntegrationInstanceDetails {
+public final class UpdateIntegrationInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -76,13 +82,19 @@ public final class UpdateIntegrationInstanceDetails {
             return this;
         }
         /**
-         * Standard or Enterprise type
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
         private IntegrationInstanceType integrationInstanceType;
 
         /**
-         * Standard or Enterprise type
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         *
          * @param integrationInstanceType the value to set
          * @return this builder
          **/
@@ -235,38 +247,57 @@ public final class UpdateIntegrationInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIntegrationInstanceDetails build() {
-            UpdateIntegrationInstanceDetails __instance__ =
+            UpdateIntegrationInstanceDetails model =
                     new UpdateIntegrationInstanceDetails(
-                            displayName,
-                            integrationInstanceType,
-                            freeformTags,
-                            definedTags,
-                            isByol,
-                            messagePacks,
-                            isFileServerEnabled,
-                            isVisualBuilderEnabled,
-                            customEndpoint,
-                            alternateCustomEndpoints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.integrationInstanceType,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.isByol,
+                            this.messagePacks,
+                            this.isFileServerEnabled,
+                            this.isVisualBuilderEnabled,
+                            this.customEndpoint,
+                            this.alternateCustomEndpoints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateIntegrationInstanceDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .integrationInstanceType(o.getIntegrationInstanceType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .isByol(o.getIsByol())
-                            .messagePacks(o.getMessagePacks())
-                            .isFileServerEnabled(o.getIsFileServerEnabled())
-                            .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
-                            .customEndpoint(o.getCustomEndpoint())
-                            .alternateCustomEndpoints(o.getAlternateCustomEndpoints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateIntegrationInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("integrationInstanceType")) {
+                this.integrationInstanceType(model.getIntegrationInstanceType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isByol")) {
+                this.isByol(model.getIsByol());
+            }
+            if (model.wasPropertyExplicitlySet("messagePacks")) {
+                this.messagePacks(model.getMessagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("isFileServerEnabled")) {
+                this.isFileServerEnabled(model.getIsFileServerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isVisualBuilderEnabled")) {
+                this.isVisualBuilderEnabled(model.getIsVisualBuilderEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customEndpoint")) {
+                this.customEndpoint(model.getCustomEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("alternateCustomEndpoints")) {
+                this.alternateCustomEndpoints(model.getAlternateCustomEndpoints());
+            }
+            return this;
         }
     }
 
@@ -296,11 +327,16 @@ public final class UpdateIntegrationInstanceDetails {
     }
 
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     *
      **/
     public enum IntegrationInstanceType {
         Standard("STANDARD"),
         Enterprise("ENTERPRISE"),
+        Standardx("STANDARDX"),
+        Enterprisex("ENTERPRISEX"),
         ;
 
         private final String value;
@@ -331,13 +367,19 @@ public final class UpdateIntegrationInstanceDetails {
         }
     };
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
     private final IntegrationInstanceType integrationInstanceType;
 
     /**
-     * Standard or Enterprise type
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     *
      * @return the value
      **/
     public IntegrationInstanceType getIntegrationInstanceType() {
@@ -478,6 +520,7 @@ public final class UpdateIntegrationInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateIntegrationInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", integrationInstanceType=")
                 .append(String.valueOf(this.integrationInstanceType));
@@ -490,7 +533,6 @@ public final class UpdateIntegrationInstanceDetails {
         sb.append(", customEndpoint=").append(String.valueOf(this.customEndpoint));
         sb.append(", alternateCustomEndpoints=")
                 .append(String.valueOf(this.alternateCustomEndpoints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -518,7 +560,7 @@ public final class UpdateIntegrationInstanceDetails {
                 && java.util.Objects.equals(this.customEndpoint, other.customEndpoint)
                 && java.util.Objects.equals(
                         this.alternateCustomEndpoints, other.alternateCustomEndpoints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -553,16 +595,7 @@ public final class UpdateIntegrationInstanceDetails {
                         + (this.alternateCustomEndpoints == null
                                 ? 43
                                 : this.alternateCustomEndpoints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

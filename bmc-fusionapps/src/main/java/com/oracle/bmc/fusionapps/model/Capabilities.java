@@ -17,7 +17,7 @@ package com.oracle.bmc.fusionapps.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Capabilities.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Capabilities {
+public final class Capabilities extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isDataMaskingEnabled",
@@ -87,21 +87,29 @@ public final class Capabilities {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Capabilities build() {
-            Capabilities __instance__ =
-                    new Capabilities(isDataMaskingEnabled, isBreakGlassEnabled, isByokEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Capabilities model =
+                    new Capabilities(
+                            this.isDataMaskingEnabled,
+                            this.isBreakGlassEnabled,
+                            this.isByokEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Capabilities o) {
-            Builder copiedBuilder =
-                    isDataMaskingEnabled(o.getIsDataMaskingEnabled())
-                            .isBreakGlassEnabled(o.getIsBreakGlassEnabled())
-                            .isByokEnabled(o.getIsByokEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Capabilities model) {
+            if (model.wasPropertyExplicitlySet("isDataMaskingEnabled")) {
+                this.isDataMaskingEnabled(model.getIsDataMaskingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isBreakGlassEnabled")) {
+                this.isBreakGlassEnabled(model.getIsBreakGlassEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isByokEnabled")) {
+                this.isByokEnabled(model.getIsByokEnabled());
+            }
+            return this;
         }
     }
 
@@ -171,10 +179,10 @@ public final class Capabilities {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Capabilities(");
+        sb.append("super=").append(super.toString());
         sb.append("isDataMaskingEnabled=").append(String.valueOf(this.isDataMaskingEnabled));
         sb.append(", isBreakGlassEnabled=").append(String.valueOf(this.isBreakGlassEnabled));
         sb.append(", isByokEnabled=").append(String.valueOf(this.isByokEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +200,7 @@ public final class Capabilities {
         return java.util.Objects.equals(this.isDataMaskingEnabled, other.isDataMaskingEnabled)
                 && java.util.Objects.equals(this.isBreakGlassEnabled, other.isBreakGlassEnabled)
                 && java.util.Objects.equals(this.isByokEnabled, other.isByokEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +220,7 @@ public final class Capabilities {
         result =
                 (result * PRIME)
                         + (this.isByokEnabled == null ? 43 : this.isByokEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -104,8 +104,8 @@ public class GetAuditProfileConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetAuditProfileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditProfile(response.getItem());
 

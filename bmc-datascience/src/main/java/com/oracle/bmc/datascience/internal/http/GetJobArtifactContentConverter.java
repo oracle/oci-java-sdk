@@ -109,8 +109,8 @@ public class GetJobArtifactContentConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .GetJobArtifactContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

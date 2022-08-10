@@ -136,8 +136,8 @@ public class ImportDataAssetConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ImportDataAssetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.importDataAssetJobResult(response.getItem());
 

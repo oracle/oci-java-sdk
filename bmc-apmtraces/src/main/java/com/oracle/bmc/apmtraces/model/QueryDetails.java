@@ -18,7 +18,7 @@ package com.oracle.bmc.apmtraces.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryDetails {
+public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"queryText"})
     public QueryDetails(String queryText) {
@@ -51,17 +51,19 @@ public final class QueryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryDetails build() {
-            QueryDetails __instance__ = new QueryDetails(queryText);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            QueryDetails model = new QueryDetails(this.queryText);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryDetails o) {
-            Builder copiedBuilder = queryText(o.getQueryText());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryDetails model) {
+            if (model.wasPropertyExplicitlySet("queryText")) {
+                this.queryText(model.getQueryText());
+            }
+            return this;
         }
     }
 
@@ -105,8 +107,8 @@ public final class QueryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("queryText=").append(String.valueOf(this.queryText));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,8 +123,7 @@ public final class QueryDetails {
         }
 
         QueryDetails other = (QueryDetails) o;
-        return java.util.Objects.equals(this.queryText, other.queryText)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.queryText, other.queryText) && super.equals(other);
     }
 
     @Override
@@ -130,16 +131,7 @@ public final class QueryDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.queryText == null ? 43 : this.queryText.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -98,7 +98,8 @@ public class GetQuotaConverter {
 
                                 com.oracle.bmc.limits.responses.GetQuotaResponse.Builder builder =
                                         com.oracle.bmc.limits.responses.GetQuotaResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.quota(response.getItem());
 

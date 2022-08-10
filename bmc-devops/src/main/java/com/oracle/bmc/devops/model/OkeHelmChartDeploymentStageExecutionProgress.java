@@ -163,41 +163,62 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OkeHelmChartDeploymentStageExecutionProgress build() {
-            OkeHelmChartDeploymentStageExecutionProgress __instance__ =
+            OkeHelmChartDeploymentStageExecutionProgress model =
                     new OkeHelmChartDeploymentStageExecutionProgress(
-                            deployStageDisplayName,
-                            deployStageId,
-                            timeStarted,
-                            timeFinished,
-                            status,
-                            deployStagePredecessors,
-                            deployStageExecutionProgressDetails,
-                            releaseName,
-                            chartUrl,
-                            version,
-                            namespace);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployStageDisplayName,
+                            this.deployStageId,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.status,
+                            this.deployStagePredecessors,
+                            this.deployStageExecutionProgressDetails,
+                            this.releaseName,
+                            this.chartUrl,
+                            this.version,
+                            this.namespace);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OkeHelmChartDeploymentStageExecutionProgress o) {
-            Builder copiedBuilder =
-                    deployStageDisplayName(o.getDeployStageDisplayName())
-                            .deployStageId(o.getDeployStageId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .status(o.getStatus())
-                            .deployStagePredecessors(o.getDeployStagePredecessors())
-                            .deployStageExecutionProgressDetails(
-                                    o.getDeployStageExecutionProgressDetails())
-                            .releaseName(o.getReleaseName())
-                            .chartUrl(o.getChartUrl())
-                            .version(o.getVersion())
-                            .namespace(o.getNamespace());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OkeHelmChartDeploymentStageExecutionProgress model) {
+            if (model.wasPropertyExplicitlySet("deployStageDisplayName")) {
+                this.deployStageDisplayName(model.getDeployStageDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageId")) {
+                this.deployStageId(model.getDeployStageId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessors")) {
+                this.deployStagePredecessors(model.getDeployStagePredecessors());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageExecutionProgressDetails")) {
+                this.deployStageExecutionProgressDetails(
+                        model.getDeployStageExecutionProgressDetails());
+            }
+            if (model.wasPropertyExplicitlySet("releaseName")) {
+                this.releaseName(model.getReleaseName());
+            }
+            if (model.wasPropertyExplicitlySet("chartUrl")) {
+                this.chartUrl(model.getChartUrl());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            return this;
         }
     }
 
@@ -313,7 +334,6 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         sb.append(", chartUrl=").append(String.valueOf(this.chartUrl));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -333,8 +353,7 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
                 && java.util.Objects.equals(this.chartUrl, other.chartUrl)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.namespace, other.namespace)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -345,16 +364,6 @@ public final class OkeHelmChartDeploymentStageExecutionProgress
         result = (result * PRIME) + (this.chartUrl == null ? 43 : this.chartUrl.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

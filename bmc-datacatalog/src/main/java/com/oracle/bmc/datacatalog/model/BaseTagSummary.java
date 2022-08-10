@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BaseTagSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BaseTagSummary {
+public final class BaseTagSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -207,36 +207,53 @@ public final class BaseTagSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BaseTagSummary build() {
-            BaseTagSummary __instance__ =
+            BaseTagSummary model =
                     new BaseTagSummary(
-                            key,
-                            timeCreated,
-                            name,
-                            uri,
-                            termKey,
-                            termPath,
-                            termDescription,
-                            glossaryKey,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.timeCreated,
+                            this.name,
+                            this.uri,
+                            this.termKey,
+                            this.termPath,
+                            this.termDescription,
+                            this.glossaryKey,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BaseTagSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .timeCreated(o.getTimeCreated())
-                            .name(o.getName())
-                            .uri(o.getUri())
-                            .termKey(o.getTermKey())
-                            .termPath(o.getTermPath())
-                            .termDescription(o.getTermDescription())
-                            .glossaryKey(o.getGlossaryKey())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BaseTagSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("termKey")) {
+                this.termKey(model.getTermKey());
+            }
+            if (model.wasPropertyExplicitlySet("termPath")) {
+                this.termPath(model.getTermPath());
+            }
+            if (model.wasPropertyExplicitlySet("termDescription")) {
+                this.termDescription(model.getTermDescription());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -394,6 +411,7 @@ public final class BaseTagSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BaseTagSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -403,7 +421,6 @@ public final class BaseTagSummary {
         sb.append(", termDescription=").append(String.valueOf(this.termDescription));
         sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -427,7 +444,7 @@ public final class BaseTagSummary {
                 && java.util.Objects.equals(this.termDescription, other.termDescription)
                 && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -447,16 +464,7 @@ public final class BaseTagSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

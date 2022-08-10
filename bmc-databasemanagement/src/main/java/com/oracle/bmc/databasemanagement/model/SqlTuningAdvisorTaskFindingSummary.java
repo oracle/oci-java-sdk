@@ -21,7 +21,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningAdvisorTaskFindingSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningAdvisorTaskFindingSummary {
+public final class SqlTuningAdvisorTaskFindingSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlTuningAdvisorTaskId",
@@ -364,53 +365,86 @@ public final class SqlTuningAdvisorTaskFindingSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningAdvisorTaskFindingSummary build() {
-            SqlTuningAdvisorTaskFindingSummary __instance__ =
+            SqlTuningAdvisorTaskFindingSummary model =
                     new SqlTuningAdvisorTaskFindingSummary(
-                            sqlTuningAdvisorTaskId,
-                            sqlTuningAdvisorTaskObjectId,
-                            sqlTuningAdvisorTaskObjectExecutionId,
-                            sqlText,
-                            parsingSchema,
-                            sqlKey,
-                            dbTimeBenefit,
-                            perExecutionPercentage,
-                            isStatsFindingPresent,
-                            isSqlProfileFindingPresent,
-                            isSqlProfileFindingImplemented,
-                            isIndexFindingPresent,
-                            isRestructureSqlFindingPresent,
-                            isAlternativePlanFindingPresent,
-                            isMiscellaneousFindingPresent,
-                            isErrorFindingPresent,
-                            isTimeoutFindingPresent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sqlTuningAdvisorTaskId,
+                            this.sqlTuningAdvisorTaskObjectId,
+                            this.sqlTuningAdvisorTaskObjectExecutionId,
+                            this.sqlText,
+                            this.parsingSchema,
+                            this.sqlKey,
+                            this.dbTimeBenefit,
+                            this.perExecutionPercentage,
+                            this.isStatsFindingPresent,
+                            this.isSqlProfileFindingPresent,
+                            this.isSqlProfileFindingImplemented,
+                            this.isIndexFindingPresent,
+                            this.isRestructureSqlFindingPresent,
+                            this.isAlternativePlanFindingPresent,
+                            this.isMiscellaneousFindingPresent,
+                            this.isErrorFindingPresent,
+                            this.isTimeoutFindingPresent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningAdvisorTaskFindingSummary o) {
-            Builder copiedBuilder =
-                    sqlTuningAdvisorTaskId(o.getSqlTuningAdvisorTaskId())
-                            .sqlTuningAdvisorTaskObjectId(o.getSqlTuningAdvisorTaskObjectId())
-                            .sqlTuningAdvisorTaskObjectExecutionId(
-                                    o.getSqlTuningAdvisorTaskObjectExecutionId())
-                            .sqlText(o.getSqlText())
-                            .parsingSchema(o.getParsingSchema())
-                            .sqlKey(o.getSqlKey())
-                            .dbTimeBenefit(o.getDbTimeBenefit())
-                            .perExecutionPercentage(o.getPerExecutionPercentage())
-                            .isStatsFindingPresent(o.getIsStatsFindingPresent())
-                            .isSqlProfileFindingPresent(o.getIsSqlProfileFindingPresent())
-                            .isSqlProfileFindingImplemented(o.getIsSqlProfileFindingImplemented())
-                            .isIndexFindingPresent(o.getIsIndexFindingPresent())
-                            .isRestructureSqlFindingPresent(o.getIsRestructureSqlFindingPresent())
-                            .isAlternativePlanFindingPresent(o.getIsAlternativePlanFindingPresent())
-                            .isMiscellaneousFindingPresent(o.getIsMiscellaneousFindingPresent())
-                            .isErrorFindingPresent(o.getIsErrorFindingPresent())
-                            .isTimeoutFindingPresent(o.getIsTimeoutFindingPresent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningAdvisorTaskFindingSummary model) {
+            if (model.wasPropertyExplicitlySet("sqlTuningAdvisorTaskId")) {
+                this.sqlTuningAdvisorTaskId(model.getSqlTuningAdvisorTaskId());
+            }
+            if (model.wasPropertyExplicitlySet("sqlTuningAdvisorTaskObjectId")) {
+                this.sqlTuningAdvisorTaskObjectId(model.getSqlTuningAdvisorTaskObjectId());
+            }
+            if (model.wasPropertyExplicitlySet("sqlTuningAdvisorTaskObjectExecutionId")) {
+                this.sqlTuningAdvisorTaskObjectExecutionId(
+                        model.getSqlTuningAdvisorTaskObjectExecutionId());
+            }
+            if (model.wasPropertyExplicitlySet("sqlText")) {
+                this.sqlText(model.getSqlText());
+            }
+            if (model.wasPropertyExplicitlySet("parsingSchema")) {
+                this.parsingSchema(model.getParsingSchema());
+            }
+            if (model.wasPropertyExplicitlySet("sqlKey")) {
+                this.sqlKey(model.getSqlKey());
+            }
+            if (model.wasPropertyExplicitlySet("dbTimeBenefit")) {
+                this.dbTimeBenefit(model.getDbTimeBenefit());
+            }
+            if (model.wasPropertyExplicitlySet("perExecutionPercentage")) {
+                this.perExecutionPercentage(model.getPerExecutionPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("isStatsFindingPresent")) {
+                this.isStatsFindingPresent(model.getIsStatsFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isSqlProfileFindingPresent")) {
+                this.isSqlProfileFindingPresent(model.getIsSqlProfileFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isSqlProfileFindingImplemented")) {
+                this.isSqlProfileFindingImplemented(model.getIsSqlProfileFindingImplemented());
+            }
+            if (model.wasPropertyExplicitlySet("isIndexFindingPresent")) {
+                this.isIndexFindingPresent(model.getIsIndexFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isRestructureSqlFindingPresent")) {
+                this.isRestructureSqlFindingPresent(model.getIsRestructureSqlFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isAlternativePlanFindingPresent")) {
+                this.isAlternativePlanFindingPresent(model.getIsAlternativePlanFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isMiscellaneousFindingPresent")) {
+                this.isMiscellaneousFindingPresent(model.getIsMiscellaneousFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isErrorFindingPresent")) {
+                this.isErrorFindingPresent(model.getIsErrorFindingPresent());
+            }
+            if (model.wasPropertyExplicitlySet("isTimeoutFindingPresent")) {
+                this.isTimeoutFindingPresent(model.getIsTimeoutFindingPresent());
+            }
+            return this;
         }
     }
 
@@ -680,6 +714,7 @@ public final class SqlTuningAdvisorTaskFindingSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningAdvisorTaskFindingSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlTuningAdvisorTaskId=").append(String.valueOf(this.sqlTuningAdvisorTaskId));
         sb.append(", sqlTuningAdvisorTaskObjectId=")
                 .append(String.valueOf(this.sqlTuningAdvisorTaskObjectId));
@@ -705,7 +740,6 @@ public final class SqlTuningAdvisorTaskFindingSummary {
         sb.append(", isErrorFindingPresent=").append(String.valueOf(this.isErrorFindingPresent));
         sb.append(", isTimeoutFindingPresent=")
                 .append(String.valueOf(this.isTimeoutFindingPresent));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -747,7 +781,7 @@ public final class SqlTuningAdvisorTaskFindingSummary {
                 && java.util.Objects.equals(this.isErrorFindingPresent, other.isErrorFindingPresent)
                 && java.util.Objects.equals(
                         this.isTimeoutFindingPresent, other.isTimeoutFindingPresent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -827,16 +861,7 @@ public final class SqlTuningAdvisorTaskFindingSummary {
                         + (this.isTimeoutFindingPresent == null
                                 ? 43
                                 : this.isTimeoutFindingPresent.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

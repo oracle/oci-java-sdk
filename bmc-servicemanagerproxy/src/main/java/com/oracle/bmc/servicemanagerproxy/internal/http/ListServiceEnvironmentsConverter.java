@@ -171,8 +171,8 @@ public class ListServiceEnvironmentsConverter {
                                         builder =
                                                 com.oracle.bmc.servicemanagerproxy.responses
                                                         .ListServiceEnvironmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceEnvironmentCollection(response.getItem());
 

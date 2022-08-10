@@ -18,7 +18,7 @@ package com.oracle.bmc.certificatesmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Validity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Validity {
+public final class Validity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeOfValidityNotBefore", "timeOfValidityNotAfter"})
     public Validity(java.util.Date timeOfValidityNotBefore, java.util.Date timeOfValidityNotAfter) {
@@ -74,19 +74,23 @@ public final class Validity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Validity build() {
-            Validity __instance__ = new Validity(timeOfValidityNotBefore, timeOfValidityNotAfter);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Validity model =
+                    new Validity(this.timeOfValidityNotBefore, this.timeOfValidityNotAfter);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Validity o) {
-            Builder copiedBuilder =
-                    timeOfValidityNotBefore(o.getTimeOfValidityNotBefore())
-                            .timeOfValidityNotAfter(o.getTimeOfValidityNotAfter());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Validity model) {
+            if (model.wasPropertyExplicitlySet("timeOfValidityNotBefore")) {
+                this.timeOfValidityNotBefore(model.getTimeOfValidityNotBefore());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfValidityNotAfter")) {
+                this.timeOfValidityNotAfter(model.getTimeOfValidityNotAfter());
+            }
+            return this;
         }
     }
 
@@ -150,9 +154,9 @@ public final class Validity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Validity(");
+        sb.append("super=").append(super.toString());
         sb.append("timeOfValidityNotBefore=").append(String.valueOf(this.timeOfValidityNotBefore));
         sb.append(", timeOfValidityNotAfter=").append(String.valueOf(this.timeOfValidityNotAfter));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -170,7 +174,7 @@ public final class Validity {
         return java.util.Objects.equals(this.timeOfValidityNotBefore, other.timeOfValidityNotBefore)
                 && java.util.Objects.equals(
                         this.timeOfValidityNotAfter, other.timeOfValidityNotAfter)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -187,16 +191,7 @@ public final class Validity {
                         + (this.timeOfValidityNotAfter == null
                                 ? 43
                                 : this.timeOfValidityNotAfter.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

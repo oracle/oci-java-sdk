@@ -93,7 +93,8 @@ public class GetVcnConverter {
 
                                 com.oracle.bmc.core.responses.GetVcnResponse.Builder builder =
                                         com.oracle.bmc.core.responses.GetVcnResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.vcn(response.getItem());
 

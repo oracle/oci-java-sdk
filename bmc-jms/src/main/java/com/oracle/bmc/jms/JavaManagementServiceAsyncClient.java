@@ -439,6 +439,61 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
     }
 
     @Override
+    public java.util.concurrent.Future<AddFleetInstallationSitesResponse> addFleetInstallationSites(
+            AddFleetInstallationSitesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddFleetInstallationSitesRequest, AddFleetInstallationSitesResponse>
+                    handler) {
+        LOG.trace("Called async addFleetInstallationSites");
+        final AddFleetInstallationSitesRequest interceptedRequest =
+                AddFleetInstallationSitesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddFleetInstallationSitesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "AddFleetInstallationSites",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/AddFleetInstallationSites");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddFleetInstallationSitesResponse>
+                transformer =
+                        AddFleetInstallationSitesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddFleetInstallationSitesRequest, AddFleetInstallationSitesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddFleetInstallationSitesRequest,
+                                AddFleetInstallationSitesResponse>,
+                        java.util.concurrent.Future<AddFleetInstallationSitesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddFleetInstallationSitesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddFleetInstallationSitesRequest, AddFleetInstallationSitesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -730,6 +785,70 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateAgentDeployScriptResponse> generateAgentDeployScript(
+            GenerateAgentDeployScriptRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateAgentDeployScriptRequest, GenerateAgentDeployScriptResponse>
+                    handler) {
+        LOG.trace("Called async generateAgentDeployScript");
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    "generateAgentDeployScript returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
+        }
+        final GenerateAgentDeployScriptRequest interceptedRequest =
+                GenerateAgentDeployScriptConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateAgentDeployScriptConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "GenerateAgentDeployScript",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateAgentDeployScript");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateAgentDeployScriptResponse>
+                transformer =
+                        GenerateAgentDeployScriptConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateAgentDeployScriptRequest, GenerateAgentDeployScriptResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateAgentDeployScriptRequest,
+                                GenerateAgentDeployScriptResponse>,
+                        java.util.concurrent.Future<GenerateAgentDeployScriptResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateAgentDeployScriptDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateAgentDeployScriptRequest, GenerateAgentDeployScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFleetResponse> getFleet(
             GetFleetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse>
@@ -809,6 +928,95 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetFleetAgentConfigurationRequest, GetFleetAgentConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaFamilyResponse> getJavaFamily(
+            GetJavaFamilyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetJavaFamilyRequest, GetJavaFamilyResponse>
+                    handler) {
+        LOG.trace("Called async getJavaFamily");
+        final GetJavaFamilyRequest interceptedRequest =
+                GetJavaFamilyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaFamilyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "GetJavaFamily",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/GetJavaFamily");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJavaFamilyResponse>
+                transformer =
+                        GetJavaFamilyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetJavaFamilyRequest, GetJavaFamilyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaFamilyRequest, GetJavaFamilyResponse>,
+                        java.util.concurrent.Future<GetJavaFamilyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaFamilyRequest, GetJavaFamilyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaReleaseResponse> getJavaRelease(
+            GetJavaReleaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetJavaReleaseRequest, GetJavaReleaseResponse>
+                    handler) {
+        LOG.trace("Called async getJavaRelease");
+        final GetJavaReleaseRequest interceptedRequest =
+                GetJavaReleaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaReleaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "GetJavaRelease",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/GetJavaRelease");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJavaReleaseResponse>
+                transformer =
+                        GetJavaReleaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetJavaReleaseRequest, GetJavaReleaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaReleaseRequest, GetJavaReleaseResponse>,
+                        java.util.concurrent.Future<GetJavaReleaseResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaReleaseRequest, GetJavaReleaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -989,6 +1197,98 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListInstallationSitesRequest, ListInstallationSitesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaFamiliesResponse> listJavaFamilies(
+            ListJavaFamiliesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJavaFamiliesRequest, ListJavaFamiliesResponse>
+                    handler) {
+        LOG.trace("Called async listJavaFamilies");
+        final ListJavaFamiliesRequest interceptedRequest =
+                ListJavaFamiliesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaFamiliesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListJavaFamilies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamilyCollection/ListJavaFamilies");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJavaFamiliesResponse>
+                transformer =
+                        ListJavaFamiliesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListJavaFamiliesRequest, ListJavaFamiliesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaFamiliesRequest, ListJavaFamiliesResponse>,
+                        java.util.concurrent.Future<ListJavaFamiliesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaFamiliesRequest, ListJavaFamiliesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaReleasesResponse> listJavaReleases(
+            ListJavaReleasesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJavaReleasesRequest, ListJavaReleasesResponse>
+                    handler) {
+        LOG.trace("Called async listJavaReleases");
+        final ListJavaReleasesRequest interceptedRequest =
+                ListJavaReleasesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaReleasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListJavaReleases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJavaReleasesResponse>
+                transformer =
+                        ListJavaReleasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListJavaReleasesRequest, ListJavaReleasesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaReleasesRequest, ListJavaReleasesResponse>,
+                        java.util.concurrent.Future<ListJavaReleasesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaReleasesRequest, ListJavaReleasesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

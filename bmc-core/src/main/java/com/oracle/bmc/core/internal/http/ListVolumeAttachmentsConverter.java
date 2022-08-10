@@ -148,8 +148,8 @@ public class ListVolumeAttachmentsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListVolumeAttachmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

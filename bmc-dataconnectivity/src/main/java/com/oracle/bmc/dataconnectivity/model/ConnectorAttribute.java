@@ -28,7 +28,7 @@ package com.oracle.bmc.dataconnectivity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ConnectorAttribute {
+public class ConnectorAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected ConnectorAttribute() {
@@ -48,6 +48,7 @@ public class ConnectorAttribute {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConnectorAttribute(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -62,13 +63,14 @@ public class ConnectorAttribute {
         }
 
         ConnectorAttribute other = (ConnectorAttribute) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

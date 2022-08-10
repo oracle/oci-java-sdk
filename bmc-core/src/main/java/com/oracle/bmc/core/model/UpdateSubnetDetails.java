@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = UpdateSubnetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSubnetDetails {
+public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -286,36 +286,53 @@ public final class UpdateSubnetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSubnetDetails build() {
-            UpdateSubnetDetails __instance__ =
+            UpdateSubnetDetails model =
                     new UpdateSubnetDetails(
-                            definedTags,
-                            dhcpOptionsId,
-                            displayName,
-                            freeformTags,
-                            routeTableId,
-                            securityListIds,
-                            cidrBlock,
-                            ipv6CidrBlock,
-                            ipv6CidrBlocks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.dhcpOptionsId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.routeTableId,
+                            this.securityListIds,
+                            this.cidrBlock,
+                            this.ipv6CidrBlock,
+                            this.ipv6CidrBlocks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSubnetDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .dhcpOptionsId(o.getDhcpOptionsId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .routeTableId(o.getRouteTableId())
-                            .securityListIds(o.getSecurityListIds())
-                            .cidrBlock(o.getCidrBlock())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .ipv6CidrBlocks(o.getIpv6CidrBlocks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSubnetDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dhcpOptionsId")) {
+                this.dhcpOptionsId(model.getDhcpOptionsId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("securityListIds")) {
+                this.securityListIds(model.getSecurityListIds());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlocks")) {
+                this.ipv6CidrBlocks(model.getIpv6CidrBlocks());
+            }
+            return this;
         }
     }
 
@@ -549,6 +566,7 @@ public final class UpdateSubnetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSubnetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dhcpOptionsId=").append(String.valueOf(this.dhcpOptionsId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -558,7 +576,6 @@ public final class UpdateSubnetDetails {
         sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
         sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -582,7 +599,7 @@ public final class UpdateSubnetDetails {
                 && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
                 && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
                 && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -606,16 +623,7 @@ public final class UpdateSubnetDetails {
         result =
                 (result * PRIME)
                         + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

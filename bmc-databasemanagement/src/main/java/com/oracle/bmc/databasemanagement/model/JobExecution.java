@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobExecution.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobExecution {
+public final class JobExecution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -440,62 +440,105 @@ public final class JobExecution {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobExecution build() {
-            JobExecution __instance__ =
+            JobExecution model =
                     new JobExecution(
-                            id,
-                            name,
-                            compartmentId,
-                            managedDatabaseGroupId,
-                            managedDatabaseId,
-                            managedDatabaseName,
-                            databaseType,
-                            databaseSubType,
-                            deploymentType,
-                            isCluster,
-                            workloadType,
-                            jobId,
-                            jobName,
-                            jobRunId,
-                            status,
-                            errorMessage,
-                            resultDetails,
-                            timeCreated,
-                            timeCompleted,
-                            userName,
-                            sqlText,
-                            scheduleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.compartmentId,
+                            this.managedDatabaseGroupId,
+                            this.managedDatabaseId,
+                            this.managedDatabaseName,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.deploymentType,
+                            this.isCluster,
+                            this.workloadType,
+                            this.jobId,
+                            this.jobName,
+                            this.jobRunId,
+                            this.status,
+                            this.errorMessage,
+                            this.resultDetails,
+                            this.timeCreated,
+                            this.timeCompleted,
+                            this.userName,
+                            this.sqlText,
+                            this.scheduleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobExecution o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .managedDatabaseGroupId(o.getManagedDatabaseGroupId())
-                            .managedDatabaseId(o.getManagedDatabaseId())
-                            .managedDatabaseName(o.getManagedDatabaseName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .deploymentType(o.getDeploymentType())
-                            .isCluster(o.getIsCluster())
-                            .workloadType(o.getWorkloadType())
-                            .jobId(o.getJobId())
-                            .jobName(o.getJobName())
-                            .jobRunId(o.getJobRunId())
-                            .status(o.getStatus())
-                            .errorMessage(o.getErrorMessage())
-                            .resultDetails(o.getResultDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .timeCompleted(o.getTimeCompleted())
-                            .userName(o.getUserName())
-                            .sqlText(o.getSqlText())
-                            .scheduleDetails(o.getScheduleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobExecution model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseGroupId")) {
+                this.managedDatabaseGroupId(model.getManagedDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseId")) {
+                this.managedDatabaseId(model.getManagedDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseName")) {
+                this.managedDatabaseName(model.getManagedDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("isCluster")) {
+                this.isCluster(model.getIsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            if (model.wasPropertyExplicitlySet("jobId")) {
+                this.jobId(model.getJobId());
+            }
+            if (model.wasPropertyExplicitlySet("jobName")) {
+                this.jobName(model.getJobName());
+            }
+            if (model.wasPropertyExplicitlySet("jobRunId")) {
+                this.jobRunId(model.getJobRunId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("resultDetails")) {
+                this.resultDetails(model.getResultDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeCompleted")) {
+                this.timeCompleted(model.getTimeCompleted());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("sqlText")) {
+                this.sqlText(model.getSqlText());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleDetails")) {
+                this.scheduleDetails(model.getScheduleDetails());
+            }
+            return this;
         }
     }
 
@@ -869,6 +912,7 @@ public final class JobExecution {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobExecution(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -891,7 +935,6 @@ public final class JobExecution {
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", sqlText=").append(String.valueOf(this.sqlText));
         sb.append(", scheduleDetails=").append(String.valueOf(this.scheduleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -929,7 +972,7 @@ public final class JobExecution {
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.sqlText, other.sqlText)
                 && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -980,16 +1023,7 @@ public final class JobExecution {
         result =
                 (result * PRIME)
                         + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

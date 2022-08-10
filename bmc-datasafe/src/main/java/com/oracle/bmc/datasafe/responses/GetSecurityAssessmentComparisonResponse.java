@@ -54,17 +54,19 @@ public class GetSecurityAssessmentComparisonResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "securityAssessmentComparison"
     })
     private GetSecurityAssessmentComparisonResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.datasafe.model.SecurityAssessmentComparison
                     securityAssessmentComparison) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.securityAssessmentComparison = securityAssessmentComparison;
@@ -75,6 +77,13 @@ public class GetSecurityAssessmentComparisonResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetSecurityAssessmentComparisonResponse extends com.oracle.bmc.resp
          */
         public Builder copy(GetSecurityAssessmentComparisonResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             securityAssessmentComparison(o.getSecurityAssessmentComparison());
@@ -149,7 +159,7 @@ public class GetSecurityAssessmentComparisonResponse extends com.oracle.bmc.resp
          */
         public GetSecurityAssessmentComparisonResponse build() {
             return new GetSecurityAssessmentComparisonResponse(
-                    __httpStatusCode__, opcRequestId, etag, securityAssessmentComparison);
+                    __httpStatusCode__, headers, opcRequestId, etag, securityAssessmentComparison);
         }
     }
 

@@ -53,16 +53,18 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "authenticationProvider"
     })
     private UpdateAuthenticationProviderResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.authenticationProvider = authenticationProvider;
@@ -73,6 +75,13 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
          */
         public Builder copy(UpdateAuthenticationProviderResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             authenticationProvider(o.getAuthenticationProvider());
@@ -145,7 +155,7 @@ public class UpdateAuthenticationProviderResponse extends com.oracle.bmc.respons
          */
         public UpdateAuthenticationProviderResponse build() {
             return new UpdateAuthenticationProviderResponse(
-                    __httpStatusCode__, etag, opcRequestId, authenticationProvider);
+                    __httpStatusCode__, headers, etag, opcRequestId, authenticationProvider);
         }
     }
 

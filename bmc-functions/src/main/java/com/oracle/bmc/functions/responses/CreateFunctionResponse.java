@@ -57,13 +57,20 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         return function;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "function"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "function"
+    })
     private CreateFunctionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.functions.model.Function function) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.function = function;
@@ -74,6 +81,13 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -138,6 +152,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(CreateFunctionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             function(o.getFunction());
@@ -150,7 +165,8 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public CreateFunctionResponse build() {
-            return new CreateFunctionResponse(__httpStatusCode__, etag, opcRequestId, function);
+            return new CreateFunctionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, function);
         }
     }
 

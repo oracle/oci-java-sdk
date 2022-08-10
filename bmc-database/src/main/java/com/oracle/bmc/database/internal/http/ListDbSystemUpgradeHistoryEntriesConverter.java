@@ -167,8 +167,8 @@ public class ListDbSystemUpgradeHistoryEntriesConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListDbSystemUpgradeHistoryEntriesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

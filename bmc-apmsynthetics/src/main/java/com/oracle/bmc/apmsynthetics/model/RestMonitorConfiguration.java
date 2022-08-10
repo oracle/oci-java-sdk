@@ -35,6 +35,15 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("isFailureRetried");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsConfiguration")
+        private DnsConfiguration dnsConfiguration;
+
+        public Builder dnsConfiguration(DnsConfiguration dnsConfiguration) {
+            this.dnsConfiguration = dnsConfiguration;
+            this.__explicitlySet__.add("dnsConfiguration");
+            return this;
+        }
         /**
          * If redirection enabled, then redirects will be allowed while accessing target URL.
          **/
@@ -214,42 +223,69 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestMonitorConfiguration build() {
-            RestMonitorConfiguration __instance__ =
+            RestMonitorConfiguration model =
                     new RestMonitorConfiguration(
-                            isFailureRetried,
-                            isRedirectionEnabled,
-                            isCertificateValidationEnabled,
-                            requestMethod,
-                            reqAuthenticationScheme,
-                            reqAuthenticationDetails,
-                            requestHeaders,
-                            requestQueryParams,
-                            requestPostBody,
-                            verifyResponseContent,
-                            verifyResponseCodes,
-                            networkConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isFailureRetried,
+                            this.dnsConfiguration,
+                            this.isRedirectionEnabled,
+                            this.isCertificateValidationEnabled,
+                            this.requestMethod,
+                            this.reqAuthenticationScheme,
+                            this.reqAuthenticationDetails,
+                            this.requestHeaders,
+                            this.requestQueryParams,
+                            this.requestPostBody,
+                            this.verifyResponseContent,
+                            this.verifyResponseCodes,
+                            this.networkConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RestMonitorConfiguration o) {
-            Builder copiedBuilder =
-                    isFailureRetried(o.getIsFailureRetried())
-                            .isRedirectionEnabled(o.getIsRedirectionEnabled())
-                            .isCertificateValidationEnabled(o.getIsCertificateValidationEnabled())
-                            .requestMethod(o.getRequestMethod())
-                            .reqAuthenticationScheme(o.getReqAuthenticationScheme())
-                            .reqAuthenticationDetails(o.getReqAuthenticationDetails())
-                            .requestHeaders(o.getRequestHeaders())
-                            .requestQueryParams(o.getRequestQueryParams())
-                            .requestPostBody(o.getRequestPostBody())
-                            .verifyResponseContent(o.getVerifyResponseContent())
-                            .verifyResponseCodes(o.getVerifyResponseCodes())
-                            .networkConfiguration(o.getNetworkConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RestMonitorConfiguration model) {
+            if (model.wasPropertyExplicitlySet("isFailureRetried")) {
+                this.isFailureRetried(model.getIsFailureRetried());
+            }
+            if (model.wasPropertyExplicitlySet("dnsConfiguration")) {
+                this.dnsConfiguration(model.getDnsConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("isRedirectionEnabled")) {
+                this.isRedirectionEnabled(model.getIsRedirectionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isCertificateValidationEnabled")) {
+                this.isCertificateValidationEnabled(model.getIsCertificateValidationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("requestMethod")) {
+                this.requestMethod(model.getRequestMethod());
+            }
+            if (model.wasPropertyExplicitlySet("reqAuthenticationScheme")) {
+                this.reqAuthenticationScheme(model.getReqAuthenticationScheme());
+            }
+            if (model.wasPropertyExplicitlySet("reqAuthenticationDetails")) {
+                this.reqAuthenticationDetails(model.getReqAuthenticationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("requestHeaders")) {
+                this.requestHeaders(model.getRequestHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("requestQueryParams")) {
+                this.requestQueryParams(model.getRequestQueryParams());
+            }
+            if (model.wasPropertyExplicitlySet("requestPostBody")) {
+                this.requestPostBody(model.getRequestPostBody());
+            }
+            if (model.wasPropertyExplicitlySet("verifyResponseContent")) {
+                this.verifyResponseContent(model.getVerifyResponseContent());
+            }
+            if (model.wasPropertyExplicitlySet("verifyResponseCodes")) {
+                this.verifyResponseCodes(model.getVerifyResponseCodes());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfiguration")) {
+                this.networkConfiguration(model.getNetworkConfiguration());
+            }
+            return this;
         }
     }
 
@@ -267,6 +303,7 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
     @Deprecated
     public RestMonitorConfiguration(
             Boolean isFailureRetried,
+            DnsConfiguration dnsConfiguration,
             Boolean isRedirectionEnabled,
             Boolean isCertificateValidationEnabled,
             RequestMethods requestMethod,
@@ -278,7 +315,7 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
             String verifyResponseContent,
             java.util.List<String> verifyResponseCodes,
             NetworkConfiguration networkConfiguration) {
-        super(isFailureRetried);
+        super(isFailureRetried, dnsConfiguration);
         this.isRedirectionEnabled = isRedirectionEnabled;
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
         this.requestMethod = requestMethod;
@@ -470,7 +507,6 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
         sb.append(", verifyResponseContent=").append(String.valueOf(this.verifyResponseContent));
         sb.append(", verifyResponseCodes=").append(String.valueOf(this.verifyResponseCodes));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -499,8 +535,7 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                 && java.util.Objects.equals(this.verifyResponseContent, other.verifyResponseContent)
                 && java.util.Objects.equals(this.verifyResponseCodes, other.verifyResponseCodes)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -556,16 +591,6 @@ public final class RestMonitorConfiguration extends MonitorConfiguration {
                         + (this.networkConfiguration == null
                                 ? 43
                                 : this.networkConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

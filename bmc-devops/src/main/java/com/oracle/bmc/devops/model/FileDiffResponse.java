@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FileDiffResponse.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FileDiffResponse {
+public final class FileDiffResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "oldPath",
@@ -184,34 +184,49 @@ public final class FileDiffResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FileDiffResponse build() {
-            FileDiffResponse __instance__ =
+            FileDiffResponse model =
                     new FileDiffResponse(
-                            oldPath,
-                            newPath,
-                            oldId,
-                            newId,
-                            areConflictsInFile,
-                            isLarge,
-                            isBinary,
-                            changes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.oldPath,
+                            this.newPath,
+                            this.oldId,
+                            this.newId,
+                            this.areConflictsInFile,
+                            this.isLarge,
+                            this.isBinary,
+                            this.changes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FileDiffResponse o) {
-            Builder copiedBuilder =
-                    oldPath(o.getOldPath())
-                            .newPath(o.getNewPath())
-                            .oldId(o.getOldId())
-                            .newId(o.getNewId())
-                            .areConflictsInFile(o.getAreConflictsInFile())
-                            .isLarge(o.getIsLarge())
-                            .isBinary(o.getIsBinary())
-                            .changes(o.getChanges());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FileDiffResponse model) {
+            if (model.wasPropertyExplicitlySet("oldPath")) {
+                this.oldPath(model.getOldPath());
+            }
+            if (model.wasPropertyExplicitlySet("newPath")) {
+                this.newPath(model.getNewPath());
+            }
+            if (model.wasPropertyExplicitlySet("oldId")) {
+                this.oldId(model.getOldId());
+            }
+            if (model.wasPropertyExplicitlySet("newId")) {
+                this.newId(model.getNewId());
+            }
+            if (model.wasPropertyExplicitlySet("areConflictsInFile")) {
+                this.areConflictsInFile(model.getAreConflictsInFile());
+            }
+            if (model.wasPropertyExplicitlySet("isLarge")) {
+                this.isLarge(model.getIsLarge());
+            }
+            if (model.wasPropertyExplicitlySet("isBinary")) {
+                this.isBinary(model.getIsBinary());
+            }
+            if (model.wasPropertyExplicitlySet("changes")) {
+                this.changes(model.getChanges());
+            }
+            return this;
         }
     }
 
@@ -351,6 +366,7 @@ public final class FileDiffResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FileDiffResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("oldPath=").append(String.valueOf(this.oldPath));
         sb.append(", newPath=").append(String.valueOf(this.newPath));
         sb.append(", oldId=").append(String.valueOf(this.oldId));
@@ -359,7 +375,6 @@ public final class FileDiffResponse {
         sb.append(", isLarge=").append(String.valueOf(this.isLarge));
         sb.append(", isBinary=").append(String.valueOf(this.isBinary));
         sb.append(", changes=").append(String.valueOf(this.changes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -382,7 +397,7 @@ public final class FileDiffResponse {
                 && java.util.Objects.equals(this.isLarge, other.isLarge)
                 && java.util.Objects.equals(this.isBinary, other.isBinary)
                 && java.util.Objects.equals(this.changes, other.changes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -401,16 +416,7 @@ public final class FileDiffResponse {
         result = (result * PRIME) + (this.isLarge == null ? 43 : this.isLarge.hashCode());
         result = (result * PRIME) + (this.isBinary == null ? 43 : this.isBinary.hashCode());
         result = (result * PRIME) + (this.changes == null ? 43 : this.changes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

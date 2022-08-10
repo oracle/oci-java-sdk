@@ -73,22 +73,29 @@ public final class CreatePortForwardingSessionTargetResourceDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePortForwardingSessionTargetResourceDetails build() {
-            CreatePortForwardingSessionTargetResourceDetails __instance__ =
+            CreatePortForwardingSessionTargetResourceDetails model =
                     new CreatePortForwardingSessionTargetResourceDetails(
-                            targetResourcePort, targetResourceId, targetResourcePrivateIpAddress);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.targetResourcePort,
+                            this.targetResourceId,
+                            this.targetResourcePrivateIpAddress);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreatePortForwardingSessionTargetResourceDetails o) {
-            Builder copiedBuilder =
-                    targetResourcePort(o.getTargetResourcePort())
-                            .targetResourceId(o.getTargetResourceId())
-                            .targetResourcePrivateIpAddress(o.getTargetResourcePrivateIpAddress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreatePortForwardingSessionTargetResourceDetails model) {
+            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
+                this.targetResourcePort(model.getTargetResourcePort());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceId")) {
+                this.targetResourceId(model.getTargetResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourcePrivateIpAddress")) {
+                this.targetResourcePrivateIpAddress(model.getTargetResourcePrivateIpAddress());
+            }
+            return this;
         }
     }
 
@@ -158,7 +165,6 @@ public final class CreatePortForwardingSessionTargetResourceDetails
         sb.append(", targetResourceId=").append(String.valueOf(this.targetResourceId));
         sb.append(", targetResourcePrivateIpAddress=")
                 .append(String.valueOf(this.targetResourcePrivateIpAddress));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -177,8 +183,7 @@ public final class CreatePortForwardingSessionTargetResourceDetails
         return java.util.Objects.equals(this.targetResourceId, other.targetResourceId)
                 && java.util.Objects.equals(
                         this.targetResourcePrivateIpAddress, other.targetResourcePrivateIpAddress)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -193,16 +198,6 @@ public final class CreatePortForwardingSessionTargetResourceDetails
                         + (this.targetResourcePrivateIpAddress == null
                                 ? 43
                                 : this.targetResourcePrivateIpAddress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

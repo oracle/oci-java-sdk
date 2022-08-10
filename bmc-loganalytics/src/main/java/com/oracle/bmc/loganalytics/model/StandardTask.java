@@ -207,54 +207,89 @@ public final class StandardTask extends ScheduledTask {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StandardTask build() {
-            StandardTask __instance__ =
+            StandardTask model =
                     new StandardTask(
-                            id,
-                            displayName,
-                            taskType,
-                            schedules,
-                            action,
-                            taskStatus,
-                            pauseReason,
-                            workRequestId,
-                            numOccurrences,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            timeOfNextExecution,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags,
-                            lastExecutionStatus,
-                            timeLastExecuted);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.taskType,
+                            this.schedules,
+                            this.action,
+                            this.taskStatus,
+                            this.pauseReason,
+                            this.workRequestId,
+                            this.numOccurrences,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.timeOfNextExecution,
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lastExecutionStatus,
+                            this.timeLastExecuted);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StandardTask o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .taskType(o.getTaskType())
-                            .schedules(o.getSchedules())
-                            .action(o.getAction())
-                            .taskStatus(o.getTaskStatus())
-                            .pauseReason(o.getPauseReason())
-                            .workRequestId(o.getWorkRequestId())
-                            .numOccurrences(o.getNumOccurrences())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeOfNextExecution(o.getTimeOfNextExecution())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .lastExecutionStatus(o.getLastExecutionStatus())
-                            .timeLastExecuted(o.getTimeLastExecuted());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StandardTask model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("taskType")) {
+                this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("schedules")) {
+                this.schedules(model.getSchedules());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("taskStatus")) {
+                this.taskStatus(model.getTaskStatus());
+            }
+            if (model.wasPropertyExplicitlySet("pauseReason")) {
+                this.pauseReason(model.getPauseReason());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("numOccurrences")) {
+                this.numOccurrences(model.getNumOccurrences());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfNextExecution")) {
+                this.timeOfNextExecution(model.getTimeOfNextExecution());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lastExecutionStatus")) {
+                this.lastExecutionStatus(model.getLastExecutionStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastExecuted")) {
+                this.timeLastExecuted(model.getTimeLastExecuted());
+            }
+            return this;
         }
     }
 
@@ -402,7 +437,6 @@ public final class StandardTask extends ScheduledTask {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", lastExecutionStatus=").append(String.valueOf(this.lastExecutionStatus));
         sb.append(", timeLastExecuted=").append(String.valueOf(this.timeLastExecuted));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -419,8 +453,7 @@ public final class StandardTask extends ScheduledTask {
         StandardTask other = (StandardTask) o;
         return java.util.Objects.equals(this.lastExecutionStatus, other.lastExecutionStatus)
                 && java.util.Objects.equals(this.timeLastExecuted, other.timeLastExecuted)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -435,16 +468,6 @@ public final class StandardTask extends ScheduledTask {
         result =
                 (result * PRIME)
                         + (this.timeLastExecuted == null ? 43 : this.timeLastExecuted.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

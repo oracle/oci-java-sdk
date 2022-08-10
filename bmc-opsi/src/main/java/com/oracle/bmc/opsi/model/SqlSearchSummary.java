@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlSearchSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlSearchSummary {
+public final class SqlSearchSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -165,32 +165,45 @@ public final class SqlSearchSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlSearchSummary build() {
-            SqlSearchSummary __instance__ =
+            SqlSearchSummary model =
                     new SqlSearchSummary(
-                            id,
-                            databaseId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.databaseId,
+                            this.compartmentId,
+                            this.databaseName,
+                            this.databaseDisplayName,
+                            this.databaseType,
+                            this.databaseVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlSearchSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .databaseId(o.getDatabaseId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlSearchSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDisplayName")) {
+                this.databaseDisplayName(model.getDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class SqlSearchSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlSearchSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -323,7 +337,6 @@ public final class SqlSearchSummary {
         sb.append(", databaseDisplayName=").append(String.valueOf(this.databaseDisplayName));
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class SqlSearchSummary {
                 && java.util.Objects.equals(this.databaseDisplayName, other.databaseDisplayName)
                 && java.util.Objects.equals(this.databaseType, other.databaseType)
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -367,16 +380,7 @@ public final class SqlSearchSummary {
         result =
                 (result * PRIME)
                         + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

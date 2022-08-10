@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UploadFileStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UploadFileStatus {
+public final class UploadFileStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fileName", "isValid"})
     public UploadFileStatus(String fileName, Boolean isValid) {
@@ -65,17 +65,22 @@ public final class UploadFileStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UploadFileStatus build() {
-            UploadFileStatus __instance__ = new UploadFileStatus(fileName, isValid);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UploadFileStatus model = new UploadFileStatus(this.fileName, this.isValid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UploadFileStatus o) {
-            Builder copiedBuilder = fileName(o.getFileName()).isValid(o.getIsValid());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UploadFileStatus model) {
+            if (model.wasPropertyExplicitlySet("fileName")) {
+                this.fileName(model.getFileName());
+            }
+            if (model.wasPropertyExplicitlySet("isValid")) {
+                this.isValid(model.getIsValid());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class UploadFileStatus {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UploadFileStatus(");
+        sb.append("super=").append(super.toString());
         sb.append("fileName=").append(String.valueOf(this.fileName));
         sb.append(", isValid=").append(String.valueOf(this.isValid));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class UploadFileStatus {
         UploadFileStatus other = (UploadFileStatus) o;
         return java.util.Objects.equals(this.fileName, other.fileName)
                 && java.util.Objects.equals(this.isValid, other.isValid)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class UploadFileStatus {
         int result = 1;
         result = (result * PRIME) + (this.fileName == null ? 43 : this.fileName.hashCode());
         result = (result * PRIME) + (this.isValid == null ? 43 : this.isValid.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = TopProcessesUsageTrend.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TopProcessesUsageTrend {
+public final class TopProcessesUsageTrend
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "endTimestamp",
@@ -167,32 +168,45 @@ public final class TopProcessesUsageTrend {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopProcessesUsageTrend build() {
-            TopProcessesUsageTrend __instance__ =
+            TopProcessesUsageTrend model =
                     new TopProcessesUsageTrend(
-                            endTimestamp,
-                            cpuUsage,
-                            cpuUtilization,
-                            memoryUtilization,
-                            virtualMemoryInMBs,
-                            physicalMemoryInMBs,
-                            maxProcessCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.endTimestamp,
+                            this.cpuUsage,
+                            this.cpuUtilization,
+                            this.memoryUtilization,
+                            this.virtualMemoryInMBs,
+                            this.physicalMemoryInMBs,
+                            this.maxProcessCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TopProcessesUsageTrend o) {
-            Builder copiedBuilder =
-                    endTimestamp(o.getEndTimestamp())
-                            .cpuUsage(o.getCpuUsage())
-                            .cpuUtilization(o.getCpuUtilization())
-                            .memoryUtilization(o.getMemoryUtilization())
-                            .virtualMemoryInMBs(o.getVirtualMemoryInMBs())
-                            .physicalMemoryInMBs(o.getPhysicalMemoryInMBs())
-                            .maxProcessCount(o.getMaxProcessCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TopProcessesUsageTrend model) {
+            if (model.wasPropertyExplicitlySet("endTimestamp")) {
+                this.endTimestamp(model.getEndTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUsage")) {
+                this.cpuUsage(model.getCpuUsage());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUtilization")) {
+                this.cpuUtilization(model.getCpuUtilization());
+            }
+            if (model.wasPropertyExplicitlySet("memoryUtilization")) {
+                this.memoryUtilization(model.getMemoryUtilization());
+            }
+            if (model.wasPropertyExplicitlySet("virtualMemoryInMBs")) {
+                this.virtualMemoryInMBs(model.getVirtualMemoryInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("physicalMemoryInMBs")) {
+                this.physicalMemoryInMBs(model.getPhysicalMemoryInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxProcessCount")) {
+                this.maxProcessCount(model.getMaxProcessCount());
+            }
+            return this;
         }
     }
 
@@ -318,6 +332,7 @@ public final class TopProcessesUsageTrend {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TopProcessesUsageTrend(");
+        sb.append("super=").append(super.toString());
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
         sb.append(", cpuUsage=").append(String.valueOf(this.cpuUsage));
         sb.append(", cpuUtilization=").append(String.valueOf(this.cpuUtilization));
@@ -325,7 +340,6 @@ public final class TopProcessesUsageTrend {
         sb.append(", virtualMemoryInMBs=").append(String.valueOf(this.virtualMemoryInMBs));
         sb.append(", physicalMemoryInMBs=").append(String.valueOf(this.physicalMemoryInMBs));
         sb.append(", maxProcessCount=").append(String.valueOf(this.maxProcessCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -347,7 +361,7 @@ public final class TopProcessesUsageTrend {
                 && java.util.Objects.equals(this.virtualMemoryInMBs, other.virtualMemoryInMBs)
                 && java.util.Objects.equals(this.physicalMemoryInMBs, other.physicalMemoryInMBs)
                 && java.util.Objects.equals(this.maxProcessCount, other.maxProcessCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -375,16 +389,7 @@ public final class TopProcessesUsageTrend {
         result =
                 (result * PRIME)
                         + (this.maxProcessCount == null ? 43 : this.maxProcessCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

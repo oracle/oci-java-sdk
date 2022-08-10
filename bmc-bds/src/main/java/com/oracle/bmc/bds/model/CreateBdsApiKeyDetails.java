@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = CreateBdsApiKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBdsApiKeyDetails {
+public final class CreateBdsApiKeyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userId", "passphrase", "defaultRegion", "keyAlias"})
     public CreateBdsApiKeyDetails(
@@ -110,22 +111,30 @@ public final class CreateBdsApiKeyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBdsApiKeyDetails build() {
-            CreateBdsApiKeyDetails __instance__ =
-                    new CreateBdsApiKeyDetails(userId, passphrase, defaultRegion, keyAlias);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateBdsApiKeyDetails model =
+                    new CreateBdsApiKeyDetails(
+                            this.userId, this.passphrase, this.defaultRegion, this.keyAlias);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBdsApiKeyDetails o) {
-            Builder copiedBuilder =
-                    userId(o.getUserId())
-                            .passphrase(o.getPassphrase())
-                            .defaultRegion(o.getDefaultRegion())
-                            .keyAlias(o.getKeyAlias());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBdsApiKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("passphrase")) {
+                this.passphrase(model.getPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("defaultRegion")) {
+                this.defaultRegion(model.getDefaultRegion());
+            }
+            if (model.wasPropertyExplicitlySet("keyAlias")) {
+                this.keyAlias(model.getKeyAlias());
+            }
+            return this;
         }
     }
 
@@ -217,11 +226,11 @@ public final class CreateBdsApiKeyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBdsApiKeyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("userId=").append(String.valueOf(this.userId));
         sb.append(", passphrase=").append(String.valueOf(this.passphrase));
         sb.append(", defaultRegion=").append(String.valueOf(this.defaultRegion));
         sb.append(", keyAlias=").append(String.valueOf(this.keyAlias));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +249,7 @@ public final class CreateBdsApiKeyDetails {
                 && java.util.Objects.equals(this.passphrase, other.passphrase)
                 && java.util.Objects.equals(this.defaultRegion, other.defaultRegion)
                 && java.util.Objects.equals(this.keyAlias, other.keyAlias)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -253,16 +262,7 @@ public final class CreateBdsApiKeyDetails {
                 (result * PRIME)
                         + (this.defaultRegion == null ? 43 : this.defaultRegion.hashCode());
         result = (result * PRIME) + (this.keyAlias == null ? 43 : this.keyAlias.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

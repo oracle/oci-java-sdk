@@ -22,7 +22,8 @@ package com.oracle.bmc.core.model;
     builder = IPSecConnectionTunnel.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IPSecConnectionTunnel {
+public final class IPSecConnectionTunnel
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -434,56 +435,93 @@ public final class IPSecConnectionTunnel {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IPSecConnectionTunnel build() {
-            IPSecConnectionTunnel __instance__ =
+            IPSecConnectionTunnel model =
                     new IPSecConnectionTunnel(
-                            compartmentId,
-                            id,
-                            vpnIp,
-                            cpeIp,
-                            status,
-                            ikeVersion,
-                            lifecycleState,
-                            displayName,
-                            bgpSessionInfo,
-                            encryptionDomainConfig,
-                            routing,
-                            timeCreated,
-                            timeStatusUpdated,
-                            oracleCanInitiate,
-                            natTranslationEnabled,
-                            dpdMode,
-                            dpdTimeoutInSec,
-                            phaseOneDetails,
-                            phaseTwoDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.id,
+                            this.vpnIp,
+                            this.cpeIp,
+                            this.status,
+                            this.ikeVersion,
+                            this.lifecycleState,
+                            this.displayName,
+                            this.bgpSessionInfo,
+                            this.encryptionDomainConfig,
+                            this.routing,
+                            this.timeCreated,
+                            this.timeStatusUpdated,
+                            this.oracleCanInitiate,
+                            this.natTranslationEnabled,
+                            this.dpdMode,
+                            this.dpdTimeoutInSec,
+                            this.phaseOneDetails,
+                            this.phaseTwoDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IPSecConnectionTunnel o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .vpnIp(o.getVpnIp())
-                            .cpeIp(o.getCpeIp())
-                            .status(o.getStatus())
-                            .ikeVersion(o.getIkeVersion())
-                            .lifecycleState(o.getLifecycleState())
-                            .displayName(o.getDisplayName())
-                            .bgpSessionInfo(o.getBgpSessionInfo())
-                            .encryptionDomainConfig(o.getEncryptionDomainConfig())
-                            .routing(o.getRouting())
-                            .timeCreated(o.getTimeCreated())
-                            .timeStatusUpdated(o.getTimeStatusUpdated())
-                            .oracleCanInitiate(o.getOracleCanInitiate())
-                            .natTranslationEnabled(o.getNatTranslationEnabled())
-                            .dpdMode(o.getDpdMode())
-                            .dpdTimeoutInSec(o.getDpdTimeoutInSec())
-                            .phaseOneDetails(o.getPhaseOneDetails())
-                            .phaseTwoDetails(o.getPhaseTwoDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IPSecConnectionTunnel model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("vpnIp")) {
+                this.vpnIp(model.getVpnIp());
+            }
+            if (model.wasPropertyExplicitlySet("cpeIp")) {
+                this.cpeIp(model.getCpeIp());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("ikeVersion")) {
+                this.ikeVersion(model.getIkeVersion());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("bgpSessionInfo")) {
+                this.bgpSessionInfo(model.getBgpSessionInfo());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionDomainConfig")) {
+                this.encryptionDomainConfig(model.getEncryptionDomainConfig());
+            }
+            if (model.wasPropertyExplicitlySet("routing")) {
+                this.routing(model.getRouting());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeStatusUpdated")) {
+                this.timeStatusUpdated(model.getTimeStatusUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("oracleCanInitiate")) {
+                this.oracleCanInitiate(model.getOracleCanInitiate());
+            }
+            if (model.wasPropertyExplicitlySet("natTranslationEnabled")) {
+                this.natTranslationEnabled(model.getNatTranslationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dpdMode")) {
+                this.dpdMode(model.getDpdMode());
+            }
+            if (model.wasPropertyExplicitlySet("dpdTimeoutInSec")) {
+                this.dpdTimeoutInSec(model.getDpdTimeoutInSec());
+            }
+            if (model.wasPropertyExplicitlySet("phaseOneDetails")) {
+                this.phaseOneDetails(model.getPhaseOneDetails());
+            }
+            if (model.wasPropertyExplicitlySet("phaseTwoDetails")) {
+                this.phaseTwoDetails(model.getPhaseTwoDetails());
+            }
+            return this;
         }
     }
 
@@ -1171,6 +1209,7 @@ public final class IPSecConnectionTunnel {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IPSecConnectionTunnel(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", vpnIp=").append(String.valueOf(this.vpnIp));
@@ -1190,7 +1229,6 @@ public final class IPSecConnectionTunnel {
         sb.append(", dpdTimeoutInSec=").append(String.valueOf(this.dpdTimeoutInSec));
         sb.append(", phaseOneDetails=").append(String.valueOf(this.phaseOneDetails));
         sb.append(", phaseTwoDetails=").append(String.valueOf(this.phaseTwoDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1225,7 +1263,7 @@ public final class IPSecConnectionTunnel {
                 && java.util.Objects.equals(this.dpdTimeoutInSec, other.dpdTimeoutInSec)
                 && java.util.Objects.equals(this.phaseOneDetails, other.phaseOneDetails)
                 && java.util.Objects.equals(this.phaseTwoDetails, other.phaseTwoDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1275,16 +1313,7 @@ public final class IPSecConnectionTunnel {
         result =
                 (result * PRIME)
                         + (this.phaseTwoDetails == null ? 43 : this.phaseTwoDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -36,7 +36,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PublishedObject {
+public class PublishedObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -186,6 +186,7 @@ public class PublishedObject {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PublishedObject(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -215,7 +216,8 @@ public class PublishedObject {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.objectVersion, other.objectVersion)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.identifier, other.identifier);
+                && java.util.Objects.equals(this.identifier, other.identifier)
+                && super.equals(other);
     }
 
     @Override
@@ -232,6 +234,7 @@ public class PublishedObject {
                         + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

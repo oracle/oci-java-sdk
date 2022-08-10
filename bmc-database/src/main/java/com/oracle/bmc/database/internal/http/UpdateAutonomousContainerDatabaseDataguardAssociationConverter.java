@@ -140,8 +140,8 @@ public class UpdateAutonomousContainerDatabaseDataguardAssociationConverter {
                                                 com.oracle.bmc.database.responses
                                                         .UpdateAutonomousContainerDatabaseDataguardAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousContainerDatabaseDataguardAssociation(
                                         response.getItem());

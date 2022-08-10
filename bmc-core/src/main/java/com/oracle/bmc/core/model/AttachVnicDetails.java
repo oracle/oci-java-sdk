@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = AttachVnicDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttachVnicDetails {
+public final class AttachVnicDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "createVnicDetails",
@@ -117,22 +117,33 @@ public final class AttachVnicDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachVnicDetails build() {
-            AttachVnicDetails __instance__ =
-                    new AttachVnicDetails(createVnicDetails, displayName, instanceId, nicIndex);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AttachVnicDetails model =
+                    new AttachVnicDetails(
+                            this.createVnicDetails,
+                            this.displayName,
+                            this.instanceId,
+                            this.nicIndex);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachVnicDetails o) {
-            Builder copiedBuilder =
-                    createVnicDetails(o.getCreateVnicDetails())
-                            .displayName(o.getDisplayName())
-                            .instanceId(o.getInstanceId())
-                            .nicIndex(o.getNicIndex());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachVnicDetails model) {
+            if (model.wasPropertyExplicitlySet("createVnicDetails")) {
+                this.createVnicDetails(model.getCreateVnicDetails());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("nicIndex")) {
+                this.nicIndex(model.getNicIndex());
+            }
+            return this;
         }
     }
 
@@ -223,11 +234,11 @@ public final class AttachVnicDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttachVnicDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("createVnicDetails=").append(String.valueOf(this.createVnicDetails));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", nicIndex=").append(String.valueOf(this.nicIndex));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -246,7 +257,7 @@ public final class AttachVnicDetails {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.nicIndex, other.nicIndex)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +270,7 @@ public final class AttachVnicDetails {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
         result = (result * PRIME) + (this.nicIndex == null ? 43 : this.nicIndex.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

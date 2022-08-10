@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WrappingKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WrappingKey {
+public final class WrappingKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -160,25 +160,41 @@ public final class WrappingKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WrappingKey build() {
-            WrappingKey __instance__ =
+            WrappingKey model =
                     new WrappingKey(
-                            compartmentId, id, lifecycleState, publicKey, timeCreated, vaultId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.id,
+                            this.lifecycleState,
+                            this.publicKey,
+                            this.timeCreated,
+                            this.vaultId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WrappingKey o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .publicKey(o.getPublicKey())
-                            .timeCreated(o.getTimeCreated())
-                            .vaultId(o.getVaultId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WrappingKey model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("publicKey")) {
+                this.publicKey(model.getPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            return this;
         }
     }
 
@@ -366,13 +382,13 @@ public final class WrappingKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WrappingKey(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", publicKey=").append(String.valueOf(this.publicKey));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -393,7 +409,7 @@ public final class WrappingKey {
                 && java.util.Objects.equals(this.publicKey, other.publicKey)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -410,16 +426,7 @@ public final class WrappingKey {
         result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

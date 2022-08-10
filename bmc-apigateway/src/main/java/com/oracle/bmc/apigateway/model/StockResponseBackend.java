@@ -81,17 +81,26 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StockResponseBackend build() {
-            StockResponseBackend __instance__ = new StockResponseBackend(body, status, headers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StockResponseBackend model =
+                    new StockResponseBackend(this.body, this.status, this.headers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StockResponseBackend o) {
-            Builder copiedBuilder = body(o.getBody()).status(o.getStatus()).headers(o.getHeaders());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StockResponseBackend model) {
+            if (model.wasPropertyExplicitlySet("body")) {
+                this.body(model.getBody());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            return this;
         }
     }
 
@@ -174,7 +183,6 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
         sb.append(", body=").append(String.valueOf(this.body));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", headers=").append(String.valueOf(this.headers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,8 +200,7 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
         return java.util.Objects.equals(this.body, other.body)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.headers, other.headers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -203,16 +210,6 @@ public final class StockResponseBackend extends ApiSpecificationRouteBackend {
         result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

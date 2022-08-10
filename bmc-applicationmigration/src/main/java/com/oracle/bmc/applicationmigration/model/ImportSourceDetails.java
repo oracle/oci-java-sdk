@@ -89,22 +89,30 @@ public final class ImportSourceDetails extends SourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImportSourceDetails build() {
-            ImportSourceDetails __instance__ =
-                    new ImportSourceDetails(manifest, namespace, bucket, objectName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImportSourceDetails model =
+                    new ImportSourceDetails(
+                            this.manifest, this.namespace, this.bucket, this.objectName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImportSourceDetails o) {
-            Builder copiedBuilder =
-                    manifest(o.getManifest())
-                            .namespace(o.getNamespace())
-                            .bucket(o.getBucket())
-                            .objectName(o.getObjectName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImportSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("manifest")) {
+                this.manifest(model.getManifest());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucket")) {
+                this.bucket(model.getBucket());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            return this;
         }
     }
 
@@ -196,7 +204,6 @@ public final class ImportSourceDetails extends SourceDetails {
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucket=").append(String.valueOf(this.bucket));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -215,8 +222,7 @@ public final class ImportSourceDetails extends SourceDetails {
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.bucket, other.bucket)
                 && java.util.Objects.equals(this.objectName, other.objectName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -227,16 +233,6 @@ public final class ImportSourceDetails extends SourceDetails {
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

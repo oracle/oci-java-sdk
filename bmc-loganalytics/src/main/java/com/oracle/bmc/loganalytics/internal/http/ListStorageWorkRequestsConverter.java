@@ -200,8 +200,8 @@ public class ListStorageWorkRequestsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListStorageWorkRequestsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.storageWorkRequestCollection(response.getItem());
 

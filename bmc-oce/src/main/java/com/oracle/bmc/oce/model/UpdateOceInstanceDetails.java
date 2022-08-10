@@ -19,7 +19,8 @@ package com.oracle.bmc.oce.model;
     builder = UpdateOceInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateOceInstanceDetails {
+public final class UpdateOceInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -176,32 +177,45 @@ public final class UpdateOceInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOceInstanceDetails build() {
-            UpdateOceInstanceDetails __instance__ =
+            UpdateOceInstanceDetails model =
                     new UpdateOceInstanceDetails(
-                            description,
-                            wafPrimaryDomain,
-                            instanceLicenseType,
-                            instanceUsageType,
-                            addOnFeatures,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.wafPrimaryDomain,
+                            this.instanceLicenseType,
+                            this.instanceUsageType,
+                            this.addOnFeatures,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOceInstanceDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .wafPrimaryDomain(o.getWafPrimaryDomain())
-                            .instanceLicenseType(o.getInstanceLicenseType())
-                            .instanceUsageType(o.getInstanceUsageType())
-                            .addOnFeatures(o.getAddOnFeatures())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOceInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("wafPrimaryDomain")) {
+                this.wafPrimaryDomain(model.getWafPrimaryDomain());
+            }
+            if (model.wasPropertyExplicitlySet("instanceLicenseType")) {
+                this.instanceLicenseType(model.getInstanceLicenseType());
+            }
+            if (model.wasPropertyExplicitlySet("instanceUsageType")) {
+                this.instanceUsageType(model.getInstanceUsageType());
+            }
+            if (model.wasPropertyExplicitlySet("addOnFeatures")) {
+                this.addOnFeatures(model.getAddOnFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -370,6 +384,7 @@ public final class UpdateOceInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOceInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", wafPrimaryDomain=").append(String.valueOf(this.wafPrimaryDomain));
         sb.append(", instanceLicenseType=").append(String.valueOf(this.instanceLicenseType));
@@ -377,7 +392,6 @@ public final class UpdateOceInstanceDetails {
         sb.append(", addOnFeatures=").append(String.valueOf(this.addOnFeatures));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -399,7 +413,7 @@ public final class UpdateOceInstanceDetails {
                 && java.util.Objects.equals(this.addOnFeatures, other.addOnFeatures)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -423,16 +437,7 @@ public final class UpdateOceInstanceDetails {
                         + (this.addOnFeatures == null ? 43 : this.addOnFeatures.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -25,7 +25,8 @@ package com.oracle.bmc.healthchecks.model;
     builder = HttpProbeResultSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HttpProbeResultSummary {
+public final class HttpProbeResultSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -555,66 +556,113 @@ public final class HttpProbeResultSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HttpProbeResultSummary build() {
-            HttpProbeResultSummary __instance__ =
+            HttpProbeResultSummary model =
                     new HttpProbeResultSummary(
-                            key,
-                            probeConfigurationId,
-                            startTime,
-                            target,
-                            vantagePointName,
-                            isTimedOut,
-                            isHealthy,
-                            errorCategory,
-                            errorMessage,
-                            protocol,
-                            connection,
-                            dns,
-                            statusCode,
-                            domainLookupStart,
-                            domainLookupEnd,
-                            connectStart,
-                            secureConnectionStart,
-                            connectEnd,
-                            fetchStart,
-                            requestStart,
-                            responseStart,
-                            responseEnd,
-                            duration,
-                            encodedBodySize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.probeConfigurationId,
+                            this.startTime,
+                            this.target,
+                            this.vantagePointName,
+                            this.isTimedOut,
+                            this.isHealthy,
+                            this.errorCategory,
+                            this.errorMessage,
+                            this.protocol,
+                            this.connection,
+                            this.dns,
+                            this.statusCode,
+                            this.domainLookupStart,
+                            this.domainLookupEnd,
+                            this.connectStart,
+                            this.secureConnectionStart,
+                            this.connectEnd,
+                            this.fetchStart,
+                            this.requestStart,
+                            this.responseStart,
+                            this.responseEnd,
+                            this.duration,
+                            this.encodedBodySize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HttpProbeResultSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .probeConfigurationId(o.getProbeConfigurationId())
-                            .startTime(o.getStartTime())
-                            .target(o.getTarget())
-                            .vantagePointName(o.getVantagePointName())
-                            .isTimedOut(o.getIsTimedOut())
-                            .isHealthy(o.getIsHealthy())
-                            .errorCategory(o.getErrorCategory())
-                            .errorMessage(o.getErrorMessage())
-                            .protocol(o.getProtocol())
-                            .connection(o.getConnection())
-                            .dns(o.getDns())
-                            .statusCode(o.getStatusCode())
-                            .domainLookupStart(o.getDomainLookupStart())
-                            .domainLookupEnd(o.getDomainLookupEnd())
-                            .connectStart(o.getConnectStart())
-                            .secureConnectionStart(o.getSecureConnectionStart())
-                            .connectEnd(o.getConnectEnd())
-                            .fetchStart(o.getFetchStart())
-                            .requestStart(o.getRequestStart())
-                            .responseStart(o.getResponseStart())
-                            .responseEnd(o.getResponseEnd())
-                            .duration(o.getDuration())
-                            .encodedBodySize(o.getEncodedBodySize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HttpProbeResultSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("probeConfigurationId")) {
+                this.probeConfigurationId(model.getProbeConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("startTime")) {
+                this.startTime(model.getStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePointName")) {
+                this.vantagePointName(model.getVantagePointName());
+            }
+            if (model.wasPropertyExplicitlySet("isTimedOut")) {
+                this.isTimedOut(model.getIsTimedOut());
+            }
+            if (model.wasPropertyExplicitlySet("isHealthy")) {
+                this.isHealthy(model.getIsHealthy());
+            }
+            if (model.wasPropertyExplicitlySet("errorCategory")) {
+                this.errorCategory(model.getErrorCategory());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("connection")) {
+                this.connection(model.getConnection());
+            }
+            if (model.wasPropertyExplicitlySet("dns")) {
+                this.dns(model.getDns());
+            }
+            if (model.wasPropertyExplicitlySet("statusCode")) {
+                this.statusCode(model.getStatusCode());
+            }
+            if (model.wasPropertyExplicitlySet("domainLookupStart")) {
+                this.domainLookupStart(model.getDomainLookupStart());
+            }
+            if (model.wasPropertyExplicitlySet("domainLookupEnd")) {
+                this.domainLookupEnd(model.getDomainLookupEnd());
+            }
+            if (model.wasPropertyExplicitlySet("connectStart")) {
+                this.connectStart(model.getConnectStart());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnectionStart")) {
+                this.secureConnectionStart(model.getSecureConnectionStart());
+            }
+            if (model.wasPropertyExplicitlySet("connectEnd")) {
+                this.connectEnd(model.getConnectEnd());
+            }
+            if (model.wasPropertyExplicitlySet("fetchStart")) {
+                this.fetchStart(model.getFetchStart());
+            }
+            if (model.wasPropertyExplicitlySet("requestStart")) {
+                this.requestStart(model.getRequestStart());
+            }
+            if (model.wasPropertyExplicitlySet("responseStart")) {
+                this.responseStart(model.getResponseStart());
+            }
+            if (model.wasPropertyExplicitlySet("responseEnd")) {
+                this.responseEnd(model.getResponseEnd());
+            }
+            if (model.wasPropertyExplicitlySet("duration")) {
+                this.duration(model.getDuration());
+            }
+            if (model.wasPropertyExplicitlySet("encodedBodySize")) {
+                this.encodedBodySize(model.getEncodedBodySize());
+            }
+            return this;
         }
     }
 
@@ -1095,6 +1143,7 @@ public final class HttpProbeResultSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HttpProbeResultSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", probeConfigurationId=").append(String.valueOf(this.probeConfigurationId));
         sb.append(", startTime=").append(String.valueOf(this.startTime));
@@ -1119,7 +1168,6 @@ public final class HttpProbeResultSummary {
         sb.append(", responseEnd=").append(String.valueOf(this.responseEnd));
         sb.append(", duration=").append(String.valueOf(this.duration));
         sb.append(", encodedBodySize=").append(String.valueOf(this.encodedBodySize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1158,7 +1206,7 @@ public final class HttpProbeResultSummary {
                 && java.util.Objects.equals(this.responseEnd, other.responseEnd)
                 && java.util.Objects.equals(this.duration, other.duration)
                 && java.util.Objects.equals(this.encodedBodySize, other.encodedBodySize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1209,16 +1257,7 @@ public final class HttpProbeResultSummary {
         result =
                 (result * PRIME)
                         + (this.encodedBodySize == null ? 43 : this.encodedBodySize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -165,39 +165,58 @@ public final class UpdateSlackChannelDetails extends UpdateChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSlackChannelDetails build() {
-            UpdateSlackChannelDetails __instance__ =
+            UpdateSlackChannelDetails model =
                     new UpdateSlackChannelDetails(
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            clientId,
-                            authSuccessUrl,
-                            authErrorUrl,
-                            signingSecret,
-                            clientSecret,
-                            botId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.clientId,
+                            this.authSuccessUrl,
+                            this.authErrorUrl,
+                            this.signingSecret,
+                            this.clientSecret,
+                            this.botId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSlackChannelDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .clientId(o.getClientId())
-                            .authSuccessUrl(o.getAuthSuccessUrl())
-                            .authErrorUrl(o.getAuthErrorUrl())
-                            .signingSecret(o.getSigningSecret())
-                            .clientSecret(o.getClientSecret())
-                            .botId(o.getBotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSlackChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            if (model.wasPropertyExplicitlySet("authSuccessUrl")) {
+                this.authSuccessUrl(model.getAuthSuccessUrl());
+            }
+            if (model.wasPropertyExplicitlySet("authErrorUrl")) {
+                this.authErrorUrl(model.getAuthErrorUrl());
+            }
+            if (model.wasPropertyExplicitlySet("signingSecret")) {
+                this.signingSecret(model.getSigningSecret());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecret")) {
+                this.clientSecret(model.getClientSecret());
+            }
+            if (model.wasPropertyExplicitlySet("botId")) {
+                this.botId(model.getBotId());
+            }
+            return this;
         }
     }
 
@@ -337,7 +356,6 @@ public final class UpdateSlackChannelDetails extends UpdateChannelDetails {
         sb.append(", signingSecret=").append(String.valueOf(this.signingSecret));
         sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
         sb.append(", botId=").append(String.valueOf(this.botId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -358,8 +376,7 @@ public final class UpdateSlackChannelDetails extends UpdateChannelDetails {
                 && java.util.Objects.equals(this.signingSecret, other.signingSecret)
                 && java.util.Objects.equals(this.clientSecret, other.clientSecret)
                 && java.util.Objects.equals(this.botId, other.botId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -376,16 +393,6 @@ public final class UpdateSlackChannelDetails extends UpdateChannelDetails {
                         + (this.signingSecret == null ? 43 : this.signingSecret.hashCode());
         result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
         result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

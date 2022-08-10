@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = DataObjectColumnMetadata.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataObjectColumnMetadata {
+public final class DataObjectColumnMetadata
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -160,32 +161,45 @@ public final class DataObjectColumnMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataObjectColumnMetadata build() {
-            DataObjectColumnMetadata __instance__ =
+            DataObjectColumnMetadata model =
                     new DataObjectColumnMetadata(
-                            name,
-                            category,
-                            dataTypeName,
-                            displayName,
-                            description,
-                            groupName,
-                            unitDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.category,
+                            this.dataTypeName,
+                            this.displayName,
+                            this.description,
+                            this.groupName,
+                            this.unitDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataObjectColumnMetadata o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .category(o.getCategory())
-                            .dataTypeName(o.getDataTypeName())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .groupName(o.getGroupName())
-                            .unitDetails(o.getUnitDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataObjectColumnMetadata model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("dataTypeName")) {
+                this.dataTypeName(model.getDataTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("groupName")) {
+                this.groupName(model.getGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("unitDetails")) {
+                this.unitDetails(model.getUnitDetails());
+            }
+            return this;
         }
     }
 
@@ -402,6 +416,7 @@ public final class DataObjectColumnMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataObjectColumnMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", dataTypeName=").append(String.valueOf(this.dataTypeName));
@@ -409,7 +424,6 @@ public final class DataObjectColumnMetadata {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", groupName=").append(String.valueOf(this.groupName));
         sb.append(", unitDetails=").append(String.valueOf(this.unitDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -431,7 +445,7 @@ public final class DataObjectColumnMetadata {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.groupName, other.groupName)
                 && java.util.Objects.equals(this.unitDetails, other.unitDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -445,16 +459,7 @@ public final class DataObjectColumnMetadata {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.groupName == null ? 43 : this.groupName.hashCode());
         result = (result * PRIME) + (this.unitDetails == null ? 43 : this.unitDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

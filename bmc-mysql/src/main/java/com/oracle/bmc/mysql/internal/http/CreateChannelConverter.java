@@ -99,8 +99,8 @@ public class CreateChannelConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses.CreateChannelResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.channel(response.getItem());
 

@@ -21,7 +21,7 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = LetterOfAuthority.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LetterOfAuthority {
+public final class LetterOfAuthority extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "authorizedEntityName",
@@ -177,32 +177,45 @@ public final class LetterOfAuthority {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LetterOfAuthority build() {
-            LetterOfAuthority __instance__ =
+            LetterOfAuthority model =
                     new LetterOfAuthority(
-                            authorizedEntityName,
-                            circuitType,
-                            crossConnectId,
-                            facilityLocation,
-                            portName,
-                            timeExpires,
-                            timeIssued);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.authorizedEntityName,
+                            this.circuitType,
+                            this.crossConnectId,
+                            this.facilityLocation,
+                            this.portName,
+                            this.timeExpires,
+                            this.timeIssued);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LetterOfAuthority o) {
-            Builder copiedBuilder =
-                    authorizedEntityName(o.getAuthorizedEntityName())
-                            .circuitType(o.getCircuitType())
-                            .crossConnectId(o.getCrossConnectId())
-                            .facilityLocation(o.getFacilityLocation())
-                            .portName(o.getPortName())
-                            .timeExpires(o.getTimeExpires())
-                            .timeIssued(o.getTimeIssued());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LetterOfAuthority model) {
+            if (model.wasPropertyExplicitlySet("authorizedEntityName")) {
+                this.authorizedEntityName(model.getAuthorizedEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("circuitType")) {
+                this.circuitType(model.getCircuitType());
+            }
+            if (model.wasPropertyExplicitlySet("crossConnectId")) {
+                this.crossConnectId(model.getCrossConnectId());
+            }
+            if (model.wasPropertyExplicitlySet("facilityLocation")) {
+                this.facilityLocation(model.getFacilityLocation());
+            }
+            if (model.wasPropertyExplicitlySet("portName")) {
+                this.portName(model.getPortName());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpires")) {
+                this.timeExpires(model.getTimeExpires());
+            }
+            if (model.wasPropertyExplicitlySet("timeIssued")) {
+                this.timeIssued(model.getTimeIssued());
+            }
+            return this;
         }
     }
 
@@ -371,6 +384,7 @@ public final class LetterOfAuthority {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LetterOfAuthority(");
+        sb.append("super=").append(super.toString());
         sb.append("authorizedEntityName=").append(String.valueOf(this.authorizedEntityName));
         sb.append(", circuitType=").append(String.valueOf(this.circuitType));
         sb.append(", crossConnectId=").append(String.valueOf(this.crossConnectId));
@@ -378,7 +392,6 @@ public final class LetterOfAuthority {
         sb.append(", portName=").append(String.valueOf(this.portName));
         sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
         sb.append(", timeIssued=").append(String.valueOf(this.timeIssued));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -400,7 +413,7 @@ public final class LetterOfAuthority {
                 && java.util.Objects.equals(this.portName, other.portName)
                 && java.util.Objects.equals(this.timeExpires, other.timeExpires)
                 && java.util.Objects.equals(this.timeIssued, other.timeIssued)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -422,16 +435,7 @@ public final class LetterOfAuthority {
         result = (result * PRIME) + (this.portName == null ? 43 : this.portName.hashCode());
         result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
         result = (result * PRIME) + (this.timeIssued == null ? 43 : this.timeIssued.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

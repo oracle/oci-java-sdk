@@ -110,33 +110,46 @@ public final class UpdateTriggerDeploymentStageDetails extends UpdateBuildPipeli
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTriggerDeploymentStageDetails build() {
-            UpdateTriggerDeploymentStageDetails __instance__ =
+            UpdateTriggerDeploymentStageDetails model =
                     new UpdateTriggerDeploymentStageDetails(
-                            displayName,
-                            description,
-                            buildPipelineStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            deployPipelineId,
-                            isPassAllParametersEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.buildPipelineStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.deployPipelineId,
+                            this.isPassAllParametersEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTriggerDeploymentStageDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .buildPipelineStagePredecessorCollection(
-                                    o.getBuildPipelineStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .isPassAllParametersEnabled(o.getIsPassAllParametersEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTriggerDeploymentStageDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessorCollection")) {
+                this.buildPipelineStagePredecessorCollection(
+                        model.getBuildPipelineStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("isPassAllParametersEnabled")) {
+                this.isPassAllParametersEnabled(model.getIsPassAllParametersEnabled());
+            }
+            return this;
         }
     }
 
@@ -215,7 +228,6 @@ public final class UpdateTriggerDeploymentStageDetails extends UpdateBuildPipeli
         sb.append(", deployPipelineId=").append(String.valueOf(this.deployPipelineId));
         sb.append(", isPassAllParametersEnabled=")
                 .append(String.valueOf(this.isPassAllParametersEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,8 +245,7 @@ public final class UpdateTriggerDeploymentStageDetails extends UpdateBuildPipeli
         return java.util.Objects.equals(this.deployPipelineId, other.deployPipelineId)
                 && java.util.Objects.equals(
                         this.isPassAllParametersEnabled, other.isPassAllParametersEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +260,6 @@ public final class UpdateTriggerDeploymentStageDetails extends UpdateBuildPipeli
                         + (this.isPassAllParametersEnabled == null
                                 ? 43
                                 : this.isPassAllParametersEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

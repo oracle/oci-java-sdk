@@ -59,21 +59,27 @@ public final class CompositeCondition extends Condition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CompositeCondition build() {
-            CompositeCondition __instance__ =
-                    new CompositeCondition(leftOperand, compositeOperator, rightOperand);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CompositeCondition model =
+                    new CompositeCondition(
+                            this.leftOperand, this.compositeOperator, this.rightOperand);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CompositeCondition o) {
-            Builder copiedBuilder =
-                    leftOperand(o.getLeftOperand())
-                            .compositeOperator(o.getCompositeOperator())
-                            .rightOperand(o.getRightOperand());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CompositeCondition model) {
+            if (model.wasPropertyExplicitlySet("leftOperand")) {
+                this.leftOperand(model.getLeftOperand());
+            }
+            if (model.wasPropertyExplicitlySet("compositeOperator")) {
+                this.compositeOperator(model.getCompositeOperator());
+            }
+            if (model.wasPropertyExplicitlySet("rightOperand")) {
+                this.rightOperand(model.getRightOperand());
+            }
+            return this;
         }
     }
 
@@ -183,7 +189,6 @@ public final class CompositeCondition extends Condition {
         sb.append(", leftOperand=").append(String.valueOf(this.leftOperand));
         sb.append(", compositeOperator=").append(String.valueOf(this.compositeOperator));
         sb.append(", rightOperand=").append(String.valueOf(this.rightOperand));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -201,8 +206,7 @@ public final class CompositeCondition extends Condition {
         return java.util.Objects.equals(this.leftOperand, other.leftOperand)
                 && java.util.Objects.equals(this.compositeOperator, other.compositeOperator)
                 && java.util.Objects.equals(this.rightOperand, other.rightOperand)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +218,6 @@ public final class CompositeCondition extends Condition {
                 (result * PRIME)
                         + (this.compositeOperator == null ? 43 : this.compositeOperator.hashCode());
         result = (result * PRIME) + (this.rightOperand == null ? 43 : this.rightOperand.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

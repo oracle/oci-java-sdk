@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = DeregisterAutonomousDatabaseDataSafeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeregisterAutonomousDatabaseDataSafeDetails {
+public final class DeregisterAutonomousDatabaseDataSafeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pdbAdminPassword"})
     public DeregisterAutonomousDatabaseDataSafeDetails(String pdbAdminPassword) {
@@ -51,18 +52,20 @@ public final class DeregisterAutonomousDatabaseDataSafeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeregisterAutonomousDatabaseDataSafeDetails build() {
-            DeregisterAutonomousDatabaseDataSafeDetails __instance__ =
-                    new DeregisterAutonomousDatabaseDataSafeDetails(pdbAdminPassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DeregisterAutonomousDatabaseDataSafeDetails model =
+                    new DeregisterAutonomousDatabaseDataSafeDetails(this.pdbAdminPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeregisterAutonomousDatabaseDataSafeDetails o) {
-            Builder copiedBuilder = pdbAdminPassword(o.getPdbAdminPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeregisterAutonomousDatabaseDataSafeDetails model) {
+            if (model.wasPropertyExplicitlySet("pdbAdminPassword")) {
+                this.pdbAdminPassword(model.getPdbAdminPassword());
+            }
+            return this;
         }
     }
 
@@ -104,8 +107,8 @@ public final class DeregisterAutonomousDatabaseDataSafeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeregisterAutonomousDatabaseDataSafeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("pdbAdminPassword=").append(String.valueOf(this.pdbAdminPassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +125,7 @@ public final class DeregisterAutonomousDatabaseDataSafeDetails {
         DeregisterAutonomousDatabaseDataSafeDetails other =
                 (DeregisterAutonomousDatabaseDataSafeDetails) o;
         return java.util.Objects.equals(this.pdbAdminPassword, other.pdbAdminPassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -132,16 +135,7 @@ public final class DeregisterAutonomousDatabaseDataSafeDetails {
         result =
                 (result * PRIME)
                         + (this.pdbAdminPassword == null ? 43 : this.pdbAdminPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

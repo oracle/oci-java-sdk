@@ -19,7 +19,7 @@ package com.oracle.bmc.cloudguard.model;
     builder = PoliticalLocation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PoliticalLocation {
+public final class PoliticalLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"city", "state", "country"})
     public PoliticalLocation(String city, String state, String country) {
@@ -84,17 +84,25 @@ public final class PoliticalLocation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PoliticalLocation build() {
-            PoliticalLocation __instance__ = new PoliticalLocation(city, state, country);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PoliticalLocation model = new PoliticalLocation(this.city, this.state, this.country);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PoliticalLocation o) {
-            Builder copiedBuilder = city(o.getCity()).state(o.getState()).country(o.getCountry());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PoliticalLocation model) {
+            if (model.wasPropertyExplicitlySet("city")) {
+                this.city(model.getCity());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            return this;
         }
     }
 
@@ -164,10 +172,10 @@ public final class PoliticalLocation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PoliticalLocation(");
+        sb.append("super=").append(super.toString());
         sb.append("city=").append(String.valueOf(this.city));
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", country=").append(String.valueOf(this.country));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -185,7 +193,7 @@ public final class PoliticalLocation {
         return java.util.Objects.equals(this.city, other.city)
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.country, other.country)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +203,7 @@ public final class PoliticalLocation {
         result = (result * PRIME) + (this.city == null ? 43 : this.city.hashCode());
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -89,6 +89,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -97,12 +98,13 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
     })
     private CreateComputeCapacityReservationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             String location,
             com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -115,6 +117,13 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -214,6 +223,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
          */
         public Builder copy(CreateComputeCapacityReservationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -230,6 +240,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         public CreateComputeCapacityReservationResponse build() {
             return new CreateComputeCapacityReservationResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     opcWorkRequestId,

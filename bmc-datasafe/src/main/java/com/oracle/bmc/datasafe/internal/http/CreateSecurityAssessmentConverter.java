@@ -109,8 +109,8 @@ public class CreateSecurityAssessmentConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .CreateSecurityAssessmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityAssessment(response.getItem());
 

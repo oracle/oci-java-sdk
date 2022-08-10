@@ -17,7 +17,7 @@ package com.oracle.bmc.lockbox.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ActivityLog.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ActivityLog {
+public final class ActivityLog extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userId", "userLevel", "action", "message", "timeUpdated"})
     public ActivityLog(
@@ -125,23 +125,37 @@ public final class ActivityLog {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivityLog build() {
-            ActivityLog __instance__ =
-                    new ActivityLog(userId, userLevel, action, message, timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ActivityLog model =
+                    new ActivityLog(
+                            this.userId,
+                            this.userLevel,
+                            this.action,
+                            this.message,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ActivityLog o) {
-            Builder copiedBuilder =
-                    userId(o.getUserId())
-                            .userLevel(o.getUserLevel())
-                            .action(o.getAction())
-                            .message(o.getMessage())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ActivityLog model) {
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("userLevel")) {
+                this.userLevel(model.getUserLevel());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -243,12 +257,12 @@ public final class ActivityLog {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActivityLog(");
+        sb.append("super=").append(super.toString());
         sb.append("userId=").append(String.valueOf(this.userId));
         sb.append(", userLevel=").append(String.valueOf(this.userLevel));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -268,7 +282,7 @@ public final class ActivityLog {
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -280,16 +294,7 @@ public final class ActivityLog {
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

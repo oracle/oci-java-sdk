@@ -116,7 +116,8 @@ public class CreateZoneConverter {
 
                                 com.oracle.bmc.dns.responses.CreateZoneResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.CreateZoneResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.zone(response.getItem());
 

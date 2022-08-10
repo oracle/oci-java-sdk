@@ -153,8 +153,8 @@ public class ListTablespacesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListTablespacesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tablespaceCollection(response.getItem());
 

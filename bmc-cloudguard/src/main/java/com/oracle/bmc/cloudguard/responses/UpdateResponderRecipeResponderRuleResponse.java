@@ -58,17 +58,19 @@ public class UpdateResponderRecipeResponderRuleResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "responderRecipeResponderRule"
     })
     private UpdateResponderRecipeResponderRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRule
                     responderRecipeResponderRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.responderRecipeResponderRule = responderRecipeResponderRule;
@@ -79,6 +81,13 @@ public class UpdateResponderRecipeResponderRuleResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class UpdateResponderRecipeResponderRuleResponse
          */
         public Builder copy(UpdateResponderRecipeResponderRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             responderRecipeResponderRule(o.getResponderRecipeResponderRule());
@@ -155,7 +165,7 @@ public class UpdateResponderRecipeResponderRuleResponse
          */
         public UpdateResponderRecipeResponderRuleResponse build() {
             return new UpdateResponderRecipeResponderRuleResponse(
-                    __httpStatusCode__, etag, opcRequestId, responderRecipeResponderRule);
+                    __httpStatusCode__, headers, etag, opcRequestId, responderRecipeResponderRule);
         }
     }
 

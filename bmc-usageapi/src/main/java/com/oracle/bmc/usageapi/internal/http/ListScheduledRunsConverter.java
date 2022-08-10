@@ -141,8 +141,8 @@ public class ListScheduledRunsConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .ListScheduledRunsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scheduledRunCollection(response.getItem());
 

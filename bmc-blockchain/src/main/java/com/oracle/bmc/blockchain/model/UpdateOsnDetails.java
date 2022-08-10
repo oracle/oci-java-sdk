@@ -17,7 +17,7 @@ package com.oracle.bmc.blockchain.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateOsnDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateOsnDetails {
+public final class UpdateOsnDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ocpuAllocationParam"})
     public UpdateOsnDetails(OcpuAllocationNumberParam ocpuAllocationParam) {
@@ -41,17 +41,19 @@ public final class UpdateOsnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOsnDetails build() {
-            UpdateOsnDetails __instance__ = new UpdateOsnDetails(ocpuAllocationParam);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateOsnDetails model = new UpdateOsnDetails(this.ocpuAllocationParam);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOsnDetails o) {
-            Builder copiedBuilder = ocpuAllocationParam(o.getOcpuAllocationParam());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOsnDetails model) {
+            if (model.wasPropertyExplicitlySet("ocpuAllocationParam")) {
+                this.ocpuAllocationParam(model.getOcpuAllocationParam());
+            }
+            return this;
         }
     }
 
@@ -86,8 +88,8 @@ public final class UpdateOsnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOsnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("ocpuAllocationParam=").append(String.valueOf(this.ocpuAllocationParam));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -103,7 +105,7 @@ public final class UpdateOsnDetails {
 
         UpdateOsnDetails other = (UpdateOsnDetails) o;
         return java.util.Objects.equals(this.ocpuAllocationParam, other.ocpuAllocationParam)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -115,16 +117,7 @@ public final class UpdateOsnDetails {
                         + (this.ocpuAllocationParam == null
                                 ? 43
                                 : this.ocpuAllocationParam.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

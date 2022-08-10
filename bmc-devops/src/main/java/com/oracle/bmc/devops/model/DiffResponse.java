@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiffResponse.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiffResponse {
+public final class DiffResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "areAllChangesIncluded",
@@ -184,34 +184,49 @@ public final class DiffResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiffResponse build() {
-            DiffResponse __instance__ =
+            DiffResponse model =
                     new DiffResponse(
-                            areAllChangesIncluded,
-                            changeTypeCount,
-                            commonCommit,
-                            commitsAheadCount,
-                            commitsBehindCount,
-                            addedLinesCount,
-                            deletedLinesCount,
-                            changes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.areAllChangesIncluded,
+                            this.changeTypeCount,
+                            this.commonCommit,
+                            this.commitsAheadCount,
+                            this.commitsBehindCount,
+                            this.addedLinesCount,
+                            this.deletedLinesCount,
+                            this.changes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiffResponse o) {
-            Builder copiedBuilder =
-                    areAllChangesIncluded(o.getAreAllChangesIncluded())
-                            .changeTypeCount(o.getChangeTypeCount())
-                            .commonCommit(o.getCommonCommit())
-                            .commitsAheadCount(o.getCommitsAheadCount())
-                            .commitsBehindCount(o.getCommitsBehindCount())
-                            .addedLinesCount(o.getAddedLinesCount())
-                            .deletedLinesCount(o.getDeletedLinesCount())
-                            .changes(o.getChanges());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiffResponse model) {
+            if (model.wasPropertyExplicitlySet("areAllChangesIncluded")) {
+                this.areAllChangesIncluded(model.getAreAllChangesIncluded());
+            }
+            if (model.wasPropertyExplicitlySet("changeTypeCount")) {
+                this.changeTypeCount(model.getChangeTypeCount());
+            }
+            if (model.wasPropertyExplicitlySet("commonCommit")) {
+                this.commonCommit(model.getCommonCommit());
+            }
+            if (model.wasPropertyExplicitlySet("commitsAheadCount")) {
+                this.commitsAheadCount(model.getCommitsAheadCount());
+            }
+            if (model.wasPropertyExplicitlySet("commitsBehindCount")) {
+                this.commitsBehindCount(model.getCommitsBehindCount());
+            }
+            if (model.wasPropertyExplicitlySet("addedLinesCount")) {
+                this.addedLinesCount(model.getAddedLinesCount());
+            }
+            if (model.wasPropertyExplicitlySet("deletedLinesCount")) {
+                this.deletedLinesCount(model.getDeletedLinesCount());
+            }
+            if (model.wasPropertyExplicitlySet("changes")) {
+                this.changes(model.getChanges());
+            }
+            return this;
         }
     }
 
@@ -351,6 +366,7 @@ public final class DiffResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiffResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("areAllChangesIncluded=").append(String.valueOf(this.areAllChangesIncluded));
         sb.append(", changeTypeCount=").append(String.valueOf(this.changeTypeCount));
         sb.append(", commonCommit=").append(String.valueOf(this.commonCommit));
@@ -359,7 +375,6 @@ public final class DiffResponse {
         sb.append(", addedLinesCount=").append(String.valueOf(this.addedLinesCount));
         sb.append(", deletedLinesCount=").append(String.valueOf(this.deletedLinesCount));
         sb.append(", changes=").append(String.valueOf(this.changes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -382,7 +397,7 @@ public final class DiffResponse {
                 && java.util.Objects.equals(this.addedLinesCount, other.addedLinesCount)
                 && java.util.Objects.equals(this.deletedLinesCount, other.deletedLinesCount)
                 && java.util.Objects.equals(this.changes, other.changes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -413,16 +428,7 @@ public final class DiffResponse {
                 (result * PRIME)
                         + (this.deletedLinesCount == null ? 43 : this.deletedLinesCount.hashCode());
         result = (result * PRIME) + (this.changes == null ? 43 : this.changes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

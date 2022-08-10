@@ -111,7 +111,8 @@ public class QueryConverter {
 
                                 com.oracle.bmc.nosql.responses.QueryResponse.Builder builder =
                                         com.oracle.bmc.nosql.responses.QueryResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.queryResultCollection(response.getItem());
 

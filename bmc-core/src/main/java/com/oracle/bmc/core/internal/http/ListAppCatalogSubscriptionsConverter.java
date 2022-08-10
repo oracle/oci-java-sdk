@@ -152,8 +152,8 @@ public class ListAppCatalogSubscriptionsConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ListAppCatalogSubscriptionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

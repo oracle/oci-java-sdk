@@ -19,7 +19,7 @@ package com.oracle.bmc.oda.model;
     builder = ExportSkillDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExportSkillDetails {
+public final class ExportSkillDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"target"})
     public ExportSkillDetails(StorageLocation target) {
@@ -43,17 +43,19 @@ public final class ExportSkillDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExportSkillDetails build() {
-            ExportSkillDetails __instance__ = new ExportSkillDetails(target);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExportSkillDetails model = new ExportSkillDetails(this.target);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExportSkillDetails o) {
-            Builder copiedBuilder = target(o.getTarget());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExportSkillDetails model) {
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            return this;
         }
     }
 
@@ -88,8 +90,8 @@ public final class ExportSkillDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExportSkillDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("target=").append(String.valueOf(this.target));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -104,8 +106,7 @@ public final class ExportSkillDetails {
         }
 
         ExportSkillDetails other = (ExportSkillDetails) o;
-        return java.util.Objects.equals(this.target, other.target)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.target, other.target) && super.equals(other);
     }
 
     @Override
@@ -113,16 +114,7 @@ public final class ExportSkillDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

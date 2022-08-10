@@ -153,8 +153,8 @@ public class ListImportedPackagesConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .ListImportedPackagesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

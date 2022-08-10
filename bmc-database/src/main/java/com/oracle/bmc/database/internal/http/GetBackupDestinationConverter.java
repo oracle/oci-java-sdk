@@ -107,8 +107,8 @@ public class GetBackupDestinationConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetBackupDestinationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.backupDestination(response.getItem());
 

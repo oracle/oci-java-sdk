@@ -214,8 +214,8 @@ public class ListAttributeTagsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListAttributeTagsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.attributeTagCollection(response.getItem());
 

@@ -53,13 +53,20 @@ public class UpdateBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
         return bootVolume;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "bootVolume"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "bootVolume"
+    })
     private UpdateBootVolumeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.BootVolume bootVolume) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.bootVolume = bootVolume;
@@ -70,6 +77,13 @@ public class UpdateBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(UpdateBootVolumeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             bootVolume(o.getBootVolume());
@@ -142,7 +157,8 @@ public class UpdateBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public UpdateBootVolumeResponse build() {
-            return new UpdateBootVolumeResponse(__httpStatusCode__, etag, opcRequestId, bootVolume);
+            return new UpdateBootVolumeResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, bootVolume);
         }
     }
 

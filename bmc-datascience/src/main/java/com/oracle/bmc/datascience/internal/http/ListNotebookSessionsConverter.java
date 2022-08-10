@@ -187,8 +187,8 @@ public class ListNotebookSessionsConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .ListNotebookSessionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

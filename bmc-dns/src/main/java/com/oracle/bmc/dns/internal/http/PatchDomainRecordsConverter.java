@@ -142,8 +142,8 @@ public class PatchDomainRecordsConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .PatchDomainRecordsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recordCollection(response.getItem());
 

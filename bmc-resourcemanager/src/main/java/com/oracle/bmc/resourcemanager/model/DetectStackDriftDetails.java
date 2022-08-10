@@ -20,7 +20,8 @@ package com.oracle.bmc.resourcemanager.model;
     builder = DetectStackDriftDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectStackDriftDetails {
+public final class DetectStackDriftDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceAddresses", "isProviderUpgradeRequired"})
     public DetectStackDriftDetails(
@@ -83,20 +84,24 @@ public final class DetectStackDriftDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectStackDriftDetails build() {
-            DetectStackDriftDetails __instance__ =
-                    new DetectStackDriftDetails(resourceAddresses, isProviderUpgradeRequired);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetectStackDriftDetails model =
+                    new DetectStackDriftDetails(
+                            this.resourceAddresses, this.isProviderUpgradeRequired);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectStackDriftDetails o) {
-            Builder copiedBuilder =
-                    resourceAddresses(o.getResourceAddresses())
-                            .isProviderUpgradeRequired(o.getIsProviderUpgradeRequired());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectStackDriftDetails model) {
+            if (model.wasPropertyExplicitlySet("resourceAddresses")) {
+                this.resourceAddresses(model.getResourceAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("isProviderUpgradeRequired")) {
+                this.isProviderUpgradeRequired(model.getIsProviderUpgradeRequired());
+            }
+            return this;
         }
     }
 
@@ -166,10 +171,10 @@ public final class DetectStackDriftDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectStackDriftDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceAddresses=").append(String.valueOf(this.resourceAddresses));
         sb.append(", isProviderUpgradeRequired=")
                 .append(String.valueOf(this.isProviderUpgradeRequired));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +192,7 @@ public final class DetectStackDriftDetails {
         return java.util.Objects.equals(this.resourceAddresses, other.resourceAddresses)
                 && java.util.Objects.equals(
                         this.isProviderUpgradeRequired, other.isProviderUpgradeRequired)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +207,7 @@ public final class DetectStackDriftDetails {
                         + (this.isProviderUpgradeRequired == null
                                 ? 43
                                 : this.isProviderUpgradeRequired.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

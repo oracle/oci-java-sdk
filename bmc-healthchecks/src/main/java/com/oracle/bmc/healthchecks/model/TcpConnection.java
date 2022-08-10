@@ -17,7 +17,7 @@ package com.oracle.bmc.healthchecks.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TcpConnection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TcpConnection {
+public final class TcpConnection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "address",
@@ -109,22 +109,33 @@ public final class TcpConnection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TcpConnection build() {
-            TcpConnection __instance__ =
-                    new TcpConnection(address, port, connectDuration, secureConnectDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TcpConnection model =
+                    new TcpConnection(
+                            this.address,
+                            this.port,
+                            this.connectDuration,
+                            this.secureConnectDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TcpConnection o) {
-            Builder copiedBuilder =
-                    address(o.getAddress())
-                            .port(o.getPort())
-                            .connectDuration(o.getConnectDuration())
-                            .secureConnectDuration(o.getSecureConnectDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TcpConnection model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("connectDuration")) {
+                this.connectDuration(model.getConnectDuration());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnectDuration")) {
+                this.secureConnectDuration(model.getSecureConnectDuration());
+            }
+            return this;
         }
     }
 
@@ -212,11 +223,11 @@ public final class TcpConnection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TcpConnection(");
+        sb.append("super=").append(super.toString());
         sb.append("address=").append(String.valueOf(this.address));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", connectDuration=").append(String.valueOf(this.connectDuration));
         sb.append(", secureConnectDuration=").append(String.valueOf(this.secureConnectDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,7 +246,7 @@ public final class TcpConnection {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.connectDuration, other.connectDuration)
                 && java.util.Objects.equals(this.secureConnectDuration, other.secureConnectDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -252,16 +263,7 @@ public final class TcpConnection {
                         + (this.secureConnectDuration == null
                                 ? 43
                                 : this.secureConnectDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

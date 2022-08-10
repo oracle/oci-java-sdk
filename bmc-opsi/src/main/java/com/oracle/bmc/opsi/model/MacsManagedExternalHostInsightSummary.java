@@ -205,52 +205,85 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MacsManagedExternalHostInsightSummary build() {
-            MacsManagedExternalHostInsightSummary __instance__ =
+            MacsManagedExternalHostInsightSummary model =
                     new MacsManagedExternalHostInsightSummary(
-                            id,
-                            compartmentId,
-                            hostName,
-                            hostDisplayName,
-                            hostType,
-                            processorCount,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            opsiPrivateEndpointId,
-                            status,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            managementAgentId,
-                            platformType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.hostName,
+                            this.hostDisplayName,
+                            this.hostType,
+                            this.processorCount,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.opsiPrivateEndpointId,
+                            this.status,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.managementAgentId,
+                            this.platformType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MacsManagedExternalHostInsightSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .hostName(o.getHostName())
-                            .hostDisplayName(o.getHostDisplayName())
-                            .hostType(o.getHostType())
-                            .processorCount(o.getProcessorCount())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .managementAgentId(o.getManagementAgentId())
-                            .platformType(o.getPlatformType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MacsManagedExternalHostInsightSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("hostDisplayName")) {
+                this.hostDisplayName(model.getHostDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("hostType")) {
+                this.hostType(model.getHostType());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
+                this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentId")) {
+                this.managementAgentId(model.getManagementAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            return this;
         }
     }
 
@@ -407,7 +440,6 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", platformType=").append(String.valueOf(this.platformType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -424,8 +456,7 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
         MacsManagedExternalHostInsightSummary other = (MacsManagedExternalHostInsightSummary) o;
         return java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.platformType, other.platformType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -436,16 +467,6 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
                 (result * PRIME)
                         + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
         result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

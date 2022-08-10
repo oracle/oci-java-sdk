@@ -98,8 +98,8 @@ public class GetServiceGatewayConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetServiceGatewayResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceGateway(response.getItem());
 

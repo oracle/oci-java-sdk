@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = UpdateDeployArtifactDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDeployArtifactDetails {
+public final class UpdateDeployArtifactDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -162,32 +163,45 @@ public final class UpdateDeployArtifactDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDeployArtifactDetails build() {
-            UpdateDeployArtifactDetails __instance__ =
+            UpdateDeployArtifactDetails model =
                     new UpdateDeployArtifactDetails(
-                            description,
-                            displayName,
-                            deployArtifactType,
-                            deployArtifactSource,
-                            argumentSubstitutionMode,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployArtifactType,
+                            this.deployArtifactSource,
+                            this.argumentSubstitutionMode,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDeployArtifactDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployArtifactType(o.getDeployArtifactType())
-                            .deployArtifactSource(o.getDeployArtifactSource())
-                            .argumentSubstitutionMode(o.getArgumentSubstitutionMode())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDeployArtifactDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactType")) {
+                this.deployArtifactType(model.getDeployArtifactType());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactSource")) {
+                this.deployArtifactSource(model.getDeployArtifactSource());
+            }
+            if (model.wasPropertyExplicitlySet("argumentSubstitutionMode")) {
+                this.argumentSubstitutionMode(model.getArgumentSubstitutionMode());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -306,6 +320,7 @@ public final class UpdateDeployArtifactDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDeployArtifactDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", deployArtifactType=").append(String.valueOf(this.deployArtifactType));
@@ -314,7 +329,6 @@ public final class UpdateDeployArtifactDetails {
                 .append(String.valueOf(this.argumentSubstitutionMode));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -337,7 +351,7 @@ public final class UpdateDeployArtifactDetails {
                         this.argumentSubstitutionMode, other.argumentSubstitutionMode)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -363,16 +377,7 @@ public final class UpdateDeployArtifactDetails {
                                 : this.argumentSubstitutionMode.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

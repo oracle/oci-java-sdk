@@ -97,8 +97,8 @@ public class CreatePrivateIpConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreatePrivateIpResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateIp(response.getItem());
 

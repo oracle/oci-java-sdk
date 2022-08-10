@@ -118,7 +118,8 @@ public class ListWorkItemsConverter {
 
                                 com.oracle.bmc.jms.responses.ListWorkItemsResponse.Builder builder =
                                         com.oracle.bmc.jms.responses.ListWorkItemsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.workItemCollection(response.getItem());
 

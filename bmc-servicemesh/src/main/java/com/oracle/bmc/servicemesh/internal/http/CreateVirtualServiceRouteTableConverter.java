@@ -115,8 +115,8 @@ public class CreateVirtualServiceRouteTableConverter {
                                                 com.oracle.bmc.servicemesh.responses
                                                         .CreateVirtualServiceRouteTableResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualServiceRouteTable(response.getItem());
 

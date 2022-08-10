@@ -50,20 +50,24 @@ public final class TlsPassthroughIngressGatewayTrafficRouteRule
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TlsPassthroughIngressGatewayTrafficRouteRule build() {
-            TlsPassthroughIngressGatewayTrafficRouteRule __instance__ =
+            TlsPassthroughIngressGatewayTrafficRouteRule model =
                     new TlsPassthroughIngressGatewayTrafficRouteRule(
-                            ingressGatewayHost, destinations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.ingressGatewayHost, this.destinations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TlsPassthroughIngressGatewayTrafficRouteRule o) {
-            Builder copiedBuilder =
-                    ingressGatewayHost(o.getIngressGatewayHost()).destinations(o.getDestinations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TlsPassthroughIngressGatewayTrafficRouteRule model) {
+            if (model.wasPropertyExplicitlySet("ingressGatewayHost")) {
+                this.ingressGatewayHost(model.getIngressGatewayHost());
+            }
+            if (model.wasPropertyExplicitlySet("destinations")) {
+                this.destinations(model.getDestinations());
+            }
+            return this;
         }
     }
 
@@ -99,7 +103,6 @@ public final class TlsPassthroughIngressGatewayTrafficRouteRule
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TlsPassthroughIngressGatewayTrafficRouteRule(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -115,24 +118,13 @@ public final class TlsPassthroughIngressGatewayTrafficRouteRule
 
         TlsPassthroughIngressGatewayTrafficRouteRule other =
                 (TlsPassthroughIngressGatewayTrafficRouteRule) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

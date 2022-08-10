@@ -53,16 +53,18 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "uIPasswordInformation"
     })
     private GetUserUIPasswordInformationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.uIPasswordInformation = uIPasswordInformation;
@@ -73,6 +75,13 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
          */
         public Builder copy(GetUserUIPasswordInformationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             uIPasswordInformation(o.getUIPasswordInformation());
@@ -145,7 +155,7 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
          */
         public GetUserUIPasswordInformationResponse build() {
             return new GetUserUIPasswordInformationResponse(
-                    __httpStatusCode__, opcRequestId, etag, uIPasswordInformation);
+                    __httpStatusCode__, headers, opcRequestId, etag, uIPasswordInformation);
         }
     }
 

@@ -180,7 +180,8 @@ public class ListBackupsConverter {
 
                                 com.oracle.bmc.mysql.responses.ListBackupsResponse.Builder builder =
                                         com.oracle.bmc.mysql.responses.ListBackupsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

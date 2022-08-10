@@ -58,21 +58,27 @@ public final class HostInsightsDataObjectSummary extends OpsiDataObjectSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostInsightsDataObjectSummary build() {
-            HostInsightsDataObjectSummary __instance__ =
-                    new HostInsightsDataObjectSummary(identifier, displayName, description);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostInsightsDataObjectSummary model =
+                    new HostInsightsDataObjectSummary(
+                            this.identifier, this.displayName, this.description);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostInsightsDataObjectSummary o) {
-            Builder copiedBuilder =
-                    identifier(o.getIdentifier())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostInsightsDataObjectSummary model) {
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            return this;
         }
     }
 
@@ -107,7 +113,6 @@ public final class HostInsightsDataObjectSummary extends OpsiDataObjectSummary {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostInsightsDataObjectSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,24 +127,13 @@ public final class HostInsightsDataObjectSummary extends OpsiDataObjectSummary {
         }
 
         HostInsightsDataObjectSummary other = (HostInsightsDataObjectSummary) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

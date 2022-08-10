@@ -116,8 +116,8 @@ public class GetInvoiceConverter {
                                         builder =
                                                 com.oracle.bmc.ospgateway.responses
                                                         .GetInvoiceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.invoice(response.getItem());
 

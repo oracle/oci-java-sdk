@@ -19,7 +19,8 @@ package com.oracle.bmc.containerengine.model;
     builder = ClusterMigrateToNativeVcnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterMigrateToNativeVcnDetails {
+public final class ClusterMigrateToNativeVcnDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endpointConfig", "decommissionDelayDuration"})
     public ClusterMigrateToNativeVcnDetails(
@@ -70,20 +71,24 @@ public final class ClusterMigrateToNativeVcnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterMigrateToNativeVcnDetails build() {
-            ClusterMigrateToNativeVcnDetails __instance__ =
-                    new ClusterMigrateToNativeVcnDetails(endpointConfig, decommissionDelayDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ClusterMigrateToNativeVcnDetails model =
+                    new ClusterMigrateToNativeVcnDetails(
+                            this.endpointConfig, this.decommissionDelayDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterMigrateToNativeVcnDetails o) {
-            Builder copiedBuilder =
-                    endpointConfig(o.getEndpointConfig())
-                            .decommissionDelayDuration(o.getDecommissionDelayDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterMigrateToNativeVcnDetails model) {
+            if (model.wasPropertyExplicitlySet("endpointConfig")) {
+                this.endpointConfig(model.getEndpointConfig());
+            }
+            if (model.wasPropertyExplicitlySet("decommissionDelayDuration")) {
+                this.decommissionDelayDuration(model.getDecommissionDelayDuration());
+            }
+            return this;
         }
     }
 
@@ -141,10 +146,10 @@ public final class ClusterMigrateToNativeVcnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterMigrateToNativeVcnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("endpointConfig=").append(String.valueOf(this.endpointConfig));
         sb.append(", decommissionDelayDuration=")
                 .append(String.valueOf(this.decommissionDelayDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -162,7 +167,7 @@ public final class ClusterMigrateToNativeVcnDetails {
         return java.util.Objects.equals(this.endpointConfig, other.endpointConfig)
                 && java.util.Objects.equals(
                         this.decommissionDelayDuration, other.decommissionDelayDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -177,16 +182,7 @@ public final class ClusterMigrateToNativeVcnDetails {
                         + (this.decommissionDelayDuration == null
                                 ? 43
                                 : this.decommissionDelayDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -113,8 +113,8 @@ public class BatchDetectLanguageEntitiesConverter {
                                                 com.oracle.bmc.ailanguage.responses
                                                         .BatchDetectLanguageEntitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.batchDetectLanguageEntitiesResult(response.getItem());
 

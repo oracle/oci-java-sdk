@@ -35,6 +35,15 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("isFailureRetried");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsConfiguration")
+        private DnsConfiguration dnsConfiguration;
+
+        public Builder dnsConfiguration(DnsConfiguration dnsConfiguration) {
+            this.dnsConfiguration = dnsConfiguration;
+            this.__explicitlySet__.add("dnsConfiguration");
+            return this;
+        }
         /**
          * If certificate validation is enabled, then the call will fail in case of certification errors.
          **/
@@ -85,26 +94,37 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BrowserMonitorConfiguration build() {
-            BrowserMonitorConfiguration __instance__ =
+            BrowserMonitorConfiguration model =
                     new BrowserMonitorConfiguration(
-                            isFailureRetried,
-                            isCertificateValidationEnabled,
-                            verifyTexts,
-                            networkConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isFailureRetried,
+                            this.dnsConfiguration,
+                            this.isCertificateValidationEnabled,
+                            this.verifyTexts,
+                            this.networkConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BrowserMonitorConfiguration o) {
-            Builder copiedBuilder =
-                    isFailureRetried(o.getIsFailureRetried())
-                            .isCertificateValidationEnabled(o.getIsCertificateValidationEnabled())
-                            .verifyTexts(o.getVerifyTexts())
-                            .networkConfiguration(o.getNetworkConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BrowserMonitorConfiguration model) {
+            if (model.wasPropertyExplicitlySet("isFailureRetried")) {
+                this.isFailureRetried(model.getIsFailureRetried());
+            }
+            if (model.wasPropertyExplicitlySet("dnsConfiguration")) {
+                this.dnsConfiguration(model.getDnsConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("isCertificateValidationEnabled")) {
+                this.isCertificateValidationEnabled(model.getIsCertificateValidationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("verifyTexts")) {
+                this.verifyTexts(model.getVerifyTexts());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfiguration")) {
+                this.networkConfiguration(model.getNetworkConfiguration());
+            }
+            return this;
         }
     }
 
@@ -122,10 +142,11 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
     @Deprecated
     public BrowserMonitorConfiguration(
             Boolean isFailureRetried,
+            DnsConfiguration dnsConfiguration,
             Boolean isCertificateValidationEnabled,
             java.util.List<VerifyText> verifyTexts,
             NetworkConfiguration networkConfiguration) {
-        super(isFailureRetried);
+        super(isFailureRetried, dnsConfiguration);
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
         this.verifyTexts = verifyTexts;
         this.networkConfiguration = networkConfiguration;
@@ -188,7 +209,6 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
                 .append(String.valueOf(this.isCertificateValidationEnabled));
         sb.append(", verifyTexts=").append(String.valueOf(this.verifyTexts));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -207,8 +227,7 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
                         this.isCertificateValidationEnabled, other.isCertificateValidationEnabled)
                 && java.util.Objects.equals(this.verifyTexts, other.verifyTexts)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -226,16 +245,6 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
                         + (this.networkConfiguration == null
                                 ? 43
                                 : this.networkConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -28,7 +28,7 @@ package com.oracle.bmc.servicecatalog.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PrivateApplicationPackage {
+public class PrivateApplicationPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -146,6 +146,7 @@ public class PrivateApplicationPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PrivateApplicationPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", privateApplicationId=").append(String.valueOf(this.privateApplicationId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -169,7 +170,8 @@ public class PrivateApplicationPackage {
                 && java.util.Objects.equals(this.privateApplicationId, other.privateApplicationId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.timeCreated, other.timeCreated);
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && super.equals(other);
     }
 
     @Override
@@ -185,6 +187,7 @@ public class PrivateApplicationPackage {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

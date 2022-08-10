@@ -55,16 +55,18 @@ public class CreateInstanceConfigurationResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "instanceConfiguration"
     })
     private CreateInstanceConfigurationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.instanceConfiguration = instanceConfiguration;
@@ -75,6 +77,13 @@ public class CreateInstanceConfigurationResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateInstanceConfigurationResponse extends com.oracle.bmc.response
          */
         public Builder copy(CreateInstanceConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             instanceConfiguration(o.getInstanceConfiguration());
@@ -149,7 +159,7 @@ public class CreateInstanceConfigurationResponse extends com.oracle.bmc.response
          */
         public CreateInstanceConfigurationResponse build() {
             return new CreateInstanceConfigurationResponse(
-                    __httpStatusCode__, etag, opcRequestId, instanceConfiguration);
+                    __httpStatusCode__, headers, etag, opcRequestId, instanceConfiguration);
         }
     }
 

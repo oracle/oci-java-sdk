@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = InstancePoolInstanceLoadBalancerBackend.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstancePoolInstanceLoadBalancerBackend {
+public final class InstancePoolInstanceLoadBalancerBackend
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "loadBalancerId",
@@ -110,23 +111,33 @@ public final class InstancePoolInstanceLoadBalancerBackend {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstancePoolInstanceLoadBalancerBackend build() {
-            InstancePoolInstanceLoadBalancerBackend __instance__ =
+            InstancePoolInstanceLoadBalancerBackend model =
                     new InstancePoolInstanceLoadBalancerBackend(
-                            loadBalancerId, backendSetName, backendName, backendHealthStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.loadBalancerId,
+                            this.backendSetName,
+                            this.backendName,
+                            this.backendHealthStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstancePoolInstanceLoadBalancerBackend o) {
-            Builder copiedBuilder =
-                    loadBalancerId(o.getLoadBalancerId())
-                            .backendSetName(o.getBackendSetName())
-                            .backendName(o.getBackendName())
-                            .backendHealthStatus(o.getBackendHealthStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstancePoolInstanceLoadBalancerBackend model) {
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
+            if (model.wasPropertyExplicitlySet("backendSetName")) {
+                this.backendSetName(model.getBackendSetName());
+            }
+            if (model.wasPropertyExplicitlySet("backendName")) {
+                this.backendName(model.getBackendName());
+            }
+            if (model.wasPropertyExplicitlySet("backendHealthStatus")) {
+                this.backendHealthStatus(model.getBackendHealthStatus());
+            }
+            return this;
         }
     }
 
@@ -260,11 +271,11 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstancePoolInstanceLoadBalancerBackend(");
+        sb.append("super=").append(super.toString());
         sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", backendSetName=").append(String.valueOf(this.backendSetName));
         sb.append(", backendName=").append(String.valueOf(this.backendName));
         sb.append(", backendHealthStatus=").append(String.valueOf(this.backendHealthStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -283,7 +294,7 @@ public final class InstancePoolInstanceLoadBalancerBackend {
                 && java.util.Objects.equals(this.backendSetName, other.backendSetName)
                 && java.util.Objects.equals(this.backendName, other.backendName)
                 && java.util.Objects.equals(this.backendHealthStatus, other.backendHealthStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -302,16 +313,7 @@ public final class InstancePoolInstanceLoadBalancerBackend {
                         + (this.backendHealthStatus == null
                                 ? 43
                                 : this.backendHealthStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -113,8 +113,8 @@ public class BatchDetectDominantLanguageConverter {
                                                 com.oracle.bmc.ailanguage.responses
                                                         .BatchDetectDominantLanguageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.batchDetectDominantLanguageResult(response.getItem());
 

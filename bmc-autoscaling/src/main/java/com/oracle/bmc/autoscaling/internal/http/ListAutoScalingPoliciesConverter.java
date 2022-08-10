@@ -159,8 +159,8 @@ public class ListAutoScalingPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.autoscaling.responses
                                                         .ListAutoScalingPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

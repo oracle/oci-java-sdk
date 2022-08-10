@@ -185,8 +185,8 @@ public class ListIndicatorsConverter {
                                         builder =
                                                 com.oracle.bmc.threatintelligence.responses
                                                         .ListIndicatorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.indicatorSummaryCollection(response.getItem());
 

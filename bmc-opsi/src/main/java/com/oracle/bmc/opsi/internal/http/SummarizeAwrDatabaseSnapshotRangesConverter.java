@@ -171,8 +171,8 @@ public class SummarizeAwrDatabaseSnapshotRangesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeAwrDatabaseSnapshotRangesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseSnapshotRangeCollection(response.getItem());
 

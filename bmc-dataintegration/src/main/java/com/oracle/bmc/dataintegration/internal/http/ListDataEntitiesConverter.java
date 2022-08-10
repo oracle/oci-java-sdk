@@ -195,8 +195,8 @@ public class ListDataEntitiesConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListDataEntitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataEntitySummaryCollection(response.getItem());
 

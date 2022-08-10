@@ -17,7 +17,7 @@ package com.oracle.bmc.visualbuilder.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VbInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VbInstance {
+public final class VbInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -378,54 +378,89 @@ public final class VbInstance {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VbInstance build() {
-            VbInstance __instance__ =
+            VbInstance model =
                     new VbInstance(
-                            id,
-                            displayName,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            stateMessage,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            instanceUrl,
-                            nodeCount,
-                            isVisualBuilderEnabled,
-                            customEndpoint,
-                            alternateCustomEndpoints,
-                            consumptionModel,
-                            idcsInfo,
-                            attachments);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.stateMessage,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.instanceUrl,
+                            this.nodeCount,
+                            this.isVisualBuilderEnabled,
+                            this.customEndpoint,
+                            this.alternateCustomEndpoints,
+                            this.consumptionModel,
+                            this.idcsInfo,
+                            this.attachments);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VbInstance o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .stateMessage(o.getStateMessage())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .instanceUrl(o.getInstanceUrl())
-                            .nodeCount(o.getNodeCount())
-                            .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
-                            .customEndpoint(o.getCustomEndpoint())
-                            .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
-                            .consumptionModel(o.getConsumptionModel())
-                            .idcsInfo(o.getIdcsInfo())
-                            .attachments(o.getAttachments());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VbInstance model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("stateMessage")) {
+                this.stateMessage(model.getStateMessage());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("instanceUrl")) {
+                this.instanceUrl(model.getInstanceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("isVisualBuilderEnabled")) {
+                this.isVisualBuilderEnabled(model.getIsVisualBuilderEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customEndpoint")) {
+                this.customEndpoint(model.getCustomEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("alternateCustomEndpoints")) {
+                this.alternateCustomEndpoints(model.getAlternateCustomEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("consumptionModel")) {
+                this.consumptionModel(model.getConsumptionModel());
+            }
+            if (model.wasPropertyExplicitlySet("idcsInfo")) {
+                this.idcsInfo(model.getIdcsInfo());
+            }
+            if (model.wasPropertyExplicitlySet("attachments")) {
+                this.attachments(model.getAttachments());
+            }
+            return this;
         }
     }
 
@@ -809,6 +844,7 @@ public final class VbInstance {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VbInstance(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -828,7 +864,6 @@ public final class VbInstance {
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
         sb.append(", idcsInfo=").append(String.valueOf(this.idcsInfo));
         sb.append(", attachments=").append(String.valueOf(this.attachments));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -863,7 +898,7 @@ public final class VbInstance {
                 && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
                 && java.util.Objects.equals(this.idcsInfo, other.idcsInfo)
                 && java.util.Objects.equals(this.attachments, other.attachments)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -904,16 +939,7 @@ public final class VbInstance {
                         + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
         result = (result * PRIME) + (this.idcsInfo == null ? 43 : this.idcsInfo.hashCode());
         result = (result * PRIME) + (this.attachments == null ? 43 : this.attachments.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

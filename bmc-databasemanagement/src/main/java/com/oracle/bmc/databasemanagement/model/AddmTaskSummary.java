@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddmTaskSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddmTaskSummary {
+public final class AddmTaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskName",
@@ -268,42 +268,65 @@ public final class AddmTaskSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddmTaskSummary build() {
-            AddmTaskSummary __instance__ =
+            AddmTaskSummary model =
                     new AddmTaskSummary(
-                            taskName,
-                            taskId,
-                            description,
-                            dbUser,
-                            status,
-                            timeCreated,
-                            howCreated,
-                            startSnapshotTime,
-                            endSnapshotTime,
-                            beginSnapshotId,
-                            endSnapshotId,
-                            findings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.taskName,
+                            this.taskId,
+                            this.description,
+                            this.dbUser,
+                            this.status,
+                            this.timeCreated,
+                            this.howCreated,
+                            this.startSnapshotTime,
+                            this.endSnapshotTime,
+                            this.beginSnapshotId,
+                            this.endSnapshotId,
+                            this.findings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddmTaskSummary o) {
-            Builder copiedBuilder =
-                    taskName(o.getTaskName())
-                            .taskId(o.getTaskId())
-                            .description(o.getDescription())
-                            .dbUser(o.getDbUser())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .howCreated(o.getHowCreated())
-                            .startSnapshotTime(o.getStartSnapshotTime())
-                            .endSnapshotTime(o.getEndSnapshotTime())
-                            .beginSnapshotId(o.getBeginSnapshotId())
-                            .endSnapshotId(o.getEndSnapshotId())
-                            .findings(o.getFindings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddmTaskSummary model) {
+            if (model.wasPropertyExplicitlySet("taskName")) {
+                this.taskName(model.getTaskName());
+            }
+            if (model.wasPropertyExplicitlySet("taskId")) {
+                this.taskId(model.getTaskId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("dbUser")) {
+                this.dbUser(model.getDbUser());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("howCreated")) {
+                this.howCreated(model.getHowCreated());
+            }
+            if (model.wasPropertyExplicitlySet("startSnapshotTime")) {
+                this.startSnapshotTime(model.getStartSnapshotTime());
+            }
+            if (model.wasPropertyExplicitlySet("endSnapshotTime")) {
+                this.endSnapshotTime(model.getEndSnapshotTime());
+            }
+            if (model.wasPropertyExplicitlySet("beginSnapshotId")) {
+                this.beginSnapshotId(model.getBeginSnapshotId());
+            }
+            if (model.wasPropertyExplicitlySet("endSnapshotId")) {
+                this.endSnapshotId(model.getEndSnapshotId());
+            }
+            if (model.wasPropertyExplicitlySet("findings")) {
+                this.findings(model.getFindings());
+            }
+            return this;
         }
     }
 
@@ -605,6 +628,7 @@ public final class AddmTaskSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddmTaskSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("taskName=").append(String.valueOf(this.taskName));
         sb.append(", taskId=").append(String.valueOf(this.taskId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -617,7 +641,6 @@ public final class AddmTaskSummary {
         sb.append(", beginSnapshotId=").append(String.valueOf(this.beginSnapshotId));
         sb.append(", endSnapshotId=").append(String.valueOf(this.endSnapshotId));
         sb.append(", findings=").append(String.valueOf(this.findings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -644,7 +667,7 @@ public final class AddmTaskSummary {
                 && java.util.Objects.equals(this.beginSnapshotId, other.beginSnapshotId)
                 && java.util.Objects.equals(this.endSnapshotId, other.endSnapshotId)
                 && java.util.Objects.equals(this.findings, other.findings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -671,16 +694,7 @@ public final class AddmTaskSummary {
                 (result * PRIME)
                         + (this.endSnapshotId == null ? 43 : this.endSnapshotId.hashCode());
         result = (result * PRIME) + (this.findings == null ? 43 : this.findings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

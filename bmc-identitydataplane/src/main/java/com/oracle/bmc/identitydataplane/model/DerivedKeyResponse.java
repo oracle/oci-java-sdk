@@ -19,7 +19,7 @@ package com.oracle.bmc.identitydataplane.model;
     builder = DerivedKeyResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DerivedKeyResponse {
+public final class DerivedKeyResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"signingKey", "principal"})
     public DerivedKeyResponse(String signingKey, CommonPrincipal principal) {
@@ -67,17 +67,22 @@ public final class DerivedKeyResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DerivedKeyResponse build() {
-            DerivedKeyResponse __instance__ = new DerivedKeyResponse(signingKey, principal);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DerivedKeyResponse model = new DerivedKeyResponse(this.signingKey, this.principal);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DerivedKeyResponse o) {
-            Builder copiedBuilder = signingKey(o.getSigningKey()).principal(o.getPrincipal());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DerivedKeyResponse model) {
+            if (model.wasPropertyExplicitlySet("signingKey")) {
+                this.signingKey(model.getSigningKey());
+            }
+            if (model.wasPropertyExplicitlySet("principal")) {
+                this.principal(model.getPrincipal());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class DerivedKeyResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DerivedKeyResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("signingKey=").append(String.valueOf(this.signingKey));
         sb.append(", principal=").append(String.valueOf(this.principal));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class DerivedKeyResponse {
         DerivedKeyResponse other = (DerivedKeyResponse) o;
         return java.util.Objects.equals(this.signingKey, other.signingKey)
                 && java.util.Objects.equals(this.principal, other.principal)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class DerivedKeyResponse {
         int result = 1;
         result = (result * PRIME) + (this.signingKey == null ? 43 : this.signingKey.hashCode());
         result = (result * PRIME) + (this.principal == null ? 43 : this.principal.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.networkfirewall.model;
     builder = UpdateNetworkFirewallPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateNetworkFirewallPolicyDetails {
+public final class UpdateNetworkFirewallPolicyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -274,38 +275,57 @@ public final class UpdateNetworkFirewallPolicyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateNetworkFirewallPolicyDetails build() {
-            UpdateNetworkFirewallPolicyDetails __instance__ =
+            UpdateNetworkFirewallPolicyDetails model =
                     new UpdateNetworkFirewallPolicyDetails(
-                            displayName,
-                            mappedSecrets,
-                            applicationLists,
-                            urlLists,
-                            ipAddressLists,
-                            securityRules,
-                            decryptionRules,
-                            decryptionProfiles,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.mappedSecrets,
+                            this.applicationLists,
+                            this.urlLists,
+                            this.ipAddressLists,
+                            this.securityRules,
+                            this.decryptionRules,
+                            this.decryptionProfiles,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateNetworkFirewallPolicyDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .mappedSecrets(o.getMappedSecrets())
-                            .applicationLists(o.getApplicationLists())
-                            .urlLists(o.getUrlLists())
-                            .ipAddressLists(o.getIpAddressLists())
-                            .securityRules(o.getSecurityRules())
-                            .decryptionRules(o.getDecryptionRules())
-                            .decryptionProfiles(o.getDecryptionProfiles())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateNetworkFirewallPolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("mappedSecrets")) {
+                this.mappedSecrets(model.getMappedSecrets());
+            }
+            if (model.wasPropertyExplicitlySet("applicationLists")) {
+                this.applicationLists(model.getApplicationLists());
+            }
+            if (model.wasPropertyExplicitlySet("urlLists")) {
+                this.urlLists(model.getUrlLists());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddressLists")) {
+                this.ipAddressLists(model.getIpAddressLists());
+            }
+            if (model.wasPropertyExplicitlySet("securityRules")) {
+                this.securityRules(model.getSecurityRules());
+            }
+            if (model.wasPropertyExplicitlySet("decryptionRules")) {
+                this.decryptionRules(model.getDecryptionRules());
+            }
+            if (model.wasPropertyExplicitlySet("decryptionProfiles")) {
+                this.decryptionProfiles(model.getDecryptionProfiles());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -519,6 +539,7 @@ public final class UpdateNetworkFirewallPolicyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateNetworkFirewallPolicyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", mappedSecrets=").append(String.valueOf(this.mappedSecrets));
         sb.append(", applicationLists=").append(String.valueOf(this.applicationLists));
@@ -529,7 +550,6 @@ public final class UpdateNetworkFirewallPolicyDetails {
         sb.append(", decryptionProfiles=").append(String.valueOf(this.decryptionProfiles));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -554,7 +574,7 @@ public final class UpdateNetworkFirewallPolicyDetails {
                 && java.util.Objects.equals(this.decryptionProfiles, other.decryptionProfiles)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -585,16 +605,7 @@ public final class UpdateNetworkFirewallPolicyDetails {
                                 : this.decryptionProfiles.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

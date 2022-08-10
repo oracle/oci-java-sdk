@@ -101,8 +101,8 @@ public class CreateImageJobConverter {
                                         builder =
                                                 com.oracle.bmc.aivision.responses
                                                         .CreateImageJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.imageJob(response.getItem());
 

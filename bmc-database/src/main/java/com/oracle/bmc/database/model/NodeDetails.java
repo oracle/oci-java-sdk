@@ -17,7 +17,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodeDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NodeDetails {
+public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname", "ip", "vipHostname", "vip"})
     public NodeDetails(String hostname, String ip, String vipHostname, String vip) {
@@ -99,21 +99,28 @@ public final class NodeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeDetails build() {
-            NodeDetails __instance__ = new NodeDetails(hostname, ip, vipHostname, vip);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NodeDetails model = new NodeDetails(this.hostname, this.ip, this.vipHostname, this.vip);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NodeDetails o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname())
-                            .ip(o.getIp())
-                            .vipHostname(o.getVipHostname())
-                            .vip(o.getVip());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NodeDetails model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("ip")) {
+                this.ip(model.getIp());
+            }
+            if (model.wasPropertyExplicitlySet("vipHostname")) {
+                this.vipHostname(model.getVipHostname());
+            }
+            if (model.wasPropertyExplicitlySet("vip")) {
+                this.vip(model.getVip());
+            }
+            return this;
         }
     }
 
@@ -197,11 +204,11 @@ public final class NodeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NodeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", ip=").append(String.valueOf(this.ip));
         sb.append(", vipHostname=").append(String.valueOf(this.vipHostname));
         sb.append(", vip=").append(String.valueOf(this.vip));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +227,7 @@ public final class NodeDetails {
                 && java.util.Objects.equals(this.ip, other.ip)
                 && java.util.Objects.equals(this.vipHostname, other.vipHostname)
                 && java.util.Objects.equals(this.vip, other.vip)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +238,7 @@ public final class NodeDetails {
         result = (result * PRIME) + (this.ip == null ? 43 : this.ip.hashCode());
         result = (result * PRIME) + (this.vipHostname == null ? 43 : this.vipHostname.hashCode());
         result = (result * PRIME) + (this.vip == null ? 43 : this.vip.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

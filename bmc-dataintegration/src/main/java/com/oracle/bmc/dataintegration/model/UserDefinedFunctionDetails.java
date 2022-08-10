@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = UserDefinedFunctionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UserDefinedFunctionDetails {
+public final class UserDefinedFunctionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -241,42 +242,65 @@ public final class UserDefinedFunctionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UserDefinedFunctionDetails build() {
-            UserDefinedFunctionDetails __instance__ =
+            UserDefinedFunctionDetails model =
                     new UserDefinedFunctionDetails(
-                            key,
-                            modelType,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            identifier,
-                            objectVersion,
-                            signatures,
-                            expr,
-                            description,
-                            objectStatus,
-                            registryMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.identifier,
+                            this.objectVersion,
+                            this.signatures,
+                            this.expr,
+                            this.description,
+                            this.objectStatus,
+                            this.registryMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UserDefinedFunctionDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .identifier(o.getIdentifier())
-                            .objectVersion(o.getObjectVersion())
-                            .signatures(o.getSignatures())
-                            .expr(o.getExpr())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .registryMetadata(o.getRegistryMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UserDefinedFunctionDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("signatures")) {
+                this.signatures(model.getSignatures());
+            }
+            if (model.wasPropertyExplicitlySet("expr")) {
+                this.expr(model.getExpr());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            return this;
         }
     }
 
@@ -485,6 +509,7 @@ public final class UserDefinedFunctionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UserDefinedFunctionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -497,7 +522,6 @@ public final class UserDefinedFunctionDetails {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -524,7 +548,7 @@ public final class UserDefinedFunctionDetails {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -547,16 +571,7 @@ public final class UserDefinedFunctionDetails {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

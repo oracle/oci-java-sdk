@@ -183,8 +183,8 @@ public class ListOperationsInsightsWarehouseUsersConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .ListOperationsInsightsWarehouseUsersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operationsInsightsWarehouseUserSummaryCollection(
                                         response.getItem());

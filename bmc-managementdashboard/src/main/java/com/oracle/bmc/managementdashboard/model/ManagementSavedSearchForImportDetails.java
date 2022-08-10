@@ -19,7 +19,8 @@ package com.oracle.bmc.managementdashboard.model;
     builder = ManagementSavedSearchForImportDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagementSavedSearchForImportDetails {
+public final class ManagementSavedSearchForImportDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -423,58 +424,97 @@ public final class ManagementSavedSearchForImportDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementSavedSearchForImportDetails build() {
-            ManagementSavedSearchForImportDetails __instance__ =
+            ManagementSavedSearchForImportDetails model =
                     new ManagementSavedSearchForImportDetails(
-                            id,
-                            displayName,
-                            providerId,
-                            providerVersion,
-                            providerName,
-                            compartmentId,
-                            isOobSavedSearch,
-                            description,
-                            nls,
-                            type,
-                            uiConfig,
-                            dataConfig,
-                            screenImage,
-                            metadataVersion,
-                            widgetTemplate,
-                            widgetVM,
-                            freeformTags,
-                            definedTags,
-                            parametersConfig,
-                            drilldownConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.providerId,
+                            this.providerVersion,
+                            this.providerName,
+                            this.compartmentId,
+                            this.isOobSavedSearch,
+                            this.description,
+                            this.nls,
+                            this.type,
+                            this.uiConfig,
+                            this.dataConfig,
+                            this.screenImage,
+                            this.metadataVersion,
+                            this.widgetTemplate,
+                            this.widgetVM,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.parametersConfig,
+                            this.drilldownConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagementSavedSearchForImportDetails o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .providerId(o.getProviderId())
-                            .providerVersion(o.getProviderVersion())
-                            .providerName(o.getProviderName())
-                            .compartmentId(o.getCompartmentId())
-                            .isOobSavedSearch(o.getIsOobSavedSearch())
-                            .description(o.getDescription())
-                            .nls(o.getNls())
-                            .type(o.getType())
-                            .uiConfig(o.getUiConfig())
-                            .dataConfig(o.getDataConfig())
-                            .screenImage(o.getScreenImage())
-                            .metadataVersion(o.getMetadataVersion())
-                            .widgetTemplate(o.getWidgetTemplate())
-                            .widgetVM(o.getWidgetVM())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .parametersConfig(o.getParametersConfig())
-                            .drilldownConfig(o.getDrilldownConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagementSavedSearchForImportDetails model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("providerId")) {
+                this.providerId(model.getProviderId());
+            }
+            if (model.wasPropertyExplicitlySet("providerVersion")) {
+                this.providerVersion(model.getProviderVersion());
+            }
+            if (model.wasPropertyExplicitlySet("providerName")) {
+                this.providerName(model.getProviderName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isOobSavedSearch")) {
+                this.isOobSavedSearch(model.getIsOobSavedSearch());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("nls")) {
+                this.nls(model.getNls());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("uiConfig")) {
+                this.uiConfig(model.getUiConfig());
+            }
+            if (model.wasPropertyExplicitlySet("dataConfig")) {
+                this.dataConfig(model.getDataConfig());
+            }
+            if (model.wasPropertyExplicitlySet("screenImage")) {
+                this.screenImage(model.getScreenImage());
+            }
+            if (model.wasPropertyExplicitlySet("metadataVersion")) {
+                this.metadataVersion(model.getMetadataVersion());
+            }
+            if (model.wasPropertyExplicitlySet("widgetTemplate")) {
+                this.widgetTemplate(model.getWidgetTemplate());
+            }
+            if (model.wasPropertyExplicitlySet("widgetVM")) {
+                this.widgetVM(model.getWidgetVM());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("parametersConfig")) {
+                this.parametersConfig(model.getParametersConfig());
+            }
+            if (model.wasPropertyExplicitlySet("drilldownConfig")) {
+                this.drilldownConfig(model.getDrilldownConfig());
+            }
+            return this;
         }
     }
 
@@ -790,6 +830,7 @@ public final class ManagementSavedSearchForImportDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagementSavedSearchForImportDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", providerId=").append(String.valueOf(this.providerId));
@@ -810,7 +851,6 @@ public final class ManagementSavedSearchForImportDetails {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", parametersConfig=").append(String.valueOf(this.parametersConfig));
         sb.append(", drilldownConfig=").append(String.valueOf(this.drilldownConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -845,7 +885,7 @@ public final class ManagementSavedSearchForImportDetails {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.parametersConfig, other.parametersConfig)
                 && java.util.Objects.equals(this.drilldownConfig, other.drilldownConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -886,16 +926,7 @@ public final class ManagementSavedSearchForImportDetails {
         result =
                 (result * PRIME)
                         + (this.drilldownConfig == null ? 43 : this.drilldownConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

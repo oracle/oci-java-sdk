@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PhaseStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PhaseStatus {
+public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -171,32 +171,45 @@ public final class PhaseStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PhaseStatus build() {
-            PhaseStatus __instance__ =
+            PhaseStatus model =
                     new PhaseStatus(
-                            name,
-                            status,
-                            durationInMs,
-                            isAdvisorReportAvailable,
-                            extract,
-                            logLocation,
-                            progress);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.status,
+                            this.durationInMs,
+                            this.isAdvisorReportAvailable,
+                            this.extract,
+                            this.logLocation,
+                            this.progress);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PhaseStatus o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .status(o.getStatus())
-                            .durationInMs(o.getDurationInMs())
-                            .isAdvisorReportAvailable(o.getIsAdvisorReportAvailable())
-                            .extract(o.getExtract())
-                            .logLocation(o.getLogLocation())
-                            .progress(o.getProgress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PhaseStatus model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("durationInMs")) {
+                this.durationInMs(model.getDurationInMs());
+            }
+            if (model.wasPropertyExplicitlySet("isAdvisorReportAvailable")) {
+                this.isAdvisorReportAvailable(model.getIsAdvisorReportAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("extract")) {
+                this.extract(model.getExtract());
+            }
+            if (model.wasPropertyExplicitlySet("logLocation")) {
+                this.logLocation(model.getLogLocation());
+            }
+            if (model.wasPropertyExplicitlySet("progress")) {
+                this.progress(model.getProgress());
+            }
+            return this;
         }
     }
 
@@ -327,6 +340,7 @@ public final class PhaseStatus {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PhaseStatus(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", durationInMs=").append(String.valueOf(this.durationInMs));
@@ -335,7 +349,6 @@ public final class PhaseStatus {
         sb.append(", extract=").append(String.valueOf(this.extract));
         sb.append(", logLocation=").append(String.valueOf(this.logLocation));
         sb.append(", progress=").append(String.valueOf(this.progress));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -358,7 +371,7 @@ public final class PhaseStatus {
                 && java.util.Objects.equals(this.extract, other.extract)
                 && java.util.Objects.equals(this.logLocation, other.logLocation)
                 && java.util.Objects.equals(this.progress, other.progress)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -376,16 +389,7 @@ public final class PhaseStatus {
         result = (result * PRIME) + (this.extract == null ? 43 : this.extract.hashCode());
         result = (result * PRIME) + (this.logLocation == null ? 43 : this.logLocation.hashCode());
         result = (result * PRIME) + (this.progress == null ? 43 : this.progress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

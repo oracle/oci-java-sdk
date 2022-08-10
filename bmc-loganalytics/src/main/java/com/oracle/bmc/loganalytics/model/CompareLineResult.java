@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = CompareLineResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CompareLineResult {
+public final class CompareLineResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "leftContent",
@@ -151,24 +151,37 @@ public final class CompareLineResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CompareLineResult build() {
-            CompareLineResult __instance__ =
+            CompareLineResult model =
                     new CompareLineResult(
-                            leftContent, rightContent, diffType, leftIndices, rightIndices);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.leftContent,
+                            this.rightContent,
+                            this.diffType,
+                            this.leftIndices,
+                            this.rightIndices);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CompareLineResult o) {
-            Builder copiedBuilder =
-                    leftContent(o.getLeftContent())
-                            .rightContent(o.getRightContent())
-                            .diffType(o.getDiffType())
-                            .leftIndices(o.getLeftIndices())
-                            .rightIndices(o.getRightIndices());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CompareLineResult model) {
+            if (model.wasPropertyExplicitlySet("leftContent")) {
+                this.leftContent(model.getLeftContent());
+            }
+            if (model.wasPropertyExplicitlySet("rightContent")) {
+                this.rightContent(model.getRightContent());
+            }
+            if (model.wasPropertyExplicitlySet("diffType")) {
+                this.diffType(model.getDiffType());
+            }
+            if (model.wasPropertyExplicitlySet("leftIndices")) {
+                this.leftIndices(model.getLeftIndices());
+            }
+            if (model.wasPropertyExplicitlySet("rightIndices")) {
+                this.rightIndices(model.getRightIndices());
+            }
+            return this;
         }
     }
 
@@ -288,12 +301,12 @@ public final class CompareLineResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CompareLineResult(");
+        sb.append("super=").append(super.toString());
         sb.append("leftContent=").append(String.valueOf(this.leftContent));
         sb.append(", rightContent=").append(String.valueOf(this.rightContent));
         sb.append(", diffType=").append(String.valueOf(this.diffType));
         sb.append(", leftIndices=").append(String.valueOf(this.leftIndices));
         sb.append(", rightIndices=").append(String.valueOf(this.rightIndices));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,7 +326,7 @@ public final class CompareLineResult {
                 && java.util.Objects.equals(this.diffType, other.diffType)
                 && java.util.Objects.equals(this.leftIndices, other.leftIndices)
                 && java.util.Objects.equals(this.rightIndices, other.rightIndices)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -325,16 +338,7 @@ public final class CompareLineResult {
         result = (result * PRIME) + (this.diffType == null ? 43 : this.diffType.hashCode());
         result = (result * PRIME) + (this.leftIndices == null ? 43 : this.leftIndices.hashCode());
         result = (result * PRIME) + (this.rightIndices == null ? 43 : this.rightIndices.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

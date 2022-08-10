@@ -115,8 +115,8 @@ public class GetFusionEnvironmentFamilyConverter {
                                                 com.oracle.bmc.fusionapps.responses
                                                         .GetFusionEnvironmentFamilyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fusionEnvironmentFamily(response.getItem());
 

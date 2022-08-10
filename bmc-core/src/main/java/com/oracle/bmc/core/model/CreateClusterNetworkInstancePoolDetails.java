@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = CreateClusterNetworkInstancePoolDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateClusterNetworkInstancePoolDetails {
+public final class CreateClusterNetworkInstancePoolDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -156,24 +157,37 @@ public final class CreateClusterNetworkInstancePoolDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateClusterNetworkInstancePoolDetails build() {
-            CreateClusterNetworkInstancePoolDetails __instance__ =
+            CreateClusterNetworkInstancePoolDetails model =
                     new CreateClusterNetworkInstancePoolDetails(
-                            definedTags, displayName, freeformTags, instanceConfigurationId, size);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.instanceConfigurationId,
+                            this.size);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateClusterNetworkInstancePoolDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .instanceConfigurationId(o.getInstanceConfigurationId())
-                            .size(o.getSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateClusterNetworkInstancePoolDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            return this;
         }
     }
 
@@ -297,13 +311,13 @@ public final class CreateClusterNetworkInstancePoolDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateClusterNetworkInstancePoolDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
         sb.append(", size=").append(String.valueOf(this.size));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -324,7 +338,7 @@ public final class CreateClusterNetworkInstancePoolDetails {
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
                 && java.util.Objects.equals(this.size, other.size)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -340,16 +354,7 @@ public final class CreateClusterNetworkInstancePoolDetails {
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -105,8 +105,8 @@ public class GetEmWarehouseConverter {
                                         builder =
                                                 com.oracle.bmc.emwarehouse.responses
                                                         .GetEmWarehouseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.emWarehouse(response.getItem());
 

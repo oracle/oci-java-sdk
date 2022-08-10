@@ -31,7 +31,7 @@ package com.oracle.bmc.dns.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ResolverRuleDetails {
+public class ResolverRuleDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clientAddressConditions", "qnameCoverConditions"})
     protected ResolverRuleDetails(
@@ -89,6 +89,7 @@ public class ResolverRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResolverRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("clientAddressConditions=").append(String.valueOf(this.clientAddressConditions));
         sb.append(", qnameCoverConditions=").append(String.valueOf(this.qnameCoverConditions));
         sb.append(")");
@@ -106,7 +107,8 @@ public class ResolverRuleDetails {
 
         ResolverRuleDetails other = (ResolverRuleDetails) o;
         return java.util.Objects.equals(this.clientAddressConditions, other.clientAddressConditions)
-                && java.util.Objects.equals(this.qnameCoverConditions, other.qnameCoverConditions);
+                && java.util.Objects.equals(this.qnameCoverConditions, other.qnameCoverConditions)
+                && super.equals(other);
     }
 
     @Override
@@ -123,6 +125,7 @@ public class ResolverRuleDetails {
                         + (this.qnameCoverConditions == null
                                 ? 43
                                 : this.qnameCoverConditions.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

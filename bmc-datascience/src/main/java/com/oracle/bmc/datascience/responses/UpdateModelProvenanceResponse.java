@@ -55,16 +55,18 @@ public class UpdateModelProvenanceResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "modelProvenance"
     })
     private UpdateModelProvenanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.datascience.model.ModelProvenance modelProvenance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.modelProvenance = modelProvenance;
@@ -75,6 +77,13 @@ public class UpdateModelProvenanceResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateModelProvenanceResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(UpdateModelProvenanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             modelProvenance(o.getModelProvenance());
@@ -149,7 +159,7 @@ public class UpdateModelProvenanceResponse extends com.oracle.bmc.responses.BmcR
          */
         public UpdateModelProvenanceResponse build() {
             return new UpdateModelProvenanceResponse(
-                    __httpStatusCode__, opcRequestId, etag, modelProvenance);
+                    __httpStatusCode__, headers, opcRequestId, etag, modelProvenance);
         }
     }
 

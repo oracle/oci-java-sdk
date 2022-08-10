@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TaskValidation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TaskValidation {
+public final class TaskValidation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalMessageCount",
@@ -304,48 +304,77 @@ public final class TaskValidation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaskValidation build() {
-            TaskValidation __instance__ =
+            TaskValidation model =
                     new TaskValidation(
-                            totalMessageCount,
-                            errorMessageCount,
-                            warnMessageCount,
-                            infoMessageCount,
-                            validationMessages,
-                            key,
-                            modelType,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalMessageCount,
+                            this.errorMessageCount,
+                            this.warnMessageCount,
+                            this.infoMessageCount,
+                            this.validationMessages,
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaskValidation o) {
-            Builder copiedBuilder =
-                    totalMessageCount(o.getTotalMessageCount())
-                            .errorMessageCount(o.getErrorMessageCount())
-                            .warnMessageCount(o.getWarnMessageCount())
-                            .infoMessageCount(o.getInfoMessageCount())
-                            .validationMessages(o.getValidationMessages())
-                            .key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaskValidation model) {
+            if (model.wasPropertyExplicitlySet("totalMessageCount")) {
+                this.totalMessageCount(model.getTotalMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessageCount")) {
+                this.errorMessageCount(model.getErrorMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("warnMessageCount")) {
+                this.warnMessageCount(model.getWarnMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("infoMessageCount")) {
+                this.infoMessageCount(model.getInfoMessageCount());
+            }
+            if (model.wasPropertyExplicitlySet("validationMessages")) {
+                this.validationMessages(model.getValidationMessages());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -569,6 +598,7 @@ public final class TaskValidation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TaskValidation(");
+        sb.append("super=").append(super.toString());
         sb.append("totalMessageCount=").append(String.valueOf(this.totalMessageCount));
         sb.append(", errorMessageCount=").append(String.valueOf(this.errorMessageCount));
         sb.append(", warnMessageCount=").append(String.valueOf(this.warnMessageCount));
@@ -584,7 +614,6 @@ public final class TaskValidation {
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -614,7 +643,7 @@ public final class TaskValidation {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -650,16 +679,7 @@ public final class TaskValidation {
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

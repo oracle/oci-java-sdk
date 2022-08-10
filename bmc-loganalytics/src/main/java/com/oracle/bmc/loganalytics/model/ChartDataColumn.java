@@ -165,44 +165,69 @@ public final class ChartDataColumn extends AbstractColumn {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChartDataColumn build() {
-            ChartDataColumn __instance__ =
+            ChartDataColumn model =
                     new ChartDataColumn(
-                            displayName,
-                            subSystem,
-                            values,
-                            isListOfValues,
-                            isMultiValued,
-                            isCaseSensitive,
-                            isGroupable,
-                            isEvaluable,
-                            valueType,
-                            originalDisplayName,
-                            internalName,
-                            dataItems,
-                            filteredDataItems);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.subSystem,
+                            this.values,
+                            this.isListOfValues,
+                            this.isMultiValued,
+                            this.isCaseSensitive,
+                            this.isGroupable,
+                            this.isEvaluable,
+                            this.valueType,
+                            this.originalDisplayName,
+                            this.internalName,
+                            this.dataItems,
+                            this.filteredDataItems);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChartDataColumn o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .subSystem(o.getSubSystem())
-                            .values(o.getValues())
-                            .isListOfValues(o.getIsListOfValues())
-                            .isMultiValued(o.getIsMultiValued())
-                            .isCaseSensitive(o.getIsCaseSensitive())
-                            .isGroupable(o.getIsGroupable())
-                            .isEvaluable(o.getIsEvaluable())
-                            .valueType(o.getValueType())
-                            .originalDisplayName(o.getOriginalDisplayName())
-                            .internalName(o.getInternalName())
-                            .dataItems(o.getDataItems())
-                            .filteredDataItems(o.getFilteredDataItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChartDataColumn model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("subSystem")) {
+                this.subSystem(model.getSubSystem());
+            }
+            if (model.wasPropertyExplicitlySet("values")) {
+                this.values(model.getValues());
+            }
+            if (model.wasPropertyExplicitlySet("isListOfValues")) {
+                this.isListOfValues(model.getIsListOfValues());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiValued")) {
+                this.isMultiValued(model.getIsMultiValued());
+            }
+            if (model.wasPropertyExplicitlySet("isCaseSensitive")) {
+                this.isCaseSensitive(model.getIsCaseSensitive());
+            }
+            if (model.wasPropertyExplicitlySet("isGroupable")) {
+                this.isGroupable(model.getIsGroupable());
+            }
+            if (model.wasPropertyExplicitlySet("isEvaluable")) {
+                this.isEvaluable(model.getIsEvaluable());
+            }
+            if (model.wasPropertyExplicitlySet("valueType")) {
+                this.valueType(model.getValueType());
+            }
+            if (model.wasPropertyExplicitlySet("originalDisplayName")) {
+                this.originalDisplayName(model.getOriginalDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("internalName")) {
+                this.internalName(model.getInternalName());
+            }
+            if (model.wasPropertyExplicitlySet("dataItems")) {
+                this.dataItems(model.getDataItems());
+            }
+            if (model.wasPropertyExplicitlySet("filteredDataItems")) {
+                this.filteredDataItems(model.getFilteredDataItems());
+            }
+            return this;
         }
     }
 
@@ -296,7 +321,6 @@ public final class ChartDataColumn extends AbstractColumn {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dataItems=").append(String.valueOf(this.dataItems));
         sb.append(", filteredDataItems=").append(String.valueOf(this.filteredDataItems));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,8 +337,7 @@ public final class ChartDataColumn extends AbstractColumn {
         ChartDataColumn other = (ChartDataColumn) o;
         return java.util.Objects.equals(this.dataItems, other.dataItems)
                 && java.util.Objects.equals(this.filteredDataItems, other.filteredDataItems)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -325,16 +348,6 @@ public final class ChartDataColumn extends AbstractColumn {
         result =
                 (result * PRIME)
                         + (this.filteredDataItems == null ? 43 : this.filteredDataItems.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }
