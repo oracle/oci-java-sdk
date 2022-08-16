@@ -35,7 +35,8 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         "sourceDataRetention",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "targetIds"
     })
     public DetectorRecipe(
             String id,
@@ -53,7 +54,8 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             Integer sourceDataRetention,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<String> targetIds) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -71,6 +73,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.targetIds = targetIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -355,6 +358,22 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * The recipe attached to targets
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
+        private java.util.List<String> targetIds;
+
+        /**
+         * The recipe attached to targets
+         * @param targetIds the value to set
+         * @return this builder
+         **/
+        public Builder targetIds(java.util.List<String> targetIds) {
+            this.targetIds = targetIds;
+            this.__explicitlySet__.add("targetIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -377,7 +396,8 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
                             this.sourceDataRetention,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.targetIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -433,6 +453,9 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("targetIds")) {
+                this.targetIds(model.getTargetIds());
             }
             return this;
         }
@@ -695,6 +718,20 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         return systemTags;
     }
 
+    /**
+     * The recipe attached to targets
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
+    private final java.util.List<String> targetIds;
+
+    /**
+     * The recipe attached to targets
+     * @return the value
+     **/
+    public java.util.List<String> getTargetIds() {
+        return targetIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -725,6 +762,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", targetIds=").append(String.valueOf(this.targetIds));
         sb.append(")");
         return sb.toString();
     }
@@ -757,6 +795,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.targetIds, other.targetIds)
                 && super.equals(other);
     }
 
@@ -798,6 +837,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

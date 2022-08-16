@@ -81,13 +81,25 @@ public final class StandaloneJobInfrastructureConfigurationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobShapeConfigDetails")
+        private JobShapeConfigDetails jobShapeConfigDetails;
+
+        public Builder jobShapeConfigDetails(JobShapeConfigDetails jobShapeConfigDetails) {
+            this.jobShapeConfigDetails = jobShapeConfigDetails;
+            this.__explicitlySet__.add("jobShapeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StandaloneJobInfrastructureConfigurationDetails build() {
             StandaloneJobInfrastructureConfigurationDetails model =
                     new StandaloneJobInfrastructureConfigurationDetails(
-                            this.shapeName, this.subnetId, this.blockStorageSizeInGBs);
+                            this.shapeName,
+                            this.subnetId,
+                            this.blockStorageSizeInGBs,
+                            this.jobShapeConfigDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,6 +116,9 @@ public final class StandaloneJobInfrastructureConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("blockStorageSizeInGBs")) {
                 this.blockStorageSizeInGBs(model.getBlockStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("jobShapeConfigDetails")) {
+                this.jobShapeConfigDetails(model.getJobShapeConfigDetails());
             }
             return this;
         }
@@ -122,11 +137,15 @@ public final class StandaloneJobInfrastructureConfigurationDetails
 
     @Deprecated
     public StandaloneJobInfrastructureConfigurationDetails(
-            String shapeName, String subnetId, Integer blockStorageSizeInGBs) {
+            String shapeName,
+            String subnetId,
+            Integer blockStorageSizeInGBs,
+            JobShapeConfigDetails jobShapeConfigDetails) {
         super();
         this.shapeName = shapeName;
         this.subnetId = subnetId;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
+        this.jobShapeConfigDetails = jobShapeConfigDetails;
     }
 
     /**
@@ -175,6 +194,13 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         return blockStorageSizeInGBs;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobShapeConfigDetails")
+    private final JobShapeConfigDetails jobShapeConfigDetails;
+
+    public JobShapeConfigDetails getJobShapeConfigDetails() {
+        return jobShapeConfigDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -192,6 +218,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
+        sb.append(", jobShapeConfigDetails=").append(String.valueOf(this.jobShapeConfigDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -210,6 +237,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
+                && java.util.Objects.equals(this.jobShapeConfigDetails, other.jobShapeConfigDetails)
                 && super.equals(other);
     }
 
@@ -224,6 +252,11 @@ public final class StandaloneJobInfrastructureConfigurationDetails
                         + (this.blockStorageSizeInGBs == null
                                 ? 43
                                 : this.blockStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobShapeConfigDetails == null
+                                ? 43
+                                : this.jobShapeConfigDetails.hashCode());
         return result;
     }
 }

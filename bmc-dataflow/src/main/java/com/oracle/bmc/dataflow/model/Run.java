@@ -24,6 +24,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "archiveUri",
         "arguments",
         "applicationId",
+        "applicationLogConfig",
         "className",
         "compartmentId",
         "configuration",
@@ -66,6 +67,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             String archiveUri,
             java.util.List<String> arguments,
             String applicationId,
+            ApplicationLogConfig applicationLogConfig,
             String className,
             String compartmentId,
             java.util.Map<String, String> configuration,
@@ -107,6 +109,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.archiveUri = archiveUri;
         this.arguments = arguments;
         this.applicationId = applicationId;
+        this.applicationLogConfig = applicationLogConfig;
         this.className = className;
         this.compartmentId = compartmentId;
         this.configuration = configuration;
@@ -216,6 +219,15 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+        private ApplicationLogConfig applicationLogConfig;
+
+        public Builder applicationLogConfig(ApplicationLogConfig applicationLogConfig) {
+            this.applicationLogConfig = applicationLogConfig;
+            this.__explicitlySet__.add("applicationLogConfig");
             return this;
         }
         /**
@@ -929,6 +941,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.archiveUri,
                             this.arguments,
                             this.applicationId,
+                            this.applicationLogConfig,
                             this.className,
                             this.compartmentId,
                             this.configuration,
@@ -982,6 +995,9 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             }
             if (model.wasPropertyExplicitlySet("applicationId")) {
                 this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationLogConfig")) {
+                this.applicationLogConfig(model.getApplicationLogConfig());
             }
             if (model.wasPropertyExplicitlySet("className")) {
                 this.className(model.getClassName());
@@ -1171,6 +1187,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      **/
     public String getApplicationId() {
         return applicationId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+    private final ApplicationLogConfig applicationLogConfig;
+
+    public ApplicationLogConfig getApplicationLogConfig() {
+        return applicationLogConfig;
     }
 
     /**
@@ -1816,6 +1839,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append("archiveUri=").append(String.valueOf(this.archiveUri));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
         sb.append(", applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(", applicationLogConfig=").append(String.valueOf(this.applicationLogConfig));
         sb.append(", className=").append(String.valueOf(this.className));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
@@ -1874,6 +1898,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return java.util.Objects.equals(this.archiveUri, other.archiveUri)
                 && java.util.Objects.equals(this.arguments, other.arguments)
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(this.applicationLogConfig, other.applicationLogConfig)
                 && java.util.Objects.equals(this.className, other.className)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.configuration, other.configuration)
@@ -1927,6 +1952,11 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         result =
                 (result * PRIME)
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationLogConfig == null
+                                ? 43
+                                : this.applicationLogConfig.hashCode());
         result = (result * PRIME) + (this.className == null ? 43 : this.className.hashCode());
         result =
                 (result * PRIME)

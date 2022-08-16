@@ -36,7 +36,9 @@ public final class DetectorRecipeDetectorRuleSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "dataSourceId",
+        "entitiesMappings"
     })
     public DetectorRecipeDetectorRuleSummary(
             String id,
@@ -52,7 +54,9 @@ public final class DetectorRecipeDetectorRuleSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            String dataSourceId,
+            java.util.List<EntitiesMapping> entitiesMappings) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -68,6 +72,8 @@ public final class DetectorRecipeDetectorRuleSummary
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.dataSourceId = dataSourceId;
+        this.entitiesMappings = entitiesMappings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -290,6 +296,38 @@ public final class DetectorRecipeDetectorRuleSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * The id of the attached DataSource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
+        private String dataSourceId;
+
+        /**
+         * The id of the attached DataSource.
+         * @param dataSourceId the value to set
+         * @return this builder
+         **/
+        public Builder dataSourceId(String dataSourceId) {
+            this.dataSourceId = dataSourceId;
+            this.__explicitlySet__.add("dataSourceId");
+            return this;
+        }
+        /**
+         * Data Source entities mapping for a Detector Rule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
+        private java.util.List<EntitiesMapping> entitiesMappings;
+
+        /**
+         * Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings the value to set
+         * @return this builder
+         **/
+        public Builder entitiesMappings(java.util.List<EntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = entitiesMappings;
+            this.__explicitlySet__.add("entitiesMappings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -310,7 +348,9 @@ public final class DetectorRecipeDetectorRuleSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.dataSourceId,
+                            this.entitiesMappings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -360,6 +400,12 @@ public final class DetectorRecipeDetectorRuleSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dataSourceId")) {
+                this.dataSourceId(model.getDataSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("entitiesMappings")) {
+                this.entitiesMappings(model.getEntitiesMappings());
             }
             return this;
         }
@@ -622,6 +668,34 @@ public final class DetectorRecipeDetectorRuleSummary
         return lifecycleDetails;
     }
 
+    /**
+     * The id of the attached DataSource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
+    private final String dataSourceId;
+
+    /**
+     * The id of the attached DataSource.
+     * @return the value
+     **/
+    public String getDataSourceId() {
+        return dataSourceId;
+    }
+
+    /**
+     * Data Source entities mapping for a Detector Rule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
+    private final java.util.List<EntitiesMapping> entitiesMappings;
+
+    /**
+     * Data Source entities mapping for a Detector Rule
+     * @return the value
+     **/
+    public java.util.List<EntitiesMapping> getEntitiesMappings() {
+        return entitiesMappings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -651,6 +725,8 @@ public final class DetectorRecipeDetectorRuleSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", dataSourceId=").append(String.valueOf(this.dataSourceId));
+        sb.append(", entitiesMappings=").append(String.valueOf(this.entitiesMappings));
         sb.append(")");
         return sb.toString();
     }
@@ -680,6 +756,8 @@ public final class DetectorRecipeDetectorRuleSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.dataSourceId, other.dataSourceId)
+                && java.util.Objects.equals(this.entitiesMappings, other.entitiesMappings)
                 && super.equals(other);
     }
 
@@ -715,6 +793,10 @@ public final class DetectorRecipeDetectorRuleSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.dataSourceId == null ? 43 : this.dataSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entitiesMappings == null ? 43 : this.entitiesMappings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

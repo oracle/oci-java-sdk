@@ -9,10 +9,10 @@ package com.oracle.bmc.cloudguard.model;
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ClassificationStatus {
-    FalsePositive("FALSE_POSITIVE"),
     FalseNegative("FALSE_NEGATIVE"),
-    TruePositive("TRUE_POSITIVE"),
     TrueNegative("TRUE_NEGATIVE"),
+    FalsePositive("FALSE_POSITIVE"),
+    TruePositive("TRUE_POSITIVE"),
     NotClassified("NOT_CLASSIFIED"),
 
     /**

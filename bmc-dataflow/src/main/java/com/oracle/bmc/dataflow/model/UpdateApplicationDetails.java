@@ -28,6 +28,7 @@ public final class UpdateApplicationDetails
         "fileUri",
         "sparkVersion",
         "language",
+        "applicationLogConfig",
         "archiveUri",
         "arguments",
         "configuration",
@@ -52,6 +53,7 @@ public final class UpdateApplicationDetails
             String fileUri,
             String sparkVersion,
             ApplicationLanguage language,
+            ApplicationLogConfig applicationLogConfig,
             String archiveUri,
             java.util.List<String> arguments,
             java.util.Map<String, String> configuration,
@@ -75,6 +77,7 @@ public final class UpdateApplicationDetails
         this.fileUri = fileUri;
         this.sparkVersion = sparkVersion;
         this.language = language;
+        this.applicationLogConfig = applicationLogConfig;
         this.archiveUri = archiveUri;
         this.arguments = arguments;
         this.configuration = configuration;
@@ -169,6 +172,15 @@ public final class UpdateApplicationDetails
         public Builder language(ApplicationLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+        private ApplicationLogConfig applicationLogConfig;
+
+        public Builder applicationLogConfig(ApplicationLogConfig applicationLogConfig) {
+            this.applicationLogConfig = applicationLogConfig;
+            this.__explicitlySet__.add("applicationLogConfig");
             return this;
         }
         /**
@@ -539,6 +551,7 @@ public final class UpdateApplicationDetails
                             this.fileUri,
                             this.sparkVersion,
                             this.language,
+                            this.applicationLogConfig,
                             this.archiveUri,
                             this.arguments,
                             this.configuration,
@@ -576,6 +589,9 @@ public final class UpdateApplicationDetails
             }
             if (model.wasPropertyExplicitlySet("language")) {
                 this.language(model.getLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("applicationLogConfig")) {
+                this.applicationLogConfig(model.getApplicationLogConfig());
             }
             if (model.wasPropertyExplicitlySet("archiveUri")) {
                 this.archiveUri(model.getArchiveUri());
@@ -710,6 +726,13 @@ public final class UpdateApplicationDetails
      **/
     public ApplicationLanguage getLanguage() {
         return language;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+    private final ApplicationLogConfig applicationLogConfig;
+
+    public ApplicationLogConfig getApplicationLogConfig() {
+        return applicationLogConfig;
     }
 
     /**
@@ -1050,6 +1073,7 @@ public final class UpdateApplicationDetails
         sb.append(", fileUri=").append(String.valueOf(this.fileUri));
         sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
         sb.append(", language=").append(String.valueOf(this.language));
+        sb.append(", applicationLogConfig=").append(String.valueOf(this.applicationLogConfig));
         sb.append(", archiveUri=").append(String.valueOf(this.archiveUri));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
@@ -1086,6 +1110,7 @@ public final class UpdateApplicationDetails
                 && java.util.Objects.equals(this.fileUri, other.fileUri)
                 && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
                 && java.util.Objects.equals(this.language, other.language)
+                && java.util.Objects.equals(this.applicationLogConfig, other.applicationLogConfig)
                 && java.util.Objects.equals(this.archiveUri, other.archiveUri)
                 && java.util.Objects.equals(this.arguments, other.arguments)
                 && java.util.Objects.equals(this.configuration, other.configuration)
@@ -1115,6 +1140,11 @@ public final class UpdateApplicationDetails
         result = (result * PRIME) + (this.fileUri == null ? 43 : this.fileUri.hashCode());
         result = (result * PRIME) + (this.sparkVersion == null ? 43 : this.sparkVersion.hashCode());
         result = (result * PRIME) + (this.language == null ? 43 : this.language.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationLogConfig == null
+                                ? 43
+                                : this.applicationLogConfig.hashCode());
         result = (result * PRIME) + (this.archiveUri == null ? 43 : this.archiveUri.hashCode());
         result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
         result =

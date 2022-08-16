@@ -48,7 +48,7 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DetectorTemplate identifier.
+         * Display name of a target.
          * <p>
          * Avoid entering confidential information.
          *
@@ -57,7 +57,7 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
         private String displayName;
 
         /**
-         * DetectorTemplate identifier.
+         * Display name of a target.
          * <p>
          * Avoid entering confidential information.
          *
@@ -219,7 +219,7 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * DetectorTemplate identifier.
+     * Display name of a target.
      * <p>
      * Avoid entering confidential information.
      *
@@ -228,7 +228,7 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
     private final String displayName;
 
     /**
-     * DetectorTemplate identifier.
+     * Display name of a target.
      * <p>
      * Avoid entering confidential information.
      *

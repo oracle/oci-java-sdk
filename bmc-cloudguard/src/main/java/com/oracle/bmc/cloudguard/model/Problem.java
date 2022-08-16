@@ -44,7 +44,10 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "additionalDetails",
         "description",
         "recommendation",
-        "comment"
+        "comment",
+        "impactedResourceId",
+        "impactedResourceName",
+        "impactedResourceType"
     })
     public Problem(
             String id,
@@ -71,7 +74,10 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             java.util.Map<String, String> additionalDetails,
             String description,
             String recommendation,
-            String comment) {
+            String comment,
+            String impactedResourceId,
+            String impactedResourceName,
+            String impactedResourceType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -98,6 +104,9 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.description = description;
         this.recommendation = recommendation;
         this.comment = comment;
+        this.impactedResourceId = impactedResourceId;
+        this.impactedResourceName = impactedResourceName;
+        this.impactedResourceType = impactedResourceType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -502,6 +511,54 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             this.__explicitlySet__.add("comment");
             return this;
         }
+        /**
+         * Identifier of the impacted Resource
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceId")
+        private String impactedResourceId;
+
+        /**
+         * Identifier of the impacted Resource
+         * @param impactedResourceId the value to set
+         * @return this builder
+         **/
+        public Builder impactedResourceId(String impactedResourceId) {
+            this.impactedResourceId = impactedResourceId;
+            this.__explicitlySet__.add("impactedResourceId");
+            return this;
+        }
+        /**
+         * DisplayName of the impacted  Resource
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceName")
+        private String impactedResourceName;
+
+        /**
+         * DisplayName of the impacted  Resource
+         * @param impactedResourceName the value to set
+         * @return this builder
+         **/
+        public Builder impactedResourceName(String impactedResourceName) {
+            this.impactedResourceName = impactedResourceName;
+            this.__explicitlySet__.add("impactedResourceName");
+            return this;
+        }
+        /**
+         * Type of the impacted Resource
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceType")
+        private String impactedResourceType;
+
+        /**
+         * Type of the impacted Resource
+         * @param impactedResourceType the value to set
+         * @return this builder
+         **/
+        public Builder impactedResourceType(String impactedResourceType) {
+            this.impactedResourceType = impactedResourceType;
+            this.__explicitlySet__.add("impactedResourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -533,7 +590,10 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.additionalDetails,
                             this.description,
                             this.recommendation,
-                            this.comment);
+                            this.comment,
+                            this.impactedResourceId,
+                            this.impactedResourceName,
+                            this.impactedResourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -616,6 +676,15 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("comment")) {
                 this.comment(model.getComment());
+            }
+            if (model.wasPropertyExplicitlySet("impactedResourceId")) {
+                this.impactedResourceId(model.getImpactedResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("impactedResourceName")) {
+                this.impactedResourceName(model.getImpactedResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("impactedResourceType")) {
+                this.impactedResourceType(model.getImpactedResourceType());
             }
             return this;
         }
@@ -982,6 +1051,48 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return comment;
     }
 
+    /**
+     * Identifier of the impacted Resource
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceId")
+    private final String impactedResourceId;
+
+    /**
+     * Identifier of the impacted Resource
+     * @return the value
+     **/
+    public String getImpactedResourceId() {
+        return impactedResourceId;
+    }
+
+    /**
+     * DisplayName of the impacted  Resource
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceName")
+    private final String impactedResourceName;
+
+    /**
+     * DisplayName of the impacted  Resource
+     * @return the value
+     **/
+    public String getImpactedResourceName() {
+        return impactedResourceName;
+    }
+
+    /**
+     * Type of the impacted Resource
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceType")
+    private final String impactedResourceType;
+
+    /**
+     * Type of the impacted Resource
+     * @return the value
+     **/
+    public String getImpactedResourceType() {
+        return impactedResourceType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1022,6 +1133,9 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", recommendation=").append(String.valueOf(this.recommendation));
         sb.append(", comment=").append(String.valueOf(this.comment));
+        sb.append(", impactedResourceId=").append(String.valueOf(this.impactedResourceId));
+        sb.append(", impactedResourceName=").append(String.valueOf(this.impactedResourceName));
+        sb.append(", impactedResourceType=").append(String.valueOf(this.impactedResourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -1062,6 +1176,9 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.recommendation, other.recommendation)
                 && java.util.Objects.equals(this.comment, other.comment)
+                && java.util.Objects.equals(this.impactedResourceId, other.impactedResourceId)
+                && java.util.Objects.equals(this.impactedResourceName, other.impactedResourceName)
+                && java.util.Objects.equals(this.impactedResourceType, other.impactedResourceType)
                 && super.equals(other);
     }
 
@@ -1120,6 +1237,21 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 (result * PRIME)
                         + (this.recommendation == null ? 43 : this.recommendation.hashCode());
         result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.impactedResourceId == null
+                                ? 43
+                                : this.impactedResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.impactedResourceName == null
+                                ? 43
+                                : this.impactedResourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.impactedResourceType == null
+                                ? 43
+                                : this.impactedResourceType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

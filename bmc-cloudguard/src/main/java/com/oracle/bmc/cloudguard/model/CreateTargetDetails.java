@@ -120,13 +120,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * possible type of targets(COMPARTMENT/FACLOUD)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
-         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * possible type of targets(COMPARTMENT/FACLOUD)
          * @param targetResourceType the value to set
          * @return this builder
          **/
@@ -371,13 +371,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * possible type of targets(COMPARTMENT/FACLOUD)
      * @return the value
      **/
     public TargetResourceType getTargetResourceType() {

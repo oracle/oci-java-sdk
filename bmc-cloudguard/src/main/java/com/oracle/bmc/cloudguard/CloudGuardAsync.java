@@ -10,7 +10,7 @@ import com.oracle.bmc.cloudguard.responses.*;
 /**
  * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform through the Cloud Guard Console or the Security Zones Console. For more information on these services, see the [Cloud Guard](https://docs.cloud.oracle.com/iaas/cloud-guard/home.htm) and [Security Zones](https://docs.cloud.oracle.com/iaas/security-zone/home.htm) documentation.
  *
- **Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations in Cloud Guard from any region.
+ **Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
@@ -67,6 +67,38 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<AddCompartmentResponse> addCompartment(
             AddCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<AddCompartmentRequest, AddCompartmentResponse>
+                    handler);
+
+    /**
+     * Cancels the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler);
+
+    /**
+     * Moves the DataSource from current compartment to another.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDataSourceCompartmentResponse> changeDataSourceCompartment(
+            ChangeDataSourceCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDataSourceCompartmentRequest, ChangeDataSourceCompartmentResponse>
                     handler);
 
     /**
@@ -176,6 +208,22 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a DataSource
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
+            CreateDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDataSourceRequest, CreateDataSourceResponse>
+                    handler);
+
+    /**
      * Creates a DetectorRecipe
      *
      *
@@ -191,6 +239,24 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDetectorRecipeRequest, CreateDetectorRecipeResponse>
                     handler);
+
+    /**
+     * Create the DetectorRule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDetectorRecipeDetectorRuleResponse>
+            createDetectorRecipeDetectorRule(
+                    CreateDetectorRecipeDetectorRuleRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDetectorRecipeDetectorRuleRequest,
+                                    CreateDetectorRecipeDetectorRuleResponse>
+                            handler);
 
     /**
      * Creates a new ManagedList.
@@ -327,6 +393,21 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a DataSource identified by dataSourceId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
+            DeleteDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResponse>
+                    handler);
+
+    /**
      * Deletes a DetectorRecipe identified by detectorRecipeId
      *
      * @param request The request object containing the details to send
@@ -341,6 +422,42 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDetectorRecipeRequest, DeleteDetectorRecipeResponse>
                     handler);
+
+    /**
+     * Deletes DetectorRecipeDetectorRule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDetectorRecipeDetectorRuleResponse>
+            deleteDetectorRecipeDetectorRule(
+                    DeleteDetectorRecipeDetectorRuleRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDetectorRecipeDetectorRuleRequest,
+                                    DeleteDetectorRecipeDetectorRuleResponse>
+                            handler);
+
+    /**
+     * Delete the DetectorRecipeDetectorRuleDataSource resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDetectorRecipeDetectorRuleDataSourceResponse>
+            deleteDetectorRecipeDetectorRuleDataSource(
+                    DeleteDetectorRecipeDetectorRuleDataSourceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDetectorRecipeDetectorRuleDataSourceRequest,
+                                    DeleteDetectorRecipeDetectorRuleDataSourceResponse>
+                            handler);
 
     /**
      * Deletes a managed list identified by managedListId
@@ -514,6 +631,21 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<GetDataMaskRuleResponse> getDataMaskRule(
             GetDataMaskRuleRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetDataMaskRuleRequest, GetDataMaskRuleResponse>
+                    handler);
+
+    /**
+     * Returns a DataSource identified by dataSourceId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
+            GetDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
                     handler);
 
     /**
@@ -836,6 +968,21 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets details of the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
      * Returns a list of condition types.
      *
      *
@@ -867,6 +1014,53 @@ public interface CloudGuardAsync extends AutoCloseable {
             ListDataMaskRulesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDataMaskRulesRequest, ListDataMaskRulesResponse>
+                    handler);
+
+    /**
+     * Returns a list of events from CloudGuard DataSource
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataSourceEventsResponse> listDataSourceEvents(
+            ListDataSourceEventsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDataSourceEventsRequest, ListDataSourceEventsResponse>
+                    handler);
+
+    /**
+     * Returns a list of all Data Sources in a compartment
+     * <p>
+     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
+            ListDataSourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResponse>
                     handler);
 
     /**
@@ -1045,6 +1239,23 @@ public interface CloudGuardAsync extends AutoCloseable {
             ListProblemEndpointsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListProblemEndpointsRequest, ListProblemEndpointsResponse>
+                    handler);
+
+    /**
+     * Returns a list of entities for a CloudGuard Problem
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProblemEntitiesResponse> listProblemEntities(
+            ListProblemEntitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProblemEntitiesRequest, ListProblemEntitiesResponse>
                     handler);
 
     /**
@@ -1536,6 +1747,53 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Return a (paginated) list of errors for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Return a (paginated) list of logs for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
      * Removes an existing compartment from a security zone. When you remove a subcompartment from a security zone, it no longer enforces security zone policies on the resources in the subcompartment. You can't remove the primary compartment that was used to create the security zone.
      *
      * @param request The request object containing the details to send
@@ -1946,6 +2204,21 @@ public interface CloudGuardAsync extends AutoCloseable {
             UpdateDataMaskRuleRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>
+                    handler);
+
+    /**
+     * Updates a data source identified by dataSourceId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
+            UpdateDataSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResponse>
                     handler);
 
     /**

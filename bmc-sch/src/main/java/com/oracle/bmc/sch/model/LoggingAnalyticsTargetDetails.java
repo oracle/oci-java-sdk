@@ -48,13 +48,35 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
+        /**
+         * Identifier of the log source that you want to use for processing data received from the service connector source.
+         * Applies to {@code StreamingSource} only.
+         * Equivalent to {@code name} at {@link LogAnalyticsSource}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSourceIdentifier")
+        private String logSourceIdentifier;
+
+        /**
+         * Identifier of the log source that you want to use for processing data received from the service connector source.
+         * Applies to {@code StreamingSource} only.
+         * Equivalent to {@code name} at {@link LogAnalyticsSource}.
+         *
+         * @param logSourceIdentifier the value to set
+         * @return this builder
+         **/
+        public Builder logSourceIdentifier(String logSourceIdentifier) {
+            this.logSourceIdentifier = logSourceIdentifier;
+            this.__explicitlySet__.add("logSourceIdentifier");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoggingAnalyticsTargetDetails build() {
             LoggingAnalyticsTargetDetails model =
-                    new LoggingAnalyticsTargetDetails(this.logGroupId);
+                    new LoggingAnalyticsTargetDetails(this.logGroupId, this.logSourceIdentifier);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -65,6 +87,9 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         public Builder copy(LoggingAnalyticsTargetDetails model) {
             if (model.wasPropertyExplicitlySet("logGroupId")) {
                 this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logSourceIdentifier")) {
+                this.logSourceIdentifier(model.getLogSourceIdentifier());
             }
             return this;
         }
@@ -82,9 +107,10 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     }
 
     @Deprecated
-    public LoggingAnalyticsTargetDetails(String logGroupId) {
+    public LoggingAnalyticsTargetDetails(String logGroupId, String logSourceIdentifier) {
         super();
         this.logGroupId = logGroupId;
+        this.logSourceIdentifier = logSourceIdentifier;
     }
 
     /**
@@ -103,6 +129,26 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         return logGroupId;
     }
 
+    /**
+     * Identifier of the log source that you want to use for processing data received from the service connector source.
+     * Applies to {@code StreamingSource} only.
+     * Equivalent to {@code name} at {@link LogAnalyticsSource}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSourceIdentifier")
+    private final String logSourceIdentifier;
+
+    /**
+     * Identifier of the log source that you want to use for processing data received from the service connector source.
+     * Applies to {@code StreamingSource} only.
+     * Equivalent to {@code name} at {@link LogAnalyticsSource}.
+     *
+     * @return the value
+     **/
+    public String getLogSourceIdentifier() {
+        return logSourceIdentifier;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -118,6 +164,7 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         sb.append("LoggingAnalyticsTargetDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", logSourceIdentifier=").append(String.valueOf(this.logSourceIdentifier));
         sb.append(")");
         return sb.toString();
     }
@@ -132,7 +179,9 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         }
 
         LoggingAnalyticsTargetDetails other = (LoggingAnalyticsTargetDetails) o;
-        return java.util.Objects.equals(this.logGroupId, other.logGroupId) && super.equals(other);
+        return java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.logSourceIdentifier, other.logSourceIdentifier)
+                && super.equals(other);
     }
 
     @Override
@@ -140,6 +189,11 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logSourceIdentifier == null
+                                ? 43
+                                : this.logSourceIdentifier.hashCode());
         return result;
     }
 }

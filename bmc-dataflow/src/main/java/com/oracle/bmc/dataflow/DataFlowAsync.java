@@ -305,7 +305,7 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all private endpoints in the specified compartment.
+     * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      *
      *
      * @param request The request object containing the details to send
