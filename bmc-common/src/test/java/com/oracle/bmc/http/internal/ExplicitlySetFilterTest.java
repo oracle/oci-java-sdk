@@ -5,6 +5,7 @@
 package com.oracle.bmc.http.internal;
 
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.PropertyWriter;
 import com.oracle.bmc.requests.BmcRequest;
@@ -20,6 +21,7 @@ import java.net.URI;
 import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.atLeast;
@@ -163,6 +165,27 @@ public class ExplicitlySetFilterTest {
         assertTrue(serializedBody.contains("\"major_version\":\"1.0\""));
     }
 
+    @Test
+    public void serializeWeirdProperty() throws JsonProcessingException {
+        Subclass sub = Subclass.builder().baseVal(1).subVal("two").ref("abc").build();
+        String serializedBody = serializeForPost(sub);
+
+        assertTrue(serializedBody.contains("\"$ref\":\"abc\""));
+
+        Subclass deserialized =
+                RestClientFactory.getObjectMapper().readValue(serializedBody, Subclass.class);
+        assertEquals(sub, deserialized);
+
+        sub = Subclass.builder().baseVal(1).subVal("two").build();
+        serializedBody = serializeForPost(sub);
+
+        assertFalse(serializedBody.contains("\"$ref\":\"abc\""));
+
+        deserialized =
+                RestClientFactory.getObjectMapper().readValue(serializedBody, Subclass.class);
+        assertEquals(sub, deserialized);
+    }
+
     private static String serializeForPost(Object o) {
         Client client = mock(Client.class);
         EntityFactory ef = mock(EntityFactory.class);
@@ -247,25 +270,27 @@ public class ExplicitlySetFilterTest {
         }
     }
 
-    @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subclass.Builder.class)
-    @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type"
-    )
     @com.fasterxml.jackson.annotation.JsonFilter(
             com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
     static final class Subclass extends Baseclass {
         @com.fasterxml.jackson.annotation.JsonProperty("subVal")
         private final String subVal;
 
-        public Subclass(Integer baseVal, String majorVersion, String subVal) {
+        @com.fasterxml.jackson.annotation.JsonProperty("$ref")
+        String ref;
+
+        public Subclass(Integer baseVal, String majorVersion, String subVal, String ref) {
             super(baseVal, majorVersion);
             this.subVal = subVal;
+            this.ref = ref;
         }
 
         public String getSubVal() {
             return this.subVal;
+        }
+
+        public String getRef() {
+            return this.ref;
         }
 
         public boolean equals(final Object o) {
@@ -301,7 +326,7 @@ public class ExplicitlySetFilterTest {
 
         @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
         public static class Builder {
-            @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+            @com.fasterxml.jackson.annotation.JsonProperty("baseVal")
             private Integer baseVal;
 
             public Builder baseVal(Integer baseVal) {
@@ -319,6 +344,15 @@ public class ExplicitlySetFilterTest {
                 return this;
             }
 
+            @com.fasterxml.jackson.annotation.JsonProperty("$ref")
+            private String ref;
+
+            public Builder ref(String ref) {
+                this.ref = ref;
+                this.__explicitlySet__.add("ref");
+                return this;
+            }
+
             @com.fasterxml.jackson.annotation.JsonProperty("subVal")
             private String subVal;
 
@@ -332,7 +366,7 @@ public class ExplicitlySetFilterTest {
             private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
             public Subclass build() {
-                Subclass model = new Subclass(baseVal, majorVersion, subVal);
+                Subclass model = new Subclass(baseVal, majorVersion, subVal, ref);
                 for (String property : __explicitlySet__) {
                     model.markPropertyAsExplicitlySet(property);
                 }
@@ -341,7 +375,7 @@ public class ExplicitlySetFilterTest {
 
             @com.fasterxml.jackson.annotation.JsonIgnore
             public Builder copy(Subclass o) {
-                return baseVal(o.getBaseVal()).subVal(o.getSubVal());
+                return baseVal(o.getBaseVal()).subVal(o.getSubVal()).ref(o.getRef());
             }
         }
 

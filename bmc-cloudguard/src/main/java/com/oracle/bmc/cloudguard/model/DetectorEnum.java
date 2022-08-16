@@ -12,6 +12,7 @@ public enum DetectorEnum {
     IaasActivityDetector("IAAS_ACTIVITY_DETECTOR"),
     IaasConfigurationDetector("IAAS_CONFIGURATION_DETECTOR"),
     IaasThreatDetector("IAAS_THREAT_DETECTOR"),
+    IaasLogInsightDetector("IAAS_LOG_INSIGHT_DETECTOR"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

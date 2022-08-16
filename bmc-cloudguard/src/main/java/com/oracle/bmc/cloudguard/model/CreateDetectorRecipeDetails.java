@@ -25,6 +25,7 @@ public final class CreateDetectorRecipeDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
+        "detector",
         "sourceDetectorRecipeId",
         "compartmentId",
         "detectorRules",
@@ -34,6 +35,7 @@ public final class CreateDetectorRecipeDetails
     public CreateDetectorRecipeDetails(
             String displayName,
             String description,
+            DetectorEnum detector,
             String sourceDetectorRecipeId,
             String compartmentId,
             java.util.List<UpdateDetectorRecipeDetectorRule> detectorRules,
@@ -42,6 +44,7 @@ public final class CreateDetectorRecipeDetails
         super();
         this.displayName = displayName;
         this.description = description;
+        this.detector = detector;
         this.sourceDetectorRecipeId = sourceDetectorRecipeId;
         this.compartmentId = compartmentId;
         this.detectorRules = detectorRules;
@@ -93,6 +96,22 @@ public final class CreateDetectorRecipeDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * detector for the rule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("detector")
+        private DetectorEnum detector;
+
+        /**
+         * detector for the rule
+         * @param detector the value to set
+         * @return this builder
+         **/
+        public Builder detector(DetectorEnum detector) {
+            this.detector = detector;
+            this.__explicitlySet__.add("detector");
             return this;
         }
         /**
@@ -198,6 +217,7 @@ public final class CreateDetectorRecipeDetails
                     new CreateDetectorRecipeDetails(
                             this.displayName,
                             this.description,
+                            this.detector,
                             this.sourceDetectorRecipeId,
                             this.compartmentId,
                             this.detectorRules,
@@ -216,6 +236,9 @@ public final class CreateDetectorRecipeDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("detector")) {
+                this.detector(model.getDetector());
             }
             if (model.wasPropertyExplicitlySet("sourceDetectorRecipeId")) {
                 this.sourceDetectorRecipeId(model.getSourceDetectorRecipeId());
@@ -285,6 +308,20 @@ public final class CreateDetectorRecipeDetails
      **/
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * detector for the rule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("detector")
+    private final DetectorEnum detector;
+
+    /**
+     * detector for the rule
+     * @return the value
+     **/
+    public DetectorEnum getDetector() {
+        return detector;
     }
 
     /**
@@ -385,6 +422,7 @@ public final class CreateDetectorRecipeDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", detector=").append(String.valueOf(this.detector));
         sb.append(", sourceDetectorRecipeId=").append(String.valueOf(this.sourceDetectorRecipeId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
@@ -406,6 +444,7 @@ public final class CreateDetectorRecipeDetails
         CreateDetectorRecipeDetails other = (CreateDetectorRecipeDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.detector, other.detector)
                 && java.util.Objects.equals(
                         this.sourceDetectorRecipeId, other.sourceDetectorRecipeId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -421,6 +460,7 @@ public final class CreateDetectorRecipeDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDetectorRecipeId == null

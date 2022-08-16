@@ -9,6 +9,7 @@ package com.oracle.bmc.dataflow.model;
  * set in the associated application:
  *   - applicationId
  *   - archiveUri
+ *   - applicationLogConfig
  *   - arguments
  *   - configuration
  *   - definedTags
@@ -53,6 +54,7 @@ package com.oracle.bmc.dataflow.model;
 public final class CreateRunDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "applicationLogConfig",
         "applicationId",
         "archiveUri",
         "arguments",
@@ -75,6 +77,7 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
         "warehouseBucketUri"
     })
     public CreateRunDetails(
+            ApplicationLogConfig applicationLogConfig,
             String applicationId,
             String archiveUri,
             java.util.List<String> arguments,
@@ -96,6 +99,7 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
             ApplicationType type,
             String warehouseBucketUri) {
         super();
+        this.applicationLogConfig = applicationLogConfig;
         this.applicationId = applicationId;
         this.archiveUri = archiveUri;
         this.arguments = arguments;
@@ -120,6 +124,15 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+        private ApplicationLogConfig applicationLogConfig;
+
+        public Builder applicationLogConfig(ApplicationLogConfig applicationLogConfig) {
+            this.applicationLogConfig = applicationLogConfig;
+            this.__explicitlySet__.add("applicationLogConfig");
+            return this;
+        }
         /**
          * The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
          *
@@ -520,6 +533,7 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
         public CreateRunDetails build() {
             CreateRunDetails model =
                     new CreateRunDetails(
+                            this.applicationLogConfig,
                             this.applicationId,
                             this.archiveUri,
                             this.arguments,
@@ -548,6 +562,9 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRunDetails model) {
+            if (model.wasPropertyExplicitlySet("applicationLogConfig")) {
+                this.applicationLogConfig(model.getApplicationLogConfig());
+            }
             if (model.wasPropertyExplicitlySet("applicationId")) {
                 this.applicationId(model.getApplicationId());
             }
@@ -621,6 +638,13 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+    private final ApplicationLogConfig applicationLogConfig;
+
+    public ApplicationLogConfig getApplicationLogConfig() {
+        return applicationLogConfig;
     }
 
     /**
@@ -989,7 +1013,8 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRunDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("applicationId=").append(String.valueOf(this.applicationId));
+        sb.append("applicationLogConfig=").append(String.valueOf(this.applicationLogConfig));
+        sb.append(", applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", archiveUri=").append(String.valueOf(this.archiveUri));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1023,7 +1048,8 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
         }
 
         CreateRunDetails other = (CreateRunDetails) o;
-        return java.util.Objects.equals(this.applicationId, other.applicationId)
+        return java.util.Objects.equals(this.applicationLogConfig, other.applicationLogConfig)
+                && java.util.Objects.equals(this.applicationId, other.applicationId)
                 && java.util.Objects.equals(this.archiveUri, other.archiveUri)
                 && java.util.Objects.equals(this.arguments, other.arguments)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -1050,6 +1076,11 @@ public final class CreateRunDetails extends com.oracle.bmc.http.internal.Explici
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.applicationLogConfig == null
+                                ? 43
+                                : this.applicationLogConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());

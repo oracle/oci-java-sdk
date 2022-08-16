@@ -21,6 +21,7 @@ package com.oracle.bmc.dataflow.model;
 public final class Application extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "applicationLogConfig",
         "archiveUri",
         "arguments",
         "className",
@@ -53,6 +54,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         "warehouseBucketUri"
     })
     public Application(
+            ApplicationLogConfig applicationLogConfig,
             String archiveUri,
             java.util.List<String> arguments,
             String className,
@@ -84,6 +86,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
             ApplicationType type,
             String warehouseBucketUri) {
         super();
+        this.applicationLogConfig = applicationLogConfig;
         this.archiveUri = archiveUri;
         this.arguments = arguments;
         this.className = className;
@@ -118,6 +121,15 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+        private ApplicationLogConfig applicationLogConfig;
+
+        public Builder applicationLogConfig(ApplicationLogConfig applicationLogConfig) {
+            this.applicationLogConfig = applicationLogConfig;
+            this.__explicitlySet__.add("applicationLogConfig");
+            return this;
+        }
         /**
          * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
          * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -706,6 +718,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         public Application build() {
             Application model =
                     new Application(
+                            this.applicationLogConfig,
                             this.archiveUri,
                             this.arguments,
                             this.className,
@@ -744,6 +757,9 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Application model) {
+            if (model.wasPropertyExplicitlySet("applicationLogConfig")) {
+                this.applicationLogConfig(model.getApplicationLogConfig());
+            }
             if (model.wasPropertyExplicitlySet("archiveUri")) {
                 this.archiveUri(model.getArchiveUri());
             }
@@ -847,6 +863,13 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+    private final ApplicationLogConfig applicationLogConfig;
+
+    public ApplicationLogConfig getApplicationLogConfig() {
+        return applicationLogConfig;
     }
 
     /**
@@ -1383,7 +1406,8 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Application(");
         sb.append("super=").append(super.toString());
-        sb.append("archiveUri=").append(String.valueOf(this.archiveUri));
+        sb.append("applicationLogConfig=").append(String.valueOf(this.applicationLogConfig));
+        sb.append(", archiveUri=").append(String.valueOf(this.archiveUri));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
         sb.append(", className=").append(String.valueOf(this.className));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
@@ -1427,7 +1451,8 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         }
 
         Application other = (Application) o;
-        return java.util.Objects.equals(this.archiveUri, other.archiveUri)
+        return java.util.Objects.equals(this.applicationLogConfig, other.applicationLogConfig)
+                && java.util.Objects.equals(this.archiveUri, other.archiveUri)
                 && java.util.Objects.equals(this.arguments, other.arguments)
                 && java.util.Objects.equals(this.className, other.className)
                 && java.util.Objects.equals(this.configuration, other.configuration)
@@ -1464,6 +1489,11 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.applicationLogConfig == null
+                                ? 43
+                                : this.applicationLogConfig.hashCode());
         result = (result * PRIME) + (this.archiveUri == null ? 43 : this.archiveUri.hashCode());
         result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
         result = (result * PRIME) + (this.className == null ? 43 : this.className.hashCode());

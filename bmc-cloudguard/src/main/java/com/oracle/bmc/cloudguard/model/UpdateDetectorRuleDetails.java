@@ -27,20 +27,32 @@ public final class UpdateDetectorRuleDetails
         "riskLevel",
         "configurations",
         "condition",
-        "labels"
+        "labels",
+        "description",
+        "recommendation",
+        "dataSourceId",
+        "entitiesMappings"
     })
     public UpdateDetectorRuleDetails(
             Boolean isEnabled,
             RiskLevel riskLevel,
             java.util.List<DetectorConfiguration> configurations,
             Condition condition,
-            java.util.List<String> labels) {
+            java.util.List<String> labels,
+            String description,
+            String recommendation,
+            String dataSourceId,
+            java.util.List<EntitiesMapping> entitiesMappings) {
         super();
         this.isEnabled = isEnabled;
         this.riskLevel = riskLevel;
         this.configurations = configurations;
         this.condition = condition;
         this.labels = labels;
+        this.description = description;
+        this.recommendation = recommendation;
+        this.dataSourceId = dataSourceId;
+        this.entitiesMappings = entitiesMappings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -118,6 +130,70 @@ public final class UpdateDetectorRuleDetails
             this.__explicitlySet__.add("labels");
             return this;
         }
+        /**
+         * Description for DetectorRecipeDetectorRule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Description for DetectorRecipeDetectorRule.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Recommendation for DetectorRecipeDetectorRule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
+        private String recommendation;
+
+        /**
+         * Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation the value to set
+         * @return this builder
+         **/
+        public Builder recommendation(String recommendation) {
+            this.recommendation = recommendation;
+            this.__explicitlySet__.add("recommendation");
+            return this;
+        }
+        /**
+         * The id of the attached DataSource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
+        private String dataSourceId;
+
+        /**
+         * The id of the attached DataSource.
+         * @param dataSourceId the value to set
+         * @return this builder
+         **/
+        public Builder dataSourceId(String dataSourceId) {
+            this.dataSourceId = dataSourceId;
+            this.__explicitlySet__.add("dataSourceId");
+            return this;
+        }
+        /**
+         * Data Source entities mapping for a Detector Rule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
+        private java.util.List<EntitiesMapping> entitiesMappings;
+
+        /**
+         * Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings the value to set
+         * @return this builder
+         **/
+        public Builder entitiesMappings(java.util.List<EntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = entitiesMappings;
+            this.__explicitlySet__.add("entitiesMappings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -129,7 +205,11 @@ public final class UpdateDetectorRuleDetails
                             this.riskLevel,
                             this.configurations,
                             this.condition,
-                            this.labels);
+                            this.labels,
+                            this.description,
+                            this.recommendation,
+                            this.dataSourceId,
+                            this.entitiesMappings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -152,6 +232,18 @@ public final class UpdateDetectorRuleDetails
             }
             if (model.wasPropertyExplicitlySet("labels")) {
                 this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("recommendation")) {
+                this.recommendation(model.getRecommendation());
+            }
+            if (model.wasPropertyExplicitlySet("dataSourceId")) {
+                this.dataSourceId(model.getDataSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("entitiesMappings")) {
+                this.entitiesMappings(model.getEntitiesMappings());
             }
             return this;
         }
@@ -231,6 +323,62 @@ public final class UpdateDetectorRuleDetails
         return labels;
     }
 
+    /**
+     * Description for DetectorRecipeDetectorRule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Description for DetectorRecipeDetectorRule.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Recommendation for DetectorRecipeDetectorRule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
+    private final String recommendation;
+
+    /**
+     * Recommendation for DetectorRecipeDetectorRule
+     * @return the value
+     **/
+    public String getRecommendation() {
+        return recommendation;
+    }
+
+    /**
+     * The id of the attached DataSource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
+    private final String dataSourceId;
+
+    /**
+     * The id of the attached DataSource.
+     * @return the value
+     **/
+    public String getDataSourceId() {
+        return dataSourceId;
+    }
+
+    /**
+     * Data Source entities mapping for a Detector Rule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
+    private final java.util.List<EntitiesMapping> entitiesMappings;
+
+    /**
+     * Data Source entities mapping for a Detector Rule
+     * @return the value
+     **/
+    public java.util.List<EntitiesMapping> getEntitiesMappings() {
+        return entitiesMappings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -250,6 +398,10 @@ public final class UpdateDetectorRuleDetails
         sb.append(", configurations=").append(String.valueOf(this.configurations));
         sb.append(", condition=").append(String.valueOf(this.condition));
         sb.append(", labels=").append(String.valueOf(this.labels));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", dataSourceId=").append(String.valueOf(this.dataSourceId));
+        sb.append(", entitiesMappings=").append(String.valueOf(this.entitiesMappings));
         sb.append(")");
         return sb.toString();
     }
@@ -269,6 +421,10 @@ public final class UpdateDetectorRuleDetails
                 && java.util.Objects.equals(this.configurations, other.configurations)
                 && java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.labels, other.labels)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.dataSourceId, other.dataSourceId)
+                && java.util.Objects.equals(this.entitiesMappings, other.entitiesMappings)
                 && super.equals(other);
     }
 
@@ -283,6 +439,14 @@ public final class UpdateDetectorRuleDetails
                         + (this.configurations == null ? 43 : this.configurations.hashCode());
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.dataSourceId == null ? 43 : this.dataSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entitiesMappings == null ? 43 : this.entitiesMappings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

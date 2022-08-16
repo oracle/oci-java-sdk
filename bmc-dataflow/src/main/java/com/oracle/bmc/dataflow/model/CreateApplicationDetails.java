@@ -26,6 +26,7 @@ public final class CreateApplicationDetails
     @java.beans.ConstructorProperties({
         "archiveUri",
         "arguments",
+        "applicationLogConfig",
         "className",
         "compartmentId",
         "configuration",
@@ -52,6 +53,7 @@ public final class CreateApplicationDetails
     public CreateApplicationDetails(
             String archiveUri,
             java.util.List<String> arguments,
+            ApplicationLogConfig applicationLogConfig,
             String className,
             String compartmentId,
             java.util.Map<String, String> configuration,
@@ -77,6 +79,7 @@ public final class CreateApplicationDetails
         super();
         this.archiveUri = archiveUri;
         this.arguments = arguments;
+        this.applicationLogConfig = applicationLogConfig;
         this.className = className;
         this.compartmentId = compartmentId;
         this.configuration = configuration;
@@ -153,6 +156,15 @@ public final class CreateApplicationDetails
         public Builder arguments(java.util.List<String> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+        private ApplicationLogConfig applicationLogConfig;
+
+        public Builder applicationLogConfig(ApplicationLogConfig applicationLogConfig) {
+            this.applicationLogConfig = applicationLogConfig;
+            this.__explicitlySet__.add("applicationLogConfig");
             return this;
         }
         /**
@@ -579,6 +591,7 @@ public final class CreateApplicationDetails
                     new CreateApplicationDetails(
                             this.archiveUri,
                             this.arguments,
+                            this.applicationLogConfig,
                             this.className,
                             this.compartmentId,
                             this.configuration,
@@ -614,6 +627,9 @@ public final class CreateApplicationDetails
             }
             if (model.wasPropertyExplicitlySet("arguments")) {
                 this.arguments(model.getArguments());
+            }
+            if (model.wasPropertyExplicitlySet("applicationLogConfig")) {
+                this.applicationLogConfig(model.getApplicationLogConfig());
             }
             if (model.wasPropertyExplicitlySet("className")) {
                 this.className(model.getClassName());
@@ -742,6 +758,13 @@ public final class CreateApplicationDetails
      **/
     public java.util.List<String> getArguments() {
         return arguments;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationLogConfig")
+    private final ApplicationLogConfig applicationLogConfig;
+
+    public ApplicationLogConfig getApplicationLogConfig() {
+        return applicationLogConfig;
     }
 
     /**
@@ -1130,6 +1153,7 @@ public final class CreateApplicationDetails
         sb.append("super=").append(super.toString());
         sb.append("archiveUri=").append(String.valueOf(this.archiveUri));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
+        sb.append(", applicationLogConfig=").append(String.valueOf(this.applicationLogConfig));
         sb.append(", className=").append(String.valueOf(this.className));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", configuration=").append(String.valueOf(this.configuration));
@@ -1168,6 +1192,7 @@ public final class CreateApplicationDetails
         CreateApplicationDetails other = (CreateApplicationDetails) o;
         return java.util.Objects.equals(this.archiveUri, other.archiveUri)
                 && java.util.Objects.equals(this.arguments, other.arguments)
+                && java.util.Objects.equals(this.applicationLogConfig, other.applicationLogConfig)
                 && java.util.Objects.equals(this.className, other.className)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.configuration, other.configuration)
@@ -1199,6 +1224,11 @@ public final class CreateApplicationDetails
         int result = 1;
         result = (result * PRIME) + (this.archiveUri == null ? 43 : this.archiveUri.hashCode());
         result = (result * PRIME) + (this.arguments == null ? 43 : this.arguments.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationLogConfig == null
+                                ? 43
+                                : this.applicationLogConfig.hashCode());
         result = (result * PRIME) + (this.className == null ? 43 : this.className.hashCode());
         result =
                 (result * PRIME)
