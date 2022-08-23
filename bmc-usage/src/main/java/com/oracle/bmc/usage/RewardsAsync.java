@@ -52,7 +52,7 @@ public interface RewardsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Adds the list of redeemable user email IDs for a subscription ID.
+     * Adds the list of redeemable user summary for a subscription ID.
      *
      *
      * @param request The request object containing the details to send
@@ -69,7 +69,7 @@ public interface RewardsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the list of redeemable user email IDs for a subscription ID.
+     * Deletes the list of redeemable user email ID for a subscription ID.
      *
      *
      * @param request The request object containing the details to send
@@ -102,7 +102,7 @@ public interface RewardsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      *
      *
      * @param request The request object containing the details to send
@@ -116,6 +116,22 @@ public interface RewardsAsync extends AutoCloseable {
             ListRedeemableUsersRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListRedeemableUsersRequest, ListRedeemableUsersResponse>
+                    handler);
+
+    /**
+     * Returns the list of redemption for the subscription ID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRedemptionsResponse> listRedemptions(
+            ListRedemptionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRedemptionsRequest, ListRedemptionsResponse>
                     handler);
 
     /**

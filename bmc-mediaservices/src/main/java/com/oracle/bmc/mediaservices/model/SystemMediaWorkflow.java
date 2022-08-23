@@ -25,7 +25,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
     public SystemMediaWorkflow(
             String name,
             String description,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.List<MediaWorkflowTask> tasks) {
         super();
         this.name = name;
@@ -79,7 +79,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
@@ -89,7 +89,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -198,7 +198,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
@@ -207,7 +207,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

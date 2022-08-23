@@ -34,7 +34,7 @@ public final class UpdateMediaWorkflowDetails
             String displayName,
             java.util.List<MediaWorkflowTask> tasks,
             java.util.List<String> mediaWorkflowConfigurationIds,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -114,7 +114,7 @@ public final class UpdateMediaWorkflowDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
@@ -124,7 +124,7 @@ public final class UpdateMediaWorkflowDetails
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -283,7 +283,7 @@ public final class UpdateMediaWorkflowDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
@@ -292,7 +292,7 @@ public final class UpdateMediaWorkflowDetails
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

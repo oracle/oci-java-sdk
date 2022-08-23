@@ -56,9 +56,9 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -161,7 +161,7 @@ public final class CreateMediaWorkflowJobByIdDetails extends CreateMediaWorkflow
             java.util.List<String> mediaWorkflowConfigurationIds,
             String compartmentId,
             String displayName,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String mediaWorkflowId) {

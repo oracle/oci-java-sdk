@@ -8,10 +8,10 @@ import com.oracle.bmc.emwarehouse.requests.*;
 import com.oracle.bmc.emwarehouse.responses.*;
 
 /**
- * A description of the EmdwControlPlane API
+ * Use the EM Warehouse API to manage EM Warehouse data collection.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public interface EmDataLakeAsync extends AutoCloseable {
+public interface EmWarehouseAsync extends AutoCloseable {
 
     /**
      * Rebuilds the client from scratch.

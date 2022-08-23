@@ -14,13 +14,13 @@ public class CreateRedeemableUserRequest
                 com.oracle.bmc.usage.model.CreateRedeemableUserDetails> {
 
     /**
-     * CreateRedeemableUserDetails inforamtion.
+     * CreateRedeemableUserDetails information.
      *
      */
     private com.oracle.bmc.usage.model.CreateRedeemableUserDetails createRedeemableUserDetails;
 
     /**
-     * CreateRedeemableUserDetails inforamtion.
+     * CreateRedeemableUserDetails information.
      *
      */
     public com.oracle.bmc.usage.model.CreateRedeemableUserDetails getCreateRedeemableUserDetails() {
@@ -132,14 +132,14 @@ public class CreateRedeemableUserRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * CreateRedeemableUserDetails inforamtion.
+         * CreateRedeemableUserDetails information.
          *
          */
         private com.oracle.bmc.usage.model.CreateRedeemableUserDetails createRedeemableUserDetails =
                 null;
 
         /**
-         * CreateRedeemableUserDetails inforamtion.
+         * CreateRedeemableUserDetails information.
          *
          * @param createRedeemableUserDetails the value to set
          * @return this builder instance

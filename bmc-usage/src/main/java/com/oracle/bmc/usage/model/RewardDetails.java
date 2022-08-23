@@ -126,13 +126,13 @@ public final class RewardDetails extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The redemption code used in the billing center during the reward redemption process
+         * The redemption code used in the Billing Center during the reward redemption process.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
         private String redemptionCode;
 
         /**
-         * The redemption code used in the billing center during the reward redemption process
+         * The redemption code used in the Billing Center during the reward redemption process.
          * @param redemptionCode the value to set
          * @return this builder
          **/
@@ -266,13 +266,13 @@ public final class RewardDetails extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The redemption code used in the billing center during the reward redemption process
+     * The redemption code used in the Billing Center during the reward redemption process.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
     private final String redemptionCode;
 
     /**
-     * The redemption code used in the billing center during the reward redemption process
+     * The redemption code used in the Billing Center during the reward redemption process.
      * @return the value
      **/
     public String getRedemptionCode() {

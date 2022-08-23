@@ -545,7 +545,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "BackupOpensearchCluster",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/BackupOpensearchCluster");
         java.util.function.Function<javax.ws.rs.core.Response, BackupOpensearchClusterResponse>
                 transformer =
                         BackupOpensearchClusterConverter.fromResponse(
@@ -588,7 +588,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "CreateOpensearchCluster",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster");
         java.util.function.Function<javax.ws.rs.core.Response, CreateOpensearchClusterResponse>
                 transformer =
                         CreateOpensearchClusterConverter.fromResponse(
@@ -630,7 +630,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "DeleteOpensearchCluster",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/DeleteOpensearchCluster");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteOpensearchClusterResponse>
                 transformer =
                         DeleteOpensearchClusterConverter.fromResponse(
@@ -668,7 +668,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "GetOpensearchCluster",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/GetOpensearchCluster");
         java.util.function.Function<javax.ws.rs.core.Response, GetOpensearchClusterResponse>
                 transformer =
                         GetOpensearchClusterConverter.fromResponse(
@@ -702,7 +702,10 @@ public class OpensearchClusterClient implements OpensearchCluster {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpensearchCluster", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "OpensearchCluster",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -738,7 +741,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "ListOpensearchClusters",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterCollection/ListOpensearchClusters");
         java.util.function.Function<javax.ws.rs.core.Response, ListOpensearchClustersResponse>
                 transformer =
                         ListOpensearchClustersConverter.fromResponse(
@@ -776,7 +779,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "ListOpensearchVersions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchVersionsCollection/ListOpensearchVersions");
         java.util.function.Function<javax.ws.rs.core.Response, ListOpensearchVersionsResponse>
                 transformer =
                         ListOpensearchVersionsConverter.fromResponse(
@@ -814,7 +817,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequestErrorCollection/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -851,7 +854,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -885,7 +888,10 @@ public class OpensearchClusterClient implements OpensearchCluster {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OpensearchCluster", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "OpensearchCluster",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequestCollection/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -924,7 +930,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "OpensearchClusterRestore",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/OpensearchClusterRestore");
         java.util.function.Function<javax.ws.rs.core.Response, OpensearchClusterRestoreResponse>
                 transformer =
                         OpensearchClusterRestoreConverter.fromResponse(
@@ -967,7 +973,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "ResizeOpensearchClusterHorizontal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ResizeOpensearchClusterHorizontal");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ResizeOpensearchClusterHorizontalResponse>
                 transformer =
@@ -1012,7 +1018,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "ResizeOpensearchClusterVertical",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ResizeOpensearchClusterVertical");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ResizeOpensearchClusterVerticalResponse>
                 transformer =
@@ -1056,7 +1062,7 @@ public class OpensearchClusterClient implements OpensearchCluster {
                         "OpensearchCluster",
                         "UpdateOpensearchCluster",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/UpdateOpensearchCluster");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateOpensearchClusterResponse>
                 transformer =
                         UpdateOpensearchClusterConverter.fromResponse(

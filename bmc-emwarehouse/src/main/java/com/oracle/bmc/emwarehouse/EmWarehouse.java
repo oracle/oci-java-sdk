@@ -8,11 +8,11 @@ import com.oracle.bmc.emwarehouse.requests.*;
 import com.oracle.bmc.emwarehouse.responses.*;
 
 /**
- * A description of the EmdwControlPlane API
+ * Use the EM Warehouse API to manage EM Warehouse data collection.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public interface EmDataLake extends AutoCloseable {
+public interface EmWarehouse extends AutoCloseable {
 
     /**
      * Rebuilds the client from scratch.
@@ -220,7 +220,7 @@ public interface EmDataLake extends AutoCloseable {
      *
      * @return The service waiters.
      */
-    EmDataLakeWaiters getWaiters();
+    EmWarehouseWaiters getWaiters();
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple
@@ -229,5 +229,5 @@ public interface EmDataLake extends AutoCloseable {
      *
      * @return The service paginators.
      */
-    EmDataLakePaginators getPaginators();
+    EmWarehousePaginators getPaginators();
 }

@@ -24,20 +24,23 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
         "id",
         "emInstanceCount",
         "targetsCount",
-        "emInstances"
+        "emInstances",
+        "schemaName"
     })
     public ResourceUsage(
             String operationsInsightsWarehouseId,
             String id,
             Integer emInstanceCount,
             Integer targetsCount,
-            java.util.List<EmInstancesDetails> emInstances) {
+            java.util.List<EmInstancesDetails> emInstances,
+            String schemaName) {
         super();
         this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
         this.id = id;
         this.emInstanceCount = emInstanceCount;
         this.targetsCount = targetsCount;
         this.emInstances = emInstances;
+        this.schemaName = schemaName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -122,6 +125,22 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("emInstances");
             return this;
         }
+        /**
+         * schema name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
+        private String schemaName;
+
+        /**
+         * schema name
+         * @param schemaName the value to set
+         * @return this builder
+         **/
+        public Builder schemaName(String schemaName) {
+            this.schemaName = schemaName;
+            this.__explicitlySet__.add("schemaName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -133,7 +152,8 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
                             this.id,
                             this.emInstanceCount,
                             this.targetsCount,
-                            this.emInstances);
+                            this.emInstances,
+                            this.schemaName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +176,9 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("emInstances")) {
                 this.emInstances(model.getEmInstances());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
             }
             return this;
         }
@@ -242,6 +265,20 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
         return emInstances;
     }
 
+    /**
+     * schema name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
+    private final String schemaName;
+
+    /**
+     * schema name
+     * @return the value
+     **/
+    public String getSchemaName() {
+        return schemaName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -262,6 +299,7 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", emInstanceCount=").append(String.valueOf(this.emInstanceCount));
         sb.append(", targetsCount=").append(String.valueOf(this.targetsCount));
         sb.append(", emInstances=").append(String.valueOf(this.emInstances));
+        sb.append(", schemaName=").append(String.valueOf(this.schemaName));
         sb.append(")");
         return sb.toString();
     }
@@ -282,6 +320,7 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.emInstanceCount, other.emInstanceCount)
                 && java.util.Objects.equals(this.targetsCount, other.targetsCount)
                 && java.util.Objects.equals(this.emInstances, other.emInstances)
+                && java.util.Objects.equals(this.schemaName, other.schemaName)
                 && super.equals(other);
     }
 
@@ -300,6 +339,7 @@ public final class ResourceUsage extends com.oracle.bmc.http.internal.Explicitly
                         + (this.emInstanceCount == null ? 43 : this.emInstanceCount.hashCode());
         result = (result * PRIME) + (this.targetsCount == null ? 43 : this.targetsCount.hashCode());
         result = (result * PRIME) + (this.emInstances == null ? 43 : this.emInstances.hashCode());
+        result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

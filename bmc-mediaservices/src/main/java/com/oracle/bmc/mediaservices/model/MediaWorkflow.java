@@ -41,7 +41,7 @@ public final class MediaWorkflow extends com.oracle.bmc.http.internal.Explicitly
             String compartmentId,
             java.util.List<MediaWorkflowTask> tasks,
             java.util.List<String> mediaWorkflowConfigurationIds,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -171,7 +171,7 @@ public final class MediaWorkflow extends com.oracle.bmc.http.internal.Explicitly
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
@@ -181,7 +181,7 @@ public final class MediaWorkflow extends com.oracle.bmc.http.internal.Explicitly
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -504,7 +504,7 @@ public final class MediaWorkflow extends com.oracle.bmc.http.internal.Explicitly
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
@@ -513,7 +513,7 @@ public final class MediaWorkflow extends com.oracle.bmc.http.internal.Explicitly
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

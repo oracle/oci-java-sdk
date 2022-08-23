@@ -28,6 +28,7 @@ public final class CreateConfigurationDetails
         "description",
         "displayName",
         "shapeName",
+        "initVariables",
         "variables",
         "parentConfigurationId",
         "freeformTags",
@@ -38,6 +39,7 @@ public final class CreateConfigurationDetails
             String description,
             String displayName,
             String shapeName,
+            InitializationVariables initVariables,
             ConfigurationVariables variables,
             String parentConfigurationId,
             java.util.Map<String, String> freeformTags,
@@ -47,6 +49,7 @@ public final class CreateConfigurationDetails
         this.description = description;
         this.displayName = displayName;
         this.shapeName = shapeName;
+        this.initVariables = initVariables;
         this.variables = variables;
         this.parentConfigurationId = parentConfigurationId;
         this.freeformTags = freeformTags;
@@ -117,6 +120,15 @@ public final class CreateConfigurationDetails
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("initVariables")
+        private InitializationVariables initVariables;
+
+        public Builder initVariables(InitializationVariables initVariables) {
+            this.initVariables = initVariables;
+            this.__explicitlySet__.add("initVariables");
             return this;
         }
 
@@ -198,6 +210,7 @@ public final class CreateConfigurationDetails
                             this.description,
                             this.displayName,
                             this.shapeName,
+                            this.initVariables,
                             this.variables,
                             this.parentConfigurationId,
                             this.freeformTags,
@@ -221,6 +234,9 @@ public final class CreateConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("shapeName")) {
                 this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("initVariables")) {
+                this.initVariables(model.getInitVariables());
             }
             if (model.wasPropertyExplicitlySet("variables")) {
                 this.variables(model.getVariables());
@@ -305,6 +321,13 @@ public final class CreateConfigurationDetails
         return shapeName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("initVariables")
+    private final InitializationVariables initVariables;
+
+    public InitializationVariables getInitVariables() {
+        return initVariables;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final ConfigurationVariables variables;
 
@@ -382,6 +405,7 @@ public final class CreateConfigurationDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", initVariables=").append(String.valueOf(this.initVariables));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", parentConfigurationId=").append(String.valueOf(this.parentConfigurationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -404,6 +428,7 @@ public final class CreateConfigurationDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.initVariables, other.initVariables)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.parentConfigurationId, other.parentConfigurationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -421,6 +446,9 @@ public final class CreateConfigurationDetails
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initVariables == null ? 43 : this.initVariables.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result =
                 (result * PRIME)

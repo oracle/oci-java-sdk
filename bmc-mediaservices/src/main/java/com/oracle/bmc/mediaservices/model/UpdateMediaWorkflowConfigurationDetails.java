@@ -25,7 +25,7 @@ public final class UpdateMediaWorkflowConfigurationDetails
     @java.beans.ConstructorProperties({"displayName", "parameters", "freeformTags", "definedTags"})
     public UpdateMediaWorkflowConfigurationDetails(
             String displayName,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -61,7 +61,7 @@ public final class UpdateMediaWorkflowConfigurationDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * Reuseable parameter values encoded as a JSON; the top and second level JSON elements are
@@ -72,7 +72,7 @@ public final class UpdateMediaWorkflowConfigurationDetails
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -183,7 +183,7 @@ public final class UpdateMediaWorkflowConfigurationDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * Reuseable parameter values encoded as a JSON; the top and second level JSON elements are
@@ -193,7 +193,7 @@ public final class UpdateMediaWorkflowConfigurationDetails
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

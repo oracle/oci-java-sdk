@@ -12,5 +12,5 @@ import java.lang.annotation.RetentionPolicy;
  */
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface SdkClientPackages {
-    Class<?>[] value();
+    String[] value();
 }

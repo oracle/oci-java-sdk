@@ -38,8 +38,8 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
             String key,
             java.util.List<String> prerequisites,
             String enableParameterReference,
-            java.util.Map<String, String> enableWhenReferencedParameterEquals,
-            java.util.Map<String, String> parameters) {
+            java.util.Map<String, Object> enableWhenReferencedParameterEquals,
+            java.util.Map<String, Object> parameters) {
         super();
         this.type = type;
         this.version = version;
@@ -154,7 +154,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableWhenReferencedParameterEquals")
-        private java.util.Map<String, String> enableWhenReferencedParameterEquals;
+        private java.util.Map<String, Object> enableWhenReferencedParameterEquals;
 
         /**
          * Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created
@@ -166,7 +166,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
          * @return this builder
          **/
         public Builder enableWhenReferencedParameterEquals(
-                java.util.Map<String, String> enableWhenReferencedParameterEquals) {
+                java.util.Map<String, Object> enableWhenReferencedParameterEquals) {
             this.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
             this.__explicitlySet__.add("enableWhenReferencedParameterEquals");
             return this;
@@ -178,7 +178,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema
@@ -188,7 +188,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -344,7 +344,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableWhenReferencedParameterEquals")
-    private final java.util.Map<String, String> enableWhenReferencedParameterEquals;
+    private final java.util.Map<String, Object> enableWhenReferencedParameterEquals;
 
     /**
      * Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created
@@ -354,7 +354,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getEnableWhenReferencedParameterEquals() {
+    public java.util.Map<String, Object> getEnableWhenReferencedParameterEquals() {
         return enableWhenReferencedParameterEquals;
     }
 
@@ -365,7 +365,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema
@@ -374,7 +374,7 @@ public final class MediaWorkflowTask extends com.oracle.bmc.http.internal.Explic
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

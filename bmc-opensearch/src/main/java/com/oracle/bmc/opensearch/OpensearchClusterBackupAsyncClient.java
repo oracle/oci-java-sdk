@@ -456,7 +456,7 @@ public class OpensearchClusterBackupAsyncClient implements OpensearchClusterBack
                         "OpensearchClusterBackup",
                         "DeleteOpensearchClusterBackup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackup/DeleteOpensearchClusterBackup");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOpensearchClusterBackupResponse>
                 transformer =
@@ -507,7 +507,7 @@ public class OpensearchClusterBackupAsyncClient implements OpensearchClusterBack
                         "OpensearchClusterBackup",
                         "GetOpensearchClusterBackup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackup/GetOpensearchClusterBackup");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOpensearchClusterBackupResponse>
                 transformer =
@@ -558,7 +558,7 @@ public class OpensearchClusterBackupAsyncClient implements OpensearchClusterBack
                         "OpensearchClusterBackup",
                         "ListOpensearchClusterBackups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackupCollection/ListOpensearchClusterBackups");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOpensearchClusterBackupsResponse>
                 transformer =
@@ -609,7 +609,7 @@ public class OpensearchClusterBackupAsyncClient implements OpensearchClusterBack
                         "OpensearchClusterBackup",
                         "UpdateOpensearchClusterBackup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackup/UpdateOpensearchClusterBackup");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOpensearchClusterBackupResponse>
                 transformer =

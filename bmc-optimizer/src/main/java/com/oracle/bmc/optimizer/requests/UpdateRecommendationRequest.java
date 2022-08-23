@@ -25,12 +25,12 @@ public class UpdateRecommendationRequest
         return recommendationId;
     }
     /**
-     * The request object for udpating the recommendation details.
+     * The request object for updating the recommendation details.
      */
     private com.oracle.bmc.optimizer.model.UpdateRecommendationDetails updateRecommendationDetails;
 
     /**
-     * The request object for udpating the recommendation details.
+     * The request object for updating the recommendation details.
      */
     public com.oracle.bmc.optimizer.model.UpdateRecommendationDetails
             getUpdateRecommendationDetails() {
@@ -107,13 +107,13 @@ public class UpdateRecommendationRequest
         }
 
         /**
-         * The request object for udpating the recommendation details.
+         * The request object for updating the recommendation details.
          */
         private com.oracle.bmc.optimizer.model.UpdateRecommendationDetails
                 updateRecommendationDetails = null;
 
         /**
-         * The request object for udpating the recommendation details.
+         * The request object for updating the recommendation details.
          * @param updateRecommendationDetails the value to set
          * @return this builder instance
          */

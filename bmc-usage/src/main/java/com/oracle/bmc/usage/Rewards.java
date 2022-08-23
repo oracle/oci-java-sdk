@@ -53,7 +53,7 @@ public interface Rewards extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Adds the list of redeemable user email IDs for a subscription ID.
+     * Adds the list of redeemable user summary for a subscription ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -66,7 +66,7 @@ public interface Rewards extends AutoCloseable {
     CreateRedeemableUserResponse createRedeemableUser(CreateRedeemableUserRequest request);
 
     /**
-     * Deletes the list of redeemable user email IDs for a subscription ID.
+     * Deletes the list of redeemable user email ID for a subscription ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -92,7 +92,7 @@ public interface Rewards extends AutoCloseable {
     ListProductsResponse listProducts(ListProductsRequest request);
 
     /**
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -103,6 +103,19 @@ public interface Rewards extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListRedeemableUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRedeemableUsers API.
      */
     ListRedeemableUsersResponse listRedeemableUsers(ListRedeemableUsersRequest request);
+
+    /**
+     * Returns the list of redemption for the subscription ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListRedemptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRedemptions API.
+     */
+    ListRedemptionsResponse listRedemptions(ListRedemptionsRequest request);
 
     /**
      * Returns the list of rewards for a subscription ID.

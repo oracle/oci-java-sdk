@@ -47,6 +47,23 @@ public class ListCategoriesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentIdInSubtree()));
 
+        if (request.getChildTenancyIds() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "childTenancyIds",
+                            request.getChildTenancyIds(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIncludeOrganization() != null) {
+            target =
+                    target.queryParam(
+                            "includeOrganization",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIncludeOrganization()));
+        }
+
         if (request.getName() != null) {
             target =
                     target.queryParam(

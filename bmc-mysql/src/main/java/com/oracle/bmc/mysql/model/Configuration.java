@@ -30,6 +30,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "initVariables",
         "variables",
         "parentConfigurationId",
         "freeformTags",
@@ -45,6 +46,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            InitializationVariables initVariables,
             ConfigurationVariables variables,
             String parentConfigurationId,
             java.util.Map<String, String> freeformTags,
@@ -59,6 +61,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.initVariables = initVariables;
         this.variables = variables;
         this.parentConfigurationId = parentConfigurationId;
         this.freeformTags = freeformTags;
@@ -212,6 +215,15 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initVariables")
+        private InitializationVariables initVariables;
+
+        public Builder initVariables(InitializationVariables initVariables) {
+            this.initVariables = initVariables;
+            this.__explicitlySet__.add("initVariables");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private ConfigurationVariables variables;
 
@@ -299,6 +311,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.initVariables,
                             this.variables,
                             this.parentConfigurationId,
                             this.freeformTags,
@@ -337,6 +350,9 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("initVariables")) {
+                this.initVariables(model.getInitVariables());
             }
             if (model.wasPropertyExplicitlySet("variables")) {
                 this.variables(model.getVariables());
@@ -585,6 +601,13 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         return lifecycleState;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("initVariables")
+    private final InitializationVariables initVariables;
+
+    public InitializationVariables getInitVariables() {
+        return initVariables;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final ConfigurationVariables variables;
 
@@ -671,6 +694,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", initVariables=").append(String.valueOf(this.initVariables));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", parentConfigurationId=").append(String.valueOf(this.parentConfigurationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -698,6 +722,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.initVariables, other.initVariables)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.parentConfigurationId, other.parentConfigurationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -722,6 +747,9 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initVariables == null ? 43 : this.initVariables.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result =
                 (result * PRIME)

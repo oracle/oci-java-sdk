@@ -628,6 +628,52 @@ public class RewardsAsyncClient implements RewardsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRedemptionsResponse> listRedemptions(
+            ListRedemptionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRedemptionsRequest, ListRedemptionsResponse>
+                    handler) {
+        LOG.trace("Called async listRedemptions");
+        final ListRedemptionsRequest interceptedRequest =
+                ListRedemptionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRedemptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Rewards",
+                        "ListRedemptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedemptionSummary/ListRedemptions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRedemptionsResponse>
+                transformer =
+                        ListRedemptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListRedemptionsRequest, ListRedemptionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRedemptionsRequest, ListRedemptionsResponse>,
+                        java.util.concurrent.Future<ListRedemptionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRedemptionsRequest, ListRedemptionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRewardsResponse> listRewards(
             ListRewardsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListRewardsRequest, ListRewardsResponse>

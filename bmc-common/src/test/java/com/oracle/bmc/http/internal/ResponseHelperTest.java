@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
@@ -30,6 +32,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -111,6 +114,68 @@ public class ResponseHelperTest {
         } catch (BmcException exception) {
             validateExceptionFields(
                     exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
+        }
+    }
+
+    @Test
+    public void test_throwIfNotSuccessful_InValidJsonResponseExtendedForLocalization() {
+        final Response jsonResponse =
+                buildMockResponseExtendedForLocalization(
+                        OPC_REQUEST_ID, JSON_MEDIA_TYPE, BAD_GATEWAY_STATUS);
+        final String dummyServiceCode = "DummyServiceCode";
+        final String dummyMessage = "DummyMessage";
+        final String dummyOriginalMessage = "DummyOriginalMessage";
+        final String dummyOriginalMessageTemplate = "DummyOriginalMessageTemplate";
+        final Map<String, String> dummyMessageArguments = new HashMap<>();
+        dummyMessageArguments.put("DummyMessageArgumentsKey", "DummyMessageArgumentsValue");
+        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
+                .thenReturn(
+                        ResponseHelper.ErrorCodeAndMessage.builder()
+                                .code(dummyServiceCode)
+                                .message(dummyMessage)
+                                .originalMessage(dummyOriginalMessage)
+                                .originalMessageTemplate(dummyOriginalMessageTemplate)
+                                .messageArguments(dummyMessageArguments)
+                                .build());
+        try {
+            ResponseHelper.throwIfNotSuccessful(jsonResponse);
+            fail("Should have thrown");
+        } catch (BmcException exception) {
+            validateExceptionFields(
+                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
+            assertEquals(exception.getOriginalMessage(), dummyOriginalMessage);
+            assertEquals(exception.getOriginalMessageTemplate(), dummyOriginalMessageTemplate);
+            assertEquals(exception.getMessageArguments(), dummyMessageArguments);
+        }
+    }
+
+    @Test
+    public void test_throwIfNotSuccessful_InValidJsonResponseExtendedForPartialLocalization() {
+        final Response jsonResponse =
+                buildMockResponseExtendedForLocalization(
+                        OPC_REQUEST_ID, JSON_MEDIA_TYPE, BAD_GATEWAY_STATUS);
+        final String dummyServiceCode = "DummyServiceCode";
+        final String dummyMessage = "DummyMessage";
+        final String dummyOriginalMessage = "DummyOriginalMessage";
+        final Map<String, String> dummyTemplateArguments = new HashMap<>();
+        dummyTemplateArguments.put("DummyTemplateArgumentKey", "DummyTemplateArgumentValue");
+        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
+                .thenReturn(
+                        ResponseHelper.ErrorCodeAndMessage.builder()
+                                .code(dummyServiceCode)
+                                .message(dummyMessage)
+                                .originalMessage(dummyOriginalMessage)
+                                .messageArguments(dummyTemplateArguments)
+                                .build());
+        try {
+            ResponseHelper.throwIfNotSuccessful(jsonResponse);
+            fail("Should have thrown");
+        } catch (BmcException exception) {
+            validateExceptionFields(
+                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
+            assertEquals(exception.getOriginalMessage(), dummyOriginalMessage);
+            assertNull(exception.getOriginalMessageTemplate());
+            assertEquals(exception.getMessageArguments(), dummyTemplateArguments);
         }
     }
 
@@ -290,6 +355,16 @@ public class ResponseHelperTest {
     }
 
     private static Response buildMockResponse(
+            final String opcRequestId, final MediaType mediaType, final Response.Status status) {
+        final Response response = mock(Response.class);
+        when(response.getHeaderString(BmcException.OPC_REQUEST_ID_HEADER)).thenReturn(opcRequestId);
+        when(response.getMediaType()).thenReturn(mediaType);
+        when(response.getStatusInfo()).thenReturn(status);
+        when(response.getStatus()).thenReturn(status.getStatusCode());
+        return response;
+    }
+
+    private static Response buildMockResponseExtendedForLocalization(
             final String opcRequestId, final MediaType mediaType, final Response.Status status) {
         final Response response = mock(Response.class);
         when(response.getHeaderString(BmcException.OPC_REQUEST_ID_HEADER)).thenReturn(opcRequestId);

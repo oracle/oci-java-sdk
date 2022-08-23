@@ -176,6 +176,22 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
             this.__explicitlySet__.add("triggerUrl");
             return this;
         }
+        /**
+         * The OCID of the connection resource used to get details for triggered events.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+        private String connectionId;
+
+        /**
+         * The OCID of the connection resource used to get details for triggered events.
+         * @param connectionId the value to set
+         * @return this builder
+         **/
+        public Builder connectionId(String connectionId) {
+            this.connectionId = connectionId;
+            this.__explicitlySet__.add("connectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -197,7 +213,8 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
                             this.definedTags,
                             this.systemTags,
                             this.secret,
-                            this.triggerUrl);
+                            this.triggerUrl,
+                            this.connectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -251,6 +268,9 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
             if (model.wasPropertyExplicitlySet("triggerUrl")) {
                 this.triggerUrl(model.getTriggerUrl());
             }
+            if (model.wasPropertyExplicitlySet("connectionId")) {
+                this.connectionId(model.getConnectionId());
+            }
             return this;
         }
     }
@@ -282,7 +302,8 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String secret,
-            String triggerUrl) {
+            String triggerUrl,
+            String connectionId) {
         super(
                 id,
                 displayName,
@@ -299,6 +320,7 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
                 systemTags);
         this.secret = secret;
         this.triggerUrl = triggerUrl;
+        this.connectionId = connectionId;
     }
 
     /**
@@ -329,6 +351,20 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
         return triggerUrl;
     }
 
+    /**
+     * The OCID of the connection resource used to get details for triggered events.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+    private final String connectionId;
+
+    /**
+     * The OCID of the connection resource used to get details for triggered events.
+     * @return the value
+     **/
+    public String getConnectionId() {
+        return connectionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -345,6 +381,7 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", secret=").append(String.valueOf(this.secret));
         sb.append(", triggerUrl=").append(String.valueOf(this.triggerUrl));
+        sb.append(", connectionId=").append(String.valueOf(this.connectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -361,6 +398,7 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
         GithubTriggerCreateResult other = (GithubTriggerCreateResult) o;
         return java.util.Objects.equals(this.secret, other.secret)
                 && java.util.Objects.equals(this.triggerUrl, other.triggerUrl)
+                && java.util.Objects.equals(this.connectionId, other.connectionId)
                 && super.equals(other);
     }
 
@@ -370,6 +408,7 @@ public final class GithubTriggerCreateResult extends TriggerCreateResult {
         int result = super.hashCode();
         result = (result * PRIME) + (this.secret == null ? 43 : this.secret.hashCode());
         result = (result * PRIME) + (this.triggerUrl == null ? 43 : this.triggerUrl.hashCode());
+        result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
         return result;
     }
 }

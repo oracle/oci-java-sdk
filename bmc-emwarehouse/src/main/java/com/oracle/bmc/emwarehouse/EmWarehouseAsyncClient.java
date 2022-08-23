@@ -9,7 +9,7 @@ import com.oracle.bmc.emwarehouse.requests.*;
 import com.oracle.bmc.emwarehouse.responses.*;
 
 /**
- * Async client implementation for EmDataLake service. <br/>
+ * Async client implementation for EmWarehouse service. <br/>
  * There are two ways to use async client:
  * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
  * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
@@ -22,20 +22,20 @@ import com.oracle.bmc.emwarehouse.responses.*;
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public class EmDataLakeAsyncClient implements EmDataLakeAsync {
+public class EmWarehouseAsyncClient implements EmWarehouseAsync {
     /**
-     * Service instance for EmDataLake.
+     * Service instance for EmWarehouse.
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EMDATALAKE")
+                    .serviceName("EMWAREHOUSE")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operationsinsights.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EmDataLakeAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EmWarehouseAsyncClient.class);
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
@@ -73,7 +73,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
@@ -83,7 +83,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
@@ -96,7 +96,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param configuration The client configuration, optional.
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
@@ -118,7 +118,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -142,7 +142,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -169,7 +169,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -200,7 +200,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -236,7 +236,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
      */
-    public EmDataLakeAsyncClient(
+    public EmWarehouseAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -310,7 +310,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
      * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, EmDataLakeAsyncClient> {
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, EmWarehouseAsyncClient> {
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
@@ -323,7 +323,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
-        public EmDataLakeAsyncClient build(
+        public EmWarehouseAsyncClient build(
                 @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
@@ -331,7 +331,7 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 throw new NullPointerException(
                         "authenticationDetailsProvider is marked non-null but is null");
             }
-            return new EmDataLakeAsyncClient(
+            return new EmWarehouseAsyncClient(
                     authenticationDetailsProvider,
                     configuration,
                     clientConfigurator,
@@ -450,7 +450,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -496,10 +499,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake",
+                        "EmWarehouse",
                         "ChangeEmWarehouseCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/ChangeEmWarehouseCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
                 transformer =
@@ -551,7 +554,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "CreateEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/CreateEmWarehouse");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
                 transformer =
                         CreateEmWarehouseConverter.fromResponse(
@@ -599,7 +605,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 DeleteEmWarehouseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "DeleteEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/DeleteEmWarehouse");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
                 transformer =
                         DeleteEmWarehouseConverter.fromResponse(
@@ -642,7 +651,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 GetEmWarehouseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "GetEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "GetEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/GetEmWarehouse");
         final java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse>
                 transformer =
                         GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -686,10 +698,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 GetEmWarehouseResourceUsageConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake",
+                        "EmWarehouse",
                         "GetEmWarehouseResourceUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/ResourceUsage/GetEmWarehouseResourceUsage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
                 transformer =
@@ -735,7 +747,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -777,7 +792,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListEmWarehousesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListEmWarehouses", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListEmWarehouses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouseCollection/ListEmWarehouses");
         final java.util.function.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
                 transformer =
                         ListEmWarehousesConverter.fromResponse(
@@ -819,7 +837,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListEtlRunsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListEtlRuns", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListEtlRuns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EtlRunCollection/ListEtlRuns");
         final java.util.function.Function<javax.ws.rs.core.Response, ListEtlRunsResponse>
                 transformer =
                         ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -861,7 +882,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -905,7 +929,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -949,7 +976,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -992,7 +1022,10 @@ public class EmDataLakeAsyncClient implements EmDataLakeAsync {
                 UpdateEmWarehouseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "UpdateEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/UpdateEmWarehouse");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
                 transformer =
                         UpdateEmWarehouseConverter.fromResponse(

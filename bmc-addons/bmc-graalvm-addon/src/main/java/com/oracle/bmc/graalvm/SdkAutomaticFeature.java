@@ -11,6 +11,7 @@ import com.oracle.bmc.SdkClients;
 import com.oracle.bmc.graalvm.utils.ReflectionUtils;
 import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.svm.core.annotate.Alias;
+import com.oracle.svm.core.annotate.AutomaticFeature;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 import org.glassfish.hk2.utilities.DescriptorImpl;
@@ -31,13 +32,14 @@ import java.util.List;
 import java.util.ServiceLoader;
 import java.util.Set;
 
+@AutomaticFeature
 final class SdkAutomaticFeature implements Feature {
     @Override
     public void beforeAnalysis(BeforeAnalysisAccess access) {
         // setup BC security
         Set<Class<?>> reflectiveAccess = new HashSet<>();
         populateReflectionData(reflectiveAccess, ResponseHelper.ErrorCodeAndMessage.class);
-        String[] classes = resolveOracleCloudSdkClientNames().toArray(new String[0]);
+        String[] classes = resolveOracleCloudSdkClientNames(access).toArray(new String[0]);
         for (String aClass : classes) {
             Class<?> c = access.findClassByName(aClass);
             if (c != null) {
@@ -72,15 +74,18 @@ final class SdkAutomaticFeature implements Feature {
         }
     }
 
-    public static List<String> resolveOracleCloudSdkClientNames() {
+    public static List<String> resolveOracleCloudSdkClientNames(BeforeAnalysisAccess access) {
         List<String> results = new ArrayList<>();
         SdkClientPackages allSdkClientPackages =
                 SdkAutomaticFeatureMetadata.class.getAnnotation(SdkClientPackages.class);
-        for (Class<?> sdkClientsMetadataPath : allSdkClientPackages.value()) {
-            Class<?>[] allSdkClients =
-                    sdkClientsMetadataPath.getDeclaredAnnotation(SdkClients.class).value();
-            for (Class sdkClient : allSdkClients) {
-                results.add(sdkClient.getName());
+        for (String sdkClientsMetadataPath : allSdkClientPackages.value()) {
+            Class<?> sdkClientsMetadataClass = access.findClassByName(sdkClientsMetadataPath);
+            if (sdkClientsMetadataClass != null) {
+                Class<?>[] allSdkClients =
+                        sdkClientsMetadataClass.getDeclaredAnnotation(SdkClients.class).value();
+                for (Class sdkClient : allSdkClients) {
+                    results.add(sdkClient.getName());
+                }
             }
         }
         return results;

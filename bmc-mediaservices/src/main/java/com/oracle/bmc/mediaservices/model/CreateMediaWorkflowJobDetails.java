@@ -47,7 +47,7 @@ public class CreateMediaWorkflowJobDetails
             java.util.List<String> mediaWorkflowConfigurationIds,
             String compartmentId,
             String displayName,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -110,7 +110,7 @@ public class CreateMediaWorkflowJobDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow,
@@ -121,7 +121,7 @@ public class CreateMediaWorkflowJobDetails
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

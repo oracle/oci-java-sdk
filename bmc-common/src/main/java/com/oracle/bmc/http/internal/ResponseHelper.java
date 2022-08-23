@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.Objects;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.HttpHeaders;
@@ -21,7 +23,6 @@ import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
-import java.util.Optional;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.WrappedResponseInputStream;
 import com.oracle.bmc.model.BmcException;
@@ -153,7 +154,10 @@ public class ResponseHelper {
                             errorCodeAndMessage.getCode(),
                             errorCodeAndMessage.getMessage(),
                             opcRequestId,
-                            serviceDetails);
+                            serviceDetails,
+                            errorCodeAndMessage.getOriginalMessage(),
+                            errorCodeAndMessage.getOriginalMessageTemplate(),
+                            errorCodeAndMessage.getMessageArguments());
                 }
             } catch (ProcessingException e) {
                 // NOTE: for async paths, this means the first invocation will be the only one that gets
@@ -433,10 +437,22 @@ public class ResponseHelper {
         private final String code;
         private final String message;
 
+        private final String originalMessage;
+
+        private final String originalMessageTemplate;
+
+        private final Map<String, String> messageArguments;
+
         @JsonPOJOBuilder(withPrefix = "")
         public static class Builder {
             private String code;
             private String message;
+
+            private String originalMessage;
+
+            private String originalMessageTemplate;
+
+            private Map<String, String> messageArguments;
 
             Builder() {}
 
@@ -456,8 +472,31 @@ public class ResponseHelper {
                 return this;
             }
 
+            public ResponseHelper.ErrorCodeAndMessage.Builder originalMessage(
+                    final String originalMessage) {
+                this.originalMessage = originalMessage;
+                return this;
+            }
+
+            public ResponseHelper.ErrorCodeAndMessage.Builder originalMessageTemplate(
+                    final String originalMessageTemplate) {
+                this.originalMessageTemplate = originalMessageTemplate;
+                return this;
+            }
+
+            public ResponseHelper.ErrorCodeAndMessage.Builder messageArguments(
+                    final Map<String, String> messageArguments) {
+                this.messageArguments = messageArguments;
+                return this;
+            }
+
             public ResponseHelper.ErrorCodeAndMessage build() {
-                return new ResponseHelper.ErrorCodeAndMessage(this.code, this.message);
+                return new ResponseHelper.ErrorCodeAndMessage(
+                        this.code,
+                        this.message,
+                        this.originalMessage,
+                        this.originalMessageTemplate,
+                        this.messageArguments);
             }
 
             @java.lang.Override
@@ -470,10 +509,24 @@ public class ResponseHelper {
             }
         }
 
-        @java.beans.ConstructorProperties({"code", "message"})
-        ErrorCodeAndMessage(final String code, final String message) {
+        @java.beans.ConstructorProperties({
+            "code",
+            "message",
+            "originalMessage",
+            "originalMessageTemplate",
+            "messageArguments"
+        })
+        ErrorCodeAndMessage(
+                final String code,
+                final String message,
+                final String originalMessage,
+                final String originalMessageTemplate,
+                final Map<String, String> messageArguments) {
             this.code = code;
             this.message = message;
+            this.originalMessage = originalMessage;
+            this.originalMessageTemplate = originalMessageTemplate;
+            this.messageArguments = messageArguments;
         }
 
         public static ResponseHelper.ErrorCodeAndMessage.Builder builder() {
@@ -488,6 +541,18 @@ public class ResponseHelper {
             return this.message;
         }
 
+        public String getOriginalMessage() {
+            return this.originalMessage;
+        }
+
+        public String getOriginalMessageTemplate() {
+            return this.originalMessageTemplate;
+        }
+
+        public Map<String, String> getMessageArguments() {
+            return this.messageArguments;
+        }
+
         @java.lang.Override
         public boolean equals(final java.lang.Object o) {
             if (o == this) return true;
@@ -495,12 +560,22 @@ public class ResponseHelper {
             final ResponseHelper.ErrorCodeAndMessage other = (ResponseHelper.ErrorCodeAndMessage) o;
             final java.lang.Object this$code = this.getCode();
             final java.lang.Object other$code = other.getCode();
-            if (this$code == null ? other$code != null : !this$code.equals(other$code))
-                return false;
+            if (!Objects.equals(this$code, other$code)) return false;
             final java.lang.Object this$message = this.getMessage();
             final java.lang.Object other$message = other.getMessage();
-            if (this$message == null ? other$message != null : !this$message.equals(other$message))
+            if (!Objects.equals(this$message, other$message)) return false;
+            if (!Objects.equals(this$message, other$message)) return false;
+            final java.lang.Object this$originalMessage = this.getOriginalMessage();
+            final java.lang.Object other$originalMessage = other.getOriginalMessage();
+            if (!Objects.equals(this$originalMessage, other$originalMessage)) return false;
+            final java.lang.Object this$originalMessageTemplate = this.getOriginalMessageTemplate();
+            final java.lang.Object other$originalMessageTemplate =
+                    other.getOriginalMessageTemplate();
+            if (!Objects.equals(this$originalMessageTemplate, other$originalMessageTemplate))
                 return false;
+            final java.lang.Object this$messageArguments = this.getMessageArguments();
+            final java.lang.Object other$messageArguments = other.getMessageArguments();
+            if (!Objects.equals(this$messageArguments, other$messageArguments)) return false;
             return true;
         }
 
@@ -512,6 +587,18 @@ public class ResponseHelper {
             result = result * PRIME + ($code == null ? 43 : $code.hashCode());
             final java.lang.Object $message = this.getMessage();
             result = result * PRIME + ($message == null ? 43 : $message.hashCode());
+            final java.lang.Object $originalMessage = this.getOriginalMessage();
+            result = result * PRIME + ($originalMessage == null ? 43 : $originalMessage.hashCode());
+            final java.lang.Object $originalMessageTemplate = this.getOriginalMessageTemplate();
+            result =
+                    result * PRIME
+                            + ($originalMessageTemplate == null
+                                    ? 43
+                                    : $originalMessageTemplate.hashCode());
+            final java.lang.Object $messageArguments = this.getMessageArguments();
+            result =
+                    result * PRIME
+                            + ($messageArguments == null ? 43 : $messageArguments.hashCode());
             return result;
         }
 
@@ -521,6 +608,12 @@ public class ResponseHelper {
                     + this.getCode()
                     + ", message="
                     + this.getMessage()
+                    + ", originalMessage="
+                    + this.getOriginalMessage()
+                    + ", originalMessageTemplate="
+                    + this.getOriginalMessageTemplate()
+                    + ", templateArguments="
+                    + this.getMessageArguments()
                     + ")";
         }
     }
