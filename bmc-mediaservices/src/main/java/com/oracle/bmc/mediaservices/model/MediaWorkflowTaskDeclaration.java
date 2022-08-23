@@ -31,8 +31,8 @@ public final class MediaWorkflowTaskDeclaration
     public MediaWorkflowTaskDeclaration(
             String name,
             Integer version,
-            java.util.Map<String, String> parametersSchema,
-            java.util.Map<String, String> parametersSchemaAllowingReferences) {
+            java.util.Map<String, Object> parametersSchema,
+            java.util.Map<String, Object> parametersSchemaAllowingReferences) {
         super();
         this.name = name;
         this.version = version;
@@ -88,7 +88,7 @@ public final class MediaWorkflowTaskDeclaration
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parametersSchema")
-        private java.util.Map<String, String> parametersSchema;
+        private java.util.Map<String, Object> parametersSchema;
 
         /**
          * JSON schema specifying the parameters supported by this type of task. This is used to validate tasks'
@@ -97,7 +97,7 @@ public final class MediaWorkflowTaskDeclaration
          * @param parametersSchema the value to set
          * @return this builder
          **/
-        public Builder parametersSchema(java.util.Map<String, String> parametersSchema) {
+        public Builder parametersSchema(java.util.Map<String, Object> parametersSchema) {
             this.parametersSchema = parametersSchema;
             this.__explicitlySet__.add("parametersSchema");
             return this;
@@ -108,7 +108,7 @@ public final class MediaWorkflowTaskDeclaration
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parametersSchemaAllowingReferences")
-        private java.util.Map<String, String> parametersSchemaAllowingReferences;
+        private java.util.Map<String, Object> parametersSchemaAllowingReferences;
 
         /**
          * JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the
@@ -118,7 +118,7 @@ public final class MediaWorkflowTaskDeclaration
          * @return this builder
          **/
         public Builder parametersSchemaAllowingReferences(
-                java.util.Map<String, String> parametersSchemaAllowingReferences) {
+                java.util.Map<String, Object> parametersSchemaAllowingReferences) {
             this.parametersSchemaAllowingReferences = parametersSchemaAllowingReferences;
             this.__explicitlySet__.add("parametersSchemaAllowingReferences");
             return this;
@@ -212,7 +212,7 @@ public final class MediaWorkflowTaskDeclaration
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parametersSchema")
-    private final java.util.Map<String, String> parametersSchema;
+    private final java.util.Map<String, Object> parametersSchema;
 
     /**
      * JSON schema specifying the parameters supported by this type of task. This is used to validate tasks'
@@ -220,7 +220,7 @@ public final class MediaWorkflowTaskDeclaration
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParametersSchema() {
+    public java.util.Map<String, Object> getParametersSchema() {
         return parametersSchema;
     }
 
@@ -230,7 +230,7 @@ public final class MediaWorkflowTaskDeclaration
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parametersSchemaAllowingReferences")
-    private final java.util.Map<String, String> parametersSchemaAllowingReferences;
+    private final java.util.Map<String, Object> parametersSchemaAllowingReferences;
 
     /**
      * JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the
@@ -238,7 +238,7 @@ public final class MediaWorkflowTaskDeclaration
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParametersSchemaAllowingReferences() {
+    public java.util.Map<String, Object> getParametersSchemaAllowingReferences() {
         return parametersSchemaAllowingReferences;
     }
 

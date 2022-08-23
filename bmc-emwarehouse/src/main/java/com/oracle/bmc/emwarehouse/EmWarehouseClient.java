@@ -11,13 +11,13 @@ import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public class EmDataLakeClient implements EmDataLake {
+public class EmWarehouseClient implements EmWarehouse {
     /**
-     * Service instance for EmDataLake.
+     * Service instance for EmWarehouse.
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
-                    .serviceName("EMDATALAKE")
+                    .serviceName("EMWAREHOUSE")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
                             "https://operationsinsights.{region}.oci.{secondLevelDomain}")
@@ -26,15 +26,15 @@ public class EmDataLakeClient implements EmDataLake {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(EmDataLakeAsyncClient.class);
+            org.slf4j.LoggerFactory.getLogger(EmWarehouseAsyncClient.class);
 
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
     }
 
-    private final EmDataLakeWaiters waiters;
+    private final EmWarehouseWaiters waiters;
 
-    private final EmDataLakePaginators paginators;
+    private final EmWarehousePaginators paginators;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
@@ -73,7 +73,7 @@ public class EmDataLakeClient implements EmDataLake {
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
@@ -83,7 +83,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
@@ -96,7 +96,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param configuration The client configuration, optional.
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
@@ -118,7 +118,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -142,7 +142,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -169,7 +169,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -200,7 +200,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -236,7 +236,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
      */
-    public EmDataLakeClient(
+    public EmWarehouseClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -277,7 +277,7 @@ public class EmDataLakeClient implements EmDataLake {
      * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
      * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
      */
-    protected EmDataLakeClient(
+    protected EmWarehouseClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
@@ -346,15 +346,15 @@ public class EmDataLakeClient implements EmDataLake {
                             new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
                             com.oracle.bmc.internal.ClientThreadFactory.builder()
                                     .isDaemon(true)
-                                    .nameFormat("EmDataLake-waiters-%d")
+                                    .nameFormat("EmWarehouse-waiters-%d")
                                     .build());
             threadPoolExecutor.allowCoreThreadTimeOut(true);
 
             executorService = threadPoolExecutor;
         }
-        this.waiters = new EmDataLakeWaiters(executorService, this);
+        this.waiters = new EmWarehouseWaiters(executorService, this);
 
-        this.paginators = new EmDataLakePaginators(this);
+        this.paginators = new EmWarehousePaginators(this);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -388,7 +388,7 @@ public class EmDataLakeClient implements EmDataLake {
      * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, EmDataLakeClient> {
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, EmWarehouseClient> {
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -413,7 +413,7 @@ public class EmDataLakeClient implements EmDataLake {
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
-        public EmDataLakeClient build(
+        public EmWarehouseClient build(
                 @javax.annotation.Nonnull
                 com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                         authenticationDetailsProvider) {
@@ -421,7 +421,7 @@ public class EmDataLakeClient implements EmDataLake {
                 throw new NullPointerException(
                         "authenticationDetailsProvider is marked non-null but is null");
             }
-            return new EmDataLakeClient(
+            return new EmWarehouseClient(
                     authenticationDetailsProvider,
                     configuration,
                     clientConfigurator,
@@ -540,7 +540,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -577,10 +580,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake",
+                        "EmWarehouse",
                         "ChangeEmWarehouseCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/ChangeEmWarehouseCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
                 transformer =
                         ChangeEmWarehouseCompartmentConverter.fromResponse(
@@ -620,7 +623,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "CreateEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/CreateEmWarehouse");
         java.util.function.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
                 transformer =
                         CreateEmWarehouseConverter.fromResponse(
@@ -658,7 +664,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "DeleteEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/DeleteEmWarehouse");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
                 transformer =
                         DeleteEmWarehouseConverter.fromResponse(
@@ -693,7 +702,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "GetEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "GetEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/GetEmWarehouse");
         java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse> transformer =
                 GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -726,10 +738,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake",
+                        "EmWarehouse",
                         "GetEmWarehouseResourceUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/ResourceUsage/GetEmWarehouseResourceUsage");
         java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
                 transformer =
                         GetEmWarehouseResourceUsageConverter.fromResponse(
@@ -763,7 +775,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -795,7 +810,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListEmWarehouses", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListEmWarehouses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouseCollection/ListEmWarehouses");
         java.util.function.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
                 transformer =
                         ListEmWarehousesConverter.fromResponse(
@@ -829,7 +847,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListEtlRuns", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListEtlRuns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EtlRunCollection/ListEtlRuns");
         java.util.function.Function<javax.ws.rs.core.Response, ListEtlRunsResponse> transformer =
                 ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -862,7 +883,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -896,7 +920,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -930,7 +957,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -964,7 +994,10 @@ public class EmDataLakeClient implements EmDataLake {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmDataLake", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
+                        "EmWarehouse",
+                        "UpdateEmWarehouse",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/UpdateEmWarehouse");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
                 transformer =
                         UpdateEmWarehouseConverter.fromResponse(
@@ -989,12 +1022,12 @@ public class EmDataLakeClient implements EmDataLake {
     }
 
     @Override
-    public EmDataLakeWaiters getWaiters() {
+    public EmWarehouseWaiters getWaiters() {
         return waiters;
     }
 
     @Override
-    public EmDataLakePaginators getPaginators() {
+    public EmWarehousePaginators getPaginators() {
         return paginators;
     }
 }

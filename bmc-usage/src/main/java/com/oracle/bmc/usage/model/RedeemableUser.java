@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The email object for a user that can redeem rewards.
+ * The summary of a user that can redeem rewards.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -19,10 +19,12 @@ package com.oracle.bmc.usage.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RedeemableUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"emailId"})
-    public RedeemableUser(String emailId) {
+    @java.beans.ConstructorProperties({"emailId", "firstName", "lastName"})
+    public RedeemableUser(String emailId, String firstName, String lastName) {
         super();
         this.emailId = emailId;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -43,12 +45,44 @@ public final class RedeemableUser extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("emailId");
             return this;
         }
+        /**
+         * The first name of the user that can redeem rewards.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("firstName")
+        private String firstName;
+
+        /**
+         * The first name of the user that can redeem rewards.
+         * @param firstName the value to set
+         * @return this builder
+         **/
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            this.__explicitlySet__.add("firstName");
+            return this;
+        }
+        /**
+         * The last name of the user that can redeem rewards.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lastName")
+        private String lastName;
+
+        /**
+         * The last name of the user that can redeem rewards.
+         * @param lastName the value to set
+         * @return this builder
+         **/
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
+            this.__explicitlySet__.add("lastName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RedeemableUser build() {
-            RedeemableUser model = new RedeemableUser(this.emailId);
+            RedeemableUser model = new RedeemableUser(this.emailId, this.firstName, this.lastName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,6 +93,12 @@ public final class RedeemableUser extends com.oracle.bmc.http.internal.Explicitl
         public Builder copy(RedeemableUser model) {
             if (model.wasPropertyExplicitlySet("emailId")) {
                 this.emailId(model.getEmailId());
+            }
+            if (model.wasPropertyExplicitlySet("firstName")) {
+                this.firstName(model.getFirstName());
+            }
+            if (model.wasPropertyExplicitlySet("lastName")) {
+                this.lastName(model.getLastName());
             }
             return this;
         }
@@ -89,6 +129,34 @@ public final class RedeemableUser extends com.oracle.bmc.http.internal.Explicitl
         return emailId;
     }
 
+    /**
+     * The first name of the user that can redeem rewards.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("firstName")
+    private final String firstName;
+
+    /**
+     * The first name of the user that can redeem rewards.
+     * @return the value
+     **/
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * The last name of the user that can redeem rewards.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastName")
+    private final String lastName;
+
+    /**
+     * The last name of the user that can redeem rewards.
+     * @return the value
+     **/
+    public String getLastName() {
+        return lastName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -104,6 +172,8 @@ public final class RedeemableUser extends com.oracle.bmc.http.internal.Explicitl
         sb.append("RedeemableUser(");
         sb.append("super=").append(super.toString());
         sb.append("emailId=").append(String.valueOf(this.emailId));
+        sb.append(", firstName=").append(String.valueOf(this.firstName));
+        sb.append(", lastName=").append(String.valueOf(this.lastName));
         sb.append(")");
         return sb.toString();
     }
@@ -118,7 +188,10 @@ public final class RedeemableUser extends com.oracle.bmc.http.internal.Explicitl
         }
 
         RedeemableUser other = (RedeemableUser) o;
-        return java.util.Objects.equals(this.emailId, other.emailId) && super.equals(other);
+        return java.util.Objects.equals(this.emailId, other.emailId)
+                && java.util.Objects.equals(this.firstName, other.firstName)
+                && java.util.Objects.equals(this.lastName, other.lastName)
+                && super.equals(other);
     }
 
     @Override
@@ -126,6 +199,8 @@ public final class RedeemableUser extends com.oracle.bmc.http.internal.Explicitl
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.emailId == null ? 43 : this.emailId.hashCode());
+        result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
+        result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

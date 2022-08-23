@@ -53,12 +53,21 @@ public final class DevopsCodeRepositoryFilter extends Filter {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+        private DevopsCodeRepositoryFilterExclusionAttributes exclude;
+
+        public Builder exclude(DevopsCodeRepositoryFilterExclusionAttributes exclude) {
+            this.exclude = exclude;
+            this.__explicitlySet__.add("exclude");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DevopsCodeRepositoryFilter build() {
             DevopsCodeRepositoryFilter model =
-                    new DevopsCodeRepositoryFilter(this.events, this.include);
+                    new DevopsCodeRepositoryFilter(this.events, this.include, this.exclude);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -72,6 +81,9 @@ public final class DevopsCodeRepositoryFilter extends Filter {
             }
             if (model.wasPropertyExplicitlySet("include")) {
                 this.include(model.getInclude());
+            }
+            if (model.wasPropertyExplicitlySet("exclude")) {
+                this.exclude(model.getExclude());
             }
             return this;
         }
@@ -90,10 +102,13 @@ public final class DevopsCodeRepositoryFilter extends Filter {
 
     @Deprecated
     public DevopsCodeRepositoryFilter(
-            java.util.List<Events> events, DevopsCodeRepositoryFilterAttributes include) {
+            java.util.List<Events> events,
+            DevopsCodeRepositoryFilterAttributes include,
+            DevopsCodeRepositoryFilterExclusionAttributes exclude) {
         super();
         this.events = events;
         this.include = include;
+        this.exclude = exclude;
     }
 
     /**
@@ -162,6 +177,13 @@ public final class DevopsCodeRepositoryFilter extends Filter {
         return include;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+    private final DevopsCodeRepositoryFilterExclusionAttributes exclude;
+
+    public DevopsCodeRepositoryFilterExclusionAttributes getExclude() {
+        return exclude;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -178,6 +200,7 @@ public final class DevopsCodeRepositoryFilter extends Filter {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", events=").append(String.valueOf(this.events));
         sb.append(", include=").append(String.valueOf(this.include));
+        sb.append(", exclude=").append(String.valueOf(this.exclude));
         sb.append(")");
         return sb.toString();
     }
@@ -194,6 +217,7 @@ public final class DevopsCodeRepositoryFilter extends Filter {
         DevopsCodeRepositoryFilter other = (DevopsCodeRepositoryFilter) o;
         return java.util.Objects.equals(this.events, other.events)
                 && java.util.Objects.equals(this.include, other.include)
+                && java.util.Objects.equals(this.exclude, other.exclude)
                 && super.equals(other);
     }
 
@@ -203,6 +227,7 @@ public final class DevopsCodeRepositoryFilter extends Filter {
         int result = super.hashCode();
         result = (result * PRIME) + (this.events == null ? 43 : this.events.hashCode());
         result = (result * PRIME) + (this.include == null ? 43 : this.include.hashCode());
+        result = (result * PRIME) + (this.exclude == null ? 43 : this.exclude.hashCode());
         return result;
     }
 }

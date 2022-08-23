@@ -31,7 +31,7 @@ public final class CreateMediaWorkflowConfigurationDetails
     })
     public CreateMediaWorkflowConfigurationDetails(
             String displayName,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -69,7 +69,7 @@ public final class CreateMediaWorkflowConfigurationDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * Reuseable parameter values encoded as a JSON; the top and second level JSON elements are
@@ -80,7 +80,7 @@ public final class CreateMediaWorkflowConfigurationDetails
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -214,7 +214,7 @@ public final class CreateMediaWorkflowConfigurationDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * Reuseable parameter values encoded as a JSON; the top and second level JSON elements are
@@ -224,7 +224,7 @@ public final class CreateMediaWorkflowConfigurationDetails
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 

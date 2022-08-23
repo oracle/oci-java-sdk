@@ -9,17 +9,17 @@ import com.oracle.bmc.emwarehouse.responses.*;
 
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
- * resources of EmDataLake.
+ * resources of EmWarehouse.
  * <p>
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public class EmDataLakeWaiters {
+public class EmWarehouseWaiters {
     private final java.util.concurrent.ExecutorService executorService;
-    private final EmDataLake client;
+    private final EmWarehouse client;
 
-    public EmDataLakeWaiters(
-            java.util.concurrent.ExecutorService executorService, EmDataLake client) {
+    public EmWarehouseWaiters(
+            java.util.concurrent.ExecutorService executorService, EmWarehouse client) {
         this.executorService = executorService;
         this.client = client;
     }

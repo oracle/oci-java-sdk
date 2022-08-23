@@ -22,10 +22,11 @@ package com.oracle.bmc.devops.model;
 public final class DevopsCodeRepositoryFilterAttributes
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"headRef"})
-    public DevopsCodeRepositoryFilterAttributes(String headRef) {
+    @java.beans.ConstructorProperties({"headRef", "fileFilter"})
+    public DevopsCodeRepositoryFilterAttributes(String headRef, FileFilter fileFilter) {
         super();
         this.headRef = headRef;
+        this.fileFilter = fileFilter;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,12 +48,21 @@ public final class DevopsCodeRepositoryFilterAttributes
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("fileFilter")
+        private FileFilter fileFilter;
+
+        public Builder fileFilter(FileFilter fileFilter) {
+            this.fileFilter = fileFilter;
+            this.__explicitlySet__.add("fileFilter");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DevopsCodeRepositoryFilterAttributes build() {
             DevopsCodeRepositoryFilterAttributes model =
-                    new DevopsCodeRepositoryFilterAttributes(this.headRef);
+                    new DevopsCodeRepositoryFilterAttributes(this.headRef, this.fileFilter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +73,9 @@ public final class DevopsCodeRepositoryFilterAttributes
         public Builder copy(DevopsCodeRepositoryFilterAttributes model) {
             if (model.wasPropertyExplicitlySet("headRef")) {
                 this.headRef(model.getHeadRef());
+            }
+            if (model.wasPropertyExplicitlySet("fileFilter")) {
+                this.fileFilter(model.getFileFilter());
             }
             return this;
         }
@@ -93,6 +106,13 @@ public final class DevopsCodeRepositoryFilterAttributes
         return headRef;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("fileFilter")
+    private final FileFilter fileFilter;
+
+    public FileFilter getFileFilter() {
+        return fileFilter;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -108,6 +128,7 @@ public final class DevopsCodeRepositoryFilterAttributes
         sb.append("DevopsCodeRepositoryFilterAttributes(");
         sb.append("super=").append(super.toString());
         sb.append("headRef=").append(String.valueOf(this.headRef));
+        sb.append(", fileFilter=").append(String.valueOf(this.fileFilter));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +143,9 @@ public final class DevopsCodeRepositoryFilterAttributes
         }
 
         DevopsCodeRepositoryFilterAttributes other = (DevopsCodeRepositoryFilterAttributes) o;
-        return java.util.Objects.equals(this.headRef, other.headRef) && super.equals(other);
+        return java.util.Objects.equals(this.headRef, other.headRef)
+                && java.util.Objects.equals(this.fileFilter, other.fileFilter)
+                && super.equals(other);
     }
 
     @Override
@@ -130,6 +153,7 @@ public final class DevopsCodeRepositoryFilterAttributes
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.headRef == null ? 43 : this.headRef.hashCode());
+        result = (result * PRIME) + (this.fileFilter == null ? 43 : this.fileFilter.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -53,11 +53,21 @@ public final class GitlabServerFilter extends Filter {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+        private GitlabServerFilterExclusionAttributes exclude;
+
+        public Builder exclude(GitlabServerFilterExclusionAttributes exclude) {
+            this.exclude = exclude;
+            this.__explicitlySet__.add("exclude");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GitlabServerFilter build() {
-            GitlabServerFilter model = new GitlabServerFilter(this.events, this.include);
+            GitlabServerFilter model =
+                    new GitlabServerFilter(this.events, this.include, this.exclude);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -71,6 +81,9 @@ public final class GitlabServerFilter extends Filter {
             }
             if (model.wasPropertyExplicitlySet("include")) {
                 this.include(model.getInclude());
+            }
+            if (model.wasPropertyExplicitlySet("exclude")) {
+                this.exclude(model.getExclude());
             }
             return this;
         }
@@ -88,10 +101,14 @@ public final class GitlabServerFilter extends Filter {
     }
 
     @Deprecated
-    public GitlabServerFilter(java.util.List<Events> events, GitlabServerFilterAttributes include) {
+    public GitlabServerFilter(
+            java.util.List<Events> events,
+            GitlabServerFilterAttributes include,
+            GitlabServerFilterExclusionAttributes exclude) {
         super();
         this.events = events;
         this.include = include;
+        this.exclude = exclude;
     }
 
     /**
@@ -164,6 +181,13 @@ public final class GitlabServerFilter extends Filter {
         return include;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+    private final GitlabServerFilterExclusionAttributes exclude;
+
+    public GitlabServerFilterExclusionAttributes getExclude() {
+        return exclude;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -180,6 +204,7 @@ public final class GitlabServerFilter extends Filter {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", events=").append(String.valueOf(this.events));
         sb.append(", include=").append(String.valueOf(this.include));
+        sb.append(", exclude=").append(String.valueOf(this.exclude));
         sb.append(")");
         return sb.toString();
     }
@@ -196,6 +221,7 @@ public final class GitlabServerFilter extends Filter {
         GitlabServerFilter other = (GitlabServerFilter) o;
         return java.util.Objects.equals(this.events, other.events)
                 && java.util.Objects.equals(this.include, other.include)
+                && java.util.Objects.equals(this.exclude, other.exclude)
                 && super.equals(other);
     }
 
@@ -205,6 +231,7 @@ public final class GitlabServerFilter extends Filter {
         int result = super.hashCode();
         result = (result * PRIME) + (this.events == null ? 43 : this.events.hashCode());
         result = (result * PRIME) + (this.include == null ? 43 : this.include.hashCode());
+        result = (result * PRIME) + (this.exclude == null ? 43 : this.exclude.hashCode());
         return result;
     }
 }

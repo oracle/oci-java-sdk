@@ -9,7 +9,7 @@ import com.oracle.bmc.emwarehouse.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of EmDataLake where multiple pages of data may be fetched.
+ * to any list operations of EmWarehouse where multiple pages of data may be fetched.
  * Two styles of iteration are supported:
  *
  * <ul>
@@ -26,10 +26,10 @@ import com.oracle.bmc.emwarehouse.responses.*;
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public class EmDataLakePaginators {
-    private final EmDataLake client;
+public class EmWarehousePaginators {
+    private final EmWarehouse client;
 
-    public EmDataLakePaginators(EmDataLake client) {
+    public EmWarehousePaginators(EmWarehouse client) {
         this.client = client;
     }
 

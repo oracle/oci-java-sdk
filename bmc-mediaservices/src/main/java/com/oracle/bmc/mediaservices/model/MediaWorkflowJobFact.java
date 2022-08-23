@@ -30,7 +30,7 @@ public final class MediaWorkflowJobFact extends com.oracle.bmc.http.internal.Exp
             Long key,
             String name,
             String type,
-            java.util.Map<String, String> detail) {
+            java.util.Map<String, Object> detail) {
         super();
         this.mediaWorkflowJobId = mediaWorkflowJobId;
         this.key = key;
@@ -109,14 +109,14 @@ public final class MediaWorkflowJobFact extends com.oracle.bmc.http.internal.Exp
          * The body of the detail captured as JSON.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detail")
-        private java.util.Map<String, String> detail;
+        private java.util.Map<String, Object> detail;
 
         /**
          * The body of the detail captured as JSON.
          * @param detail the value to set
          * @return this builder
          **/
-        public Builder detail(java.util.Map<String, String> detail) {
+        public Builder detail(java.util.Map<String, Object> detail) {
             this.detail = detail;
             this.__explicitlySet__.add("detail");
             return this;
@@ -227,13 +227,13 @@ public final class MediaWorkflowJobFact extends com.oracle.bmc.http.internal.Exp
      * The body of the detail captured as JSON.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detail")
-    private final java.util.Map<String, String> detail;
+    private final java.util.Map<String, Object> detail;
 
     /**
      * The body of the detail captured as JSON.
      * @return the value
      **/
-    public java.util.Map<String, String> getDetail() {
+    public java.util.Map<String, Object> getDetail() {
         return detail;
     }
 

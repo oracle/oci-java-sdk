@@ -160,6 +160,22 @@ public final class BitbucketCloudTrigger extends Trigger {
             this.__explicitlySet__.add("triggerUrl");
             return this;
         }
+        /**
+         * The OCID of the connection resource used to get details for triggered events.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+        private String connectionId;
+
+        /**
+         * The OCID of the connection resource used to get details for triggered events.
+         * @param connectionId the value to set
+         * @return this builder
+         **/
+        public Builder connectionId(String connectionId) {
+            this.connectionId = connectionId;
+            this.__explicitlySet__.add("connectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -180,7 +196,8 @@ public final class BitbucketCloudTrigger extends Trigger {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.triggerUrl);
+                            this.triggerUrl,
+                            this.connectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -231,6 +248,9 @@ public final class BitbucketCloudTrigger extends Trigger {
             if (model.wasPropertyExplicitlySet("triggerUrl")) {
                 this.triggerUrl(model.getTriggerUrl());
             }
+            if (model.wasPropertyExplicitlySet("connectionId")) {
+                this.connectionId(model.getConnectionId());
+            }
             return this;
         }
     }
@@ -261,7 +281,8 @@ public final class BitbucketCloudTrigger extends Trigger {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            String triggerUrl) {
+            String triggerUrl,
+            String connectionId) {
         super(
                 id,
                 displayName,
@@ -277,6 +298,7 @@ public final class BitbucketCloudTrigger extends Trigger {
                 definedTags,
                 systemTags);
         this.triggerUrl = triggerUrl;
+        this.connectionId = connectionId;
     }
 
     /**
@@ -291,6 +313,20 @@ public final class BitbucketCloudTrigger extends Trigger {
      **/
     public String getTriggerUrl() {
         return triggerUrl;
+    }
+
+    /**
+     * The OCID of the connection resource used to get details for triggered events.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+    private final String connectionId;
+
+    /**
+     * The OCID of the connection resource used to get details for triggered events.
+     * @return the value
+     **/
+    public String getConnectionId() {
+        return connectionId;
     }
 
     @Override
@@ -308,6 +344,7 @@ public final class BitbucketCloudTrigger extends Trigger {
         sb.append("BitbucketCloudTrigger(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", triggerUrl=").append(String.valueOf(this.triggerUrl));
+        sb.append(", connectionId=").append(String.valueOf(this.connectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -322,7 +359,9 @@ public final class BitbucketCloudTrigger extends Trigger {
         }
 
         BitbucketCloudTrigger other = (BitbucketCloudTrigger) o;
-        return java.util.Objects.equals(this.triggerUrl, other.triggerUrl) && super.equals(other);
+        return java.util.Objects.equals(this.triggerUrl, other.triggerUrl)
+                && java.util.Objects.equals(this.connectionId, other.connectionId)
+                && super.equals(other);
     }
 
     @Override
@@ -330,6 +369,7 @@ public final class BitbucketCloudTrigger extends Trigger {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.triggerUrl == null ? 43 : this.triggerUrl.hashCode());
+        result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
         return result;
     }
 }

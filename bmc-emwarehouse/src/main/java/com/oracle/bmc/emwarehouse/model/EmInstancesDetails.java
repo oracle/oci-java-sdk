@@ -21,12 +21,14 @@ package com.oracle.bmc.emwarehouse.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EmInstancesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"emId", "targetsCount", "emHost"})
-    public EmInstancesDetails(String emId, Integer targetsCount, String emHost) {
+    @java.beans.ConstructorProperties({"emId", "targetsCount", "emHost", "emDiscovererUrl"})
+    public EmInstancesDetails(
+            String emId, Integer targetsCount, String emHost, String emDiscovererUrl) {
         super();
         this.emId = emId;
         this.targetsCount = targetsCount;
         this.emHost = emHost;
+        this.emDiscovererUrl = emDiscovererUrl;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -79,13 +81,30 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("emHost");
             return this;
         }
+        /**
+         * emdDiscoverer url
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("emDiscovererUrl")
+        private String emDiscovererUrl;
+
+        /**
+         * emdDiscoverer url
+         * @param emDiscovererUrl the value to set
+         * @return this builder
+         **/
+        public Builder emDiscovererUrl(String emDiscovererUrl) {
+            this.emDiscovererUrl = emDiscovererUrl;
+            this.__explicitlySet__.add("emDiscovererUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmInstancesDetails build() {
             EmInstancesDetails model =
-                    new EmInstancesDetails(this.emId, this.targetsCount, this.emHost);
+                    new EmInstancesDetails(
+                            this.emId, this.targetsCount, this.emHost, this.emDiscovererUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +121,9 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("emHost")) {
                 this.emHost(model.getEmHost());
+            }
+            if (model.wasPropertyExplicitlySet("emDiscovererUrl")) {
+                this.emDiscovererUrl(model.getEmDiscovererUrl());
             }
             return this;
         }
@@ -160,6 +182,20 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
         return emHost;
     }
 
+    /**
+     * emdDiscoverer url
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emDiscovererUrl")
+    private final String emDiscovererUrl;
+
+    /**
+     * emdDiscoverer url
+     * @return the value
+     **/
+    public String getEmDiscovererUrl() {
+        return emDiscovererUrl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -177,6 +213,7 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("emId=").append(String.valueOf(this.emId));
         sb.append(", targetsCount=").append(String.valueOf(this.targetsCount));
         sb.append(", emHost=").append(String.valueOf(this.emHost));
+        sb.append(", emDiscovererUrl=").append(String.valueOf(this.emDiscovererUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -194,6 +231,7 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
         return java.util.Objects.equals(this.emId, other.emId)
                 && java.util.Objects.equals(this.targetsCount, other.targetsCount)
                 && java.util.Objects.equals(this.emHost, other.emHost)
+                && java.util.Objects.equals(this.emDiscovererUrl, other.emDiscovererUrl)
                 && super.equals(other);
     }
 
@@ -204,6 +242,9 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.emId == null ? 43 : this.emId.hashCode());
         result = (result * PRIME) + (this.targetsCount == null ? 43 : this.targetsCount.hashCode());
         result = (result * PRIME) + (this.emHost == null ? 43 : this.emHost.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.emDiscovererUrl == null ? 43 : this.emDiscovererUrl.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -7,5 +7,5 @@ package com.oracle.bmc.emwarehouse;
 import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-@SdkClients({EmDataLakeAsyncClient.class, EmDataLakeClient.class})
+@SdkClients({EmWarehouseAsyncClient.class, EmWarehouseClient.class})
 public final class SdkClientsMetadata {}

@@ -31,7 +31,6 @@ public class ListResourceActionsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getCompartmentIdInSubtree(), "compartmentIdInSubtree is required");
-        Validate.notNull(request.getRecommendationId(), "recommendationId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20200606").path("resourceActions");
@@ -48,11 +47,38 @@ public class ListResourceActionsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentIdInSubtree()));
 
-        target =
-                target.queryParam(
-                        "recommendationId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getRecommendationId()));
+        if (request.getRecommendationId() != null) {
+            target =
+                    target.queryParam(
+                            "recommendationId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRecommendationId()));
+        }
+
+        if (request.getRecommendationName() != null) {
+            target =
+                    target.queryParam(
+                            "recommendationName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRecommendationName()));
+        }
+
+        if (request.getChildTenancyIds() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "childTenancyIds",
+                            request.getChildTenancyIds(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIncludeOrganization() != null) {
+            target =
+                    target.queryParam(
+                            "includeOrganization",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIncludeOrganization()));
+        }
 
         if (request.getName() != null) {
             target =

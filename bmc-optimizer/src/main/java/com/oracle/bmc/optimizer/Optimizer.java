@@ -96,7 +96,7 @@ public interface Optimizer extends AutoCloseable {
     DeleteProfileResponse deleteProfile(DeleteProfileRequest request);
 
     /**
-     * Queries the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Queries the Cloud Advisor resource actions that are supported.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -266,7 +266,7 @@ public interface Optimizer extends AutoCloseable {
             ListRecommendationStrategiesRequest request);
 
     /**
-     * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+     * Lists the Cloud Advisor recommendations that are currently supported.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -293,7 +293,7 @@ public interface Optimizer extends AutoCloseable {
             ListResourceActionQueryableFieldsRequest request);
 
     /**
-     * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Lists the Cloud Advisor resource actions that are supported.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

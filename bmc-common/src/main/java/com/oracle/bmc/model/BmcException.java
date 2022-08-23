@@ -9,6 +9,7 @@ import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.http.internal.RFC3339DateFormat;
 import com.oracle.bmc.util.internal.StringUtils;
 import java.util.Date;
+import java.util.Map;
 
 public class BmcException extends RuntimeException {
     /**
@@ -51,6 +52,24 @@ public class BmcException extends RuntimeException {
      */
     private ServiceDetails serviceDetails;
 
+    /**
+     * A human-readable error string in English.
+     * Optional field in localized error responses.
+     */
+    private final String originalMessage;
+
+    /**
+     * Template in ICU MessageFormat for the human-readable error string in English, but without the values replaced.
+     * Optional field in localized error responses.
+     */
+    private final String originalMessageTemplate;
+
+    /**
+     * The values to be substituted into the originalMessageTemplate, expressed as a string-to-string map.
+     * Optional field in localized error responses.
+     */
+    private final Map<String, String> messageArguments;
+
     public BmcException(
             int statusCode,
             String serviceCode,
@@ -63,6 +82,9 @@ public class BmcException extends RuntimeException {
         this.opcRequestId = opcRequestId;
         this.timeout = false;
         this.isClientSide = false;
+        this.originalMessage = null;
+        this.originalMessageTemplate = null;
+        this.messageArguments = null;
     }
 
     public BmcException(
@@ -79,6 +101,9 @@ public class BmcException extends RuntimeException {
         this.timeout = false;
         this.isClientSide = false;
         this.serviceDetails = serviceDetails;
+        this.originalMessage = null;
+        this.originalMessageTemplate = null;
+        this.messageArguments = null;
     }
 
     public BmcException(int statusCode, String serviceCode, String message, String opcRequestId) {
@@ -88,6 +113,9 @@ public class BmcException extends RuntimeException {
         this.opcRequestId = opcRequestId;
         this.timeout = false;
         this.isClientSide = false;
+        this.originalMessage = null;
+        this.originalMessageTemplate = null;
+        this.messageArguments = null;
     }
 
     public BmcException(
@@ -103,6 +131,9 @@ public class BmcException extends RuntimeException {
         this.timeout = false;
         this.isClientSide = false;
         this.serviceDetails = serviceDetails;
+        this.originalMessage = null;
+        this.originalMessageTemplate = null;
+        this.messageArguments = null;
     }
 
     public BmcException(boolean timeout, String message, Throwable cause, String opcRequestId) {
@@ -112,6 +143,30 @@ public class BmcException extends RuntimeException {
         this.opcRequestId = opcRequestId;
         this.timeout = timeout;
         this.isClientSide = true;
+        this.originalMessage = null;
+        this.originalMessageTemplate = null;
+        this.messageArguments = null;
+    }
+
+    public BmcException(
+            int statusCode,
+            String serviceCode,
+            String message,
+            String opcRequestId,
+            ServiceDetails serviceDetails,
+            String originalMessage,
+            String originalMessageTemplate,
+            Map<String, String> templateArguments) {
+        super(message);
+        this.statusCode = statusCode;
+        this.serviceCode = serviceCode;
+        this.opcRequestId = opcRequestId;
+        this.timeout = false;
+        this.isClientSide = false;
+        this.serviceDetails = serviceDetails;
+        this.originalMessage = originalMessage;
+        this.originalMessageTemplate = originalMessageTemplate;
+        this.messageArguments = templateArguments;
     }
 
     @Override
@@ -214,5 +269,26 @@ public class BmcException extends RuntimeException {
      */
     public ServiceDetails getServiceDetails() {
         return this.serviceDetails;
+    }
+
+    /**
+     * Gets the original message of the failed Exception. null in the case of non-localized responses.
+     */
+    public String getOriginalMessage() {
+        return this.originalMessage;
+    }
+
+    /**
+     * Gets the original message template of the failed Exception. null in the case of non-localized responses.
+     */
+    public String getOriginalMessageTemplate() {
+        return this.originalMessageTemplate;
+    }
+
+    /**
+     * Gets the template arguments of the failed Exception. null in the case of non-localized responses.
+     */
+    public Map<String, String> getMessageArguments() {
+        return this.messageArguments;
     }
 }

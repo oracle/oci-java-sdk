@@ -51,6 +51,87 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         return recommendationId;
     }
     /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     */
+    private String recommendationName;
+
+    /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     */
+    public String getRecommendationName() {
+        return recommendationName;
+    }
+    /**
+     * A list of child tenancies for which the respective data will be returned. Please note that
+     * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+     * children A and B, to return results of only parent P and child A, this list should be populated with
+     * tenancy id of parent P and child A.
+     * <p>
+     * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+     * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+     * other tenant T that isn't part of the organization. If T is included in the list of
+     * childTenancyIds, the request will fail.
+     * <p>
+     * It is important to note that if you are setting the includeOrganization parameter value as true and
+     * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+     * The childTenancyIds and includeOrganization should be used exclusively.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+     *
+     */
+    private java.util.List<String> childTenancyIds;
+
+    /**
+     * A list of child tenancies for which the respective data will be returned. Please note that
+     * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+     * children A and B, to return results of only parent P and child A, this list should be populated with
+     * tenancy id of parent P and child A.
+     * <p>
+     * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+     * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+     * other tenant T that isn't part of the organization. If T is included in the list of
+     * childTenancyIds, the request will fail.
+     * <p>
+     * It is important to note that if you are setting the includeOrganization parameter value as true and
+     * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+     * The childTenancyIds and includeOrganization should be used exclusively.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+     *
+     */
+    public java.util.List<String> getChildTenancyIds() {
+        return childTenancyIds;
+    }
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if
+     * there is an organization with parent P and children A and B, to return the data for the parent P, child
+     * A and child B, this parameter value should be set to true.
+     * <p>
+     * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+     * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+     * the list with tenancy id of P and A.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+     *
+     */
+    private Boolean includeOrganization;
+
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if
+     * there is an organization with parent P and children A and B, to return the data for the parent P, child
+     * A and child B, this parameter value should be set to true.
+     * <p>
+     * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+     * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+     * the list with tenancy id of P and A.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+     *
+     */
+    public Boolean getIncludeOrganization() {
+        return includeOrganization;
+    }
+    /**
      * Optional. A filter that returns results that match the name specified.
      */
     private String name;
@@ -258,6 +339,123 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * Optional. A filter that returns results that match the recommendation name specified.
+         */
+        private String recommendationName = null;
+
+        /**
+         * Optional. A filter that returns results that match the recommendation name specified.
+         * @param recommendationName the value to set
+         * @return this builder instance
+         */
+        public Builder recommendationName(String recommendationName) {
+            this.recommendationName = recommendationName;
+            return this;
+        }
+
+        /**
+         * A list of child tenancies for which the respective data will be returned. Please note that
+         * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+         * children A and B, to return results of only parent P and child A, this list should be populated with
+         * tenancy id of parent P and child A.
+         * <p>
+         * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+         * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+         * other tenant T that isn't part of the organization. If T is included in the list of
+         * childTenancyIds, the request will fail.
+         * <p>
+         * It is important to note that if you are setting the includeOrganization parameter value as true and
+         * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+         * The childTenancyIds and includeOrganization should be used exclusively.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+         *
+         */
+        private java.util.List<String> childTenancyIds = null;
+
+        /**
+         * A list of child tenancies for which the respective data will be returned. Please note that
+         * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+         * children A and B, to return results of only parent P and child A, this list should be populated with
+         * tenancy id of parent P and child A.
+         * <p>
+         * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+         * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+         * other tenant T that isn't part of the organization. If T is included in the list of
+         * childTenancyIds, the request will fail.
+         * <p>
+         * It is important to note that if you are setting the includeOrganization parameter value as true and
+         * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+         * The childTenancyIds and includeOrganization should be used exclusively.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+         *
+         * @param childTenancyIds the value to set
+         * @return this builder instance
+         */
+        public Builder childTenancyIds(java.util.List<String> childTenancyIds) {
+            this.childTenancyIds = childTenancyIds;
+            return this;
+        }
+
+        /**
+         * Singular setter. A list of child tenancies for which the respective data will be returned. Please note that
+         * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+         * children A and B, to return results of only parent P and child A, this list should be populated with
+         * tenancy id of parent P and child A.
+         * <p>
+         * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+         * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+         * other tenant T that isn't part of the organization. If T is included in the list of
+         * childTenancyIds, the request will fail.
+         * <p>
+         * It is important to note that if you are setting the includeOrganization parameter value as true and
+         * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+         * The childTenancyIds and includeOrganization should be used exclusively.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder childTenancyIds(String singularValue) {
+            return this.childTenancyIds(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * When set to true, the data for all child tenancies including the parent is returned. That is, if
+         * there is an organization with parent P and children A and B, to return the data for the parent P, child
+         * A and child B, this parameter value should be set to true.
+         * <p>
+         * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+         * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+         * the list with tenancy id of P and A.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+         *
+         */
+        private Boolean includeOrganization = null;
+
+        /**
+         * When set to true, the data for all child tenancies including the parent is returned. That is, if
+         * there is an organization with parent P and children A and B, to return the data for the parent P, child
+         * A and child B, this parameter value should be set to true.
+         * <p>
+         * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+         * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+         * the list with tenancy id of P and A.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+         *
+         * @param includeOrganization the value to set
+         * @return this builder instance
+         */
+        public Builder includeOrganization(Boolean includeOrganization) {
+            this.includeOrganization = includeOrganization;
+            return this;
+        }
+
+        /**
          * Optional. A filter that returns results that match the name specified.
          */
         private String name = null;
@@ -436,6 +634,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             compartmentId(o.getCompartmentId());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             recommendationId(o.getRecommendationId());
+            recommendationName(o.getRecommendationName());
+            childTenancyIds(o.getChildTenancyIds());
+            includeOrganization(o.getIncludeOrganization());
             name(o.getName());
             resourceType(o.getResourceType());
             limit(o.getLimit());
@@ -480,6 +681,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             request.compartmentId = compartmentId;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.recommendationId = recommendationId;
+            request.recommendationName = recommendationName;
+            request.childTenancyIds = childTenancyIds;
+            request.includeOrganization = includeOrganization;
             request.name = name;
             request.resourceType = resourceType;
             request.limit = limit;
@@ -490,7 +694,7 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             request.status = status;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourceActionsRequest(compartmentId, compartmentIdInSubtree, recommendationId, name, resourceType, limit, page, sortOrder, sortBy, lifecycleState, status, opcRequestId);
+            // new ListResourceActionsRequest(compartmentId, compartmentIdInSubtree, recommendationId, recommendationName, childTenancyIds, includeOrganization, name, resourceType, limit, page, sortOrder, sortBy, lifecycleState, status, opcRequestId);
         }
     }
 
@@ -503,6 +707,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 .compartmentId(compartmentId)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .recommendationId(recommendationId)
+                .recommendationName(recommendationName)
+                .childTenancyIds(childTenancyIds)
+                .includeOrganization(includeOrganization)
                 .name(name)
                 .resourceType(resourceType)
                 .limit(limit)
@@ -530,6 +737,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",recommendationId=").append(String.valueOf(this.recommendationId));
+        sb.append(",recommendationName=").append(String.valueOf(this.recommendationName));
+        sb.append(",childTenancyIds=").append(String.valueOf(this.childTenancyIds));
+        sb.append(",includeOrganization=").append(String.valueOf(this.includeOrganization));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",resourceType=").append(String.valueOf(this.resourceType));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -558,6 +768,9 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.recommendationId, other.recommendationId)
+                && java.util.Objects.equals(this.recommendationName, other.recommendationName)
+                && java.util.Objects.equals(this.childTenancyIds, other.childTenancyIds)
+                && java.util.Objects.equals(this.includeOrganization, other.includeOrganization)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -584,6 +797,19 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         result =
                 (result * PRIME)
                         + (this.recommendationId == null ? 43 : this.recommendationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendationName == null
+                                ? 43
+                                : this.recommendationName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.childTenancyIds == null ? 43 : this.childTenancyIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeOrganization == null
+                                ? 43
+                                : this.includeOrganization.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

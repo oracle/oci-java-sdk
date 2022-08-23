@@ -27,6 +27,7 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
         "patchingMode",
         "isCustomActionTimeoutEnabled",
         "customActionTimeoutInMins",
+        "isMonthlyPatchingEnabled",
         "months",
         "weeksOfMonth",
         "daysOfWeek",
@@ -38,6 +39,7 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
             PatchingMode patchingMode,
             Boolean isCustomActionTimeoutEnabled,
             Integer customActionTimeoutInMins,
+            Boolean isMonthlyPatchingEnabled,
             java.util.List<Month> months,
             java.util.List<Integer> weeksOfMonth,
             java.util.List<DayOfWeek> daysOfWeek,
@@ -48,6 +50,7 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
         this.patchingMode = patchingMode;
         this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
         this.customActionTimeoutInMins = customActionTimeoutInMins;
+        this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
         this.months = months;
         this.weeksOfMonth = weeksOfMonth;
         this.daysOfWeek = daysOfWeek;
@@ -129,6 +132,22 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
             this.customActionTimeoutInMins = customActionTimeoutInMins;
             this.__explicitlySet__.add("customActionTimeoutInMins");
+            return this;
+        }
+        /**
+         * If true, enables the monthly patching option.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMonthlyPatchingEnabled")
+        private Boolean isMonthlyPatchingEnabled;
+
+        /**
+         * If true, enables the monthly patching option.
+         * @param isMonthlyPatchingEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
+            this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            this.__explicitlySet__.add("isMonthlyPatchingEnabled");
             return this;
         }
         /**
@@ -232,6 +251,7 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
                             this.patchingMode,
                             this.isCustomActionTimeoutEnabled,
                             this.customActionTimeoutInMins,
+                            this.isMonthlyPatchingEnabled,
                             this.months,
                             this.weeksOfMonth,
                             this.daysOfWeek,
@@ -256,6 +276,9 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("customActionTimeoutInMins")) {
                 this.customActionTimeoutInMins(model.getCustomActionTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("isMonthlyPatchingEnabled")) {
+                this.isMonthlyPatchingEnabled(model.getIsMonthlyPatchingEnabled());
             }
             if (model.wasPropertyExplicitlySet("months")) {
                 this.months(model.getMonths());
@@ -453,6 +476,20 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * If true, enables the monthly patching option.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMonthlyPatchingEnabled")
+    private final Boolean isMonthlyPatchingEnabled;
+
+    /**
+     * If true, enables the monthly patching option.
+     * @return the value
+     **/
+    public Boolean getIsMonthlyPatchingEnabled() {
+        return isMonthlyPatchingEnabled;
+    }
+
+    /**
      * Months during the year when maintenance should be performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("months")
@@ -552,6 +589,8 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.isCustomActionTimeoutEnabled));
         sb.append(", customActionTimeoutInMins=")
                 .append(String.valueOf(this.customActionTimeoutInMins));
+        sb.append(", isMonthlyPatchingEnabled=")
+                .append(String.valueOf(this.isMonthlyPatchingEnabled));
         sb.append(", months=").append(String.valueOf(this.months));
         sb.append(", weeksOfMonth=").append(String.valueOf(this.weeksOfMonth));
         sb.append(", daysOfWeek=").append(String.valueOf(this.daysOfWeek));
@@ -577,6 +616,8 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
                         this.isCustomActionTimeoutEnabled, other.isCustomActionTimeoutEnabled)
                 && java.util.Objects.equals(
                         this.customActionTimeoutInMins, other.customActionTimeoutInMins)
+                && java.util.Objects.equals(
+                        this.isMonthlyPatchingEnabled, other.isMonthlyPatchingEnabled)
                 && java.util.Objects.equals(this.months, other.months)
                 && java.util.Objects.equals(this.weeksOfMonth, other.weeksOfMonth)
                 && java.util.Objects.equals(this.daysOfWeek, other.daysOfWeek)
@@ -601,6 +642,11 @@ public final class MaintenanceWindow extends com.oracle.bmc.http.internal.Explic
                         + (this.customActionTimeoutInMins == null
                                 ? 43
                                 : this.customActionTimeoutInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMonthlyPatchingEnabled == null
+                                ? 43
+                                : this.isMonthlyPatchingEnabled.hashCode());
         result = (result * PRIME) + (this.months == null ? 43 : this.months.hashCode());
         result = (result * PRIME) + (this.weeksOfMonth == null ? 43 : this.weeksOfMonth.hashCode());
         result = (result * PRIME) + (this.daysOfWeek == null ? 43 : this.daysOfWeek.hashCode());

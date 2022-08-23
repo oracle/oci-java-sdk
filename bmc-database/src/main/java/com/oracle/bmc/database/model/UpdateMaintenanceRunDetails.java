@@ -32,7 +32,9 @@ public final class UpdateMaintenanceRunDetails
         "isCustomActionTimeoutEnabled",
         "customActionTimeoutInMins",
         "currentCustomActionTimeoutInMins",
-        "isResumePatching"
+        "isResumePatching",
+        "targetDbServerVersion",
+        "targetStorageServerVersion"
     })
     public UpdateMaintenanceRunDetails(
             Boolean isEnabled,
@@ -43,7 +45,9 @@ public final class UpdateMaintenanceRunDetails
             Boolean isCustomActionTimeoutEnabled,
             Integer customActionTimeoutInMins,
             Integer currentCustomActionTimeoutInMins,
-            Boolean isResumePatching) {
+            Boolean isResumePatching,
+            String targetDbServerVersion,
+            String targetStorageServerVersion) {
         super();
         this.isEnabled = isEnabled;
         this.timeScheduled = timeScheduled;
@@ -54,6 +58,8 @@ public final class UpdateMaintenanceRunDetails
         this.customActionTimeoutInMins = customActionTimeoutInMins;
         this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
         this.isResumePatching = isResumePatching;
+        this.targetDbServerVersion = targetDbServerVersion;
+        this.targetStorageServerVersion = targetStorageServerVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -212,6 +218,38 @@ public final class UpdateMaintenanceRunDetails
             this.__explicitlySet__.add("isResumePatching");
             return this;
         }
+        /**
+         * The target database server system software version for the patching operation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
+        private String targetDbServerVersion;
+
+        /**
+         * The target database server system software version for the patching operation.
+         * @param targetDbServerVersion the value to set
+         * @return this builder
+         **/
+        public Builder targetDbServerVersion(String targetDbServerVersion) {
+            this.targetDbServerVersion = targetDbServerVersion;
+            this.__explicitlySet__.add("targetDbServerVersion");
+            return this;
+        }
+        /**
+         * The target storage cell system software version for the patching operation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
+        private String targetStorageServerVersion;
+
+        /**
+         * The target storage cell system software version for the patching operation.
+         * @param targetStorageServerVersion the value to set
+         * @return this builder
+         **/
+        public Builder targetStorageServerVersion(String targetStorageServerVersion) {
+            this.targetStorageServerVersion = targetStorageServerVersion;
+            this.__explicitlySet__.add("targetStorageServerVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -227,7 +265,9 @@ public final class UpdateMaintenanceRunDetails
                             this.isCustomActionTimeoutEnabled,
                             this.customActionTimeoutInMins,
                             this.currentCustomActionTimeoutInMins,
-                            this.isResumePatching);
+                            this.isResumePatching,
+                            this.targetDbServerVersion,
+                            this.targetStorageServerVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -262,6 +302,12 @@ public final class UpdateMaintenanceRunDetails
             }
             if (model.wasPropertyExplicitlySet("isResumePatching")) {
                 this.isResumePatching(model.getIsResumePatching());
+            }
+            if (model.wasPropertyExplicitlySet("targetDbServerVersion")) {
+                this.targetDbServerVersion(model.getTargetDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("targetStorageServerVersion")) {
+                this.targetStorageServerVersion(model.getTargetStorageServerVersion());
             }
             return this;
         }
@@ -452,6 +498,34 @@ public final class UpdateMaintenanceRunDetails
         return isResumePatching;
     }
 
+    /**
+     * The target database server system software version for the patching operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
+    private final String targetDbServerVersion;
+
+    /**
+     * The target database server system software version for the patching operation.
+     * @return the value
+     **/
+    public String getTargetDbServerVersion() {
+        return targetDbServerVersion;
+    }
+
+    /**
+     * The target storage cell system software version for the patching operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
+    private final String targetStorageServerVersion;
+
+    /**
+     * The target storage cell system software version for the patching operation.
+     * @return the value
+     **/
+    public String getTargetStorageServerVersion() {
+        return targetStorageServerVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -478,6 +552,9 @@ public final class UpdateMaintenanceRunDetails
         sb.append(", currentCustomActionTimeoutInMins=")
                 .append(String.valueOf(this.currentCustomActionTimeoutInMins));
         sb.append(", isResumePatching=").append(String.valueOf(this.isResumePatching));
+        sb.append(", targetDbServerVersion=").append(String.valueOf(this.targetDbServerVersion));
+        sb.append(", targetStorageServerVersion=")
+                .append(String.valueOf(this.targetStorageServerVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -505,6 +582,9 @@ public final class UpdateMaintenanceRunDetails
                         this.currentCustomActionTimeoutInMins,
                         other.currentCustomActionTimeoutInMins)
                 && java.util.Objects.equals(this.isResumePatching, other.isResumePatching)
+                && java.util.Objects.equals(this.targetDbServerVersion, other.targetDbServerVersion)
+                && java.util.Objects.equals(
+                        this.targetStorageServerVersion, other.targetStorageServerVersion)
                 && super.equals(other);
     }
 
@@ -539,6 +619,16 @@ public final class UpdateMaintenanceRunDetails
         result =
                 (result * PRIME)
                         + (this.isResumePatching == null ? 43 : this.isResumePatching.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetDbServerVersion == null
+                                ? 43
+                                : this.targetDbServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetStorageServerVersion == null
+                                ? 43
+                                : this.targetStorageServerVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

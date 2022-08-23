@@ -104,7 +104,7 @@ public interface OptimizerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Queries the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Queries the Cloud Advisor resource actions that are supported.
      *
      *
      * @param request The request object containing the details to send
@@ -318,7 +318,7 @@ public interface OptimizerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+     * Lists the Cloud Advisor recommendations that are currently supported.
      *
      *
      * @param request The request object containing the details to send
@@ -354,7 +354,7 @@ public interface OptimizerAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Lists the Cloud Advisor resource actions that are supported.
      *
      *
      * @param request The request object containing the details to send

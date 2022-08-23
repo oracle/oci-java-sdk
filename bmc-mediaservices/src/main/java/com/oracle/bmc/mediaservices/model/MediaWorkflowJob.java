@@ -49,10 +49,10 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.List<MediaWorkflowTaskState> taskLifecycleState,
-            java.util.Map<String, String> parameters,
+            java.util.Map<String, Object> parameters,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            java.util.Map<String, String> runnable,
+            java.util.Map<String, Object> runnable,
             java.util.List<JobOutput> outputs,
             java.util.Date timeStarted,
             java.util.Date timeEnded,
@@ -221,7 +221,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-        private java.util.Map<String, String> parameters;
+        private java.util.Map<String, Object> parameters;
 
         /**
          * Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow,
@@ -233,7 +233,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
          * @param parameters the value to set
          * @return this builder
          **/
-        public Builder parameters(java.util.Map<String, String> parameters) {
+        public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
@@ -276,7 +276,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("runnable")
-        private java.util.Map<String, String> runnable;
+        private java.util.Map<String, Object> runnable;
 
         /**
          * A JSON representation of the job as it will be run by the system. All the task declarations, configurations
@@ -285,7 +285,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
          * @param runnable the value to set
          * @return this builder
          **/
-        public Builder runnable(java.util.Map<String, String> runnable) {
+        public Builder runnable(java.util.Map<String, Object> runnable) {
             this.runnable = runnable;
             this.__explicitlySet__.add("runnable");
             return this;
@@ -675,7 +675,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
-    private final java.util.Map<String, String> parameters;
+    private final java.util.Map<String, Object> parameters;
 
     /**
      * Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow,
@@ -686,7 +686,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getParameters() {
+    public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 
@@ -724,7 +724,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runnable")
-    private final java.util.Map<String, String> runnable;
+    private final java.util.Map<String, Object> runnable;
 
     /**
      * A JSON representation of the job as it will be run by the system. All the task declarations, configurations
@@ -732,7 +732,7 @@ public final class MediaWorkflowJob extends com.oracle.bmc.http.internal.Explici
      *
      * @return the value
      **/
-    public java.util.Map<String, String> getRunnable() {
+    public java.util.Map<String, Object> getRunnable() {
         return runnable;
     }
 

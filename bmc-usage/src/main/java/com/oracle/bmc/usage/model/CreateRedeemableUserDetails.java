@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * A list of email IDs to be added to the list of users that can redeem rewards.
+ * A list of new user to be added to the list of user that can redeem rewards.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class CreateRedeemableUserDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of email IDs to be added to the list of users that can redeem rewards.
+         * The list of new user to be added to the list of user that can redeem rewards.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RedeemableUser> items;
 
         /**
-         * The list of email IDs to be added to the list of users that can redeem rewards.
+         * The list of new user to be added to the list of user that can redeem rewards.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class CreateRedeemableUserDetails
     }
 
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RedeemableUser> items;
 
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      * @return the value
      **/
     public java.util.List<RedeemableUser> getItems() {

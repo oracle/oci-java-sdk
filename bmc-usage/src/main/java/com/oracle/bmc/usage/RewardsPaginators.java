@@ -255,4 +255,114 @@ public class RewardsPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRedemptions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRedemptionsResponse> listRedemptionsResponseIterator(
+            final ListRedemptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRedemptionsRequest.Builder, ListRedemptionsRequest, ListRedemptionsResponse>(
+                new java.util.function.Supplier<ListRedemptionsRequest.Builder>() {
+                    @Override
+                    public ListRedemptionsRequest.Builder get() {
+                        return ListRedemptionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRedemptionsResponse, String>() {
+                    @Override
+                    public String apply(ListRedemptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRedemptionsRequest.Builder>,
+                        ListRedemptionsRequest>() {
+                    @Override
+                    public ListRedemptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRedemptionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListRedemptionsRequest, ListRedemptionsResponse>() {
+                    @Override
+                    public ListRedemptionsResponse apply(ListRedemptionsRequest request) {
+                        return client.listRedemptions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usage.model.RedemptionSummary} objects
+     * contained in responses from the listRedemptions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usage.model.RedemptionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.usage.model.RedemptionSummary> listRedemptionsRecordIterator(
+            final ListRedemptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRedemptionsRequest.Builder, ListRedemptionsRequest, ListRedemptionsResponse,
+                com.oracle.bmc.usage.model.RedemptionSummary>(
+                new java.util.function.Supplier<ListRedemptionsRequest.Builder>() {
+                    @Override
+                    public ListRedemptionsRequest.Builder get() {
+                        return ListRedemptionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRedemptionsResponse, String>() {
+                    @Override
+                    public String apply(ListRedemptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRedemptionsRequest.Builder>,
+                        ListRedemptionsRequest>() {
+                    @Override
+                    public ListRedemptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRedemptionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListRedemptionsRequest, ListRedemptionsResponse>() {
+                    @Override
+                    public ListRedemptionsResponse apply(ListRedemptionsRequest request) {
+                        return client.listRedemptions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRedemptionsResponse,
+                        java.util.List<com.oracle.bmc.usage.model.RedemptionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.usage.model.RedemptionSummary> apply(
+                            ListRedemptionsResponse response) {
+                        return response.getRedemptionCollection().getItems();
+                    }
+                });
+    }
 }

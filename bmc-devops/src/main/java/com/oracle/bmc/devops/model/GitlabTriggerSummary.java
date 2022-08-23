@@ -135,6 +135,22 @@ public final class GitlabTriggerSummary extends TriggerSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * The OCID of the connection resource used to get details for triggered events.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+        private String connectionId;
+
+        /**
+         * The OCID of the connection resource used to get details for triggered events.
+         * @param connectionId the value to set
+         * @return this builder
+         **/
+        public Builder connectionId(String connectionId) {
+            this.connectionId = connectionId;
+            this.__explicitlySet__.add("connectionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -153,7 +169,8 @@ public final class GitlabTriggerSummary extends TriggerSummary {
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.connectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -198,6 +215,9 @@ public final class GitlabTriggerSummary extends TriggerSummary {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("connectionId")) {
+                this.connectionId(model.getConnectionId());
+            }
             return this;
         }
     }
@@ -226,7 +246,8 @@ public final class GitlabTriggerSummary extends TriggerSummary {
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String connectionId) {
         super(
                 id,
                 displayName,
@@ -240,6 +261,21 @@ public final class GitlabTriggerSummary extends TriggerSummary {
                 freeformTags,
                 definedTags,
                 systemTags);
+        this.connectionId = connectionId;
+    }
+
+    /**
+     * The OCID of the connection resource used to get details for triggered events.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
+    private final String connectionId;
+
+    /**
+     * The OCID of the connection resource used to get details for triggered events.
+     * @return the value
+     **/
+    public String getConnectionId() {
+        return connectionId;
     }
 
     @Override
@@ -256,6 +292,7 @@ public final class GitlabTriggerSummary extends TriggerSummary {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GitlabTriggerSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", connectionId=").append(String.valueOf(this.connectionId));
         sb.append(")");
         return sb.toString();
     }
@@ -270,13 +307,15 @@ public final class GitlabTriggerSummary extends TriggerSummary {
         }
 
         GitlabTriggerSummary other = (GitlabTriggerSummary) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.connectionId, other.connectionId)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
         return result;
     }
 }

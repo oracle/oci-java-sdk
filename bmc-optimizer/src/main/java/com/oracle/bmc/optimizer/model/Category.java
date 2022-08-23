@@ -23,6 +23,7 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "compartmentName",
         "name",
         "description",
         "recommendationCounts",
@@ -36,6 +37,7 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
     public Category(
             String id,
             String compartmentId,
+            String compartmentName,
             String name,
             String description,
             java.util.List<RecommendationCount> recommendationCounts,
@@ -48,6 +50,7 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.compartmentName = compartmentName;
         this.name = name;
         this.description = description;
         this.recommendationCounts = recommendationCounts;
@@ -91,6 +94,22 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The name associated with the compartment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+        private String compartmentName;
+
+        /**
+         * The name associated with the compartment.
+         * @param compartmentName the value to set
+         * @return this builder
+         **/
+        public Builder compartmentName(String compartmentName) {
+            this.compartmentName = compartmentName;
+            this.__explicitlySet__.add("compartmentName");
             return this;
         }
         /**
@@ -257,6 +276,7 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
                     new Category(
                             this.id,
                             this.compartmentId,
+                            this.compartmentName,
                             this.name,
                             this.description,
                             this.recommendationCounts,
@@ -279,6 +299,9 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentName")) {
+                this.compartmentName(model.getCompartmentName());
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
@@ -348,6 +371,20 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The name associated with the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+    private final String compartmentName;
+
+    /**
+     * The name associated with the compartment.
+     * @return the value
+     **/
+    public String getCompartmentName() {
+        return compartmentName;
     }
 
     /**
@@ -502,6 +539,7 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentName=").append(String.valueOf(this.compartmentName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", recommendationCounts=").append(String.valueOf(this.recommendationCounts));
@@ -527,6 +565,7 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Category other = (Category) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compartmentName, other.compartmentName)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.recommendationCounts, other.recommendationCounts)
@@ -547,6 +586,9 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentName == null ? 43 : this.compartmentName.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =

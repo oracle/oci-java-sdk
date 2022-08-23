@@ -51,11 +51,20 @@ public final class GithubFilter extends Filter {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+        private GithubFilterExclusionAttributes exclude;
+
+        public Builder exclude(GithubFilterExclusionAttributes exclude) {
+            this.exclude = exclude;
+            this.__explicitlySet__.add("exclude");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GithubFilter build() {
-            GithubFilter model = new GithubFilter(this.events, this.include);
+            GithubFilter model = new GithubFilter(this.events, this.include, this.exclude);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -69,6 +78,9 @@ public final class GithubFilter extends Filter {
             }
             if (model.wasPropertyExplicitlySet("include")) {
                 this.include(model.getInclude());
+            }
+            if (model.wasPropertyExplicitlySet("exclude")) {
+                this.exclude(model.getExclude());
             }
             return this;
         }
@@ -86,10 +98,14 @@ public final class GithubFilter extends Filter {
     }
 
     @Deprecated
-    public GithubFilter(java.util.List<Events> events, GithubFilterAttributes include) {
+    public GithubFilter(
+            java.util.List<Events> events,
+            GithubFilterAttributes include,
+            GithubFilterExclusionAttributes exclude) {
         super();
         this.events = events;
         this.include = include;
+        this.exclude = exclude;
     }
 
     /**
@@ -162,6 +178,13 @@ public final class GithubFilter extends Filter {
         return include;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+    private final GithubFilterExclusionAttributes exclude;
+
+    public GithubFilterExclusionAttributes getExclude() {
+        return exclude;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -178,6 +201,7 @@ public final class GithubFilter extends Filter {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", events=").append(String.valueOf(this.events));
         sb.append(", include=").append(String.valueOf(this.include));
+        sb.append(", exclude=").append(String.valueOf(this.exclude));
         sb.append(")");
         return sb.toString();
     }
@@ -194,6 +218,7 @@ public final class GithubFilter extends Filter {
         GithubFilter other = (GithubFilter) o;
         return java.util.Objects.equals(this.events, other.events)
                 && java.util.Objects.equals(this.include, other.include)
+                && java.util.Objects.equals(this.exclude, other.exclude)
                 && super.equals(other);
     }
 
@@ -203,6 +228,7 @@ public final class GithubFilter extends Filter {
         int result = super.hashCode();
         result = (result * PRIME) + (this.events == null ? 43 : this.events.hashCode());
         result = (result * PRIME) + (this.include == null ? 43 : this.include.hashCode());
+        result = (result * PRIME) + (this.exclude == null ? 43 : this.exclude.hashCode());
         return result;
     }
 }
