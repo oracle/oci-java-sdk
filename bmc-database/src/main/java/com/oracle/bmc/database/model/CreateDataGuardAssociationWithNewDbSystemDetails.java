@@ -483,6 +483,15 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
+        private DataCollectionOptions dataCollectionOptions;
+
+        public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
+            this.dataCollectionOptions = dataCollectionOptions;
+            this.__explicitlySet__.add("dataCollectionOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -513,7 +522,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.dbSystemFreeformTags,
                             this.dbSystemDefinedTags,
                             this.databaseFreeformTags,
-                            this.databaseDefinedTags);
+                            this.databaseDefinedTags,
+                            this.dataCollectionOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -597,6 +607,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("databaseDefinedTags")) {
                 this.databaseDefinedTags(model.getDatabaseDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
+                this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
             return this;
         }
     }
@@ -638,7 +651,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.Map<String, String> dbSystemFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags,
             java.util.Map<String, String> databaseFreeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags,
+            DataCollectionOptions dataCollectionOptions) {
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
@@ -665,6 +679,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.dbSystemDefinedTags = dbSystemDefinedTags;
         this.databaseFreeformTags = databaseFreeformTags;
         this.databaseDefinedTags = databaseDefinedTags;
+        this.dataCollectionOptions = dataCollectionOptions;
     }
 
     /**
@@ -1089,6 +1104,13 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         return databaseDefinedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
+    private final DataCollectionOptions dataCollectionOptions;
+
+    public DataCollectionOptions getDataCollectionOptions() {
+        return dataCollectionOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1122,6 +1144,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", dbSystemDefinedTags=").append(String.valueOf(this.dbSystemDefinedTags));
         sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
         sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
+        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -1156,6 +1179,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.dbSystemDefinedTags, other.dbSystemDefinedTags)
                 && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
                 && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
+                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
     }
 
@@ -1209,6 +1233,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.databaseDefinedTags == null
                                 ? 43
                                 : this.databaseDefinedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataCollectionOptions == null
+                                ? 43
+                                : this.dataCollectionOptions.hashCode());
         return result;
     }
 }

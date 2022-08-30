@@ -64,12 +64,32 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         * @param networkSecurityGroupIds the value to set
+         * @return this builder
+         **/
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateEndpointDetails build() {
-            PrivateEndpointDetails model = new PrivateEndpointDetails(this.vcnId, this.subnetId);
+            PrivateEndpointDetails model =
+                    new PrivateEndpointDetails(
+                            this.vcnId, this.subnetId, this.networkSecurityGroupIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +103,9 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
+                this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
             }
             return this;
         }
@@ -100,10 +123,12 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
     }
 
     @Deprecated
-    public PrivateEndpointDetails(String vcnId, String subnetId) {
+    public PrivateEndpointDetails(
+            String vcnId, String subnetId, java.util.List<String> networkSecurityGroupIds) {
         super();
         this.vcnId = vcnId;
         this.subnetId = subnetId;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
     }
 
     /**
@@ -138,6 +163,22 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
         return subnetId;
     }
 
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -154,6 +195,8 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(")");
         return sb.toString();
     }
@@ -170,6 +213,8 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
         PrivateEndpointDetails other = (PrivateEndpointDetails) o;
         return java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && super.equals(other);
     }
 
@@ -179,6 +224,11 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
         return result;
     }
 }

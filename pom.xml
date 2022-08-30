@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.41.0</version>
+  <version>2.41.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -686,6 +686,7 @@
     </dependencies>
   </dependencyManagement>
   <modules>
+    <module>bmc-enforcer-rules</module>
     <module>bmc-audit</module>
     <module>bmc-bom</module>
     <module>bmc-circuitbreaker</module>
