@@ -58,7 +58,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.goldengate.SdkClientsMetadata",
     "com.oracle.bmc.governancerulescontrolplane.SdkClientsMetadata",
     "com.oracle.bmc.healthchecks.SdkClientsMetadata",
-    "com.oracle.bmc.identity.IdentityClient",
+    "com.oracle.bmc.identity.SdkClientsMetadata",
     "com.oracle.bmc.identitydataplane.SdkClientsMetadata",
     "com.oracle.bmc.jms.SdkClientsMetadata",
     "com.oracle.bmc.keymanagement.SdkClientsMetadata",
