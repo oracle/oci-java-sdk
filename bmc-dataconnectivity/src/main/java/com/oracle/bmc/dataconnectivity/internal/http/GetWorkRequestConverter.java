@@ -142,7 +142,7 @@ public class GetWorkRequestConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "retry-after",
                                                     retryAfterHeader.get().get(0),
-                                                    Float.class));
+                                                    Integer.class));
                                 }
 
                                 com.oracle.bmc.dataconnectivity.responses.GetWorkRequestResponse

@@ -7,22 +7,7 @@ package com.oracle.bmc.dataconnectivity.responses;
 import com.oracle.bmc.dataconnectivity.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-public class GetConnectionValidationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
-     */
-    private String etag;
-
-    /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
-     * @return the value
-     */
-    public String getEtag() {
-        return etag;
-    }
-
+public class DeriveEntitiesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -41,35 +26,32 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * The returned ConnectionValidation instance.
+     * The returned DeriveEntities instance.
      */
-    private com.oracle.bmc.dataconnectivity.model.ConnectionValidation connectionValidation;
+    private com.oracle.bmc.dataconnectivity.model.DeriveEntities deriveEntities;
 
     /**
-     * The returned ConnectionValidation instance.
+     * The returned DeriveEntities instance.
      * @return the value
      */
-    public com.oracle.bmc.dataconnectivity.model.ConnectionValidation getConnectionValidation() {
-        return connectionValidation;
+    public com.oracle.bmc.dataconnectivity.model.DeriveEntities getDeriveEntities() {
+        return deriveEntities;
     }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
-        "etag",
         "opcRequestId",
-        "connectionValidation"
+        "deriveEntities"
     })
-    private GetConnectionValidationResponse(
+    private DeriveEntitiesResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
-            String etag,
             String opcRequestId,
-            com.oracle.bmc.dataconnectivity.model.ConnectionValidation connectionValidation) {
+            com.oracle.bmc.dataconnectivity.model.DeriveEntities deriveEntities) {
         super(__httpStatusCode__, headers);
-        this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.connectionValidation = connectionValidation;
+        this.deriveEntities = deriveEntities;
     }
 
     public static class Builder {
@@ -84,23 +66,6 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
 
         public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
-            return this;
-        }
-
-        /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
-         */
-        private String etag;
-
-        /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
-         * @param etag the value to set
-         * @return this builder
-         */
-        public Builder etag(String etag) {
-            this.etag = etag;
             return this;
         }
 
@@ -124,18 +89,18 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * The returned ConnectionValidation instance.
+         * The returned DeriveEntities instance.
          */
-        private com.oracle.bmc.dataconnectivity.model.ConnectionValidation connectionValidation;
+        private com.oracle.bmc.dataconnectivity.model.DeriveEntities deriveEntities;
 
         /**
-         * The returned ConnectionValidation instance.
-         * @param connectionValidation the value to set
+         * The returned DeriveEntities instance.
+         * @param deriveEntities the value to set
          * @return this builder
          */
-        public Builder connectionValidation(
-                com.oracle.bmc.dataconnectivity.model.ConnectionValidation connectionValidation) {
-            this.connectionValidation = connectionValidation;
+        public Builder deriveEntities(
+                com.oracle.bmc.dataconnectivity.model.DeriveEntities deriveEntities) {
+            this.deriveEntities = deriveEntities;
             return this;
         }
 
@@ -143,12 +108,11 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(GetConnectionValidationResponse o) {
+        public Builder copy(DeriveEntitiesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
-            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            connectionValidation(o.getConnectionValidation());
+            deriveEntities(o.getDeriveEntities());
 
             return this;
         }
@@ -157,9 +121,9 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
          * Build the response object.
          * @return the response object
          */
-        public GetConnectionValidationResponse build() {
-            return new GetConnectionValidationResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, connectionValidation);
+        public DeriveEntitiesResponse build() {
+            return new DeriveEntitiesResponse(
+                    __httpStatusCode__, headers, opcRequestId, deriveEntities);
         }
     }
 
@@ -176,9 +140,8 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",connectionValidation=").append(String.valueOf(connectionValidation));
+        sb.append(",deriveEntities=").append(String.valueOf(deriveEntities));
         sb.append(")");
         return sb.toString();
     }
@@ -188,28 +151,24 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetConnectionValidationResponse)) {
+        if (!(o instanceof DeriveEntitiesResponse)) {
             return false;
         }
 
-        GetConnectionValidationResponse other = (GetConnectionValidationResponse) o;
+        DeriveEntitiesResponse other = (DeriveEntitiesResponse) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.connectionValidation, other.connectionValidation);
+                && java.util.Objects.equals(this.deriveEntities, other.deriveEntities);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.connectionValidation == null
-                                ? 43
-                                : this.connectionValidation.hashCode());
+                        + (this.deriveEntities == null ? 43 : this.deriveEntities.hashCode());
         return result;
     }
 }

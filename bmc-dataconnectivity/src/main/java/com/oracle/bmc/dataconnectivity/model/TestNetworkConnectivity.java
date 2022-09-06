@@ -54,13 +54,13 @@ public final class TestNetworkConnectivity
             return this;
         }
         /**
-         * True if the data asset is has a valid network path.
+         * True if the data asset has a valid network path.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReachable")
         private Boolean isReachable;
 
         /**
-         * True if the data asset is has a valid network path.
+         * True if the data asset has a valid network path.
          * @param isReachable the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class TestNetworkConnectivity
     }
 
     /**
-     * True if the data asset is has a valid network path.
+     * True if the data asset has a valid network path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReachable")
     private final Boolean isReachable;
 
     /**
-     * True if the data asset is has a valid network path.
+     * True if the data asset has a valid network path.
      * @return the value
      **/
     public Boolean getIsReachable() {

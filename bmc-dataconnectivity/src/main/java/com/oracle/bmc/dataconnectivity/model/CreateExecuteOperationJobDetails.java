@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Input details to execute operation.
+ * Input details to execute an operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -54,13 +54,13 @@ public final class CreateExecuteOperationJobDetails
             return this;
         }
         /**
-         * Collection of input parameters supplied.
+         * Collection of the input parameters supplied.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
         private java.util.List<OperationInputRecord> inputRecords;
 
         /**
-         * Collection of input parameters supplied.
+         * Collection of the input parameters supplied.
          * @param inputRecords the value to set
          * @return this builder
          **/
@@ -124,13 +124,13 @@ public final class CreateExecuteOperationJobDetails
     }
 
     /**
-     * Collection of input parameters supplied.
+     * Collection of the input parameters supplied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
     private final java.util.List<OperationInputRecord> inputRecords;
 
     /**
-     * Collection of input parameters supplied.
+     * Collection of the input parameters supplied.
      * @return the value
      **/
     public java.util.List<OperationInputRecord> getInputRecords() {

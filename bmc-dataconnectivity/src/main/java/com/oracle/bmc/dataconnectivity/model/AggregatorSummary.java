@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A summary type containing information about the object's aggregator including its type, key, name and description.
+ * A summary type containing information about the object's aggregator including its type, key, name, and description.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

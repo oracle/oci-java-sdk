@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A summary of profiling results of a specefic attribute.
+ * A summary of profiling results of a specific attribute.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -69,13 +69,13 @@ public class AttributeProfileResult extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Name of attribute
+     * Name of the attribute
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of attribute
+     * Name of the attribute
      * @return the value
      **/
     public String getName() {
@@ -125,13 +125,13 @@ public class AttributeProfileResult extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Top N value frequencies for the column as described already in profile config topNValueFrequency property.
+     * Top N value frequencies for the column as described already in the topNValueFrequency profile config property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueFrequencies")
     private final java.util.List<ObjectFreqStat> valueFrequencies;
 
     /**
-     * Top N value frequencies for the column as described already in profile config topNValueFrequency property.
+     * Top N value frequencies for the column as described already in the topNValueFrequency profile config property.
      * @return the value
      **/
     public java.util.List<ObjectFreqStat> getValueFrequencies() {

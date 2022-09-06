@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The endpoint details for a private endpoint.
+ * The endpoint details of a private endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -124,13 +124,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
             return this;
         }
         /**
-         * The ocid of private endpoint resource.
+         * The OCID of the private endpoint resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peId")
         private String peId;
 
         /**
-         * The ocid of private endpoint resource.
+         * The OCID of the private endpoint resource.
          * @param peId the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
             return this;
         }
         /**
-         * The compartmentId of private endpoint resource.
+         * The compartmentId of the private endpoint resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartmentId of private endpoint resource.
+         * The compartmentId of the private endpoint resource.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -156,13 +156,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
             return this;
         }
         /**
-         * The IP address of dns proxy.
+         * The IP address of the DNS proxy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
         private String dnsProxyIp;
 
         /**
-         * The IP address of dns proxy.
+         * The IP address of the DNS proxy.
          * @param dnsProxyIp the value to set
          * @return this builder
          **/
@@ -172,13 +172,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
             return this;
         }
         /**
-         * The ocid of private endpoint resource.
+         * The OCID of the private endpoint resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
         /**
-         * The ocid of private endpoint resource.
+         * The OCID of the private endpoint resource.
          * @param privateEndpointIp the value to set
          * @return this builder
          **/
@@ -188,13 +188,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
             return this;
         }
         /**
-         * Array of dns zones to be use during private endpoint resolution.
+         * Array of DNS zones to be used during the private endpoint resolution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
         /**
-         * Array of dns zones to be use during private endpoint resolution.
+         * Array of DNS zones to be used during the private endpoint resolution.
          * @param dnsZones the value to set
          * @return this builder
          **/
@@ -365,13 +365,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
     }
 
     /**
-     * The ocid of private endpoint resource.
+     * The OCID of the private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peId")
     private final String peId;
 
     /**
-     * The ocid of private endpoint resource.
+     * The OCID of the private endpoint resource.
      * @return the value
      **/
     public String getPeId() {
@@ -379,13 +379,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
     }
 
     /**
-     * The compartmentId of private endpoint resource.
+     * The compartmentId of the private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartmentId of private endpoint resource.
+     * The compartmentId of the private endpoint resource.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -393,13 +393,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
     }
 
     /**
-     * The IP address of dns proxy.
+     * The IP address of the DNS proxy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
     private final String dnsProxyIp;
 
     /**
-     * The IP address of dns proxy.
+     * The IP address of the DNS proxy.
      * @return the value
      **/
     public String getDnsProxyIp() {
@@ -407,13 +407,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
     }
 
     /**
-     * The ocid of private endpoint resource.
+     * The OCID of the private endpoint resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
 
     /**
-     * The ocid of private endpoint resource.
+     * The OCID of the private endpoint resource.
      * @return the value
      **/
     public String getPrivateEndpointIp() {
@@ -421,13 +421,13 @@ public final class DpEndpointFromPrivate extends DpEndpoint {
     }
 
     /**
-     * Array of dns zones to be use during private endpoint resolution.
+     * Array of DNS zones to be used during the private endpoint resolution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
     /**
-     * Array of dns zones to be use during private endpoint resolution.
+     * Array of DNS zones to be used during the private endpoint resolution.
      * @return the value
      **/
     public java.util.List<String> getDnsZones() {

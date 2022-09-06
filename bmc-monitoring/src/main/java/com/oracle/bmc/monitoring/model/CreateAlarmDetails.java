@@ -34,6 +34,7 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
         "pendingDuration",
         "severity",
         "body",
+        "isNotificationsPerMetricDimensionEnabled",
         "messageFormat",
         "destinations",
         "repeatNotificationDuration",
@@ -54,6 +55,7 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
             String pendingDuration,
             Alarm.Severity severity,
             String body,
+            Boolean isNotificationsPerMetricDimensionEnabled,
             MessageFormat messageFormat,
             java.util.List<String> destinations,
             String repeatNotificationDuration,
@@ -73,6 +75,7 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
         this.pendingDuration = pendingDuration;
         this.severity = severity;
         this.body = body;
+        this.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
         this.messageFormat = messageFormat;
         this.destinations = destinations;
         this.repeatNotificationDuration = repeatNotificationDuration;
@@ -409,6 +412,28 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
+         * Example: {@code true}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
+        private Boolean isNotificationsPerMetricDimensionEnabled;
+
+        /**
+         * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
+         * Example: {@code true}
+         *
+         * @param isNotificationsPerMetricDimensionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isNotificationsPerMetricDimensionEnabled(
+                Boolean isNotificationsPerMetricDimensionEnabled) {
+            this.isNotificationsPerMetricDimensionEnabled =
+                    isNotificationsPerMetricDimensionEnabled;
+            this.__explicitlySet__.add("isNotificationsPerMetricDimensionEnabled");
+            return this;
+        }
+        /**
          * The format to use for notification messages sent from this alarm. The formats are:
          * * {@code RAW} - Raw JSON blob. Default value.
          * * {@code PRETTY_JSON}: JSON with new lines and indents.
@@ -585,6 +610,7 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
                             this.pendingDuration,
                             this.severity,
                             this.body,
+                            this.isNotificationsPerMetricDimensionEnabled,
                             this.messageFormat,
                             this.destinations,
                             this.repeatNotificationDuration,
@@ -632,6 +658,10 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("body")) {
                 this.body(model.getBody());
+            }
+            if (model.wasPropertyExplicitlySet("isNotificationsPerMetricDimensionEnabled")) {
+                this.isNotificationsPerMetricDimensionEnabled(
+                        model.getIsNotificationsPerMetricDimensionEnabled());
             }
             if (model.wasPropertyExplicitlySet("messageFormat")) {
                 this.messageFormat(model.getMessageFormat());
@@ -972,6 +1002,24 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
+     * Example: {@code true}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
+    private final Boolean isNotificationsPerMetricDimensionEnabled;
+
+    /**
+     * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
+    public Boolean getIsNotificationsPerMetricDimensionEnabled() {
+        return isNotificationsPerMetricDimensionEnabled;
+    }
+
+    /**
      * The format to use for notification messages sent from this alarm. The formats are:
      * * {@code RAW} - Raw JSON blob. Default value.
      * * {@code PRETTY_JSON}: JSON with new lines and indents.
@@ -1181,6 +1229,8 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", pendingDuration=").append(String.valueOf(this.pendingDuration));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", body=").append(String.valueOf(this.body));
+        sb.append(", isNotificationsPerMetricDimensionEnabled=")
+                .append(String.valueOf(this.isNotificationsPerMetricDimensionEnabled));
         sb.append(", messageFormat=").append(String.valueOf(this.messageFormat));
         sb.append(", destinations=").append(String.valueOf(this.destinations));
         sb.append(", repeatNotificationDuration=")
@@ -1215,6 +1265,9 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.pendingDuration, other.pendingDuration)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.body, other.body)
+                && java.util.Objects.equals(
+                        this.isNotificationsPerMetricDimensionEnabled,
+                        other.isNotificationsPerMetricDimensionEnabled)
                 && java.util.Objects.equals(this.messageFormat, other.messageFormat)
                 && java.util.Objects.equals(this.destinations, other.destinations)
                 && java.util.Objects.equals(
@@ -1255,6 +1308,11 @@ public final class CreateAlarmDetails extends com.oracle.bmc.http.internal.Expli
                         + (this.pendingDuration == null ? 43 : this.pendingDuration.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isNotificationsPerMetricDimensionEnabled == null
+                                ? 43
+                                : this.isNotificationsPerMetricDimensionEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.messageFormat == null ? 43 : this.messageFormat.hashCode());

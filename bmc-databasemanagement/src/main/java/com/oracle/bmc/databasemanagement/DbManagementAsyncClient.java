@@ -1184,6 +1184,55 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePreferredCredentialResponse> deletePreferredCredential(
+            DeletePreferredCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>
+                    handler) {
+        LOG.trace("Called async deletePreferredCredential");
+        final DeletePreferredCredentialRequest interceptedRequest =
+                DeletePreferredCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePreferredCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeletePreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/DeletePreferredCredential");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeletePreferredCredentialResponse>
+                transformer =
+                        DeletePreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePreferredCredentialRequest,
+                                DeletePreferredCredentialResponse>,
+                        java.util.concurrent.Future<DeletePreferredCredentialResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
             DropTablespaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1991,6 +2040,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetPdbMetricsRequest, GetPdbMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPreferredCredentialResponse> getPreferredCredential(
+            GetPreferredCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPreferredCredentialRequest, GetPreferredCredentialResponse>
+                    handler) {
+        LOG.trace("Called async getPreferredCredential");
+        final GetPreferredCredentialRequest interceptedRequest =
+                GetPreferredCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPreferredCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetPreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/GetPreferredCredential");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPreferredCredentialResponse>
+                transformer =
+                        GetPreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPreferredCredentialRequest, GetPreferredCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPreferredCredentialRequest, GetPreferredCredentialResponse>,
+                        java.util.concurrent.Future<GetPreferredCredentialResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPreferredCredentialRequest, GetPreferredCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3008,6 +3104,54 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListOptimizerStatisticsCollectionOperationsRequest,
                     ListOptimizerStatisticsCollectionOperationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreferredCredentialsResponse> listPreferredCredentials(
+            ListPreferredCredentialsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>
+                    handler) {
+        LOG.trace("Called async listPreferredCredentials");
+        final ListPreferredCredentialsRequest interceptedRequest =
+                ListPreferredCredentialsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPreferredCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListPreferredCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/ListPreferredCredentials");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListPreferredCredentialsResponse>
+                transformer =
+                        ListPreferredCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>,
+                        java.util.concurrent.Future<ListPreferredCredentialsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4253,6 +4397,59 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<TestPreferredCredentialResponse> testPreferredCredential(
+            TestPreferredCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            TestPreferredCredentialRequest, TestPreferredCredentialResponse>
+                    handler) {
+        LOG.trace("Called async testPreferredCredential");
+        final TestPreferredCredentialRequest interceptedRequest =
+                TestPreferredCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestPreferredCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "TestPreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/TestPreferredCredential");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, TestPreferredCredentialResponse>
+                transformer =
+                        TestPreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        TestPreferredCredentialRequest, TestPreferredCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TestPreferredCredentialRequest, TestPreferredCredentialResponse>,
+                        java.util.concurrent.Future<TestPreferredCredentialResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTestPreferredCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TestPreferredCredentialRequest, TestPreferredCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDbManagementPrivateEndpointResponse>
             updateDbManagementPrivateEndpoint(
                     UpdateDbManagementPrivateEndpointRequest request,
@@ -4401,6 +4598,60 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePreferredCredentialResponse> updatePreferredCredential(
+            UpdatePreferredCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>
+                    handler) {
+        LOG.trace("Called async updatePreferredCredential");
+        final UpdatePreferredCredentialRequest interceptedRequest =
+                UpdatePreferredCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePreferredCredentialConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdatePreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/UpdatePreferredCredential");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdatePreferredCredentialResponse>
+                transformer =
+                        UpdatePreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePreferredCredentialRequest,
+                                UpdatePreferredCredentialResponse>,
+                        java.util.concurrent.Future<UpdatePreferredCredentialResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePreferredCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

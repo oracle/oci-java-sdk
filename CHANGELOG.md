@@ -3,6 +3,35 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.42.0 - 2022-09-06
+### Added
+- Support for generic REST, OCI Streaming service, and Lake House connectors in the Data Connectivity Management service
+- Support for connecting to the Data Catalog service in the Data Connectivity Management service
+- Support for Kerberos and SSL for HDFS operations in the Data Connectivity Management service
+- Support for excel-formatted data and default columns in the Data Connectivity Management service
+- Support for reporting connector usage in the Data Connectivity Management service
+- Support for preferred credentials for performing privileged operations in the Database Management service
+- Support for passing a content encoding when posting metrics in the Monitoring service
+
+### Breaking Changes
+- Support for retries by default on some operations of the Data Connectivity Management service
+- Method `public com.oracle.bmc.dataconnectivity.responses.DeleteConnectionValidationResponse deleteConnectionValidation(com.oracle.bmc.dataconnectivity.requests.DeleteConnectionValidationRequest)` has been removed from `com.oracle.bmc.dataconnectivity.DataConnectivityManagement` in the Data Connectivity Management service
+- Method `public com.oracle.bmc.dataconnectivity.responses.GetConnectionValidationResponse getConnectionValidation(com.oracle.bmc.dataconnectivity.requests.GetConnectionValidationRequest)` has been removed from `com.oracle.bmc.dataconnectivity.DataConnectivityManagement` in the Data Connectivity Management service
+- Method `public com.oracle.bmc.dataconnectivity.responses.ListConnectionValidationsResponse listConnectionValidations(com.oracle.bmc.dataconnectivity.requests.ListConnectionValidationsRequest)` has been removed from `com.oracle.bmc.dataconnectivity.DataConnectivityManagement` in the Data Connectivity Management service
+- Method `public java.lang.Iterable listConnectionValidationsRecordIterator(com.oracle.bmc.dataconnectivity.requests.ListConnectionValidationsRequest)` has been removed from `com.oracle.bmc.dataconnectivity.DataConnectivityManagementPaginators` in the Data Connectivity Management service
+- Method `public java.lang.Iterable listConnectionValidationsResponseIterator(com.oracle.bmc.dataconnectivity.requests.ListConnectionValidationsRequest)` has been removed from `com.oracle.bmc.dataconnectivity.DataConnectivityManagementPaginators` in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.model.ConnectionValidationSummaryCollection` has been removed in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.requests.DeleteConnectionValidationRequest` has been removed in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.requests.GetConnectionValidationRequest` has been removed in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.requests.ListConnectionValidationsRequest` has been removed in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.requests.ListConnectionValidationsRequest$SortBy` has been removed in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.requests.ListConnectionValidationsRequest$SortOrder` has been removed in the Data Connectivity Management service
+- Method `public java.lang.String getResourceId()` has been removed from `com.oracle.bmc.dataconnectivity.requests.ListWorkRequestsRequest` in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.responses.DeleteConnectionValidationResponse` has been removed in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.responses.GetConnectionValidationResponse` has been removed in the Data Connectivity Management service
+- Return type of method `public java.lang.Float getRetryAfter()` has been changed to `java.lang.Integer` in the response `com.oracle.bmc.dataconnectivity.responses.GetWorkRequestResponse` in the Data Connectivity Management service
+- Class `com.oracle.bmc.dataconnectivity.responses.ListConnectionValidationsResponse` has been removed in the Data Connectivity Management service
+
 ## 2.41.1 - 2022-08-30
 ### Added
 - Support for opting out of guest VM event collection, health metrics, diagnostics logs, and traces in the Database service

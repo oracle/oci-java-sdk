@@ -30,13 +30,13 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * unique id of specefic data asset type.
+         * The unique ID of the specific data asset type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * unique id of specefic data asset type.
+         * The unique ID of the specific data asset type.
          * @param key the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * desctription for the specific data asset type.
+         * Description for the specific data asset type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * desctription for the specific data asset type.
+         * Description for the specific data asset type.
          * @param description the value to set
          * @return this builder
          **/
@@ -116,13 +116,13 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * unique id of specefic data asset type.
+     * The unique ID of the specific data asset type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * unique id of specefic data asset type.
+     * The unique ID of the specific data asset type.
      * @return the value
      **/
     public String getKey() {
@@ -144,13 +144,13 @@ public final class TypeSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * desctription for the specific data asset type.
+     * Description for the specific data asset type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * desctription for the specific data asset type.
+     * Description for the specific data asset type.
      * @return the value
      **/
     public String getDescription() {

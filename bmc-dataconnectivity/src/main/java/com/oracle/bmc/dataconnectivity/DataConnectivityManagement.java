@@ -8,7 +8,7 @@ import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
 
 /**
- * Use the DCMS APIs to perform Metadata/Data operations.
+ * Use the Data Connectivity Management Service APIs to perform common extract, load, and transform (ETL) tasks.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
@@ -53,7 +53,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * The Endpoint will be moved to the desired compartment.
+     * The endpoint will be moved to the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -67,7 +67,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
             ChangeEndpointCompartmentRequest request);
 
     /**
-     * The registry will be moved to the desired compartment.
+     * The registry will be moved to the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,7 +81,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
             ChangeRegistryCompartmentRequest request);
 
     /**
-     * Attaches list of DataAssets to the given endpoint
+     * Attaches a list of data assets to the given endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -97,7 +97,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection API.
@@ -109,7 +109,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectionValidation API.
@@ -122,7 +122,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateConnectivityValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectivityValidation API.
@@ -135,7 +135,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataAsset API.
@@ -143,11 +143,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateDataAssetResponse createDataAsset(CreateDataAssetRequest request);
 
     /**
-     * Provide data preview on live schema
+     * Provide data preview on live schema.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateDataPreviewExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataPreview API.
@@ -155,11 +155,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateDataPreviewResponse createDataPreview(CreateDataPreviewRequest request);
 
     /**
-     * Execute data profiling on live schema
+     * Execute data profiling on live schema.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateDataProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataProfile API.
@@ -167,11 +167,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateDataProfileResponse createDataProfile(CreateDataProfileRequest request);
 
     /**
-     * DeRereferenced a dcms artifact.
+     * Dereferenced a dcms artifact.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateDeReferenceArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeReferenceArtifact API.
@@ -180,7 +180,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
             CreateDeReferenceArtifactRequest request);
 
     /**
-     * Detaches list of DataAssets to the given endpoint
+     * Detaches a list of data assets to the given endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -192,7 +192,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateDetachDataAssetResponse createDetachDataAsset(CreateDetachDataAssetRequest request);
 
     /**
-     * Creates a new Data Connectivity Management Endpoint ready for performing data Connectivity.
+     * Creates a new Data Connectivity Management endpoint ready to perform data connectivity.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -209,7 +209,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateEntityShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntityShape API.
@@ -230,11 +230,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
             CreateExecuteOperationJobRequest request);
 
     /**
-     * Creates a folder under a specefied registry.
+     * Creates a folder under a specified registry.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFolder API.
@@ -242,11 +242,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateFolderResponse createFolder(CreateFolderRequest request);
 
     /**
-     * This endpoint is used to create a connectivity task (like PushdownTask).
+     * This endpoint is used to create a connectivity task (such as PushdownTask).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateFullPushDownTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFullPushDownTask API.
@@ -258,7 +258,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/CreateReferenceArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReferenceArtifact API.
@@ -266,7 +266,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateReferenceArtifactResponse createReferenceArtifact(CreateReferenceArtifactRequest request);
 
     /**
-     * Creates a new Data Connectivity Management Registry ready for performing data Connectivity Management.
+     * Creates a new Data Connectivity Management registry ready to perform data connectivity management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -279,7 +279,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     CreateRegistryResponse createRegistry(CreateRegistryRequest request);
 
     /**
-     * Execute network validation on selected data assets associated with the provided private endpoint
+     * Execute network validation on the selected data assets associated with the provided private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -304,19 +304,6 @@ public interface DataConnectivityManagement extends AutoCloseable {
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
 
     /**
-     * Deletes a connection validation.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/DeleteConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnectionValidation API.
-     */
-    DeleteConnectionValidationResponse deleteConnectionValidation(
-            DeleteConnectionValidationRequest request);
-
-    /**
      * Removes a data asset using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -329,7 +316,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     DeleteDataAssetResponse deleteDataAsset(DeleteDataAssetRequest request);
 
     /**
-     * Deletes a Data Connectivity Management Endpoint resource by identifier
+     * Deletes a Data Connectivity Management endpoint resource by its identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -366,7 +353,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
             DeleteNetworkConnectivityStatusRequest request);
 
     /**
-     * Deletes a Data Connectivity Management Registry resource by identifier
+     * Deletes a Data Connectivity Management registry resource by its identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -378,11 +365,23 @@ public interface DataConnectivityManagement extends AutoCloseable {
     DeleteRegistryResponse deleteRegistry(DeleteRegistryRequest request);
 
     /**
-     * Retrieves the connection details using the specified identifier.
+     * Get the Derived Entities from the EntityFlowMode and reference key of DataObject
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/DeriveEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeriveEntities API.
+     */
+    DeriveEntitiesResponse deriveEntities(DeriveEntitiesRequest request);
+
+    /**
+     * Retrieves the connection details using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
@@ -390,23 +389,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetConnectionResponse getConnection(GetConnectionRequest request);
 
     /**
-     * Retrieves a connection validation using the specified identifier.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectionValidation API.
-     */
-    GetConnectionValidationResponse getConnectionValidation(GetConnectionValidationRequest request);
-
-    /**
      * Retrieves details of a data asset using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataAsset API.
@@ -418,7 +405,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetDataEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataEntity API.
@@ -426,11 +413,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetDataEntityResponse getDataEntity(GetDataEntityRequest request);
 
     /**
-     * Gets a Data Connectivity Management Endpoint by identifier
+     * Gets a Data Connectivity Management endpoint by its identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEndpoint API.
@@ -438,11 +425,23 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetEndpointResponse getEndpoint(GetEndpointRequest request);
 
     /**
-     * Get the operation status or operation execution result
+     * This endpoint is used to fetch connector-specific engine configurations.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetEngineConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEngineConfigurations API.
+     */
+    GetEngineConfigurationsResponse getEngineConfigurations(GetEngineConfigurationsRequest request);
+
+    /**
+     * Get the status or the result of the execution.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetExecuteOperationJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecuteOperationJob API.
@@ -454,7 +453,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFolder API.
@@ -462,11 +461,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetFolderResponse getFolder(GetFolderRequest request);
 
     /**
-     * Get Status of network reachability check, with the timestamp when the status was last checked, for a given PrivateEndpoint-DataAsset pair
+     * Get the status of network reachability check, with the timestamp of when the status was last checked, for a given PrivateEndpoint-DataAsset pair.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetNetworkConnectivityStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkConnectivityStatus API.
@@ -475,11 +474,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
             GetNetworkConnectivityStatusRequest request);
 
     /**
-     * Retrieves the details of operation with given resource name.
+     * Retrieves the details of operation with the given resource name.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetOperationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOperation API.
@@ -487,11 +486,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetOperationResponse getOperation(GetOperationRequest request);
 
     /**
-     * Gets a Data Connectivity Management Registry by identifier
+     * Retrieves a Data Connectivity Management registry using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetRegistryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRegistry API.
@@ -503,7 +502,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetSchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchema API.
@@ -511,12 +510,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetSchemaResponse getSchema(GetSchemaRequest request);
 
     /**
-     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetType API.
@@ -528,7 +527,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
@@ -536,24 +535,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Retrieves a list of connection validations within the specified registry.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListConnectionValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnectionValidations API.
-     */
-    ListConnectionValidationsResponse listConnectionValidations(
-            ListConnectionValidationsRequest request);
-
-    /**
      * Retrieves a list of all connections.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
@@ -566,7 +552,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListDataAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataAssets API.
@@ -579,7 +565,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListDataEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataEntities API.
@@ -587,12 +573,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListDataEntitiesResponse listDataEntities(ListDataEntitiesRequest request);
 
     /**
-     * Returns a list of Data Connectivity Management Endpoints.
+     * Returns a list of Data Connectivity Management endpoints.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEndpoints API.
@@ -600,11 +586,11 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListEndpointsResponse listEndpoints(ListEndpointsRequest request);
 
     /**
-     * Retrieves a list of all folders.
+     * Retrieves a list of all the folders.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListFoldersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFolders API.
@@ -612,12 +598,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListFoldersResponse listFolders(ListFoldersRequest request);
 
     /**
-     * Lists the summary of operations present in the schema identified by schema name.
+     * Lists the summary of operations that are present in the schema, identified by the schema name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListOperationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOperations API.
@@ -630,7 +616,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListReferenceArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReferenceArtifacts API.
@@ -638,12 +624,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListReferenceArtifactsResponse listReferenceArtifacts(ListReferenceArtifactsRequest request);
 
     /**
-     * Returns a list of Data Connectivity Management Registries.
+     * Retrieves a list of Data Connectivity Management registries.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListRegistriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRegistries API.
@@ -655,7 +641,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListSchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchemas API.
@@ -663,12 +649,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListSchemasResponse listSchemas(ListSchemasRequest request);
 
     /**
-     * This endpoint retrieves list of all the supported connector types
+     * This endpoint retrieves a list of all the supported connector types.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTypes API.
@@ -676,12 +662,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListTypesResponse listTypes(ListTypesRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
@@ -689,12 +675,12 @@ public interface DataConnectivityManagement extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a (paginated) list of logs for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
@@ -707,7 +693,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
@@ -739,7 +725,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     UpdateDataAssetResponse updateDataAsset(UpdateDataAssetRequest request);
 
     /**
-     * Updates the Data Connectivity Management Endpoint
+     * Updates the Data Connectivity Management endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -751,7 +737,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request);
 
     /**
-     * Updates a folder under a specefied registry.
+     * Updates a folder under a specified registry.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -763,7 +749,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     UpdateFolderResponse updateFolder(UpdateFolderRequest request);
 
     /**
-     * Updates the Data Connectivity Management Registry
+     * Updates the Data Connectivity Management Registry.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -775,7 +761,7 @@ public interface DataConnectivityManagement extends AutoCloseable {
     UpdateRegistryResponse updateRegistry(UpdateRegistryRequest request);
 
     /**
-     * Validates the dataAsset network Reachability.
+     * Validates the dataAsset network reachability.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -28,7 +28,8 @@ public final class UpdateEndpointDetails
         "description",
         "displayName",
         "endpointSize",
-        "nsgIds"
+        "nsgIds",
+        "dnsZones"
     })
     public UpdateEndpointDetails(
             java.util.Map<String, String> freeformTags,
@@ -36,7 +37,8 @@ public final class UpdateEndpointDetails
             String description,
             String displayName,
             Integer endpointSize,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            java.util.List<String> dnsZones) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -44,12 +46,13 @@ public final class UpdateEndpointDetails
         this.displayName = displayName;
         this.endpointSize = endpointSize;
         this.nsgIds = nsgIds;
+        this.dnsZones = dnsZones;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -57,7 +60,7 @@ public final class UpdateEndpointDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -106,13 +109,13 @@ public final class UpdateEndpointDetails
             return this;
         }
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * The Data Connectivity Management registry display name; registries can be renamed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * The Data Connectivity Management registry display name; registries can be renamed.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -122,13 +125,13 @@ public final class UpdateEndpointDetails
             return this;
         }
         /**
-         * Update Endpoint size for reverse connection capacity.
+         * Update endpoint size for reverse connection capacity.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointSize")
         private Integer endpointSize;
 
         /**
-         * Update Endpoint size for reverse connection capacity.
+         * Update endpoint size for reverse connection capacity.
          * @param endpointSize the value to set
          * @return this builder
          **/
@@ -138,19 +141,39 @@ public final class UpdateEndpointDetails
             return this;
         }
         /**
-         * List of NSGs to which the Private Endpoint VNIC must be added.
+         * The list of NSGs to which the Private Endpoint VNIC must be added.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of NSGs to which the Private Endpoint VNIC must be added.
+         * The list of NSGs to which the Private Endpoint VNIC must be added.
          * @param nsgIds the value to set
          * @return this builder
          **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * List of DNS zones to be used by the data assets.
+         * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
+        private java.util.List<String> dnsZones;
+
+        /**
+         * List of DNS zones to be used by the data assets.
+         * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+         *
+         * @param dnsZones the value to set
+         * @return this builder
+         **/
+        public Builder dnsZones(java.util.List<String> dnsZones) {
+            this.dnsZones = dnsZones;
+            this.__explicitlySet__.add("dnsZones");
             return this;
         }
 
@@ -165,7 +188,8 @@ public final class UpdateEndpointDetails
                             this.description,
                             this.displayName,
                             this.endpointSize,
-                            this.nsgIds);
+                            this.nsgIds,
+                            this.dnsZones);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -192,6 +216,9 @@ public final class UpdateEndpointDetails
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
             return this;
         }
     }
@@ -208,7 +235,7 @@ public final class UpdateEndpointDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -216,7 +243,7 @@ public final class UpdateEndpointDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -258,13 +285,13 @@ public final class UpdateEndpointDetails
     }
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * The Data Connectivity Management registry display name; registries can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * The Data Connectivity Management registry display name; registries can be renamed.
      * @return the value
      **/
     public String getDisplayName() {
@@ -272,13 +299,13 @@ public final class UpdateEndpointDetails
     }
 
     /**
-     * Update Endpoint size for reverse connection capacity.
+     * Update endpoint size for reverse connection capacity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointSize")
     private final Integer endpointSize;
 
     /**
-     * Update Endpoint size for reverse connection capacity.
+     * Update endpoint size for reverse connection capacity.
      * @return the value
      **/
     public Integer getEndpointSize() {
@@ -286,17 +313,35 @@ public final class UpdateEndpointDetails
     }
 
     /**
-     * List of NSGs to which the Private Endpoint VNIC must be added.
+     * The list of NSGs to which the Private Endpoint VNIC must be added.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of NSGs to which the Private Endpoint VNIC must be added.
+     * The list of NSGs to which the Private Endpoint VNIC must be added.
      * @return the value
      **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    /**
+     * List of DNS zones to be used by the data assets.
+     * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
+    private final java.util.List<String> dnsZones;
+
+    /**
+     * List of DNS zones to be used by the data assets.
+     * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getDnsZones() {
+        return dnsZones;
     }
 
     @Override
@@ -319,6 +364,7 @@ public final class UpdateEndpointDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", endpointSize=").append(String.valueOf(this.endpointSize));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", dnsZones=").append(String.valueOf(this.dnsZones));
         sb.append(")");
         return sb.toString();
     }
@@ -339,6 +385,7 @@ public final class UpdateEndpointDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.endpointSize, other.endpointSize)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.dnsZones, other.dnsZones)
                 && super.equals(other);
     }
 
@@ -352,6 +399,7 @@ public final class UpdateEndpointDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.endpointSize == null ? 43 : this.endpointSize.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.dnsZones == null ? 43 : this.dnsZones.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

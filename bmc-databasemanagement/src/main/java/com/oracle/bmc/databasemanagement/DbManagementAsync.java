@@ -313,6 +313,23 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the preferred credential based on the credentialName.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePreferredCredentialResponse> deletePreferredCredential(
+            DeletePreferredCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>
+                    handler);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
      *
      *
@@ -604,6 +621,23 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetPdbMetricsResponse> getPdbMetrics(
             GetPdbMetricsRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
+                    handler);
+
+    /**
+     * Gets the preferred credential details for a Managed Database based on credentialName.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPreferredCredentialResponse> getPreferredCredential(
+            GetPreferredCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPreferredCredentialRequest, GetPreferredCredentialResponse>
                     handler);
 
     /**
@@ -985,6 +1019,23 @@ public interface DbManagementAsync extends AutoCloseable {
                                     ListOptimizerStatisticsCollectionOperationsRequest,
                                     ListOptimizerStatisticsCollectionOperationsResponse>
                             handler);
+
+    /**
+     * Gets the list of preferred credentials for a given Managed Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPreferredCredentialsResponse> listPreferredCredentials(
+            ListPreferredCredentialsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>
+                    handler);
 
     /**
      * Gets the list of users on whose behalf the current user acts as proxy.
@@ -1423,6 +1474,23 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Tests the preferred credential.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TestPreferredCredentialResponse> testPreferredCredential(
+            TestPreferredCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            TestPreferredCredentialRequest, TestPreferredCredentialResponse>
+                    handler);
+
+    /**
      * Updates one or more attributes of a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
@@ -1470,6 +1538,23 @@ public interface DbManagementAsync extends AutoCloseable {
             UpdateManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Updates the preferred credential based on the credentialName.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePreferredCredentialResponse> updatePreferredCredential(
+            UpdatePreferredCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>
                     handler);
 
     /**

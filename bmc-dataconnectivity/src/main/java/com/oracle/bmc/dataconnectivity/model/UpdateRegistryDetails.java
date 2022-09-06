@@ -38,16 +38,16 @@ public final class UpdateRegistryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -58,16 +58,16 @@ public final class UpdateRegistryDetails
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -79,13 +79,13 @@ public final class UpdateRegistryDetails
             return this;
         }
         /**
-         * Data Connectivity Management Registry description
+         * Data Connectivity Management Registry description.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Data Connectivity Management Registry description
+         * Data Connectivity Management Registry description.
          * @param description the value to set
          * @return this builder
          **/
@@ -95,13 +95,13 @@ public final class UpdateRegistryDetails
             return this;
         }
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * Data Connectivity Management Registry display name, registries can be renamed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * Data Connectivity Management Registry display name, registries can be renamed.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -157,16 +157,16 @@ public final class UpdateRegistryDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
      **/
@@ -175,16 +175,16 @@ public final class UpdateRegistryDetails
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a registry. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      **/
@@ -193,13 +193,13 @@ public final class UpdateRegistryDetails
     }
 
     /**
-     * Data Connectivity Management Registry description
+     * Data Connectivity Management Registry description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Data Connectivity Management Registry description
+     * Data Connectivity Management Registry description.
      * @return the value
      **/
     public String getDescription() {
@@ -207,13 +207,13 @@ public final class UpdateRegistryDetails
     }
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * Data Connectivity Management Registry display name, registries can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * Data Connectivity Management Registry display name, registries can be renamed.
      * @return the value
      **/
     public String getDisplayName() {

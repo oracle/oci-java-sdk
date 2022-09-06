@@ -27,6 +27,14 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class WriteOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
+        private java.util.Map<String, String> derivedAttributes;
+
+        public Builder derivedAttributes(java.util.Map<String, String> derivedAttributes) {
+            this.derivedAttributes = derivedAttributes;
+            this.__explicitlySet__.add("derivedAttributes");
+            return this;
+        }
         /**
          * The object key.
          **/
@@ -44,13 +52,13 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             return this;
         }
         /**
-         * The object's model version.
+         * The model version of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * The object's model version.
+         * The model version of the object.
          * @param modelVersion the value to set
          * @return this builder
          **/
@@ -153,13 +161,13 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             return this;
         }
         /**
-         * The number of rows are rejected based on which operation will error out.
+         * The number of rows are rejected based on the operation that errors out.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rejectLimit")
         private Integer rejectLimit;
 
         /**
-         * The number of rows are rejected based on which operation will error out.
+         * The number of rows are rejected based on the operation that errors out.
          * @param rejectLimit the value to set
          * @return this builder
          **/
@@ -175,6 +183,7 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
         public WriteOperationConfig build() {
             WriteOperationConfig model =
                     new WriteOperationConfig(
+                            this.derivedAttributes,
                             this.key,
                             this.modelVersion,
                             this.parentRef,
@@ -194,6 +203,9 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WriteOperationConfig model) {
+            if (model.wasPropertyExplicitlySet("derivedAttributes")) {
+                this.derivedAttributes(model.getDerivedAttributes());
+            }
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
             }
@@ -244,6 +256,7 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
 
     @Deprecated
     public WriteOperationConfig(
+            java.util.Map<String, String> derivedAttributes,
             String key,
             String modelVersion,
             ParentReference parentRef,
@@ -255,7 +268,7 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
             UniqueKey mergeKey,
             Integer objectStatus,
             Integer rejectLimit) {
-        super();
+        super(derivedAttributes);
         this.key = key;
         this.modelVersion = modelVersion;
         this.parentRef = parentRef;
@@ -284,13 +297,13 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -413,13 +426,13 @@ public final class WriteOperationConfig extends AbstractDataOperationConfig {
     }
 
     /**
-     * The number of rows are rejected based on which operation will error out.
+     * The number of rows are rejected based on the operation that errors out.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rejectLimit")
     private final Integer rejectLimit;
 
     /**
-     * The number of rows are rejected based on which operation will error out.
+     * The number of rows are rejected based on the operation that errors out.
      * @return the value
      **/
     public Integer getRejectLimit() {

@@ -6,33 +6,79 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConnectionValidationRequest.
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetEngineConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetEngineConfigurationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-public class GetConnectionValidationRequest
+public class GetEngineConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * The key of the connection validation.
+     * The connection key.
      */
-    private String connectionValidationKey;
+    private String connectionKey;
 
     /**
-     * The key of the connection validation.
+     * The connection key.
      */
-    public String getConnectionValidationKey() {
-        return connectionValidationKey;
+    public String getConnectionKey() {
+        return connectionKey;
+    }
+    /**
+     * Specifies the runtime engine for the bulk read/write operation. Default is SPARK.
+     */
+    private EngineTypeQueryParam engineTypeQueryParam;
+
+    /**
+     * Specifies the runtime engine for the bulk read/write operation. Default is SPARK.
+     **/
+    public enum EngineTypeQueryParam {
+        Spark("SPARK"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, EngineTypeQueryParam> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EngineTypeQueryParam v : EngineTypeQueryParam.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        EngineTypeQueryParam(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EngineTypeQueryParam create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid EngineTypeQueryParam: " + key);
+        }
+    };
+
+    /**
+     * Specifies the runtime engine for the bulk read/write operation. Default is SPARK.
+     */
+    public EngineTypeQueryParam getEngineTypeQueryParam() {
+        return engineTypeQueryParam;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -51,32 +97,21 @@ public class GetConnectionValidationRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Endpoint Id used for getDataAssetFullDetails.
-     */
-    private String endpointId;
-
-    /**
-     * Endpoint Id used for getDataAssetFullDetails.
-     */
-    public String getEndpointId() {
-        return endpointId;
-    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GetConnectionValidationRequest, java.lang.Void> {
+                    GetEngineConfigurationsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -86,17 +121,32 @@ public class GetConnectionValidationRequest
         }
 
         /**
-         * The key of the connection validation.
+         * The connection key.
          */
-        private String connectionValidationKey = null;
+        private String connectionKey = null;
 
         /**
-         * The key of the connection validation.
-         * @param connectionValidationKey the value to set
+         * The connection key.
+         * @param connectionKey the value to set
          * @return this builder instance
          */
-        public Builder connectionValidationKey(String connectionValidationKey) {
-            this.connectionValidationKey = connectionValidationKey;
+        public Builder connectionKey(String connectionKey) {
+            this.connectionKey = connectionKey;
+            return this;
+        }
+
+        /**
+         * Specifies the runtime engine for the bulk read/write operation. Default is SPARK.
+         */
+        private EngineTypeQueryParam engineTypeQueryParam = null;
+
+        /**
+         * Specifies the runtime engine for the bulk read/write operation. Default is SPARK.
+         * @param engineTypeQueryParam the value to set
+         * @return this builder instance
+         */
+        public Builder engineTypeQueryParam(EngineTypeQueryParam engineTypeQueryParam) {
+            this.engineTypeQueryParam = engineTypeQueryParam;
             return this;
         }
 
@@ -118,21 +168,6 @@ public class GetConnectionValidationRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
-            return this;
-        }
-
-        /**
-         * Endpoint Id used for getDataAssetFullDetails.
-         */
-        private String endpointId = null;
-
-        /**
-         * Endpoint Id used for getDataAssetFullDetails.
-         * @param endpointId the value to set
-         * @return this builder instance
-         */
-        public Builder endpointId(String endpointId) {
-            this.endpointId = endpointId;
             return this;
         }
 
@@ -163,49 +198,49 @@ public class GetConnectionValidationRequest
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(GetConnectionValidationRequest o) {
+        public Builder copy(GetEngineConfigurationsRequest o) {
             registryId(o.getRegistryId());
-            connectionValidationKey(o.getConnectionValidationKey());
+            connectionKey(o.getConnectionKey());
+            engineTypeQueryParam(o.getEngineTypeQueryParam());
             opcRequestId(o.getOpcRequestId());
-            endpointId(o.getEndpointId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
         /**
-         * Build the instance of GetConnectionValidationRequest as configured by this builder
+         * Build the instance of GetEngineConfigurationsRequest as configured by this builder
          *
          * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
          * This is the preferred method to build an instance.
          *
-         * @return instance of GetConnectionValidationRequest
+         * @return instance of GetEngineConfigurationsRequest
          */
-        public GetConnectionValidationRequest build() {
-            GetConnectionValidationRequest request = buildWithoutInvocationCallback();
+        public GetEngineConfigurationsRequest build() {
+            GetEngineConfigurationsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
 
         /**
-         * Build the instance of GetConnectionValidationRequest as configured by this builder
+         * Build the instance of GetEngineConfigurationsRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of GetConnectionValidationRequest
+         * @return instance of GetEngineConfigurationsRequest
          */
-        public GetConnectionValidationRequest buildWithoutInvocationCallback() {
-            GetConnectionValidationRequest request = new GetConnectionValidationRequest();
+        public GetEngineConfigurationsRequest buildWithoutInvocationCallback() {
+            GetEngineConfigurationsRequest request = new GetEngineConfigurationsRequest();
             request.registryId = registryId;
-            request.connectionValidationKey = connectionValidationKey;
+            request.connectionKey = connectionKey;
+            request.engineTypeQueryParam = engineTypeQueryParam;
             request.opcRequestId = opcRequestId;
-            request.endpointId = endpointId;
             return request;
-            // new GetConnectionValidationRequest(registryId, connectionValidationKey, opcRequestId, endpointId);
+            // new GetEngineConfigurationsRequest(registryId, connectionKey, engineTypeQueryParam, opcRequestId);
         }
     }
 
@@ -216,9 +251,9 @@ public class GetConnectionValidationRequest
     public Builder toBuilder() {
         return new Builder()
                 .registryId(registryId)
-                .connectionValidationKey(connectionValidationKey)
-                .opcRequestId(opcRequestId)
-                .endpointId(endpointId);
+                .connectionKey(connectionKey)
+                .engineTypeQueryParam(engineTypeQueryParam)
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -235,9 +270,9 @@ public class GetConnectionValidationRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",registryId=").append(String.valueOf(this.registryId));
-        sb.append(",connectionValidationKey=").append(String.valueOf(this.connectionValidationKey));
+        sb.append(",connectionKey=").append(String.valueOf(this.connectionKey));
+        sb.append(",engineTypeQueryParam=").append(String.valueOf(this.engineTypeQueryParam));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",endpointId=").append(String.valueOf(this.endpointId));
         sb.append(")");
         return sb.toString();
     }
@@ -247,17 +282,16 @@ public class GetConnectionValidationRequest
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetConnectionValidationRequest)) {
+        if (!(o instanceof GetEngineConfigurationsRequest)) {
             return false;
         }
 
-        GetConnectionValidationRequest other = (GetConnectionValidationRequest) o;
+        GetEngineConfigurationsRequest other = (GetEngineConfigurationsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.registryId, other.registryId)
-                && java.util.Objects.equals(
-                        this.connectionValidationKey, other.connectionValidationKey)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.endpointId, other.endpointId);
+                && java.util.Objects.equals(this.connectionKey, other.connectionKey)
+                && java.util.Objects.equals(this.engineTypeQueryParam, other.engineTypeQueryParam)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
@@ -267,11 +301,13 @@ public class GetConnectionValidationRequest
         result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.connectionValidationKey == null
+                        + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.engineTypeQueryParam == null
                                 ? 43
-                                : this.connectionValidationKey.hashCode());
+                                : this.engineTypeQueryParam.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         return result;
     }
 }

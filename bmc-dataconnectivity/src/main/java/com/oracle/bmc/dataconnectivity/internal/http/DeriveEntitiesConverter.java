@@ -11,29 +11,26 @@ import com.oracle.bmc.dataconnectivity.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-public class DeleteConnectionValidationConverter {
+public class DeriveEntitiesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
-            org.slf4j.LoggerFactory.getLogger(DeleteConnectionValidationConverter.class);
+            org.slf4j.LoggerFactory.getLogger(DeriveEntitiesConverter.class);
 
-    public static com.oracle.bmc.dataconnectivity.requests.DeleteConnectionValidationRequest
-            interceptRequest(
-                    com.oracle.bmc.dataconnectivity.requests.DeleteConnectionValidationRequest
-                            request) {
+    public static com.oracle.bmc.dataconnectivity.requests.DeriveEntitiesRequest interceptRequest(
+            com.oracle.bmc.dataconnectivity.requests.DeriveEntitiesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            com.oracle.bmc.dataconnectivity.requests.DeleteConnectionValidationRequest request) {
+            com.oracle.bmc.dataconnectivity.requests.DeriveEntitiesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRegistryId(), "registryId must not be blank");
-        Validate.notBlank(
-                request.getConnectionValidationKey(), "connectionValidationKey must not be blank");
+        Validate.notNull(request.getDeriveEntitiesDetails(), "deriveEntitiesDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -42,29 +39,19 @@ public class DeleteConnectionValidationConverter {
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getRegistryId()))
-                        .path("connectionValidations")
-                        .path(
-                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
-                                        request.getConnectionValidationKey()));
-
-        if (request.getEndpointId() != null) {
-            target =
-                    target.queryParam(
-                            "endpointId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getEndpointId()));
-        }
+                        .path("actions")
+                        .path("deriveEntities");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
-        if (request.getIfMatch() != null) {
-            ib.header("if-match", request.getIfMatch());
-        }
-
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
         if (client.getClientConfigurator() != null) {
@@ -75,55 +62,65 @@ public class DeleteConnectionValidationConverter {
 
     public static java.util.function.Function<
                     javax.ws.rs.core.Response,
-                    com.oracle.bmc.dataconnectivity.responses.DeleteConnectionValidationResponse>
+                    com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse>
             fromResponse() {
         return fromResponse(java.util.Optional.empty());
     }
 
     public static java.util.function.Function<
                     javax.ws.rs.core.Response,
-                    com.oracle.bmc.dataconnectivity.responses.DeleteConnectionValidationResponse>
+                    com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse>
             fromResponse(java.util.Optional<com.oracle.bmc.ServiceDetails> serviceDetails) {
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
-                        com.oracle.bmc.dataconnectivity.responses
-                                .DeleteConnectionValidationResponse>
+                        com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse>
                 transformer =
                         new java.util.function.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.dataconnectivity.responses
-                                        .DeleteConnectionValidationResponse>() {
+                                        .DeriveEntitiesResponse>() {
                             @Override
-                            public com.oracle.bmc.dataconnectivity.responses
-                                            .DeleteConnectionValidationResponse
+                            public com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for com.oracle.bmc.dataconnectivity.responses.DeleteConnectionValidationResponse");
+                                        "Transform function invoked for com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse");
                                 final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.dataconnectivity.model
+                                                                .DeriveEntities>>
                                         responseFn;
                                 if (serviceDetails.isPresent()) {
                                     responseFn =
                                             RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.dataconnectivity.model
+                                                                    .DeriveEntities
+                                                            .class,
                                                     serviceDetails.get());
                                 } else {
-                                    responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.dataconnectivity.model
+                                                                    .DeriveEntities
+                                                            .class);
                                 }
 
-                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.dataconnectivity.model
+                                                        .DeriveEntities>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                com.oracle.bmc.dataconnectivity.responses
-                                                .DeleteConnectionValidationResponse.Builder
+                                com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse
+                                                .Builder
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
-                                                        .DeleteConnectionValidationResponse
-                                                        .builder()
+                                                        .DeriveEntitiesResponse.builder()
                                                         .__httpStatusCode__(rawResponse.getStatus())
                                                         .headers(headers);
+
+                                builder.deriveEntities(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
@@ -136,8 +133,7 @@ public class DeleteConnectionValidationConverter {
                                                     String.class));
                                 }
 
-                                com.oracle.bmc.dataconnectivity.responses
-                                                .DeleteConnectionValidationResponse
+                                com.oracle.bmc.dataconnectivity.responses.DeriveEntitiesResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

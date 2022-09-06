@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A {@code CompositeType} represents a type that is composed of a list of sub-types, for example an {@code Address} type.   The sub-types can be simple {@code DataType} or other {@code CompositeType} objects. Typically, a {@code CompositeType} may represent an arbitrarily deep hierarchy of types.
+ * A {@code CompositeType} represents a type that is composed of a list of sub-types, for example an {@code Address} type. The sub-types can be simple {@code DataType} or other {@code CompositeType} objects. Typically, a {@code CompositeType} may represent an arbitrarily deep hierarchy of types.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

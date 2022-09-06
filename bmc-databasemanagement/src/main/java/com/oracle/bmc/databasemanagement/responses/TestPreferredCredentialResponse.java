@@ -2,12 +2,12 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.dataconnectivity.responses;
+package com.oracle.bmc.databasemanagement.responses;
 
-import com.oracle.bmc.dataconnectivity.model.*;
+import com.oracle.bmc.databasemanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses.BmcResponse {
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public class TestPreferredCredentialResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
@@ -25,13 +25,36 @@ public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
-    private DeleteConnectionValidationResponse(
+    /**
+     * The returned TestPreferredCredentialStatus instance.
+     */
+    private com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
+            testPreferredCredentialStatus;
+
+    /**
+     * The returned TestPreferredCredentialStatus instance.
+     * @return the value
+     */
+    public com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
+            getTestPreferredCredentialStatus() {
+        return testPreferredCredentialStatus;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "testPreferredCredentialStatus"
+    })
+    private TestPreferredCredentialResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
+                    testPreferredCredentialStatus) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.testPreferredCredentialStatus = testPreferredCredentialStatus;
     }
 
     public static class Builder {
@@ -69,13 +92,32 @@ public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses
         }
 
         /**
+         * The returned TestPreferredCredentialStatus instance.
+         */
+        private com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
+                testPreferredCredentialStatus;
+
+        /**
+         * The returned TestPreferredCredentialStatus instance.
+         * @param testPreferredCredentialStatus the value to set
+         * @return this builder
+         */
+        public Builder testPreferredCredentialStatus(
+                com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus
+                        testPreferredCredentialStatus) {
+            this.testPreferredCredentialStatus = testPreferredCredentialStatus;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(DeleteConnectionValidationResponse o) {
+        public Builder copy(TestPreferredCredentialResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            testPreferredCredentialStatus(o.getTestPreferredCredentialStatus());
 
             return this;
         }
@@ -84,9 +126,9 @@ public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses
          * Build the response object.
          * @return the response object
          */
-        public DeleteConnectionValidationResponse build() {
-            return new DeleteConnectionValidationResponse(
-                    __httpStatusCode__, headers, opcRequestId);
+        public TestPreferredCredentialResponse build() {
+            return new TestPreferredCredentialResponse(
+                    __httpStatusCode__, headers, opcRequestId, testPreferredCredentialStatus);
         }
     }
 
@@ -104,6 +146,8 @@ public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",testPreferredCredentialStatus=")
+                .append(String.valueOf(testPreferredCredentialStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -113,12 +157,15 @@ public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses
         if (this == o) {
             return true;
         }
-        if (!(o instanceof DeleteConnectionValidationResponse)) {
+        if (!(o instanceof TestPreferredCredentialResponse)) {
             return false;
         }
 
-        DeleteConnectionValidationResponse other = (DeleteConnectionValidationResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        TestPreferredCredentialResponse other = (TestPreferredCredentialResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.testPreferredCredentialStatus, other.testPreferredCredentialStatus);
     }
 
     @Override
@@ -126,6 +173,11 @@ public class DeleteConnectionValidationResponse extends com.oracle.bmc.responses
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.testPreferredCredentialStatus == null
+                                ? 43
+                                : this.testPreferredCredentialStatus.hashCode());
         return result;
     }
 }

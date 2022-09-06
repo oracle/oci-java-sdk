@@ -31,13 +31,13 @@ public final class TypesSummaryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of Type summaries
+         * The array of type summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TypeSummary> items;
 
         /**
-         * The array of Type summaries
+         * The array of type summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class TypesSummaryCollection
     }
 
     /**
-     * The array of Type summaries
+     * The array of type summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TypeSummary> items;
 
     /**
-     * The array of Type summaries
+     * The array of type summaries.
      * @return the value
      **/
     public java.util.List<TypeSummary> getItems() {

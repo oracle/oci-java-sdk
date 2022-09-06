@@ -13,12 +13,12 @@ public class GetExecuteOperationJobRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -46,12 +46,12 @@ public class GetExecuteOperationJobRequest
         return schemaResourceName;
     }
     /**
-     * Job id returned by execute operation job api
+     * Job ID returned by the execute operation job API.
      */
     private String executeOperationJobKey;
 
     /**
-     * Job id returned by execute operation job api
+     * Job ID returned by the execute operation job API.
      */
     public String getExecuteOperationJobKey() {
         return executeOperationJobKey;
@@ -74,12 +74,12 @@ public class GetExecuteOperationJobRequest
         return opcRequestId;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     private String endpointId;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     public String getEndpointId() {
         return endpointId;
@@ -93,12 +93,12 @@ public class GetExecuteOperationJobRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -138,12 +138,12 @@ public class GetExecuteOperationJobRequest
         }
 
         /**
-         * Job id returned by execute operation job api
+         * Job ID returned by the execute operation job API.
          */
         private String executeOperationJobKey = null;
 
         /**
-         * Job id returned by execute operation job api
+         * Job ID returned by the execute operation job API.
          * @param executeOperationJobKey the value to set
          * @return this builder instance
          */
@@ -174,12 +174,12 @@ public class GetExecuteOperationJobRequest
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          */
         private String endpointId = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          * @param endpointId the value to set
          * @return this builder instance
          */
