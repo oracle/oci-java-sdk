@@ -13,12 +13,12 @@ public class ValidateDataAssetNetworkReachablityRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     private String endpointId;
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     public String getEndpointId() {
         return endpointId;
@@ -58,25 +58,25 @@ public class ValidateDataAssetNetworkReachablityRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     private String registryId;
 
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     public String getRegistryId() {
         return registryId;
@@ -90,12 +90,12 @@ public class ValidateDataAssetNetworkReachablityRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          */
         private String endpointId = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          * @param endpointId the value to set
          * @return this builder instance
          */
@@ -147,13 +147,13 @@ public class ValidateDataAssetNetworkReachablityRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -164,12 +164,12 @@ public class ValidateDataAssetNetworkReachablityRequest
         }
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          */
         private String registryId = null;
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          * @param registryId the value to set
          * @return this builder instance
          */

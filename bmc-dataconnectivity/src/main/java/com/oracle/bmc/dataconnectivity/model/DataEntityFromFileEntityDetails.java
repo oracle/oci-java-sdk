@@ -44,13 +44,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
             return this;
         }
         /**
-         * The object's model version.
+         * The model version of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * The object's model version.
+         * The model version of the object.
          * @param modelVersion the value to set
          * @return this builder
          **/
@@ -69,13 +69,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
             return this;
         }
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          * @param description the value to set
          * @return this builder
          **/
@@ -117,13 +117,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
             return this;
         }
         /**
-         * The external key for the object.
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object.
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -263,13 +263,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -430,13 +430,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -451,13 +451,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -465,13 +465,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
     }
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      * @return the value
      **/
     public String getDescription() {
@@ -493,13 +493,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
     }
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {
@@ -536,6 +536,7 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
         File("FILE"),
         Sql("SQL"),
         DataStore("DATA_STORE"),
+        Message("MESSAGE"),
         ;
 
         private final String value;
@@ -657,13 +658,13 @@ public final class DataEntityFromFileEntityDetails extends DataEntityDetails {
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {

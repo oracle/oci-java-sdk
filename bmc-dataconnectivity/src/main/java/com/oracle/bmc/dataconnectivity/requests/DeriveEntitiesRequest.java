@@ -6,50 +6,34 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/DeleteConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteConnectionValidationRequest.
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/DeriveEntitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeriveEntitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
-public class DeleteConnectionValidationRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+public class DeriveEntitiesRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * The key of the connection validation.
+     * The details needed to create the derived entities.
      */
-    private String connectionValidationKey;
+    private com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails deriveEntitiesDetails;
 
     /**
-     * The key of the connection validation.
+     * The details needed to create the derived entities.
      */
-    public String getConnectionValidationKey() {
-        return connectionValidationKey;
-    }
-    /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-     *
-     */
-    private String ifMatch;
-
-    /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-     *
-     */
-    public String getIfMatch() {
-        return ifMatch;
+    public com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails getDeriveEntitiesDetails() {
+        return deriveEntitiesDetails;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -69,31 +53,44 @@ public class DeleteConnectionValidationRequest
         return opcRequestId;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
+     *
      */
-    private String endpointId;
+    private String opcRetryToken;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
+     *
      */
-    public String getEndpointId() {
-        return endpointId;
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails getBody$() {
+        return deriveEntitiesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DeleteConnectionValidationRequest, java.lang.Void> {
+                    DeriveEntitiesRequest,
+                    com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -103,38 +100,19 @@ public class DeleteConnectionValidationRequest
         }
 
         /**
-         * The key of the connection validation.
+         * The details needed to create the derived entities.
          */
-        private String connectionValidationKey = null;
+        private com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails deriveEntitiesDetails =
+                null;
 
         /**
-         * The key of the connection validation.
-         * @param connectionValidationKey the value to set
+         * The details needed to create the derived entities.
+         * @param deriveEntitiesDetails the value to set
          * @return this builder instance
          */
-        public Builder connectionValidationKey(String connectionValidationKey) {
-            this.connectionValidationKey = connectionValidationKey;
-            return this;
-        }
-
-        /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-         *
-         */
-        private String ifMatch = null;
-
-        /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-         *
-         * @param ifMatch the value to set
-         * @return this builder instance
-         */
-        public Builder ifMatch(String ifMatch) {
-            this.ifMatch = ifMatch;
+        public Builder deriveEntitiesDetails(
+                com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails deriveEntitiesDetails) {
+            this.deriveEntitiesDetails = deriveEntitiesDetails;
             return this;
         }
 
@@ -160,17 +138,19 @@ public class DeleteConnectionValidationRequest
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
+         *
          */
-        private String endpointId = null;
+        private String opcRetryToken = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
-         * @param endpointId the value to set
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
+         *
+         * @param opcRetryToken the value to set
          * @return this builder instance
          */
-        public Builder endpointId(String endpointId) {
-            this.endpointId = endpointId;
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
             return this;
         }
 
@@ -201,51 +181,60 @@ public class DeleteConnectionValidationRequest
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(DeleteConnectionValidationRequest o) {
+        public Builder copy(DeriveEntitiesRequest o) {
             registryId(o.getRegistryId());
-            connectionValidationKey(o.getConnectionValidationKey());
-            ifMatch(o.getIfMatch());
+            deriveEntitiesDetails(o.getDeriveEntitiesDetails());
             opcRequestId(o.getOpcRequestId());
-            endpointId(o.getEndpointId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
         /**
-         * Build the instance of DeleteConnectionValidationRequest as configured by this builder
+         * Build the instance of DeriveEntitiesRequest as configured by this builder
          *
          * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
          * This is the preferred method to build an instance.
          *
-         * @return instance of DeleteConnectionValidationRequest
+         * @return instance of DeriveEntitiesRequest
          */
-        public DeleteConnectionValidationRequest build() {
-            DeleteConnectionValidationRequest request = buildWithoutInvocationCallback();
+        public DeriveEntitiesRequest build() {
+            DeriveEntitiesRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
         }
 
         /**
-         * Build the instance of DeleteConnectionValidationRequest as configured by this builder
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(com.oracle.bmc.dataconnectivity.model.DeriveEntitiesDetails body) {
+            deriveEntitiesDetails(body);
+            return this;
+        }
+
+        /**
+         * Build the instance of DeriveEntitiesRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of DeleteConnectionValidationRequest
+         * @return instance of DeriveEntitiesRequest
          */
-        public DeleteConnectionValidationRequest buildWithoutInvocationCallback() {
-            DeleteConnectionValidationRequest request = new DeleteConnectionValidationRequest();
+        public DeriveEntitiesRequest buildWithoutInvocationCallback() {
+            DeriveEntitiesRequest request = new DeriveEntitiesRequest();
             request.registryId = registryId;
-            request.connectionValidationKey = connectionValidationKey;
-            request.ifMatch = ifMatch;
+            request.deriveEntitiesDetails = deriveEntitiesDetails;
             request.opcRequestId = opcRequestId;
-            request.endpointId = endpointId;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new DeleteConnectionValidationRequest(registryId, connectionValidationKey, ifMatch, opcRequestId, endpointId);
+            // new DeriveEntitiesRequest(registryId, deriveEntitiesDetails, opcRequestId, opcRetryToken);
         }
     }
 
@@ -256,10 +245,9 @@ public class DeleteConnectionValidationRequest
     public Builder toBuilder() {
         return new Builder()
                 .registryId(registryId)
-                .connectionValidationKey(connectionValidationKey)
-                .ifMatch(ifMatch)
+                .deriveEntitiesDetails(deriveEntitiesDetails)
                 .opcRequestId(opcRequestId)
-                .endpointId(endpointId);
+                .opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -276,10 +264,9 @@ public class DeleteConnectionValidationRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",registryId=").append(String.valueOf(this.registryId));
-        sb.append(",connectionValidationKey=").append(String.valueOf(this.connectionValidationKey));
-        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",deriveEntitiesDetails=").append(String.valueOf(this.deriveEntitiesDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -289,18 +276,16 @@ public class DeleteConnectionValidationRequest
         if (this == o) {
             return true;
         }
-        if (!(o instanceof DeleteConnectionValidationRequest)) {
+        if (!(o instanceof DeriveEntitiesRequest)) {
             return false;
         }
 
-        DeleteConnectionValidationRequest other = (DeleteConnectionValidationRequest) o;
+        DeriveEntitiesRequest other = (DeriveEntitiesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.registryId, other.registryId)
-                && java.util.Objects.equals(
-                        this.connectionValidationKey, other.connectionValidationKey)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.deriveEntitiesDetails, other.deriveEntitiesDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.endpointId, other.endpointId);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -310,12 +295,13 @@ public class DeleteConnectionValidationRequest
         result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.connectionValidationKey == null
+                        + (this.deriveEntitiesDetails == null
                                 ? 43
-                                : this.connectionValidationKey.hashCode());
-        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+                                : this.deriveEntitiesDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

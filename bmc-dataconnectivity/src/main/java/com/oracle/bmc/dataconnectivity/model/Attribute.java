@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Registry Attribute Object, to get connector details
+ * The attribute object fo the registry that can be used to get the connector details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,13 +49,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of of the Attribute.
+         * The name of of the attribute.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of of the Attribute.
+         * The name of of the attribute.
          * @param name the value to set
          * @return this builder
          **/
@@ -65,13 +65,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * True if Attribute is sensitive.
+         * True if attribute is sensitive.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
         private Boolean isSensitive;
 
         /**
-         * True if Attribute is sensitive.
+         * True if attribute is sensitive.
          * @param isSensitive the value to set
          * @return this builder
          **/
@@ -81,13 +81,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * True if Attribute is mandatory.
+         * True if attribute is mandatory.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
         /**
-         * True if Attribute is mandatory.
+         * True if attribute is mandatory.
          * @param isMandatory the value to set
          * @return this builder
          **/
@@ -97,13 +97,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * True if Attribute is generated.
+         * True if attribute is generated.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
         private Boolean isGenerated;
 
         /**
-         * True if Attribute is generated.
+         * True if attribute is generated.
          * @param isGenerated the value to set
          * @return this builder
          **/
@@ -113,13 +113,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * True if Attribute is encoded.
+         * True if attribute is encoded.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBase64Encoded")
         private Boolean isBase64Encoded;
 
         /**
-         * True if Attribute is encoded.
+         * True if attribute is encoded.
          * @param isBase64Encoded the value to set
          * @return this builder
          **/
@@ -129,13 +129,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * List of valid key list
+         * The list of valid keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("validKeyList")
         private java.util.List<String> validKeyList;
 
         /**
-         * List of valid key list
+         * The list of valid keys.
          * @param validKeyList the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * Attribute type details
+         * The attribute type details.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
         private String attributeType;
 
         /**
-         * Attribute type details
+         * The attribute type details.
          * @param attributeType the value to set
          * @return this builder
          **/
@@ -219,13 +219,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * The name of of the Attribute.
+     * The name of of the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of of the Attribute.
+     * The name of of the attribute.
      * @return the value
      **/
     public String getName() {
@@ -233,13 +233,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * True if Attribute is sensitive.
+     * True if attribute is sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSensitive")
     private final Boolean isSensitive;
 
     /**
-     * True if Attribute is sensitive.
+     * True if attribute is sensitive.
      * @return the value
      **/
     public Boolean getIsSensitive() {
@@ -247,13 +247,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * True if Attribute is mandatory.
+     * True if attribute is mandatory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
     private final Boolean isMandatory;
 
     /**
-     * True if Attribute is mandatory.
+     * True if attribute is mandatory.
      * @return the value
      **/
     public Boolean getIsMandatory() {
@@ -261,13 +261,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * True if Attribute is generated.
+     * True if attribute is generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGenerated")
     private final Boolean isGenerated;
 
     /**
-     * True if Attribute is generated.
+     * True if attribute is generated.
      * @return the value
      **/
     public Boolean getIsGenerated() {
@@ -275,13 +275,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * True if Attribute is encoded.
+     * True if attribute is encoded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBase64Encoded")
     private final Boolean isBase64Encoded;
 
     /**
-     * True if Attribute is encoded.
+     * True if attribute is encoded.
      * @return the value
      **/
     public Boolean getIsBase64Encoded() {
@@ -289,13 +289,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * List of valid key list
+     * The list of valid keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validKeyList")
     private final java.util.List<String> validKeyList;
 
     /**
-     * List of valid key list
+     * The list of valid keys.
      * @return the value
      **/
     public java.util.List<String> getValidKeyList() {
@@ -303,13 +303,13 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * Attribute type details
+     * The attribute type details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     private final String attributeType;
 
     /**
-     * Attribute type details
+     * The attribute type details.
      * @return the value
      **/
     public String getAttributeType() {

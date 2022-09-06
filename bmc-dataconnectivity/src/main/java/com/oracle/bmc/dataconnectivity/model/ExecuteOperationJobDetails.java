@@ -34,13 +34,13 @@ public final class ExecuteOperationJobDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Job id to track job status.
+         * Job ID to track the job status.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("executeOperationJobId")
         private String executeOperationJobId;
 
         /**
-         * Job id to track job status.
+         * Job ID to track the job status.
          * @param executeOperationJobId the value to set
          * @return this builder
          **/
@@ -50,13 +50,13 @@ public final class ExecuteOperationJobDetails
             return this;
         }
         /**
-         * The status of job
+         * The status of the job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The status of job
+         * The status of the job.
          * @param status the value to set
          * @return this builder
          **/
@@ -66,13 +66,13 @@ public final class ExecuteOperationJobDetails
             return this;
         }
         /**
-         * Error message if job creation is failed.
+         * Error message when the job creation fails.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Error message if job creation is failed.
+         * Error message when the job creation fails.
          * @param errorMessage the value to set
          * @return this builder
          **/
@@ -122,13 +122,13 @@ public final class ExecuteOperationJobDetails
     }
 
     /**
-     * Job id to track job status.
+     * Job ID to track the job status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executeOperationJobId")
     private final String executeOperationJobId;
 
     /**
-     * Job id to track job status.
+     * Job ID to track the job status.
      * @return the value
      **/
     public String getExecuteOperationJobId() {
@@ -136,7 +136,7 @@ public final class ExecuteOperationJobDetails
     }
 
     /**
-     * The status of job
+     * The status of the job.
      **/
     public enum Status {
         Failed("FAILED"),
@@ -183,13 +183,13 @@ public final class ExecuteOperationJobDetails
         }
     };
     /**
-     * The status of job
+     * The status of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The status of job
+     * The status of the job.
      * @return the value
      **/
     public Status getStatus() {
@@ -197,13 +197,13 @@ public final class ExecuteOperationJobDetails
     }
 
     /**
-     * Error message if job creation is failed.
+     * Error message when the job creation fails.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * Error message if job creation is failed.
+     * Error message when the job creation fails.
      * @return the value
      **/
     public String getErrorMessage() {

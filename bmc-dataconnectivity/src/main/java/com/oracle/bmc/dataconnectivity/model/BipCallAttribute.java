@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The call attributes impl
+ * The call attributes impl.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -35,13 +35,13 @@ public final class BipCallAttribute extends AbstractCallAttribute {
             return this;
         }
         /**
-         * Parameter to set offset
+         * The parameter to set offset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
         private String offsetParameter;
 
         /**
-         * Parameter to set offset
+         * The parameter to set offset.
          * @param offsetParameter the value to set
          * @return this builder
          **/
@@ -51,13 +51,13 @@ public final class BipCallAttribute extends AbstractCallAttribute {
             return this;
         }
         /**
-         * Parameter to fetch next set of rows
+         * The parameter to fetch the next set of rows.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
         private String fetchNextRowsParameter;
 
         /**
-         * Parameter to fetch next set of rows
+         * The parameter to fetch the next set of rows.
          * @param fetchNextRowsParameter the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class BipCallAttribute extends AbstractCallAttribute {
             return this;
         }
         /**
-         * Prefix for the staging DataAsset
+         * The prefix for the staging DataAsset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stagingPrefix")
         private String stagingPrefix;
 
         /**
-         * Prefix for the staging DataAsset
+         * The prefix for the staging DataAsset.
          * @param stagingPrefix the value to set
          * @return this builder
          **/
@@ -179,13 +179,13 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     }
 
     /**
-     * Parameter to set offset
+     * The parameter to set offset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetParameter")
     private final String offsetParameter;
 
     /**
-     * Parameter to set offset
+     * The parameter to set offset.
      * @return the value
      **/
     public String getOffsetParameter() {
@@ -193,13 +193,13 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     }
 
     /**
-     * Parameter to fetch next set of rows
+     * The parameter to fetch the next set of rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fetchNextRowsParameter")
     private final String fetchNextRowsParameter;
 
     /**
-     * Parameter to fetch next set of rows
+     * The parameter to fetch the next set of rows.
      * @return the value
      **/
     public String getFetchNextRowsParameter() {
@@ -221,13 +221,13 @@ public final class BipCallAttribute extends AbstractCallAttribute {
     }
 
     /**
-     * Prefix for the staging DataAsset
+     * The prefix for the staging DataAsset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stagingPrefix")
     private final String stagingPrefix;
 
     /**
-     * Prefix for the staging DataAsset
+     * The prefix for the staging DataAsset.
      * @return the value
      **/
     public String getStagingPrefix() {

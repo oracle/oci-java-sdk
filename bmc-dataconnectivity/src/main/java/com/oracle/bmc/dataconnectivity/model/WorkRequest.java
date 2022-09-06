@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A description of workrequest status
+ * A description of the status of the work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -55,13 +55,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * type of the work request
+         * Type of the work request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
-         * type of the work request
+         * Type of the work request.
          * @param operationType the value to set
          * @return this builder
          **/
@@ -71,13 +71,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * status of current work request.
+         * Status of the current work request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * status of current work request.
+         * Status of the current work request.
          * @param status the value to set
          * @return this builder
          **/
@@ -87,13 +87,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The id of the work request.
+         * The ID of the work request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the work request.
+         * The ID of the work request.
          * @param id the value to set
          * @return this builder
          **/
@@ -103,20 +103,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be scoped to
+         * The OCID of the compartment that contains the work request. Work requests should be scoped to
          * the same compartment as the resource the work request affects. If the work request affects multiple resources,
          * and those resources are not in the same compartment, it is up to the service team to pick the primary
-         * resource whose compartment should be used
+         * resource whose compartment should be used.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be scoped to
+         * The OCID of the compartment that contains the work request. Work requests should be scoped to
          * the same compartment as the resource the work request affects. If the work request affects multiple resources,
          * and those resources are not in the same compartment, it is up to the service team to pick the primary
-         * resource whose compartment should be used
+         * resource whose compartment should be used.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -143,13 +143,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Percentage of the request completed.
+         * The percentage of the request completed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
-         * Percentage of the request completed.
+         * The percentage of the request completed.
          * @param percentComplete the value to set
          * @return this builder
          **/
@@ -283,7 +283,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * type of the work request
+     * Type of the work request.
      **/
     public enum OperationType {
         Create("CREATE"),
@@ -333,13 +333,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     };
     /**
-     * type of the work request
+     * Type of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
-     * type of the work request
+     * Type of the work request.
      * @return the value
      **/
     public OperationType getOperationType() {
@@ -347,7 +347,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * status of current work request.
+     * Status of the current work request.
      **/
     public enum Status {
         Accepted("ACCEPTED"),
@@ -398,13 +398,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     };
     /**
-     * status of current work request.
+     * Status of the current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * status of current work request.
+     * Status of the current work request.
      * @return the value
      **/
     public Status getStatus() {
@@ -412,13 +412,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      * @return the value
      **/
     public String getId() {
@@ -426,20 +426,20 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects multiple resources,
      * and those resources are not in the same compartment, it is up to the service team to pick the primary
-     * resource whose compartment should be used
+     * resource whose compartment should be used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects multiple resources,
      * and those resources are not in the same compartment, it is up to the service team to pick the primary
-     * resource whose compartment should be used
+     * resource whose compartment should be used.
      *
      * @return the value
      **/
@@ -462,13 +462,13 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Percentage of the request completed.
+     * The percentage of the request completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
-     * Percentage of the request completed.
+     * The percentage of the request completed.
      * @return the value
      **/
     public Float getPercentComplete() {

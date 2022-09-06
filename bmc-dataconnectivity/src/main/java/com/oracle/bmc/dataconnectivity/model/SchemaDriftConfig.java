@@ -42,13 +42,13 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+         * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
         private ExtraColumnHandling extraColumnHandling;
 
         /**
-         * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+         * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
          * @param extraColumnHandling the value to set
          * @return this builder
          **/
@@ -58,13 +58,13 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+         * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
         private MissingColumnHandling missingColumnHandling;
 
         /**
-         * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+         * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
          * @param missingColumnHandling the value to set
          * @return this builder
          **/
@@ -74,13 +74,13 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The setting for how to handle columns/fields with changed data types.
+         * The setting to handle columns/fields with changed data types.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
         private DataTypeChangeHandling dataTypeChangeHandling;
 
         /**
-         * The setting for how to handle columns/fields with changed data types.
+         * The setting to handle columns/fields with changed data types.
          * @param dataTypeChangeHandling the value to set
          * @return this builder
          **/
@@ -152,7 +152,7 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+     * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
      **/
     public enum ExtraColumnHandling {
         Allow("ALLOW"),
@@ -188,13 +188,13 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+     * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extraColumnHandling")
     private final ExtraColumnHandling extraColumnHandling;
 
     /**
-     * The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+     * The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
      * @return the value
      **/
     public ExtraColumnHandling getExtraColumnHandling() {
@@ -202,7 +202,7 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+     * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
      **/
     public enum MissingColumnHandling {
         Allow("ALLOW"),
@@ -238,13 +238,13 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+     * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingColumnHandling")
     private final MissingColumnHandling missingColumnHandling;
 
     /**
-     * The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+     * The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
      * @return the value
      **/
     public MissingColumnHandling getMissingColumnHandling() {
@@ -252,7 +252,7 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The setting for how to handle columns/fields with changed data types.
+     * The setting to handle columns/fields with changed data types.
      **/
     public enum DataTypeChangeHandling {
         Allow("ALLOW"),
@@ -288,13 +288,13 @@ public final class SchemaDriftConfig extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * The setting for how to handle columns/fields with changed data types.
+     * The setting to handle columns/fields with changed data types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeChangeHandling")
     private final DataTypeChangeHandling dataTypeChangeHandling;
 
     /**
-     * The setting for how to handle columns/fields with changed data types.
+     * The setting to handle columns/fields with changed data types.
      * @return the value
      **/
     public DataTypeChangeHandling getDataTypeChangeHandling() {

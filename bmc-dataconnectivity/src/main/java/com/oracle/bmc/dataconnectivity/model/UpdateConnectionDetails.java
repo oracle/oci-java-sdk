@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Properties used in connection update operations.
+ * Properties used in the update connection operations.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -105,13 +105,13 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -169,13 +169,13 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -194,13 +194,13 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
         private java.util.List<ConnectionProperty> connectionProperties;
 
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          * @param connectionProperties the value to set
          * @return this builder
          **/
@@ -211,13 +211,13 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * All the properties for the connection in a key-value map format.
+         * All the properties of the connection in a key-value map format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, Object> properties;
 
         /**
-         * All the properties for the connection in a key-value map format.
+         * All the properties of the connection in a key-value map format.
          * @param properties the value to set
          * @return this builder
          **/
@@ -243,13 +243,13 @@ public final class UpdateConnectionDetails
             return this;
         }
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          * @param isDefault the value to set
          * @return this builder
          **/
@@ -391,13 +391,13 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -447,13 +447,13 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -468,13 +468,13 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * The properties for the connection.
+     * The properties of the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
     private final java.util.List<ConnectionProperty> connectionProperties;
 
     /**
-     * The properties for the connection.
+     * The properties of the connection.
      * @return the value
      **/
     public java.util.List<ConnectionProperty> getConnectionProperties() {
@@ -482,13 +482,13 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * All the properties for the connection in a key-value map format.
+     * All the properties of the connection in a key-value map format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, Object> properties;
 
     /**
-     * All the properties for the connection in a key-value map format.
+     * All the properties of the connection in a key-value map format.
      * @return the value
      **/
     public java.util.Map<String, Object> getProperties() {
@@ -510,13 +510,13 @@ public final class UpdateConnectionDetails
     }
 
     /**
-     * The default property for the connection.
+     * The default property of the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * The default property for the connection.
+     * The default property of the connection.
      * @return the value
      **/
     public Boolean getIsDefault() {

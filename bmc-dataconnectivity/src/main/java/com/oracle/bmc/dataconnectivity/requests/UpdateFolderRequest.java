@@ -14,12 +14,12 @@ public class UpdateFolderRequest
                 com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -36,12 +36,12 @@ public class UpdateFolderRequest
         return folderKey;
     }
     /**
-     * The information needed to update a folder.
+     * The information required to update a folder.
      */
     private com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails updateFolderDetails;
 
     /**
-     * The information needed to update a folder.
+     * The information required to update a folder.
      */
     public com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails getUpdateFolderDetails() {
         return updateFolderDetails;
@@ -100,12 +100,12 @@ public class UpdateFolderRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -130,13 +130,13 @@ public class UpdateFolderRequest
         }
 
         /**
-         * The information needed to update a folder.
+         * The information required to update a folder.
          */
         private com.oracle.bmc.dataconnectivity.model.UpdateFolderDetails updateFolderDetails =
                 null;
 
         /**
-         * The information needed to update a folder.
+         * The information required to update a folder.
          * @param updateFolderDetails the value to set
          * @return this builder instance
          */

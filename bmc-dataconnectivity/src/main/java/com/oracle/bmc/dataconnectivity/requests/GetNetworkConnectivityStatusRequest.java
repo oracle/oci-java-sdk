@@ -13,12 +13,12 @@ public class GetNetworkConnectivityStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -52,25 +52,25 @@ public class GetNetworkConnectivityStatusRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     private String endpointId;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     public String getEndpointId() {
         return endpointId;
@@ -101,12 +101,12 @@ public class GetNetworkConnectivityStatusRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -152,13 +152,13 @@ public class GetNetworkConnectivityStatusRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -169,12 +169,12 @@ public class GetNetworkConnectivityStatusRequest
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          */
         private String endpointId = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          * @param endpointId the value to set
          * @return this builder instance
          */

@@ -12,12 +12,12 @@ import com.oracle.bmc.dataconnectivity.model.*;
 public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -100,12 +100,12 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         return fields;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      **/
     public enum SortBy {
         Id("id"),
@@ -142,7 +142,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -270,26 +270,37 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         return nameList;
     }
     /**
-     * This parameter can be used to specify whether entity search type is pattern search or not.
+     * This parameter can be used to specify whether entity search type is a pattern search.
      */
     private Boolean isPattern;
 
     /**
-     * This parameter can be used to specify whether entity search type is pattern search or not.
+     * This parameter can be used to specify whether entity search type is a pattern search.
      */
     public Boolean getIsPattern() {
         return isPattern;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     private String endpointId;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     public String getEndpointId() {
         return endpointId;
+    }
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    private java.util.List<String> includeTypes;
+
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    public java.util.List<String> getIncludeTypes() {
+        return includeTypes;
     }
 
     public static class Builder
@@ -300,12 +311,12 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -429,12 +440,12 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -519,12 +530,12 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * This parameter can be used to specify whether entity search type is pattern search or not.
+         * This parameter can be used to specify whether entity search type is a pattern search.
          */
         private Boolean isPattern = null;
 
         /**
-         * This parameter can be used to specify whether entity search type is pattern search or not.
+         * This parameter can be used to specify whether entity search type is a pattern search.
          * @param isPattern the value to set
          * @return this builder instance
          */
@@ -534,18 +545,42 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          */
         private String endpointId = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             return this;
+        }
+
+        /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         */
+        private java.util.List<String> includeTypes = null;
+
+        /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         * @param includeTypes the value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(java.util.List<String> includeTypes) {
+            this.includeTypes = includeTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. Artifact type which needs to be listed while listing Artifacts.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(String singularValue) {
+            return this.includeTypes(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -591,6 +626,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
             nameList(o.getNameList());
             isPattern(o.getIsPattern());
             endpointId(o.getEndpointId());
+            includeTypes(o.getIncludeTypes());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -638,8 +674,9 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
             request.nameList = nameList;
             request.isPattern = isPattern;
             request.endpointId = endpointId;
+            request.includeTypes = includeTypes;
             return request;
-            // new ListDataEntitiesRequest(registryId, connectionKey, schemaResourceName, name, page, type, limit, fields, sortBy, sortOrder, opcRequestId, apiMode, nameList, isPattern, endpointId);
+            // new ListDataEntitiesRequest(registryId, connectionKey, schemaResourceName, name, page, type, limit, fields, sortBy, sortOrder, opcRequestId, apiMode, nameList, isPattern, endpointId, includeTypes);
         }
     }
 
@@ -663,7 +700,8 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .apiMode(apiMode)
                 .nameList(nameList)
                 .isPattern(isPattern)
-                .endpointId(endpointId);
+                .endpointId(endpointId)
+                .includeTypes(includeTypes);
     }
 
     /**
@@ -694,6 +732,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",nameList=").append(String.valueOf(this.nameList));
         sb.append(",isPattern=").append(String.valueOf(this.isPattern));
         sb.append(",endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(",includeTypes=").append(String.valueOf(this.includeTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -723,7 +762,8 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.apiMode, other.apiMode)
                 && java.util.Objects.equals(this.nameList, other.nameList)
                 && java.util.Objects.equals(this.isPattern, other.isPattern)
-                && java.util.Objects.equals(this.endpointId, other.endpointId);
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.includeTypes, other.includeTypes);
     }
 
     @Override
@@ -751,6 +791,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.nameList == null ? 43 : this.nameList.hashCode());
         result = (result * PRIME) + (this.isPattern == null ? 43 : this.isPattern.hashCode());
         result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.includeTypes == null ? 43 : this.includeTypes.hashCode());
         return result;
     }
 }

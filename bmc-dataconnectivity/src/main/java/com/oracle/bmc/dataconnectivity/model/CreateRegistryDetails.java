@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The information about new Registry.
+ * The information about a new Registry.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,7 +46,7 @@ public final class CreateRegistryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -54,7 +54,7 @@ public final class CreateRegistryDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -103,13 +103,13 @@ public final class CreateRegistryDetails
             return this;
         }
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * The Data Connectivity Management Registry display name; registries can be renamed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * The Data Connectivity Management Registry display name; registries can be renamed.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -185,7 +185,7 @@ public final class CreateRegistryDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -193,7 +193,7 @@ public final class CreateRegistryDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -235,13 +235,13 @@ public final class CreateRegistryDetails
     }
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * The Data Connectivity Management Registry display name; registries can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * The Data Connectivity Management Registry display name; registries can be renamed.
      * @return the value
      **/
     public String getDisplayName() {

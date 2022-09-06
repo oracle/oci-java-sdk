@@ -28,13 +28,13 @@ public final class ObjectStorageWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies whether to write output to single-file or not.
+         * Specifies whether to write the output to a single file.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("writeToSingleFile")
         private Boolean writeToSingleFile;
 
         /**
-         * Specifies whether to write output to single-file or not.
+         * Specifies whether to write the output to a single file.
          * @param writeToSingleFile the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class ObjectStorageWriteAttributes extends AbstractWriteAttribute {
     }
 
     /**
-     * Specifies whether to write output to single-file or not.
+     * Specifies whether to write the output to a single file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("writeToSingleFile")
     private final Boolean writeToSingleFile;
 
     /**
-     * Specifies whether to write output to single-file or not.
+     * Specifies whether to write the output to a single file.
      * @return the value
      **/
     public Boolean getWriteToSingleFile() {

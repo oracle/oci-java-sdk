@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * DataAsset & Connection Registry Attributes
+ * DataAsset and Connection Registry Attributes
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * list of attributes for the dataAsset
+         * The list of attributes of the data asset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetAttributes")
         private java.util.List<Attribute> dataAssetAttributes;
 
         /**
-         * list of attributes for the dataAsset
+         * The list of attributes of the data asset.
          * @param dataAssetAttributes the value to set
          * @return this builder
          **/
@@ -47,13 +47,13 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Map of connectionType as key and List of attributes as value
+         * Mapping the connectionType as the key to the list of attributes as the value.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionAttributes")
         private java.util.Map<String, java.util.List<Attribute>> connectionAttributes;
 
         /**
-         * Map of connectionType as key and List of attributes as value
+         * Mapping the connectionType as the key to the list of attributes as the value.
          * @param connectionAttributes the value to set
          * @return this builder
          **/
@@ -99,13 +99,13 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * list of attributes for the dataAsset
+     * The list of attributes of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetAttributes")
     private final java.util.List<Attribute> dataAssetAttributes;
 
     /**
-     * list of attributes for the dataAsset
+     * The list of attributes of the data asset.
      * @return the value
      **/
     public java.util.List<Attribute> getDataAssetAttributes() {
@@ -113,13 +113,13 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Map of connectionType as key and List of attributes as value
+     * Mapping the connectionType as the key to the list of attributes as the value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionAttributes")
     private final java.util.Map<String, java.util.List<Attribute>> connectionAttributes;
 
     /**
-     * Map of connectionType as key and List of attributes as value
+     * Mapping the connectionType as the key to the list of attributes as the value.
      * @return the value
      **/
     public java.util.Map<String, java.util.List<Attribute>> getConnectionAttributes() {

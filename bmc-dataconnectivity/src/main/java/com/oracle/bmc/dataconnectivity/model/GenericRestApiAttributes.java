@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A list of connection validation summaries.
+ * Generic rest api specific attributes.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -16,44 +16,39 @@ package com.oracle.bmc.dataconnectivity.model;
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConnectionValidationSummaryCollection.Builder.class
+    builder = GenericRestApiAttributes.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectionValidationSummaryCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
-    @Deprecated
-    @java.beans.ConstructorProperties({"items"})
-    public ConnectionValidationSummaryCollection(
-            java.util.List<ConnectionValidationSummary> items) {
-        super();
-        this.items = items;
-    }
-
+public final class GenericRestApiAttributes extends AbstractOperationAttributes {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An array of connection validation summaries.
+         * The server Url serving operation.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("items")
-        private java.util.List<ConnectionValidationSummary> items;
+        @com.fasterxml.jackson.annotation.JsonProperty("serverUrl")
+        private String serverUrl;
 
         /**
-         * An array of connection validation summaries.
-         * @param items the value to set
+         * The server Url serving operation.
+         * @param serverUrl the value to set
          * @return this builder
          **/
-        public Builder items(java.util.List<ConnectionValidationSummary> items) {
-            this.items = items;
-            this.__explicitlySet__.add("items");
+        public Builder serverUrl(String serverUrl) {
+            this.serverUrl = serverUrl;
+            this.__explicitlySet__.add("serverUrl");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public ConnectionValidationSummaryCollection build() {
-            ConnectionValidationSummaryCollection model =
-                    new ConnectionValidationSummaryCollection(this.items);
+        public GenericRestApiAttributes build() {
+            GenericRestApiAttributes model = new GenericRestApiAttributes(this.serverUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,9 +56,9 @@ public final class ConnectionValidationSummaryCollection
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectionValidationSummaryCollection model) {
-            if (model.wasPropertyExplicitlySet("items")) {
-                this.items(model.getItems());
+        public Builder copy(GenericRestApiAttributes model) {
+            if (model.wasPropertyExplicitlySet("serverUrl")) {
+                this.serverUrl(model.getServerUrl());
             }
             return this;
         }
@@ -80,18 +75,24 @@ public final class ConnectionValidationSummaryCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of connection validation summaries.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("items")
-    private final java.util.List<ConnectionValidationSummary> items;
+    @Deprecated
+    public GenericRestApiAttributes(String serverUrl) {
+        super();
+        this.serverUrl = serverUrl;
+    }
 
     /**
-     * An array of connection validation summaries.
+     * The server Url serving operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serverUrl")
+    private final String serverUrl;
+
+    /**
+     * The server Url serving operation.
      * @return the value
      **/
-    public java.util.List<ConnectionValidationSummary> getItems() {
-        return items;
+    public String getServerUrl() {
+        return serverUrl;
     }
 
     @Override
@@ -106,9 +107,9 @@ public final class ConnectionValidationSummaryCollection
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("ConnectionValidationSummaryCollection(");
-        sb.append("super=").append(super.toString());
-        sb.append("items=").append(String.valueOf(this.items));
+        sb.append("GenericRestApiAttributes(");
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", serverUrl=").append(String.valueOf(this.serverUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -118,20 +119,19 @@ public final class ConnectionValidationSummaryCollection
         if (this == o) {
             return true;
         }
-        if (!(o instanceof ConnectionValidationSummaryCollection)) {
+        if (!(o instanceof GenericRestApiAttributes)) {
             return false;
         }
 
-        ConnectionValidationSummaryCollection other = (ConnectionValidationSummaryCollection) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        GenericRestApiAttributes other = (GenericRestApiAttributes) o;
+        return java.util.Objects.equals(this.serverUrl, other.serverUrl) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
-        int result = 1;
-        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result = (result * PRIME) + super.hashCode();
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.serverUrl == null ? 43 : this.serverUrl.hashCode());
         return result;
     }
 }

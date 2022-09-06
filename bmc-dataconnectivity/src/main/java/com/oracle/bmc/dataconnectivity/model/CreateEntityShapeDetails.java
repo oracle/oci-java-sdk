@@ -27,6 +27,10 @@ package com.oracle.bmc.dataconnectivity.model;
         name = "DATA_STORE_ENTITY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateEntityShapeFromMessage.class,
+        name = "MESSAGE_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateEntityShapeFromTable.class,
         name = "TABLE_ENTITY"
     ),
@@ -118,13 +122,13 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -139,13 +143,13 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -167,13 +171,13 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {
@@ -209,6 +213,8 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
         View("VIEW"),
         File("FILE"),
         Sql("SQL"),
+        DataStore("DATA_STORE"),
+        Message("MESSAGE"),
         ;
 
         private final String value;
@@ -323,13 +329,13 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -462,6 +468,7 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
         FileEntity("FILE_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        MessageEntity("MESSAGE_ENTITY"),
         ;
 
         private final String value;

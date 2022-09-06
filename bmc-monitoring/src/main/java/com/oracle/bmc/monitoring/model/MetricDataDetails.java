@@ -154,8 +154,8 @@ public final class MetricDataDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
          * Each dimension takes the form of a key-value pair.
-         * A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
-         * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
+         * A valid dimension key includes only printable ASCII, excluding spaces. The character limit for a dimension key is 256.
+         * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
          * Empty strings are not allowed for keys or values. Avoid entering confidential information.
          * <p>
          * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
@@ -167,8 +167,8 @@ public final class MetricDataDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
          * Each dimension takes the form of a key-value pair.
-         * A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
-         * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
+         * A valid dimension key includes only printable ASCII, excluding spaces. The character limit for a dimension key is 256.
+         * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
          * Empty strings are not allowed for keys or values. Avoid entering confidential information.
          * <p>
          * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
@@ -376,8 +376,8 @@ public final class MetricDataDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
-     * A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
-     * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
+     * A valid dimension key includes only printable ASCII, excluding spaces. The character limit for a dimension key is 256.
+     * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
      * Empty strings are not allowed for keys or values. Avoid entering confidential information.
      * <p>
      * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
@@ -389,8 +389,8 @@ public final class MetricDataDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
-     * A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
-     * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
+     * A valid dimension key includes only printable ASCII, excluding spaces. The character limit for a dimension key is 256.
+     * A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
      * Empty strings are not allowed for keys or values. Avoid entering confidential information.
      * <p>
      * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}

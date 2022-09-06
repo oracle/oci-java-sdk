@@ -12,12 +12,12 @@ import com.oracle.bmc.dataconnectivity.model.*;
 public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -67,12 +67,12 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return fields;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      **/
     public enum SortBy {
         Id("id"),
@@ -109,7 +109,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -212,15 +212,26 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return nameList;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     private String endpointId;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     public String getEndpointId() {
         return endpointId;
+    }
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    private java.util.List<String> includeTypes;
+
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    public java.util.List<String> getIncludeTypes() {
+        return includeTypes;
     }
 
     public static class Builder
@@ -231,12 +242,12 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -315,12 +326,12 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -420,18 +431,42 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          */
         private String endpointId = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          * @param endpointId the value to set
          * @return this builder instance
          */
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             return this;
+        }
+
+        /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         */
+        private java.util.List<String> includeTypes = null;
+
+        /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         * @param includeTypes the value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(java.util.List<String> includeTypes) {
+            this.includeTypes = includeTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. Artifact type which needs to be listed while listing Artifacts.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(String singularValue) {
+            return this.includeTypes(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -474,6 +509,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             opcRequestId(o.getOpcRequestId());
             nameList(o.getNameList());
             endpointId(o.getEndpointId());
+            includeTypes(o.getIncludeTypes());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -518,8 +554,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.opcRequestId = opcRequestId;
             request.nameList = nameList;
             request.endpointId = endpointId;
+            request.includeTypes = includeTypes;
             return request;
-            // new ListSchemasRequest(registryId, connectionKey, page, limit, fields, sortBy, sortOrder, schemaResourceKey, name, opcRequestId, nameList, endpointId);
+            // new ListSchemasRequest(registryId, connectionKey, page, limit, fields, sortBy, sortOrder, schemaResourceKey, name, opcRequestId, nameList, endpointId, includeTypes);
         }
     }
 
@@ -540,7 +577,8 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .name(name)
                 .opcRequestId(opcRequestId)
                 .nameList(nameList)
-                .endpointId(endpointId);
+                .endpointId(endpointId)
+                .includeTypes(includeTypes);
     }
 
     /**
@@ -568,6 +606,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",nameList=").append(String.valueOf(this.nameList));
         sb.append(",endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(",includeTypes=").append(String.valueOf(this.includeTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -594,7 +633,8 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.nameList, other.nameList)
-                && java.util.Objects.equals(this.endpointId, other.endpointId);
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.includeTypes, other.includeTypes);
     }
 
     @Override
@@ -617,6 +657,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.nameList == null ? 43 : this.nameList.hashCode());
         result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.includeTypes == null ? 43 : this.includeTypes.hashCode());
         return result;
     }
 }

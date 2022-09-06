@@ -41,6 +41,19 @@ public class PostMetricDataRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
+     *
+     */
+    private String contentEncoding;
+
+    /**
+     * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
+     *
+     */
+    public String getContentEncoding() {
+        return contentEncoding;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -97,6 +110,23 @@ public class PostMetricDataRequest
         }
 
         /**
+         * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
+         *
+         */
+        private String contentEncoding = null;
+
+        /**
+         * The optional Content-Encoding header that defines the content encodings that were applied to the payload.
+         *
+         * @param contentEncoding the value to set
+         * @return this builder instance
+         */
+        public Builder contentEncoding(String contentEncoding) {
+            this.contentEncoding = contentEncoding;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -126,6 +156,7 @@ public class PostMetricDataRequest
         public Builder copy(PostMetricDataRequest o) {
             postMetricDataDetails(o.getPostMetricDataDetails());
             opcRequestId(o.getOpcRequestId());
+            contentEncoding(o.getContentEncoding());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -171,8 +202,9 @@ public class PostMetricDataRequest
             PostMetricDataRequest request = new PostMetricDataRequest();
             request.postMetricDataDetails = postMetricDataDetails;
             request.opcRequestId = opcRequestId;
+            request.contentEncoding = contentEncoding;
             return request;
-            // new PostMetricDataRequest(postMetricDataDetails, opcRequestId);
+            // new PostMetricDataRequest(postMetricDataDetails, opcRequestId, contentEncoding);
         }
     }
 
@@ -183,7 +215,8 @@ public class PostMetricDataRequest
     public Builder toBuilder() {
         return new Builder()
                 .postMetricDataDetails(postMetricDataDetails)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .contentEncoding(contentEncoding);
     }
 
     /**
@@ -201,6 +234,7 @@ public class PostMetricDataRequest
         sb.append("super=").append(super.toString());
         sb.append(",postMetricDataDetails=").append(String.valueOf(this.postMetricDataDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",contentEncoding=").append(String.valueOf(this.contentEncoding));
         sb.append(")");
         return sb.toString();
     }
@@ -217,7 +251,8 @@ public class PostMetricDataRequest
         PostMetricDataRequest other = (PostMetricDataRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.postMetricDataDetails, other.postMetricDataDetails)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.contentEncoding, other.contentEncoding);
     }
 
     @Override
@@ -230,6 +265,9 @@ public class PostMetricDataRequest
                                 ? 43
                                 : this.postMetricDataDetails.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentEncoding == null ? 43 : this.contentEncoding.hashCode());
         return result;
     }
 }

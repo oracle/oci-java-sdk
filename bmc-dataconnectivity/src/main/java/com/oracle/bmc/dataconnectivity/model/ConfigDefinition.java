@@ -109,13 +109,13 @@ public final class ConfigDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -125,13 +125,13 @@ public final class ConfigDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies whether the configuration is contained or not.
+         * Specifies whether the configuration is contained.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isContained")
         private Boolean isContained;
 
         /**
-         * Specifies whether the configuration is contained or not.
+         * Specifies whether the configuration is contained.
          * @param isContained the value to set
          * @return this builder
          **/
@@ -285,13 +285,13 @@ public final class ConfigDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -299,13 +299,13 @@ public final class ConfigDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies whether the configuration is contained or not.
+     * Specifies whether the configuration is contained.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isContained")
     private final Boolean isContained;
 
     /**
-     * Specifies whether the configuration is contained or not.
+     * Specifies whether the configuration is contained.
      * @return the value
      **/
     public Boolean getIsContained() {

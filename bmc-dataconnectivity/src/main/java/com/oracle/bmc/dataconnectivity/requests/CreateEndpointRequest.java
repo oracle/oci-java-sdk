@@ -14,39 +14,39 @@ public class CreateEndpointRequest
                 com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails> {
 
     /**
-     * Details for the new Data Connectivity Management Endpoint.
+     * Details of the new Data Connectivity Management endpoint.
      */
     private com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails createEndpointDetails;
 
     /**
-     * Details for the new Data Connectivity Management Endpoint.
+     * Details of the new Data Connectivity Management endpoint.
      */
     public com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails getCreateEndpointDetails() {
         return createEndpointDetails;
     }
     /**
-     * DCMS registry id
-     */
-    private String registryId;
-
-    /**
-     * DCMS registry id
-     */
-    public String getRegistryId() {
-        return registryId;
-    }
-    /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * DCMS registry ID
+     */
+    private String registryId;
+
+    /**
+     * DCMS registry ID
+     */
+    public String getRegistryId() {
+        return registryId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -85,13 +85,13 @@ public class CreateEndpointRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new Data Connectivity Management Endpoint.
+         * Details of the new Data Connectivity Management endpoint.
          */
         private com.oracle.bmc.dataconnectivity.model.CreateEndpointDetails createEndpointDetails =
                 null;
 
         /**
-         * Details for the new Data Connectivity Management Endpoint.
+         * Details of the new Data Connectivity Management endpoint.
          * @param createEndpointDetails the value to set
          * @return this builder instance
          */
@@ -102,34 +102,34 @@ public class CreateEndpointRequest
         }
 
         /**
-         * DCMS registry id
-         */
-        private String registryId = null;
-
-        /**
-         * DCMS registry id
-         * @param registryId the value to set
-         * @return this builder instance
-         */
-        public Builder registryId(String registryId) {
-            this.registryId = registryId;
-            return this;
-        }
-
-        /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
         public Builder opcRetryToken(String opcRetryToken) {
             this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
+         * DCMS registry ID
+         */
+        private String registryId = null;
+
+        /**
+         * DCMS registry ID
+         * @param registryId the value to set
+         * @return this builder instance
+         */
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
             return this;
         }
 
@@ -183,8 +183,8 @@ public class CreateEndpointRequest
          */
         public Builder copy(CreateEndpointRequest o) {
             createEndpointDetails(o.getCreateEndpointDetails());
-            registryId(o.getRegistryId());
             opcRetryToken(o.getOpcRetryToken());
+            registryId(o.getRegistryId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -230,11 +230,11 @@ public class CreateEndpointRequest
         public CreateEndpointRequest buildWithoutInvocationCallback() {
             CreateEndpointRequest request = new CreateEndpointRequest();
             request.createEndpointDetails = createEndpointDetails;
-            request.registryId = registryId;
             request.opcRetryToken = opcRetryToken;
+            request.registryId = registryId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateEndpointRequest(createEndpointDetails, registryId, opcRetryToken, opcRequestId);
+            // new CreateEndpointRequest(createEndpointDetails, opcRetryToken, registryId, opcRequestId);
         }
     }
 
@@ -245,8 +245,8 @@ public class CreateEndpointRequest
     public Builder toBuilder() {
         return new Builder()
                 .createEndpointDetails(createEndpointDetails)
-                .registryId(registryId)
                 .opcRetryToken(opcRetryToken)
+                .registryId(registryId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -264,8 +264,8 @@ public class CreateEndpointRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",createEndpointDetails=").append(String.valueOf(this.createEndpointDetails));
-        sb.append(",registryId=").append(String.valueOf(this.registryId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",registryId=").append(String.valueOf(this.registryId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -283,8 +283,8 @@ public class CreateEndpointRequest
         CreateEndpointRequest other = (CreateEndpointRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.createEndpointDetails, other.createEndpointDetails)
-                && java.util.Objects.equals(this.registryId, other.registryId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.registryId, other.registryId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -297,10 +297,10 @@ public class CreateEndpointRequest
                         + (this.createEndpointDetails == null
                                 ? 43
                                 : this.createEndpointDetails.hashCode());
-        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

@@ -31,13 +31,13 @@ public final class ValidationMessage extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * level of validation messages
+         * The level of validation messages.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private String level;
 
         /**
-         * level of validation messages
+         * The level of validation messages.
          * @param level the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class ValidationMessage extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * level of validation messages
+     * The level of validation messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final String level;
 
     /**
-     * level of validation messages
+     * The level of validation messages.
      * @return the value
      **/
     public String getLevel() {

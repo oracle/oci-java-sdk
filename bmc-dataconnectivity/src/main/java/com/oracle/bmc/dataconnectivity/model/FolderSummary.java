@@ -74,13 +74,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * @param key the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -131,13 +131,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          * @param description the value to set
          * @return this builder
          **/
@@ -179,13 +179,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -195,13 +195,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * List of data assets which belongs to this folder
+         * The list of data assets that belong to the folder.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
         private java.util.List<DataAsset> dataAssets;
 
         /**
-         * List of data assets which belongs to this folder
+         * The list of data assets that belong to the folder.
          * @param dataAssets the value to set
          * @return this builder
          **/
@@ -295,13 +295,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * @return the value
      **/
     public String getKey() {
@@ -330,13 +330,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -344,13 +344,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * User-defined description for the folder.
+     * User-defined description of the folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User-defined description for the folder.
+     * User-defined description of the folder.
      * @return the value
      **/
     public String getDescription() {
@@ -386,13 +386,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -400,13 +400,13 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * List of data assets which belongs to this folder
+     * The list of data assets that belong to the folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
     private final java.util.List<DataAsset> dataAssets;
 
     /**
-     * List of data assets which belongs to this folder
+     * The list of data assets that belong to the folder.
      * @return the value
      **/
     public java.util.List<DataAsset> getDataAssets() {

@@ -23,12 +23,12 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return compartmentId;
     }
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     private String registryId;
 
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     public String getRegistryId() {
         return registryId;
@@ -169,12 +169,12 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return sortOrder;
     }
     /**
-     * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * This parameter allows users to specify a sort field. Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top). Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * This parameter allows users to specify a sort field. Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top). Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),
@@ -211,7 +211,7 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     };
 
     /**
-     * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * This parameter allows users to specify a sort field. Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top). Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -257,12 +257,12 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          */
         private String registryId = null;
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -347,12 +347,12 @@ public class ListEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * This parameter allows users to specify a sort field. Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top). Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * This parameter allows users to specify a sort field.  Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top).  Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * This parameter allows users to specify a sort field. Default sort order is the descending order of {@code timeCreated} (most recently created objects at the top). Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */

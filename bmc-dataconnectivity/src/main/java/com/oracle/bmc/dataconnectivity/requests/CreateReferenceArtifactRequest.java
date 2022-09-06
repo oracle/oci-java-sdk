@@ -14,12 +14,12 @@ public class CreateReferenceArtifactRequest
                 com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -36,13 +36,13 @@ public class CreateReferenceArtifactRequest
         return dcmsArtifactId;
     }
     /**
-     * The information needed to reference a dcms artifact
+     * The information required to reference a dcms artifact.
      */
     private com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails
             createReferenceArtifactDetails;
 
     /**
-     * The information needed to reference a dcms artifact
+     * The information required to reference a dcms artifact.
      */
     public com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails
             getCreateReferenceArtifactDetails() {
@@ -66,13 +66,13 @@ public class CreateReferenceArtifactRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -115,12 +115,12 @@ public class CreateReferenceArtifactRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -145,13 +145,13 @@ public class CreateReferenceArtifactRequest
         }
 
         /**
-         * The information needed to reference a dcms artifact
+         * The information required to reference a dcms artifact.
          */
         private com.oracle.bmc.dataconnectivity.model.CreateReferenceArtifactDetails
                 createReferenceArtifactDetails = null;
 
         /**
-         * The information needed to reference a dcms artifact
+         * The information required to reference a dcms artifact.
          * @param createReferenceArtifactDetails the value to set
          * @return this builder instance
          */
@@ -184,13 +184,13 @@ public class CreateReferenceArtifactRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

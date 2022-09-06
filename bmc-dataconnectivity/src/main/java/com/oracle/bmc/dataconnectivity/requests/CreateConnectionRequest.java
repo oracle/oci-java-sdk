@@ -14,23 +14,23 @@ public class CreateConnectionRequest
                 com.oracle.bmc.dataconnectivity.model.CreateConnectionDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * The information needed to create a connection.
+     * The information required to create a connection.
      */
     private com.oracle.bmc.dataconnectivity.model.CreateConnectionDetails createConnectionDetails;
 
     /**
-     * The information needed to create a connection.
+     * The information required to create a connection.
      */
     public com.oracle.bmc.dataconnectivity.model.CreateConnectionDetails
             getCreateConnectionDetails() {
@@ -54,13 +54,13 @@ public class CreateConnectionRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -86,12 +86,12 @@ public class CreateConnectionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -101,13 +101,13 @@ public class CreateConnectionRequest
         }
 
         /**
-         * The information needed to create a connection.
+         * The information required to create a connection.
          */
         private com.oracle.bmc.dataconnectivity.model.CreateConnectionDetails
                 createConnectionDetails = null;
 
         /**
-         * The information needed to create a connection.
+         * The information required to create a connection.
          * @param createConnectionDetails the value to set
          * @return this builder instance
          */
@@ -140,13 +140,13 @@ public class CreateConnectionRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

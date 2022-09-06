@@ -14,36 +14,36 @@ public class ChangeEndpointCompartmentRequest
                 com.oracle.bmc.dataconnectivity.model.ChangeEndpointCompartmentDetails> {
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     private String endpointId;
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     public String getEndpointId() {
         return endpointId;
     }
     /**
-     * The details of change compartment action.
+     * The details of the change compartment action.
      */
     private com.oracle.bmc.dataconnectivity.model.ChangeEndpointCompartmentDetails
             changeEndpointCompartmentDetails;
 
     /**
-     * The details of change compartment action.
+     * The details of the change compartment action.
      */
     public com.oracle.bmc.dataconnectivity.model.ChangeEndpointCompartmentDetails
             getChangeEndpointCompartmentDetails() {
         return changeEndpointCompartmentDetails;
     }
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     private String registryId;
 
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     public String getRegistryId() {
         return registryId;
@@ -83,13 +83,13 @@ public class ChangeEndpointCompartmentRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -115,12 +115,12 @@ public class ChangeEndpointCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          */
         private String endpointId = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          * @param endpointId the value to set
          * @return this builder instance
          */
@@ -130,13 +130,13 @@ public class ChangeEndpointCompartmentRequest
         }
 
         /**
-         * The details of change compartment action.
+         * The details of the change compartment action.
          */
         private com.oracle.bmc.dataconnectivity.model.ChangeEndpointCompartmentDetails
                 changeEndpointCompartmentDetails = null;
 
         /**
-         * The details of change compartment action.
+         * The details of the change compartment action.
          * @param changeEndpointCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -148,12 +148,12 @@ public class ChangeEndpointCompartmentRequest
         }
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          */
         private String registryId = null;
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -205,13 +205,13 @@ public class ChangeEndpointCompartmentRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

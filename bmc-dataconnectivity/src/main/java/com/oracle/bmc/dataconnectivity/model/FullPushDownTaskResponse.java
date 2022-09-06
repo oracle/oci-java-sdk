@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The full pushdown task
+ * The full pushdown task.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +33,13 @@ public final class FullPushDownTaskResponse
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of of FullPushDownTask Response.
+         * The type of of FullPushDownTask response.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
-         * The type of of FullPushDownTask Response.
+         * The type of of FullPushDownTask response.
          * @param modelType the value to set
          * @return this builder
          **/
@@ -49,13 +49,13 @@ public final class FullPushDownTaskResponse
             return this;
         }
         /**
-         * The error message in response object.
+         * The error message in the response object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * The error message in response object.
+         * The error message in the response object.
          * @param errorMessage the value to set
          * @return this builder
          **/
@@ -120,13 +120,13 @@ public final class FullPushDownTaskResponse
     }
 
     /**
-     * The type of of FullPushDownTask Response.
+     * The type of of FullPushDownTask response.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
-     * The type of of FullPushDownTask Response.
+     * The type of of FullPushDownTask response.
      * @return the value
      **/
     public String getModelType() {
@@ -134,13 +134,13 @@ public final class FullPushDownTaskResponse
     }
 
     /**
-     * The error message in response object.
+     * The error message in the response object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * The error message in response object.
+     * The error message in the response object.
      * @return the value
      **/
     public String getErrorMessage() {

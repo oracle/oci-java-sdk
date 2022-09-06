@@ -8,7 +8,7 @@ import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
 
 /**
- * Use the DCMS APIs to perform Metadata/Data operations.
+ * Use the Data Connectivity Management Service APIs to perform common extract, load, and transform (ETL) tasks.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public interface DataConnectivityManagementAsync extends AutoCloseable {
@@ -52,7 +52,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * The Endpoint will be moved to the desired compartment.
+     * The endpoint will be moved to the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -69,7 +69,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The registry will be moved to the desired compartment.
+     * The registry will be moved to the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -86,7 +86,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Attaches list of DataAssets to the given endpoint
+     * Attaches a list of data assets to the given endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -165,7 +165,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Provide data preview on live schema
+     * Provide data preview on live schema.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -181,7 +181,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Execute data profiling on live schema
+     * Execute data profiling on live schema.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -197,7 +197,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DeRereferenced a dcms artifact.
+     * Dereferenced a dcms artifact.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -213,7 +213,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Detaches list of DataAssets to the given endpoint
+     * Detaches a list of data assets to the given endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -229,7 +229,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Data Connectivity Management Endpoint ready for performing data Connectivity.
+     * Creates a new Data Connectivity Management endpoint ready to perform data connectivity.
      *
      *
      * @param request The request object containing the details to send
@@ -277,7 +277,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a folder under a specefied registry.
+     * Creates a folder under a specified registry.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -292,7 +292,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This endpoint is used to create a connectivity task (like PushdownTask).
+     * This endpoint is used to create a connectivity task (such as PushdownTask).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -324,7 +324,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Data Connectivity Management Registry ready for performing data Connectivity Management.
+     * Creates a new Data Connectivity Management registry ready to perform data connectivity management.
      *
      *
      * @param request The request object containing the details to send
@@ -340,7 +340,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Execute network validation on selected data assets associated with the provided private endpoint
+     * Execute network validation on the selected data assets associated with the provided private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -373,22 +373,6 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a connection validation.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<DeleteConnectionValidationResponse> deleteConnectionValidation(
-            DeleteConnectionValidationRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>
-                    handler);
-
-    /**
      * Removes a data asset using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -404,7 +388,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Data Connectivity Management Endpoint resource by identifier
+     * Deletes a Data Connectivity Management endpoint resource by its identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -452,7 +436,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes a Data Connectivity Management Registry resource by identifier
+     * Deletes a Data Connectivity Management registry resource by its identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -464,6 +448,21 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteRegistryResponse> deleteRegistry(
             DeleteRegistryRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteRegistryRequest, DeleteRegistryResponse>
+                    handler);
+
+    /**
+     * Get the Derived Entities from the EntityFlowMode and reference key of DataObject
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeriveEntitiesResponse> deriveEntities(
+            DeriveEntitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeriveEntitiesRequest, DeriveEntitiesResponse>
                     handler);
 
     /**
@@ -479,22 +478,6 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
-                    handler);
-
-    /**
-     * Retrieves a connection validation using the specified identifier.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<GetConnectionValidationResponse> getConnectionValidation(
-            GetConnectionValidationRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            GetConnectionValidationRequest, GetConnectionValidationResponse>
                     handler);
 
     /**
@@ -528,7 +511,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Data Connectivity Management Endpoint by identifier
+     * Gets a Data Connectivity Management endpoint by its identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -542,7 +525,23 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetEndpointRequest, GetEndpointResponse> handler);
 
     /**
-     * Get the operation status or operation execution result
+     * This endpoint is used to fetch connector-specific engine configurations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEngineConfigurationsResponse> getEngineConfigurations(
+            GetEngineConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEngineConfigurationsRequest, GetEngineConfigurationsResponse>
+                    handler);
+
+    /**
+     * Get the status or the result of the execution.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -572,7 +571,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handler);
 
     /**
-     * Get Status of network reachability check, with the timestamp when the status was last checked, for a given PrivateEndpoint-DataAsset pair
+     * Get the status of network reachability check, with the timestamp of when the status was last checked, for a given PrivateEndpoint-DataAsset pair.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -589,7 +588,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves the details of operation with given resource name.
+     * Retrieves the details of operation with the given resource name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -604,7 +603,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Data Connectivity Management Registry by identifier
+     * Retrieves a Data Connectivity Management registry using the specified identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -632,7 +631,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse> handler);
 
     /**
-     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+     * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
      *
      *
      * @param request The request object containing the details to send
@@ -659,22 +658,6 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler);
-
-    /**
-     * Retrieves a list of connection validations within the specified registry.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<ListConnectionValidationsResponse> listConnectionValidations(
-            ListConnectionValidationsRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListConnectionValidationsRequest, ListConnectionValidationsResponse>
                     handler);
 
     /**
@@ -725,7 +708,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Data Connectivity Management Endpoints.
+     * Returns a list of Data Connectivity Management endpoints.
      *
      *
      * @param request The request object containing the details to send
@@ -741,7 +724,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a list of all folders.
+     * Retrieves a list of all the folders.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -755,7 +738,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse> handler);
 
     /**
-     * Lists the summary of operations present in the schema identified by schema name.
+     * Lists the summary of operations that are present in the schema, identified by the schema name.
      *
      *
      * @param request The request object containing the details to send
@@ -788,7 +771,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Data Connectivity Management Registries.
+     * Retrieves a list of Data Connectivity Management registries.
      *
      *
      * @param request The request object containing the details to send
@@ -818,7 +801,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse> handler);
 
     /**
-     * This endpoint retrieves list of all the supported connector types
+     * This endpoint retrieves a list of all the supported connector types.
      *
      *
      * @param request The request object containing the details to send
@@ -833,7 +816,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListTypesRequest, ListTypesResponse> handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a (paginated) list of errors for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -850,7 +833,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a (paginated) list of logs for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -913,7 +896,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Data Connectivity Management Endpoint
+     * Updates the Data Connectivity Management endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -928,7 +911,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a folder under a specefied registry.
+     * Updates a folder under a specified registry.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -943,7 +926,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Data Connectivity Management Registry
+     * Updates the Data Connectivity Management Registry.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -958,7 +941,7 @@ public interface DataConnectivityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Validates the dataAsset network Reachability.
+     * Validates the dataAsset network reachability.
      *
      *
      * @param request The request object containing the details to send
