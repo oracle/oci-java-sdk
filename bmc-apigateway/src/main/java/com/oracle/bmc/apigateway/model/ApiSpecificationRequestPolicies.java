@@ -27,20 +27,23 @@ public final class ApiSpecificationRequestPolicies
         "rateLimiting",
         "cors",
         "mutualTls",
-        "usagePlans"
+        "usagePlans",
+        "dynamicAuthentication"
     })
     public ApiSpecificationRequestPolicies(
             AuthenticationPolicy authentication,
             RateLimitingPolicy rateLimiting,
             CorsPolicy cors,
             MutualTlsDetails mutualTls,
-            UsagePlansPolicy usagePlans) {
+            UsagePlansPolicy usagePlans,
+            DynamicAuthenticationPolicy dynamicAuthentication) {
         super();
         this.authentication = authentication;
         this.rateLimiting = rateLimiting;
         this.cors = cors;
         this.mutualTls = mutualTls;
         this.usagePlans = usagePlans;
+        this.dynamicAuthentication = dynamicAuthentication;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -91,6 +94,15 @@ public final class ApiSpecificationRequestPolicies
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dynamicAuthentication")
+        private DynamicAuthenticationPolicy dynamicAuthentication;
+
+        public Builder dynamicAuthentication(DynamicAuthenticationPolicy dynamicAuthentication) {
+            this.dynamicAuthentication = dynamicAuthentication;
+            this.__explicitlySet__.add("dynamicAuthentication");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -101,7 +113,8 @@ public final class ApiSpecificationRequestPolicies
                             this.rateLimiting,
                             this.cors,
                             this.mutualTls,
-                            this.usagePlans);
+                            this.usagePlans,
+                            this.dynamicAuthentication);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -124,6 +137,9 @@ public final class ApiSpecificationRequestPolicies
             }
             if (model.wasPropertyExplicitlySet("usagePlans")) {
                 this.usagePlans(model.getUsagePlans());
+            }
+            if (model.wasPropertyExplicitlySet("dynamicAuthentication")) {
+                this.dynamicAuthentication(model.getDynamicAuthentication());
             }
             return this;
         }
@@ -175,6 +191,13 @@ public final class ApiSpecificationRequestPolicies
         return usagePlans;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dynamicAuthentication")
+    private final DynamicAuthenticationPolicy dynamicAuthentication;
+
+    public DynamicAuthenticationPolicy getDynamicAuthentication() {
+        return dynamicAuthentication;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -194,6 +217,7 @@ public final class ApiSpecificationRequestPolicies
         sb.append(", cors=").append(String.valueOf(this.cors));
         sb.append(", mutualTls=").append(String.valueOf(this.mutualTls));
         sb.append(", usagePlans=").append(String.valueOf(this.usagePlans));
+        sb.append(", dynamicAuthentication=").append(String.valueOf(this.dynamicAuthentication));
         sb.append(")");
         return sb.toString();
     }
@@ -213,6 +237,7 @@ public final class ApiSpecificationRequestPolicies
                 && java.util.Objects.equals(this.cors, other.cors)
                 && java.util.Objects.equals(this.mutualTls, other.mutualTls)
                 && java.util.Objects.equals(this.usagePlans, other.usagePlans)
+                && java.util.Objects.equals(this.dynamicAuthentication, other.dynamicAuthentication)
                 && super.equals(other);
     }
 
@@ -227,6 +252,11 @@ public final class ApiSpecificationRequestPolicies
         result = (result * PRIME) + (this.cors == null ? 43 : this.cors.hashCode());
         result = (result * PRIME) + (this.mutualTls == null ? 43 : this.mutualTls.hashCode());
         result = (result * PRIME) + (this.usagePlans == null ? 43 : this.usagePlans.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dynamicAuthentication == null
+                                ? 43
+                                : this.dynamicAuthentication.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

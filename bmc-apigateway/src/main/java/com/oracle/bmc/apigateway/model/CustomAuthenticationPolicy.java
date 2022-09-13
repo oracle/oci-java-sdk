@@ -87,6 +87,53 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
             this.__explicitlySet__.add("tokenQueryParam");
             return this;
         }
+        /**
+         * A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression.
+         * Example: {@code {"foo": "request.header[abc]"}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+        private java.util.Map<String, String> parameters;
+
+        /**
+         * A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression.
+         * Example: {@code {"foo": "request.header[abc]"}}
+         *
+         * @param parameters the value to set
+         * @return this builder
+         **/
+        public Builder parameters(java.util.Map<String, String> parameters) {
+            this.parameters = parameters;
+            this.__explicitlySet__.add("parameters");
+            return this;
+        }
+        /**
+         * A list of keys from "parameters" attribute value whose values will be added to the cache key.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cacheKey")
+        private java.util.List<String> cacheKey;
+
+        /**
+         * A list of keys from "parameters" attribute value whose values will be added to the cache key.
+         *
+         * @param cacheKey the value to set
+         * @return this builder
+         **/
+        public Builder cacheKey(java.util.List<String> cacheKey) {
+            this.cacheKey = cacheKey;
+            this.__explicitlySet__.add("cacheKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("validationFailurePolicy")
+        private ValidationFailurePolicy validationFailurePolicy;
+
+        public Builder validationFailurePolicy(ValidationFailurePolicy validationFailurePolicy) {
+            this.validationFailurePolicy = validationFailurePolicy;
+            this.__explicitlySet__.add("validationFailurePolicy");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -97,7 +144,10 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
                             this.isAnonymousAccessAllowed,
                             this.functionId,
                             this.tokenHeader,
-                            this.tokenQueryParam);
+                            this.tokenQueryParam,
+                            this.parameters,
+                            this.cacheKey,
+                            this.validationFailurePolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,6 +167,15 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
             }
             if (model.wasPropertyExplicitlySet("tokenQueryParam")) {
                 this.tokenQueryParam(model.getTokenQueryParam());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("cacheKey")) {
+                this.cacheKey(model.getCacheKey());
+            }
+            if (model.wasPropertyExplicitlySet("validationFailurePolicy")) {
+                this.validationFailurePolicy(model.getValidationFailurePolicy());
             }
             return this;
         }
@@ -138,11 +197,17 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
             Boolean isAnonymousAccessAllowed,
             String functionId,
             String tokenHeader,
-            String tokenQueryParam) {
+            String tokenQueryParam,
+            java.util.Map<String, String> parameters,
+            java.util.List<String> cacheKey,
+            ValidationFailurePolicy validationFailurePolicy) {
         super(isAnonymousAccessAllowed);
         this.functionId = functionId;
         this.tokenHeader = tokenHeader;
         this.tokenQueryParam = tokenQueryParam;
+        this.parameters = parameters;
+        this.cacheKey = cacheKey;
+        this.validationFailurePolicy = validationFailurePolicy;
     }
 
     /**
@@ -189,6 +254,47 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         return tokenQueryParam;
     }
 
+    /**
+     * A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression.
+     * Example: {@code {"foo": "request.header[abc]"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parameters")
+    private final java.util.Map<String, String> parameters;
+
+    /**
+     * A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression.
+     * Example: {@code {"foo": "request.header[abc]"}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * A list of keys from "parameters" attribute value whose values will be added to the cache key.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cacheKey")
+    private final java.util.List<String> cacheKey;
+
+    /**
+     * A list of keys from "parameters" attribute value whose values will be added to the cache key.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getCacheKey() {
+        return cacheKey;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("validationFailurePolicy")
+    private final ValidationFailurePolicy validationFailurePolicy;
+
+    public ValidationFailurePolicy getValidationFailurePolicy() {
+        return validationFailurePolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -206,6 +312,10 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         sb.append(", functionId=").append(String.valueOf(this.functionId));
         sb.append(", tokenHeader=").append(String.valueOf(this.tokenHeader));
         sb.append(", tokenQueryParam=").append(String.valueOf(this.tokenQueryParam));
+        sb.append(", parameters=").append(String.valueOf(this.parameters));
+        sb.append(", cacheKey=").append(String.valueOf(this.cacheKey));
+        sb.append(", validationFailurePolicy=")
+                .append(String.valueOf(this.validationFailurePolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -223,6 +333,10 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         return java.util.Objects.equals(this.functionId, other.functionId)
                 && java.util.Objects.equals(this.tokenHeader, other.tokenHeader)
                 && java.util.Objects.equals(this.tokenQueryParam, other.tokenQueryParam)
+                && java.util.Objects.equals(this.parameters, other.parameters)
+                && java.util.Objects.equals(this.cacheKey, other.cacheKey)
+                && java.util.Objects.equals(
+                        this.validationFailurePolicy, other.validationFailurePolicy)
                 && super.equals(other);
     }
 
@@ -235,6 +349,13 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         result =
                 (result * PRIME)
                         + (this.tokenQueryParam == null ? 43 : this.tokenQueryParam.hashCode());
+        result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
+        result = (result * PRIME) + (this.cacheKey == null ? 43 : this.cacheKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.validationFailurePolicy == null
+                                ? 43
+                                : this.validationFailurePolicy.hashCode());
         return result;
     }
 }

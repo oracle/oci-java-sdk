@@ -31,6 +31,7 @@ import org.slf4j.Logger;
  *
  * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use RefreshAuthTokenTransformingFuture anymore
  */
+@Deprecated
 public class RefreshAuthTokenTransformingFuture<FROM, TO> implements Future<TO> {
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RefreshAuthTokenTransformingFuture.class);

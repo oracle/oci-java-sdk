@@ -174,7 +174,7 @@ public class RestClient implements AutoCloseable {
 
     /**
      * Ideal name for this method is decorateSupplierWithCircuitBreaker. However, I shortened it due to it's being private
-     * It takes a Supplier<Response> and returns a Supplier<Response>, this pattern allows users to chain different
+     * It takes a {@code Supplier<Response>} and returns a {@code Supplier<Response>}, this pattern allows users to chain different
      * functionalities.
      * @param supplier a supplier of Response
      * @return a supplier of Response
@@ -195,10 +195,10 @@ public class RestClient implements AutoCloseable {
 
     /**
      * Ideal name for this method is decorateFutureSupplierWithCircuitBreaker. However, I shortened it due to it's being private
-     * It takes a Supplier<Future<Response>> and returns a Supplier<Future<Response>>, this pattern allows users to chain
+     * It takes a {@code Supplier<Future<Response>>} and returns a {@code Supplier<Future<Response>>}, this pattern allows users to chain
      * different functionalities.
-     * @param supplier a Supplier of Future<Response>
-     * @return a Supplier of Future<Response>
+     * @param supplier a Supplier of {@code Future<Response>}
+     * @return a Supplier of {@code Future<Response>}
      */
     private Supplier<Future<Response>> decorateFuture(Supplier<Future<Response>> supplier) {
         if (circuitBreaker == null) {
@@ -1292,7 +1292,7 @@ public class RestClient implements AutoCloseable {
      * @param <REQUEST> type of the request
      * @param <RESPONSE> type of the response
      * @return future for the head request
-     * @Deprecated use method without Guava parameters instead
+     * @deprecated use method without Guava parameters instead
      */
     @InternalSdk(backwardCompatibilityRequired = true)
     @Deprecated

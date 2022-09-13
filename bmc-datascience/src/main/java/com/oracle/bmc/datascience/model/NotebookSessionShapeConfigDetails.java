@@ -32,14 +32,14 @@ public final class NotebookSessionShapeConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * The total number of OCPUs available to the notebook session instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
         /**
-         * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * The total number of OCPUs available to the notebook session instance.
          *
          * @param ocpus the value to set
          * @return this builder
@@ -50,14 +50,14 @@ public final class NotebookSessionShapeConfigDetails
             return this;
         }
         /**
-         * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * The total amount of memory available to the notebook session instance, in gigabytes.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
         /**
-         * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * The total amount of memory available to the notebook session instance, in gigabytes.
          *
          * @param memoryInGBs the value to set
          * @return this builder
@@ -104,14 +104,14 @@ public final class NotebookSessionShapeConfigDetails
     }
 
     /**
-     * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * The total number of OCPUs available to the notebook session instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
     /**
-     * A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * The total number of OCPUs available to the notebook session instance.
      *
      * @return the value
      **/
@@ -120,14 +120,14 @@ public final class NotebookSessionShapeConfigDetails
     }
 
     /**
-     * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * The total amount of memory available to the notebook session instance, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
     /**
-     * A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * The total amount of memory available to the notebook session instance, in gigabytes.
      *
      * @return the value
      **/

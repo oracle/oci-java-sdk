@@ -22,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.oracle.bmc.ConfigFileReader;
+import com.oracle.bmc.Options;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -46,7 +47,6 @@ import com.oracle.bmc.datalabelingservice.responses.DeleteDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.GetDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.UpdateDatasetResponse;
 import com.oracle.bmc.http.JerseyDefaultConnectorConfigurator;
-import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.identity.IdentityClient;
 
 /**
@@ -276,7 +276,7 @@ public class DataLabelingDatasetExample {
             throws JsonProcessingException {
         DeleteDatasetRequest deleteDatasetRequest =
                 DeleteDatasetRequest.builder().datasetId(datasetId).build();
-        // ResponseHelper.shouldAutoCloseResponseInputStream(false);
+        // Options.shouldAutoCloseResponseInputStream(false);
         DeleteDatasetResponse deleteDatasetResponse = client.deleteDataset(deleteDatasetRequest);
 
         /*
