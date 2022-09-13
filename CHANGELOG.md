@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.43.0 - 2022-09-13
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the eu-madrid-1 region
+- Support for exporting and importing larger model artifacts in the model catalog in the Data Science service
+- Support for Request Based Authorization in the API Gateway service
+- Support for Dynamic Authentication in the API Gateway service
+- Support for Dynamic Routing Backend in the API Gateway service
+
+### Breaking Changes
+- Support for retries by default on some operations of the Data Science service
+
 ## 2.42.0 - 2022-09-06
 ### Added
 - Support for generic REST, OCI Streaming service, and Lake House connectors in the Data Connectivity Management service

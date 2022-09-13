@@ -48,6 +48,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         NotebookSessionDelete("NOTEBOOK_SESSION_DELETE"),
         NotebookSessionActivate("NOTEBOOK_SESSION_ACTIVATE"),
         NotebookSessionDeactivate("NOTEBOOK_SESSION_DEACTIVATE"),
+        ExportModelArtifact("EXPORT_MODEL_ARTIFACT"),
+        ImportModelArtifact("IMPORT_MODEL_ARTIFACT"),
         ModelDeploymentCreate("MODEL_DEPLOYMENT_CREATE"),
         ModelDeploymentDelete("MODEL_DEPLOYMENT_DELETE"),
         ModelDeploymentActivate("MODEL_DEPLOYMENT_ACTIVATE"),

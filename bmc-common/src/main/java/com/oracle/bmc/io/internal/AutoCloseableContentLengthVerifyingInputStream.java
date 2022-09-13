@@ -78,7 +78,7 @@ public class AutoCloseableContentLengthVerifyingInputStream
         throw new IOException(
                 "Reset not supported for AutoCloseableContentLengthVerifyingInputStream, to support"
                         + "reset, please "
-                        + "disable auto-close by calling ResponseHelper.shouldAutoCloseResponseInputStream()");
+                        + "disable auto-close by calling Options.shouldAutoCloseResponseInputStream()");
     }
 
     private void autoCloseStream() throws IOException {

@@ -20,6 +20,7 @@ import javax.ws.rs.core.Response.Status;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import com.oracle.bmc.Options;
 import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
@@ -41,7 +42,6 @@ public class ResponseHelper {
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final Map<Integer, String> DEFAULT_ERROR_MESSAGES = new HashMap<>();
-    private static boolean SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM = true;
 
     // mostly here for HEAD requests which wouldn't have a body to parse a nice message from.
     static {
@@ -279,11 +279,13 @@ public class ResponseHelper {
                                             contentLengthHeader.get().get(0),
                                             Long.class);
                             if (contentLength > 0) {
-                                if (SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM) {
+                                if (Options.getShouldAutoCloseResponseInputStream()) {
                                     if (ApacheUtils.isExtraStreamLogsEnabled()) {
                                         LOG.warn(
                                                 "Wrapping response stream into auto closeable stream, to disable this, please "
-                                                        + "use ResponseHelper.shouldAutoCloseResponseInputStream(false)");
+                                                        + "use "
+                                                        + Options.class.getName()
+                                                        + ".shouldAutoCloseResponseInputStream(false)");
                                     }
                                     inputStream =
                                             new AutoCloseableContentLengthVerifyingInputStream(
@@ -426,10 +428,11 @@ public class ResponseHelper {
      * response once the stream has been read until the content-length of the stream
      * Note : This has been added to automatically release connections from the connection pool when using
      * the Apache Connector since the Apache Connector uses connection pooling by default
+     * @deprecated use Options.shouldAutoCloseResponseInputStream instead
      */
+    @Deprecated
     public static void shouldAutoCloseResponseInputStream(final boolean shouldAutoClose) {
-        LOG.info("Setting auto-close of response input stream to", shouldAutoClose);
-        SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM = shouldAutoClose;
+        Options.shouldAutoCloseResponseInputStream(shouldAutoClose);
     }
 
     @JsonDeserialize(builder = ErrorCodeAndMessage.Builder.class)

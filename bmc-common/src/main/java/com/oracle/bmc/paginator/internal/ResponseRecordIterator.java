@@ -20,7 +20,7 @@ import java.util.function.Function;
  *   <li>{@link #next()} will vend individual model/resource objects from that page until there are no more to vend</li>
  *   <li>Call the service for the next page of results</li>
  *   <li>Repeat steps 2 and 3 until there are no more results</li>
- * <ol>
+ * </ol>
  *
  * This iterator does not support removal of elements.
  *

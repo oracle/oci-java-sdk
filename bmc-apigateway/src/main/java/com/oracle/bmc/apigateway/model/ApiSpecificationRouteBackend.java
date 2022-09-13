@@ -34,6 +34,10 @@ package com.oracle.bmc.apigateway.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StockResponseBackend.class,
         name = "STOCK_RESPONSE_BACKEND"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DynamicRoutingBackend.class,
+        name = "DYNAMIC_ROUTING_BACKEND"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -91,6 +95,7 @@ public class ApiSpecificationRouteBackend
         OracleFunctionsBackend("ORACLE_FUNCTIONS_BACKEND"),
         HttpBackend("HTTP_BACKEND"),
         StockResponseBackend("STOCK_RESPONSE_BACKEND"),
+        DynamicRoutingBackend("DYNAMIC_ROUTING_BACKEND"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
