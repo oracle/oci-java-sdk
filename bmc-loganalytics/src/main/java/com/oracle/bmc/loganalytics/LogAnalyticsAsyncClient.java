@@ -706,6 +706,65 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeIngestTimeRuleCompartmentResponse>
+            changeIngestTimeRuleCompartment(
+                    ChangeIngestTimeRuleCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeIngestTimeRuleCompartmentRequest,
+                                    ChangeIngestTimeRuleCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeIngestTimeRuleCompartment");
+        final ChangeIngestTimeRuleCompartmentRequest interceptedRequest =
+                ChangeIngestTimeRuleCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeIngestTimeRuleCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ChangeIngestTimeRuleCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/ChangeIngestTimeRuleCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeIngestTimeRuleCompartmentResponse>
+                transformer =
+                        ChangeIngestTimeRuleCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeIngestTimeRuleCompartmentRequest,
+                        ChangeIngestTimeRuleCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeIngestTimeRuleCompartmentRequest,
+                                ChangeIngestTimeRuleCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeIngestTimeRuleCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeIngestTimeRuleCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeIngestTimeRuleCompartmentRequest,
+                    ChangeIngestTimeRuleCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeLogAnalyticsEmBridgeCompartmentResponse>
             changeLogAnalyticsEmBridgeCompartment(
                     ChangeLogAnalyticsEmBridgeCompartmentRequest request,
@@ -1086,6 +1145,59 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CompareContentRequest, CompareContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIngestTimeRuleResponse> createIngestTimeRule(
+            CreateIngestTimeRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateIngestTimeRuleRequest, CreateIngestTimeRuleResponse>
+                    handler) {
+        LOG.trace("Called async createIngestTimeRule");
+        final CreateIngestTimeRuleRequest interceptedRequest =
+                CreateIngestTimeRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "CreateIngestTimeRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/CreateIngestTimeRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateIngestTimeRuleResponse>
+                transformer =
+                        CreateIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateIngestTimeRuleRequest, CreateIngestTimeRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateIngestTimeRuleRequest, CreateIngestTimeRuleResponse>,
+                        java.util.concurrent.Future<CreateIngestTimeRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIngestTimeRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateIngestTimeRuleRequest, CreateIngestTimeRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1521,6 +1633,53 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteFieldRequest, DeleteFieldResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIngestTimeRuleResponse> deleteIngestTimeRule(
+            DeleteIngestTimeRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIngestTimeRuleRequest, DeleteIngestTimeRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteIngestTimeRule");
+        final DeleteIngestTimeRuleRequest interceptedRequest =
+                DeleteIngestTimeRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "DeleteIngestTimeRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/DeleteIngestTimeRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIngestTimeRuleResponse>
+                transformer =
+                        DeleteIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteIngestTimeRuleRequest, DeleteIngestTimeRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteIngestTimeRuleRequest, DeleteIngestTimeRuleResponse>,
+                        java.util.concurrent.Future<DeleteIngestTimeRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteIngestTimeRuleRequest, DeleteIngestTimeRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2252,6 +2411,53 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableIngestTimeRuleResponse> disableIngestTimeRule(
+            DisableIngestTimeRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableIngestTimeRuleRequest, DisableIngestTimeRuleResponse>
+                    handler) {
+        LOG.trace("Called async disableIngestTimeRule");
+        final DisableIngestTimeRuleRequest interceptedRequest =
+                DisableIngestTimeRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "DisableIngestTimeRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/DisableIngestTimeRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, DisableIngestTimeRuleResponse>
+                transformer =
+                        DisableIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableIngestTimeRuleRequest, DisableIngestTimeRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableIngestTimeRuleRequest, DisableIngestTimeRuleResponse>,
+                        java.util.concurrent.Future<DisableIngestTimeRuleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableIngestTimeRuleRequest, DisableIngestTimeRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableSourceEventTypesResponse> disableSourceEventTypes(
             DisableSourceEventTypesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2392,6 +2598,53 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableAutoAssociationRequest, EnableAutoAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableIngestTimeRuleResponse> enableIngestTimeRule(
+            EnableIngestTimeRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableIngestTimeRuleRequest, EnableIngestTimeRuleResponse>
+                    handler) {
+        LOG.trace("Called async enableIngestTimeRule");
+        final EnableIngestTimeRuleRequest interceptedRequest =
+                EnableIngestTimeRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "EnableIngestTimeRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/EnableIngestTimeRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, EnableIngestTimeRuleResponse>
+                transformer =
+                        EnableIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableIngestTimeRuleRequest, EnableIngestTimeRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableIngestTimeRuleRequest, EnableIngestTimeRuleResponse>,
+                        java.util.concurrent.Future<EnableIngestTimeRuleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableIngestTimeRuleRequest, EnableIngestTimeRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3156,6 +3409,52 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetFieldsSummaryRequest, GetFieldsSummaryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIngestTimeRuleResponse> getIngestTimeRule(
+            GetIngestTimeRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetIngestTimeRuleRequest, GetIngestTimeRuleResponse>
+                    handler) {
+        LOG.trace("Called async getIngestTimeRule");
+        final GetIngestTimeRuleRequest interceptedRequest =
+                GetIngestTimeRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "GetIngestTimeRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/GetIngestTimeRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIngestTimeRuleResponse>
+                transformer =
+                        GetIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetIngestTimeRuleRequest, GetIngestTimeRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetIngestTimeRuleRequest, GetIngestTimeRuleResponse>,
+                        java.util.concurrent.Future<GetIngestTimeRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetIngestTimeRuleRequest, GetIngestTimeRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4906,6 +5205,53 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListIngestTimeRulesResponse> listIngestTimeRules(
+            ListIngestTimeRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>
+                    handler) {
+        LOG.trace("Called async listIngestTimeRules");
+        final ListIngestTimeRulesRequest interceptedRequest =
+                ListIngestTimeRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIngestTimeRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListIngestTimeRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/ListIngestTimeRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIngestTimeRulesResponse>
+                transformer =
+                        ListIngestTimeRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>,
+                        java.util.concurrent.Future<ListIngestTimeRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLabelPrioritiesResponse> listLabelPriorities(
             ListLabelPrioritiesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5791,6 +6137,48 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListResourceCategoriesRequest, ListResourceCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRulesResponse> listRules(
+            ListRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse>
+                    handler) {
+        LOG.trace("Called async listRules");
+        final ListRulesRequest interceptedRequest = ListRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Rule/ListRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRulesResponse>
+                transformer =
+                        ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse>,
+                        java.util.concurrent.Future<ListRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRulesRequest, ListRulesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7735,6 +8123,58 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UnsuppressWarningRequest, UnsuppressWarningResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIngestTimeRuleResponse> updateIngestTimeRule(
+            UpdateIngestTimeRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIngestTimeRuleRequest, UpdateIngestTimeRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateIngestTimeRule");
+        final UpdateIngestTimeRuleRequest interceptedRequest =
+                UpdateIngestTimeRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIngestTimeRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "UpdateIngestTimeRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/IngestTimeRule/UpdateIngestTimeRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIngestTimeRuleResponse>
+                transformer =
+                        UpdateIngestTimeRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateIngestTimeRuleRequest, UpdateIngestTimeRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateIngestTimeRuleRequest, UpdateIngestTimeRuleResponse>,
+                        java.util.concurrent.Future<UpdateIngestTimeRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIngestTimeRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateIngestTimeRuleRequest, UpdateIngestTimeRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

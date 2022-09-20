@@ -6,6 +6,6 @@ package com.oracle.bmc.threatintelligence;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @SdkClients({ThreatintelAsyncClient.class, ThreatintelClient.class})
 public final class SdkClientsMetadata {}

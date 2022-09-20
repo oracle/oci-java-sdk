@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * The visibility level associated with data and an associated TLP (https://www.cisa.gov/tlp) level.
+ * The visibility level of attribution data, including its [Traffic Light Protocol (TLP)](https://www.cisa.gov/tlp) color.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataVisibility.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataVisibility extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -45,13 +45,13 @@ public final class DataVisibility extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The Traffic Light Protocol (TLP) name of the visibility level.
+         * The Traffic Light Protocol (TLP) color of the visibility level.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlpName")
         private TlpName tlpName;
 
         /**
-         * The Traffic Light Protocol (TLP) name of the visibility level.
+         * The Traffic Light Protocol (TLP) color of the visibility level.
          * @param tlpName the value to set
          * @return this builder
          **/
@@ -110,7 +110,7 @@ public final class DataVisibility extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The Traffic Light Protocol (TLP) name of the visibility level.
+     * The Traffic Light Protocol (TLP) color of the visibility level.
      **/
     public enum TlpName {
         TlpInternalAudit("TLP_INTERNAL_AUDIT"),
@@ -161,13 +161,13 @@ public final class DataVisibility extends com.oracle.bmc.http.internal.Explicitl
         }
     };
     /**
-     * The Traffic Light Protocol (TLP) name of the visibility level.
+     * The Traffic Light Protocol (TLP) color of the visibility level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlpName")
     private final TlpName tlpName;
 
     /**
-     * The Traffic Light Protocol (TLP) name of the visibility level.
+     * The Traffic Light Protocol (TLP) color of the visibility level.
      * @return the value
      **/
     public TlpName getTlpName() {

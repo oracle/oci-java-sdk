@@ -21,11 +21,13 @@ package com.oracle.bmc.dataintegration.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataflowApplication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"applicationId", "compartmentId"})
-    public DataflowApplication(String applicationId, String compartmentId) {
+    @java.beans.ConstructorProperties({"applicationId", "compartmentId", "configValues"})
+    public DataflowApplication(
+            String applicationId, String compartmentId, ConfigValues configValues) {
         super();
         this.applicationId = applicationId;
         this.compartmentId = compartmentId;
+        this.configValues = configValues;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,12 +65,22 @@ public final class DataflowApplication extends com.oracle.bmc.http.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("configValues")
+        private ConfigValues configValues;
+
+        public Builder configValues(ConfigValues configValues) {
+            this.configValues = configValues;
+            this.__explicitlySet__.add("configValues");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataflowApplication build() {
             DataflowApplication model =
-                    new DataflowApplication(this.applicationId, this.compartmentId);
+                    new DataflowApplication(
+                            this.applicationId, this.compartmentId, this.configValues);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +94,9 @@ public final class DataflowApplication extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
             }
             return this;
         }
@@ -126,6 +141,13 @@ public final class DataflowApplication extends com.oracle.bmc.http.internal.Expl
         return compartmentId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("configValues")
+    private final ConfigValues configValues;
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -142,6 +164,7 @@ public final class DataflowApplication extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", configValues=").append(String.valueOf(this.configValues));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +181,7 @@ public final class DataflowApplication extends com.oracle.bmc.http.internal.Expl
         DataflowApplication other = (DataflowApplication) o;
         return java.util.Objects.equals(this.applicationId, other.applicationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.configValues, other.configValues)
                 && super.equals(other);
     }
 
@@ -171,6 +195,7 @@ public final class DataflowApplication extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.44.0 - 2022-09-20
+### Added
+- Support for the Cloud Bridge service
+- Support for the Cloud Migrations service
+- Support for display banners, trails, and sizes in the GoldenGate service
+- Support for generic REST data assets, flattening of data in Data Flow, and runtime information on pipelines in the Data Integration service
+- Support for expanded search functionality in the Threat Intelligence service
+- Support for ingest-time rules and specifying logsets and query strings during recalls in the Logging Analytics service
+- Support for repository mirroring from Visual Builder Studio in the DevOps service
+- Support for running a managed build stage with the source code hosted in a Visual Builder Studio repository in the DevOps service
+- Support for triggering a build run based on an event in a Visual Builder Studio repository in the DevOps service
+- Support for additional parameters during cost management scheduling in the Usage service
+
+### Breaking Changes
+- Support for retries by default on operations of the GoldenGate service
+- Support for retries by default on operations of the Threat Intelligence service
+
 ## 2.43.0 - 2022-09-13
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-madrid-1 region

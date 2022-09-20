@@ -142,6 +142,16 @@ public final class Aggregator extends Operator {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("materializedGroupByColumns")
+        private MaterializedDynamicField materializedGroupByColumns;
+
+        public Builder materializedGroupByColumns(
+                MaterializedDynamicField materializedGroupByColumns) {
+            this.materializedGroupByColumns = materializedGroupByColumns;
+            this.__explicitlySet__.add("materializedGroupByColumns");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -160,7 +170,8 @@ public final class Aggregator extends Operator {
                             this.identifier,
                             this.parameters,
                             this.opConfigValues,
-                            this.groupByColumns);
+                            this.groupByColumns,
+                            this.materializedGroupByColumns);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -208,6 +219,9 @@ public final class Aggregator extends Operator {
             if (model.wasPropertyExplicitlySet("groupByColumns")) {
                 this.groupByColumns(model.getGroupByColumns());
             }
+            if (model.wasPropertyExplicitlySet("materializedGroupByColumns")) {
+                this.materializedGroupByColumns(model.getMaterializedGroupByColumns());
+            }
             return this;
         }
     }
@@ -237,7 +251,8 @@ public final class Aggregator extends Operator {
             String identifier,
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
-            DynamicProxyField groupByColumns) {
+            DynamicProxyField groupByColumns,
+            MaterializedDynamicField materializedGroupByColumns) {
         super(
                 key,
                 modelVersion,
@@ -252,6 +267,7 @@ public final class Aggregator extends Operator {
                 parameters,
                 opConfigValues);
         this.groupByColumns = groupByColumns;
+        this.materializedGroupByColumns = materializedGroupByColumns;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("groupByColumns")
@@ -259,6 +275,13 @@ public final class Aggregator extends Operator {
 
     public DynamicProxyField getGroupByColumns() {
         return groupByColumns;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("materializedGroupByColumns")
+    private final MaterializedDynamicField materializedGroupByColumns;
+
+    public MaterializedDynamicField getMaterializedGroupByColumns() {
+        return materializedGroupByColumns;
     }
 
     @Override
@@ -276,6 +299,8 @@ public final class Aggregator extends Operator {
         sb.append("Aggregator(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", groupByColumns=").append(String.valueOf(this.groupByColumns));
+        sb.append(", materializedGroupByColumns=")
+                .append(String.valueOf(this.materializedGroupByColumns));
         sb.append(")");
         return sb.toString();
     }
@@ -291,6 +316,8 @@ public final class Aggregator extends Operator {
 
         Aggregator other = (Aggregator) o;
         return java.util.Objects.equals(this.groupByColumns, other.groupByColumns)
+                && java.util.Objects.equals(
+                        this.materializedGroupByColumns, other.materializedGroupByColumns)
                 && super.equals(other);
     }
 
@@ -301,6 +328,11 @@ public final class Aggregator extends Operator {
         result =
                 (result * PRIME)
                         + (this.groupByColumns == null ? 43 : this.groupByColumns.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.materializedGroupByColumns == null
+                                ? 43
+                                : this.materializedGroupByColumns.hashCode());
         return result;
     }
 }

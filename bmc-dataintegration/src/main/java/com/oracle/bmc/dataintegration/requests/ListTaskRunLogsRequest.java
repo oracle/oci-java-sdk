@@ -141,6 +141,7 @@ public class ListTaskRunLogsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
+        TimeUpdated("TIME_UPDATED"),
         ;
 
         private final String value;

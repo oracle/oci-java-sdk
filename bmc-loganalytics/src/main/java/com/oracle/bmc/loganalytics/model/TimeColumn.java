@@ -125,14 +125,14 @@ public final class TimeColumn extends AbstractColumn {
             return this;
         }
         /**
-         * Time span betwwen each series data point.
+         * Time span between each series data point.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
         /**
-         * Time span betwwen each series data point.
+         * Time span between each series data point.
          *
          * @param span the value to set
          * @return this builder
@@ -274,14 +274,14 @@ public final class TimeColumn extends AbstractColumn {
     }
 
     /**
-     * Time span betwwen each series data point.
+     * Time span between each series data point.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
     /**
-     * Time span betwwen each series data point.
+     * Time span between each series data point.
      *
      * @return the value
      **/

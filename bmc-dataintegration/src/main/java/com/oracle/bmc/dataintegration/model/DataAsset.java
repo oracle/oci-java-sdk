@@ -39,6 +39,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "AMAZON_S3_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromLakehouseDetails.class,
+        name = "LAKE_HOUSE_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetFromObjectStorageDetails.class,
         name = "ORACLE_OBJECT_STORAGE_DATA_ASSET"
     ),
@@ -53,6 +57,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetFromMySQL.class,
         name = "MYSQL_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromRestDetails.class,
+        name = "REST_DATA_ASSET"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -360,6 +368,8 @@ public class DataAsset extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
+        LakeHouseDataAsset("LAKE_HOUSE_DATA_ASSET"),
+        RestDataAsset("REST_DATA_ASSET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

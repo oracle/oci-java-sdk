@@ -2,6 +2,11 @@
  * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
+
+/**
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
 package com.oracle.bmc.graalvm;
 
 @SdkClientPackages({
@@ -28,7 +33,9 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.certificates.SdkClientsMetadata",
     "com.oracle.bmc.certificatesmanagement.SdkClientsMetadata",
     "com.oracle.bmc.cims.SdkClientsMetadata",
+    "com.oracle.bmc.cloudbridge.SdkClientsMetadata",
     "com.oracle.bmc.cloudguard.SdkClientsMetadata",
+    "com.oracle.bmc.cloudmigrations.SdkClientsMetadata",
     "com.oracle.bmc.computeinstanceagent.SdkClientsMetadata",
     "com.oracle.bmc.containerengine.SdkClientsMetadata",
     "com.oracle.bmc.core.SdkClientsMetadata",

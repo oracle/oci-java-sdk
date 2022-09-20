@@ -32,7 +32,13 @@ public final class CreateWorkspaceDetails
         "description",
         "displayName",
         "compartmentId",
-        "isPrivateNetworkEnabled"
+        "isPrivateNetworkEnabled",
+        "registryId",
+        "endpointId",
+        "registryName",
+        "registryCompartmentId",
+        "endpointName",
+        "endpointCompartmentId"
     })
     public CreateWorkspaceDetails(
             String vcnId,
@@ -44,7 +50,13 @@ public final class CreateWorkspaceDetails
             String description,
             String displayName,
             String compartmentId,
-            Boolean isPrivateNetworkEnabled) {
+            Boolean isPrivateNetworkEnabled,
+            String registryId,
+            String endpointId,
+            String registryName,
+            String registryCompartmentId,
+            String endpointName,
+            String endpointCompartmentId) {
         super();
         this.vcnId = vcnId;
         this.subnetId = subnetId;
@@ -56,6 +68,12 @@ public final class CreateWorkspaceDetails
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
+        this.registryId = registryId;
+        this.endpointId = endpointId;
+        this.registryName = registryName;
+        this.registryCompartmentId = registryCompartmentId;
+        this.endpointName = endpointName;
+        this.endpointCompartmentId = endpointCompartmentId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -229,6 +247,102 @@ public final class CreateWorkspaceDetails
             this.__explicitlySet__.add("isPrivateNetworkEnabled");
             return this;
         }
+        /**
+         * DCMS Data Asset Registry ID to which the workspace is associated
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("registryId")
+        private String registryId;
+
+        /**
+         * DCMS Data Asset Registry ID to which the workspace is associated
+         * @param registryId the value to set
+         * @return this builder
+         **/
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
+            this.__explicitlySet__.add("registryId");
+            return this;
+        }
+        /**
+         * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+         * @param endpointId the value to set
+         * @return this builder
+         **/
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
+        /**
+         * DCMS Data Asset Registry display name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("registryName")
+        private String registryName;
+
+        /**
+         * DCMS Data Asset Registry display name
+         * @param registryName the value to set
+         * @return this builder
+         **/
+        public Builder registryName(String registryName) {
+            this.registryName = registryName;
+            this.__explicitlySet__.add("registryName");
+            return this;
+        }
+        /**
+         * DCMS Data Asset Registry Compartment Identifier
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("registryCompartmentId")
+        private String registryCompartmentId;
+
+        /**
+         * DCMS Data Asset Registry Compartment Identifier
+         * @param registryCompartmentId the value to set
+         * @return this builder
+         **/
+        public Builder registryCompartmentId(String registryCompartmentId) {
+            this.registryCompartmentId = registryCompartmentId;
+            this.__explicitlySet__.add("registryCompartmentId");
+            return this;
+        }
+        /**
+         * DCMS Private Endpoint Name
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
+        private String endpointName;
+
+        /**
+         * DCMS Private Endpoint Name
+         * @param endpointName the value to set
+         * @return this builder
+         **/
+        public Builder endpointName(String endpointName) {
+            this.endpointName = endpointName;
+            this.__explicitlySet__.add("endpointName");
+            return this;
+        }
+        /**
+         * DCMS PRivate Endpoint Compartment Identifier
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointCompartmentId")
+        private String endpointCompartmentId;
+
+        /**
+         * DCMS PRivate Endpoint Compartment Identifier
+         * @param endpointCompartmentId the value to set
+         * @return this builder
+         **/
+        public Builder endpointCompartmentId(String endpointCompartmentId) {
+            this.endpointCompartmentId = endpointCompartmentId;
+            this.__explicitlySet__.add("endpointCompartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -245,7 +359,13 @@ public final class CreateWorkspaceDetails
                             this.description,
                             this.displayName,
                             this.compartmentId,
-                            this.isPrivateNetworkEnabled);
+                            this.isPrivateNetworkEnabled,
+                            this.registryId,
+                            this.endpointId,
+                            this.registryName,
+                            this.registryCompartmentId,
+                            this.endpointName,
+                            this.endpointCompartmentId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -283,6 +403,24 @@ public final class CreateWorkspaceDetails
             }
             if (model.wasPropertyExplicitlySet("isPrivateNetworkEnabled")) {
                 this.isPrivateNetworkEnabled(model.getIsPrivateNetworkEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("registryId")) {
+                this.registryId(model.getRegistryId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("registryName")) {
+                this.registryName(model.getRegistryName());
+            }
+            if (model.wasPropertyExplicitlySet("registryCompartmentId")) {
+                this.registryCompartmentId(model.getRegistryCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointName")) {
+                this.endpointName(model.getEndpointName());
+            }
+            if (model.wasPropertyExplicitlySet("endpointCompartmentId")) {
+                this.endpointCompartmentId(model.getEndpointCompartmentId());
             }
             return this;
         }
@@ -447,6 +585,90 @@ public final class CreateWorkspaceDetails
         return isPrivateNetworkEnabled;
     }
 
+    /**
+     * DCMS Data Asset Registry ID to which the workspace is associated
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("registryId")
+    private final String registryId;
+
+    /**
+     * DCMS Data Asset Registry ID to which the workspace is associated
+     * @return the value
+     **/
+    public String getRegistryId() {
+        return registryId;
+    }
+
+    /**
+     * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     * @return the value
+     **/
+    public String getEndpointId() {
+        return endpointId;
+    }
+
+    /**
+     * DCMS Data Asset Registry display name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("registryName")
+    private final String registryName;
+
+    /**
+     * DCMS Data Asset Registry display name
+     * @return the value
+     **/
+    public String getRegistryName() {
+        return registryName;
+    }
+
+    /**
+     * DCMS Data Asset Registry Compartment Identifier
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("registryCompartmentId")
+    private final String registryCompartmentId;
+
+    /**
+     * DCMS Data Asset Registry Compartment Identifier
+     * @return the value
+     **/
+    public String getRegistryCompartmentId() {
+        return registryCompartmentId;
+    }
+
+    /**
+     * DCMS Private Endpoint Name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
+    private final String endpointName;
+
+    /**
+     * DCMS Private Endpoint Name
+     * @return the value
+     **/
+    public String getEndpointName() {
+        return endpointName;
+    }
+
+    /**
+     * DCMS PRivate Endpoint Compartment Identifier
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointCompartmentId")
+    private final String endpointCompartmentId;
+
+    /**
+     * DCMS PRivate Endpoint Compartment Identifier
+     * @return the value
+     **/
+    public String getEndpointCompartmentId() {
+        return endpointCompartmentId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -472,6 +694,12 @@ public final class CreateWorkspaceDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isPrivateNetworkEnabled=")
                 .append(String.valueOf(this.isPrivateNetworkEnabled));
+        sb.append(", registryId=").append(String.valueOf(this.registryId));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", registryName=").append(String.valueOf(this.registryName));
+        sb.append(", registryCompartmentId=").append(String.valueOf(this.registryCompartmentId));
+        sb.append(", endpointName=").append(String.valueOf(this.endpointName));
+        sb.append(", endpointCompartmentId=").append(String.valueOf(this.endpointCompartmentId));
         sb.append(")");
         return sb.toString();
     }
@@ -497,6 +725,12 @@ public final class CreateWorkspaceDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.isPrivateNetworkEnabled, other.isPrivateNetworkEnabled)
+                && java.util.Objects.equals(this.registryId, other.registryId)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.registryName, other.registryName)
+                && java.util.Objects.equals(this.registryCompartmentId, other.registryCompartmentId)
+                && java.util.Objects.equals(this.endpointName, other.endpointName)
+                && java.util.Objects.equals(this.endpointCompartmentId, other.endpointCompartmentId)
                 && super.equals(other);
     }
 
@@ -522,6 +756,20 @@ public final class CreateWorkspaceDetails
                         + (this.isPrivateNetworkEnabled == null
                                 ? 43
                                 : this.isPrivateNetworkEnabled.hashCode());
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.registryName == null ? 43 : this.registryName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registryCompartmentId == null
+                                ? 43
+                                : this.registryCompartmentId.hashCode());
+        result = (result * PRIME) + (this.endpointName == null ? 43 : this.endpointName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.endpointCompartmentId == null
+                                ? 43
+                                : this.endpointCompartmentId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

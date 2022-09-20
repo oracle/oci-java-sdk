@@ -918,6 +918,30 @@ public interface DataIntegration extends AutoCloseable {
     GetReferenceResponse getReference(GetReferenceRequest request);
 
     /**
+     * Retrieves a runtime operator using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimeOperatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuntimeOperator API.
+     */
+    GetRuntimeOperatorResponse getRuntimeOperator(GetRuntimeOperatorRequest request);
+
+    /**
+     * Retrieves a runtime pipeline using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuntimePipeline API.
+     */
+    GetRuntimePipelineResponse getRuntimePipeline(GetRuntimePipelineRequest request);
+
+    /**
      * Retrieves schedule by schedule key
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1140,6 +1164,20 @@ public interface DataIntegration extends AutoCloseable {
     ListDependentObjectsResponse listDependentObjects(ListDependentObjectsRequest request);
 
     /**
+     * This endpoint can be used to list Task Run Lineages within a given time window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDisApplicationTaskRunLineages API.
+     */
+    ListDisApplicationTaskRunLineagesResponse listDisApplicationTaskRunLineages(
+            ListDisApplicationTaskRunLineagesRequest request);
+
+    /**
      * Retrieves a list of DIS Applications in a compartment and provides options to filter the list.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1291,6 +1329,32 @@ public interface DataIntegration extends AutoCloseable {
     ListReferencesResponse listReferences(ListReferencesRequest request);
 
     /**
+     * This endpoint can be used to list runtime operators with filtering options
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListRuntimeOperatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuntimeOperators API.
+     */
+    ListRuntimeOperatorsResponse listRuntimeOperators(ListRuntimeOperatorsRequest request);
+
+    /**
+     * This endpoint can be used to list runtime pipelines with filtering options
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListRuntimePipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuntimePipelines API.
+     */
+    ListRuntimePipelinesResponse listRuntimePipelines(ListRuntimePipelinesRequest request);
+
+    /**
      * Use this endpoint to list schedules.
      *
      * @param request The request object containing the details to send
@@ -1314,6 +1378,19 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListSchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchemas API.
      */
     ListSchemasResponse listSchemas(ListSchemasRequest request);
+
+    /**
+     * This endpoint can be used to list Task Run Lineages within a given time window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRunLineages API.
+     */
+    ListTaskRunLineagesResponse listTaskRunLineages(ListTaskRunLineagesRequest request);
 
     /**
      * Gets log entries for task runs using its key.

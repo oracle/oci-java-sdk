@@ -27,6 +27,10 @@ package com.oracle.bmc.devops.model;
         name = "BITBUCKET_SERVER"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateVbsTriggerDetails.class,
+        name = "VBS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateGitlabServerTriggerDetails.class,
         name = "GITLAB_SERVER"
     ),

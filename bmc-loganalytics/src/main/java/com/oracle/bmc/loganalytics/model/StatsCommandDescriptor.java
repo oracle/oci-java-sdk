@@ -72,6 +72,15 @@ public final class StatsCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * Group by fields if specified in the query string.
          *
@@ -120,6 +129,7 @@ public final class StatsCommandDescriptor extends AbstractCommandDescriptor {
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.groupByFields,
                             this.functions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -144,6 +154,9 @@ public final class StatsCommandDescriptor extends AbstractCommandDescriptor {
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("groupByFields")) {
                 this.groupByFields(model.getGroupByFields());
@@ -173,9 +186,16 @@ public final class StatsCommandDescriptor extends AbstractCommandDescriptor {
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             java.util.List<AbstractField> groupByFields,
             java.util.List<FunctionField> functions) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.groupByFields = groupByFields;
         this.functions = functions;
     }

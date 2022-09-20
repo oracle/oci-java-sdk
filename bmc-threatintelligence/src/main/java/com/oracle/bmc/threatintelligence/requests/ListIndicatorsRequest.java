@@ -8,27 +8,27 @@ import com.oracle.bmc.threatintelligence.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIndicatorsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the tenancy to use to filter results.
+     * The OCID of the tenancy (root compartment) that is used to filter results.
      */
     private String compartmentId;
 
     /**
-     * The ID of the tenancy to use to filter results.
+     * The OCID of the tenancy (root compartment) that is used to filter results.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The result set will include indicators that have any of the provided threat types. To filter for multiple threat types repeat the query parameter.
+     * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
      */
     private java.util.List<String> threatTypeName;
 
     /**
-     * The result set will include indicators that have any of the provided threat types. To filter for multiple threat types repeat the query parameter.
+     * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
      */
     public java.util.List<String> getThreatTypeName() {
         return threatTypeName;
@@ -78,6 +78,61 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return timeUpdatedGreaterThanOrEqualTo;
     }
     /**
+     * Return indicators updated before the provided time.
+     */
+    private java.util.Date timeUpdatedLessThan;
+
+    /**
+     * Return indicators updated before the provided time.
+     */
+    public java.util.Date getTimeUpdatedLessThan() {
+        return timeUpdatedLessThan;
+    }
+    /**
+     * The oldest last seen time of entities to be returned.
+     */
+    private java.util.Date timeLastSeenGreaterThanOrEqualTo;
+
+    /**
+     * The oldest last seen time of entities to be returned.
+     */
+    public java.util.Date getTimeLastSeenGreaterThanOrEqualTo() {
+        return timeLastSeenGreaterThanOrEqualTo;
+    }
+    /**
+     * Return indicators last seen before the provided time.
+     */
+    private java.util.Date timeLastSeenLessThan;
+
+    /**
+     * Return indicators last seen before the provided time.
+     */
+    public java.util.Date getTimeLastSeenLessThan() {
+        return timeLastSeenLessThan;
+    }
+    /**
+     * The oldest created/first seen time of entities to be returned.
+     */
+    private java.util.Date timeCreatedGreaterThanOrEqualTo;
+
+    /**
+     * The oldest created/first seen time of entities to be returned.
+     */
+    public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
+        return timeCreatedGreaterThanOrEqualTo;
+    }
+    /**
+     * Return indicators created/first seen before the provided time.
+     */
+    private java.util.Date timeCreatedLessThan;
+
+    /**
+     * Return indicators created/first seen before the provided time.
+     */
+    public java.util.Date getTimeCreatedLessThan() {
+        return timeCreatedLessThan;
+    }
+    /**
      * The maximum number of items to return.
      */
     private Integer limit;
@@ -122,7 +177,9 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      **/
     public enum SortBy {
         Confidence("confidence"),
+        TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
+        TimeLastSeen("timeLastSeen"),
         ;
 
         private final String value;
@@ -180,12 +237,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the tenancy to use to filter results.
+         * The OCID of the tenancy (root compartment) that is used to filter results.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the tenancy to use to filter results.
+         * The OCID of the tenancy (root compartment) that is used to filter results.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -195,12 +252,12 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The result set will include indicators that have any of the provided threat types. To filter for multiple threat types repeat the query parameter.
+         * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
          */
         private java.util.List<String> threatTypeName = null;
 
         /**
-         * The result set will include indicators that have any of the provided threat types. To filter for multiple threat types repeat the query parameter.
+         * The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
          * @param threatTypeName the value to set
          * @return this builder instance
          */
@@ -210,7 +267,7 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Singular setter. The result set will include indicators that have any of the provided threat types. To filter for multiple threat types repeat the query parameter.
+         * Singular setter. The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -276,6 +333,83 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public Builder timeUpdatedGreaterThanOrEqualTo(
                 java.util.Date timeUpdatedGreaterThanOrEqualTo) {
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * Return indicators updated before the provided time.
+         */
+        private java.util.Date timeUpdatedLessThan = null;
+
+        /**
+         * Return indicators updated before the provided time.
+         * @param timeUpdatedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeUpdatedLessThan(java.util.Date timeUpdatedLessThan) {
+            this.timeUpdatedLessThan = timeUpdatedLessThan;
+            return this;
+        }
+
+        /**
+         * The oldest last seen time of entities to be returned.
+         */
+        private java.util.Date timeLastSeenGreaterThanOrEqualTo = null;
+
+        /**
+         * The oldest last seen time of entities to be returned.
+         * @param timeLastSeenGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeLastSeenGreaterThanOrEqualTo(
+                java.util.Date timeLastSeenGreaterThanOrEqualTo) {
+            this.timeLastSeenGreaterThanOrEqualTo = timeLastSeenGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * Return indicators last seen before the provided time.
+         */
+        private java.util.Date timeLastSeenLessThan = null;
+
+        /**
+         * Return indicators last seen before the provided time.
+         * @param timeLastSeenLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeLastSeenLessThan(java.util.Date timeLastSeenLessThan) {
+            this.timeLastSeenLessThan = timeLastSeenLessThan;
+            return this;
+        }
+
+        /**
+         * The oldest created/first seen time of entities to be returned.
+         */
+        private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
+
+        /**
+         * The oldest created/first seen time of entities to be returned.
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeCreatedGreaterThanOrEqualTo(
+                java.util.Date timeCreatedGreaterThanOrEqualTo) {
+            this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * Return indicators created/first seen before the provided time.
+         */
+        private java.util.Date timeCreatedLessThan = null;
+
+        /**
+         * Return indicators created/first seen before the provided time.
+         * @param timeCreatedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
+            this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
 
@@ -390,6 +524,11 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             value(o.getValue());
             confidenceGreaterThanOrEqualTo(o.getConfidenceGreaterThanOrEqualTo());
             timeUpdatedGreaterThanOrEqualTo(o.getTimeUpdatedGreaterThanOrEqualTo());
+            timeUpdatedLessThan(o.getTimeUpdatedLessThan());
+            timeLastSeenGreaterThanOrEqualTo(o.getTimeLastSeenGreaterThanOrEqualTo());
+            timeLastSeenLessThan(o.getTimeLastSeenLessThan());
+            timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
+            timeCreatedLessThan(o.getTimeCreatedLessThan());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -433,13 +572,18 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.value = value;
             request.confidenceGreaterThanOrEqualTo = confidenceGreaterThanOrEqualTo;
             request.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
+            request.timeUpdatedLessThan = timeUpdatedLessThan;
+            request.timeLastSeenGreaterThanOrEqualTo = timeLastSeenGreaterThanOrEqualTo;
+            request.timeLastSeenLessThan = timeLastSeenLessThan;
+            request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            request.timeCreatedLessThan = timeCreatedLessThan;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIndicatorsRequest(compartmentId, threatTypeName, type, value, confidenceGreaterThanOrEqualTo, timeUpdatedGreaterThanOrEqualTo, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListIndicatorsRequest(compartmentId, threatTypeName, type, value, confidenceGreaterThanOrEqualTo, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, timeLastSeenGreaterThanOrEqualTo, timeLastSeenLessThan, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -455,6 +599,11 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .value(value)
                 .confidenceGreaterThanOrEqualTo(confidenceGreaterThanOrEqualTo)
                 .timeUpdatedGreaterThanOrEqualTo(timeUpdatedGreaterThanOrEqualTo)
+                .timeUpdatedLessThan(timeUpdatedLessThan)
+                .timeLastSeenGreaterThanOrEqualTo(timeLastSeenGreaterThanOrEqualTo)
+                .timeLastSeenLessThan(timeLastSeenLessThan)
+                .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
+                .timeCreatedLessThan(timeCreatedLessThan)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -483,6 +632,13 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .append(String.valueOf(this.confidenceGreaterThanOrEqualTo));
         sb.append(",timeUpdatedGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeUpdatedGreaterThanOrEqualTo));
+        sb.append(",timeUpdatedLessThan=").append(String.valueOf(this.timeUpdatedLessThan));
+        sb.append(",timeLastSeenGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeLastSeenGreaterThanOrEqualTo));
+        sb.append(",timeLastSeenLessThan=").append(String.valueOf(this.timeLastSeenLessThan));
+        sb.append(",timeCreatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
+        sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -511,6 +667,14 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         this.confidenceGreaterThanOrEqualTo, other.confidenceGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
                         this.timeUpdatedGreaterThanOrEqualTo, other.timeUpdatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeUpdatedLessThan, other.timeUpdatedLessThan)
+                && java.util.Objects.equals(
+                        this.timeLastSeenGreaterThanOrEqualTo,
+                        other.timeLastSeenGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeLastSeenLessThan, other.timeLastSeenLessThan)
+                && java.util.Objects.equals(
+                        this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -540,6 +704,31 @@ public class ListIndicatorsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.timeUpdatedGreaterThanOrEqualTo == null
                                 ? 43
                                 : this.timeUpdatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUpdatedLessThan == null
+                                ? 43
+                                : this.timeUpdatedLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSeenGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeLastSeenGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSeenLessThan == null
+                                ? 43
+                                : this.timeLastSeenLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedLessThan == null
+                                ? 43
+                                : this.timeCreatedLessThan.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

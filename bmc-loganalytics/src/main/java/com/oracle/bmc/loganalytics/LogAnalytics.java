@@ -144,6 +144,20 @@ public interface LogAnalytics extends AutoCloseable {
     CancelQueryWorkRequestResponse cancelQueryWorkRequest(CancelQueryWorkRequestRequest request);
 
     /**
+     * Moves the specified ingest time rule to a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeIngestTimeRuleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIngestTimeRuleCompartment API.
+     */
+    ChangeIngestTimeRuleCompartmentResponse changeIngestTimeRuleCompartment(
+            ChangeIngestTimeRuleCompartmentRequest request);
+
+    /**
      * Update the compartment of the log analytics enterprise manager bridge with the given id.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -237,6 +251,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CompareContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompareContent API.
      */
     CompareContentResponse compareContent(CompareContentRequest request);
+
+    /**
+     * Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateIngestTimeRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIngestTimeRule API.
+     */
+    CreateIngestTimeRuleResponse createIngestTimeRule(CreateIngestTimeRuleRequest request);
 
     /**
      * Add configuration for enterprise manager bridge. Enterprise manager bridge is used to automatically add selected entities from enterprise manager cloud control. A corresponding OCI bridge configuration is required in enterprise manager.
@@ -341,6 +368,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteFieldExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteField API.
      */
     DeleteFieldResponse deleteField(DeleteFieldRequest request);
+
+    /**
+     * Deletes the specified ingest time rule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteIngestTimeRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIngestTimeRule API.
+     */
+    DeleteIngestTimeRuleResponse deleteIngestTimeRule(DeleteIngestTimeRuleRequest request);
 
     /**
      * Deletes label with the specified name.
@@ -544,6 +584,19 @@ public interface LogAnalytics extends AutoCloseable {
     DisableAutoAssociationResponse disableAutoAssociation(DisableAutoAssociationRequest request);
 
     /**
+     * Disables the specified ingest time rule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DisableIngestTimeRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableIngestTimeRule API.
+     */
+    DisableIngestTimeRuleResponse disableIngestTimeRule(DisableIngestTimeRuleRequest request);
+
+    /**
      * Disable one or more event types in a source.
      *
      * @param request The request object containing the details to send
@@ -583,6 +636,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableAutoAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutoAssociation API.
      */
     EnableAutoAssociationResponse enableAutoAssociation(EnableAutoAssociationRequest request);
+
+    /**
+     * Enables the specified ingest time rule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableIngestTimeRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableIngestTimeRule API.
+     */
+    EnableIngestTimeRuleResponse enableIngestTimeRule(EnableIngestTimeRuleRequest request);
 
     /**
      * Enable one or more event types in a source. An event type and version can be enabled only in one source.
@@ -778,6 +844,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetFieldsSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFieldsSummary API.
      */
     GetFieldsSummaryResponse getFieldsSummary(GetFieldsSummaryRequest request);
+
+    /**
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetIngestTimeRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIngestTimeRule API.
+     */
+    GetIngestTimeRuleResponse getIngestTimeRule(GetIngestTimeRuleRequest request);
 
     /**
      * Gets detailed information about the label with the specified name.
@@ -1286,6 +1365,19 @@ public interface LogAnalytics extends AutoCloseable {
     ListFieldsResponse listFields(ListFieldsRequest request);
 
     /**
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListIngestTimeRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIngestTimeRules API.
+     */
+    ListIngestTimeRulesResponse listIngestTimeRules(ListIngestTimeRulesRequest request);
+
+    /**
      * Lists the available problem priorities that could be associated with a label.
      *
      * @param request The request object containing the details to send
@@ -1533,6 +1625,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListResourceCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceCategories API.
      */
     ListResourceCategoriesResponse listResourceCategories(ListResourceCategoriesRequest request);
+
+    /**
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRules API.
+     */
+    ListRulesResponse listRules(ListRulesRequest request);
 
     /**
      * Lists scheduled tasks.
@@ -2083,6 +2188,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UnsuppressWarningExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsuppressWarning API.
      */
     UnsuppressWarningResponse unsuppressWarning(UnsuppressWarningRequest request);
+
+    /**
+     * Updates the specified ingest time rule's description, defined tags, and free-form tags.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateIngestTimeRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIngestTimeRule API.
+     */
+    UpdateIngestTimeRuleResponse updateIngestTimeRule(UpdateIngestTimeRuleRequest request);
 
     /**
      * Update log analytics enterprise manager bridge with the given id.

@@ -31,6 +31,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "BICC_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionSummaryFromRestNoAuth.class,
+        name = "REST_NO_AUTH_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionSummaryFromAtp.class,
         name = "ORACLE_ATP_CONNECTION"
     ),
@@ -43,12 +47,20 @@ package com.oracle.bmc.dataintegration.model;
         name = "AMAZON_S3_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionSummaryFromRestBasicAuth.class,
+        name = "REST_BASIC_AUTH_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionSummaryFromAdwc.class,
         name = "ORACLE_ADWC_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionSummaryFromMySQL.class,
         name = "MYSQL_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionSummaryFromLakehouse.class,
+        name = "LAKE_HOUSE_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionSummaryFromBIP.class,
@@ -367,6 +379,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         BiccConnection("BICC_CONNECTION"),
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
         BipConnection("BIP_CONNECTION"),
+        LakeHouseConnection("LAKE_HOUSE_CONNECTION"),
+        RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
+        RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

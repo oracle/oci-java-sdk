@@ -41,6 +41,10 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabServerAccessTokenConnection.class,
         name = "GITLAB_SERVER_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VbsAccessTokenConnection.class,
+        name = "VBS_ACCESS_TOKEN"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -371,6 +375,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         GitlabServerAccessToken("GITLAB_SERVER_ACCESS_TOKEN"),
         BitbucketServerAccessToken("BITBUCKET_SERVER_ACCESS_TOKEN"),
         BitbucketCloudAppPassword("BITBUCKET_CLOUD_APP_PASSWORD"),
+        VbsAccessToken("VBS_ACCESS_TOKEN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

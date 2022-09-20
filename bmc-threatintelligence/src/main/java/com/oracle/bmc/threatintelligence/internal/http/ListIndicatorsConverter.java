@@ -10,7 +10,7 @@ import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListIndicatorsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -32,7 +32,7 @@ public class ListIndicatorsConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210831").path("indicators");
+                client.getBaseTarget().path("/20220901").path("indicators");
 
         target =
                 target.queryParam(
@@ -79,6 +79,46 @@ public class ListIndicatorsConverter {
                             "timeUpdatedGreaterThanOrEqualTo",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getTimeUpdatedGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeUpdatedLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeUpdatedLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeUpdatedLessThan()));
+        }
+
+        if (request.getTimeLastSeenGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeLastSeenGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeLastSeenGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeLastSeenLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeLastSeenLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeLastSeenLessThan()));
+        }
+
+        if (request.getTimeCreatedGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeCreatedGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeCreatedGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeCreatedLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeCreatedLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeCreatedLessThan()));
         }
 
         if (request.getLimit() != null) {

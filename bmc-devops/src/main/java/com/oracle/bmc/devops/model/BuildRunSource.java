@@ -39,6 +39,10 @@ package com.oracle.bmc.devops.model;
         name = "DEVOPS_CODE_REPOSITORY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VbsBuildRunSource.class,
+        name = "VBS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ManualBuildRunSource.class,
         name = "MANUAL"
     ),
@@ -109,6 +113,7 @@ public class BuildRunSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
         BitbucketCloud("BITBUCKET_CLOUD"),
         BitbucketServer("BITBUCKET_SERVER"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
+        Vbs("VBS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

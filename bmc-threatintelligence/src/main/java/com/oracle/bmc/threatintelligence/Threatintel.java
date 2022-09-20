@@ -8,10 +8,10 @@ import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
 
 /**
- * Use the Threat Intelligence API to view indicators of compromise and related items. For more information, see [Overview of Threat Intelligence](https://docs.cloud.oracle.com/Content/ThreatIntelligence/Concepts/threatintelligenceoverview.htm).
+ * Use the Threat Intelligence API to search for information about known threat indicators, including suspicious IP addresses, domain names, and other digital fingerprints. Threat Intelligence is a managed database of curated threat intelligence that comes from first party Oracle security insights, open source feeds, and vendor-procured data. For more information, see the [Threat Intelligence documentation](https://docs.cloud.oracle.com/iaas/Content/threat-intel/home.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface Threatintel extends AutoCloseable {
 
     /**
@@ -53,11 +53,11 @@ public interface Threatintel extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Gets a detailed indicator by identifier
+     * Get detailed information about a threat indicator with a given identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/GetIndicatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIndicator API.
@@ -65,11 +65,11 @@ public interface Threatintel extends AutoCloseable {
     GetIndicatorResponse getIndicator(GetIndicatorRequest request);
 
     /**
-     * Get the current count of each indicator type.  Results can be sorted ASC or DESC by count.
+     * Get the current count of each threat indicator type. Indicator counts can be sorted in ascending or descending order.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIndicatorCounts API.
@@ -77,12 +77,12 @@ public interface Threatintel extends AutoCloseable {
     ListIndicatorCountsResponse listIndicatorCounts(ListIndicatorCountsRequest request);
 
     /**
-     * Returns a list of IndicatorSummary objects.
+     * Get a list of threat indicator summaries based on the search criteria.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIndicators API.
@@ -91,17 +91,29 @@ public interface Threatintel extends AutoCloseable {
 
     /**
      * Gets a list of threat types that are available to use as parameters when querying indicators.
-     * This is sorted by threat type name according to the sort order query param.
+     * The list is sorted by threat type name according to the sort order query param.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListThreatTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListThreatTypes API.
      */
     ListThreatTypesResponse listThreatTypes(ListThreatTypesRequest request);
+
+    /**
+     * Get indicator summaries based on advanced search criteria.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/SummarizeIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeIndicators API.
+     */
+    SummarizeIndicatorsResponse summarizeIndicators(SummarizeIndicatorsRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

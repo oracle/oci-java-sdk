@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * Threat type along with attribution data for its association to an indicator
+ * A threat type along with attribution data that associates it to a threat indicator.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ThreatType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ThreatType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -30,13 +30,13 @@ public final class ThreatType extends com.oracle.bmc.http.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the threat type
+         * The OCID of the threat type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the threat type
+         * The OCID of the threat type.
          * @param id the value to set
          * @return this builder
          **/
@@ -46,13 +46,13 @@ public final class ThreatType extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The name of the threat type
+         * The name of the threat type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the threat type
+         * The name of the threat type.
          * @param name the value to set
          * @return this builder
          **/
@@ -116,13 +116,13 @@ public final class ThreatType extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The OCID of the threat type
+     * The OCID of the threat type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the threat type
+     * The OCID of the threat type.
      * @return the value
      **/
     public String getId() {
@@ -130,13 +130,13 @@ public final class ThreatType extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The name of the threat type
+     * The name of the threat type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the threat type
+     * The name of the threat type.
      * @return the value
      **/
     public String getName() {
