@@ -72,6 +72,15 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * User specified color to highlight matches with if found.
          *
@@ -120,6 +129,7 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.color,
                             this.keywords);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -144,6 +154,9 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("color")) {
                 this.color(model.getColor());
@@ -173,9 +186,16 @@ public final class HighlightRowsCommandDescriptor extends AbstractCommandDescrip
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             String color,
             java.util.List<String> keywords) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.color = color;
         this.keywords = keywords;
     }

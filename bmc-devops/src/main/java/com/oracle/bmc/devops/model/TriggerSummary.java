@@ -45,6 +45,10 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BitbucketServerTriggerSummary.class,
         name = "BITBUCKET_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VbsTriggerSummary.class,
+        name = "VBS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

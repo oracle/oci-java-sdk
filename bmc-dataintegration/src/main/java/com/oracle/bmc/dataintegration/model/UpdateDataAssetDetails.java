@@ -23,8 +23,16 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDataAssetFromRest.class,
+        name = "REST_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDataAssetFromAtp.class,
         name = "ORACLE_ATP_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDataAssetFromLakehouse.class,
+        name = "LAKE_HOUSE_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDataAssetFromAdwc.class,
@@ -314,6 +322,8 @@ public class UpdateDataAssetDetails extends com.oracle.bmc.http.internal.Explici
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
+        LakeHouseDataAsset("LAKE_HOUSE_DATA_ASSET"),
+        RestDataAsset("REST_DATA_ASSET"),
         ;
 
         private final String value;

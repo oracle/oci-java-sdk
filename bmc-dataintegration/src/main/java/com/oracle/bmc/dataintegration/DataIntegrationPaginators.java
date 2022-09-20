@@ -943,6 +943,133 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDisApplicationTaskRunLineages operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDisApplicationTaskRunLineagesResponse>
+            listDisApplicationTaskRunLineagesResponseIterator(
+                    final ListDisApplicationTaskRunLineagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDisApplicationTaskRunLineagesRequest.Builder,
+                ListDisApplicationTaskRunLineagesRequest,
+                ListDisApplicationTaskRunLineagesResponse>(
+                new java.util.function.Supplier<
+                        ListDisApplicationTaskRunLineagesRequest.Builder>() {
+                    @Override
+                    public ListDisApplicationTaskRunLineagesRequest.Builder get() {
+                        return ListDisApplicationTaskRunLineagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisApplicationTaskRunLineagesResponse, String>() {
+                    @Override
+                    public String apply(ListDisApplicationTaskRunLineagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDisApplicationTaskRunLineagesRequest.Builder>,
+                        ListDisApplicationTaskRunLineagesRequest>() {
+                    @Override
+                    public ListDisApplicationTaskRunLineagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDisApplicationTaskRunLineagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisApplicationTaskRunLineagesRequest,
+                        ListDisApplicationTaskRunLineagesResponse>() {
+                    @Override
+                    public ListDisApplicationTaskRunLineagesResponse apply(
+                            ListDisApplicationTaskRunLineagesRequest request) {
+                        return client.listDisApplicationTaskRunLineages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.TaskRunLineageSummary} objects
+     * contained in responses from the listDisApplicationTaskRunLineages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.TaskRunLineageSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>
+            listDisApplicationTaskRunLineagesRecordIterator(
+                    final ListDisApplicationTaskRunLineagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDisApplicationTaskRunLineagesRequest.Builder,
+                ListDisApplicationTaskRunLineagesRequest, ListDisApplicationTaskRunLineagesResponse,
+                com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>(
+                new java.util.function.Supplier<
+                        ListDisApplicationTaskRunLineagesRequest.Builder>() {
+                    @Override
+                    public ListDisApplicationTaskRunLineagesRequest.Builder get() {
+                        return ListDisApplicationTaskRunLineagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisApplicationTaskRunLineagesResponse, String>() {
+                    @Override
+                    public String apply(ListDisApplicationTaskRunLineagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDisApplicationTaskRunLineagesRequest.Builder>,
+                        ListDisApplicationTaskRunLineagesRequest>() {
+                    @Override
+                    public ListDisApplicationTaskRunLineagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDisApplicationTaskRunLineagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisApplicationTaskRunLineagesRequest,
+                        ListDisApplicationTaskRunLineagesResponse>() {
+                    @Override
+                    public ListDisApplicationTaskRunLineagesResponse apply(
+                            ListDisApplicationTaskRunLineagesRequest request) {
+                        return client.listDisApplicationTaskRunLineages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDisApplicationTaskRunLineagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>
+                            apply(ListDisApplicationTaskRunLineagesResponse response) {
+                        return response.getTaskRunLineageSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDisApplications operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2323,6 +2450,238 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listRuntimeOperators operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRuntimeOperatorsResponse> listRuntimeOperatorsResponseIterator(
+            final ListRuntimeOperatorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRuntimeOperatorsRequest.Builder, ListRuntimeOperatorsRequest,
+                ListRuntimeOperatorsResponse>(
+                new java.util.function.Supplier<ListRuntimeOperatorsRequest.Builder>() {
+                    @Override
+                    public ListRuntimeOperatorsRequest.Builder get() {
+                        return ListRuntimeOperatorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRuntimeOperatorsResponse, String>() {
+                    @Override
+                    public String apply(ListRuntimeOperatorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRuntimeOperatorsRequest.Builder>,
+                        ListRuntimeOperatorsRequest>() {
+                    @Override
+                    public ListRuntimeOperatorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRuntimeOperatorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>() {
+                    @Override
+                    public ListRuntimeOperatorsResponse apply(ListRuntimeOperatorsRequest request) {
+                        return client.listRuntimeOperators(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.RuntimeOperatorSummary} objects
+     * contained in responses from the listRuntimeOperators operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.RuntimeOperatorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.RuntimeOperatorSummary>
+            listRuntimeOperatorsRecordIterator(final ListRuntimeOperatorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRuntimeOperatorsRequest.Builder, ListRuntimeOperatorsRequest,
+                ListRuntimeOperatorsResponse,
+                com.oracle.bmc.dataintegration.model.RuntimeOperatorSummary>(
+                new java.util.function.Supplier<ListRuntimeOperatorsRequest.Builder>() {
+                    @Override
+                    public ListRuntimeOperatorsRequest.Builder get() {
+                        return ListRuntimeOperatorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRuntimeOperatorsResponse, String>() {
+                    @Override
+                    public String apply(ListRuntimeOperatorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRuntimeOperatorsRequest.Builder>,
+                        ListRuntimeOperatorsRequest>() {
+                    @Override
+                    public ListRuntimeOperatorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRuntimeOperatorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>() {
+                    @Override
+                    public ListRuntimeOperatorsResponse apply(ListRuntimeOperatorsRequest request) {
+                        return client.listRuntimeOperators(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRuntimeOperatorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.RuntimeOperatorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.RuntimeOperatorSummary>
+                            apply(ListRuntimeOperatorsResponse response) {
+                        return response.getRuntimeOperatorSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRuntimePipelines operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRuntimePipelinesResponse> listRuntimePipelinesResponseIterator(
+            final ListRuntimePipelinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRuntimePipelinesRequest.Builder, ListRuntimePipelinesRequest,
+                ListRuntimePipelinesResponse>(
+                new java.util.function.Supplier<ListRuntimePipelinesRequest.Builder>() {
+                    @Override
+                    public ListRuntimePipelinesRequest.Builder get() {
+                        return ListRuntimePipelinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRuntimePipelinesResponse, String>() {
+                    @Override
+                    public String apply(ListRuntimePipelinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRuntimePipelinesRequest.Builder>,
+                        ListRuntimePipelinesRequest>() {
+                    @Override
+                    public ListRuntimePipelinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRuntimePipelinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>() {
+                    @Override
+                    public ListRuntimePipelinesResponse apply(ListRuntimePipelinesRequest request) {
+                        return client.listRuntimePipelines(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.RuntimePipelineSummary} objects
+     * contained in responses from the listRuntimePipelines operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.RuntimePipelineSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.RuntimePipelineSummary>
+            listRuntimePipelinesRecordIterator(final ListRuntimePipelinesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRuntimePipelinesRequest.Builder, ListRuntimePipelinesRequest,
+                ListRuntimePipelinesResponse,
+                com.oracle.bmc.dataintegration.model.RuntimePipelineSummary>(
+                new java.util.function.Supplier<ListRuntimePipelinesRequest.Builder>() {
+                    @Override
+                    public ListRuntimePipelinesRequest.Builder get() {
+                        return ListRuntimePipelinesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRuntimePipelinesResponse, String>() {
+                    @Override
+                    public String apply(ListRuntimePipelinesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRuntimePipelinesRequest.Builder>,
+                        ListRuntimePipelinesRequest>() {
+                    @Override
+                    public ListRuntimePipelinesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRuntimePipelinesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>() {
+                    @Override
+                    public ListRuntimePipelinesResponse apply(ListRuntimePipelinesRequest request) {
+                        return client.listRuntimePipelines(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRuntimePipelinesResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.RuntimePipelineSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.RuntimePipelineSummary>
+                            apply(ListRuntimePipelinesResponse response) {
+                        return response.getRuntimePipelineSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSchedules operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2538,6 +2897,122 @@ public class DataIntegrationPaginators {
                     public java.util.List<com.oracle.bmc.dataintegration.model.SchemaSummary> apply(
                             ListSchemasResponse response) {
                         return response.getSchemaSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTaskRunLineages operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTaskRunLineagesResponse> listTaskRunLineagesResponseIterator(
+            final ListTaskRunLineagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTaskRunLineagesRequest.Builder, ListTaskRunLineagesRequest,
+                ListTaskRunLineagesResponse>(
+                new java.util.function.Supplier<ListTaskRunLineagesRequest.Builder>() {
+                    @Override
+                    public ListTaskRunLineagesRequest.Builder get() {
+                        return ListTaskRunLineagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTaskRunLineagesResponse, String>() {
+                    @Override
+                    public String apply(ListTaskRunLineagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaskRunLineagesRequest.Builder>,
+                        ListTaskRunLineagesRequest>() {
+                    @Override
+                    public ListTaskRunLineagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaskRunLineagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>() {
+                    @Override
+                    public ListTaskRunLineagesResponse apply(ListTaskRunLineagesRequest request) {
+                        return client.listTaskRunLineages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.TaskRunLineageSummary} objects
+     * contained in responses from the listTaskRunLineages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.TaskRunLineageSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>
+            listTaskRunLineagesRecordIterator(final ListTaskRunLineagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTaskRunLineagesRequest.Builder, ListTaskRunLineagesRequest,
+                ListTaskRunLineagesResponse,
+                com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>(
+                new java.util.function.Supplier<ListTaskRunLineagesRequest.Builder>() {
+                    @Override
+                    public ListTaskRunLineagesRequest.Builder get() {
+                        return ListTaskRunLineagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTaskRunLineagesResponse, String>() {
+                    @Override
+                    public String apply(ListTaskRunLineagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaskRunLineagesRequest.Builder>,
+                        ListTaskRunLineagesRequest>() {
+                    @Override
+                    public ListTaskRunLineagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaskRunLineagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>() {
+                    @Override
+                    public ListTaskRunLineagesResponse apply(ListTaskRunLineagesRequest request) {
+                        return client.listTaskRunLineages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTaskRunLineagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.TaskRunLineageSummary>
+                            apply(ListTaskRunLineagesResponse response) {
+                        return response.getTaskRunLineageSummaryCollection().getItems();
                     }
                 });
     }

@@ -30,13 +30,13 @@ public final class ScheduleCollection extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of schedule summary.
+         * Schedule summary list.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ScheduleSummary> items;
 
         /**
-         * List of schedule summary.
+         * Schedule summary list.
          * @param items the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class ScheduleCollection extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * List of schedule summary.
+     * Schedule summary list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ScheduleSummary> items;
 
     /**
-     * List of schedule summary.
+     * Schedule summary list.
      * @return the value
      **/
     public java.util.List<ScheduleSummary> getItems() {

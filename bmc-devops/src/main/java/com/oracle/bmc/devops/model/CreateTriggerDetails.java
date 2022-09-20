@@ -27,6 +27,10 @@ package com.oracle.bmc.devops.model;
         name = "GITHUB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateVbsTriggerDetails.class,
+        name = "VBS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDevopsCodeRepositoryTriggerDetails.class,
         name = "DEVOPS_CODE_REPOSITORY"
     ),

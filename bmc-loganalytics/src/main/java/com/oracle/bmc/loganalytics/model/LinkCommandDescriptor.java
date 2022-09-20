@@ -72,6 +72,15 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * Option to return groups with a null value if specified.
          *
@@ -138,6 +147,7 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.shouldIncludeNulls,
                             this.shouldIncludeTrends,
                             this.span);
@@ -163,6 +173,9 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("shouldIncludeNulls")) {
                 this.shouldIncludeNulls(model.getShouldIncludeNulls());
@@ -195,10 +208,17 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             Boolean shouldIncludeNulls,
             Boolean shouldIncludeTrends,
             String span) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.shouldIncludeNulls = shouldIncludeNulls;
         this.shouldIncludeTrends = shouldIncludeTrends;
         this.span = span;

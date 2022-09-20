@@ -25,6 +25,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BipCallAttribute.class,
         name = "BIP_CALL_ATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GenericRestCallAttribute.class,
+        name = "GENERIC_REST_CALL_ATTRIBUTE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -96,6 +100,7 @@ public class AbstractCallAttribute extends com.oracle.bmc.http.internal.Explicit
      **/
     public enum ModelType {
         BipCallAttribute("BIP_CALL_ATTRIBUTE"),
+        GenericRestCallAttribute("GENERIC_REST_CALL_ATTRIBUTE"),
         ;
 
         private final String value;

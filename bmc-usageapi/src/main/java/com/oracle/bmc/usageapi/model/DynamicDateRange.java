@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The saved dynamic date range (Required when staticDateRange is missing).
+ * The saved dynamic date range (required when the static date range is missing).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -76,12 +76,17 @@ public final class DynamicDateRange extends DateRange {
      **/
     public enum DynamicDateRangeType {
         Last7Days("LAST_7_DAYS"),
+        Last10Days("LAST_10_DAYS"),
         LastCalendarWeek("LAST_CALENDAR_WEEK"),
         LastCalendarMonth("LAST_CALENDAR_MONTH"),
+        Last2CalendarMonths("LAST_2_CALENDAR_MONTHS"),
+        Last3CalendarMonths("LAST_3_CALENDAR_MONTHS"),
+        Last6CalendarMonths("LAST_6_CALENDAR_MONTHS"),
         Last30Days("LAST_30_DAYS"),
         MonthToDate("MONTH_TO_DATE"),
         LastYear("LAST_YEAR"),
         YearTodate("YEAR_TODATE"),
+        All("ALL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

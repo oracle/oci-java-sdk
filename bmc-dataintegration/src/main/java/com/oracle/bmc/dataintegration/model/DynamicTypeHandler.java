@@ -23,6 +23,10 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FlattenTypeHandler.class,
+        name = "FLATTEN_TYPE_HANDLER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = RuleTypeConfig.class,
         name = "RULE_TYPE_CONFIGS"
     )
@@ -79,6 +83,7 @@ public class DynamicTypeHandler extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public enum ModelType {
         RuleTypeConfigs("RULE_TYPE_CONFIGS"),
+        FlattenTypeHandler("FLATTEN_TYPE_HANDLER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

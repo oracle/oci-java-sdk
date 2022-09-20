@@ -10,7 +10,7 @@ import com.oracle.bmc.threatintelligence.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ThreatintelClient implements Threatintel {
     /**
      * Service instance for Threatintel.
@@ -536,14 +536,14 @@ public class ThreatintelClient implements Threatintel {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Threatintel",
                         "GetIndicator",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/Indicator/GetIndicator");
         java.util.function.Function<javax.ws.rs.core.Response, GetIndicatorResponse> transformer =
                 GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -571,14 +571,14 @@ public class ThreatintelClient implements Threatintel {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Threatintel",
                         "ListIndicatorCounts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/IndicatorCountCollection/ListIndicatorCounts");
         java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
                 transformer =
                         ListIndicatorCountsConverter.fromResponse(
@@ -608,14 +608,14 @@ public class ThreatintelClient implements Threatintel {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Threatintel",
                         "ListIndicators",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/IndicatorSummaryCollection/ListIndicators");
         java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorsResponse> transformer =
                 ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -643,14 +643,14 @@ public class ThreatintelClient implements Threatintel {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "Threatintel",
                         "ListThreatTypes",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/ThreatTypesCollection/ListThreatTypes");
         java.util.function.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
                 transformer =
                         ListThreatTypesConverter.fromResponse(
@@ -665,6 +665,47 @@ public class ThreatintelClient implements Threatintel {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeIndicatorsResponse summarizeIndicators(SummarizeIndicatorsRequest request) {
+        LOG.trace("Called summarizeIndicators");
+        final SummarizeIndicatorsRequest interceptedRequest =
+                SummarizeIndicatorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeIndicatorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "SummarizeIndicators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/Indicator/SummarizeIndicators");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeIndicatorsResponse>
+                transformer =
+                        SummarizeIndicatorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getSummarizeIndicatorsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

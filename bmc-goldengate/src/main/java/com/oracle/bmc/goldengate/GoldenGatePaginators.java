@@ -496,6 +496,229 @@ public class GoldenGatePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listTrailFiles operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTrailFilesResponse> listTrailFilesResponseIterator(
+            final ListTrailFilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTrailFilesRequest.Builder, ListTrailFilesRequest, ListTrailFilesResponse>(
+                new java.util.function.Supplier<ListTrailFilesRequest.Builder>() {
+                    @Override
+                    public ListTrailFilesRequest.Builder get() {
+                        return ListTrailFilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTrailFilesResponse, String>() {
+                    @Override
+                    public String apply(ListTrailFilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTrailFilesRequest.Builder>,
+                        ListTrailFilesRequest>() {
+                    @Override
+                    public ListTrailFilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTrailFilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTrailFilesRequest, ListTrailFilesResponse>() {
+                    @Override
+                    public ListTrailFilesResponse apply(ListTrailFilesRequest request) {
+                        return client.listTrailFiles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.TrailFileSummary} objects
+     * contained in responses from the listTrailFiles operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.TrailFileSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.TrailFileSummary> listTrailFilesRecordIterator(
+            final ListTrailFilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTrailFilesRequest.Builder, ListTrailFilesRequest, ListTrailFilesResponse,
+                com.oracle.bmc.goldengate.model.TrailFileSummary>(
+                new java.util.function.Supplier<ListTrailFilesRequest.Builder>() {
+                    @Override
+                    public ListTrailFilesRequest.Builder get() {
+                        return ListTrailFilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTrailFilesResponse, String>() {
+                    @Override
+                    public String apply(ListTrailFilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTrailFilesRequest.Builder>,
+                        ListTrailFilesRequest>() {
+                    @Override
+                    public ListTrailFilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTrailFilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListTrailFilesRequest, ListTrailFilesResponse>() {
+                    @Override
+                    public ListTrailFilesResponse apply(ListTrailFilesRequest request) {
+                        return client.listTrailFiles(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTrailFilesResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.TrailFileSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.TrailFileSummary> apply(
+                            ListTrailFilesResponse response) {
+                        return response.getTrailFileCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTrailSequences operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTrailSequencesResponse> listTrailSequencesResponseIterator(
+            final ListTrailSequencesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTrailSequencesRequest.Builder, ListTrailSequencesRequest,
+                ListTrailSequencesResponse>(
+                new java.util.function.Supplier<ListTrailSequencesRequest.Builder>() {
+                    @Override
+                    public ListTrailSequencesRequest.Builder get() {
+                        return ListTrailSequencesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTrailSequencesResponse, String>() {
+                    @Override
+                    public String apply(ListTrailSequencesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTrailSequencesRequest.Builder>,
+                        ListTrailSequencesRequest>() {
+                    @Override
+                    public ListTrailSequencesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTrailSequencesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTrailSequencesRequest, ListTrailSequencesResponse>() {
+                    @Override
+                    public ListTrailSequencesResponse apply(ListTrailSequencesRequest request) {
+                        return client.listTrailSequences(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.TrailSequenceSummary} objects
+     * contained in responses from the listTrailSequences operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.TrailSequenceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.TrailSequenceSummary>
+            listTrailSequencesRecordIterator(final ListTrailSequencesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTrailSequencesRequest.Builder, ListTrailSequencesRequest,
+                ListTrailSequencesResponse, com.oracle.bmc.goldengate.model.TrailSequenceSummary>(
+                new java.util.function.Supplier<ListTrailSequencesRequest.Builder>() {
+                    @Override
+                    public ListTrailSequencesRequest.Builder get() {
+                        return ListTrailSequencesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTrailSequencesResponse, String>() {
+                    @Override
+                    public String apply(ListTrailSequencesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTrailSequencesRequest.Builder>,
+                        ListTrailSequencesRequest>() {
+                    @Override
+                    public ListTrailSequencesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTrailSequencesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTrailSequencesRequest, ListTrailSequencesResponse>() {
+                    @Override
+                    public ListTrailSequencesResponse apply(ListTrailSequencesRequest request) {
+                        return client.listTrailSequences(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTrailSequencesResponse,
+                        java.util.List<com.oracle.bmc.goldengate.model.TrailSequenceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.TrailSequenceSummary>
+                            apply(ListTrailSequencesResponse response) {
+                        return response.getTrailSequenceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

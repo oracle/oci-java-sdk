@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Schedule summary for listSchedule.
+ * Schedule summary for the list schedule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,6 +22,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "description",
+        "timeNextRun",
         "scheduleRecurrences",
         "timeScheduled",
         "freeformTags",
@@ -32,6 +34,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     public ScheduleSummary(
             String id,
             String name,
+            String description,
+            java.util.Date timeNextRun,
             String scheduleRecurrences,
             java.util.Date timeScheduled,
             java.util.Map<String, String> freeformTags,
@@ -41,6 +45,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         super();
         this.id = id;
         this.name = name;
+        this.description = description;
+        this.timeNextRun = timeNextRun;
         this.scheduleRecurrences = scheduleRecurrences;
         this.timeScheduled = timeScheduled;
         this.freeformTags = freeformTags;
@@ -68,13 +74,13 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The unique name of the schedule created by the user
+         * The unique name of the user-created schedule.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The unique name of the schedule created by the user
+         * The unique name of the user-created schedule.
          * @param name the value to set
          * @return this builder
          **/
@@ -84,16 +90,50 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-         * Describes the frequency of when the schedule will be run
+         * The description of the schedule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the schedule.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * The date and time of the next job execution.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
+        private java.util.Date timeNextRun;
+
+        /**
+         * The date and time of the next job execution.
+         * @param timeNextRun the value to set
+         * @return this builder
+         **/
+        public Builder timeNextRun(java.util.Date timeNextRun) {
+            this.timeNextRun = timeNextRun;
+            this.__explicitlySet__.add("timeNextRun");
+            return this;
+        }
+        /**
+         * Specifies the frequency according to when the schedule will be run,
+         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
         private String scheduleRecurrences;
 
         /**
-         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-         * Describes the frequency of when the schedule will be run
+         * Specifies the frequency according to when the schedule will be run,
+         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          * @param scheduleRecurrences the value to set
          * @return this builder
@@ -104,13 +144,13 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time of the first time job execution
+         * The date and time of the first time job execution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
-         * The date and time of the first time job execution
+         * The date and time of the first time job execution.
          * @param timeScheduled the value to set
          * @return this builder
          **/
@@ -177,13 +217,13 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The lifecycle state of the schedule summary
+         * The schedule summary lifecycle state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Schedule.LifecycleState lifecycleState;
 
         /**
-         * The lifecycle state of the schedule summary
+         * The schedule summary lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -201,6 +241,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
                     new ScheduleSummary(
                             this.id,
                             this.name,
+                            this.description,
+                            this.timeNextRun,
                             this.scheduleRecurrences,
                             this.timeScheduled,
                             this.freeformTags,
@@ -220,6 +262,12 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("timeNextRun")) {
+                this.timeNextRun(model.getTimeNextRun());
             }
             if (model.wasPropertyExplicitlySet("scheduleRecurrences")) {
                 this.scheduleRecurrences(model.getScheduleRecurrences());
@@ -269,13 +317,13 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      * @return the value
      **/
     public String getName() {
@@ -283,16 +331,46 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-     * Describes the frequency of when the schedule will be run
+     * The description of the schedule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the schedule.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * The date and time of the next job execution.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
+    private final java.util.Date timeNextRun;
+
+    /**
+     * The date and time of the next job execution.
+     * @return the value
+     **/
+    public java.util.Date getTimeNextRun() {
+        return timeNextRun;
+    }
+
+    /**
+     * Specifies the frequency according to when the schedule will be run,
+     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
     private final String scheduleRecurrences;
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-     * Describes the frequency of when the schedule will be run
+     * Specifies the frequency according to when the schedule will be run,
+     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      * @return the value
      **/
@@ -301,13 +379,13 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      * @return the value
      **/
     public java.util.Date getTimeScheduled() {
@@ -365,13 +443,13 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The lifecycle state of the schedule summary
+     * The schedule summary lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Schedule.LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of the schedule summary
+     * The schedule summary lifecycle state.
      * @return the value
      **/
     public Schedule.LifecycleState getLifecycleState() {
@@ -394,6 +472,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeNextRun=").append(String.valueOf(this.timeNextRun));
         sb.append(", scheduleRecurrences=").append(String.valueOf(this.scheduleRecurrences));
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -416,6 +496,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         ScheduleSummary other = (ScheduleSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeNextRun, other.timeNextRun)
                 && java.util.Objects.equals(this.scheduleRecurrences, other.scheduleRecurrences)
                 && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -431,6 +513,8 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeNextRun == null ? 43 : this.timeNextRun.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduleRecurrences == null

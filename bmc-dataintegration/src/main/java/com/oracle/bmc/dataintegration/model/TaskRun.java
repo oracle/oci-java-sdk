@@ -49,6 +49,7 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "opcRequestId",
         "objectStatus",
         "taskType",
+        "isLogProcessingInProgress",
         "identifier",
         "metadata",
         "keyMap"
@@ -83,6 +84,7 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             String opcRequestId,
             Integer objectStatus,
             TaskType taskType,
+            Boolean isLogProcessingInProgress,
             String identifier,
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap) {
@@ -116,6 +118,7 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.opcRequestId = opcRequestId;
         this.objectStatus = objectStatus;
         this.taskType = taskType;
+        this.isLogProcessingInProgress = isLogProcessingInProgress;
         this.identifier = identifier;
         this.metadata = metadata;
         this.keyMap = keyMap;
@@ -567,6 +570,22 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * This field tells the user if there is any logs being fetched in backend for failure. Applicable only for failed pipeline tasks.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isLogProcessingInProgress")
+        private Boolean isLogProcessingInProgress;
+
+        /**
+         * This field tells the user if there is any logs being fetched in backend for failure. Applicable only for failed pipeline tasks.
+         * @param isLogProcessingInProgress the value to set
+         * @return this builder
+         **/
+        public Builder isLogProcessingInProgress(Boolean isLogProcessingInProgress) {
+            this.isLogProcessingInProgress = isLogProcessingInProgress;
+            this.__explicitlySet__.add("isLogProcessingInProgress");
+            return this;
+        }
+        /**
          * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
@@ -643,6 +662,7 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.opcRequestId,
                             this.objectStatus,
                             this.taskType,
+                            this.isLogProcessingInProgress,
                             this.identifier,
                             this.metadata,
                             this.keyMap);
@@ -740,6 +760,9 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("taskType")) {
                 this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("isLogProcessingInProgress")) {
+                this.isLogProcessingInProgress(model.getIsLogProcessingInProgress());
             }
             if (model.wasPropertyExplicitlySet("identifier")) {
                 this.identifier(model.getIdentifier());
@@ -1354,6 +1377,20 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * This field tells the user if there is any logs being fetched in backend for failure. Applicable only for failed pipeline tasks.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLogProcessingInProgress")
+    private final Boolean isLogProcessingInProgress;
+
+    /**
+     * This field tells the user if there is any logs being fetched in backend for failure. Applicable only for failed pipeline tasks.
+     * @return the value
+     **/
+    public Boolean getIsLogProcessingInProgress() {
+        return isLogProcessingInProgress;
+    }
+
+    /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
@@ -1431,6 +1468,8 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", isLogProcessingInProgress=")
+                .append(String.valueOf(this.isLogProcessingInProgress));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
@@ -1477,6 +1516,8 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(
+                        this.isLogProcessingInProgress, other.isLogProcessingInProgress)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
@@ -1538,6 +1579,11 @@ public final class TaskRun extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLogProcessingInProgress == null
+                                ? 43
+                                : this.isLogProcessingInProgress.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());

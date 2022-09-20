@@ -5,9 +5,9 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * allowed lifecycle states for indicators
+ * The lifecycle state of a threat indicator.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum LifecycleState {
     Active("ACTIVE"),
     Deleted("DELETED"),

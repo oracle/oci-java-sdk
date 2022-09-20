@@ -34,7 +34,10 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
         "timeUpdated",
         "lifecycleState",
         "stateMessage",
-        "id"
+        "id",
+        "endpointId",
+        "endpointName",
+        "registryId"
     })
     public Workspace(
             String vcnId,
@@ -51,7 +54,10 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String stateMessage,
-            String id) {
+            String id,
+            String endpointId,
+            String endpointName,
+            String registryId) {
         super();
         this.vcnId = vcnId;
         this.subnetId = subnetId;
@@ -68,6 +74,9 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
         this.lifecycleState = lifecycleState;
         this.stateMessage = stateMessage;
         this.id = id;
+        this.endpointId = endpointId;
+        this.endpointName = endpointName;
+        this.registryId = registryId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -347,6 +356,54 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
             this.__explicitlySet__.add("id");
             return this;
         }
+        /**
+         * OCID of the private endpoint associated with the container/workspace.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * OCID of the private endpoint associated with the container/workspace.
+         * @param endpointId the value to set
+         * @return this builder
+         **/
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
+        /**
+         * Name of the private endpoint associated with the container/workspace.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
+        private String endpointName;
+
+        /**
+         * Name of the private endpoint associated with the container/workspace.
+         * @param endpointName the value to set
+         * @return this builder
+         **/
+        public Builder endpointName(String endpointName) {
+            this.endpointName = endpointName;
+            this.__explicitlySet__.add("endpointName");
+            return this;
+        }
+        /**
+         * DCMS Registry ID associated with the container/workspace.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("registryId")
+        private String registryId;
+
+        /**
+         * DCMS Registry ID associated with the container/workspace.
+         * @param registryId the value to set
+         * @return this builder
+         **/
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
+            this.__explicitlySet__.add("registryId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -368,7 +425,10 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
                             this.timeUpdated,
                             this.lifecycleState,
                             this.stateMessage,
-                            this.id);
+                            this.id,
+                            this.endpointId,
+                            this.endpointName,
+                            this.registryId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -421,6 +481,15 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointName")) {
+                this.endpointName(model.getEndpointName());
+            }
+            if (model.wasPropertyExplicitlySet("registryId")) {
+                this.registryId(model.getRegistryId());
             }
             return this;
         }
@@ -749,6 +818,48 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
         return id;
     }
 
+    /**
+     * OCID of the private endpoint associated with the container/workspace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * OCID of the private endpoint associated with the container/workspace.
+     * @return the value
+     **/
+    public String getEndpointId() {
+        return endpointId;
+    }
+
+    /**
+     * Name of the private endpoint associated with the container/workspace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
+    private final String endpointName;
+
+    /**
+     * Name of the private endpoint associated with the container/workspace.
+     * @return the value
+     **/
+    public String getEndpointName() {
+        return endpointName;
+    }
+
+    /**
+     * DCMS Registry ID associated with the container/workspace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("registryId")
+    private final String registryId;
+
+    /**
+     * DCMS Registry ID associated with the container/workspace.
+     * @return the value
+     **/
+    public String getRegistryId() {
+        return registryId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -779,6 +890,9 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", endpointName=").append(String.valueOf(this.endpointName));
+        sb.append(", registryId=").append(String.valueOf(this.registryId));
         sb.append(")");
         return sb.toString();
     }
@@ -809,6 +923,9 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.endpointName, other.endpointName)
+                && java.util.Objects.equals(this.registryId, other.registryId)
                 && super.equals(other);
     }
 
@@ -841,6 +958,9 @@ public final class Workspace extends com.oracle.bmc.http.internal.ExplicitlySetB
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.endpointName == null ? 43 : this.endpointName.hashCode());
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

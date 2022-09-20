@@ -110,6 +110,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
     public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
+        TimeUpdated("TIME_UPDATED"),
         ;
 
         private final String value;
@@ -231,6 +232,17 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     public Boolean getIsPattern() {
         return isPattern;
+    }
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    private java.util.List<String> includeTypes;
+
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    public java.util.List<String> getIncludeTypes() {
+        return includeTypes;
     }
 
     public static class Builder
@@ -460,6 +472,30 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         */
+        private java.util.List<String> includeTypes = null;
+
+        /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         * @param includeTypes the value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(java.util.List<String> includeTypes) {
+            this.includeTypes = includeTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. Artifact type which needs to be listed while listing Artifacts.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(String singularValue) {
+            return this.includeTypes(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -500,6 +536,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             nameList(o.getNameList());
             isPattern(o.getIsPattern());
+            includeTypes(o.getIncludeTypes());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -545,8 +582,9 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.nameList = nameList;
             request.isPattern = isPattern;
+            request.includeTypes = includeTypes;
             return request;
-            // new ListDataEntitiesRequest(workspaceId, connectionKey, schemaResourceName, name, page, type, limit, fields, sortBy, sortOrder, opcRequestId, nameList, isPattern);
+            // new ListDataEntitiesRequest(workspaceId, connectionKey, schemaResourceName, name, page, type, limit, fields, sortBy, sortOrder, opcRequestId, nameList, isPattern, includeTypes);
         }
     }
 
@@ -568,7 +606,8 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
                 .sortOrder(sortOrder)
                 .opcRequestId(opcRequestId)
                 .nameList(nameList)
-                .isPattern(isPattern);
+                .isPattern(isPattern)
+                .includeTypes(includeTypes);
     }
 
     /**
@@ -597,6 +636,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",nameList=").append(String.valueOf(this.nameList));
         sb.append(",isPattern=").append(String.valueOf(this.isPattern));
+        sb.append(",includeTypes=").append(String.valueOf(this.includeTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -624,7 +664,8 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.nameList, other.nameList)
-                && java.util.Objects.equals(this.isPattern, other.isPattern);
+                && java.util.Objects.equals(this.isPattern, other.isPattern)
+                && java.util.Objects.equals(this.includeTypes, other.includeTypes);
     }
 
     @Override
@@ -650,6 +691,7 @@ public class ListDataEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.nameList == null ? 43 : this.nameList.hashCode());
         result = (result * PRIME) + (this.isPattern == null ? 43 : this.isPattern.hashCode());
+        result = (result * PRIME) + (this.includeTypes == null ? 43 : this.includeTypes.hashCode());
         return result;
     }
 }

@@ -631,14 +631,16 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The deployment type.
+         * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+         *       in favor of the equivalent DATABASE_ORACLE value.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
-         * The deployment type.
+         * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+         *       in favor of the equivalent DATABASE_ORACLE value.
          *
          * @param deploymentType the value to set
          * @return this builder
@@ -1263,14 +1265,16 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The deployment type.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+     *       in favor of the equivalent DATABASE_ORACLE value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
-     * The deployment type.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+     *       in favor of the equivalent DATABASE_ORACLE value.
      *
      * @return the value
      **/

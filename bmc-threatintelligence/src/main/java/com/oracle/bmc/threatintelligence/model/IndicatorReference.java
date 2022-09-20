@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * a reference to an Indicator resource
+ * A reference to a threat indicator resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IndicatorReference.Builder.class
 )
@@ -28,13 +28,13 @@ public final class IndicatorReference extends EntityReference {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * the OCID of the referenced Indicator
+         * The unique OCID of the referenced threat indicator.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("indicatorId")
         private String indicatorId;
 
         /**
-         * the OCID of the referenced Indicator
+         * The unique OCID of the referenced threat indicator.
          * @param indicatorId the value to set
          * @return this builder
          **/
@@ -82,13 +82,13 @@ public final class IndicatorReference extends EntityReference {
     }
 
     /**
-     * the OCID of the referenced Indicator
+     * The unique OCID of the referenced threat indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("indicatorId")
     private final String indicatorId;
 
     /**
-     * the OCID of the referenced Indicator
+     * The unique OCID of the referenced threat indicator.
      * @return the value
      **/
     public String getIndicatorId() {

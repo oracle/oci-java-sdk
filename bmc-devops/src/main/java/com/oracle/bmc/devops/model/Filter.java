@@ -22,6 +22,7 @@ package com.oracle.bmc.devops.model;
     defaultImpl = Filter.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VbsFilter.class, name = "VBS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DevopsCodeRepositoryFilter.class,
         name = "DEVOPS_CODE_REPOSITORY"
