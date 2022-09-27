@@ -549,6 +549,62 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeReplicationCompartmentResponse>
+            changeReplicationCompartment(
+                    ChangeReplicationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeReplicationCompartmentRequest,
+                                    ChangeReplicationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeReplicationCompartment");
+        final ChangeReplicationCompartmentRequest interceptedRequest =
+                ChangeReplicationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeReplicationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ChangeReplicationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/ChangeReplicationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeReplicationCompartmentResponse>
+                transformer =
+                        ChangeReplicationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeReplicationCompartmentRequest, ChangeReplicationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeReplicationCompartmentRequest,
+                                ChangeReplicationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeReplicationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeReplicationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeReplicationCompartmentRequest, ChangeReplicationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExportResponse> createExport(
             CreateExportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateExportRequest, CreateExportResponse>
@@ -690,6 +746,58 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateMountTargetRequest, CreateMountTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplicationResponse> createReplication(
+            CreateReplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateReplicationRequest, CreateReplicationResponse>
+                    handler) {
+        LOG.trace("Called async createReplication");
+        final CreateReplicationRequest interceptedRequest =
+                CreateReplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateReplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "CreateReplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/CreateReplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateReplicationResponse>
+                transformer =
+                        CreateReplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateReplicationRequest, CreateReplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateReplicationRequest, CreateReplicationResponse>,
+                        java.util.concurrent.Future<CreateReplicationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateReplicationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateReplicationRequest, CreateReplicationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -890,6 +998,100 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteReplicationResponse> deleteReplication(
+            DeleteReplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteReplicationRequest, DeleteReplicationResponse>
+                    handler) {
+        LOG.trace("Called async deleteReplication");
+        final DeleteReplicationRequest interceptedRequest =
+                DeleteReplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteReplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DeleteReplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/DeleteReplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteReplicationResponse>
+                transformer =
+                        DeleteReplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteReplicationRequest, DeleteReplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteReplicationRequest, DeleteReplicationResponse>,
+                        java.util.concurrent.Future<DeleteReplicationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteReplicationRequest, DeleteReplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicationTargetResponse> deleteReplicationTarget(
+            DeleteReplicationTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteReplicationTargetRequest, DeleteReplicationTargetResponse>
+                    handler) {
+        LOG.trace("Called async deleteReplicationTarget");
+        final DeleteReplicationTargetRequest interceptedRequest =
+                DeleteReplicationTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteReplicationTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DeleteReplicationTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/DeleteReplicationTarget");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteReplicationTargetResponse>
+                transformer =
+                        DeleteReplicationTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteReplicationTargetRequest, DeleteReplicationTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteReplicationTargetRequest, DeleteReplicationTargetResponse>,
+                        java.util.concurrent.Future<DeleteReplicationTargetResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteReplicationTargetRequest, DeleteReplicationTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSnapshotResponse> deleteSnapshot(
             DeleteSnapshotRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -922,6 +1124,53 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteSnapshotRequest, DeleteSnapshotResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EstimateReplicationResponse> estimateReplication(
+            EstimateReplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EstimateReplicationRequest, EstimateReplicationResponse>
+                    handler) {
+        LOG.trace("Called async estimateReplication");
+        final EstimateReplicationRequest interceptedRequest =
+                EstimateReplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EstimateReplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "EstimateReplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/EstimateReplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, EstimateReplicationResponse>
+                transformer =
+                        EstimateReplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EstimateReplicationRequest, EstimateReplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EstimateReplicationRequest, EstimateReplicationResponse>,
+                        java.util.concurrent.Future<EstimateReplicationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EstimateReplicationRequest, EstimateReplicationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1097,6 +1346,98 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetMountTargetRequest, GetMountTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReplicationResponse> getReplication(
+            GetReplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetReplicationRequest, GetReplicationResponse>
+                    handler) {
+        LOG.trace("Called async getReplication");
+        final GetReplicationRequest interceptedRequest =
+                GetReplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetReplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "GetReplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/GetReplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetReplicationResponse>
+                transformer =
+                        GetReplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetReplicationRequest, GetReplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetReplicationRequest, GetReplicationResponse>,
+                        java.util.concurrent.Future<GetReplicationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetReplicationRequest, GetReplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReplicationTargetResponse> getReplicationTarget(
+            GetReplicationTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetReplicationTargetRequest, GetReplicationTargetResponse>
+                    handler) {
+        LOG.trace("Called async getReplicationTarget");
+        final GetReplicationTargetRequest interceptedRequest =
+                GetReplicationTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetReplicationTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "GetReplicationTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTarget/GetReplicationTarget");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetReplicationTargetResponse>
+                transformer =
+                        GetReplicationTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetReplicationTargetRequest, GetReplicationTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetReplicationTargetRequest, GetReplicationTargetResponse>,
+                        java.util.concurrent.Future<GetReplicationTargetResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetReplicationTargetRequest, GetReplicationTargetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1322,6 +1663,99 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListMountTargetsRequest, ListMountTargetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplicationTargetsResponse> listReplicationTargets(
+            ListReplicationTargetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListReplicationTargetsRequest, ListReplicationTargetsResponse>
+                    handler) {
+        LOG.trace("Called async listReplicationTargets");
+        final ListReplicationTargetsRequest interceptedRequest =
+                ListReplicationTargetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListReplicationTargetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ListReplicationTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationTargetSummary/ListReplicationTargets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListReplicationTargetsResponse>
+                transformer =
+                        ListReplicationTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListReplicationTargetsRequest, ListReplicationTargetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListReplicationTargetsRequest, ListReplicationTargetsResponse>,
+                        java.util.concurrent.Future<ListReplicationTargetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListReplicationTargetsRequest, ListReplicationTargetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplicationsResponse> listReplications(
+            ListReplicationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListReplicationsRequest, ListReplicationsResponse>
+                    handler) {
+        LOG.trace("Called async listReplications");
+        final ListReplicationsRequest interceptedRequest =
+                ListReplicationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListReplicationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ListReplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ReplicationSummary/ListReplications");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListReplicationsResponse>
+                transformer =
+                        ListReplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListReplicationsRequest, ListReplicationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListReplicationsRequest, ListReplicationsResponse>,
+                        java.util.concurrent.Future<ListReplicationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListReplicationsRequest, ListReplicationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1568,6 +2002,57 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateMountTargetRequest, UpdateMountTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReplicationResponse> updateReplication(
+            UpdateReplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateReplicationRequest, UpdateReplicationResponse>
+                    handler) {
+        LOG.trace("Called async updateReplication");
+        final UpdateReplicationRequest interceptedRequest =
+                UpdateReplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateReplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UpdateReplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/UpdateReplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateReplicationResponse>
+                transformer =
+                        UpdateReplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateReplicationRequest, UpdateReplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateReplicationRequest, UpdateReplicationResponse>,
+                        java.util.concurrent.Future<UpdateReplicationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateReplicationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateReplicationRequest, UpdateReplicationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

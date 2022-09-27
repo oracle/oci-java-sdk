@@ -38,8 +38,6 @@ package com.oracle.bmc.filestorage.model;
  * <p>
  * Use {@code exportOptions} to control access to an export. For more information, see
  * [Export Options](https://docs.cloud.oracle.com/Content/File/Tasks/exportoptions.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

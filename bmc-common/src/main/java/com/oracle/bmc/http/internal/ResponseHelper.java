@@ -38,7 +38,7 @@ public class ResponseHelper {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ResponseHelper.class);
     private static final ObjectReader STRING_READER =
-            RestClientFactory.getObjectMapper().readerFor(String.class);
+            com.oracle.bmc.http.Serialization.getObjectMapper().readerFor(String.class);
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final Map<Integer, String> DEFAULT_ERROR_MESSAGES = new HashMap<>();

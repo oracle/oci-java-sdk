@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.util.Random;
 
 import org.junit.Test;
 
@@ -127,6 +128,23 @@ public class StreamUtilsTest {
                 value.getBytes(Charset.defaultCharset()),
                 StreamUtils.toByteArray(
                         new ByteArrayInputStream(value.getBytes(Charset.defaultCharset()))));
+    }
+
+    @Test
+    public void testToByteArray_Long() throws IOException {
+        Random random = new Random();
+
+        byte[] original = new byte[123456];
+        random.nextBytes(original);
+        assertArrayEquals(original, StreamUtils.toByteArray(new ByteArrayInputStream(original)));
+
+        original = new byte[4096];
+        random.nextBytes(original);
+        assertArrayEquals(original, StreamUtils.toByteArray(new ByteArrayInputStream(original)));
+
+        original = new byte[8192];
+        random.nextBytes(original);
+        assertArrayEquals(original, StreamUtils.toByteArray(new ByteArrayInputStream(original)));
     }
 
     @Test

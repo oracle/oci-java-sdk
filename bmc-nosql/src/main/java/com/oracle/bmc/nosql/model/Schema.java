@@ -19,17 +19,19 @@ package com.oracle.bmc.nosql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"columns", "primaryKey", "shardKey", "ttl"})
+    @java.beans.ConstructorProperties({"columns", "primaryKey", "shardKey", "ttl", "identity"})
     public Schema(
             java.util.List<Column> columns,
             java.util.List<String> primaryKey,
             java.util.List<String> shardKey,
-            Integer ttl) {
+            Integer ttl,
+            Identity identity) {
         super();
         this.columns = columns;
         this.primaryKey = primaryKey;
         this.shardKey = shardKey;
         this.ttl = ttl;
+        this.identity = identity;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -99,11 +101,22 @@ public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("identity")
+        private Identity identity;
+
+        public Builder identity(Identity identity) {
+            this.identity = identity;
+            this.__explicitlySet__.add("identity");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Schema build() {
-            Schema model = new Schema(this.columns, this.primaryKey, this.shardKey, this.ttl);
+            Schema model =
+                    new Schema(
+                            this.columns, this.primaryKey, this.shardKey, this.ttl, this.identity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -123,6 +136,9 @@ public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("ttl")) {
                 this.ttl(model.getTtl());
+            }
+            if (model.wasPropertyExplicitlySet("identity")) {
+                this.identity(model.getIdentity());
             }
             return this;
         }
@@ -195,6 +211,13 @@ public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return ttl;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("identity")
+    private final Identity identity;
+
+    public Identity getIdentity() {
+        return identity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -213,6 +236,7 @@ public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", primaryKey=").append(String.valueOf(this.primaryKey));
         sb.append(", shardKey=").append(String.valueOf(this.shardKey));
         sb.append(", ttl=").append(String.valueOf(this.ttl));
+        sb.append(", identity=").append(String.valueOf(this.identity));
         sb.append(")");
         return sb.toString();
     }
@@ -231,6 +255,7 @@ public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.primaryKey, other.primaryKey)
                 && java.util.Objects.equals(this.shardKey, other.shardKey)
                 && java.util.Objects.equals(this.ttl, other.ttl)
+                && java.util.Objects.equals(this.identity, other.identity)
                 && super.equals(other);
     }
 
@@ -242,6 +267,7 @@ public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result = (result * PRIME) + (this.primaryKey == null ? 43 : this.primaryKey.hashCode());
         result = (result * PRIME) + (this.shardKey == null ? 43 : this.shardKey.hashCode());
         result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
+        result = (result * PRIME) + (this.identity == null ? 43 : this.identity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

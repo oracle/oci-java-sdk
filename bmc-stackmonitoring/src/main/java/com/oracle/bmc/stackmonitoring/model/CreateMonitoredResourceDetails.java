@@ -28,6 +28,7 @@ public final class CreateMonitoredResourceDetails
         "type",
         "compartmentId",
         "hostName",
+        "externalId",
         "managementAgentId",
         "resourceTimeZone",
         "properties",
@@ -41,6 +42,7 @@ public final class CreateMonitoredResourceDetails
             String type,
             String compartmentId,
             String hostName,
+            String externalId,
             String managementAgentId,
             String resourceTimeZone,
             java.util.List<MonitoredResourceProperty> properties,
@@ -53,6 +55,7 @@ public final class CreateMonitoredResourceDetails
         this.type = type;
         this.compartmentId = compartmentId;
         this.hostName = hostName;
+        this.externalId = externalId;
         this.managementAgentId = managementAgentId;
         this.resourceTimeZone = resourceTimeZone;
         this.properties = properties;
@@ -144,6 +147,28 @@ public final class CreateMonitoredResourceDetails
             return this;
         }
         /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only OCI compute instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+        private String externalId;
+
+        /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only OCI compute instance.
+         *
+         * @param externalId the value to set
+         * @return this builder
+         **/
+        public Builder externalId(String externalId) {
+            this.externalId = externalId;
+            this.__explicitlySet__.add("externalId");
+            return this;
+        }
+        /**
          * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
@@ -230,6 +255,7 @@ public final class CreateMonitoredResourceDetails
                             this.type,
                             this.compartmentId,
                             this.hostName,
+                            this.externalId,
                             this.managementAgentId,
                             this.resourceTimeZone,
                             this.properties,
@@ -258,6 +284,9 @@ public final class CreateMonitoredResourceDetails
             }
             if (model.wasPropertyExplicitlySet("hostName")) {
                 this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("externalId")) {
+                this.externalId(model.getExternalId());
             }
             if (model.wasPropertyExplicitlySet("managementAgentId")) {
                 this.managementAgentId(model.getManagementAgentId());
@@ -363,6 +392,26 @@ public final class CreateMonitoredResourceDetails
     }
 
     /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only OCI compute instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+    private final String externalId;
+
+    /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only OCI compute instance.
+     *
+     * @return the value
+     **/
+    public String getExternalId() {
+        return externalId;
+    }
+
+    /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
@@ -444,6 +493,7 @@ public final class CreateMonitoredResourceDetails
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", resourceTimeZone=").append(String.valueOf(this.resourceTimeZone));
         sb.append(", properties=").append(String.valueOf(this.properties));
@@ -470,6 +520,7 @@ public final class CreateMonitoredResourceDetails
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.resourceTimeZone, other.resourceTimeZone)
                 && java.util.Objects.equals(this.properties, other.properties)
@@ -491,6 +542,7 @@ public final class CreateMonitoredResourceDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
         result =
                 (result * PRIME)
                         + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());

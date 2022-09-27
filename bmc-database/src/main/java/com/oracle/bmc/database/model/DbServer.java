@@ -30,6 +30,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "dbNodeStorageSizeInGBs",
         "vmClusterIds",
         "dbNodeIds",
+        "shape",
         "lifecycleState",
         "lifecycleDetails",
         "maxCpuCount",
@@ -50,6 +51,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
             Integer dbNodeStorageSizeInGBs,
             java.util.List<String> vmClusterIds,
             java.util.List<String> dbNodeIds,
+            String shape,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             Integer maxCpuCount,
@@ -69,6 +71,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.vmClusterIds = vmClusterIds;
         this.dbNodeIds = dbNodeIds;
+        this.shape = shape;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.maxCpuCount = maxCpuCount;
@@ -228,6 +231,24 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder dbNodeIds(java.util.List<String> dbNodeIds) {
             this.dbNodeIds = dbNodeIds;
             this.__explicitlySet__.add("dbNodeIds");
+            return this;
+        }
+        /**
+         * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        /**
+         * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+         *
+         * @param shape the value to set
+         * @return this builder
+         **/
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
             return this;
         }
         /**
@@ -396,6 +417,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.dbNodeStorageSizeInGBs,
                             this.vmClusterIds,
                             this.dbNodeIds,
+                            this.shape,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.maxCpuCount,
@@ -439,6 +461,9 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("dbNodeIds")) {
                 this.dbNodeIds(model.getDbNodeIds());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -610,6 +635,22 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public java.util.List<String> getDbNodeIds() {
         return dbNodeIds;
+    }
+
+    /**
+     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final String shape;
+
+    /**
+     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     *
+     * @return the value
+     **/
+    public String getShape() {
+        return shape;
     }
 
     /**
@@ -819,6 +860,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", vmClusterIds=").append(String.valueOf(this.vmClusterIds));
         sb.append(", dbNodeIds=").append(String.valueOf(this.dbNodeIds));
+        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", maxCpuCount=").append(String.valueOf(this.maxCpuCount));
@@ -854,6 +896,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
                 && java.util.Objects.equals(this.vmClusterIds, other.vmClusterIds)
                 && java.util.Objects.equals(this.dbNodeIds, other.dbNodeIds)
+                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.maxCpuCount, other.maxCpuCount)
@@ -892,6 +935,7 @@ public final class DbServer extends com.oracle.bmc.http.internal.ExplicitlySetBm
                                 : this.dbNodeStorageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.vmClusterIds == null ? 43 : this.vmClusterIds.hashCode());
         result = (result * PRIME) + (this.dbNodeIds == null ? 43 : this.dbNodeIds.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

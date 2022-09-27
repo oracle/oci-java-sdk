@@ -36,7 +36,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "timeCreated",
         "timeUpdated",
         "ocpus",
-        "memoryInGBs"
+        "memoryInGBs",
+        "nvmes",
+        "localDisksTotalSizeInGBs"
     })
     public Node(
             String instanceId,
@@ -55,7 +57,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             Integer ocpus,
-            Integer memoryInGBs) {
+            Integer memoryInGBs,
+            Integer nvmes,
+            Double localDisksTotalSizeInGBs) {
         super();
         this.instanceId = instanceId;
         this.displayName = displayName;
@@ -74,6 +78,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.timeUpdated = timeUpdated;
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
+        this.nvmes = nvmes;
+        this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -351,6 +357,38 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
+        private Integer nvmes;
+
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * @param nvmes the value to set
+         * @return this builder
+         **/
+        public Builder nvmes(Integer nvmes) {
+            this.nvmes = nvmes;
+            this.__explicitlySet__.add("nvmes");
+            return this;
+        }
+        /**
+         * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
+        private Double localDisksTotalSizeInGBs;
+
+        /**
+         * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+         * @param localDisksTotalSizeInGBs the value to set
+         * @return this builder
+         **/
+        public Builder localDisksTotalSizeInGBs(Double localDisksTotalSizeInGBs) {
+            this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
+            this.__explicitlySet__.add("localDisksTotalSizeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -374,7 +412,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.timeCreated,
                             this.timeUpdated,
                             this.ocpus,
-                            this.memoryInGBs);
+                            this.memoryInGBs,
+                            this.nvmes,
+                            this.localDisksTotalSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -434,6 +474,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
             }
+            if (model.wasPropertyExplicitlySet("nvmes")) {
+                this.nvmes(model.getNvmes());
+            }
+            if (model.wasPropertyExplicitlySet("localDisksTotalSizeInGBs")) {
+                this.localDisksTotalSizeInGBs(model.getLocalDisksTotalSizeInGBs());
+            }
             return this;
         }
     }
@@ -488,6 +534,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Stopped("STOPPED"),
+        Stopping("STOPPING"),
+        Starting("STARTING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -793,6 +842,34 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return memoryInGBs;
     }
 
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
+    private final Integer nvmes;
+
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * @return the value
+     **/
+    public Integer getNvmes() {
+        return nvmes;
+    }
+
+    /**
+     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
+    private final Double localDisksTotalSizeInGBs;
+
+    /**
+     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     * @return the value
+     **/
+    public Double getLocalDisksTotalSizeInGBs() {
+        return localDisksTotalSizeInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -824,6 +901,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", nvmes=").append(String.valueOf(this.nvmes));
+        sb.append(", localDisksTotalSizeInGBs=")
+                .append(String.valueOf(this.localDisksTotalSizeInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -855,6 +935,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.nvmes, other.nvmes)
+                && java.util.Objects.equals(
+                        this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
                 && super.equals(other);
     }
 
@@ -891,6 +974,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.nvmes == null ? 43 : this.nvmes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localDisksTotalSizeInGBs == null
+                                ? 43
+                                : this.localDisksTotalSizeInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

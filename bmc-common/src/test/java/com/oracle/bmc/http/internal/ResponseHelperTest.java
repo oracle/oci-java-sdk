@@ -185,7 +185,8 @@ public class ResponseHelperTest {
         Response.StatusType statusInfo = mock(Response.StatusType.class);
         // with embedded quote
         String jsonEncodedString =
-                RestClientFactory.getObjectMapper().writeValueAsString("foo \" bar");
+                com.oracle.bmc.http.Serialization.getObjectMapper()
+                        .writeValueAsString("foo \" bar");
         assertEquals("\"foo \\\" bar\"", jsonEncodedString);
 
         Class<String> entityType = String.class;

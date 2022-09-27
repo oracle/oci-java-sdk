@@ -144,6 +144,17 @@ public class SearchResourcesConverter {
                                                     String.class));
                                 }
 
+                                java.util.Optional<java.util.List<String>> opcPreviousPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-previous-page");
+                                if (opcPreviousPageHeader.isPresent()) {
+                                    builder.opcPreviousPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-previous-page",
+                                                    opcPreviousPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");

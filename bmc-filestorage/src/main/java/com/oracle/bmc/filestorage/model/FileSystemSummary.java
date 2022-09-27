@@ -292,7 +292,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Specifies whether the file system has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
@@ -300,7 +300,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Specifies whether the file system has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param isCloneParent the value to set
          * @return this builder
@@ -314,7 +314,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
          * Specifies whether the data has finished copying from the source to the clone.
          * Hydration can take up to several hours to complete depending on the size of the source.
          * The source and clone remain available during hydration, but there may be some performance impact.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
@@ -324,7 +324,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
          * Specifies whether the data has finished copying from the source to the clone.
          * Hydration can take up to several hours to complete depending on the size of the source.
          * The source and clone remain available during hydration, but there may be some performance impact.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          * @param isHydrated the value to set
          * @return this builder
@@ -538,6 +538,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         Active("ACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
+        Failed("FAILED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -683,7 +684,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Specifies whether the file system has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
@@ -691,7 +692,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Specifies whether the file system has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      **/
@@ -703,7 +704,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
      * Specifies whether the data has finished copying from the source to the clone.
      * Hydration can take up to several hours to complete depending on the size of the source.
      * The source and clone remain available during hydration, but there may be some performance impact.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
@@ -713,7 +714,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
      * Specifies whether the data has finished copying from the source to the clone.
      * Hydration can take up to several hours to complete depending on the size of the source.
      * The source and clone remain available during hydration, but there may be some performance impact.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      * @return the value
      **/

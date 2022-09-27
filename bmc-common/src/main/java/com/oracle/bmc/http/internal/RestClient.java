@@ -1749,7 +1749,7 @@ public class RestClient implements AutoCloseable {
                 }
                 return body;
             } else if (body != null) {
-                return RestClientFactory.getObjectMapper().writeValueAsString(body);
+                return com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(body);
             } else {
                 return "";
             }

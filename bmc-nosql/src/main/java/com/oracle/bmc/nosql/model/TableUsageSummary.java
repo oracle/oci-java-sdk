@@ -32,7 +32,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         "storageInGBs",
         "readThrottleCount",
         "writeThrottleCount",
-        "storageThrottleCount"
+        "storageThrottleCount",
+        "maxShardSizeUsageInPercent"
     })
     public TableUsageSummary(
             Integer secondsInPeriod,
@@ -41,7 +42,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
             Integer storageInGBs,
             Integer readThrottleCount,
             Integer writeThrottleCount,
-            Integer storageThrottleCount) {
+            Integer storageThrottleCount,
+            Integer maxShardSizeUsageInPercent) {
         super();
         this.secondsInPeriod = secondsInPeriod;
         this.readUnits = readUnits;
@@ -50,6 +52,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         this.readThrottleCount = readThrottleCount;
         this.writeThrottleCount = writeThrottleCount;
         this.storageThrottleCount = storageThrottleCount;
+        this.maxShardSizeUsageInPercent = maxShardSizeUsageInPercent;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -178,6 +181,24 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("storageThrottleCount");
             return this;
         }
+        /**
+         * The percentage of allowed per-shard usage for the table shard with the highest usage.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxShardSizeUsageInPercent")
+        private Integer maxShardSizeUsageInPercent;
+
+        /**
+         * The percentage of allowed per-shard usage for the table shard with the highest usage.
+         *
+         * @param maxShardSizeUsageInPercent the value to set
+         * @return this builder
+         **/
+        public Builder maxShardSizeUsageInPercent(Integer maxShardSizeUsageInPercent) {
+            this.maxShardSizeUsageInPercent = maxShardSizeUsageInPercent;
+            this.__explicitlySet__.add("maxShardSizeUsageInPercent");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -191,7 +212,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
                             this.storageInGBs,
                             this.readThrottleCount,
                             this.writeThrottleCount,
-                            this.storageThrottleCount);
+                            this.storageThrottleCount,
+                            this.maxShardSizeUsageInPercent);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -220,6 +242,9 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("storageThrottleCount")) {
                 this.storageThrottleCount(model.getStorageThrottleCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxShardSizeUsageInPercent")) {
+                this.maxShardSizeUsageInPercent(model.getMaxShardSizeUsageInPercent());
             }
             return this;
         }
@@ -346,6 +371,22 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         return storageThrottleCount;
     }
 
+    /**
+     * The percentage of allowed per-shard usage for the table shard with the highest usage.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxShardSizeUsageInPercent")
+    private final Integer maxShardSizeUsageInPercent;
+
+    /**
+     * The percentage of allowed per-shard usage for the table shard with the highest usage.
+     *
+     * @return the value
+     **/
+    public Integer getMaxShardSizeUsageInPercent() {
+        return maxShardSizeUsageInPercent;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -367,6 +408,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", readThrottleCount=").append(String.valueOf(this.readThrottleCount));
         sb.append(", writeThrottleCount=").append(String.valueOf(this.writeThrottleCount));
         sb.append(", storageThrottleCount=").append(String.valueOf(this.storageThrottleCount));
+        sb.append(", maxShardSizeUsageInPercent=")
+                .append(String.valueOf(this.maxShardSizeUsageInPercent));
         sb.append(")");
         return sb.toString();
     }
@@ -388,6 +431,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.readThrottleCount, other.readThrottleCount)
                 && java.util.Objects.equals(this.writeThrottleCount, other.writeThrottleCount)
                 && java.util.Objects.equals(this.storageThrottleCount, other.storageThrottleCount)
+                && java.util.Objects.equals(
+                        this.maxShardSizeUsageInPercent, other.maxShardSizeUsageInPercent)
                 && super.equals(other);
     }
 
@@ -414,6 +459,11 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
                         + (this.storageThrottleCount == null
                                 ? 43
                                 : this.storageThrottleCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxShardSizeUsageInPercent == null
+                                ? 43
+                                : this.maxShardSizeUsageInPercent.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
