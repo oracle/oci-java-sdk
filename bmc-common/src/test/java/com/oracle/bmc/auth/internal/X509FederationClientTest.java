@@ -10,7 +10,6 @@ import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.RestClient;
-import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
@@ -140,7 +139,7 @@ public class X509FederationClientTest {
     public void jacksonCanDeserializeSecurityToken() throws IOException {
         final String strToken = "{\"token\" : \"abcdef\"}";
         // this line will fail on original code if Jackson is not at exactly the right version
-        RestClientFactory.getObjectMapper()
+        com.oracle.bmc.http.Serialization.getObjectMapper()
                 .readValue(strToken, X509FederationClient.SecurityToken.class);
     }
 
@@ -148,7 +147,7 @@ public class X509FederationClientTest {
     public void jacksonCanRoundTripSecurityToken() throws IOException {
         final X509FederationClient.SecurityToken secToken =
                 new X509FederationClient.SecurityToken("abcdef");
-        final ObjectMapper mapper = RestClientFactory.getObjectMapper();
+        final ObjectMapper mapper = com.oracle.bmc.http.Serialization.getObjectMapper();
         assertEquals(
                 secToken.getToken(),
                 mapper.readValue(mapper.writeValueAsString(secToken), secToken.getClass())

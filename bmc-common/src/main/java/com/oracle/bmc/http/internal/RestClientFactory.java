@@ -35,29 +35,12 @@ import java.util.Map;
  * required filters and configuration options.
  */
 public class RestClientFactory {
-    private static final ObjectMapper DEFAULT_MAPPER = new ObjectMapper();
     private static final JacksonJsonProvider JACKSON_JSON_PROVIDER =
             new JacksonJaxbJsonProvider(
-                    DEFAULT_MAPPER, JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
+                    com.oracle.bmc.http.Serialization.getObjectMapper(),
+                    JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
     private static final ClientIdFilter CLIENT_ID_FILTER = new ClientIdFilter();
     private static final LogHeadersFilter LOG_HEADERS_FILTER = new LogHeadersFilter();
-
-    static {
-        // Our default object mapper will ignore unknown properties when
-        // deserializing results
-        DEFAULT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        // Serialize Date instances using the DateFormat we specify, do not serialize into
-        // timestamps.
-        DEFAULT_MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-        // set explicit formatter that will serialize correctly
-        DEFAULT_MAPPER.setDateFormat(new RFC3339DateFormat());
-
-        FilterProvider filters =
-                new SimpleFilterProvider()
-                        .addFilter(ExplicitlySetFilter.NAME, ExplicitlySetFilter.INSTANCE);
-
-        DEFAULT_MAPPER.setFilterProvider(filters);
-    }
 
     private final ClientConfigurator clientConfigurator;
 
@@ -321,9 +304,11 @@ public class RestClientFactory {
      * <p>
      * Exposed only for internal use.
      * @return The ObjectMapper used.
+     * @deprecated use com.oracle.bmc.http.Serialization.getObjectMapper() instead
      */
+    @Deprecated
     public static ObjectMapper getObjectMapper() {
-        return DEFAULT_MAPPER;
+        return com.oracle.bmc.http.Serialization.getObjectMapper();
     }
 
     public ClientConfigurator getClientConfigurator() {

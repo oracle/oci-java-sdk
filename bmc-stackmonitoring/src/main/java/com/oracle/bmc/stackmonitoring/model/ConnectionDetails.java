@@ -27,7 +27,8 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         "connectorId",
         "serviceName",
         "dbUniqueName",
-        "dbId"
+        "dbId",
+        "sslSecretId"
     })
     public ConnectionDetails(
             Protocol protocol,
@@ -35,7 +36,8 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             String connectorId,
             String serviceName,
             String dbUniqueName,
-            String dbId) {
+            String dbId,
+            String sslSecretId) {
         super();
         this.protocol = protocol;
         this.port = port;
@@ -43,6 +45,7 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         this.serviceName = serviceName;
         this.dbUniqueName = dbUniqueName;
         this.dbId = dbId;
+        this.sslSecretId = sslSecretId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -143,6 +146,22 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("dbId");
             return this;
         }
+        /**
+         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
+        private String sslSecretId;
+
+        /**
+         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * @param sslSecretId the value to set
+         * @return this builder
+         **/
+        public Builder sslSecretId(String sslSecretId) {
+            this.sslSecretId = sslSecretId;
+            this.__explicitlySet__.add("sslSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -155,7 +174,8 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
                             this.connectorId,
                             this.serviceName,
                             this.dbUniqueName,
-                            this.dbId);
+                            this.dbId,
+                            this.sslSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -181,6 +201,9 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("dbId")) {
                 this.dbId(model.getDbId());
+            }
+            if (model.wasPropertyExplicitlySet("sslSecretId")) {
+                this.sslSecretId(model.getSslSecretId());
             }
             return this;
         }
@@ -329,6 +352,20 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         return dbId;
     }
 
+    /**
+     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
+    private final String sslSecretId;
+
+    /**
+     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
+    public String getSslSecretId() {
+        return sslSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -349,6 +386,7 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", dbId=").append(String.valueOf(this.dbId));
+        sb.append(", sslSecretId=").append(String.valueOf(this.sslSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -369,6 +407,7 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && java.util.Objects.equals(this.dbId, other.dbId)
+                && java.util.Objects.equals(this.sslSecretId, other.sslSecretId)
                 && super.equals(other);
     }
 
@@ -382,6 +421,7 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
         result = (result * PRIME) + (this.dbId == null ? 43 : this.dbId.hashCode());
+        result = (result * PRIME) + (this.sslSecretId == null ? 43 : this.sslSecretId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

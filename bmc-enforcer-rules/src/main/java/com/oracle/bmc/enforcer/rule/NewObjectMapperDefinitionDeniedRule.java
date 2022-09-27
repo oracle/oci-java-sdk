@@ -18,8 +18,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in RestClientFactory.java
- * The ObjectMapper defined in RestClientFactory.java should be re-used as RestClientFactory.getObjectMapper()
+ * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in Serialization.java
+ * The ObjectMapper defined in Serialization.java should be re-used as com.oracle.bmc.http.Serialization.getObjectMapper()
  * Any new ObjectMapper object (including any form of constructors) will cause the build to fail.
  */
 public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
@@ -58,7 +58,7 @@ public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
                             throw new EnforcerRuleException(
                                     "New ObjectMapper defined in "
                                             + javaFile.getAbsolutePath()
-                                            + ". Please re-use the ObjectMapper defined in RestClientFactory.java by calling RestClientFactory.getObjectMapper().");
+                                            + ". Please re-use the ObjectMapper defined in Serialization.java by calling com.oracle.bmc.http.Serialization.getObjectMapper().");
                         }
                     }
                 }

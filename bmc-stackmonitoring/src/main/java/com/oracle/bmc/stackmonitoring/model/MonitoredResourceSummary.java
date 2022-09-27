@@ -28,10 +28,12 @@ public final class MonitoredResourceSummary
         "displayName",
         "type",
         "hostName",
+        "externalId",
         "managementAgentId",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "properties",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -42,10 +44,12 @@ public final class MonitoredResourceSummary
             String displayName,
             String type,
             String hostName,
+            String externalId,
             String managementAgentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ResourceLifecycleState lifecycleState,
+            java.util.List<MonitoredResourceProperty> properties,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -55,10 +59,12 @@ public final class MonitoredResourceSummary
         this.displayName = displayName;
         this.type = type;
         this.hostName = hostName;
+        this.externalId = externalId;
         this.managementAgentId = managementAgentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.properties = properties;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -147,6 +153,30 @@ public final class MonitoredResourceSummary
             return this;
         }
         /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only following resource type identifiers - externalcontainerdatabase,
+         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+        private String externalId;
+
+        /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only following resource type identifiers - externalcontainerdatabase,
+         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         *
+         * @param externalId the value to set
+         * @return this builder
+         **/
+        public Builder externalId(String externalId) {
+            this.externalId = externalId;
+            this.__explicitlySet__.add("externalId");
+            return this;
+        }
+        /**
          * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
@@ -208,6 +238,22 @@ public final class MonitoredResourceSummary
         public Builder lifecycleState(ResourceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * List of monitored resource properties
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private java.util.List<MonitoredResourceProperty> properties;
+
+        /**
+         * List of monitored resource properties
+         * @param properties the value to set
+         * @return this builder
+         **/
+        public Builder properties(java.util.List<MonitoredResourceProperty> properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
             return this;
         }
         /**
@@ -283,10 +329,12 @@ public final class MonitoredResourceSummary
                             this.displayName,
                             this.type,
                             this.hostName,
+                            this.externalId,
                             this.managementAgentId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.properties,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -313,6 +361,9 @@ public final class MonitoredResourceSummary
             if (model.wasPropertyExplicitlySet("hostName")) {
                 this.hostName(model.getHostName());
             }
+            if (model.wasPropertyExplicitlySet("externalId")) {
+                this.externalId(model.getExternalId());
+            }
             if (model.wasPropertyExplicitlySet("managementAgentId")) {
                 this.managementAgentId(model.getManagementAgentId());
             }
@@ -324,6 +375,9 @@ public final class MonitoredResourceSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -420,6 +474,28 @@ public final class MonitoredResourceSummary
     }
 
     /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only following resource type identifiers - externalcontainerdatabase,
+     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+    private final String externalId;
+
+    /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only following resource type identifiers - externalcontainerdatabase,
+     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     *
+     * @return the value
+     **/
+    public String getExternalId() {
+        return externalId;
+    }
+
+    /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
@@ -473,6 +549,20 @@ public final class MonitoredResourceSummary
      **/
     public ResourceLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * List of monitored resource properties
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    private final java.util.List<MonitoredResourceProperty> properties;
+
+    /**
+     * List of monitored resource properties
+     * @return the value
+     **/
+    public java.util.List<MonitoredResourceProperty> getProperties() {
+        return properties;
     }
 
     /**
@@ -548,10 +638,12 @@ public final class MonitoredResourceSummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -574,10 +666,12 @@ public final class MonitoredResourceSummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -593,6 +687,7 @@ public final class MonitoredResourceSummary
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
         result =
                 (result * PRIME)
                         + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());
@@ -601,6 +696,7 @@ public final class MonitoredResourceSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

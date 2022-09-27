@@ -109,7 +109,9 @@ public final class UpdateFileSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+         * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
+         * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
          * <p>
          * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
          * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
@@ -119,7 +121,9 @@ public final class UpdateFileSystemDetails
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+         * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
+         * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
          * <p>
          * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
          * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
@@ -240,7 +244,9 @@ public final class UpdateFileSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+     * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
+     * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
      * <p>
      * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
      * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
@@ -250,7 +256,9 @@ public final class UpdateFileSystemDetails
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+     * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
+     * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
      * <p>
      * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
      * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).

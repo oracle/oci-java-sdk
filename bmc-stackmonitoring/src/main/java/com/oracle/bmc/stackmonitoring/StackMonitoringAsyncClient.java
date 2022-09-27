@@ -1233,6 +1233,61 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SearchAssociatedResourcesResponse> searchAssociatedResources(
+            SearchAssociatedResourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SearchAssociatedResourcesRequest, SearchAssociatedResourcesResponse>
+                    handler) {
+        LOG.trace("Called async searchAssociatedResources");
+        final SearchAssociatedResourcesRequest interceptedRequest =
+                SearchAssociatedResourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchAssociatedResourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "SearchAssociatedResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchAssociatedResources");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchAssociatedResourcesResponse>
+                transformer =
+                        SearchAssociatedResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SearchAssociatedResourcesRequest, SearchAssociatedResourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SearchAssociatedResourcesRequest,
+                                SearchAssociatedResourcesResponse>,
+                        java.util.concurrent.Future<SearchAssociatedResourcesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSearchAssociatedResourcesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SearchAssociatedResourcesRequest, SearchAssociatedResourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchMonitoredResourceAssociationsResponse>
             searchMonitoredResourceAssociations(
                     SearchMonitoredResourceAssociationsRequest request,

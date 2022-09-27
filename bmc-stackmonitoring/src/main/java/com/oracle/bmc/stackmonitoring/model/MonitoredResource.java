@@ -29,6 +29,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
         "compartmentId",
         "tenantId",
         "hostName",
+        "externalId",
         "managementAgentId",
         "resourceTimeZone",
         "timeCreated",
@@ -50,6 +51,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             String compartmentId,
             String tenantId,
             String hostName,
+            String externalId,
             String managementAgentId,
             String resourceTimeZone,
             java.util.Date timeCreated,
@@ -70,6 +72,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
         this.compartmentId = compartmentId;
         this.tenantId = tenantId;
         this.hostName = hostName;
+        this.externalId = externalId;
         this.managementAgentId = managementAgentId;
         this.resourceTimeZone = resourceTimeZone;
         this.timeCreated = timeCreated;
@@ -196,6 +199,30 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
+            return this;
+        }
+        /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only following resource type identifiers - externalcontainerdatabase,
+         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+        private String externalId;
+
+        /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only following resource type identifiers - externalcontainerdatabase,
+         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         *
+         * @param externalId the value to set
+         * @return this builder
+         **/
+        public Builder externalId(String externalId) {
+            this.externalId = externalId;
+            this.__explicitlySet__.add("externalId");
             return this;
         }
         /**
@@ -396,6 +423,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
                             this.compartmentId,
                             this.tenantId,
                             this.hostName,
+                            this.externalId,
                             this.managementAgentId,
                             this.resourceTimeZone,
                             this.timeCreated,
@@ -436,6 +464,9 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("hostName")) {
                 this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("externalId")) {
+                this.externalId(model.getExternalId());
             }
             if (model.wasPropertyExplicitlySet("managementAgentId")) {
                 this.managementAgentId(model.getManagementAgentId());
@@ -584,6 +615,28 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
      **/
     public String getHostName() {
         return hostName;
+    }
+
+    /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only following resource type identifiers - externalcontainerdatabase,
+     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+    private final String externalId;
+
+    /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only following resource type identifiers - externalcontainerdatabase,
+     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     *
+     * @return the value
+     **/
+    public String getExternalId() {
+        return externalId;
     }
 
     /**
@@ -766,6 +819,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", resourceTimeZone=").append(String.valueOf(this.resourceTimeZone));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -800,6 +854,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.resourceTimeZone, other.resourceTimeZone)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -829,6 +884,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
         result =
                 (result * PRIME)
                         + (this.managementAgentId == null ? 43 : this.managementAgentId.hashCode());

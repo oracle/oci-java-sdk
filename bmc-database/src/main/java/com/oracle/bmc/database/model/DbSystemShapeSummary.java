@@ -406,13 +406,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The minimum number of database nodes available for this shape.
+         * The minimum number of compute servers available for this shape.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
         private Integer minimumNodeCount;
 
         /**
-         * The minimum number of database nodes available for this shape.
+         * The minimum number of compute servers available for this shape.
          * @param minimumNodeCount the value to set
          * @return this builder
          **/
@@ -422,13 +422,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The maximum number of database nodes available for this shape.
+         * The maximum number of compute servers available for this shape.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
         private Integer maximumNodeCount;
 
         /**
-         * The maximum number of database nodes available for this shape.
+         * The maximum number of compute servers available for this shape.
          * @param maximumNodeCount the value to set
          * @return this builder
          **/
@@ -887,13 +887,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The minimum number of database nodes available for this shape.
+     * The minimum number of compute servers available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
     private final Integer minimumNodeCount;
 
     /**
-     * The minimum number of database nodes available for this shape.
+     * The minimum number of compute servers available for this shape.
      * @return the value
      **/
     public Integer getMinimumNodeCount() {
@@ -901,13 +901,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The maximum number of database nodes available for this shape.
+     * The maximum number of compute servers available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
     private final Integer maximumNodeCount;
 
     /**
-     * The maximum number of database nodes available for this shape.
+     * The maximum number of compute servers available for this shape.
      * @return the value
      **/
     public Integer getMaximumNodeCount() {

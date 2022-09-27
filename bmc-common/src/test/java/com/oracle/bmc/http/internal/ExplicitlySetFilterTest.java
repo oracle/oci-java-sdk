@@ -173,7 +173,8 @@ public class ExplicitlySetFilterTest {
         assertTrue(serializedBody.contains("\"$ref\":\"abc\""));
 
         Subclass deserialized =
-                RestClientFactory.getObjectMapper().readValue(serializedBody, Subclass.class);
+                com.oracle.bmc.http.Serialization.getObjectMapper()
+                        .readValue(serializedBody, Subclass.class);
         assertEquals(sub, deserialized);
 
         sub = Subclass.builder().baseVal(1).subVal("two").build();
@@ -182,7 +183,8 @@ public class ExplicitlySetFilterTest {
         assertFalse(serializedBody.contains("\"$ref\":\"abc\""));
 
         deserialized =
-                RestClientFactory.getObjectMapper().readValue(serializedBody, Subclass.class);
+                com.oracle.bmc.http.Serialization.getObjectMapper()
+                        .readValue(serializedBody, Subclass.class);
         assertEquals(sub, deserialized);
     }
 

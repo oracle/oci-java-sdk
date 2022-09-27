@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>2.44.0</version>
+    <version>2.45.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -80,7 +80,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>2.44.0</version>
+      <version>2.45.0</version>
     </dependency>
     <!-- Begin ApacheConnector Http Dependencies  -->
     <dependency>
