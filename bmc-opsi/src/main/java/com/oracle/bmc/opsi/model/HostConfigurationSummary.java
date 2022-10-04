@@ -33,6 +33,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EmManagedExternalHostConfigurationSummary.class,
         name = "EM_MANAGED_EXTERNAL_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacsManagedCloudHostConfigurationSummary.class,
+        name = "MACS_MANAGED_CLOUD_HOST"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -146,6 +150,7 @@ public class HostConfigurationSummary extends com.oracle.bmc.http.internal.Expli
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
@@ -199,6 +204,7 @@ public class HostConfigurationSummary extends com.oracle.bmc.http.internal.Expli
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
@@ -208,6 +214,7 @@ public class HostConfigurationSummary extends com.oracle.bmc.http.internal.Expli
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      * @return the value

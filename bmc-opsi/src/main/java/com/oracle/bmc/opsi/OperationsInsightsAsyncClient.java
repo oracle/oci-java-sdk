@@ -6113,6 +6113,60 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageResponse>
+            summarizeHostInsightTopProcessesUsage(
+                    SummarizeHostInsightTopProcessesUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightTopProcessesUsageRequest,
+                                    SummarizeHostInsightTopProcessesUsageResponse>
+                            handler) {
+        LOG.trace("Called async summarizeHostInsightTopProcessesUsage");
+        final SummarizeHostInsightTopProcessesUsageRequest interceptedRequest =
+                SummarizeHostInsightTopProcessesUsageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeHostInsightTopProcessesUsageConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightTopProcessesUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeHostInsightTopProcessesUsageResponse>
+                transformer =
+                        SummarizeHostInsightTopProcessesUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeHostInsightTopProcessesUsageRequest,
+                        SummarizeHostInsightTopProcessesUsageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeHostInsightTopProcessesUsageRequest,
+                                SummarizeHostInsightTopProcessesUsageResponse>,
+                        java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeHostInsightTopProcessesUsageRequest,
+                    SummarizeHostInsightTopProcessesUsageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageTrendResponse>
             summarizeHostInsightTopProcessesUsageTrend(
                     SummarizeHostInsightTopProcessesUsageTrendRequest request,

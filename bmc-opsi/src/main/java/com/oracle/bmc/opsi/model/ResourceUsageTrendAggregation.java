@@ -22,13 +22,14 @@ package com.oracle.bmc.opsi.model;
 public final class ResourceUsageTrendAggregation
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"endTimestamp", "usage", "capacity"})
+    @java.beans.ConstructorProperties({"endTimestamp", "usage", "capacity", "totalHostCapacity"})
     public ResourceUsageTrendAggregation(
-            java.util.Date endTimestamp, Double usage, Double capacity) {
+            java.util.Date endTimestamp, Double usage, Double capacity, Double totalHostCapacity) {
         super();
         this.endTimestamp = endTimestamp;
         this.usage = usage;
         this.capacity = capacity;
+        this.totalHostCapacity = totalHostCapacity;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -68,14 +69,14 @@ public final class ResourceUsageTrendAggregation
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          * @param capacity the value to set
          * @return this builder
@@ -85,13 +86,32 @@ public final class ResourceUsageTrendAggregation
             this.__explicitlySet__.add("capacity");
             return this;
         }
+        /**
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
+        private Double totalHostCapacity;
+
+        /**
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         * @param totalHostCapacity the value to set
+         * @return this builder
+         **/
+        public Builder totalHostCapacity(Double totalHostCapacity) {
+            this.totalHostCapacity = totalHostCapacity;
+            this.__explicitlySet__.add("totalHostCapacity");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceUsageTrendAggregation build() {
             ResourceUsageTrendAggregation model =
-                    new ResourceUsageTrendAggregation(this.endTimestamp, this.usage, this.capacity);
+                    new ResourceUsageTrendAggregation(
+                            this.endTimestamp, this.usage, this.capacity, this.totalHostCapacity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -108,6 +128,9 @@ public final class ResourceUsageTrendAggregation
             }
             if (model.wasPropertyExplicitlySet("capacity")) {
                 this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("totalHostCapacity")) {
+                this.totalHostCapacity(model.getTotalHostCapacity());
             }
             return this;
         }
@@ -155,19 +178,35 @@ public final class ResourceUsageTrendAggregation
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      * @return the value
      **/
     public Double getCapacity() {
         return capacity;
+    }
+
+    /**
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
+    private final Double totalHostCapacity;
+
+    /**
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     * @return the value
+     **/
+    public Double getTotalHostCapacity() {
+        return totalHostCapacity;
     }
 
     @Override
@@ -187,6 +226,7 @@ public final class ResourceUsageTrendAggregation
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
         sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", totalHostCapacity=").append(String.valueOf(this.totalHostCapacity));
         sb.append(")");
         return sb.toString();
     }
@@ -204,6 +244,7 @@ public final class ResourceUsageTrendAggregation
         return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
                 && java.util.Objects.equals(this.usage, other.usage)
                 && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.totalHostCapacity, other.totalHostCapacity)
                 && super.equals(other);
     }
 
@@ -214,6 +255,9 @@ public final class ResourceUsageTrendAggregation
         result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalHostCapacity == null ? 43 : this.totalHostCapacity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

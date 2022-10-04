@@ -28,14 +28,6 @@ public final class CreateManagedSshSessionTargetResourceDetails
         extends CreateSessionTargetResourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
-        private Integer targetResourcePort;
-
-        public Builder targetResourcePort(Integer targetResourcePort) {
-            this.targetResourcePort = targetResourcePort;
-            this.__explicitlySet__.add("targetResourcePort");
-            return this;
-        }
         /**
          * The name of the user on the target resource operating system that the session uses for the connection.
          **/
@@ -85,6 +77,22 @@ public final class CreateManagedSshSessionTargetResourceDetails
             this.__explicitlySet__.add("targetResourcePrivateIpAddress");
             return this;
         }
+        /**
+         * The port number to connect to on the target resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
+        private Integer targetResourcePort;
+
+        /**
+         * The port number to connect to on the target resource.
+         * @param targetResourcePort the value to set
+         * @return this builder
+         **/
+        public Builder targetResourcePort(Integer targetResourcePort) {
+            this.targetResourcePort = targetResourcePort;
+            this.__explicitlySet__.add("targetResourcePort");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -92,10 +100,10 @@ public final class CreateManagedSshSessionTargetResourceDetails
         public CreateManagedSshSessionTargetResourceDetails build() {
             CreateManagedSshSessionTargetResourceDetails model =
                     new CreateManagedSshSessionTargetResourceDetails(
-                            this.targetResourcePort,
                             this.targetResourceOperatingSystemUserName,
                             this.targetResourceId,
-                            this.targetResourcePrivateIpAddress);
+                            this.targetResourcePrivateIpAddress,
+                            this.targetResourcePort);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,9 +112,6 @@ public final class CreateManagedSshSessionTargetResourceDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateManagedSshSessionTargetResourceDetails model) {
-            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
-                this.targetResourcePort(model.getTargetResourcePort());
-            }
             if (model.wasPropertyExplicitlySet("targetResourceOperatingSystemUserName")) {
                 this.targetResourceOperatingSystemUserName(
                         model.getTargetResourceOperatingSystemUserName());
@@ -116,6 +121,9 @@ public final class CreateManagedSshSessionTargetResourceDetails
             }
             if (model.wasPropertyExplicitlySet("targetResourcePrivateIpAddress")) {
                 this.targetResourcePrivateIpAddress(model.getTargetResourcePrivateIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
+                this.targetResourcePort(model.getTargetResourcePort());
             }
             return this;
         }
@@ -134,14 +142,15 @@ public final class CreateManagedSshSessionTargetResourceDetails
 
     @Deprecated
     public CreateManagedSshSessionTargetResourceDetails(
-            Integer targetResourcePort,
             String targetResourceOperatingSystemUserName,
             String targetResourceId,
-            String targetResourcePrivateIpAddress) {
-        super(targetResourcePort);
+            String targetResourcePrivateIpAddress,
+            Integer targetResourcePort) {
+        super();
         this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
         this.targetResourceId = targetResourceId;
         this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
+        this.targetResourcePort = targetResourcePort;
     }
 
     /**
@@ -186,6 +195,20 @@ public final class CreateManagedSshSessionTargetResourceDetails
         return targetResourcePrivateIpAddress;
     }
 
+    /**
+     * The port number to connect to on the target resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
+    private final Integer targetResourcePort;
+
+    /**
+     * The port number to connect to on the target resource.
+     * @return the value
+     **/
+    public Integer getTargetResourcePort() {
+        return targetResourcePort;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -205,6 +228,7 @@ public final class CreateManagedSshSessionTargetResourceDetails
         sb.append(", targetResourceId=").append(String.valueOf(this.targetResourceId));
         sb.append(", targetResourcePrivateIpAddress=")
                 .append(String.valueOf(this.targetResourcePrivateIpAddress));
+        sb.append(", targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
     }
@@ -226,6 +250,7 @@ public final class CreateManagedSshSessionTargetResourceDetails
                 && java.util.Objects.equals(this.targetResourceId, other.targetResourceId)
                 && java.util.Objects.equals(
                         this.targetResourcePrivateIpAddress, other.targetResourcePrivateIpAddress)
+                && java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
                 && super.equals(other);
     }
 
@@ -246,6 +271,11 @@ public final class CreateManagedSshSessionTargetResourceDetails
                         + (this.targetResourcePrivateIpAddress == null
                                 ? 43
                                 : this.targetResourcePrivateIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourcePort == null
+                                ? 43
+                                : this.targetResourcePort.hashCode());
         return result;
     }
 }

@@ -26,6 +26,7 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
         "compartmentId",
         "targetVcnId",
         "targetSubnetId",
+        "dnsProxyStatus",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -41,6 +42,7 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
             String compartmentId,
             String targetVcnId,
             String targetSubnetId,
+            BastionDnsProxyStatus dnsProxyStatus,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             BastionLifecycleState lifecycleState,
@@ -55,6 +57,7 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
         this.compartmentId = compartmentId;
         this.targetVcnId = targetVcnId;
         this.targetSubnetId = targetSubnetId;
+        this.dnsProxyStatus = dnsProxyStatus;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -160,6 +163,22 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
         public Builder targetSubnetId(String targetSubnetId) {
             this.targetSubnetId = targetSubnetId;
             this.__explicitlySet__.add("targetSubnetId");
+            return this;
+        }
+        /**
+         * The current dns proxy status of the bastion.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyStatus")
+        private BastionDnsProxyStatus dnsProxyStatus;
+
+        /**
+         * The current dns proxy status of the bastion.
+         * @param dnsProxyStatus the value to set
+         * @return this builder
+         **/
+        public Builder dnsProxyStatus(BastionDnsProxyStatus dnsProxyStatus) {
+            this.dnsProxyStatus = dnsProxyStatus;
+            this.__explicitlySet__.add("dnsProxyStatus");
             return this;
         }
         /**
@@ -308,6 +327,7 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.compartmentId,
                             this.targetVcnId,
                             this.targetSubnetId,
+                            this.dnsProxyStatus,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -340,6 +360,9 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("targetSubnetId")) {
                 this.targetSubnetId(model.getTargetSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsProxyStatus")) {
+                this.dnsProxyStatus(model.getDnsProxyStatus());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -459,6 +482,20 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
      **/
     public String getTargetSubnetId() {
         return targetSubnetId;
+    }
+
+    /**
+     * The current dns proxy status of the bastion.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyStatus")
+    private final BastionDnsProxyStatus dnsProxyStatus;
+
+    /**
+     * The current dns proxy status of the bastion.
+     * @return the value
+     **/
+    public BastionDnsProxyStatus getDnsProxyStatus() {
+        return dnsProxyStatus;
     }
 
     /**
@@ -599,6 +636,7 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", targetVcnId=").append(String.valueOf(this.targetVcnId));
         sb.append(", targetSubnetId=").append(String.valueOf(this.targetSubnetId));
+        sb.append(", dnsProxyStatus=").append(String.valueOf(this.dnsProxyStatus));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -626,6 +664,7 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.targetVcnId, other.targetVcnId)
                 && java.util.Objects.equals(this.targetSubnetId, other.targetSubnetId)
+                && java.util.Objects.equals(this.dnsProxyStatus, other.dnsProxyStatus)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -650,6 +689,9 @@ public final class BastionSummary extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.targetSubnetId == null ? 43 : this.targetSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dnsProxyStatus == null ? 43 : this.dnsProxyStatus.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

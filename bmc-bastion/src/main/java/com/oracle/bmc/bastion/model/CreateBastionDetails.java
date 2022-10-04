@@ -30,6 +30,7 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
         "staticJumpHostIpAddresses",
         "clientCidrBlockAllowList",
         "maxSessionTtlInSeconds",
+        "dnsProxyStatus",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +43,7 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
             java.util.List<String> staticJumpHostIpAddresses,
             java.util.List<String> clientCidrBlockAllowList,
             Integer maxSessionTtlInSeconds,
+            BastionDnsProxyStatus dnsProxyStatus,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -53,6 +55,7 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
         this.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
         this.clientCidrBlockAllowList = clientCidrBlockAllowList;
         this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
+        this.dnsProxyStatus = dnsProxyStatus;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -194,6 +197,22 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * The desired dns proxy status of the bastion.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyStatus")
+        private BastionDnsProxyStatus dnsProxyStatus;
+
+        /**
+         * The desired dns proxy status of the bastion.
+         * @param dnsProxyStatus the value to set
+         * @return this builder
+         **/
+        public Builder dnsProxyStatus(BastionDnsProxyStatus dnsProxyStatus) {
+            this.dnsProxyStatus = dnsProxyStatus;
+            this.__explicitlySet__.add("dnsProxyStatus");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -249,6 +268,7 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
                             this.staticJumpHostIpAddresses,
                             this.clientCidrBlockAllowList,
                             this.maxSessionTtlInSeconds,
+                            this.dnsProxyStatus,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -282,6 +302,9 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("maxSessionTtlInSeconds")) {
                 this.maxSessionTtlInSeconds(model.getMaxSessionTtlInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("dnsProxyStatus")) {
+                this.dnsProxyStatus(model.getDnsProxyStatus());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -423,6 +446,20 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * The desired dns proxy status of the bastion.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyStatus")
+    private final BastionDnsProxyStatus dnsProxyStatus;
+
+    /**
+     * The desired dns proxy status of the bastion.
+     * @return the value
+     **/
+    public BastionDnsProxyStatus getDnsProxyStatus() {
+        return dnsProxyStatus;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -482,6 +519,7 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
         sb.append(", clientCidrBlockAllowList=")
                 .append(String.valueOf(this.clientCidrBlockAllowList));
         sb.append(", maxSessionTtlInSeconds=").append(String.valueOf(this.maxSessionTtlInSeconds));
+        sb.append(", dnsProxyStatus=").append(String.valueOf(this.dnsProxyStatus));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -509,6 +547,7 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
                         this.clientCidrBlockAllowList, other.clientCidrBlockAllowList)
                 && java.util.Objects.equals(
                         this.maxSessionTtlInSeconds, other.maxSessionTtlInSeconds)
+                && java.util.Objects.equals(this.dnsProxyStatus, other.dnsProxyStatus)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -544,6 +583,9 @@ public final class CreateBastionDetails extends com.oracle.bmc.http.internal.Exp
                         + (this.maxSessionTtlInSeconds == null
                                 ? 43
                                 : this.maxSessionTtlInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dnsProxyStatus == null ? 43 : this.dnsProxyStatus.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

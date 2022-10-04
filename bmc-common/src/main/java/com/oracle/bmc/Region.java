@@ -143,6 +143,9 @@ public final class Region implements Serializable, Comparable<Region> {
     // OC10
     public static final Region AP_DCC_CANBERRA_1 = register("ap-dcc-canberra-1", Realm.OC10, "wga");
 
+    // OC14
+    public static final Region EU_DCC_MILAN_1 = register("eu-dcc-milan-1", Realm.OC14, "bgy");
+
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
 
