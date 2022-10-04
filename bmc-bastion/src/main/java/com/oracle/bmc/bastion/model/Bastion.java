@@ -32,6 +32,7 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "privateEndpointIpAddress",
         "maxSessionTtlInSeconds",
         "maxSessionsAllowed",
+        "dnsProxyStatus",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -53,6 +54,7 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             String privateEndpointIpAddress,
             Integer maxSessionTtlInSeconds,
             Integer maxSessionsAllowed,
+            BastionDnsProxyStatus dnsProxyStatus,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             BastionLifecycleState lifecycleState,
@@ -73,6 +75,7 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.privateEndpointIpAddress = privateEndpointIpAddress;
         this.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
         this.maxSessionsAllowed = maxSessionsAllowed;
+        this.dnsProxyStatus = dnsProxyStatus;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -281,6 +284,22 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * The current dns proxy status of the bastion.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyStatus")
+        private BastionDnsProxyStatus dnsProxyStatus;
+
+        /**
+         * The current dns proxy status of the bastion.
+         * @param dnsProxyStatus the value to set
+         * @return this builder
+         **/
+        public Builder dnsProxyStatus(BastionDnsProxyStatus dnsProxyStatus) {
+            this.dnsProxyStatus = dnsProxyStatus;
+            this.__explicitlySet__.add("dnsProxyStatus");
+            return this;
+        }
+        /**
          * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2020-01-25T21:10:29.600Z}
          *
@@ -432,6 +451,7 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.privateEndpointIpAddress,
                             this.maxSessionTtlInSeconds,
                             this.maxSessionsAllowed,
+                            this.dnsProxyStatus,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -482,6 +502,9 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("maxSessionsAllowed")) {
                 this.maxSessionsAllowed(model.getMaxSessionsAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("dnsProxyStatus")) {
+                this.dnsProxyStatus(model.getDnsProxyStatus());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -692,6 +715,20 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * The current dns proxy status of the bastion.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyStatus")
+    private final BastionDnsProxyStatus dnsProxyStatus;
+
+    /**
+     * The current dns proxy status of the bastion.
+     * @return the value
+     **/
+    public BastionDnsProxyStatus getDnsProxyStatus() {
+        return dnsProxyStatus;
+    }
+
+    /**
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2020-01-25T21:10:29.600Z}
      *
@@ -838,6 +875,7 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 .append(String.valueOf(this.privateEndpointIpAddress));
         sb.append(", maxSessionTtlInSeconds=").append(String.valueOf(this.maxSessionTtlInSeconds));
         sb.append(", maxSessionsAllowed=").append(String.valueOf(this.maxSessionsAllowed));
+        sb.append(", dnsProxyStatus=").append(String.valueOf(this.dnsProxyStatus));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -875,6 +913,7 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(
                         this.maxSessionTtlInSeconds, other.maxSessionTtlInSeconds)
                 && java.util.Objects.equals(this.maxSessionsAllowed, other.maxSessionsAllowed)
+                && java.util.Objects.equals(this.dnsProxyStatus, other.dnsProxyStatus)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -927,6 +966,9 @@ public final class Bastion extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.maxSessionsAllowed == null
                                 ? 43
                                 : this.maxSessionsAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dnsProxyStatus == null ? 43 : this.dnsProxyStatus.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

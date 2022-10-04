@@ -191,6 +191,19 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     public String getHostId() {
         return hostId;
     }
+    /**
+     * Unique identifier for a process.
+     *
+     */
+    private String processHash;
+
+    /**
+     * Unique identifier for a process.
+     *
+     */
+    public String getProcessHash() {
+        return processHash;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -434,6 +447,23 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         }
 
         /**
+         * Unique identifier for a process.
+         *
+         */
+        private String processHash = null;
+
+        /**
+         * Unique identifier for a process.
+         *
+         * @param processHash the value to set
+         * @return this builder instance
+         */
+        public Builder processHash(String processHash) {
+            this.processHash = processHash;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -472,6 +502,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
             opcRequestId(o.getOpcRequestId());
             hostType(o.getHostType());
             hostId(o.getHostId());
+            processHash(o.getProcessHash());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -517,8 +548,9 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
             request.opcRequestId = opcRequestId;
             request.hostType = hostType;
             request.hostId = hostId;
+            request.processHash = processHash;
             return request;
-            // new SummarizeHostInsightTopProcessesUsageTrendRequest(compartmentId, id, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, page, limit, opcRequestId, hostType, hostId);
+            // new SummarizeHostInsightTopProcessesUsageTrendRequest(compartmentId, id, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, page, limit, opcRequestId, hostType, hostId, processHash);
         }
     }
 
@@ -538,7 +570,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
                 .limit(limit)
                 .opcRequestId(opcRequestId)
                 .hostType(hostType)
-                .hostId(hostId);
+                .hostId(hostId)
+                .processHash(processHash);
     }
 
     /**
@@ -565,6 +598,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
+        sb.append(",processHash=").append(String.valueOf(this.processHash));
         sb.append(")");
         return sb.toString();
     }
@@ -591,7 +625,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.hostType, other.hostType)
-                && java.util.Objects.equals(this.hostId, other.hostId);
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.processHash, other.processHash);
     }
 
     @Override
@@ -621,6 +656,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.hostType == null ? 43 : this.hostType.hashCode());
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result = (result * PRIME) + (this.processHash == null ? 43 : this.processHash.hashCode());
         return result;
     }
 }

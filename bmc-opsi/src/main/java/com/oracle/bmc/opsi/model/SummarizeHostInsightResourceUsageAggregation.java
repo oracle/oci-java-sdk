@@ -137,14 +137,14 @@ public final class SummarizeHostInsightResourceUsageAggregation
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          * @param capacity the value to set
          * @return this builder
@@ -404,14 +404,14 @@ public final class SummarizeHostInsightResourceUsageAggregation
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      * @return the value
      **/

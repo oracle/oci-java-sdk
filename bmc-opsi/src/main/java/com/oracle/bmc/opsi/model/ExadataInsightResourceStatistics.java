@@ -25,6 +25,7 @@ public final class ExadataInsightResourceStatistics
     @java.beans.ConstructorProperties({
         "usage",
         "capacity",
+        "totalHostCapacity",
         "utilizationPercent",
         "usageChangePercent",
         "instanceMetrics"
@@ -32,12 +33,14 @@ public final class ExadataInsightResourceStatistics
     public ExadataInsightResourceStatistics(
             Double usage,
             Double capacity,
+            Double totalHostCapacity,
             Double utilizationPercent,
             Double usageChangePercent,
             java.util.List<InstanceMetrics> instanceMetrics) {
         super();
         this.usage = usage;
         this.capacity = capacity;
+        this.totalHostCapacity = totalHostCapacity;
         this.utilizationPercent = utilizationPercent;
         this.usageChangePercent = usageChangePercent;
         this.instanceMetrics = instanceMetrics;
@@ -64,14 +67,14 @@ public final class ExadataInsightResourceStatistics
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          * @param capacity the value to set
          * @return this builder
@@ -79,6 +82,24 @@ public final class ExadataInsightResourceStatistics
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
+            return this;
+        }
+        /**
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
+        private Double totalHostCapacity;
+
+        /**
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         * @param totalHostCapacity the value to set
+         * @return this builder
+         **/
+        public Builder totalHostCapacity(Double totalHostCapacity) {
+            this.totalHostCapacity = totalHostCapacity;
+            this.__explicitlySet__.add("totalHostCapacity");
             return this;
         }
         /**
@@ -138,6 +159,7 @@ public final class ExadataInsightResourceStatistics
                     new ExadataInsightResourceStatistics(
                             this.usage,
                             this.capacity,
+                            this.totalHostCapacity,
                             this.utilizationPercent,
                             this.usageChangePercent,
                             this.instanceMetrics);
@@ -154,6 +176,9 @@ public final class ExadataInsightResourceStatistics
             }
             if (model.wasPropertyExplicitlySet("capacity")) {
                 this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("totalHostCapacity")) {
+                this.totalHostCapacity(model.getTotalHostCapacity());
             }
             if (model.wasPropertyExplicitlySet("utilizationPercent")) {
                 this.utilizationPercent(model.getUtilizationPercent());
@@ -196,19 +221,35 @@ public final class ExadataInsightResourceStatistics
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      * @return the value
      **/
     public Double getCapacity() {
         return capacity;
+    }
+
+    /**
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
+    private final Double totalHostCapacity;
+
+    /**
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     * @return the value
+     **/
+    public Double getTotalHostCapacity() {
+        return totalHostCapacity;
     }
 
     /**
@@ -269,6 +310,7 @@ public final class ExadataInsightResourceStatistics
         sb.append("super=").append(super.toString());
         sb.append("usage=").append(String.valueOf(this.usage));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", totalHostCapacity=").append(String.valueOf(this.totalHostCapacity));
         sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
         sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
         sb.append(", instanceMetrics=").append(String.valueOf(this.instanceMetrics));
@@ -288,6 +330,7 @@ public final class ExadataInsightResourceStatistics
         ExadataInsightResourceStatistics other = (ExadataInsightResourceStatistics) o;
         return java.util.Objects.equals(this.usage, other.usage)
                 && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.totalHostCapacity, other.totalHostCapacity)
                 && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
                 && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
                 && java.util.Objects.equals(this.instanceMetrics, other.instanceMetrics)
@@ -300,6 +343,9 @@ public final class ExadataInsightResourceStatistics
         int result = 1;
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalHostCapacity == null ? 43 : this.totalHostCapacity.hashCode());
         result =
                 (result * PRIME)
                         + (this.utilizationPercent == null

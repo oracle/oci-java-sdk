@@ -27,7 +27,8 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
         "usage",
         "capacity",
         "utilizationPercent",
-        "usageChangePercent"
+        "usageChangePercent",
+        "totalHostCapacity"
     })
     public ResourceUsageSummary(
             String exadataInsightId,
@@ -35,7 +36,8 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
             Double usage,
             Double capacity,
             Double utilizationPercent,
-            Double usageChangePercent) {
+            Double usageChangePercent,
+            Double totalHostCapacity) {
         super();
         this.exadataInsightId = exadataInsightId;
         this.exadataDisplayName = exadataDisplayName;
@@ -43,6 +45,7 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
         this.capacity = capacity;
         this.utilizationPercent = utilizationPercent;
         this.usageChangePercent = usageChangePercent;
+        this.totalHostCapacity = totalHostCapacity;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -98,14 +101,14 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          * @param capacity the value to set
          * @return this builder
@@ -147,6 +150,24 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("usageChangePercent");
             return this;
         }
+        /**
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
+        private Double totalHostCapacity;
+
+        /**
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         * @param totalHostCapacity the value to set
+         * @return this builder
+         **/
+        public Builder totalHostCapacity(Double totalHostCapacity) {
+            this.totalHostCapacity = totalHostCapacity;
+            this.__explicitlySet__.add("totalHostCapacity");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -159,7 +180,8 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
                             this.usage,
                             this.capacity,
                             this.utilizationPercent,
-                            this.usageChangePercent);
+                            this.usageChangePercent,
+                            this.totalHostCapacity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -185,6 +207,9 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("usageChangePercent")) {
                 this.usageChangePercent(model.getUsageChangePercent());
+            }
+            if (model.wasPropertyExplicitlySet("totalHostCapacity")) {
+                this.totalHostCapacity(model.getTotalHostCapacity());
             }
             return this;
         }
@@ -246,14 +271,14 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      * @return the value
      **/
@@ -289,6 +314,22 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
         return usageChangePercent;
     }
 
+    /**
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
+    private final Double totalHostCapacity;
+
+    /**
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     * @return the value
+     **/
+    public Double getTotalHostCapacity() {
+        return totalHostCapacity;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -309,6 +350,7 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
         sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
+        sb.append(", totalHostCapacity=").append(String.valueOf(this.totalHostCapacity));
         sb.append(")");
         return sb.toString();
     }
@@ -329,6 +371,7 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
                 && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
+                && java.util.Objects.equals(this.totalHostCapacity, other.totalHostCapacity)
                 && super.equals(other);
     }
 
@@ -356,6 +399,9 @@ public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.Exp
                         + (this.usageChangePercent == null
                                 ? 43
                                 : this.usageChangePercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalHostCapacity == null ? 43 : this.totalHostCapacity.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

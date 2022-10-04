@@ -27,6 +27,10 @@ package com.oracle.bmc.bastion.model;
         name = "MANAGED_SSH"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDynamicPortForwardingSessionTargetResourceDetails.class,
+        name = "DYNAMIC_PORT_FORWARDING"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreatePortForwardingSessionTargetResourceDetails.class,
         name = "PORT_FORWARDING"
     )
@@ -35,24 +39,9 @@ package com.oracle.bmc.bastion.model;
 public class CreateSessionTargetResourceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targetResourcePort"})
-    protected CreateSessionTargetResourceDetails(Integer targetResourcePort) {
+    @java.beans.ConstructorProperties({})
+    protected CreateSessionTargetResourceDetails() {
         super();
-        this.targetResourcePort = targetResourcePort;
-    }
-
-    /**
-     * The port number to connect to on the target resource.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
-    private final Integer targetResourcePort;
-
-    /**
-     * The port number to connect to on the target resource.
-     * @return the value
-     **/
-    public Integer getTargetResourcePort() {
-        return targetResourcePort;
     }
 
     @Override
@@ -69,7 +58,6 @@ public class CreateSessionTargetResourceDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSessionTargetResourceDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
     }
@@ -84,19 +72,13 @@ public class CreateSessionTargetResourceDetails
         }
 
         CreateSessionTargetResourceDetails other = (CreateSessionTargetResourceDetails) o;
-        return java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
-                && super.equals(other);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.targetResourcePort == null
-                                ? 43
-                                : this.targetResourcePort.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
