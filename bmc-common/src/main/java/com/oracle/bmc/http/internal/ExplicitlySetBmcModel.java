@@ -45,7 +45,7 @@ public abstract class ExplicitlySetBmcModel {
      * @param propertyName the name of the property.
      * @return whether the property was explicitly specified by user.
      */
-    public boolean wasPropertyExplicitlySet(String propertyName) {
+    protected boolean wasPropertyExplicitlySet(String propertyName) {
         return this.__explicitlySet__.contains(propertyName);
     }
 

@@ -37,8 +37,7 @@ public final class UpdateDbSystemDetails
         "nsgIds",
         "backupNetworkNsgIds",
         "licenseModel",
-        "maintenanceWindowDetails",
-        "dataCollectionOptions"
+        "maintenanceWindowDetails"
     })
     public UpdateDbSystemDetails(
             Integer cpuCoreCount,
@@ -52,8 +51,7 @@ public final class UpdateDbSystemDetails
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
             LicenseModel licenseModel,
-            MaintenanceWindow maintenanceWindowDetails,
-            DataCollectionOptions dataCollectionOptions) {
+            MaintenanceWindow maintenanceWindowDetails) {
         super();
         this.cpuCoreCount = cpuCoreCount;
         this.version = version;
@@ -67,7 +65,6 @@ public final class UpdateDbSystemDetails
         this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.licenseModel = licenseModel;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
-        this.dataCollectionOptions = dataCollectionOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -286,15 +283,6 @@ public final class UpdateDbSystemDetails
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-        private DataCollectionOptions dataCollectionOptions;
-
-        public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
-            this.dataCollectionOptions = dataCollectionOptions;
-            this.__explicitlySet__.add("dataCollectionOptions");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -312,8 +300,7 @@ public final class UpdateDbSystemDetails
                             this.nsgIds,
                             this.backupNetworkNsgIds,
                             this.licenseModel,
-                            this.maintenanceWindowDetails,
-                            this.dataCollectionOptions);
+                            this.maintenanceWindowDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -357,9 +344,6 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
                 this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
-            }
-            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
-                this.dataCollectionOptions(model.getDataCollectionOptions());
             }
             return this;
         }
@@ -600,13 +584,6 @@ public final class UpdateDbSystemDetails
         return maintenanceWindowDetails;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-    private final DataCollectionOptions dataCollectionOptions;
-
-    public DataCollectionOptions getDataCollectionOptions() {
-        return dataCollectionOptions;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -634,7 +611,6 @@ public final class UpdateDbSystemDetails
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
-        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -662,7 +638,6 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
-                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
     }
 
@@ -700,11 +675,6 @@ public final class UpdateDbSystemDetails
                         + (this.maintenanceWindowDetails == null
                                 ? 43
                                 : this.maintenanceWindowDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.dataCollectionOptions == null
-                                ? 43
-                                : this.dataCollectionOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

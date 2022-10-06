@@ -37,8 +37,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         "sourceDetails",
         "volumeBackupId",
         "isAutoTuneEnabled",
-        "blockVolumeReplicas",
-        "autotunePolicies"
+        "blockVolumeReplicas"
     })
     public CreateVolumeDetails(
             String availabilityDomain,
@@ -54,8 +53,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             VolumeSourceDetails sourceDetails,
             String volumeBackupId,
             Boolean isAutoTuneEnabled,
-            java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas,
-            java.util.List<AutotunePolicy> autotunePolicies) {
+            java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -71,7 +69,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         this.volumeBackupId = volumeBackupId;
         this.isAutoTuneEnabled = isAutoTuneEnabled;
         this.blockVolumeReplicas = blockVolumeReplicas;
-        this.autotunePolicies = autotunePolicies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -237,8 +234,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -258,8 +253,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          * @param vpusPerGB the value to set
          * @return this builder
@@ -337,16 +330,14 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-         * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+         * Specifies whether the auto-tune performance is enabled for this volume.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
         private Boolean isAutoTuneEnabled;
 
         /**
-         * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-         * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+         * Specifies whether the auto-tune performance is enabled for this volume.
          *
          * @param isAutoTuneEnabled the value to set
          * @return this builder
@@ -377,22 +368,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("blockVolumeReplicas");
             return this;
         }
-        /**
-         * The list of autotune policies to be enabled for this volume.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
-        private java.util.List<AutotunePolicy> autotunePolicies;
-
-        /**
-         * The list of autotune policies to be enabled for this volume.
-         * @param autotunePolicies the value to set
-         * @return this builder
-         **/
-        public Builder autotunePolicies(java.util.List<AutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = autotunePolicies;
-            this.__explicitlySet__.add("autotunePolicies");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -413,8 +388,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
                             this.sourceDetails,
                             this.volumeBackupId,
                             this.isAutoTuneEnabled,
-                            this.blockVolumeReplicas,
-                            this.autotunePolicies);
+                            this.blockVolumeReplicas);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -464,9 +438,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("blockVolumeReplicas")) {
                 this.blockVolumeReplicas(model.getBlockVolumeReplicas());
-            }
-            if (model.wasPropertyExplicitlySet("autotunePolicies")) {
-                this.autotunePolicies(model.getAutotunePolicies());
             }
             return this;
         }
@@ -629,8 +600,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -650,8 +619,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      * @return the value
      **/
@@ -719,16 +686,14 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
     private final Boolean isAutoTuneEnabled;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this volume.
      *
      * @return the value
      **/
@@ -752,20 +717,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
      **/
     public java.util.List<BlockVolumeReplicaDetails> getBlockVolumeReplicas() {
         return blockVolumeReplicas;
-    }
-
-    /**
-     * The list of autotune policies to be enabled for this volume.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
-    private final java.util.List<AutotunePolicy> autotunePolicies;
-
-    /**
-     * The list of autotune policies to be enabled for this volume.
-     * @return the value
-     **/
-    public java.util.List<AutotunePolicy> getAutotunePolicies() {
-        return autotunePolicies;
     }
 
     @Override
@@ -796,7 +747,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         sb.append(", volumeBackupId=").append(String.valueOf(this.volumeBackupId));
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
-        sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
         sb.append(")");
         return sb.toString();
     }
@@ -825,7 +775,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.volumeBackupId, other.volumeBackupId)
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
-                && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
                 && super.equals(other);
     }
 
@@ -865,9 +814,6 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
                         + (this.blockVolumeReplicas == null
                                 ? 43
                                 : this.blockVolumeReplicas.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -29,8 +29,7 @@ public final class UpdateBootVolumeDetails
         "sizeInGBs",
         "vpusPerGB",
         "isAutoTuneEnabled",
-        "bootVolumeReplicas",
-        "autotunePolicies"
+        "bootVolumeReplicas"
     })
     public UpdateBootVolumeDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -39,8 +38,7 @@ public final class UpdateBootVolumeDetails
             Long sizeInGBs,
             Long vpusPerGB,
             Boolean isAutoTuneEnabled,
-            java.util.List<BootVolumeReplicaDetails> bootVolumeReplicas,
-            java.util.List<AutotunePolicy> autotunePolicies) {
+            java.util.List<BootVolumeReplicaDetails> bootVolumeReplicas) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -49,7 +47,6 @@ public final class UpdateBootVolumeDetails
         this.vpusPerGB = vpusPerGB;
         this.isAutoTuneEnabled = isAutoTuneEnabled;
         this.bootVolumeReplicas = bootVolumeReplicas;
-        this.autotunePolicies = autotunePolicies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -151,8 +148,6 @@ public final class UpdateBootVolumeDetails
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -170,8 +165,6 @@ public final class UpdateBootVolumeDetails
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          * @param vpusPerGB the value to set
          * @return this builder
@@ -182,16 +175,14 @@ public final class UpdateBootVolumeDetails
             return this;
         }
         /**
-         * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-         * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+         * Specifies whether the auto-tune performance is enabled for this boot volume.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
         private Boolean isAutoTuneEnabled;
 
         /**
-         * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-         * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+         * Specifies whether the auto-tune performance is enabled for this boot volume.
          *
          * @param isAutoTuneEnabled the value to set
          * @return this builder
@@ -222,22 +213,6 @@ public final class UpdateBootVolumeDetails
             this.__explicitlySet__.add("bootVolumeReplicas");
             return this;
         }
-        /**
-         * The list of autotune policies to be enabled for this volume.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
-        private java.util.List<AutotunePolicy> autotunePolicies;
-
-        /**
-         * The list of autotune policies to be enabled for this volume.
-         * @param autotunePolicies the value to set
-         * @return this builder
-         **/
-        public Builder autotunePolicies(java.util.List<AutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = autotunePolicies;
-            this.__explicitlySet__.add("autotunePolicies");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -251,8 +226,7 @@ public final class UpdateBootVolumeDetails
                             this.sizeInGBs,
                             this.vpusPerGB,
                             this.isAutoTuneEnabled,
-                            this.bootVolumeReplicas,
-                            this.autotunePolicies);
+                            this.bootVolumeReplicas);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -281,9 +255,6 @@ public final class UpdateBootVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("bootVolumeReplicas")) {
                 this.bootVolumeReplicas(model.getBootVolumeReplicas());
-            }
-            if (model.wasPropertyExplicitlySet("autotunePolicies")) {
-                this.autotunePolicies(model.getAutotunePolicies());
             }
             return this;
         }
@@ -388,8 +359,6 @@ public final class UpdateBootVolumeDetails
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -407,8 +376,6 @@ public final class UpdateBootVolumeDetails
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      * @return the value
      **/
@@ -417,16 +384,14 @@ public final class UpdateBootVolumeDetails
     }
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this boot volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
     private final Boolean isAutoTuneEnabled;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this boot volume.
      *
      * @return the value
      **/
@@ -452,20 +417,6 @@ public final class UpdateBootVolumeDetails
         return bootVolumeReplicas;
     }
 
-    /**
-     * The list of autotune policies to be enabled for this volume.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
-    private final java.util.List<AutotunePolicy> autotunePolicies;
-
-    /**
-     * The list of autotune policies to be enabled for this volume.
-     * @return the value
-     **/
-    public java.util.List<AutotunePolicy> getAutotunePolicies() {
-        return autotunePolicies;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -487,7 +438,6 @@ public final class UpdateBootVolumeDetails
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", bootVolumeReplicas=").append(String.valueOf(this.bootVolumeReplicas));
-        sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
         sb.append(")");
         return sb.toString();
     }
@@ -509,7 +459,6 @@ public final class UpdateBootVolumeDetails
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.bootVolumeReplicas, other.bootVolumeReplicas)
-                && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
                 && super.equals(other);
     }
 
@@ -530,9 +479,6 @@ public final class UpdateBootVolumeDetails
                         + (this.bootVolumeReplicas == null
                                 ? 43
                                 : this.bootVolumeReplicas.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

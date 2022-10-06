@@ -66,8 +66,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "freeformTags",
         "definedTags",
         "sourceDbSystemId",
-        "pointInTimeDataDiskCloneTimestamp",
-        "dataCollectionOptions"
+        "pointInTimeDataDiskCloneTimestamp"
     })
     public DbSystem(
             ExadataIormConfig iormConfigCache,
@@ -116,8 +115,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String sourceDbSystemId,
-            java.util.Date pointInTimeDataDiskCloneTimestamp,
-            DataCollectionOptions dataCollectionOptions) {
+            java.util.Date pointInTimeDataDiskCloneTimestamp) {
         super();
         this.iormConfigCache = iormConfigCache;
         this.id = id;
@@ -166,7 +164,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.definedTags = definedTags;
         this.sourceDbSystemId = sourceDbSystemId;
         this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
-        this.dataCollectionOptions = dataCollectionOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1008,15 +1005,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-        private DataCollectionOptions dataCollectionOptions;
-
-        public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
-            this.dataCollectionOptions = dataCollectionOptions;
-            this.__explicitlySet__.add("dataCollectionOptions");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1069,8 +1057,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.freeformTags,
                             this.definedTags,
                             this.sourceDbSystemId,
-                            this.pointInTimeDataDiskCloneTimestamp,
-                            this.dataCollectionOptions);
+                            this.pointInTimeDataDiskCloneTimestamp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1220,9 +1207,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             if (model.wasPropertyExplicitlySet("pointInTimeDataDiskCloneTimestamp")) {
                 this.pointInTimeDataDiskCloneTimestamp(
                         model.getPointInTimeDataDiskCloneTimestamp());
-            }
-            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
-                this.dataCollectionOptions(model.getDataCollectionOptions());
             }
             return this;
         }
@@ -2234,13 +2218,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return pointInTimeDataDiskCloneTimestamp;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-    private final DataCollectionOptions dataCollectionOptions;
-
-    public DataCollectionOptions getDataCollectionOptions() {
-        return dataCollectionOptions;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -2305,7 +2282,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
                 .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
-        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -2371,7 +2347,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(
                         this.pointInTimeDataDiskCloneTimestamp,
                         other.pointInTimeDataDiskCloneTimestamp)
-                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
     }
 
@@ -2494,11 +2469,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.pointInTimeDataDiskCloneTimestamp == null
                                 ? 43
                                 : this.pointInTimeDataDiskCloneTimestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.dataCollectionOptions == null
-                                ? 43
-                                : this.dataCollectionOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -71,8 +71,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         "nodeCount",
         "freeformTags",
         "definedTags",
-        "privateIp",
-        "dataCollectionOptions"
+        "privateIp"
     })
     protected LaunchDbSystemBase(
             String compartmentId,
@@ -100,8 +99,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String privateIp,
-            DataCollectionOptions dataCollectionOptions) {
+            String privateIp) {
         super();
         this.compartmentId = compartmentId;
         this.faultDomains = faultDomains;
@@ -129,7 +127,6 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.privateIp = privateIp;
-        this.dataCollectionOptions = dataCollectionOptions;
     }
 
     /**
@@ -685,13 +682,6 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         return privateIp;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-    private final DataCollectionOptions dataCollectionOptions;
-
-    public DataCollectionOptions getDataCollectionOptions() {
-        return dataCollectionOptions;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -734,7 +724,6 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
-        sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -777,7 +766,6 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
-                && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
     }
 
@@ -843,11 +831,6 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.internal.ExplicitlyS
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.dataCollectionOptions == null
-                                ? 43
-                                : this.dataCollectionOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

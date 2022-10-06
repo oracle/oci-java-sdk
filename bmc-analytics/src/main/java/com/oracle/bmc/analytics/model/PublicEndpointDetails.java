@@ -29,14 +29,14 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Source IP addresses or IP address ranges in ingress rules.
+         * Source IP addresses or IP address ranges igress rules.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
 
         /**
-         * Source IP addresses or IP address ranges in ingress rules.
+         * Source IP addresses or IP address ranges igress rules.
          *
          * @param whitelistedIps the value to set
          * @return this builder
@@ -64,33 +64,13 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
             this.__explicitlySet__.add("whitelistedVcns");
             return this;
         }
-        /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("whitelistedServices")
-        private java.util.List<AccessControlServiceType> whitelistedServices;
-
-        /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
-         *
-         * @param whitelistedServices the value to set
-         * @return this builder
-         **/
-        public Builder whitelistedServices(
-                java.util.List<AccessControlServiceType> whitelistedServices) {
-            this.whitelistedServices = whitelistedServices;
-            this.__explicitlySet__.add("whitelistedServices");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublicEndpointDetails build() {
             PublicEndpointDetails model =
-                    new PublicEndpointDetails(
-                            this.whitelistedIps, this.whitelistedVcns, this.whitelistedServices);
+                    new PublicEndpointDetails(this.whitelistedIps, this.whitelistedVcns);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,9 +84,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
             }
             if (model.wasPropertyExplicitlySet("whitelistedVcns")) {
                 this.whitelistedVcns(model.getWhitelistedVcns());
-            }
-            if (model.wasPropertyExplicitlySet("whitelistedServices")) {
-                this.whitelistedServices(model.getWhitelistedServices());
             }
             return this;
         }
@@ -126,23 +103,21 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @Deprecated
     public PublicEndpointDetails(
             java.util.List<String> whitelistedIps,
-            java.util.List<VirtualCloudNetwork> whitelistedVcns,
-            java.util.List<AccessControlServiceType> whitelistedServices) {
+            java.util.List<VirtualCloudNetwork> whitelistedVcns) {
         super();
         this.whitelistedIps = whitelistedIps;
         this.whitelistedVcns = whitelistedVcns;
-        this.whitelistedServices = whitelistedServices;
     }
 
     /**
-     * Source IP addresses or IP address ranges in ingress rules.
+     * Source IP addresses or IP address ranges igress rules.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     private final java.util.List<String> whitelistedIps;
 
     /**
-     * Source IP addresses or IP address ranges in ingress rules.
+     * Source IP addresses or IP address ranges igress rules.
      *
      * @return the value
      **/
@@ -166,22 +141,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         return whitelistedVcns;
     }
 
-    /**
-     * Oracle Cloud Services that are allowed to access this Analytics instance.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("whitelistedServices")
-    private final java.util.List<AccessControlServiceType> whitelistedServices;
-
-    /**
-     * Oracle Cloud Services that are allowed to access this Analytics instance.
-     *
-     * @return the value
-     **/
-    public java.util.List<AccessControlServiceType> getWhitelistedServices() {
-        return whitelistedServices;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -198,7 +157,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
         sb.append(", whitelistedVcns=").append(String.valueOf(this.whitelistedVcns));
-        sb.append(", whitelistedServices=").append(String.valueOf(this.whitelistedServices));
         sb.append(")");
         return sb.toString();
     }
@@ -215,7 +173,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         PublicEndpointDetails other = (PublicEndpointDetails) o;
         return java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
                 && java.util.Objects.equals(this.whitelistedVcns, other.whitelistedVcns)
-                && java.util.Objects.equals(this.whitelistedServices, other.whitelistedServices)
                 && super.equals(other);
     }
 
@@ -229,11 +186,6 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         result =
                 (result * PRIME)
                         + (this.whitelistedVcns == null ? 43 : this.whitelistedVcns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.whitelistedServices == null
-                                ? 43
-                                : this.whitelistedServices.hashCode());
         return result;
     }
 }

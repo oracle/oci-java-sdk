@@ -42,9 +42,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "failedEsxiHostId",
         "replacementEsxiHostId",
         "gracePeriodEndDate",
-        "vmwareSoftwareVersion",
-        "nonUpgradedEsxiHostId",
-        "upgradedReplacementEsxiHostId",
         "computeAvailabilityDomain",
         "hostShapeName",
         "hostOcpuCount",
@@ -67,9 +64,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String failedEsxiHostId,
             String replacementEsxiHostId,
             java.util.Date gracePeriodEndDate,
-            String vmwareSoftwareVersion,
-            String nonUpgradedEsxiHostId,
-            String upgradedReplacementEsxiHostId,
             String computeAvailabilityDomain,
             String hostShapeName,
             Float hostOcpuCount,
@@ -91,9 +85,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.failedEsxiHostId = failedEsxiHostId;
         this.replacementEsxiHostId = replacementEsxiHostId;
         this.gracePeriodEndDate = gracePeriodEndDate;
-        this.vmwareSoftwareVersion = vmwareSoftwareVersion;
-        this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
-        this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
         this.hostShapeName = hostShapeName;
         this.hostOcpuCount = hostOcpuCount;
@@ -389,64 +380,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
-        private String vmwareSoftwareVersion;
-
-        /**
-         * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
-         *
-         * @param vmwareSoftwareVersion the value to set
-         * @return this builder
-         **/
-        public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
-            this.vmwareSoftwareVersion = vmwareSoftwareVersion;
-            this.__explicitlySet__.add("vmwareSoftwareVersion");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * will be upgraded.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
-        private String nonUpgradedEsxiHostId;
-
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * will be upgraded.
-         *
-         * @param nonUpgradedEsxiHostId the value to set
-         * @return this builder
-         **/
-        public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
-            this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
-            this.__explicitlySet__.add("nonUpgradedEsxiHostId");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * is newly created to upgrade the original host.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("upgradedReplacementEsxiHostId")
-        private String upgradedReplacementEsxiHostId;
-
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * is newly created to upgrade the original host.
-         *
-         * @param upgradedReplacementEsxiHostId the value to set
-         * @return this builder
-         **/
-        public Builder upgradedReplacementEsxiHostId(String upgradedReplacementEsxiHostId) {
-            this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
-            this.__explicitlySet__.add("upgradedReplacementEsxiHostId");
-            return this;
-        }
-        /**
          * The availability domain of the ESXi host.
          *
          **/
@@ -590,9 +523,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.failedEsxiHostId,
                             this.replacementEsxiHostId,
                             this.gracePeriodEndDate,
-                            this.vmwareSoftwareVersion,
-                            this.nonUpgradedEsxiHostId,
-                            this.upgradedReplacementEsxiHostId,
                             this.computeAvailabilityDomain,
                             this.hostShapeName,
                             this.hostOcpuCount,
@@ -648,15 +578,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("gracePeriodEndDate")) {
                 this.gracePeriodEndDate(model.getGracePeriodEndDate());
-            }
-            if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
-                this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
-            }
-            if (model.wasPropertyExplicitlySet("nonUpgradedEsxiHostId")) {
-                this.nonUpgradedEsxiHostId(model.getNonUpgradedEsxiHostId());
-            }
-            if (model.wasPropertyExplicitlySet("upgradedReplacementEsxiHostId")) {
-                this.upgradedReplacementEsxiHostId(model.getUpgradedReplacementEsxiHostId());
             }
             if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
                 this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
@@ -948,58 +869,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
-    private final String vmwareSoftwareVersion;
-
-    /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
-     *
-     * @return the value
-     **/
-    public String getVmwareSoftwareVersion() {
-        return vmwareSoftwareVersion;
-    }
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * will be upgraded.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
-    private final String nonUpgradedEsxiHostId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * will be upgraded.
-     *
-     * @return the value
-     **/
-    public String getNonUpgradedEsxiHostId() {
-        return nonUpgradedEsxiHostId;
-    }
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * is newly created to upgrade the original host.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("upgradedReplacementEsxiHostId")
-    private final String upgradedReplacementEsxiHostId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * is newly created to upgrade the original host.
-     *
-     * @return the value
-     **/
-    public String getUpgradedReplacementEsxiHostId() {
-        return upgradedReplacementEsxiHostId;
-    }
-
-    /**
      * The availability domain of the ESXi host.
      *
      **/
@@ -1137,10 +1006,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", failedEsxiHostId=").append(String.valueOf(this.failedEsxiHostId));
         sb.append(", replacementEsxiHostId=").append(String.valueOf(this.replacementEsxiHostId));
         sb.append(", gracePeriodEndDate=").append(String.valueOf(this.gracePeriodEndDate));
-        sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
-        sb.append(", nonUpgradedEsxiHostId=").append(String.valueOf(this.nonUpgradedEsxiHostId));
-        sb.append(", upgradedReplacementEsxiHostId=")
-                .append(String.valueOf(this.upgradedReplacementEsxiHostId));
         sb.append(", computeAvailabilityDomain=")
                 .append(String.valueOf(this.computeAvailabilityDomain));
         sb.append(", hostShapeName=").append(String.valueOf(this.hostShapeName));
@@ -1177,10 +1042,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.failedEsxiHostId, other.failedEsxiHostId)
                 && java.util.Objects.equals(this.replacementEsxiHostId, other.replacementEsxiHostId)
                 && java.util.Objects.equals(this.gracePeriodEndDate, other.gracePeriodEndDate)
-                && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
-                && java.util.Objects.equals(this.nonUpgradedEsxiHostId, other.nonUpgradedEsxiHostId)
-                && java.util.Objects.equals(
-                        this.upgradedReplacementEsxiHostId, other.upgradedReplacementEsxiHostId)
                 && java.util.Objects.equals(
                         this.computeAvailabilityDomain, other.computeAvailabilityDomain)
                 && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
@@ -1229,21 +1090,6 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.gracePeriodEndDate == null
                                 ? 43
                                 : this.gracePeriodEndDate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.vmwareSoftwareVersion == null
-                                ? 43
-                                : this.vmwareSoftwareVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.nonUpgradedEsxiHostId == null
-                                ? 43
-                                : this.nonUpgradedEsxiHostId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.upgradedReplacementEsxiHostId == null
-                                ? 43
-                                : this.upgradedReplacementEsxiHostId.hashCode());
         result =
                 (result * PRIME)
                         + (this.computeAvailabilityDomain == null
