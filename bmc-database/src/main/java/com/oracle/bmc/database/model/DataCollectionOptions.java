@@ -23,19 +23,10 @@ package com.oracle.bmc.database.model;
 public final class DataCollectionOptions
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "isDiagnosticsEventsEnabled",
-        "isHealthMonitoringEnabled",
-        "isIncidentLogsEnabled"
-    })
-    public DataCollectionOptions(
-            Boolean isDiagnosticsEventsEnabled,
-            Boolean isHealthMonitoringEnabled,
-            Boolean isIncidentLogsEnabled) {
+    @java.beans.ConstructorProperties({"isDiagnosticsEventsEnabled"})
+    public DataCollectionOptions(Boolean isDiagnosticsEventsEnabled) {
         super();
         this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-        this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-        this.isIncidentLogsEnabled = isIncidentLogsEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -58,56 +49,13 @@ public final class DataCollectionOptions
             this.__explicitlySet__.add("isDiagnosticsEventsEnabled");
             return this;
         }
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
-         * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isHealthMonitoringEnabled")
-        private Boolean isHealthMonitoringEnabled;
-
-        /**
-         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
-         * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
-         *
-         * @param isHealthMonitoringEnabled the value to set
-         * @return this builder
-         **/
-        public Builder isHealthMonitoringEnabled(Boolean isHealthMonitoringEnabled) {
-            this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            this.__explicitlySet__.add("isHealthMonitoringEnabled");
-            return this;
-        }
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
-         * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isIncidentLogsEnabled")
-        private Boolean isIncidentLogsEnabled;
-
-        /**
-         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
-         * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
-         *
-         * @param isIncidentLogsEnabled the value to set
-         * @return this builder
-         **/
-        public Builder isIncidentLogsEnabled(Boolean isIncidentLogsEnabled) {
-            this.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            this.__explicitlySet__.add("isIncidentLogsEnabled");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataCollectionOptions build() {
             DataCollectionOptions model =
-                    new DataCollectionOptions(
-                            this.isDiagnosticsEventsEnabled,
-                            this.isHealthMonitoringEnabled,
-                            this.isIncidentLogsEnabled);
+                    new DataCollectionOptions(this.isDiagnosticsEventsEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -118,12 +66,6 @@ public final class DataCollectionOptions
         public Builder copy(DataCollectionOptions model) {
             if (model.wasPropertyExplicitlySet("isDiagnosticsEventsEnabled")) {
                 this.isDiagnosticsEventsEnabled(model.getIsDiagnosticsEventsEnabled());
-            }
-            if (model.wasPropertyExplicitlySet("isHealthMonitoringEnabled")) {
-                this.isHealthMonitoringEnabled(model.getIsHealthMonitoringEnabled());
-            }
-            if (model.wasPropertyExplicitlySet("isIncidentLogsEnabled")) {
-                this.isIncidentLogsEnabled(model.getIsIncidentLogsEnabled());
             }
             return this;
         }
@@ -156,42 +98,6 @@ public final class DataCollectionOptions
         return isDiagnosticsEventsEnabled;
     }
 
-    /**
-     * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
-     * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isHealthMonitoringEnabled")
-    private final Boolean isHealthMonitoringEnabled;
-
-    /**
-     * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
-     * Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the {@code UpdateVmCluster}, {@code UpdateCloudVmCluster} or {@code updateDbsystem} API.
-     *
-     * @return the value
-     **/
-    public Boolean getIsHealthMonitoringEnabled() {
-        return isHealthMonitoringEnabled;
-    }
-
-    /**
-     * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
-     * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isIncidentLogsEnabled")
-    private final Boolean isIncidentLogsEnabled;
-
-    /**
-     * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
-     * Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the {@code UpdateVmCluster}, {@code updateCloudVmCluster} or {@code updateDbsystem} API.
-     *
-     * @return the value
-     **/
-    public Boolean getIsIncidentLogsEnabled() {
-        return isIncidentLogsEnabled;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -208,9 +114,6 @@ public final class DataCollectionOptions
         sb.append("super=").append(super.toString());
         sb.append("isDiagnosticsEventsEnabled=")
                 .append(String.valueOf(this.isDiagnosticsEventsEnabled));
-        sb.append(", isHealthMonitoringEnabled=")
-                .append(String.valueOf(this.isHealthMonitoringEnabled));
-        sb.append(", isIncidentLogsEnabled=").append(String.valueOf(this.isIncidentLogsEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -227,9 +130,6 @@ public final class DataCollectionOptions
         DataCollectionOptions other = (DataCollectionOptions) o;
         return java.util.Objects.equals(
                         this.isDiagnosticsEventsEnabled, other.isDiagnosticsEventsEnabled)
-                && java.util.Objects.equals(
-                        this.isHealthMonitoringEnabled, other.isHealthMonitoringEnabled)
-                && java.util.Objects.equals(this.isIncidentLogsEnabled, other.isIncidentLogsEnabled)
                 && super.equals(other);
     }
 
@@ -242,16 +142,6 @@ public final class DataCollectionOptions
                         + (this.isDiagnosticsEventsEnabled == null
                                 ? 43
                                 : this.isDiagnosticsEventsEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isHealthMonitoringEnabled == null
-                                ? 43
-                                : this.isHealthMonitoringEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isIncidentLogsEnabled == null
-                                ? 43
-                                : this.isIncidentLogsEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

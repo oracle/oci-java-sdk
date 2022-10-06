@@ -3,36 +3,6 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## 2.41.1 - 2022-08-30
-### Added
-- Support for opting out of guest VM event collection, health metrics, diagnostics logs, and traces in the Database service
-- Support for in-place upgrades for software-defined data centers in the VMWare Solution service
-- Support for single-client access name protocol as a data source for private access channels in the Analytics Cloud service
-- Support for network security groups, egress control on public datasources, and GitHub access in the Analytics Cloud service
-- Support for performance-based autotuning of block and boot volumes in the Block Storage service
-
-## 2.41.0 - 2022-08-23
-### Added
-- Support for the Enterprise Manager Warehouse service
-- Support for additional configuration variables in the MySQL Database service
-- Support for file filters in the DevOps service
-- Support for support rewards redemption summaries in the Usage service
-- Support for the parent tenancy of an organization to view child tenancy categories, recommendations, and resource actions in the Optimizer service
-- Support for choosing prior versions during infrastructure maintenance on Exadata Cloud at Customer in the Database service
-
-### Breaking Changes
-- Class `com.oracle.bmc.emwarehouse.EmDataLake` has been removed in the Enterprise Manager Warehouse service
-- Class `com.oracle.bmc.emwarehouse.EmDataLakeClient$Builder` has been removed in the Enterprise Manager Warehouse service
-- Class `com.oracle.bmc.emwarehouse.EmDataLakePaginators` has been removed in the Enterprise Manager Warehouse service
-- Class `com.oracle.bmc.emwarehouse.EmDataLakeWaiters` has been removed in the Enterprise Manager Warehouse service
-- Return type of method `public java.lang.Integer getCteMaxRecursionDepth()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-- Return type of method `public java.lang.Integer getInnodbFtResultCacheLimit()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-- Return type of method `public java.lang.Integer getInnodbMaxPurgeLag()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-- Return type of method `public java.lang.Integer getMaxExecutionTime()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-- Return type of method `public java.lang.Integer getParserMaxMemSize()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-- Return type of method `public java.lang.Integer getQueryAllocBlockSize()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-- Return type of method `public java.lang.Integer getQueryPreallocSize()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.mysql.model.ConfigurationVariables` in the MySQL Database service
-
 ## 2.40.0 - 2022-08-16
 ### Added
 - Support for Logging Analytics as a streaming source target in the Service Connector Hub service

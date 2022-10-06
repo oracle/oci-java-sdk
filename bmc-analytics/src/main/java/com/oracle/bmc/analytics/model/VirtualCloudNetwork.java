@@ -50,14 +50,14 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Source IP addresses or IP address ranges in ingress rules.
+         * Source IP addresses or IP address ranges igress rules.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
 
         /**
-         * Source IP addresses or IP address ranges in ingress rules.
+         * Source IP addresses or IP address ranges igress rules.
          *
          * @param whitelistedIps the value to set
          * @return this builder
@@ -119,14 +119,14 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Source IP addresses or IP address ranges in ingress rules.
+     * Source IP addresses or IP address ranges igress rules.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     private final java.util.List<String> whitelistedIps;
 
     /**
-     * Source IP addresses or IP address ranges in ingress rules.
+     * Source IP addresses or IP address ranges igress rules.
      *
      * @return the value
      **/

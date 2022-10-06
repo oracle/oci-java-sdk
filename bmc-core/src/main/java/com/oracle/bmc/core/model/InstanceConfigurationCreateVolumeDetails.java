@@ -33,8 +33,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         "kmsKeyId",
         "vpusPerGB",
         "sizeInGBs",
-        "sourceDetails",
-        "autotunePolicies"
+        "sourceDetails"
     })
     public InstanceConfigurationCreateVolumeDetails(
             String availabilityDomain,
@@ -46,8 +45,7 @@ public final class InstanceConfigurationCreateVolumeDetails
             String kmsKeyId,
             Long vpusPerGB,
             Long sizeInGBs,
-            InstanceConfigurationVolumeSourceDetails sourceDetails,
-            java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies) {
+            InstanceConfigurationVolumeSourceDetails sourceDetails) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -59,7 +57,6 @@ public final class InstanceConfigurationCreateVolumeDetails
         this.vpusPerGB = vpusPerGB;
         this.sizeInGBs = sizeInGBs;
         this.sourceDetails = sourceDetails;
-        this.autotunePolicies = autotunePolicies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -225,8 +222,6 @@ public final class InstanceConfigurationCreateVolumeDetails
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -246,8 +241,6 @@ public final class InstanceConfigurationCreateVolumeDetails
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-         * <p>
-         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          * @param vpusPerGB the value to set
          * @return this builder
@@ -282,23 +275,6 @@ public final class InstanceConfigurationCreateVolumeDetails
             this.__explicitlySet__.add("sourceDetails");
             return this;
         }
-        /**
-         * The list of autotune policies enabled for this volume.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
-        private java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies;
-
-        /**
-         * The list of autotune policies enabled for this volume.
-         * @param autotunePolicies the value to set
-         * @return this builder
-         **/
-        public Builder autotunePolicies(
-                java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies) {
-            this.autotunePolicies = autotunePolicies;
-            this.__explicitlySet__.add("autotunePolicies");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -315,8 +291,7 @@ public final class InstanceConfigurationCreateVolumeDetails
                             this.kmsKeyId,
                             this.vpusPerGB,
                             this.sizeInGBs,
-                            this.sourceDetails,
-                            this.autotunePolicies);
+                            this.sourceDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -354,9 +329,6 @@ public final class InstanceConfigurationCreateVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("sourceDetails")) {
                 this.sourceDetails(model.getSourceDetails());
-            }
-            if (model.wasPropertyExplicitlySet("autotunePolicies")) {
-                this.autotunePolicies(model.getAutotunePolicies());
             }
             return this;
         }
@@ -519,8 +491,6 @@ public final class InstanceConfigurationCreateVolumeDetails
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -540,8 +510,6 @@ public final class InstanceConfigurationCreateVolumeDetails
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
-     * <p>
-     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      * @return the value
      **/
@@ -570,20 +538,6 @@ public final class InstanceConfigurationCreateVolumeDetails
         return sourceDetails;
     }
 
-    /**
-     * The list of autotune policies enabled for this volume.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("autotunePolicies")
-    private final java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies;
-
-    /**
-     * The list of autotune policies enabled for this volume.
-     * @return the value
-     **/
-    public java.util.List<InstanceConfigurationAutotunePolicy> getAutotunePolicies() {
-        return autotunePolicies;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -608,7 +562,6 @@ public final class InstanceConfigurationCreateVolumeDetails
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
-        sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
         sb.append(")");
         return sb.toString();
     }
@@ -634,7 +587,6 @@ public final class InstanceConfigurationCreateVolumeDetails
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
-                && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
                 && super.equals(other);
     }
 
@@ -662,9 +614,6 @@ public final class InstanceConfigurationCreateVolumeDetails
         result =
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

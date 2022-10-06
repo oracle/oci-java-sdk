@@ -74,9 +74,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "upgradeLicenses",
-        "vsphereUpgradeGuide",
-        "vsphereUpgradeObjects",
         "initialHostShapeName",
         "initialHostOcpuCount",
         "isShieldedInstanceEnabled",
@@ -130,9 +127,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleStates lifecycleState,
-            java.util.List<VsphereLicense> upgradeLicenses,
-            String vsphereUpgradeGuide,
-            java.util.List<VsphereUpgradeObject> vsphereUpgradeObjects,
             String initialHostShapeName,
             Float initialHostOcpuCount,
             Boolean isShieldedInstanceEnabled,
@@ -185,9 +179,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
-        this.upgradeLicenses = upgradeLicenses;
-        this.vsphereUpgradeGuide = vsphereUpgradeGuide;
-        this.vsphereUpgradeObjects = vsphereUpgradeObjects;
         this.initialHostShapeName = initialHostShapeName;
         this.initialHostOcpuCount = initialHostOcpuCount;
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
@@ -1331,61 +1322,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The vSphere licenses to be used when upgrade SDDC.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("upgradeLicenses")
-        private java.util.List<VsphereLicense> upgradeLicenses;
-
-        /**
-         * The vSphere licenses to be used when upgrade SDDC.
-         *
-         * @param upgradeLicenses the value to set
-         * @return this builder
-         **/
-        public Builder upgradeLicenses(java.util.List<VsphereLicense> upgradeLicenses) {
-            this.upgradeLicenses = upgradeLicenses;
-            this.__explicitlySet__.add("upgradeLicenses");
-            return this;
-        }
-        /**
-         * The link of guidance to upgrade vSphere.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeGuide")
-        private String vsphereUpgradeGuide;
-
-        /**
-         * The link of guidance to upgrade vSphere.
-         *
-         * @param vsphereUpgradeGuide the value to set
-         * @return this builder
-         **/
-        public Builder vsphereUpgradeGuide(String vsphereUpgradeGuide) {
-            this.vsphereUpgradeGuide = vsphereUpgradeGuide;
-            this.__explicitlySet__.add("vsphereUpgradeGuide");
-            return this;
-        }
-        /**
-         * The links of binary objects needed for upgrade vSphere.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeObjects")
-        private java.util.List<VsphereUpgradeObject> vsphereUpgradeObjects;
-
-        /**
-         * The links of binary objects needed for upgrade vSphere.
-         *
-         * @param vsphereUpgradeObjects the value to set
-         * @return this builder
-         **/
-        public Builder vsphereUpgradeObjects(
-                java.util.List<VsphereUpgradeObject> vsphereUpgradeObjects) {
-            this.vsphereUpgradeObjects = vsphereUpgradeObjects;
-            this.__explicitlySet__.add("vsphereUpgradeObjects");
-            return this;
-        }
-        /**
          * The initial compute shape of the SDDC's ESXi hosts.
          * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
          *
@@ -1560,9 +1496,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.upgradeLicenses,
-                            this.vsphereUpgradeGuide,
-                            this.vsphereUpgradeObjects,
                             this.initialHostShapeName,
                             this.initialHostOcpuCount,
                             this.isShieldedInstanceEnabled,
@@ -1711,15 +1644,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
-            }
-            if (model.wasPropertyExplicitlySet("upgradeLicenses")) {
-                this.upgradeLicenses(model.getUpgradeLicenses());
-            }
-            if (model.wasPropertyExplicitlySet("vsphereUpgradeGuide")) {
-                this.vsphereUpgradeGuide(model.getVsphereUpgradeGuide());
-            }
-            if (model.wasPropertyExplicitlySet("vsphereUpgradeObjects")) {
-                this.vsphereUpgradeObjects(model.getVsphereUpgradeObjects());
             }
             if (model.wasPropertyExplicitlySet("initialHostShapeName")) {
                 this.initialHostShapeName(model.getInitialHostShapeName());
@@ -2797,54 +2721,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The vSphere licenses to be used when upgrade SDDC.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("upgradeLicenses")
-    private final java.util.List<VsphereLicense> upgradeLicenses;
-
-    /**
-     * The vSphere licenses to be used when upgrade SDDC.
-     *
-     * @return the value
-     **/
-    public java.util.List<VsphereLicense> getUpgradeLicenses() {
-        return upgradeLicenses;
-    }
-
-    /**
-     * The link of guidance to upgrade vSphere.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeGuide")
-    private final String vsphereUpgradeGuide;
-
-    /**
-     * The link of guidance to upgrade vSphere.
-     *
-     * @return the value
-     **/
-    public String getVsphereUpgradeGuide() {
-        return vsphereUpgradeGuide;
-    }
-
-    /**
-     * The links of binary objects needed for upgrade vSphere.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vsphereUpgradeObjects")
-    private final java.util.List<VsphereUpgradeObject> vsphereUpgradeObjects;
-
-    /**
-     * The links of binary objects needed for upgrade vSphere.
-     *
-     * @return the value
-     **/
-    public java.util.List<VsphereUpgradeObject> getVsphereUpgradeObjects() {
-        return vsphereUpgradeObjects;
-    }
-
-    /**
      * The initial compute shape of the SDDC's ESXi hosts.
      * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
      *
@@ -3017,9 +2893,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", upgradeLicenses=").append(String.valueOf(this.upgradeLicenses));
-        sb.append(", vsphereUpgradeGuide=").append(String.valueOf(this.vsphereUpgradeGuide));
-        sb.append(", vsphereUpgradeObjects=").append(String.valueOf(this.vsphereUpgradeObjects));
         sb.append(", initialHostShapeName=").append(String.valueOf(this.initialHostShapeName));
         sb.append(", initialHostOcpuCount=").append(String.valueOf(this.initialHostOcpuCount));
         sb.append(", isShieldedInstanceEnabled=")
@@ -3093,9 +2966,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.upgradeLicenses, other.upgradeLicenses)
-                && java.util.Objects.equals(this.vsphereUpgradeGuide, other.vsphereUpgradeGuide)
-                && java.util.Objects.equals(this.vsphereUpgradeObjects, other.vsphereUpgradeObjects)
                 && java.util.Objects.equals(this.initialHostShapeName, other.initialHostShapeName)
                 && java.util.Objects.equals(this.initialHostOcpuCount, other.initialHostOcpuCount)
                 && java.util.Objects.equals(
@@ -3261,19 +3131,6 @@ public final class Sddc extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.upgradeLicenses == null ? 43 : this.upgradeLicenses.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.vsphereUpgradeGuide == null
-                                ? 43
-                                : this.vsphereUpgradeGuide.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.vsphereUpgradeObjects == null
-                                ? 43
-                                : this.vsphereUpgradeObjects.hashCode());
         result =
                 (result * PRIME)
                         + (this.initialHostShapeName == null

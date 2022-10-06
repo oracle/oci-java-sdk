@@ -264,15 +264,6 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
-        private DataCollectionOptions dataCollectionOptions;
-
-        public Builder dataCollectionOptions(DataCollectionOptions dataCollectionOptions) {
-            this.dataCollectionOptions = dataCollectionOptions;
-            this.__explicitlySet__.add("dataCollectionOptions");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
         private CreateDbHomeDetails dbHome;
 
@@ -383,7 +374,6 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             this.freeformTags,
                             this.definedTags,
                             this.privateIp,
-                            this.dataCollectionOptions,
                             this.dbHome,
                             this.databaseEdition,
                             this.diskRedundancy,
@@ -475,9 +465,6 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
-            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
-                this.dataCollectionOptions(model.getDataCollectionOptions());
-            }
             if (model.wasPropertyExplicitlySet("dbHome")) {
                 this.dbHome(model.getDbHome());
             }
@@ -536,7 +523,6 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String privateIp,
-            DataCollectionOptions dataCollectionOptions,
             CreateDbHomeDetails dbHome,
             DatabaseEdition databaseEdition,
             DiskRedundancy diskRedundancy,
@@ -568,8 +554,7 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 nodeCount,
                 freeformTags,
                 definedTags,
-                privateIp,
-                dataCollectionOptions);
+                privateIp);
         this.dbHome = dbHome;
         this.databaseEdition = databaseEdition;
         this.diskRedundancy = diskRedundancy;
