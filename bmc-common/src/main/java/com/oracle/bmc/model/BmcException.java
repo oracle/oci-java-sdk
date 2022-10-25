@@ -225,6 +225,14 @@ public class BmcException extends RuntimeException {
     }
 
     /**
+     * Returns the exception message, without adding additional troubleshooting information to it.
+     * @return unmodified exception message
+     */
+    public String getUnmodifiedMessage() {
+        return super.getMessage();
+    }
+
+    /**
      * The HTTP status code.
      */
     public int getStatusCode() {

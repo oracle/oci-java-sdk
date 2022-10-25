@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * List of Registry summaries.
+ * The list of registry summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class RegistrySummaryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of Registry summariess
+         * The array of registry summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RegistrySummary> items;
 
         /**
-         * The array of Registry summariess
+         * The array of registry summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class RegistrySummaryCollection
     }
 
     /**
-     * The array of Registry summariess
+     * The array of registry summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RegistrySummary> items;
 
     /**
-     * The array of Registry summariess
+     * The array of registry summaries.
      * @return the value
      **/
     public java.util.List<RegistrySummary> getItems() {

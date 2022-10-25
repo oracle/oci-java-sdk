@@ -12,12 +12,12 @@ import com.oracle.bmc.dataconnectivity.model.*;
 public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -95,12 +95,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return limit;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      **/
     public enum SortBy {
         Id("id"),
@@ -137,7 +137,7 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -190,12 +190,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return sortOrder;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     private String endpointId;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     public String getEndpointId() {
         return endpointId;
@@ -209,12 +209,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -320,12 +320,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -350,12 +350,12 @@ public class ListOperationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          */
         private String endpointId = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          * @param endpointId the value to set
          * @return this builder instance
          */

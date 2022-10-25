@@ -61,6 +61,10 @@ public class CreateModelArtifactConverter {
             ib.header("content-disposition", request.getContentDisposition());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

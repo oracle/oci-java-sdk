@@ -22,6 +22,7 @@ package com.oracle.bmc.devops.model;
     defaultImpl = BuildSource.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VbsBuildSource.class, name = "VBS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BitbucketServerBuildSource.class,
         name = "BITBUCKET_SERVER"
@@ -160,6 +161,7 @@ public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         BitbucketCloud("BITBUCKET_CLOUD"),
         BitbucketServer("BITBUCKET_SERVER"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
+        Vbs("VBS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

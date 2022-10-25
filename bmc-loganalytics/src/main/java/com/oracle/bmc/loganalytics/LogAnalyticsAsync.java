@@ -135,6 +135,25 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves the specified ingest time rule to a different compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeIngestTimeRuleCompartmentResponse>
+            changeIngestTimeRuleCompartment(
+                    ChangeIngestTimeRuleCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeIngestTimeRuleCompartmentRequest,
+                                    ChangeIngestTimeRuleCompartmentResponse>
+                            handler);
+
+    /**
      * Update the compartment of the log analytics enterprise manager bridge with the given id.
      *
      * @param request The request object containing the details to send
@@ -256,6 +275,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<CompareContentResponse> compareContent(
             CompareContentRequest request,
             com.oracle.bmc.responses.AsyncHandler<CompareContentRequest, CompareContentResponse>
+                    handler);
+
+    /**
+     * Creates a new ingest time rule in the specified compartment. You may also specify optional information such as description, defined tags, and free-form tags.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateIngestTimeRuleResponse> createIngestTimeRule(
+            CreateIngestTimeRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIngestTimeRuleRequest, CreateIngestTimeRuleResponse>
                     handler);
 
     /**
@@ -389,6 +425,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteFieldResponse> deleteField(
             DeleteFieldRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteFieldRequest, DeleteFieldResponse> handler);
+
+    /**
+     * Deletes the specified ingest time rule.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteIngestTimeRuleResponse> deleteIngestTimeRule(
+            DeleteIngestTimeRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIngestTimeRuleRequest, DeleteIngestTimeRuleResponse>
+                    handler);
 
     /**
      * Deletes label with the specified name.
@@ -642,6 +695,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disables the specified ingest time rule.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableIngestTimeRuleResponse> disableIngestTimeRule(
+            DisableIngestTimeRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableIngestTimeRuleRequest, DisableIngestTimeRuleResponse>
+                    handler);
+
+    /**
      * Disable one or more event types in a source.
      *
      *
@@ -691,6 +761,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             EnableAutoAssociationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             EnableAutoAssociationRequest, EnableAutoAssociationResponse>
+                    handler);
+
+    /**
+     * Enables the specified ingest time rule.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableIngestTimeRuleResponse> enableIngestTimeRule(
+            EnableIngestTimeRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableIngestTimeRuleRequest, EnableIngestTimeRuleResponse>
                     handler);
 
     /**
@@ -940,6 +1027,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetFieldsSummaryResponse> getFieldsSummary(
             GetFieldsSummaryRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetFieldsSummaryRequest, GetFieldsSummaryResponse>
+                    handler);
+
+    /**
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIngestTimeRuleResponse> getIngestTimeRule(
+            GetIngestTimeRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIngestTimeRuleRequest, GetIngestTimeRuleResponse>
                     handler);
 
     /**
@@ -1546,6 +1650,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListFieldsRequest, ListFieldsResponse> handler);
 
     /**
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIngestTimeRulesResponse> listIngestTimeRules(
+            ListIngestTimeRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>
+                    handler);
+
+    /**
      * Lists the available problem priorities that could be associated with a label.
      *
      *
@@ -1857,6 +1978,21 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListResourceCategoriesRequest, ListResourceCategoriesResponse>
                     handler);
+
+    /**
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRulesResponse> listRules(
+            ListRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handler);
 
     /**
      * Lists scheduled tasks.
@@ -2515,6 +2651,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             UnsuppressWarningRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UnsuppressWarningRequest, UnsuppressWarningResponse>
+                    handler);
+
+    /**
+     * Updates the specified ingest time rule's description, defined tags, and free-form tags.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIngestTimeRuleResponse> updateIngestTimeRule(
+            UpdateIngestTimeRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIngestTimeRuleRequest, UpdateIngestTimeRuleResponse>
                     handler);
 
     /**

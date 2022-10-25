@@ -97,6 +97,27 @@ public class CreateModelArtifactRequest
     public String getContentDisposition() {
         return contentDisposition;
     }
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
+     */
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -224,6 +245,31 @@ public class CreateModelArtifactRequest
         }
 
         /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         */
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
+         * provide matches the resource's current {@code etag} value.
+         *
+         * @param ifMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -257,6 +303,7 @@ public class CreateModelArtifactRequest
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             contentDisposition(o.getContentDisposition());
+            ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -306,8 +353,9 @@ public class CreateModelArtifactRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             request.contentDisposition = contentDisposition;
+            request.ifMatch = ifMatch;
             return request;
-            // new CreateModelArtifactRequest(modelId, contentLength, modelArtifact, opcRequestId, opcRetryToken, contentDisposition);
+            // new CreateModelArtifactRequest(modelId, contentLength, modelArtifact, opcRequestId, opcRetryToken, contentDisposition, ifMatch);
         }
     }
 
@@ -322,7 +370,8 @@ public class CreateModelArtifactRequest
                 .modelArtifact(modelArtifact)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken)
-                .contentDisposition(contentDisposition);
+                .contentDisposition(contentDisposition)
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -344,6 +393,7 @@ public class CreateModelArtifactRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",contentDisposition=").append(String.valueOf(this.contentDisposition));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
         return sb.toString();
     }
@@ -364,7 +414,8 @@ public class CreateModelArtifactRequest
                 && java.util.Objects.equals(this.modelArtifact, other.modelArtifact)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.contentDisposition, other.contentDisposition);
+                && java.util.Objects.equals(this.contentDisposition, other.contentDisposition)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -387,6 +438,7 @@ public class CreateModelArtifactRequest
                         + (this.contentDisposition == null
                                 ? 43
                                 : this.contentDisposition.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }
 }

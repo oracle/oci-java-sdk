@@ -72,6 +72,15 @@ public final class DeltaCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * Value specified in DELTA command in queryString if set controlling whether delta is calculating difference between consecutive result rows or skipping N rows for each calculation.
          *
@@ -102,6 +111,7 @@ public final class DeltaCommandDescriptor extends AbstractCommandDescriptor {
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.step);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -125,6 +135,9 @@ public final class DeltaCommandDescriptor extends AbstractCommandDescriptor {
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("step")) {
                 this.step(model.getStep());
@@ -151,8 +164,15 @@ public final class DeltaCommandDescriptor extends AbstractCommandDescriptor {
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             Integer step) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.step = step;
     }
 

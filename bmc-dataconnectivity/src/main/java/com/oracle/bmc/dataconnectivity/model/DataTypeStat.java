@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Statistical data in profiling results
+ * Statistical data in profiling results.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Value of the confidence of the profile result
+         * Value of the confidence of the profile result.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Value of the confidence of the profile result
+         * Value of the confidence of the profile result.
          * @param value the value to set
          * @return this builder
          **/
@@ -63,13 +63,13 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * How many times that value occurred.
+         * The number of times the value appeared.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("freq")
         private Long freq;
 
         /**
-         * How many times that value occurred.
+         * The number of times the value appeared.
          * @param freq the value to set
          * @return this builder
          **/
@@ -137,13 +137,13 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Value of the confidence of the profile result
+     * Value of the confidence of the profile result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Value of the confidence of the profile result
+     * Value of the confidence of the profile result.
      * @return the value
      **/
     public String getValue() {
@@ -165,13 +165,13 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * How many times that value occurred.
+     * The number of times the value appeared.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freq")
     private final Long freq;
 
     /**
-     * How many times that value occurred.
+     * The number of times the value appeared.
      * @return the value
      **/
     public Long getFreq() {

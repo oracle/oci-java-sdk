@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Details for updating the custom table. Only updating tags is supported
+ * Details for updating the custom table.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -23,17 +23,70 @@ package com.oracle.bmc.usageapi.model;
 public final class UpdateScheduleDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "description",
+        "outputFileFormat",
+        "resultLocation",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateScheduleDetails(
+            String description,
+            OutputFileFormat outputFileFormat,
+            ResultLocation resultLocation,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.description = description;
+        this.outputFileFormat = outputFileFormat;
+        this.resultLocation = resultLocation;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The description of the schedule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the schedule.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Specifies supported output file format.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
+        private OutputFileFormat outputFileFormat;
+
+        /**
+         * Specifies supported output file format.
+         * @param outputFileFormat the value to set
+         * @return this builder
+         **/
+        public Builder outputFileFormat(OutputFileFormat outputFileFormat) {
+            this.outputFileFormat = outputFileFormat;
+            this.__explicitlySet__.add("outputFileFormat");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
+        private ResultLocation resultLocation;
+
+        public Builder resultLocation(ResultLocation resultLocation) {
+            this.resultLocation = resultLocation;
+            this.__explicitlySet__.add("resultLocation");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
@@ -79,7 +132,12 @@ public final class UpdateScheduleDetails
 
         public UpdateScheduleDetails build() {
             UpdateScheduleDetails model =
-                    new UpdateScheduleDetails(this.freeformTags, this.definedTags);
+                    new UpdateScheduleDetails(
+                            this.description,
+                            this.outputFileFormat,
+                            this.resultLocation,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -88,6 +146,15 @@ public final class UpdateScheduleDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateScheduleDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("outputFileFormat")) {
+                this.outputFileFormat(model.getOutputFileFormat());
+            }
+            if (model.wasPropertyExplicitlySet("resultLocation")) {
+                this.resultLocation(model.getResultLocation());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -107,6 +174,76 @@ public final class UpdateScheduleDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The description of the schedule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the schedule.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Specifies supported output file format.
+     **/
+    public enum OutputFileFormat {
+        Csv("CSV"),
+        Pdf("PDF"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, OutputFileFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OutputFileFormat v : OutputFileFormat.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        OutputFileFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OutputFileFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid OutputFileFormat: " + key);
+        }
+    };
+    /**
+     * Specifies supported output file format.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
+    private final OutputFileFormat outputFileFormat;
+
+    /**
+     * Specifies supported output file format.
+     * @return the value
+     **/
+    public OutputFileFormat getOutputFileFormat() {
+        return outputFileFormat;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
+    private final ResultLocation resultLocation;
+
+    public ResultLocation getResultLocation() {
+        return resultLocation;
     }
 
     /**
@@ -157,7 +294,10 @@ public final class UpdateScheduleDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateScheduleDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append("description=").append(String.valueOf(this.description));
+        sb.append(", outputFileFormat=").append(String.valueOf(this.outputFileFormat));
+        sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
@@ -173,7 +313,10 @@ public final class UpdateScheduleDetails
         }
 
         UpdateScheduleDetails other = (UpdateScheduleDetails) o;
-        return java.util.Objects.equals(this.freeformTags, other.freeformTags)
+        return java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.outputFileFormat, other.outputFileFormat)
+                && java.util.Objects.equals(this.resultLocation, other.resultLocation)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
@@ -182,6 +325,13 @@ public final class UpdateScheduleDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputFileFormat == null ? 43 : this.outputFileFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

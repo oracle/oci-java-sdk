@@ -11,6 +11,7 @@ package com.oracle.bmc.bastion.model;
 public enum SessionType {
     ManagedSsh("MANAGED_SSH"),
     PortForwarding("PORT_FORWARDING"),
+    DynamicPortForwarding("DYNAMIC_PORT_FORWARDING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

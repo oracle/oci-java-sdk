@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * List of endpoint summaries.
+ * The list of endpoint summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class EndpointSummaryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of endpoint summariess
+         * The array of endpoint summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EndpointSummary> items;
 
         /**
-         * The array of endpoint summariess
+         * The array of endpoint summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class EndpointSummaryCollection
     }
 
     /**
-     * The array of endpoint summariess
+     * The array of endpoint summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EndpointSummary> items;
 
     /**
-     * The array of endpoint summariess
+     * The array of endpoint summaries.
      * @return the value
      **/
     public java.util.List<EndpointSummary> getItems() {

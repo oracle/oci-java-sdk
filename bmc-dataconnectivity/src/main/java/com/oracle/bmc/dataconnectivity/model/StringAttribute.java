@@ -124,13 +124,13 @@ public final class StringAttribute extends AttributeProfileResult {
             return this;
         }
         /**
-         * Pattern frequencies for the column as described already in profile config.
+         * Pattern frequencies for the column as described in the profile config.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
         private java.util.List<ObjectFreqStat> patternFrequencies;
 
         /**
-         * Pattern frequencies for the column as described already in profile config.
+         * Pattern frequencies for the column as described in the profile config.
          * @param patternFrequencies the value to set
          * @return this builder
          **/
@@ -290,13 +290,13 @@ public final class StringAttribute extends AttributeProfileResult {
     }
 
     /**
-     * Pattern frequencies for the column as described already in profile config.
+     * Pattern frequencies for the column as described in the profile config.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternFrequencies")
     private final java.util.List<ObjectFreqStat> patternFrequencies;
 
     /**
-     * Pattern frequencies for the column as described already in profile config.
+     * Pattern frequencies for the column as described in the profile config.
      * @return the value
      **/
     public java.util.List<ObjectFreqStat> getPatternFrequencies() {

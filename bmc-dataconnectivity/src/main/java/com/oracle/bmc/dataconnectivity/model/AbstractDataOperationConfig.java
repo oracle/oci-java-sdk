@@ -35,9 +35,24 @@ package com.oracle.bmc.dataconnectivity.model;
 public class AbstractDataOperationConfig
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected AbstractDataOperationConfig() {
+    @java.beans.ConstructorProperties({"derivedAttributes"})
+    protected AbstractDataOperationConfig(java.util.Map<String, String> derivedAttributes) {
         super();
+        this.derivedAttributes = derivedAttributes;
+    }
+
+    /**
+     * this map is used for passing BIP report/REST parameter values.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
+    private final java.util.Map<String, String> derivedAttributes;
+
+    /**
+     * this map is used for passing BIP report/REST parameter values.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getDerivedAttributes() {
+        return derivedAttributes;
     }
 
     @Override
@@ -54,6 +69,7 @@ public class AbstractDataOperationConfig
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractDataOperationConfig(");
         sb.append("super=").append(super.toString());
+        sb.append("derivedAttributes=").append(String.valueOf(this.derivedAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -68,13 +84,17 @@ public class AbstractDataOperationConfig
         }
 
         AbstractDataOperationConfig other = (AbstractDataOperationConfig) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.derivedAttributes, other.derivedAttributes)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.derivedAttributes == null ? 43 : this.derivedAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

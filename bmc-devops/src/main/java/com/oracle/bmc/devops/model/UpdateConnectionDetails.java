@@ -28,6 +28,10 @@ package com.oracle.bmc.devops.model;
         name = "GITHUB_ACCESS_TOKEN"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateVbsAccessTokenConnectionDetails.class,
+        name = "VBS_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateBitbucketServerAccessTokenConnectionDetails.class,
         name = "BITBUCKET_SERVER_ACCESS_TOKEN"
     ),

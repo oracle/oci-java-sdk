@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The information about new Endpoint.
+ * Information about a new endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,13 +61,13 @@ public final class CreateEndpointDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * VCN Identifier where the subnet resides.
+         * VCN identifier where the subnet resides.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * VCN Identifier where the subnet resides.
+         * VCN identifier where the subnet resides.
          * @param vcnId the value to set
          * @return this builder
          **/
@@ -77,13 +77,13 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * Subnet Identifier for customer connected databases
+         * Subnet identifier for the customer-connected databases.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * Subnet Identifier for customer connected databases
+         * Subnet identifier for the customer-connected databases.
          * @param subnetId the value to set
          * @return this builder
          **/
@@ -93,7 +93,7 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * List of DNS zones to be used by the data assets to be harvested.
+         * The list of DNS zones to be used by the data assets to be harvested.
          * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
          *
          **/
@@ -101,7 +101,7 @@ public final class CreateEndpointDetails
         private java.util.List<String> dnsZones;
 
         /**
-         * List of DNS zones to be used by the data assets to be harvested.
+         * The list of DNS zones to be used by the data assets to be harvested.
          * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
          *
          * @param dnsZones the value to set
@@ -113,7 +113,7 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -121,7 +121,7 @@ public final class CreateEndpointDetails
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -170,13 +170,13 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * The Data Connectivity Management registry display name; registries can be renamed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * The Data Connectivity Management registry display name; registries can be renamed.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -218,13 +218,13 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * List of NSGs to which the Private Endpoint VNIC must be added.
+         * The list of NSGs to which the private endpoint VNIC must be added.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of NSGs to which the Private Endpoint VNIC must be added.
+         * The list of NSGs to which the private endpoint VNIC must be added.
          * @param nsgIds the value to set
          * @return this builder
          **/
@@ -304,13 +304,13 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * VCN Identifier where the subnet resides.
+     * VCN identifier where the subnet resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * VCN Identifier where the subnet resides.
+     * VCN identifier where the subnet resides.
      * @return the value
      **/
     public String getVcnId() {
@@ -318,13 +318,13 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * Subnet Identifier for customer connected databases
+     * Subnet identifier for the customer-connected databases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * Subnet Identifier for customer connected databases
+     * Subnet identifier for the customer-connected databases.
      * @return the value
      **/
     public String getSubnetId() {
@@ -332,7 +332,7 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * List of DNS zones to be used by the data assets to be harvested.
+     * The list of DNS zones to be used by the data assets to be harvested.
      * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
      *
      **/
@@ -340,7 +340,7 @@ public final class CreateEndpointDetails
     private final java.util.List<String> dnsZones;
 
     /**
-     * List of DNS zones to be used by the data assets to be harvested.
+     * The list of DNS zones to be used by the data assets to be harvested.
      * Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
      *
      * @return the value
@@ -350,7 +350,7 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -358,7 +358,7 @@ public final class CreateEndpointDetails
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -400,13 +400,13 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * The Data Connectivity Management registry display name; registries can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * The Data Connectivity Management registry display name; registries can be renamed.
      * @return the value
      **/
     public String getDisplayName() {
@@ -442,13 +442,13 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * List of NSGs to which the Private Endpoint VNIC must be added.
+     * The list of NSGs to which the private endpoint VNIC must be added.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of NSGs to which the Private Endpoint VNIC must be added.
+     * The list of NSGs to which the private endpoint VNIC must be added.
      * @return the value
      **/
     public java.util.List<String> getNsgIds() {

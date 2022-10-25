@@ -27,6 +27,10 @@ package com.oracle.bmc.dataconnectivity.model;
         name = "DATA_STORE_ENTITY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EntityShapeFromMessage.class,
+        name = "MESSAGE_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EntityShapeFromTable.class,
         name = "TABLE_ENTITY"
     ),
@@ -109,6 +113,7 @@ public class EntityShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         FileEntity("FILE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
+        MessageEntity("MESSAGE_ENTITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

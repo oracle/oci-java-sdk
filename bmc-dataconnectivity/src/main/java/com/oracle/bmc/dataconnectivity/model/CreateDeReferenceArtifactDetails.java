@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Represents the info needed for de-referencing a dcms artifact.
+ * Represents the info required for de-referencing a DCMS artifact.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class CreateDeReferenceArtifactDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * unique id of service which is referencing data asset.
+         * The unique ID of the service that is referencing a data asset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
         private String serviceArtifactId;
 
         /**
-         * unique id of service which is referencing data asset.
+         * The unique ID of the service that is referencing a data asset.
          * @param serviceArtifactId the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class CreateDeReferenceArtifactDetails
     }
 
     /**
-     * unique id of service which is referencing data asset.
+     * The unique ID of the service that is referencing a data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
     private final String serviceArtifactId;
 
     /**
-     * unique id of service which is referencing data asset.
+     * The unique ID of the service that is referencing a data asset.
      * @return the value
      **/
     public String getServiceArtifactId() {

@@ -27,6 +27,7 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.http.Serialization;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -54,7 +55,12 @@ import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
+@PrepareForTest({
+    LoggerFactory.class,
+    RestClientFactory.class,
+    RequestSignerImpl.class,
+    Serialization.class
+})
 public class RequestSignerImplTest {
     private static final String SERIALIZED_MAP_JSON_STRING = "{\"header\":[\"value1\",\"value2\"]}";
     private static final byte[] BYTE_BUFFER = new byte[8196];
@@ -71,11 +77,9 @@ public class RequestSignerImplTest {
         mockStatic(LoggerFactory.class);
         when(LoggerFactory.getLogger(any(Class.class))).thenReturn(mockLogger);
 
-        mockStatic(LoggerFactory.class);
-        when(LoggerFactory.getLogger(any(Class.class))).thenReturn(mockLogger);
-
         mockStatic(RestClientFactory.class);
-        when(RestClientFactory.getObjectMapper()).thenReturn(mockObjectMapper);
+        mockStatic(Serialization.class);
+        when(com.oracle.bmc.http.Serialization.getObjectMapper()).thenReturn(mockObjectMapper);
         when(mockObjectMapper.writeValueAsString(any())).thenReturn(SERIALIZED_MAP_JSON_STRING);
     }
 
@@ -105,7 +109,12 @@ public class RequestSignerImplTest {
     }
 
     // Reload the classes so PowerMockito can inject the static mocks.
-    @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
+    @PrepareForTest({
+        LoggerFactory.class,
+        RestClientFactory.class,
+        RequestSignerImpl.class,
+        Serialization.class
+    })
     @Test
     public void ignoreCaseHeaders_whenDuplicateHeaderKeysExists() throws Exception {
         final Map<String, List<String>> headers = new HashMap<>();
@@ -130,7 +139,12 @@ public class RequestSignerImplTest {
     }
 
     // Reload the classes so PowerMockito can inject the static mocks.
-    @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
+    @PrepareForTest({
+        LoggerFactory.class,
+        RestClientFactory.class,
+        RequestSignerImpl.class,
+        Serialization.class
+    })
     @Test
     public void calculateStringToSign_whenDuplicateHeaderKeysExists() {
         final Map<String, List<String>> headers = new HashMap<>();
@@ -151,7 +165,12 @@ public class RequestSignerImplTest {
     }
 
     // Reload the classes so PowerMockito can inject the static mocks.
-    @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
+    @PrepareForTest({
+        LoggerFactory.class,
+        RestClientFactory.class,
+        RequestSignerImpl.class,
+        Serialization.class
+    })
     @Test
     public void signRequest_withOptionallySignedHeader()
             throws IllegalAccessException, NoSuchFieldException {

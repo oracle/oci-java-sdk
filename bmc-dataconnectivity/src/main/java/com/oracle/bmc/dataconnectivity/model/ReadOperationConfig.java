@@ -27,6 +27,14 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class ReadOperationConfig extends AbstractDataOperationConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
+        private java.util.Map<String, String> derivedAttributes;
+
+        public Builder derivedAttributes(java.util.Map<String, String> derivedAttributes) {
+            this.derivedAttributes = derivedAttributes;
+            this.__explicitlySet__.add("derivedAttributes");
+            return this;
+        }
         /**
          * The object key.
          **/
@@ -44,13 +52,13 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             return this;
         }
         /**
-         * The object's model version.
+         * The model version of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * The object's model version.
+         * The model version of the object.
          * @param modelVersion the value to set
          * @return this builder
          **/
@@ -128,13 +136,13 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             return this;
         }
         /**
-         * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+         * Specifies if the readOperationConfig operation should trigger a raw data preview flow.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("readRawData")
         private Boolean readRawData;
 
         /**
-         * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+         * Specifies if the readOperationConfig operation should trigger a raw data preview flow.
          * @param readRawData the value to set
          * @return this builder
          **/
@@ -150,6 +158,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         public ReadOperationConfig build() {
             ReadOperationConfig model =
                     new ReadOperationConfig(
+                            this.derivedAttributes,
                             this.key,
                             this.modelVersion,
                             this.parentRef,
@@ -167,6 +176,9 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ReadOperationConfig model) {
+            if (model.wasPropertyExplicitlySet("derivedAttributes")) {
+                this.derivedAttributes(model.getDerivedAttributes());
+            }
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
             }
@@ -211,6 +223,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
 
     @Deprecated
     public ReadOperationConfig(
+            java.util.Map<String, String> derivedAttributes,
             String key,
             String modelVersion,
             ParentReference parentRef,
@@ -220,7 +233,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
             AbstractReadAttribute readAttribute,
             Integer objectStatus,
             Boolean readRawData) {
-        super();
+        super(derivedAttributes);
         this.key = key;
         this.modelVersion = modelVersion;
         this.parentRef = parentRef;
@@ -247,13 +260,13 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -317,13 +330,13 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
     }
 
     /**
-     * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+     * Specifies if the readOperationConfig operation should trigger a raw data preview flow.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("readRawData")
     private final Boolean readRawData;
 
     /**
-     * Specifies if this readOperationConfig operation should trigger raw data preview flow.
+     * Specifies if the readOperationConfig operation should trigger a raw data preview flow.
      * @return the value
      **/
     public Boolean getReadRawData() {

@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IndicatorSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IndicatorSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -26,9 +26,12 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
         "confidence",
         "compartmentId",
         "threatTypes",
+        "attributes",
         "lifecycleState",
         "timeCreated",
-        "timeUpdated"
+        "timeUpdated",
+        "timeLastSeen",
+        "geodata"
     })
     public IndicatorSummary(
             String id,
@@ -36,10 +39,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             String value,
             Integer confidence,
             String compartmentId,
-            java.util.List<ThreatType> threatTypes,
+            java.util.List<String> threatTypes,
+            java.util.List<IndicatorAttributeSummary> attributes,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            java.util.Date timeLastSeen,
+            GeodataDetails geodata) {
         super();
         this.id = id;
         this.type = type;
@@ -47,9 +53,12 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
         this.confidence = confidence;
         this.compartmentId = compartmentId;
         this.threatTypes = threatTypes;
+        this.attributes = attributes;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.timeLastSeen = timeLastSeen;
+        this.geodata = geodata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,13 +80,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Type of indicator
+         * The type of indicator.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private IndicatorType type;
 
         /**
-         * Type of indicator
+         * The type of indicator.
          * @param type the value to set
          * @return this builder
          **/
@@ -87,13 +96,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The value of indicator.
+         * The indicator data value.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The value of indicator.
+         * The indicator data value.
          * @param value the value to set
          * @return this builder
          **/
@@ -103,13 +112,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+         * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
         /**
-         * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+         * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
          * @param confidence the value to set
          * @return this builder
          **/
@@ -119,13 +128,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Compartment Identifier
+         * The OCID of the compartment that contains this indicator.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The OCID of the compartment that contains this indicator.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -138,26 +147,46 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
          * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
-        private java.util.List<ThreatType> threatTypes;
+        private java.util.List<String> threatTypes;
 
         /**
          * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
          * @param threatTypes the value to set
          * @return this builder
          **/
-        public Builder threatTypes(java.util.List<ThreatType> threatTypes) {
+        public Builder threatTypes(java.util.List<String> threatTypes) {
             this.threatTypes = threatTypes;
             this.__explicitlySet__.add("threatTypes");
             return this;
         }
         /**
-         * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+         * A map of attributes with additional information about the indicator.
+         * Each attribute has a name (string), value (string), and attribution (supporting data).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("attributes")
+        private java.util.List<IndicatorAttributeSummary> attributes;
+
+        /**
+         * A map of attributes with additional information about the indicator.
+         * Each attribute has a name (string), value (string), and attribution (supporting data).
+         *
+         * @param attributes the value to set
+         * @return this builder
+         **/
+        public Builder attributes(java.util.List<IndicatorAttributeSummary> attributes) {
+            this.attributes = attributes;
+            this.__explicitlySet__.add("attributes");
+            return this;
+        }
+        /**
+         * The state of the indicator. It will always be {@code ACTIVE}.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+         * The state of the indicator. It will always be {@code ACTIVE}.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -167,13 +196,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+         * The date and time that the indicator was first detected. An RFC3339 formatted string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+         * The date and time that the indicator was first detected. An RFC3339 formatted string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -183,19 +212,44 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+         * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+         * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
+         * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
+        private java.util.Date timeLastSeen;
+
+        /**
+         * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+         * @param timeLastSeen the value to set
+         * @return this builder
+         **/
+        public Builder timeLastSeen(java.util.Date timeLastSeen) {
+            this.timeLastSeen = timeLastSeen;
+            this.__explicitlySet__.add("timeLastSeen");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("geodata")
+        private GeodataDetails geodata;
+
+        public Builder geodata(GeodataDetails geodata) {
+            this.geodata = geodata;
+            this.__explicitlySet__.add("geodata");
             return this;
         }
 
@@ -211,9 +265,12 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
                             this.confidence,
                             this.compartmentId,
                             this.threatTypes,
+                            this.attributes,
                             this.lifecycleState,
                             this.timeCreated,
-                            this.timeUpdated);
+                            this.timeUpdated,
+                            this.timeLastSeen,
+                            this.geodata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -240,6 +297,9 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             if (model.wasPropertyExplicitlySet("threatTypes")) {
                 this.threatTypes(model.getThreatTypes());
             }
+            if (model.wasPropertyExplicitlySet("attributes")) {
+                this.attributes(model.getAttributes());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
@@ -248,6 +308,12 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            if (model.wasPropertyExplicitlySet("geodata")) {
+                this.geodata(model.getGeodata());
             }
             return this;
         }
@@ -279,13 +345,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Type of indicator
+     * The type of indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final IndicatorType type;
 
     /**
-     * Type of indicator
+     * The type of indicator.
      * @return the value
      **/
     public IndicatorType getType() {
@@ -293,13 +359,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The value of indicator.
+     * The indicator data value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The value of indicator.
+     * The indicator data value.
      * @return the value
      **/
     public String getValue() {
@@ -307,13 +373,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+     * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
     /**
-     * Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+     * An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
      * @return the value
      **/
     public Integer getConfidence() {
@@ -321,13 +387,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment that contains this indicator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment that contains this indicator.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -338,24 +404,42 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
      * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
-    private final java.util.List<ThreatType> threatTypes;
+    private final java.util.List<String> threatTypes;
 
     /**
      * Characteristics of the threat indicator based on previous observations or behavior. May include related tactics, techniques, and procedures.
      * @return the value
      **/
-    public java.util.List<ThreatType> getThreatTypes() {
+    public java.util.List<String> getThreatTypes() {
         return threatTypes;
     }
 
     /**
-     * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+     * A map of attributes with additional information about the indicator.
+     * Each attribute has a name (string), value (string), and attribution (supporting data).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attributes")
+    private final java.util.List<IndicatorAttributeSummary> attributes;
+
+    /**
+     * A map of attributes with additional information about the indicator.
+     * Each attribute has a name (string), value (string), and attribution (supporting data).
+     *
+     * @return the value
+     **/
+    public java.util.List<IndicatorAttributeSummary> getAttributes() {
+        return attributes;
+    }
+
+    /**
+     * The state of the indicator. It will always be {@code ACTIVE}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+     * The state of the indicator. It will always be {@code ACTIVE}.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -363,13 +447,13 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+     * The date and time that the indicator was first detected. An RFC3339 formatted string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+     * The date and time that the indicator was first detected. An RFC3339 formatted string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -377,17 +461,38 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+     * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+     * The date and time that this indicator was last updated by the system.  Updates can include new reports or regular updates in confidence. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
+    }
+
+    /**
+     * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
+    private final java.util.Date timeLastSeen;
+
+    /**
+     * The date and time that this indicator was last seen. The value is the same as {@code timeCreated} for a new indicator. An RFC3339 formatted string.
+     * @return the value
+     **/
+    public java.util.Date getTimeLastSeen() {
+        return timeLastSeen;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("geodata")
+    private final GeodataDetails geodata;
+
+    public GeodataDetails getGeodata() {
+        return geodata;
     }
 
     @Override
@@ -410,9 +515,12 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", threatTypes=").append(String.valueOf(this.threatTypes));
+        sb.append(", attributes=").append(String.valueOf(this.attributes));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
+        sb.append(", geodata=").append(String.valueOf(this.geodata));
         sb.append(")");
         return sb.toString();
     }
@@ -433,9 +541,12 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.threatTypes, other.threatTypes)
+                && java.util.Objects.equals(this.attributes, other.attributes)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
+                && java.util.Objects.equals(this.geodata, other.geodata)
                 && super.equals(other);
     }
 
@@ -451,11 +562,14 @@ public final class IndicatorSummary extends com.oracle.bmc.http.internal.Explici
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.threatTypes == null ? 43 : this.threatTypes.hashCode());
+        result = (result * PRIME) + (this.attributes == null ? 43 : this.attributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
+        result = (result * PRIME) + (this.geodata == null ? 43 : this.geodata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

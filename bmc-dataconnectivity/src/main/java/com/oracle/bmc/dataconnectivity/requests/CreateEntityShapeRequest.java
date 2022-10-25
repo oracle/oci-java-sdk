@@ -14,12 +14,12 @@ public class CreateEntityShapeRequest
                 com.oracle.bmc.dataconnectivity.model.CreateEntityShapeDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -47,12 +47,12 @@ public class CreateEntityShapeRequest
         return schemaResourceName;
     }
     /**
-     * The details needed to create the data entity shape.
+     * The details required to create the data entity shape.
      */
     private com.oracle.bmc.dataconnectivity.model.CreateEntityShapeDetails createEntityShapeDetails;
 
     /**
-     * The details needed to create the data entity shape.
+     * The details required to create the data entity shape.
      */
     public com.oracle.bmc.dataconnectivity.model.CreateEntityShapeDetails
             getCreateEntityShapeDetails() {
@@ -76,13 +76,13 @@ public class CreateEntityShapeRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -156,12 +156,12 @@ public class CreateEntityShapeRequest
         return authorizationMode;
     }
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     private String endpointId;
 
     /**
-     * Endpoint Id used for getDataAssetFullDetails.
+     * Endpoint ID used for getDataAssetFullDetails.
      */
     public String getEndpointId() {
         return endpointId;
@@ -186,12 +186,12 @@ public class CreateEntityShapeRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -231,13 +231,13 @@ public class CreateEntityShapeRequest
         }
 
         /**
-         * The details needed to create the data entity shape.
+         * The details required to create the data entity shape.
          */
         private com.oracle.bmc.dataconnectivity.model.CreateEntityShapeDetails
                 createEntityShapeDetails = null;
 
         /**
-         * The details needed to create the data entity shape.
+         * The details required to create the data entity shape.
          * @param createEntityShapeDetails the value to set
          * @return this builder instance
          */
@@ -270,13 +270,13 @@ public class CreateEntityShapeRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -323,12 +323,12 @@ public class CreateEntityShapeRequest
         }
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          */
         private String endpointId = null;
 
         /**
-         * Endpoint Id used for getDataAssetFullDetails.
+         * Endpoint ID used for getDataAssetFullDetails.
          * @param endpointId the value to set
          * @return this builder instance
          */

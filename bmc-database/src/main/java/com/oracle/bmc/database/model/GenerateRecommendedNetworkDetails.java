@@ -26,6 +26,7 @@ public final class GenerateRecommendedNetworkDetails
     @java.beans.ConstructorProperties({
         "compartmentId",
         "displayName",
+        "dbServers",
         "scanListenerPortTcp",
         "scanListenerPortTcpSsl",
         "networks",
@@ -37,6 +38,7 @@ public final class GenerateRecommendedNetworkDetails
     public GenerateRecommendedNetworkDetails(
             String compartmentId,
             String displayName,
+            java.util.List<String> dbServers,
             Integer scanListenerPortTcp,
             Integer scanListenerPortTcpSsl,
             java.util.List<InfoForNetworkGenDetails> networks,
@@ -47,6 +49,7 @@ public final class GenerateRecommendedNetworkDetails
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.dbServers = dbServers;
         this.scanListenerPortTcp = scanListenerPortTcp;
         this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
         this.networks = networks;
@@ -88,6 +91,22 @@ public final class GenerateRecommendedNetworkDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The list of Db server Ids to configure network.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        /**
+         * The list of Db server Ids to configure network.
+         * @param dbServers the value to set
+         * @return this builder
+         **/
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
             return this;
         }
         /**
@@ -224,6 +243,7 @@ public final class GenerateRecommendedNetworkDetails
                     new GenerateRecommendedNetworkDetails(
                             this.compartmentId,
                             this.displayName,
+                            this.dbServers,
                             this.scanListenerPortTcp,
                             this.scanListenerPortTcpSsl,
                             this.networks,
@@ -244,6 +264,9 @@ public final class GenerateRecommendedNetworkDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
             }
             if (model.wasPropertyExplicitlySet("scanListenerPortTcp")) {
                 this.scanListenerPortTcp(model.getScanListenerPortTcp());
@@ -307,6 +330,20 @@ public final class GenerateRecommendedNetworkDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The list of Db server Ids to configure network.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    private final java.util.List<String> dbServers;
+
+    /**
+     * The list of Db server Ids to configure network.
+     * @return the value
+     **/
+    public java.util.List<String> getDbServers() {
+        return dbServers;
     }
 
     /**
@@ -435,6 +472,7 @@ public final class GenerateRecommendedNetworkDetails
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
         sb.append(", networks=").append(String.valueOf(this.networks));
@@ -458,6 +496,7 @@ public final class GenerateRecommendedNetworkDetails
         GenerateRecommendedNetworkDetails other = (GenerateRecommendedNetworkDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.scanListenerPortTcp, other.scanListenerPortTcp)
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
@@ -477,6 +516,7 @@ public final class GenerateRecommendedNetworkDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result =
                 (result * PRIME)
                         + (this.scanListenerPortTcp == null

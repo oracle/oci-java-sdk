@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * A group of indicators with the same dimensions
+ * A group of indicators with the same dimensions, such as the same indicator type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IndicatorCountSummary.Builder.class
 )
@@ -41,13 +41,13 @@ public final class IndicatorCountSummary
             return this;
         }
         /**
-         * The count of indicators in the group
+         * The count of indicators in the group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * The count of indicators in the group
+         * The count of indicators in the group.
          * @param count the value to set
          * @return this builder
          **/
@@ -99,13 +99,13 @@ public final class IndicatorCountSummary
     }
 
     /**
-     * The count of indicators in the group
+     * The count of indicators in the group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * The count of indicators in the group
+     * The count of indicators in the group.
      * @return the value
      **/
     public Integer getCount() {

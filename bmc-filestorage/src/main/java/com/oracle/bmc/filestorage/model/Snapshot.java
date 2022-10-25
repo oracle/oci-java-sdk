@@ -6,8 +6,6 @@ package com.oracle.bmc.filestorage.model;
 
 /**
  * A point-in-time snapshot of a specified file system.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,6 +26,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "lifecycleState",
         "name",
         "timeCreated",
+        "snapshotType",
+        "snapshotTime",
         "provenanceId",
         "isCloneSource",
         "lifecycleDetails",
@@ -40,6 +40,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             LifecycleState lifecycleState,
             String name,
             java.util.Date timeCreated,
+            SnapshotType snapshotType,
+            java.util.Date snapshotTime,
             String provenanceId,
             Boolean isCloneSource,
             String lifecycleDetails,
@@ -51,6 +53,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.lifecycleState = lifecycleState;
         this.name = name;
         this.timeCreated = timeCreated;
+        this.snapshotType = snapshotType;
+        this.snapshotTime = snapshotTime;
         this.provenanceId = provenanceId;
         this.isCloneSource = isCloneSource;
         this.lifecycleDetails = lifecycleDetails;
@@ -163,10 +167,62 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * Specifies generation type of the snapshot.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("snapshotType")
+        private SnapshotType snapshotType;
+
+        /**
+         * Specifies generation type of the snapshot.
+         *
+         * @param snapshotType the value to set
+         * @return this builder
+         **/
+        public Builder snapshotType(SnapshotType snapshotType) {
+            this.snapshotType = snapshotType;
+            this.__explicitlySet__.add("snapshotType");
+            return this;
+        }
+        /**
+         * The date and time the snapshot was taken, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * This value might be the same or different from {@code timeCreated} depending
+         * on the following factors:
+         * - If the snapshot is created in the original file system directory.
+         * - If the snapshot is cloned from a file system.
+         * - If the snapshot is replicated from a file system.
+         * <p>
+         * Example: {@code 2020-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("snapshotTime")
+        private java.util.Date snapshotTime;
+
+        /**
+         * The date and time the snapshot was taken, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * This value might be the same or different from {@code timeCreated} depending
+         * on the following factors:
+         * - If the snapshot is created in the original file system directory.
+         * - If the snapshot is cloned from a file system.
+         * - If the snapshot is replicated from a file system.
+         * <p>
+         * Example: {@code 2020-08-25T21:10:29.600Z}
+         *
+         * @param snapshotTime the value to set
+         * @return this builder
+         **/
+        public Builder snapshotTime(java.util.Date snapshotTime) {
+            this.snapshotTime = snapshotTime;
+            this.__explicitlySet__.add("snapshotTime");
+            return this;
+        }
+        /**
          * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
          * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
          * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("provenanceId")
@@ -176,7 +232,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
          * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
          * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
          * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param provenanceId the value to set
          * @return this builder
@@ -188,7 +244,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * Specifies whether the snapshot has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneSource")
@@ -196,7 +252,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         /**
          * Specifies whether the snapshot has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param isCloneSource the value to set
          * @return this builder
@@ -207,13 +263,13 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Additional information about the current 'lifecycleState'.
+         * Additional information about the current {@code lifecycleState}.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Additional information about the current 'lifecycleState'.
+         * Additional information about the current {@code lifecycleState}.
          * @param lifecycleDetails the value to set
          * @return this builder
          **/
@@ -281,6 +337,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.lifecycleState,
                             this.name,
                             this.timeCreated,
+                            this.snapshotType,
+                            this.snapshotTime,
                             this.provenanceId,
                             this.isCloneSource,
                             this.lifecycleDetails,
@@ -308,6 +366,12 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotType")) {
+                this.snapshotType(model.getSnapshotType());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotTime")) {
+                this.snapshotTime(model.getSnapshotTime());
             }
             if (model.wasPropertyExplicitlySet("provenanceId")) {
                 this.provenanceId(model.getProvenanceId());
@@ -482,10 +546,108 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Specifies generation type of the snapshot.
+     *
+     **/
+    public enum SnapshotType {
+        User("USER"),
+        PolicyBased("POLICY_BASED"),
+        Replication("REPLICATION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SnapshotType.class);
+
+        private final String value;
+        private static java.util.Map<String, SnapshotType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SnapshotType v : SnapshotType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SnapshotType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SnapshotType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SnapshotType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies generation type of the snapshot.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("snapshotType")
+    private final SnapshotType snapshotType;
+
+    /**
+     * Specifies generation type of the snapshot.
+     *
+     * @return the value
+     **/
+    public SnapshotType getSnapshotType() {
+        return snapshotType;
+    }
+
+    /**
+     * The date and time the snapshot was taken, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * This value might be the same or different from {@code timeCreated} depending
+     * on the following factors:
+     * - If the snapshot is created in the original file system directory.
+     * - If the snapshot is cloned from a file system.
+     * - If the snapshot is replicated from a file system.
+     * <p>
+     * Example: {@code 2020-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("snapshotTime")
+    private final java.util.Date snapshotTime;
+
+    /**
+     * The date and time the snapshot was taken, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * This value might be the same or different from {@code timeCreated} depending
+     * on the following factors:
+     * - If the snapshot is created in the original file system directory.
+     * - If the snapshot is cloned from a file system.
+     * - If the snapshot is replicated from a file system.
+     * <p>
+     * Example: {@code 2020-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getSnapshotTime() {
+        return snapshotTime;
+    }
+
+    /**
      * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
      * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
      * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provenanceId")
@@ -495,7 +657,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * An [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned.
      * If this snapshot was not cloned, then the {@code provenanceId} is the same as the snapshot {@code id} value.
      * If this snapshot was cloned, then the {@code provenanceId} value is the parent's {@code provenanceId}.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      **/
@@ -505,7 +667,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Specifies whether the snapshot has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneSource")
@@ -513,7 +675,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Specifies whether the snapshot has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      **/
@@ -522,13 +684,13 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Additional information about the current 'lifecycleState'.
+     * Additional information about the current {@code lifecycleState}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Additional information about the current 'lifecycleState'.
+     * Additional information about the current {@code lifecycleState}.
      * @return the value
      **/
     public String getLifecycleDetails() {
@@ -596,6 +758,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", snapshotType=").append(String.valueOf(this.snapshotType));
+        sb.append(", snapshotTime=").append(String.valueOf(this.snapshotTime));
         sb.append(", provenanceId=").append(String.valueOf(this.provenanceId));
         sb.append(", isCloneSource=").append(String.valueOf(this.isCloneSource));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -620,6 +784,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.snapshotType, other.snapshotType)
+                && java.util.Objects.equals(this.snapshotTime, other.snapshotTime)
                 && java.util.Objects.equals(this.provenanceId, other.provenanceId)
                 && java.util.Objects.equals(this.isCloneSource, other.isCloneSource)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -639,6 +805,8 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.snapshotType == null ? 43 : this.snapshotType.hashCode());
+        result = (result * PRIME) + (this.snapshotTime == null ? 43 : this.snapshotTime.hashCode());
         result = (result * PRIME) + (this.provenanceId == null ? 43 : this.provenanceId.hashCode());
         result =
                 (result * PRIME)

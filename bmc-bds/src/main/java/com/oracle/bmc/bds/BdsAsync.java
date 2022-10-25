@@ -582,6 +582,38 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse> handler);
 
     /**
+     * Starts the BDS cluster that was stopped earlier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartBdsInstanceResponse> startBdsInstance(
+            StartBdsInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartBdsInstanceRequest, StartBdsInstanceResponse>
+                    handler);
+
+    /**
+     * Stops the BDS cluster that can be started at later point of time.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StopBdsInstanceResponse> stopBdsInstance(
+            StopBdsInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopBdsInstanceRequest, StopBdsInstanceResponse>
+                    handler);
+
+    /**
      * Test specified metastore configuration.
      *
      *

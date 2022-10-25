@@ -77,13 +77,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * @param labels the value to set
          * @return this builder
          **/
@@ -125,13 +125,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
         private Boolean isFavorite;
 
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          * @param isFavorite the value to set
          * @return this builder
          **/
@@ -141,13 +141,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
         private String createdByUserId;
 
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          * @param createdByUserId the value to set
          * @return this builder
          **/
@@ -173,13 +173,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
         private String updatedByUserId;
 
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          * @param updatedByUserId the value to set
          * @return this builder
          **/
@@ -325,13 +325,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * @return the value
      **/
     public java.util.List<String> getLabels() {
@@ -367,13 +367,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies whether this object is a favorite or not.
+     * Specifies whether the object is a favorite.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     private final Boolean isFavorite;
 
     /**
-     * Specifies whether this object is a favorite or not.
+     * Specifies whether the object is a favorite.
      * @return the value
      **/
     public Boolean getIsFavorite() {
@@ -381,13 +381,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The id of the user who created the object.
+     * The ID of the user who created the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
     private final String createdByUserId;
 
     /**
-     * The id of the user who created the object.
+     * The ID of the user who created the object.
      * @return the value
      **/
     public String getCreatedByUserId() {
@@ -409,13 +409,13 @@ public final class RegistryMetadata extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The id of the user who updated the object.
+     * The ID of the user who updated the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
     private final String updatedByUserId;
 
     /**
-     * The id of the user who updated the object.
+     * The ID of the user who updated the object.
      * @return the value
      **/
     public String getUpdatedByUserId() {

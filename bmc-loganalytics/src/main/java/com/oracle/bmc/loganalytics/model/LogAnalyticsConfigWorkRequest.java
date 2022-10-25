@@ -90,19 +90,13 @@ public final class LogAnalyticsConfigWorkRequest
             return this;
         }
         /**
-         * The operation type.  There are two classes of operations, association operations and
-         * lookup operations.  Associations may be created or deleted, and lookup operations include
-         * append, update and delete.
-         *
+         * The operation type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
-         * The operation type.  There are two classes of operations, association operations and
-         * lookup operations.  Associations may be created or deleted, and lookup operations include
-         * append, update and delete.
-         *
+         * The operation type
          * @param operationType the value to set
          * @return this builder
          **/
@@ -306,10 +300,7 @@ public final class LogAnalyticsConfigWorkRequest
     }
 
     /**
-     * The operation type.  There are two classes of operations, association operations and
-     * lookup operations.  Associations may be created or deleted, and lookup operations include
-     * append, update and delete.
-     *
+     * The operation type
      **/
     public enum OperationType {
         CreateAssociations("CREATE_ASSOCIATIONS"),
@@ -317,6 +308,8 @@ public final class LogAnalyticsConfigWorkRequest
         AppendLookupData("APPEND_LOOKUP_DATA"),
         UpdateLookupData("UPDATE_LOOKUP_DATA"),
         DeleteLookup("DELETE_LOOKUP"),
+        EnableIngestTimeRule("ENABLE_INGEST_TIME_RULE"),
+        DisableIngestTimeRule("DISABLE_INGEST_TIME_RULE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -360,19 +353,13 @@ public final class LogAnalyticsConfigWorkRequest
         }
     };
     /**
-     * The operation type.  There are two classes of operations, association operations and
-     * lookup operations.  Associations may be created or deleted, and lookup operations include
-     * append, update and delete.
-     *
+     * The operation type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
-     * The operation type.  There are two classes of operations, association operations and
-     * lookup operations.  Associations may be created or deleted, and lookup operations include
-     * append, update and delete.
-     *
+     * The operation type
      * @return the value
      **/
     public OperationType getOperationType() {

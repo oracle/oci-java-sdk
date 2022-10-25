@@ -247,6 +247,33 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stagingDataAsset")
+        private DataAsset stagingDataAsset;
+
+        public Builder stagingDataAsset(DataAsset stagingDataAsset) {
+            this.stagingDataAsset = stagingDataAsset;
+            this.__explicitlySet__.add("stagingDataAsset");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stagingConnection")
+        private Connection stagingConnection;
+
+        public Builder stagingConnection(Connection stagingConnection) {
+            this.stagingConnection = stagingConnection;
+            this.__explicitlySet__.add("stagingConnection");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
+        private Schema bucketSchema;
+
+        public Builder bucketSchema(Schema bucketSchema) {
+            this.bucketSchema = bucketSchema;
+            this.__explicitlySet__.add("bucketSchema");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -271,7 +298,10 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
                             this.tenancyId,
                             this.compartmentId,
                             this.autonomousDbId,
-                            this.defaultConnection);
+                            this.defaultConnection,
+                            this.stagingDataAsset,
+                            this.stagingConnection,
+                            this.bucketSchema);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -337,6 +367,15 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
             if (model.wasPropertyExplicitlySet("defaultConnection")) {
                 this.defaultConnection(model.getDefaultConnection());
             }
+            if (model.wasPropertyExplicitlySet("stagingDataAsset")) {
+                this.stagingDataAsset(model.getStagingDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("stagingConnection")) {
+                this.stagingConnection(model.getStagingConnection());
+            }
+            if (model.wasPropertyExplicitlySet("bucketSchema")) {
+                this.bucketSchema(model.getBucketSchema());
+            }
             return this;
         }
     }
@@ -372,7 +411,10 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
             String tenancyId,
             String compartmentId,
             String autonomousDbId,
-            CreateConnectionFromAtp defaultConnection) {
+            CreateConnectionFromAtp defaultConnection,
+            DataAsset stagingDataAsset,
+            Connection stagingConnection,
+            Schema bucketSchema) {
         super(
                 key,
                 modelVersion,
@@ -393,6 +435,9 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
         this.compartmentId = compartmentId;
         this.autonomousDbId = autonomousDbId;
         this.defaultConnection = defaultConnection;
+        this.stagingDataAsset = stagingDataAsset;
+        this.stagingConnection = stagingConnection;
+        this.bucketSchema = bucketSchema;
     }
 
     /**
@@ -514,6 +559,27 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
         return defaultConnection;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stagingDataAsset")
+    private final DataAsset stagingDataAsset;
+
+    public DataAsset getStagingDataAsset() {
+        return stagingDataAsset;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stagingConnection")
+    private final Connection stagingConnection;
+
+    public Connection getStagingConnection() {
+        return stagingConnection;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketSchema")
+    private final Schema bucketSchema;
+
+    public Schema getBucketSchema() {
+        return bucketSchema;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -538,6 +604,9 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", autonomousDbId=").append(String.valueOf(this.autonomousDbId));
         sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
+        sb.append(", stagingDataAsset=").append(String.valueOf(this.stagingDataAsset));
+        sb.append(", stagingConnection=").append(String.valueOf(this.stagingConnection));
+        sb.append(", bucketSchema=").append(String.valueOf(this.bucketSchema));
         sb.append(")");
         return sb.toString();
     }
@@ -562,6 +631,9 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.autonomousDbId, other.autonomousDbId)
                 && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
+                && java.util.Objects.equals(this.stagingDataAsset, other.stagingDataAsset)
+                && java.util.Objects.equals(this.stagingConnection, other.stagingConnection)
+                && java.util.Objects.equals(this.bucketSchema, other.bucketSchema)
                 && super.equals(other);
     }
 
@@ -593,6 +665,13 @@ public final class CreateDataAssetFromAtp extends CreateDataAssetDetails {
         result =
                 (result * PRIME)
                         + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stagingDataAsset == null ? 43 : this.stagingDataAsset.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stagingConnection == null ? 43 : this.stagingConnection.hashCode());
+        result = (result * PRIME) + (this.bucketSchema == null ? 43 : this.bucketSchema.hashCode());
         return result;
     }
 }

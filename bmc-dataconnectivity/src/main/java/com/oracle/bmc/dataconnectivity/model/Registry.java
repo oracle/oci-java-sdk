@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A registry is an organizational construct to keep multiple data Connectivity Management solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you could have separate registries for development, testing, and production.
+ * A registry is an organizational construct to keep multiple data connectivity management solutions and their resources (data assets, data flows, tasks, and so on) separate from each other, helping you to stay organized. For example, you could have separate registries for development, testing, and production.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -69,7 +69,7 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -118,13 +118,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * Data Connectivity Management registry display name; registries can be renamed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * Data Connectivity Management registry display name; registries can be renamed.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -134,13 +134,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Name of the user who updated the DCMS Registry.
+         * Name of the user who updated the DCMS registry.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
         /**
-         * Name of the user who updated the DCMS Registry.
+         * Name of the user who updated the DCMS registry.
          * @param updatedBy the value to set
          * @return this builder
          **/
@@ -166,13 +166,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -182,13 +182,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -198,30 +198,30 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Lifecycle states for registries in Data Connectivity Management Service
-         * CREATING - The resource is being created and may not be usable until the entire metadata is defined
-         * UPDATING - The resource is being updated and may not be usable until all changes are commited
+         * Lifecycle states for registries in the Data Connectivity Management Service
+         * CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+         * UPDATING - The resource is being updated and may not be usable until all changes are commited.
          * DELETING - The resource is being deleted and might require deep cleanup of children.
-         * ACTIVE   - The resource is valid and available for access
+         * ACTIVE   - The resource is valid and available for access.
          * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-         *          administrative reasons
-         * DELETED  - The resource has been deleted and isn't available
-         * FAILED   - The resource is in a failed state due to validation or other errors
+         *          administrative reasons.
+         * DELETED  - The resource has been deleted and isn't available.
+         * FAILED   - The resource is in a failed state due to validation or other errors.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Lifecycle states for registries in Data Connectivity Management Service
-         * CREATING - The resource is being created and may not be usable until the entire metadata is defined
-         * UPDATING - The resource is being updated and may not be usable until all changes are commited
+         * Lifecycle states for registries in the Data Connectivity Management Service
+         * CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+         * UPDATING - The resource is being updated and may not be usable until all changes are commited.
          * DELETING - The resource is being deleted and might require deep cleanup of children.
-         * ACTIVE   - The resource is valid and available for access
+         * ACTIVE   - The resource is valid and available for access.
          * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-         *          administrative reasons
-         * DELETED  - The resource has been deleted and isn't available
-         * FAILED   - The resource is in a failed state due to validation or other errors
+         *          administrative reasons.
+         * DELETED  - The resource has been deleted and isn't available.
+         * FAILED   - The resource is in a failed state due to validation or other errors.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -248,13 +248,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier that is immutable on creation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier that is immutable on creation.
          * @param id the value to set
          * @return this builder
          **/
@@ -338,7 +338,7 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -346,7 +346,7 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -388,13 +388,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * Data Connectivity Management registry display name; registries can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Connectivity Management Registry display name, registries can be renamed
+     * Data Connectivity Management registry display name; registries can be renamed.
      * @return the value
      **/
     public String getDisplayName() {
@@ -402,13 +402,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Name of the user who updated the DCMS Registry.
+     * Name of the user who updated the DCMS registry.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
-     * Name of the user who updated the DCMS Registry.
+     * Name of the user who updated the DCMS registry.
      * @return the value
      **/
     public String getUpdatedBy() {
@@ -430,13 +430,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -444,13 +444,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -458,15 +458,15 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service
-     * CREATING - The resource is being created and may not be usable until the entire metadata is defined
-     * UPDATING - The resource is being updated and may not be usable until all changes are commited
+     * Lifecycle states for registries in the Data Connectivity Management Service
+     * CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+     * UPDATING - The resource is being updated and may not be usable until all changes are commited.
      * DELETING - The resource is being deleted and might require deep cleanup of children.
-     * ACTIVE   - The resource is valid and available for access
+     * ACTIVE   - The resource is valid and available for access.
      * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-     *          administrative reasons
-     * DELETED  - The resource has been deleted and isn't available
-     * FAILED   - The resource is in a failed state due to validation or other errors
+     *          administrative reasons.
+     * DELETED  - The resource has been deleted and isn't available.
+     * FAILED   - The resource is in a failed state due to validation or other errors.
      *
      **/
     public enum LifecycleState {
@@ -520,30 +520,30 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     };
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service
-     * CREATING - The resource is being created and may not be usable until the entire metadata is defined
-     * UPDATING - The resource is being updated and may not be usable until all changes are commited
+     * Lifecycle states for registries in the Data Connectivity Management Service
+     * CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+     * UPDATING - The resource is being updated and may not be usable until all changes are commited.
      * DELETING - The resource is being deleted and might require deep cleanup of children.
-     * ACTIVE   - The resource is valid and available for access
+     * ACTIVE   - The resource is valid and available for access.
      * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-     *          administrative reasons
-     * DELETED  - The resource has been deleted and isn't available
-     * FAILED   - The resource is in a failed state due to validation or other errors
+     *          administrative reasons.
+     * DELETED  - The resource has been deleted and isn't available.
+     * FAILED   - The resource is in a failed state due to validation or other errors.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service
-     * CREATING - The resource is being created and may not be usable until the entire metadata is defined
-     * UPDATING - The resource is being updated and may not be usable until all changes are commited
+     * Lifecycle states for registries in the Data Connectivity Management Service
+     * CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+     * UPDATING - The resource is being updated and may not be usable until all changes are commited.
      * DELETING - The resource is being deleted and might require deep cleanup of children.
-     * ACTIVE   - The resource is valid and available for access
+     * ACTIVE   - The resource is valid and available for access.
      * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-     *          administrative reasons
-     * DELETED  - The resource has been deleted and isn't available
-     * FAILED   - The resource is in a failed state due to validation or other errors
+     *          administrative reasons.
+     * DELETED  - The resource has been deleted and isn't available.
+     * FAILED   - The resource is in a failed state due to validation or other errors.
      *
      * @return the value
      **/
@@ -566,13 +566,13 @@ public final class Registry extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable on creation.
      * @return the value
      **/
     public String getId() {

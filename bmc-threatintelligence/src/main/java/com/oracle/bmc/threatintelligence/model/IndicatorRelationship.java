@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * An relationship name and list of releated entities.
+ * A relationship name and list of releated entities.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IndicatorRelationship.Builder.class
 )
@@ -36,13 +36,13 @@ public final class IndicatorRelationship
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the attribute
+         * The name of the attribute.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the attribute
+         * The name of the attribute.
          * @param name the value to set
          * @return this builder
          **/
@@ -61,13 +61,13 @@ public final class IndicatorRelationship
             return this;
         }
         /**
-         * The array of attribution data that support this SourcedRelationship
+         * The array of attribution data that support this relationship.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("attribution")
         private java.util.List<DataAttribution> attribution;
 
         /**
-         * The array of attribution data that support this SourcedRelationship
+         * The array of attribution data that support this relationship.
          * @param attribution the value to set
          * @return this builder
          **/
@@ -116,13 +116,13 @@ public final class IndicatorRelationship
     }
 
     /**
-     * The name of the attribute
+     * The name of the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the attribute
+     * The name of the attribute.
      * @return the value
      **/
     public String getName() {
@@ -137,13 +137,13 @@ public final class IndicatorRelationship
     }
 
     /**
-     * The array of attribution data that support this SourcedRelationship
+     * The array of attribution data that support this relationship.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attribution")
     private final java.util.List<DataAttribution> attribution;
 
     /**
-     * The array of attribution data that support this SourcedRelationship
+     * The array of attribution data that support this relationship.
      * @return the value
      **/
     public java.util.List<DataAttribution> getAttribution() {

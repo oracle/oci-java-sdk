@@ -72,6 +72,15 @@ public final class MultiSearchCommandDescriptor extends AbstractCommandDescripto
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * List of sub-searches specified in query string as multisearch command arguments.
          *
@@ -102,6 +111,7 @@ public final class MultiSearchCommandDescriptor extends AbstractCommandDescripto
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.subQueries);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -125,6 +135,9 @@ public final class MultiSearchCommandDescriptor extends AbstractCommandDescripto
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("subQueries")) {
                 this.subQueries(model.getSubQueries());
@@ -151,8 +164,15 @@ public final class MultiSearchCommandDescriptor extends AbstractCommandDescripto
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             java.util.List<ParseQueryOutput> subQueries) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.subQueries = subQueries;
     }
 

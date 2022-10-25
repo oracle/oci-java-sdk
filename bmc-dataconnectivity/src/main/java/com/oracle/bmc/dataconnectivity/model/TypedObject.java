@@ -131,13 +131,13 @@ public class TypedObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -145,13 +145,13 @@ public class TypedObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Detailed description for the object.
+     * A detailed description of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Detailed description for the object.
+     * A detailed description of the object.
      * @return the value
      **/
     public String getDescription() {

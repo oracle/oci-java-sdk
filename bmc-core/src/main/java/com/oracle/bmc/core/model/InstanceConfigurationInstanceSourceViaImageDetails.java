@@ -76,6 +76,8 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         * <p>
+         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeVpusPerGB")
@@ -93,6 +95,8 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
          * {@code 20}: Represents Higher Performance option.
          * <p>
          * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+         * <p>
+         * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
          *
          * @param bootVolumeVpusPerGB the value to set
          * @return this builder
@@ -195,6 +199,8 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     * <p>
+     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeVpusPerGB")
@@ -212,6 +218,8 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
      * {@code 20}: Represents Higher Performance option.
      * <p>
      * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
+     * <p>
+     * For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
      *
      * @return the value
      **/

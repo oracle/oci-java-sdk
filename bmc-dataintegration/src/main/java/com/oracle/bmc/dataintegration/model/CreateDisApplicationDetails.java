@@ -23,6 +23,7 @@ public final class CreateDisApplicationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "compartmentId",
         "key",
         "modelVersion",
         "modelType",
@@ -38,6 +39,7 @@ public final class CreateDisApplicationDetails
         "registryMetadata"
     })
     public CreateDisApplicationDetails(
+            String compartmentId,
             String key,
             String modelVersion,
             ModelType modelType,
@@ -52,6 +54,7 @@ public final class CreateDisApplicationDetails
             CreateSourceApplicationInfo sourceApplicationInfo,
             RegistryMetadata registryMetadata) {
         super();
+        this.compartmentId = compartmentId;
         this.key = key;
         this.modelVersion = modelVersion;
         this.modelType = modelType;
@@ -69,6 +72,22 @@ public final class CreateDisApplicationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /**
          * Currently not used on application creation. Reserved for future.
          **/
@@ -279,6 +298,7 @@ public final class CreateDisApplicationDetails
         public CreateDisApplicationDetails build() {
             CreateDisApplicationDetails model =
                     new CreateDisApplicationDetails(
+                            this.compartmentId,
                             this.key,
                             this.modelVersion,
                             this.modelType,
@@ -300,6 +320,9 @@ public final class CreateDisApplicationDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDisApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("key")) {
                 this.key(model.getKey());
             }
@@ -352,6 +375,20 @@ public final class CreateDisApplicationDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
@@ -617,7 +654,8 @@ public final class CreateDisApplicationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDisApplicationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("key=").append(String.valueOf(this.key));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -644,7 +682,8 @@ public final class CreateDisApplicationDetails
         }
 
         CreateDisApplicationDetails other = (CreateDisApplicationDetails) o;
-        return java.util.Objects.equals(this.key, other.key)
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.modelVersion, other.modelVersion)
                 && java.util.Objects.equals(this.modelType, other.modelType)
                 && java.util.Objects.equals(this.name, other.name)
@@ -664,6 +703,9 @@ public final class CreateDisApplicationDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.modelVersion == null ? 43 : this.modelVersion.hashCode());
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());

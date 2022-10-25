@@ -27,14 +27,6 @@ package com.oracle.bmc.bastion.model;
 public final class PortForwardingSessionTargetResourceDetails extends TargetResourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
-        private Integer targetResourcePort;
-
-        public Builder targetResourcePort(Integer targetResourcePort) {
-            this.targetResourcePort = targetResourcePort;
-            this.__explicitlySet__.add("targetResourcePort");
-            return this;
-        }
         /**
          * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
          **/
@@ -83,6 +75,38 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
             this.__explicitlySet__.add("targetResourceDisplayName");
             return this;
         }
+        /**
+         * The Fully Qualified Domain Name of the target resource that the session connects to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetResourceFqdn")
+        private String targetResourceFqdn;
+
+        /**
+         * The Fully Qualified Domain Name of the target resource that the session connects to.
+         * @param targetResourceFqdn the value to set
+         * @return this builder
+         **/
+        public Builder targetResourceFqdn(String targetResourceFqdn) {
+            this.targetResourceFqdn = targetResourceFqdn;
+            this.__explicitlySet__.add("targetResourceFqdn");
+            return this;
+        }
+        /**
+         * The port number to connect to on the target resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
+        private Integer targetResourcePort;
+
+        /**
+         * The port number to connect to on the target resource.
+         * @param targetResourcePort the value to set
+         * @return this builder
+         **/
+        public Builder targetResourcePort(Integer targetResourcePort) {
+            this.targetResourcePort = targetResourcePort;
+            this.__explicitlySet__.add("targetResourcePort");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -90,10 +114,11 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
         public PortForwardingSessionTargetResourceDetails build() {
             PortForwardingSessionTargetResourceDetails model =
                     new PortForwardingSessionTargetResourceDetails(
-                            this.targetResourcePort,
                             this.targetResourceId,
                             this.targetResourcePrivateIpAddress,
-                            this.targetResourceDisplayName);
+                            this.targetResourceDisplayName,
+                            this.targetResourceFqdn,
+                            this.targetResourcePort);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,9 +127,6 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PortForwardingSessionTargetResourceDetails model) {
-            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
-                this.targetResourcePort(model.getTargetResourcePort());
-            }
             if (model.wasPropertyExplicitlySet("targetResourceId")) {
                 this.targetResourceId(model.getTargetResourceId());
             }
@@ -113,6 +135,12 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
             }
             if (model.wasPropertyExplicitlySet("targetResourceDisplayName")) {
                 this.targetResourceDisplayName(model.getTargetResourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceFqdn")) {
+                this.targetResourceFqdn(model.getTargetResourceFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
+                this.targetResourcePort(model.getTargetResourcePort());
             }
             return this;
         }
@@ -131,14 +159,17 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
 
     @Deprecated
     public PortForwardingSessionTargetResourceDetails(
-            Integer targetResourcePort,
             String targetResourceId,
             String targetResourcePrivateIpAddress,
-            String targetResourceDisplayName) {
-        super(targetResourcePort);
+            String targetResourceDisplayName,
+            String targetResourceFqdn,
+            Integer targetResourcePort) {
+        super();
         this.targetResourceId = targetResourceId;
         this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
         this.targetResourceDisplayName = targetResourceDisplayName;
+        this.targetResourceFqdn = targetResourceFqdn;
+        this.targetResourcePort = targetResourcePort;
     }
 
     /**
@@ -183,6 +214,34 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
         return targetResourceDisplayName;
     }
 
+    /**
+     * The Fully Qualified Domain Name of the target resource that the session connects to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetResourceFqdn")
+    private final String targetResourceFqdn;
+
+    /**
+     * The Fully Qualified Domain Name of the target resource that the session connects to.
+     * @return the value
+     **/
+    public String getTargetResourceFqdn() {
+        return targetResourceFqdn;
+    }
+
+    /**
+     * The port number to connect to on the target resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
+    private final Integer targetResourcePort;
+
+    /**
+     * The port number to connect to on the target resource.
+     * @return the value
+     **/
+    public Integer getTargetResourcePort() {
+        return targetResourcePort;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -202,6 +261,8 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
                 .append(String.valueOf(this.targetResourcePrivateIpAddress));
         sb.append(", targetResourceDisplayName=")
                 .append(String.valueOf(this.targetResourceDisplayName));
+        sb.append(", targetResourceFqdn=").append(String.valueOf(this.targetResourceFqdn));
+        sb.append(", targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
     }
@@ -222,6 +283,8 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
                         this.targetResourcePrivateIpAddress, other.targetResourcePrivateIpAddress)
                 && java.util.Objects.equals(
                         this.targetResourceDisplayName, other.targetResourceDisplayName)
+                && java.util.Objects.equals(this.targetResourceFqdn, other.targetResourceFqdn)
+                && java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
                 && super.equals(other);
     }
 
@@ -242,6 +305,16 @@ public final class PortForwardingSessionTargetResourceDetails extends TargetReso
                         + (this.targetResourceDisplayName == null
                                 ? 43
                                 : this.targetResourceDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourceFqdn == null
+                                ? 43
+                                : this.targetResourceFqdn.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourcePort == null
+                                ? 43
+                                : this.targetResourcePort.hashCode());
         return result;
     }
 }

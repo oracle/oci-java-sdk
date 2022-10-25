@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The update run details. Only the tags of a run can be updated.
+ * The update run details. Only a limited set of properties of a run can be updated.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -20,13 +20,22 @@ package com.oracle.bmc.dataflow.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateRunDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"definedTags", "freeformTags"})
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "freeformTags",
+        "maxDurationInMinutes",
+        "idleTimeoutInMinutes"
+    })
     public UpdateRunDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            Long maxDurationInMinutes,
+            Long idleTimeoutInMinutes) {
         super();
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.maxDurationInMinutes = maxDurationInMinutes;
+        this.idleTimeoutInMinutes = idleTimeoutInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -74,12 +83,57 @@ public final class UpdateRunDetails extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+         * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDurationInMinutes")
+        private Long maxDurationInMinutes;
+
+        /**
+         * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+         * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+         *
+         * @param maxDurationInMinutes the value to set
+         * @return this builder
+         **/
+        public Builder maxDurationInMinutes(Long maxDurationInMinutes) {
+            this.maxDurationInMinutes = maxDurationInMinutes;
+            this.__explicitlySet__.add("maxDurationInMinutes");
+            return this;
+        }
+        /**
+         * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+         * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
+        private Long idleTimeoutInMinutes;
+
+        /**
+         * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+         * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+         *
+         * @param idleTimeoutInMinutes the value to set
+         * @return this builder
+         **/
+        public Builder idleTimeoutInMinutes(Long idleTimeoutInMinutes) {
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
+            this.__explicitlySet__.add("idleTimeoutInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRunDetails build() {
-            UpdateRunDetails model = new UpdateRunDetails(this.definedTags, this.freeformTags);
+            UpdateRunDetails model =
+                    new UpdateRunDetails(
+                            this.definedTags,
+                            this.freeformTags,
+                            this.maxDurationInMinutes,
+                            this.idleTimeoutInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,6 +147,12 @@ public final class UpdateRunDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("maxDurationInMinutes")) {
+                this.maxDurationInMinutes(model.getMaxDurationInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("idleTimeoutInMinutes")) {
+                this.idleTimeoutInMinutes(model.getIdleTimeoutInMinutes());
             }
             return this;
         }
@@ -147,6 +207,42 @@ public final class UpdateRunDetails extends com.oracle.bmc.http.internal.Explici
         return freeformTags;
     }
 
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+     * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDurationInMinutes")
+    private final Long maxDurationInMinutes;
+
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+     * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+     *
+     * @return the value
+     **/
+    public Long getMaxDurationInMinutes() {
+        return maxDurationInMinutes;
+    }
+
+    /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+     * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
+    private final Long idleTimeoutInMinutes;
+
+    /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+     * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+     *
+     * @return the value
+     **/
+    public Long getIdleTimeoutInMinutes() {
+        return idleTimeoutInMinutes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -163,6 +259,8 @@ public final class UpdateRunDetails extends com.oracle.bmc.http.internal.Explici
         sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", maxDurationInMinutes=").append(String.valueOf(this.maxDurationInMinutes));
+        sb.append(", idleTimeoutInMinutes=").append(String.valueOf(this.idleTimeoutInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -179,6 +277,8 @@ public final class UpdateRunDetails extends com.oracle.bmc.http.internal.Explici
         UpdateRunDetails other = (UpdateRunDetails) o;
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.maxDurationInMinutes, other.maxDurationInMinutes)
+                && java.util.Objects.equals(this.idleTimeoutInMinutes, other.idleTimeoutInMinutes)
                 && super.equals(other);
     }
 
@@ -188,6 +288,16 @@ public final class UpdateRunDetails extends com.oracle.bmc.http.internal.Explici
         int result = 1;
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxDurationInMinutes == null
+                                ? 43
+                                : this.maxDurationInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.idleTimeoutInMinutes == null
+                                ? 43
+                                : this.idleTimeoutInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

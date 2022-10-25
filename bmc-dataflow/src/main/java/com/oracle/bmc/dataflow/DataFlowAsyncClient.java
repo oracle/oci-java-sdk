@@ -755,6 +755,57 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStatementResponse> createStatement(
+            CreateStatementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateStatementRequest, CreateStatementResponse>
+                    handler) {
+        LOG.trace("Called async createStatement");
+        final CreateStatementRequest interceptedRequest =
+                CreateStatementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStatementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "CreateStatement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Statement/CreateStatement");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateStatementResponse>
+                transformer =
+                        CreateStatementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateStatementRequest, CreateStatementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStatementRequest, CreateStatementResponse>,
+                        java.util.concurrent.Future<CreateStatementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStatementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStatementRequest, CreateStatementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApplicationResponse> deleteApplication(
             DeleteApplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -877,6 +928,52 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteRunRequest, DeleteRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStatementResponse> deleteStatement(
+            DeleteStatementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStatementRequest, DeleteStatementResponse>
+                    handler) {
+        LOG.trace("Called async deleteStatement");
+        final DeleteStatementRequest interceptedRequest =
+                DeleteStatementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStatementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "DeleteStatement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Statement/DeleteStatement");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStatementResponse>
+                transformer =
+                        DeleteStatementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteStatementRequest, DeleteStatementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStatementRequest, DeleteStatementResponse>,
+                        java.util.concurrent.Future<DeleteStatementResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStatementRequest, DeleteStatementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1059,6 +1156,50 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetRunLogRequest, GetRunLogResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStatementResponse> getStatement(
+            GetStatementRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetStatementRequest, GetStatementResponse>
+                    handler) {
+        LOG.trace("Called async getStatement");
+        final GetStatementRequest interceptedRequest =
+                GetStatementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStatementConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "GetStatement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Statement/GetStatement");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStatementResponse>
+                transformer =
+                        GetStatementConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetStatementRequest, GetStatementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStatementRequest, GetStatementResponse>,
+                        java.util.concurrent.Future<GetStatementResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStatementRequest, GetStatementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1282,6 +1423,51 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListRunsRequest, ListRunsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStatementsResponse> listStatements(
+            ListStatementsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListStatementsRequest, ListStatementsResponse>
+                    handler) {
+        LOG.trace("Called async listStatements");
+        final ListStatementsRequest interceptedRequest =
+                ListStatementsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStatementsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "ListStatements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/StatementCollection/ListStatements");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListStatementsResponse>
+                transformer =
+                        ListStatementsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListStatementsRequest, ListStatementsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStatementsRequest, ListStatementsResponse>,
+                        java.util.concurrent.Future<ListStatementsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStatementsRequest, ListStatementsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

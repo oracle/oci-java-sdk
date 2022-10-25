@@ -482,6 +482,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * @param <T>
      * @return
      */
+    @Deprecated
     public static <T> T simpleRetry(
             com.google.common /*Guava will be removed soon*/.base.Function<WebTarget, T>
                     retryOperation,

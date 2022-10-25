@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * a reference to a resource or other entity
+ * A reference to a resource or other entity.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -75,7 +75,7 @@ public class EntityReference extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * the type of the referenced entity
+     * The type of the referenced entity.
      **/
     public enum Type {
         Indicator("INDICATOR"),

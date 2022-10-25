@@ -13,6 +13,7 @@ package com.oracle.bmc.loganalytics.model;
 public enum CreationSourceType {
     EmBridge("EM_BRIDGE"),
     ServiceConnectorHub("SERVICE_CONNECTOR_HUB"),
+    Discovery("DISCOVERY"),
     None("NONE"),
 
     /**

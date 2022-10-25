@@ -7,8 +7,6 @@ package com.oracle.bmc.filestorage.model;
 /**
  * A set of file systems to export through one or more mount
  * targets. Composed of zero or more export resources.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

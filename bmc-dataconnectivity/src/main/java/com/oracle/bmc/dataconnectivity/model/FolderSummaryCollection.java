@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * This is the collection of folder summaries, it may be a collection of lightweight details or full definitions.
+ * This is the collection of folder summaries; it can be a collection of lightweight details or full definitions.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

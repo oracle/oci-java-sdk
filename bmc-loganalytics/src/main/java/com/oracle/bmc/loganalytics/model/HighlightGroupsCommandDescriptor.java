@@ -72,6 +72,15 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * User specified color to highlight matches with if found.
          *
@@ -192,6 +201,7 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.color,
                             this.priority,
                             this.matchOnly,
@@ -220,6 +230,9 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("color")) {
                 this.color(model.getColor());
@@ -261,13 +274,20 @@ public final class HighlightGroupsCommandDescriptor extends AbstractCommandDescr
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             String color,
             String priority,
             java.util.List<String> matchOnly,
             java.util.List<String> fields,
             java.util.List<String> keywords,
             java.util.List<ParseQueryOutput> subQueries) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.color = color;
         this.priority = priority;
         this.matchOnly = matchOnly;

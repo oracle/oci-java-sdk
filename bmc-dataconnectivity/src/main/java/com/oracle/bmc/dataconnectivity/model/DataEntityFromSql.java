@@ -27,6 +27,15 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class DataEntityFromSql extends DataEntity {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("entityProperties")
+        private java.util.Map<String, String> entityProperties;
+
+        public Builder entityProperties(java.util.Map<String, String> entityProperties) {
+            this.entityProperties = entityProperties;
+            this.__explicitlySet__.add("entityProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ObjectMetadata metadata;
 
@@ -52,13 +61,13 @@ public final class DataEntityFromSql extends DataEntity {
             return this;
         }
         /**
-         * The object's model version.
+         * The model version of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * The object's model version.
+         * The model version of the object.
          * @param modelVersion the value to set
          * @return this builder
          **/
@@ -77,13 +86,13 @@ public final class DataEntityFromSql extends DataEntity {
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -93,13 +102,13 @@ public final class DataEntityFromSql extends DataEntity {
             return this;
         }
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          * @param description the value to set
          * @return this builder
          **/
@@ -125,13 +134,13 @@ public final class DataEntityFromSql extends DataEntity {
             return this;
         }
         /**
-         * The external key for the object
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -262,13 +271,13 @@ public final class DataEntityFromSql extends DataEntity {
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -300,6 +309,7 @@ public final class DataEntityFromSql extends DataEntity {
         public DataEntityFromSql build() {
             DataEntityFromSql model =
                     new DataEntityFromSql(
+                            this.entityProperties,
                             this.metadata,
                             this.key,
                             this.modelVersion,
@@ -326,6 +336,9 @@ public final class DataEntityFromSql extends DataEntity {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DataEntityFromSql model) {
+            if (model.wasPropertyExplicitlySet("entityProperties")) {
+                this.entityProperties(model.getEntityProperties());
+            }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
             }
@@ -397,6 +410,7 @@ public final class DataEntityFromSql extends DataEntity {
 
     @Deprecated
     public DataEntityFromSql(
+            java.util.Map<String, String> entityProperties,
             ObjectMetadata metadata,
             String key,
             String modelVersion,
@@ -415,7 +429,7 @@ public final class DataEntityFromSql extends DataEntity {
             Integer objectStatus,
             String identifier,
             String sqlQuery) {
-        super(metadata);
+        super(entityProperties, metadata);
         this.key = key;
         this.modelVersion = modelVersion;
         this.parentRef = parentRef;
@@ -450,13 +464,13 @@ public final class DataEntityFromSql extends DataEntity {
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -471,13 +485,13 @@ public final class DataEntityFromSql extends DataEntity {
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -485,13 +499,13 @@ public final class DataEntityFromSql extends DataEntity {
     }
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      * @return the value
      **/
     public String getDescription() {
@@ -513,13 +527,13 @@ public final class DataEntityFromSql extends DataEntity {
     }
 
     /**
-     * The external key for the object
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {
@@ -555,6 +569,8 @@ public final class DataEntityFromSql extends DataEntity {
         View("VIEW"),
         File("FILE"),
         Sql("SQL"),
+        DataStore("DATA_STORE"),
+        Message("MESSAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -682,13 +698,13 @@ public final class DataEntityFromSql extends DataEntity {
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {

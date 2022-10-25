@@ -32,6 +32,7 @@ public final class CreateEsxiHostDetails
         "hostShapeName",
         "hostOcpuCount",
         "capacityReservationId",
+        "nonUpgradedEsxiHostId",
         "freeformTags",
         "definedTags"
     })
@@ -45,6 +46,7 @@ public final class CreateEsxiHostDetails
             String hostShapeName,
             Float hostOcpuCount,
             String capacityReservationId,
+            String nonUpgradedEsxiHostId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -57,6 +59,7 @@ public final class CreateEsxiHostDetails
         this.hostShapeName = hostShapeName;
         this.hostOcpuCount = hostOcpuCount;
         this.capacityReservationId = capacityReservationId;
+        this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -185,7 +188,7 @@ public final class CreateEsxiHostDetails
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
          * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
-         * will be udpated in the newly created Esxi host.
+         * will be updated in the newly created Esxi host.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
@@ -195,7 +198,7 @@ public final class CreateEsxiHostDetails
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
          * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
-         * will be udpated in the newly created Esxi host.
+         * will be updated in the newly created Esxi host.
          *
          * @param failedEsxiHostId the value to set
          * @return this builder
@@ -259,6 +262,32 @@ public final class CreateEsxiHostDetails
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * will be upgraded. This is an optional parameter. If this parameter
+         * is specified, an ESXi host with new version will be created to replace the
+         * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
+         * created Esxi host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
+        private String nonUpgradedEsxiHostId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * will be upgraded. This is an optional parameter. If this parameter
+         * is specified, an ESXi host with new version will be created to replace the
+         * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
+         * created Esxi host.
+         *
+         * @param nonUpgradedEsxiHostId the value to set
+         * @return this builder
+         **/
+        public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
+            this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            this.__explicitlySet__.add("nonUpgradedEsxiHostId");
             return this;
         }
         /**
@@ -326,6 +355,7 @@ public final class CreateEsxiHostDetails
                             this.hostShapeName,
                             this.hostOcpuCount,
                             this.capacityReservationId,
+                            this.nonUpgradedEsxiHostId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -362,6 +392,9 @@ public final class CreateEsxiHostDetails
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("nonUpgradedEsxiHostId")) {
+                this.nonUpgradedEsxiHostId(model.getNonUpgradedEsxiHostId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -496,7 +529,7 @@ public final class CreateEsxiHostDetails
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
      * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
-     * will be udpated in the newly created Esxi host.
+     * will be updated in the newly created Esxi host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
@@ -506,7 +539,7 @@ public final class CreateEsxiHostDetails
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
      * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
-     * will be udpated in the newly created Esxi host.
+     * will be updated in the newly created Esxi host.
      *
      * @return the value
      **/
@@ -562,6 +595,30 @@ public final class CreateEsxiHostDetails
      **/
     public String getCapacityReservationId() {
         return capacityReservationId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * will be upgraded. This is an optional parameter. If this parameter
+     * is specified, an ESXi host with new version will be created to replace the
+     * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
+     * created Esxi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
+    private final String nonUpgradedEsxiHostId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * will be upgraded. This is an optional parameter. If this parameter
+     * is specified, an ESXi host with new version will be created to replace the
+     * original one, and the {@code nonUpgradedEsxiHostId} field will be updated in the newly
+     * created Esxi host.
+     *
+     * @return the value
+     **/
+    public String getNonUpgradedEsxiHostId() {
+        return nonUpgradedEsxiHostId;
     }
 
     /**
@@ -632,6 +689,7 @@ public final class CreateEsxiHostDetails
         sb.append(", hostShapeName=").append(String.valueOf(this.hostShapeName));
         sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", nonUpgradedEsxiHostId=").append(String.valueOf(this.nonUpgradedEsxiHostId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -658,6 +716,7 @@ public final class CreateEsxiHostDetails
                 && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
                 && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.nonUpgradedEsxiHostId, other.nonUpgradedEsxiHostId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -690,6 +749,11 @@ public final class CreateEsxiHostDetails
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonUpgradedEsxiHostId == null
+                                ? 43
+                                : this.nonUpgradedEsxiHostId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -24,6 +24,10 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "name",
         "compartmentId",
         "resultLocation",
+        "description",
+        "timeNextRun",
+        "outputFileFormat",
+        "savedReportId",
         "scheduleRecurrences",
         "timeScheduled",
         "queryProperties",
@@ -38,6 +42,10 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String name,
             String compartmentId,
             ResultLocation resultLocation,
+            String description,
+            java.util.Date timeNextRun,
+            OutputFileFormat outputFileFormat,
+            String savedReportId,
             String scheduleRecurrences,
             java.util.Date timeScheduled,
             QueryProperties queryProperties,
@@ -51,6 +59,10 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.name = name;
         this.compartmentId = compartmentId;
         this.resultLocation = resultLocation;
+        this.description = description;
+        this.timeNextRun = timeNextRun;
+        this.outputFileFormat = outputFileFormat;
+        this.savedReportId = savedReportId;
         this.scheduleRecurrences = scheduleRecurrences;
         this.timeScheduled = timeScheduled;
         this.queryProperties = queryProperties;
@@ -64,13 +76,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID representing unique shedule
+         * The OCID representing a unique shedule.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID representing unique shedule
+         * The OCID representing a unique shedule.
          * @param id the value to set
          * @return this builder
          **/
@@ -80,13 +92,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The unique name of the schedule created by the user
+         * The unique name of the schedule created by the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The unique name of the schedule created by the user
+         * The unique name of the schedule created by the user.
          * @param name the value to set
          * @return this builder
          **/
@@ -96,13 +108,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The tenancy of the customer
+         * The customer tenancy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The tenancy of the customer
+         * The customer tenancy.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -121,16 +133,82 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-         * Describes the frequency of when the schedule will be run
+         * The description of the schedule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the schedule.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * The date and time of the next job execution.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
+        private java.util.Date timeNextRun;
+
+        /**
+         * The date and time of the next job execution.
+         * @param timeNextRun the value to set
+         * @return this builder
+         **/
+        public Builder timeNextRun(java.util.Date timeNextRun) {
+            this.timeNextRun = timeNextRun;
+            this.__explicitlySet__.add("timeNextRun");
+            return this;
+        }
+        /**
+         * Specifies supported output file format.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
+        private OutputFileFormat outputFileFormat;
+
+        /**
+         * Specifies supported output file format.
+         * @param outputFileFormat the value to set
+         * @return this builder
+         **/
+        public Builder outputFileFormat(OutputFileFormat outputFileFormat) {
+            this.outputFileFormat = outputFileFormat;
+            this.__explicitlySet__.add("outputFileFormat");
+            return this;
+        }
+        /**
+         * The saved report id which can also be used to generate query.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
+        private String savedReportId;
+
+        /**
+         * The saved report id which can also be used to generate query.
+         * @param savedReportId the value to set
+         * @return this builder
+         **/
+        public Builder savedReportId(String savedReportId) {
+            this.savedReportId = savedReportId;
+            this.__explicitlySet__.add("savedReportId");
+            return this;
+        }
+        /**
+         * Specifies the frequency according to when the schedule will be run,
+         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
         private String scheduleRecurrences;
 
         /**
-         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-         * Describes the frequency of when the schedule will be run
+         * Specifies the frequency according to when the schedule will be run,
+         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          * @param scheduleRecurrences the value to set
          * @return this builder
@@ -141,13 +219,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The date and time of the first time job execution
+         * The date and time of the first time job execution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
-         * The date and time of the first time job execution
+         * The date and time of the first time job execution.
          * @param timeScheduled the value to set
          * @return this builder
          **/
@@ -166,13 +244,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The date and time of when the schedule was created
+         * The date and time the schedule was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time of when the schedule was created
+         * The date and time the schedule was created.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -182,13 +260,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The lifecycle state of the schedule
+         * The schedule lifecycle state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycle state of the schedule
+         * The schedule lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -265,6 +343,10 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.name,
                             this.compartmentId,
                             this.resultLocation,
+                            this.description,
+                            this.timeNextRun,
+                            this.outputFileFormat,
+                            this.savedReportId,
                             this.scheduleRecurrences,
                             this.timeScheduled,
                             this.queryProperties,
@@ -292,6 +374,18 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("resultLocation")) {
                 this.resultLocation(model.getResultLocation());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("timeNextRun")) {
+                this.timeNextRun(model.getTimeNextRun());
+            }
+            if (model.wasPropertyExplicitlySet("outputFileFormat")) {
+                this.outputFileFormat(model.getOutputFileFormat());
+            }
+            if (model.wasPropertyExplicitlySet("savedReportId")) {
+                this.savedReportId(model.getSavedReportId());
             }
             if (model.wasPropertyExplicitlySet("scheduleRecurrences")) {
                 this.scheduleRecurrences(model.getScheduleRecurrences());
@@ -333,13 +427,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The OCID representing unique shedule
+     * The OCID representing a unique shedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID representing unique shedule
+     * The OCID representing a unique shedule.
      * @return the value
      **/
     public String getId() {
@@ -347,13 +441,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the schedule created by the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the schedule created by the user.
      * @return the value
      **/
     public String getName() {
@@ -361,13 +455,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -382,16 +476,122 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-     * Describes the frequency of when the schedule will be run
+     * The description of the schedule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the schedule.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * The date and time of the next job execution.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeNextRun")
+    private final java.util.Date timeNextRun;
+
+    /**
+     * The date and time of the next job execution.
+     * @return the value
+     **/
+    public java.util.Date getTimeNextRun() {
+        return timeNextRun;
+    }
+
+    /**
+     * Specifies supported output file format.
+     **/
+    public enum OutputFileFormat {
+        Csv("CSV"),
+        Pdf("PDF"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OutputFileFormat.class);
+
+        private final String value;
+        private static java.util.Map<String, OutputFileFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OutputFileFormat v : OutputFileFormat.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        OutputFileFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OutputFileFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'OutputFileFormat', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies supported output file format.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
+    private final OutputFileFormat outputFileFormat;
+
+    /**
+     * Specifies supported output file format.
+     * @return the value
+     **/
+    public OutputFileFormat getOutputFileFormat() {
+        return outputFileFormat;
+    }
+
+    /**
+     * The saved report id which can also be used to generate query.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
+    private final String savedReportId;
+
+    /**
+     * The saved report id which can also be used to generate query.
+     * @return the value
+     **/
+    public String getSavedReportId() {
+        return savedReportId;
+    }
+
+    /**
+     * Specifies the frequency according to when the schedule will be run,
+     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
     private final String scheduleRecurrences;
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-     * Describes the frequency of when the schedule will be run
+     * Specifies the frequency according to when the schedule will be run,
+     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      * @return the value
      **/
@@ -400,13 +600,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      * @return the value
      **/
     public java.util.Date getTimeScheduled() {
@@ -421,13 +621,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The date and time of when the schedule was created
+     * The date and time the schedule was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time of when the schedule was created
+     * The date and time the schedule was created.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -435,7 +635,7 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -483,13 +683,13 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     };
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -564,6 +764,10 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", timeNextRun=").append(String.valueOf(this.timeNextRun));
+        sb.append(", outputFileFormat=").append(String.valueOf(this.outputFileFormat));
+        sb.append(", savedReportId=").append(String.valueOf(this.savedReportId));
         sb.append(", scheduleRecurrences=").append(String.valueOf(this.scheduleRecurrences));
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
         sb.append(", queryProperties=").append(String.valueOf(this.queryProperties));
@@ -590,6 +794,10 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resultLocation, other.resultLocation)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.timeNextRun, other.timeNextRun)
+                && java.util.Objects.equals(this.outputFileFormat, other.outputFileFormat)
+                && java.util.Objects.equals(this.savedReportId, other.savedReportId)
                 && java.util.Objects.equals(this.scheduleRecurrences, other.scheduleRecurrences)
                 && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
                 && java.util.Objects.equals(this.queryProperties, other.queryProperties)
@@ -613,6 +821,14 @@ public final class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.timeNextRun == null ? 43 : this.timeNextRun.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputFileFormat == null ? 43 : this.outputFileFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedReportId == null ? 43 : this.savedReportId.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduleRecurrences == null

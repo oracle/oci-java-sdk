@@ -139,6 +139,54 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
             this.__explicitlySet__.add("timestampFormat");
             return this;
         }
+        /**
+         * Defines whether the quote entire content while performing read/write.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isQuoteAll")
+        private Boolean isQuoteAll;
+
+        /**
+         * Defines whether the quote entire content while performing read/write.
+         * @param isQuoteAll the value to set
+         * @return this builder
+         **/
+        public Builder isQuoteAll(Boolean isQuoteAll) {
+            this.isQuoteAll = isQuoteAll;
+            this.__explicitlySet__.add("isQuoteAll");
+            return this;
+        }
+        /**
+         * Defines whether the file has a multiline content
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMultiline")
+        private Boolean isMultiline;
+
+        /**
+         * Defines whether the file has a multiline content
+         * @param isMultiline the value to set
+         * @return this builder
+         **/
+        public Builder isMultiline(Boolean isMultiline) {
+            this.isMultiline = isMultiline;
+            this.__explicitlySet__.add("isMultiline");
+            return this;
+        }
+        /**
+         * Defines whether the file has a trailing delimiter
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isTrailingDelimiter")
+        private Boolean isTrailingDelimiter;
+
+        /**
+         * Defines whether the file has a trailing delimiter
+         * @param isTrailingDelimiter the value to set
+         * @return this builder
+         **/
+        public Builder isTrailingDelimiter(Boolean isTrailingDelimiter) {
+            this.isTrailingDelimiter = isTrailingDelimiter;
+            this.__explicitlySet__.add("isTrailingDelimiter");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -152,7 +200,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
                             this.quoteCharacter,
                             this.hasHeader,
                             this.isFilePattern,
-                            this.timestampFormat);
+                            this.timestampFormat,
+                            this.isQuoteAll,
+                            this.isMultiline,
+                            this.isTrailingDelimiter);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -182,6 +233,15 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
             if (model.wasPropertyExplicitlySet("timestampFormat")) {
                 this.timestampFormat(model.getTimestampFormat());
             }
+            if (model.wasPropertyExplicitlySet("isQuoteAll")) {
+                this.isQuoteAll(model.getIsQuoteAll());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiline")) {
+                this.isMultiline(model.getIsMultiline());
+            }
+            if (model.wasPropertyExplicitlySet("isTrailingDelimiter")) {
+                this.isTrailingDelimiter(model.getIsTrailingDelimiter());
+            }
             return this;
         }
     }
@@ -205,7 +265,10 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
             String quoteCharacter,
             Boolean hasHeader,
             Boolean isFilePattern,
-            String timestampFormat) {
+            String timestampFormat,
+            Boolean isQuoteAll,
+            Boolean isMultiline,
+            Boolean isTrailingDelimiter) {
         super();
         this.encoding = encoding;
         this.escapeCharacter = escapeCharacter;
@@ -214,6 +277,9 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         this.hasHeader = hasHeader;
         this.isFilePattern = isFilePattern;
         this.timestampFormat = timestampFormat;
+        this.isQuoteAll = isQuoteAll;
+        this.isMultiline = isMultiline;
+        this.isTrailingDelimiter = isTrailingDelimiter;
     }
 
     /**
@@ -314,6 +380,48 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         return timestampFormat;
     }
 
+    /**
+     * Defines whether the quote entire content while performing read/write.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isQuoteAll")
+    private final Boolean isQuoteAll;
+
+    /**
+     * Defines whether the quote entire content while performing read/write.
+     * @return the value
+     **/
+    public Boolean getIsQuoteAll() {
+        return isQuoteAll;
+    }
+
+    /**
+     * Defines whether the file has a multiline content
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMultiline")
+    private final Boolean isMultiline;
+
+    /**
+     * Defines whether the file has a multiline content
+     * @return the value
+     **/
+    public Boolean getIsMultiline() {
+        return isMultiline;
+    }
+
+    /**
+     * Defines whether the file has a trailing delimiter
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isTrailingDelimiter")
+    private final Boolean isTrailingDelimiter;
+
+    /**
+     * Defines whether the file has a trailing delimiter
+     * @return the value
+     **/
+    public Boolean getIsTrailingDelimiter() {
+        return isTrailingDelimiter;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -335,6 +443,9 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         sb.append(", hasHeader=").append(String.valueOf(this.hasHeader));
         sb.append(", isFilePattern=").append(String.valueOf(this.isFilePattern));
         sb.append(", timestampFormat=").append(String.valueOf(this.timestampFormat));
+        sb.append(", isQuoteAll=").append(String.valueOf(this.isQuoteAll));
+        sb.append(", isMultiline=").append(String.valueOf(this.isMultiline));
+        sb.append(", isTrailingDelimiter=").append(String.valueOf(this.isTrailingDelimiter));
         sb.append(")");
         return sb.toString();
     }
@@ -356,6 +467,9 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
                 && java.util.Objects.equals(this.hasHeader, other.hasHeader)
                 && java.util.Objects.equals(this.isFilePattern, other.isFilePattern)
                 && java.util.Objects.equals(this.timestampFormat, other.timestampFormat)
+                && java.util.Objects.equals(this.isQuoteAll, other.isQuoteAll)
+                && java.util.Objects.equals(this.isMultiline, other.isMultiline)
+                && java.util.Objects.equals(this.isTrailingDelimiter, other.isTrailingDelimiter)
                 && super.equals(other);
     }
 
@@ -378,6 +492,13 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         result =
                 (result * PRIME)
                         + (this.timestampFormat == null ? 43 : this.timestampFormat.hashCode());
+        result = (result * PRIME) + (this.isQuoteAll == null ? 43 : this.isQuoteAll.hashCode());
+        result = (result * PRIME) + (this.isMultiline == null ? 43 : this.isMultiline.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isTrailingDelimiter == null
+                                ? 43
+                                : this.isTrailingDelimiter.hashCode());
         return result;
     }
 }

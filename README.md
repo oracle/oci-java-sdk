@@ -1,4 +1,3 @@
-# Add one line for test
 # Oracle Cloud Infrastructure SDK for Java
 [![Build Status](https://travis-ci.org/oracle/oci-java-sdk.svg?branch=master)](https://travis-ci.org/oracle/oci-java-sdk)
 
@@ -81,7 +80,7 @@ If the request to the server hangs for an indefinite time and the program gets s
 because the connection is not released from the Apache connection 
 pool. If you're calling APIs that return a binary/stream response, 
 please make sure to close all the streams returned from the response to release the connections from the connection pool in case of partial reads. If reading the stream completely, the SDK will 
-automatically try to close the stream to release the connection from the connection pool, to disable this feature of auto-closing streams on full read, please call `ResponseHelper.shouldAutoCloseResponseInputStream(false)`. This is because the SDK for Java supports the Apache Connector for sending requests and managing connections to the service. By default, the Apache Connector supports connection pooling and in the cases where the stream from the response is not closed, the connections don't get released from the connection pool and in turn results in an indefinite wait time. This can be avoided either by closing the streams or switching back to the Jersey default connector, i.e. `HttpUrlConnector`. You can find more information about the same in the OCI Java SDK Troubleshooting section.
+automatically try to close the stream to release the connection from the connection pool, to disable this feature of auto-closing streams on full read, please call `Options.shouldAutoCloseResponseInputStream(false)`. This is because the SDK for Java supports the Apache Connector for sending requests and managing connections to the service. By default, the Apache Connector supports connection pooling and in the cases where the stream from the response is not closed, the connections don't get released from the connection pool and in turn results in an indefinite wait time. This can be avoided either by closing the streams or switching back to the Jersey default connector, i.e. `HttpUrlConnector`. You can find more information about the same in the OCI Java SDK Troubleshooting section.
  
 ### Performance issues and switching between connection closing strategies with the Apache Connector
  

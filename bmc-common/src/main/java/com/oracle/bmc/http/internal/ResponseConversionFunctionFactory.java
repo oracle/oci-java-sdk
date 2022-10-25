@@ -14,7 +14,7 @@ import com.oracle.bmc.internal.GuavaUtils;
  * Factory class to create the appropriate type of Function to convert a REST
  * Response into its final form.
  *
- * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+ * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
  */
 @Deprecated
 public class ResponseConversionFunctionFactory {
@@ -28,7 +28,7 @@ public class ResponseConversionFunctionFactory {
      *
      * @return A new Function.
      *
-     * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+     * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
      */
     @Deprecated
     public Function<Response, WithHeaders<Void>> create() {
@@ -41,7 +41,7 @@ public class ResponseConversionFunctionFactory {
      * @param serviceDetails service details of the Response
      * @return A new Function.
      *
-     * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+     * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
      */
     @Deprecated
     public Function<Response, WithHeaders<Void>> create(ServiceDetails serviceDetails) {
@@ -54,7 +54,7 @@ public class ResponseConversionFunctionFactory {
      * @param clazz The type of instance to convert to.
      * @return A new Function.
      *
-     * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+     * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
      */
     @Deprecated
     public <T> Function<Response, WithHeaders<T>> create(Class<T> clazz) {
@@ -68,7 +68,7 @@ public class ResponseConversionFunctionFactory {
      * @param serviceDetails service details of the Response
      * @return A new Function.
      *
-     * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+     * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
      */
     @Deprecated
     public <T> Function<Response, WithHeaders<T>> create(
@@ -83,7 +83,7 @@ public class ResponseConversionFunctionFactory {
      * @param type The generic type to convert to.
      * @return A new Function.
      *
-     * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+     * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
      */
     @Deprecated
     public <T> Function<Response, WithHeaders<T>> create(GenericType<T> type) {
@@ -98,7 +98,7 @@ public class ResponseConversionFunctionFactory {
      * @param serviceDetails service details of the Response
      * @return A new Function.
      *
-     * @Deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
+     * @deprecated all clients of this version or newer use {@link ResponseConversionFunctionFactoryV2} instead
      */
     @Deprecated
     public <T> Function<Response, WithHeaders<T>> create(

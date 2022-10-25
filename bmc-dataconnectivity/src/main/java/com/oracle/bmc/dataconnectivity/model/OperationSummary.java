@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The operation summary object
+ * The operation summary object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,6 +25,10 @@ package com.oracle.bmc.dataconnectivity.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OperationSummaryFromProcedure.class,
         name = "PROCEDURE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OperationSummaryFromApi.class,
+        name = "API"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -85,10 +89,11 @@ public class OperationSummary extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The operation type
+     * The operation type.
      **/
     public enum ModelType {
         Procedure("PROCEDURE"),
+        Api("API"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

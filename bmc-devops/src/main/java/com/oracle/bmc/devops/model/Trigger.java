@@ -26,6 +26,7 @@ package com.oracle.bmc.devops.model;
         value = GitlabTrigger.class,
         name = "GITLAB"
     ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VbsTrigger.class, name = "VBS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BitbucketServerTrigger.class,
         name = "BITBUCKET_SERVER"
@@ -417,6 +418,7 @@ public class Trigger extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
         GitlabServer("GITLAB_SERVER"),
         BitbucketCloud("BITBUCKET_CLOUD"),
         BitbucketServer("BITBUCKET_SERVER"),
+        Vbs("VBS"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
 
         /**

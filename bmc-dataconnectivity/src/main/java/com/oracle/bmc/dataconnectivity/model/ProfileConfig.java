@@ -43,13 +43,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Array of column names to profile. If empty all columns in the entity are profiled.
+         * Array of column names to profile. If empty, all the columns in the entity are profiled.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<String> attributes;
 
         /**
-         * Array of column names to profile. If empty all columns in the entity are profiled.
+         * Array of column names to profile. If empty, all the columns in the entity are profiled.
          * @param attributes the value to set
          * @return this builder
          **/
@@ -59,13 +59,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+         * Array of enum strings to decide which profile functions to run. If empty, all the supported functions are run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<Functions> functions;
 
         /**
-         * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+         * Array of enum strings to decide which profile functions to run. If empty, all the supported functions are run.
          * @param functions the value to set
          * @return this builder
          **/
@@ -75,13 +75,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+         * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency, and ascending on value, and then topN are returned and rest discarded.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("topNValFreq")
         private Integer topNValFreq;
 
         /**
-         * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+         * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency, and ascending on value, and then topN are returned and rest discarded.
          * @param topNValFreq the value to set
          * @return this builder
          **/
@@ -91,13 +91,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+         * A pattern has to qualify at least this percentage threshold to be considered a pattern on its own. Patterns that do not qualify are clubbed together into 'Others' pattern.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patternThreshold")
         private Integer patternThreshold;
 
         /**
-         * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+         * A pattern has to qualify at least this percentage threshold to be considered a pattern on its own. Patterns that do not qualify are clubbed together into 'Others' pattern.
          * @param patternThreshold the value to set
          * @return this builder
          **/
@@ -107,13 +107,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+         * A data type has to qualify at least this percentage threshold to be considered an inferred data type for a column.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeThreshold")
         private Integer dataTypeThreshold;
 
         /**
-         * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+         * A data type has to qualify at least this percentage threshold to be considered an inferred data type for a column.
          * @param dataTypeThreshold the value to set
          * @return this builder
          **/
@@ -173,13 +173,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Array of column names to profile. If empty all columns in the entity are profiled.
+     * Array of column names to profile. If empty, all the columns in the entity are profiled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.List<String> attributes;
 
     /**
-     * Array of column names to profile. If empty all columns in the entity are profiled.
+     * Array of column names to profile. If empty, all the columns in the entity are profiled.
      * @return the value
      **/
     public java.util.List<String> getAttributes() {
@@ -239,13 +239,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
         }
     };
     /**
-     * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+     * Array of enum strings to decide which profile functions to run. If empty, all the supported functions are run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<Functions> functions;
 
     /**
-     * Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+     * Array of enum strings to decide which profile functions to run. If empty, all the supported functions are run.
      * @return the value
      **/
     public java.util.List<Functions> getFunctions() {
@@ -253,13 +253,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+     * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency, and ascending on value, and then topN are returned and rest discarded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topNValFreq")
     private final Integer topNValFreq;
 
     /**
-     * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+     * The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency, and ascending on value, and then topN are returned and rest discarded.
      * @return the value
      **/
     public Integer getTopNValFreq() {
@@ -267,13 +267,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+     * A pattern has to qualify at least this percentage threshold to be considered a pattern on its own. Patterns that do not qualify are clubbed together into 'Others' pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patternThreshold")
     private final Integer patternThreshold;
 
     /**
-     * A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+     * A pattern has to qualify at least this percentage threshold to be considered a pattern on its own. Patterns that do not qualify are clubbed together into 'Others' pattern.
      * @return the value
      **/
     public Integer getPatternThreshold() {
@@ -281,13 +281,13 @@ public final class ProfileConfig extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+     * A data type has to qualify at least this percentage threshold to be considered an inferred data type for a column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeThreshold")
     private final Integer dataTypeThreshold;
 
     /**
-     * A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+     * A data type has to qualify at least this percentage threshold to be considered an inferred data type for a column.
      * @return the value
      **/
     public Integer getDataTypeThreshold() {

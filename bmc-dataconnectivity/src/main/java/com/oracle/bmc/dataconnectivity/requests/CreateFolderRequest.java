@@ -14,23 +14,23 @@ public class CreateFolderRequest
                 com.oracle.bmc.dataconnectivity.model.CreateFolderDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * The information needed to create a folder.
+     * The information required to create a folder.
      */
     private com.oracle.bmc.dataconnectivity.model.CreateFolderDetails createFolderDetails;
 
     /**
-     * The information needed to create a folder.
+     * The information required to create a folder.
      */
     public com.oracle.bmc.dataconnectivity.model.CreateFolderDetails getCreateFolderDetails() {
         return createFolderDetails;
@@ -53,13 +53,13 @@ public class CreateFolderRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -85,12 +85,12 @@ public class CreateFolderRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -100,13 +100,13 @@ public class CreateFolderRequest
         }
 
         /**
-         * The information needed to create a folder.
+         * The information required to create a folder.
          */
         private com.oracle.bmc.dataconnectivity.model.CreateFolderDetails createFolderDetails =
                 null;
 
         /**
-         * The information needed to create a folder.
+         * The information required to create a folder.
          * @param createFolderDetails the value to set
          * @return this builder instance
          */
@@ -138,13 +138,13 @@ public class CreateFolderRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

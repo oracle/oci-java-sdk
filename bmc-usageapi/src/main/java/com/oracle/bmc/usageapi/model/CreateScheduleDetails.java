@@ -25,6 +25,9 @@ public final class CreateScheduleDetails
     @java.beans.ConstructorProperties({
         "name",
         "compartmentId",
+        "description",
+        "outputFileFormat",
+        "savedReportId",
         "resultLocation",
         "scheduleRecurrences",
         "timeScheduled",
@@ -35,6 +38,9 @@ public final class CreateScheduleDetails
     public CreateScheduleDetails(
             String name,
             String compartmentId,
+            String description,
+            OutputFileFormat outputFileFormat,
+            String savedReportId,
             ResultLocation resultLocation,
             String scheduleRecurrences,
             java.util.Date timeScheduled,
@@ -44,6 +50,9 @@ public final class CreateScheduleDetails
         super();
         this.name = name;
         this.compartmentId = compartmentId;
+        this.description = description;
+        this.outputFileFormat = outputFileFormat;
+        this.savedReportId = savedReportId;
         this.resultLocation = resultLocation;
         this.scheduleRecurrences = scheduleRecurrences;
         this.timeScheduled = timeScheduled;
@@ -55,13 +64,13 @@ public final class CreateScheduleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique name of the schedule created by the user
+         * The unique name of the user-created schedule.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The unique name of the schedule created by the user
+         * The unique name of the user-created schedule.
          * @param name the value to set
          * @return this builder
          **/
@@ -71,19 +80,67 @@ public final class CreateScheduleDetails
             return this;
         }
         /**
-         * The tenancy of the customer
+         * The customer tenancy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The tenancy of the customer
+         * The customer tenancy.
          * @param compartmentId the value to set
          * @return this builder
          **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The description of the schedule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the schedule.
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Specifies supported output file format.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
+        private OutputFileFormat outputFileFormat;
+
+        /**
+         * Specifies supported output file format.
+         * @param outputFileFormat the value to set
+         * @return this builder
+         **/
+        public Builder outputFileFormat(OutputFileFormat outputFileFormat) {
+            this.outputFileFormat = outputFileFormat;
+            this.__explicitlySet__.add("outputFileFormat");
+            return this;
+        }
+        /**
+         * The saved report id which can also be used to generate query.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
+        private String savedReportId;
+
+        /**
+         * The saved report id which can also be used to generate query.
+         * @param savedReportId the value to set
+         * @return this builder
+         **/
+        public Builder savedReportId(String savedReportId) {
+            this.savedReportId = savedReportId;
+            this.__explicitlySet__.add("savedReportId");
             return this;
         }
 
@@ -96,16 +153,18 @@ public final class CreateScheduleDetails
             return this;
         }
         /**
-         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-         * Describes the frequency of when the schedule will be run
+         * Specifies the frequency according to when the schedule will be run,
+         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
         private String scheduleRecurrences;
 
         /**
-         * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-         * Describes the frequency of when the schedule will be run
+         * Specifies the frequency according to when the schedule will be run,
+         * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          *
          * @param scheduleRecurrences the value to set
          * @return this builder
@@ -116,13 +175,13 @@ public final class CreateScheduleDetails
             return this;
         }
         /**
-         * The date and time of the first time job execution
+         * The date and time of the first time job execution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
-         * The date and time of the first time job execution
+         * The date and time of the first time job execution.
          * @param timeScheduled the value to set
          * @return this builder
          **/
@@ -188,6 +247,9 @@ public final class CreateScheduleDetails
                     new CreateScheduleDetails(
                             this.name,
                             this.compartmentId,
+                            this.description,
+                            this.outputFileFormat,
+                            this.savedReportId,
                             this.resultLocation,
                             this.scheduleRecurrences,
                             this.timeScheduled,
@@ -207,6 +269,15 @@ public final class CreateScheduleDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("outputFileFormat")) {
+                this.outputFileFormat(model.getOutputFileFormat());
+            }
+            if (model.wasPropertyExplicitlySet("savedReportId")) {
+                this.savedReportId(model.getSavedReportId());
             }
             if (model.wasPropertyExplicitlySet("resultLocation")) {
                 this.resultLocation(model.getResultLocation());
@@ -242,13 +313,13 @@ public final class CreateScheduleDetails
     }
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      * @return the value
      **/
     public String getName() {
@@ -256,17 +327,94 @@ public final class CreateScheduleDetails
     }
 
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      * @return the value
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The description of the schedule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the schedule.
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Specifies supported output file format.
+     **/
+    public enum OutputFileFormat {
+        Csv("CSV"),
+        Pdf("PDF"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, OutputFileFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OutputFileFormat v : OutputFileFormat.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        OutputFileFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OutputFileFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid OutputFileFormat: " + key);
+        }
+    };
+    /**
+     * Specifies supported output file format.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("outputFileFormat")
+    private final OutputFileFormat outputFileFormat;
+
+    /**
+     * Specifies supported output file format.
+     * @return the value
+     **/
+    public OutputFileFormat getOutputFileFormat() {
+        return outputFileFormat;
+    }
+
+    /**
+     * The saved report id which can also be used to generate query.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("savedReportId")
+    private final String savedReportId;
+
+    /**
+     * The saved report id which can also be used to generate query.
+     * @return the value
+     **/
+    public String getSavedReportId() {
+        return savedReportId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("resultLocation")
@@ -277,16 +425,18 @@ public final class CreateScheduleDetails
     }
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-     * Describes the frequency of when the schedule will be run
+     * Specifies the frequency according to when the schedule will be run,
+     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleRecurrences")
     private final String scheduleRecurrences;
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-     * Describes the frequency of when the schedule will be run
+     * Specifies the frequency according to when the schedule will be run,
+     * in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      *
      * @return the value
      **/
@@ -295,13 +445,13 @@ public final class CreateScheduleDetails
     }
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      * @return the value
      **/
     public java.util.Date getTimeScheduled() {
@@ -365,6 +515,9 @@ public final class CreateScheduleDetails
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", outputFileFormat=").append(String.valueOf(this.outputFileFormat));
+        sb.append(", savedReportId=").append(String.valueOf(this.savedReportId));
         sb.append(", resultLocation=").append(String.valueOf(this.resultLocation));
         sb.append(", scheduleRecurrences=").append(String.valueOf(this.scheduleRecurrences));
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
@@ -387,6 +540,9 @@ public final class CreateScheduleDetails
         CreateScheduleDetails other = (CreateScheduleDetails) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.outputFileFormat, other.outputFileFormat)
+                && java.util.Objects.equals(this.savedReportId, other.savedReportId)
                 && java.util.Objects.equals(this.resultLocation, other.resultLocation)
                 && java.util.Objects.equals(this.scheduleRecurrences, other.scheduleRecurrences)
                 && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
@@ -404,6 +560,13 @@ public final class CreateScheduleDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outputFileFormat == null ? 43 : this.outputFileFormat.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.savedReportId == null ? 43 : this.savedReportId.hashCode());
         result =
                 (result * PRIME)
                         + (this.resultLocation == null ? 43 : this.resultLocation.hashCode());

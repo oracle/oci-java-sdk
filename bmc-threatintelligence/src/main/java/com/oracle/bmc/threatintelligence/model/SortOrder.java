@@ -7,7 +7,7 @@ package com.oracle.bmc.threatintelligence.model;
 /**
  * Sort orders.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),

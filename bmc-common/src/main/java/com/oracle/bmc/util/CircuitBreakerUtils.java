@@ -38,6 +38,7 @@ public class CircuitBreakerUtils {
     /**
      * Gets the user defined CircuitBreaker
      * @return the user defined CircuitBreaker
+     * @deprecated use getUserDefinedCircuitBreakerConfiguration instead
      */
     @Deprecated
     public static JaxRsCircuitBreaker getUserDefinedCircuitBreaker(

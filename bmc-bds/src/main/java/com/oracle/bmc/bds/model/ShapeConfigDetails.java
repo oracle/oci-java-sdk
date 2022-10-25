@@ -21,11 +21,12 @@ package com.oracle.bmc.bds.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs"})
-    public ShapeConfigDetails(Integer ocpus, Integer memoryInGBs) {
+    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "nvmes"})
+    public ShapeConfigDetails(Integer ocpus, Integer memoryInGBs, Integer nvmes) {
         super();
         this.ocpus = ocpus;
         this.memoryInGBs = memoryInGBs;
+        this.nvmes = nvmes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,13 +48,13 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The total amount of memory available to the node, in gigabytes
+         * The total amount of memory available to the node, in gigabytes.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
         /**
-         * The total amount of memory available to the node, in gigabytes
+         * The total amount of memory available to the node, in gigabytes.
          * @param memoryInGBs the value to set
          * @return this builder
          **/
@@ -62,12 +63,29 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
+        private Integer nvmes;
+
+        /**
+         * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+         * @param nvmes the value to set
+         * @return this builder
+         **/
+        public Builder nvmes(Integer nvmes) {
+            this.nvmes = nvmes;
+            this.__explicitlySet__.add("nvmes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeConfigDetails build() {
-            ShapeConfigDetails model = new ShapeConfigDetails(this.ocpus, this.memoryInGBs);
+            ShapeConfigDetails model =
+                    new ShapeConfigDetails(this.ocpus, this.memoryInGBs, this.nvmes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +99,9 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("nvmes")) {
+                this.nvmes(model.getNvmes());
             }
             return this;
         }
@@ -112,17 +133,31 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The total amount of memory available to the node, in gigabytes
+     * The total amount of memory available to the node, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
     /**
-     * The total amount of memory available to the node, in gigabytes
+     * The total amount of memory available to the node, in gigabytes.
      * @return the value
      **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
+    }
+
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
+    private final Integer nvmes;
+
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * @return the value
+     **/
+    public Integer getNvmes() {
+        return nvmes;
     }
 
     @Override
@@ -141,6 +176,7 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
+        sb.append(", nvmes=").append(String.valueOf(this.nvmes));
         sb.append(")");
         return sb.toString();
     }
@@ -157,6 +193,7 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
         ShapeConfigDetails other = (ShapeConfigDetails) o;
         return java.util.Objects.equals(this.ocpus, other.ocpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
+                && java.util.Objects.equals(this.nvmes, other.nvmes)
                 && super.equals(other);
     }
 
@@ -166,6 +203,7 @@ public final class ShapeConfigDetails extends com.oracle.bmc.http.internal.Expli
         int result = 1;
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
+        result = (result * PRIME) + (this.nvmes == null ? 43 : this.nvmes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

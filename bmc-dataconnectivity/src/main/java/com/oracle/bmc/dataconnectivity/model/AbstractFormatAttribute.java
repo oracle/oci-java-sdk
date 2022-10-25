@@ -37,6 +37,10 @@ package com.oracle.bmc.dataconnectivity.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ParquetFormatAttribute.class,
         name = "PARQUET_FORMAT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExcelFormatAttribute.class,
+        name = "EXCEL_FORMAT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

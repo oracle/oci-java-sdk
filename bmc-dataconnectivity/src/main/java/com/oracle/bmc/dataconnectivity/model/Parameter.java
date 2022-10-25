@@ -113,13 +113,13 @@ public final class Parameter extends TypedObject {
             return this;
         }
         /**
-         * The default value of the parameter which can be an object in DIS, such as a data entity.
+         * The default value of the parameter, which can be an object in DIS, such as a data entity.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootObjectDefaultValue")
         private Object rootObjectDefaultValue;
 
         /**
-         * The default value of the parameter which can be an object in DIS, such as a data entity.
+         * The default value of the parameter, which can be an object in DIS, such as a data entity.
          * @param rootObjectDefaultValue the value to set
          * @return this builder
          **/
@@ -129,13 +129,13 @@ public final class Parameter extends TypedObject {
             return this;
         }
         /**
-         * Specifies whether the parameter is input value.
+         * Specifies whether the parameter is an input value.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInput")
         private Boolean isInput;
 
         /**
-         * Specifies whether the parameter is input value.
+         * Specifies whether the parameter is an input value.
          * @param isInput the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class Parameter extends TypedObject {
             return this;
         }
         /**
-         * Specifies whether the parameter is output value.
+         * Specifies whether the parameter is an output value.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOutput")
         private Boolean isOutput;
 
         /**
-         * Specifies whether the parameter is output value.
+         * Specifies whether the parameter is an output value.
          * @param isOutput the value to set
          * @return this builder
          **/
@@ -326,13 +326,13 @@ public final class Parameter extends TypedObject {
     }
 
     /**
-     * The default value of the parameter which can be an object in DIS, such as a data entity.
+     * The default value of the parameter, which can be an object in DIS, such as a data entity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectDefaultValue")
     private final Object rootObjectDefaultValue;
 
     /**
-     * The default value of the parameter which can be an object in DIS, such as a data entity.
+     * The default value of the parameter, which can be an object in DIS, such as a data entity.
      * @return the value
      **/
     public Object getRootObjectDefaultValue() {
@@ -340,13 +340,13 @@ public final class Parameter extends TypedObject {
     }
 
     /**
-     * Specifies whether the parameter is input value.
+     * Specifies whether the parameter is an input value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInput")
     private final Boolean isInput;
 
     /**
-     * Specifies whether the parameter is input value.
+     * Specifies whether the parameter is an input value.
      * @return the value
      **/
     public Boolean getIsInput() {
@@ -354,13 +354,13 @@ public final class Parameter extends TypedObject {
     }
 
     /**
-     * Specifies whether the parameter is output value.
+     * Specifies whether the parameter is an output value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutput")
     private final Boolean isOutput;
 
     /**
-     * Specifies whether the parameter is output value.
+     * Specifies whether the parameter is an output value.
      * @return the value
      **/
     public Boolean getIsOutput() {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Validation Result object for a single DataAsset.
+ * Validation result object for a single data asset.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,13 @@ public final class ValidationResult extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Error text for validation failure
+         * Error text for validation failure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMsg")
         private String errorMsg;
 
         /**
-         * Error text for validation failure
+         * Error text for validation failure.
          * @param errorMsg the value to set
          * @return this builder
          **/
@@ -45,13 +45,13 @@ public final class ValidationResult extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Status of the validatio result execution
+         * Status of the validation result execution.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of the validatio result execution
+         * Status of the validation result execution.
          * @param status the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class ValidationResult extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Error text for validation failure
+     * Error text for validation failure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMsg")
     private final String errorMsg;
 
     /**
-     * Error text for validation failure
+     * Error text for validation failure.
      * @return the value
      **/
     public String getErrorMsg() {
@@ -110,7 +110,7 @@ public final class ValidationResult extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Status of the validatio result execution
+     * Status of the validation result execution.
      **/
     public enum Status {
         Error("ERROR"),
@@ -157,13 +157,13 @@ public final class ValidationResult extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * Status of the validatio result execution
+     * Status of the validation result execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of the validatio result execution
+     * Status of the validation result execution.
      * @return the value
      **/
     public Status getStatus() {

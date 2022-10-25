@@ -29,7 +29,10 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         "freeformTags",
         "definedTags",
         "lifecycleState",
-        "stateMessage"
+        "stateMessage",
+        "endpointName",
+        "endpointId",
+        "registryId"
     })
     public WorkspaceSummary(
             String id,
@@ -41,7 +44,10 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             LifecycleState lifecycleState,
-            String stateMessage) {
+            String stateMessage,
+            String endpointName,
+            String endpointId,
+            String registryId) {
         super();
         this.id = id;
         this.description = description;
@@ -53,6 +59,9 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         this.definedTags = definedTags;
         this.lifecycleState = lifecycleState;
         this.stateMessage = stateMessage;
+        this.endpointName = endpointName;
+        this.endpointId = endpointId;
+        this.registryId = registryId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -230,6 +239,54 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
+        /**
+         * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
+        private String endpointName;
+
+        /**
+         * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+         * @param endpointName the value to set
+         * @return this builder
+         **/
+        public Builder endpointName(String endpointName) {
+            this.endpointName = endpointName;
+            this.__explicitlySet__.add("endpointName");
+            return this;
+        }
+        /**
+         * DCMS endpoint associated with the container/workspace. Returns null if there is none.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * DCMS endpoint associated with the container/workspace. Returns null if there is none.
+         * @param endpointId the value to set
+         * @return this builder
+         **/
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
+        /**
+         * DCMS registry associated with the container/workspace. Returns null if there is none.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("registryId")
+        private String registryId;
+
+        /**
+         * DCMS registry associated with the container/workspace. Returns null if there is none.
+         * @param registryId the value to set
+         * @return this builder
+         **/
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
+            this.__explicitlySet__.add("registryId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -246,7 +303,10 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
                             this.freeformTags,
                             this.definedTags,
                             this.lifecycleState,
-                            this.stateMessage);
+                            this.stateMessage,
+                            this.endpointName,
+                            this.endpointId,
+                            this.registryId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -284,6 +344,15 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("stateMessage")) {
                 this.stateMessage(model.getStateMessage());
+            }
+            if (model.wasPropertyExplicitlySet("endpointName")) {
+                this.endpointName(model.getEndpointName());
+            }
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("registryId")) {
+                this.registryId(model.getRegistryId());
             }
             return this;
         }
@@ -508,6 +577,48 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         return stateMessage;
     }
 
+    /**
+     * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
+    private final String endpointName;
+
+    /**
+     * Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+     * @return the value
+     **/
+    public String getEndpointName() {
+        return endpointName;
+    }
+
+    /**
+     * DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * DCMS endpoint associated with the container/workspace. Returns null if there is none.
+     * @return the value
+     **/
+    public String getEndpointId() {
+        return endpointId;
+    }
+
+    /**
+     * DCMS registry associated with the container/workspace. Returns null if there is none.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("registryId")
+    private final String registryId;
+
+    /**
+     * DCMS registry associated with the container/workspace. Returns null if there is none.
+     * @return the value
+     **/
+    public String getRegistryId() {
+        return registryId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -532,6 +643,9 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
+        sb.append(", endpointName=").append(String.valueOf(this.endpointName));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", registryId=").append(String.valueOf(this.registryId));
         sb.append(")");
         return sb.toString();
     }
@@ -556,6 +670,9 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
+                && java.util.Objects.equals(this.endpointName, other.endpointName)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.registryId, other.registryId)
                 && super.equals(other);
     }
 
@@ -577,6 +694,9 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
+        result = (result * PRIME) + (this.endpointName == null ? 43 : this.endpointName.hashCode());
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

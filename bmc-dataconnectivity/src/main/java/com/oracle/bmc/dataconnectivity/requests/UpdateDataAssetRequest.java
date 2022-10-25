@@ -14,12 +14,12 @@ public class UpdateDataAssetRequest
                 com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -36,12 +36,12 @@ public class UpdateDataAssetRequest
         return dataAssetKey;
     }
     /**
-     * The information needed to update a data asset.
+     * The information required to update a data asset.
      */
     private com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails updateDataAssetDetails;
 
     /**
-     * The information needed to update a data asset.
+     * The information required to update a data asset.
      */
     public com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails
             getUpdateDataAssetDetails() {
@@ -101,12 +101,12 @@ public class UpdateDataAssetRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -131,13 +131,13 @@ public class UpdateDataAssetRequest
         }
 
         /**
-         * The information needed to update a data asset.
+         * The information required to update a data asset.
          */
         private com.oracle.bmc.dataconnectivity.model.UpdateDataAssetDetails
                 updateDataAssetDetails = null;
 
         /**
-         * The information needed to update a data asset.
+         * The information required to update a data asset.
          * @param updateDataAssetDetails the value to set
          * @return this builder instance
          */

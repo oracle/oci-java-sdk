@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The location where usage/cost CSVs will be uploaded defined by {@code locationType},
+ * The location where usage or cost CSVs will be uploaded defined by {@code locationType},
  * which corresponds with type-specific characteristics.
  *
  * <br/>
@@ -77,7 +77,7 @@ public class ResultLocation extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Defines the type of location where the usage/cost CSVs will be stored
+     * Defines the type of location where the usage or cost CSVs will be stored.
      *
      **/
     public enum LocationType {

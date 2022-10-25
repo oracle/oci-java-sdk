@@ -22,11 +22,13 @@ package com.oracle.bmc.dataintegration.model;
 public final class CreateSourceApplicationInfo
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"workspaceId", "applicationKey"})
-    public CreateSourceApplicationInfo(String workspaceId, String applicationKey) {
+    @java.beans.ConstructorProperties({"workspaceId", "applicationKey", "copyType"})
+    public CreateSourceApplicationInfo(
+            String workspaceId, String applicationKey, CopyType copyType) {
         super();
         this.workspaceId = workspaceId;
         this.applicationKey = applicationKey;
+        this.copyType = copyType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,13 +65,30 @@ public final class CreateSourceApplicationInfo
             this.__explicitlySet__.add("applicationKey");
             return this;
         }
+        /**
+         * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("copyType")
+        private CopyType copyType;
+
+        /**
+         * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+         * @param copyType the value to set
+         * @return this builder
+         **/
+        public Builder copyType(CopyType copyType) {
+            this.copyType = copyType;
+            this.__explicitlySet__.add("copyType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSourceApplicationInfo build() {
             CreateSourceApplicationInfo model =
-                    new CreateSourceApplicationInfo(this.workspaceId, this.applicationKey);
+                    new CreateSourceApplicationInfo(
+                            this.workspaceId, this.applicationKey, this.copyType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +102,9 @@ public final class CreateSourceApplicationInfo
             }
             if (model.wasPropertyExplicitlySet("applicationKey")) {
                 this.applicationKey(model.getApplicationKey());
+            }
+            if (model.wasPropertyExplicitlySet("copyType")) {
+                this.copyType(model.getCopyType());
             }
             return this;
         }
@@ -127,6 +149,55 @@ public final class CreateSourceApplicationInfo
         return applicationKey;
     }
 
+    /**
+     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+     **/
+    public enum CopyType {
+        Connected("CONNECTED"),
+        Disconnected("DISCONNECTED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CopyType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CopyType v : CopyType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CopyType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CopyType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CopyType: " + key);
+        }
+    };
+    /**
+     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("copyType")
+    private final CopyType copyType;
+
+    /**
+     * Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+     * @return the value
+     **/
+    public CopyType getCopyType() {
+        return copyType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -143,6 +214,7 @@ public final class CreateSourceApplicationInfo
         sb.append("super=").append(super.toString());
         sb.append("workspaceId=").append(String.valueOf(this.workspaceId));
         sb.append(", applicationKey=").append(String.valueOf(this.applicationKey));
+        sb.append(", copyType=").append(String.valueOf(this.copyType));
         sb.append(")");
         return sb.toString();
     }
@@ -159,6 +231,7 @@ public final class CreateSourceApplicationInfo
         CreateSourceApplicationInfo other = (CreateSourceApplicationInfo) o;
         return java.util.Objects.equals(this.workspaceId, other.workspaceId)
                 && java.util.Objects.equals(this.applicationKey, other.applicationKey)
+                && java.util.Objects.equals(this.copyType, other.copyType)
                 && super.equals(other);
     }
 
@@ -170,6 +243,7 @@ public final class CreateSourceApplicationInfo
         result =
                 (result * PRIME)
                         + (this.applicationKey == null ? 43 : this.applicationKey.hashCode());
+        result = (result * PRIME) + (this.copyType == null ? 43 : this.copyType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

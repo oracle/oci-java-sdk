@@ -31,13 +31,13 @@ public final class CreateAttachDataAssetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of DataAsset keys
+         * The array of DataAsset keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
         private java.util.List<DataAsset> dataAssets;
 
         /**
-         * The array of DataAsset keys
+         * The array of DataAsset keys.
          * @param dataAssets the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class CreateAttachDataAssetDetails
     }
 
     /**
-     * The array of DataAsset keys
+     * The array of DataAsset keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
     private final java.util.List<DataAsset> dataAssets;
 
     /**
-     * The array of DataAsset keys
+     * The array of DataAsset keys.
      * @return the value
      **/
     public java.util.List<DataAsset> getDataAssets() {

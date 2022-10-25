@@ -43,8 +43,16 @@ package com.oracle.bmc.dataintegration.model;
         name = "AMAZON_S3_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataAssetFromRest.class,
+        name = "REST_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDataAssetFromFusionApp.class,
         name = "FUSION_APP_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataAssetFromLakehouse.class,
+        name = "LAKE_HOUSE_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDataAssetFromAtp.class,
@@ -292,6 +300,8 @@ public class CreateDataAssetDetails extends com.oracle.bmc.http.internal.Explici
         GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
+        LakeHouseDataAsset("LAKE_HOUSE_DATA_ASSET"),
+        RestDataAsset("REST_DATA_ASSET"),
         ;
 
         private final String value;

@@ -204,6 +204,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
         /**
          * Platform type.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
          * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          **/
@@ -213,6 +214,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
         /**
          * Platform type.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
          * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param platformType the value to set
@@ -433,6 +435,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
@@ -486,6 +489,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
@@ -495,6 +499,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      * @return the value

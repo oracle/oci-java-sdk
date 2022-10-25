@@ -8,7 +8,8 @@ import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
 
 /**
- * API for the File Storage service. Use this API to manage file systems, mount targets, and snapshots. For more information, see [Overview of File Storage](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm).
+ * Use the File Storage service API to manage file systems, mount targets, and snapshots.
+ * For more information, see [Overview of File Storage](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -80,6 +81,21 @@ public interface FileStorage extends AutoCloseable {
      */
     ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request);
+
+    /**
+     * Moves a replication and its replication target into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeReplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeReplicationCompartment API.
+     */
+    ChangeReplicationCompartmentResponse changeReplicationCompartment(
+            ChangeReplicationCompartmentRequest request);
 
     /**
      * Creates a new export in the specified export set, path, and
@@ -181,6 +197,45 @@ public interface FileStorage extends AutoCloseable {
     CreateMountTargetResponse createMountTarget(CreateMountTargetRequest request);
 
     /**
+     * Creates a new replication in the specified compartment.
+     * Replications are the primary resource that governs the policy of cross-region replication between source
+     * and target file systems. Replications are associated with a secondary resource called a {@link ReplicationTarget}
+     * located in another availability domain.
+     * The associated replication target resource is automatically created along with the replication resource.
+     * The replication retrieves the delta of data between two snapshots of a source file system
+     * and sends it to the associated `ReplicationTarget`, which retrieves the delta and applies it to the target
+     * file system.
+     * Only unexported file systems can be used as target file systems.
+     * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
+     * <p>
+     * For information about access control and compartments, see
+     * [Overview of the IAM
+     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * <p>
+     * For information about availability domains, see [Regions and
+     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * To get a list of availability domains, use the
+     * `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
+     * <p>
+     * All Oracle Cloud Infrastructure Services resources, including
+     * replications, get an Oracle-assigned, unique ID called an
+     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * When you create a resource, you can find its OCID in the response.
+     * You can also retrieve a resource's OCID by using a List API operation on that resource
+     * type, or by viewing the resource in the Console.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplication API.
+     */
+    CreateReplicationResponse createReplication(CreateReplicationRequest request);
+
+    /**
      * Creates a new snapshot of the specified file system. You
      * can access the snapshot at `.snapshot/<name>`.
      *
@@ -237,6 +292,35 @@ public interface FileStorage extends AutoCloseable {
     DeleteMountTargetResponse deleteMountTarget(DeleteMountTargetRequest request);
 
     /**
+     * Deletes the specified replication and the the associated replication target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplication API.
+     */
+    DeleteReplicationResponse deleteReplication(DeleteReplicationRequest request);
+
+    /**
+     * Deletes the specified replication target.
+     * This operation causes the immediate release of the target file system if there are currently no delta application operations.
+     * If there is any current delta being applied the delete operation is blocked until the current
+     * delta has been completely applied.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteReplicationTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationTarget API.
+     */
+    DeleteReplicationTargetResponse deleteReplicationTarget(DeleteReplicationTargetRequest request);
+
+    /**
      * Deletes the specified snapshot.
      *
      * @param request The request object containing the details to send
@@ -248,6 +332,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSnapshot API.
      */
     DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request);
+
+    /**
+     * Provides estimates for replication created using specific file system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/EstimateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EstimateReplication API.
+     */
+    EstimateReplicationResponse estimateReplication(EstimateReplicationRequest request);
 
     /**
      * Gets the specified export's information.
@@ -296,6 +393,30 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMountTarget API.
      */
     GetMountTargetResponse getMountTarget(GetMountTargetRequest request);
+
+    /**
+     * Gets the specified replication's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplication API.
+     */
+    GetReplicationResponse getReplication(GetReplicationRequest request);
+
+    /**
+     * Gets the specified replication target's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetReplicationTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationTarget API.
+     */
+    GetReplicationTargetResponse getReplicationTarget(GetReplicationTargetRequest request);
 
     /**
      * Gets the specified snapshot's information.
@@ -364,6 +485,32 @@ public interface FileStorage extends AutoCloseable {
     ListMountTargetsResponse listMountTargets(ListMountTargetsRequest request);
 
     /**
+     * Lists the replication target resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListReplicationTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationTargets API.
+     */
+    ListReplicationTargetsResponse listReplicationTargets(ListReplicationTargetsRequest request);
+
+    /**
+     * Lists the replication resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListReplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplications API.
+     */
+    ListReplicationsResponse listReplications(ListReplicationsRequest request);
+
+    /**
      * Lists snapshots of the specified file system.
      *
      * @param request The request object containing the details to send
@@ -425,6 +572,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMountTarget API.
      */
     UpdateMountTargetResponse updateMountTarget(UpdateMountTargetRequest request);
+
+    /**
+     * Updates the information for the specified replication and its associated replication target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReplication API.
+     */
+    UpdateReplicationResponse updateReplication(UpdateReplicationRequest request);
 
     /**
      * Updates the specified snapshot's information.

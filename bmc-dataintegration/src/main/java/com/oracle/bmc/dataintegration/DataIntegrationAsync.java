@@ -1148,6 +1148,38 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a runtime operator using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRuntimeOperatorResponse> getRuntimeOperator(
+            GetRuntimeOperatorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>
+                    handler);
+
+    /**
+     * Retrieves a runtime pipeline using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRuntimePipelineResponse> getRuntimePipeline(
+            GetRuntimePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRuntimePipelineRequest, GetRuntimePipelineResponse>
+                    handler);
+
+    /**
      * Retrieves schedule by schedule key
      *
      * @param request The request object containing the details to send
@@ -1426,6 +1458,25 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This endpoint can be used to list Task Run Lineages within a given time window.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDisApplicationTaskRunLineagesResponse>
+            listDisApplicationTaskRunLineages(
+                    ListDisApplicationTaskRunLineagesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDisApplicationTaskRunLineagesRequest,
+                                    ListDisApplicationTaskRunLineagesResponse>
+                            handler);
+
+    /**
      * Retrieves a list of DIS Applications in a compartment and provides options to filter the list.
      *
      * @param request The request object containing the details to send
@@ -1617,6 +1668,40 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This endpoint can be used to list runtime operators with filtering options
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRuntimeOperatorsResponse> listRuntimeOperators(
+            ListRuntimeOperatorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>
+                    handler);
+
+    /**
+     * This endpoint can be used to list runtime pipelines with filtering options
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRuntimePipelinesResponse> listRuntimePipelines(
+            ListRuntimePipelinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>
+                    handler);
+
+    /**
      * Use this endpoint to list schedules.
      *
      *
@@ -1645,6 +1730,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<ListSchemasResponse> listSchemas(
             ListSchemasRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse> handler);
+
+    /**
+     * This endpoint can be used to list Task Run Lineages within a given time window.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTaskRunLineagesResponse> listTaskRunLineages(
+            ListTaskRunLineagesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>
+                    handler);
 
     /**
      * Gets log entries for task runs using its key.

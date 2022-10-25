@@ -37,6 +37,10 @@ public final class LogAnalyticsObjectCollectionRule
         "logSourceName",
         "entityId",
         "charEncoding",
+        "timezone",
+        "logSet",
+        "logSetKey",
+        "logSetExtRegex",
         "overrides",
         "lifecycleState",
         "lifecycleDetails",
@@ -61,6 +65,10 @@ public final class LogAnalyticsObjectCollectionRule
             String logSourceName,
             String entityId,
             String charEncoding,
+            String timezone,
+            String logSet,
+            LogSetKeyTypes logSetKey,
+            String logSetExtRegex,
             java.util.Map<String, java.util.List<PropertyOverride>> overrides,
             ObjectCollectionRuleLifecycleStates lifecycleState,
             String lifecycleDetails,
@@ -84,6 +92,10 @@ public final class LogAnalyticsObjectCollectionRule
         this.logSourceName = logSourceName;
         this.entityId = entityId;
         this.charEncoding = charEncoding;
+        this.timezone = timezone;
+        this.logSet = logSet;
+        this.logSetKey = logSetKey;
+        this.logSetExtRegex = logSetExtRegex;
         this.overrides = overrides;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -332,6 +344,88 @@ public final class LogAnalyticsObjectCollectionRule
             return this;
         }
         /**
+         * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.
+         * When this property is not specified, the timezone of the entity specified is used.
+         * If the entity is also not specified or do not have a valid timezone then UTC is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timezone")
+        private String timezone;
+
+        /**
+         * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.
+         * When this property is not specified, the timezone of the entity specified is used.
+         * If the entity is also not specified or do not have a valid timezone then UTC is used.
+         *
+         * @param timezone the value to set
+         * @return this builder
+         **/
+        public Builder timezone(String timezone) {
+            this.timezone = timezone;
+            this.__explicitlySet__.add("timezone");
+            return this;
+        }
+        /**
+         * The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data
+         * and this feature has to be enabled for a given tenancy prior to its usage.
+         * When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically
+         * using logSetKey and logSetExtRegex.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSet")
+        private String logSet;
+
+        /**
+         * The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data
+         * and this feature has to be enabled for a given tenancy prior to its usage.
+         * When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically
+         * using logSetKey and logSetExtRegex.
+         *
+         * @param logSet the value to set
+         * @return this builder
+         **/
+        public Builder logSet(String logSet) {
+            this.logSet = logSet;
+            this.__explicitlySet__.add("logSet");
+            return this;
+        }
+        /**
+         * An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSetKey")
+        private LogSetKeyTypes logSetKey;
+
+        /**
+         * An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+         *
+         * @param logSetKey the value to set
+         * @return this builder
+         **/
+        public Builder logSetKey(LogSetKeyTypes logSetKey) {
+            this.logSetKey = logSetKey;
+            this.__explicitlySet__.add("logSetKey");
+            return this;
+        }
+        /**
+         * The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSetExtRegex")
+        private String logSetExtRegex;
+
+        /**
+         * The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+         *
+         * @param logSetExtRegex the value to set
+         * @return this builder
+         **/
+        public Builder logSetExtRegex(String logSetExtRegex) {
+            this.logSetExtRegex = logSetExtRegex;
+            this.__explicitlySet__.add("logSetExtRegex");
+            return this;
+        }
+        /**
          * Use this to override some property values which are defined at bucket level to the scope of object.
          * Supported propeties for override are: logSourceName, charEncoding, entityId.
          * Supported matchType for override are "contains".
@@ -521,6 +615,10 @@ public final class LogAnalyticsObjectCollectionRule
                             this.logSourceName,
                             this.entityId,
                             this.charEncoding,
+                            this.timezone,
+                            this.logSet,
+                            this.logSetKey,
+                            this.logSetExtRegex,
                             this.overrides,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -576,6 +674,18 @@ public final class LogAnalyticsObjectCollectionRule
             }
             if (model.wasPropertyExplicitlySet("charEncoding")) {
                 this.charEncoding(model.getCharEncoding());
+            }
+            if (model.wasPropertyExplicitlySet("timezone")) {
+                this.timezone(model.getTimezone());
+            }
+            if (model.wasPropertyExplicitlySet("logSet")) {
+                this.logSet(model.getLogSet());
+            }
+            if (model.wasPropertyExplicitlySet("logSetKey")) {
+                this.logSetKey(model.getLogSetKey());
+            }
+            if (model.wasPropertyExplicitlySet("logSetExtRegex")) {
+                this.logSetExtRegex(model.getLogSetExtRegex());
             }
             if (model.wasPropertyExplicitlySet("overrides")) {
                 this.overrides(model.getOverrides());
@@ -828,6 +938,80 @@ public final class LogAnalyticsObjectCollectionRule
     }
 
     /**
+     * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.
+     * When this property is not specified, the timezone of the entity specified is used.
+     * If the entity is also not specified or do not have a valid timezone then UTC is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timezone")
+    private final String timezone;
+
+    /**
+     * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.
+     * When this property is not specified, the timezone of the entity specified is used.
+     * If the entity is also not specified or do not have a valid timezone then UTC is used.
+     *
+     * @return the value
+     **/
+    public String getTimezone() {
+        return timezone;
+    }
+
+    /**
+     * The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data
+     * and this feature has to be enabled for a given tenancy prior to its usage.
+     * When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically
+     * using logSetKey and logSetExtRegex.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSet")
+    private final String logSet;
+
+    /**
+     * The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data
+     * and this feature has to be enabled for a given tenancy prior to its usage.
+     * When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically
+     * using logSetKey and logSetExtRegex.
+     *
+     * @return the value
+     **/
+    public String getLogSet() {
+        return logSet;
+    }
+
+    /**
+     * An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSetKey")
+    private final LogSetKeyTypes logSetKey;
+
+    /**
+     * An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+     *
+     * @return the value
+     **/
+    public LogSetKeyTypes getLogSetKey() {
+        return logSetKey;
+    }
+
+    /**
+     * The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSetExtRegex")
+    private final String logSetExtRegex;
+
+    /**
+     * The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     *
+     * @return the value
+     **/
+    public String getLogSetExtRegex() {
+        return logSetExtRegex;
+    }
+
+    /**
      * Use this to override some property values which are defined at bucket level to the scope of object.
      * Supported propeties for override are: logSourceName, charEncoding, entityId.
      * Supported matchType for override are "contains".
@@ -1004,6 +1188,10 @@ public final class LogAnalyticsObjectCollectionRule
         sb.append(", logSourceName=").append(String.valueOf(this.logSourceName));
         sb.append(", entityId=").append(String.valueOf(this.entityId));
         sb.append(", charEncoding=").append(String.valueOf(this.charEncoding));
+        sb.append(", timezone=").append(String.valueOf(this.timezone));
+        sb.append(", logSet=").append(String.valueOf(this.logSet));
+        sb.append(", logSetKey=").append(String.valueOf(this.logSetKey));
+        sb.append(", logSetExtRegex=").append(String.valueOf(this.logSetExtRegex));
         sb.append(", overrides=").append(String.valueOf(this.overrides));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -1040,6 +1228,10 @@ public final class LogAnalyticsObjectCollectionRule
                 && java.util.Objects.equals(this.logSourceName, other.logSourceName)
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.charEncoding, other.charEncoding)
+                && java.util.Objects.equals(this.timezone, other.timezone)
+                && java.util.Objects.equals(this.logSet, other.logSet)
+                && java.util.Objects.equals(this.logSetKey, other.logSetKey)
+                && java.util.Objects.equals(this.logSetExtRegex, other.logSetExtRegex)
                 && java.util.Objects.equals(this.overrides, other.overrides)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -1075,6 +1267,12 @@ public final class LogAnalyticsObjectCollectionRule
                         + (this.logSourceName == null ? 43 : this.logSourceName.hashCode());
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.charEncoding == null ? 43 : this.charEncoding.hashCode());
+        result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
+        result = (result * PRIME) + (this.logSet == null ? 43 : this.logSet.hashCode());
+        result = (result * PRIME) + (this.logSetKey == null ? 43 : this.logSetKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.logSetExtRegex == null ? 43 : this.logSetExtRegex.hashCode());
         result = (result * PRIME) + (this.overrides == null ? 43 : this.overrides.hashCode());
         result =
                 (result * PRIME)

@@ -478,6 +478,116 @@ public class DataFlowPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listStatements operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListStatementsResponse> listStatementsResponseIterator(
+            final ListStatementsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStatementsRequest.Builder, ListStatementsRequest, ListStatementsResponse>(
+                new java.util.function.Supplier<ListStatementsRequest.Builder>() {
+                    @Override
+                    public ListStatementsRequest.Builder get() {
+                        return ListStatementsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStatementsResponse, String>() {
+                    @Override
+                    public String apply(ListStatementsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStatementsRequest.Builder>,
+                        ListStatementsRequest>() {
+                    @Override
+                    public ListStatementsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStatementsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStatementsRequest, ListStatementsResponse>() {
+                    @Override
+                    public ListStatementsResponse apply(ListStatementsRequest request) {
+                        return client.listStatements(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataflow.model.StatementSummary} objects
+     * contained in responses from the listStatements operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataflow.model.StatementSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataflow.model.StatementSummary> listStatementsRecordIterator(
+            final ListStatementsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStatementsRequest.Builder, ListStatementsRequest, ListStatementsResponse,
+                com.oracle.bmc.dataflow.model.StatementSummary>(
+                new java.util.function.Supplier<ListStatementsRequest.Builder>() {
+                    @Override
+                    public ListStatementsRequest.Builder get() {
+                        return ListStatementsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStatementsResponse, String>() {
+                    @Override
+                    public String apply(ListStatementsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStatementsRequest.Builder>,
+                        ListStatementsRequest>() {
+                    @Override
+                    public ListStatementsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStatementsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStatementsRequest, ListStatementsResponse>() {
+                    @Override
+                    public ListStatementsResponse apply(ListStatementsRequest request) {
+                        return client.listStatements(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStatementsResponse,
+                        java.util.List<com.oracle.bmc.dataflow.model.StatementSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataflow.model.StatementSummary> apply(
+                            ListStatementsResponse response) {
+                        return response.getStatementCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

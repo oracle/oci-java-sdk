@@ -77,13 +77,13 @@ public final class ConfigParameterDefinition
             return this;
         }
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          * @param description the value to set
          * @return this builder
          **/
@@ -125,13 +125,13 @@ public final class ConfigParameterDefinition
             return this;
         }
         /**
-         * Specifies whether the parameter is static or not.
+         * Specifies whether the parameter is static.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStatic")
         private Boolean isStatic;
 
         /**
-         * Specifies whether the parameter is static or not.
+         * Specifies whether the parameter is static.
          * @param isStatic the value to set
          * @return this builder
          **/
@@ -141,13 +141,13 @@ public final class ConfigParameterDefinition
             return this;
         }
         /**
-         * Specifies whether the parameter is a class field or not.
+         * Specifies whether the parameter is a class field.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClassFieldValue")
         private Boolean isClassFieldValue;
 
         /**
-         * Specifies whether the parameter is a class field or not.
+         * Specifies whether the parameter is a class field.
          * @param isClassFieldValue the value to set
          * @return this builder
          **/
@@ -236,13 +236,13 @@ public final class ConfigParameterDefinition
     }
 
     /**
-     * A user defined description for the object.
+     * A user-defined description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user defined description for the object.
+     * A user-defined description for the object.
      * @return the value
      **/
     public String getDescription() {
@@ -278,13 +278,13 @@ public final class ConfigParameterDefinition
     }
 
     /**
-     * Specifies whether the parameter is static or not.
+     * Specifies whether the parameter is static.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStatic")
     private final Boolean isStatic;
 
     /**
-     * Specifies whether the parameter is static or not.
+     * Specifies whether the parameter is static.
      * @return the value
      **/
     public Boolean getIsStatic() {
@@ -292,13 +292,13 @@ public final class ConfigParameterDefinition
     }
 
     /**
-     * Specifies whether the parameter is a class field or not.
+     * Specifies whether the parameter is a class field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClassFieldValue")
     private final Boolean isClassFieldValue;
 
     /**
-     * Specifies whether the parameter is a class field or not.
+     * Specifies whether the parameter is a class field.
      * @return the value
      **/
     public Boolean getIsClassFieldValue() {

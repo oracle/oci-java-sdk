@@ -160,6 +160,22 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateRunRequest, CreateRunResponse> handler);
 
     /**
+     * Executes a statement for a Session run.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateStatementResponse> createStatement(
+            CreateStatementRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateStatementRequest, CreateStatementResponse>
+                    handler);
+
+    /**
      * Deletes an application using an `applicationId`.
      *
      *
@@ -208,6 +224,22 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteRunResponse> deleteRun(
             DeleteRunRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteRunRequest, DeleteRunResponse> handler);
+
+    /**
+     * Cancels the specified statement for a Session run.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteStatementResponse> deleteStatement(
+            DeleteStatementRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteStatementRequest, DeleteStatementResponse>
+                    handler);
 
     /**
      * Retrieves an application using an `applicationId`.
@@ -271,6 +303,22 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<GetRunLogResponse> getRunLog(
             GetRunLogRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetRunLogRequest, GetRunLogResponse> handler);
+
+    /**
+     * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStatementResponse> getStatement(
+            GetStatementRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetStatementRequest, GetStatementResponse>
+                    handler);
 
     /**
      * Gets the status of the work request with the given OCID.
@@ -350,6 +398,22 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<ListRunsResponse> listRuns(
             ListRunsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListRunsRequest, ListRunsResponse> handler);
+
+    /**
+     * Lists all statements for a Session run.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStatementsResponse> listStatements(
+            ListStatementsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListStatementsRequest, ListStatementsResponse>
+                    handler);
 
     /**
      * Return a (paginated) list of errors for a given work request.

@@ -39,6 +39,10 @@ package com.oracle.bmc.dataconnectivity.model;
         name = "DATA_STORE_ENTITY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataEntityFromMessageEntityDetails.class,
+        name = "MESSAGE_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataEntityFromTableEntityDetails.class,
         name = "TABLE_ENTITY"
     )
@@ -99,6 +103,8 @@ public class DataEntityDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         FileEntity("FILE_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        DerivedEntity("DERIVED_ENTITY"),
+        MessageEntity("MESSAGE_ENTITY"),
         ;
 
         private final String value;
