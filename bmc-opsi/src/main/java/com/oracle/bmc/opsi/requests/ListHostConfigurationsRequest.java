@@ -63,6 +63,7 @@ public class ListHostConfigurationsRequest
     /**
      * Filter by one or more platform types.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      */
@@ -71,6 +72,7 @@ public class ListHostConfigurationsRequest
     /**
      * Filter by one or more platform types.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
@@ -112,6 +114,7 @@ public class ListHostConfigurationsRequest
     /**
      * Filter by one or more platform types.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
      * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      */
@@ -448,6 +451,7 @@ public class ListHostConfigurationsRequest
         /**
          * Filter by one or more platform types.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
          * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          */
@@ -456,6 +460,7 @@ public class ListHostConfigurationsRequest
         /**
          * Filter by one or more platform types.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
          * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param platformType the value to set
@@ -469,6 +474,7 @@ public class ListHostConfigurationsRequest
         /**
          * Singular setter. Filter by one or more platform types.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
          * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param singularValue the singular value to set

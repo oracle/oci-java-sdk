@@ -19,13 +19,28 @@ package com.oracle.bmc.database.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"hostname", "ip", "vipHostname", "vip"})
-    public NodeDetails(String hostname, String ip, String vipHostname, String vip) {
+    @java.beans.ConstructorProperties({
+        "hostname",
+        "ip",
+        "vipHostname",
+        "vip",
+        "lifecycleState",
+        "dbServerId"
+    })
+    public NodeDetails(
+            String hostname,
+            String ip,
+            String vipHostname,
+            String vip,
+            LifecycleState lifecycleState,
+            String dbServerId) {
         super();
         this.hostname = hostname;
         this.ip = ip;
         this.vipHostname = vipHostname;
         this.vip = vip;
+        this.lifecycleState = lifecycleState;
+        this.dbServerId = dbServerId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -94,12 +109,73 @@ public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("vip");
             return this;
         }
+        /**
+         * The current state of the VM cluster network nodes.
+         * CREATING - The resource is being created
+         * REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated.
+         * VALIDATING - The resource is being validated and not available to use.
+         * VALIDATED - The resource is validated and is available for consumption by VM cluster.
+         * VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected.
+         * UPDATING - The resource is being updated and not available to use.
+         * ALLOCATED - The resource is currently being used by VM cluster.
+         * TERMINATING - The resource is being deleted and not available to use.
+         * TERMINATED - The resource is deleted and unavailable.
+         * FAILED - The resource is in a failed state due to validation or other errors.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        /**
+         * The current state of the VM cluster network nodes.
+         * CREATING - The resource is being created
+         * REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated.
+         * VALIDATING - The resource is being validated and not available to use.
+         * VALIDATED - The resource is validated and is available for consumption by VM cluster.
+         * VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected.
+         * UPDATING - The resource is being updated and not available to use.
+         * ALLOCATED - The resource is currently being used by VM cluster.
+         * TERMINATING - The resource is being deleted and not available to use.
+         * TERMINATED - The resource is deleted and unavailable.
+         * FAILED - The resource is in a failed state due to validation or other errors.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * The Db server associated with the node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
+        private String dbServerId;
+
+        /**
+         * The Db server associated with the node.
+         * @param dbServerId the value to set
+         * @return this builder
+         **/
+        public Builder dbServerId(String dbServerId) {
+            this.dbServerId = dbServerId;
+            this.__explicitlySet__.add("dbServerId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeDetails build() {
-            NodeDetails model = new NodeDetails(this.hostname, this.ip, this.vipHostname, this.vip);
+            NodeDetails model =
+                    new NodeDetails(
+                            this.hostname,
+                            this.ip,
+                            this.vipHostname,
+                            this.vip,
+                            this.lifecycleState,
+                            this.dbServerId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -119,6 +195,12 @@ public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("vip")) {
                 this.vip(model.getVip());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("dbServerId")) {
+                this.dbServerId(model.getDbServerId());
             }
             return this;
         }
@@ -191,6 +273,123 @@ public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         return vip;
     }
 
+    /**
+     * The current state of the VM cluster network nodes.
+     * CREATING - The resource is being created
+     * REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated.
+     * VALIDATING - The resource is being validated and not available to use.
+     * VALIDATED - The resource is validated and is available for consumption by VM cluster.
+     * VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected.
+     * UPDATING - The resource is being updated and not available to use.
+     * ALLOCATED - The resource is currently being used by VM cluster.
+     * TERMINATING - The resource is being deleted and not available to use.
+     * TERMINATED - The resource is deleted and unavailable.
+     * FAILED - The resource is in a failed state due to validation or other errors.
+     *
+     **/
+    public enum LifecycleState {
+        Creating("CREATING"),
+        RequiresValidation("REQUIRES_VALIDATION"),
+        Validating("VALIDATING"),
+        Validated("VALIDATED"),
+        ValidationFailed("VALIDATION_FAILED"),
+        Updating("UPDATING"),
+        Allocated("ALLOCATED"),
+        Terminating("TERMINATING"),
+        Terminated("TERMINATED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the VM cluster network nodes.
+     * CREATING - The resource is being created
+     * REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated.
+     * VALIDATING - The resource is being validated and not available to use.
+     * VALIDATED - The resource is validated and is available for consumption by VM cluster.
+     * VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected.
+     * UPDATING - The resource is being updated and not available to use.
+     * ALLOCATED - The resource is currently being used by VM cluster.
+     * TERMINATING - The resource is being deleted and not available to use.
+     * TERMINATED - The resource is deleted and unavailable.
+     * FAILED - The resource is in a failed state due to validation or other errors.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleState lifecycleState;
+
+    /**
+     * The current state of the VM cluster network nodes.
+     * CREATING - The resource is being created
+     * REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated.
+     * VALIDATING - The resource is being validated and not available to use.
+     * VALIDATED - The resource is validated and is available for consumption by VM cluster.
+     * VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected.
+     * UPDATING - The resource is being updated and not available to use.
+     * ALLOCATED - The resource is currently being used by VM cluster.
+     * TERMINATING - The resource is being deleted and not available to use.
+     * TERMINATED - The resource is deleted and unavailable.
+     * FAILED - The resource is in a failed state due to validation or other errors.
+     *
+     * @return the value
+     **/
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * The Db server associated with the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
+    private final String dbServerId;
+
+    /**
+     * The Db server associated with the node.
+     * @return the value
+     **/
+    public String getDbServerId() {
+        return dbServerId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -209,6 +408,8 @@ public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", ip=").append(String.valueOf(this.ip));
         sb.append(", vipHostname=").append(String.valueOf(this.vipHostname));
         sb.append(", vip=").append(String.valueOf(this.vip));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", dbServerId=").append(String.valueOf(this.dbServerId));
         sb.append(")");
         return sb.toString();
     }
@@ -227,6 +428,8 @@ public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.ip, other.ip)
                 && java.util.Objects.equals(this.vipHostname, other.vipHostname)
                 && java.util.Objects.equals(this.vip, other.vip)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.dbServerId, other.dbServerId)
                 && super.equals(other);
     }
 
@@ -238,6 +441,10 @@ public final class NodeDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.ip == null ? 43 : this.ip.hashCode());
         result = (result * PRIME) + (this.vipHostname == null ? 43 : this.vipHostname.hashCode());
         result = (result * PRIME) + (this.vip == null ? 43 : this.vip.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.dbServerId == null ? 43 : this.dbServerId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -37,13 +37,13 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Entity name for which prodilig is requested.
+         * Entity name for which profiling is requested.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
-         * Entity name for which prodilig is requested.
+         * Entity name for which profiling is requested.
          * @param entityName the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Array of profiling results
+         * Array of profiling results.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeProfileResults")
         private java.util.List<AttributeProfileResult> attributeProfileResults;
 
         /**
-         * Array of profiling results
+         * Array of profiling results.
          * @param attributeProfileResults the value to set
          * @return this builder
          **/
@@ -121,13 +121,13 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Entity name for which prodilig is requested.
+     * Entity name for which profiling is requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
-     * Entity name for which prodilig is requested.
+     * Entity name for which profiling is requested.
      * @return the value
      **/
     public String getEntityName() {
@@ -142,13 +142,13 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Array of profiling results
+     * Array of profiling results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeProfileResults")
     private final java.util.List<AttributeProfileResult> attributeProfileResults;
 
     /**
-     * Array of profiling results
+     * Array of profiling results.
      * @return the value
      **/
     public java.util.List<AttributeProfileResult> getAttributeProfileResults() {

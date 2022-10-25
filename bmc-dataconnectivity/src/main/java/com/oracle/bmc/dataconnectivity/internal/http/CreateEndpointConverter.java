@@ -109,17 +109,6 @@ public class CreateEndpointConverter {
                                                         .__httpStatusCode__(rawResponse.getStatus())
                                                         .headers(headers);
 
-                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
-                                                headers, "opc-work-request-id");
-                                if (opcWorkRequestIdHeader.isPresent()) {
-                                    builder.opcWorkRequestId(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-work-request-id",
-                                                    opcWorkRequestIdHeader.get().get(0),
-                                                    String.class));
-                                }
-
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
@@ -128,6 +117,17 @@ public class CreateEndpointConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
                                                     String.class));
                                 }
 

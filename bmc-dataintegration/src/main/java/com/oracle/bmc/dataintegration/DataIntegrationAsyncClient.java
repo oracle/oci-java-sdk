@@ -3803,6 +3803,98 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetRuntimeOperatorResponse> getRuntimeOperator(
+            GetRuntimeOperatorRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>
+                    handler) {
+        LOG.trace("Called async getRuntimeOperator");
+        final GetRuntimeOperatorRequest interceptedRequest =
+                GetRuntimeOperatorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRuntimeOperatorConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetRuntimeOperator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperator/GetRuntimeOperator");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRuntimeOperatorResponse>
+                transformer =
+                        GetRuntimeOperatorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>,
+                        java.util.concurrent.Future<GetRuntimeOperatorResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRuntimeOperatorRequest, GetRuntimeOperatorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRuntimePipelineResponse> getRuntimePipeline(
+            GetRuntimePipelineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRuntimePipelineRequest, GetRuntimePipelineResponse>
+                    handler) {
+        LOG.trace("Called async getRuntimePipeline");
+        final GetRuntimePipelineRequest interceptedRequest =
+                GetRuntimePipelineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRuntimePipelineConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetRuntimePipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipeline/GetRuntimePipeline");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRuntimePipelineResponse>
+                transformer =
+                        GetRuntimePipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetRuntimePipelineRequest, GetRuntimePipelineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRuntimePipelineRequest, GetRuntimePipelineResponse>,
+                        java.util.concurrent.Future<GetRuntimePipelineResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRuntimePipelineRequest, GetRuntimePipelineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetScheduleResponse> getSchedule(
             GetScheduleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
@@ -4624,6 +4716,59 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDisApplicationTaskRunLineagesResponse>
+            listDisApplicationTaskRunLineages(
+                    ListDisApplicationTaskRunLineagesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDisApplicationTaskRunLineagesRequest,
+                                    ListDisApplicationTaskRunLineagesResponse>
+                            handler) {
+        LOG.trace("Called async listDisApplicationTaskRunLineages");
+        final ListDisApplicationTaskRunLineagesRequest interceptedRequest =
+                ListDisApplicationTaskRunLineagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDisApplicationTaskRunLineagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListDisApplicationTaskRunLineages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListDisApplicationTaskRunLineages");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDisApplicationTaskRunLineagesResponse>
+                transformer =
+                        ListDisApplicationTaskRunLineagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDisApplicationTaskRunLineagesRequest,
+                        ListDisApplicationTaskRunLineagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDisApplicationTaskRunLineagesRequest,
+                                ListDisApplicationTaskRunLineagesResponse>,
+                        java.util.concurrent.Future<ListDisApplicationTaskRunLineagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDisApplicationTaskRunLineagesRequest,
+                    ListDisApplicationTaskRunLineagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDisApplicationsResponse> listDisApplications(
             ListDisApplicationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5181,6 +5326,100 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRuntimeOperatorsResponse> listRuntimeOperators(
+            ListRuntimeOperatorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>
+                    handler) {
+        LOG.trace("Called async listRuntimeOperators");
+        final ListRuntimeOperatorsRequest interceptedRequest =
+                ListRuntimeOperatorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRuntimeOperatorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListRuntimeOperators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperatorSummaryCollection/ListRuntimeOperators");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRuntimeOperatorsResponse>
+                transformer =
+                        ListRuntimeOperatorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>,
+                        java.util.concurrent.Future<ListRuntimeOperatorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRuntimeOperatorsRequest, ListRuntimeOperatorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuntimePipelinesResponse> listRuntimePipelines(
+            ListRuntimePipelinesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>
+                    handler) {
+        LOG.trace("Called async listRuntimePipelines");
+        final ListRuntimePipelinesRequest interceptedRequest =
+                ListRuntimePipelinesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRuntimePipelinesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListRuntimePipelines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipelineSummaryCollection/ListRuntimePipelines");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRuntimePipelinesResponse>
+                transformer =
+                        ListRuntimePipelinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>,
+                        java.util.concurrent.Future<ListRuntimePipelinesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRuntimePipelinesRequest, ListRuntimePipelinesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSchedulesResponse> listSchedules(
             ListSchedulesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
@@ -5256,6 +5495,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListSchemasRequest, ListSchemasResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTaskRunLineagesResponse> listTaskRunLineages(
+            ListTaskRunLineagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>
+                    handler) {
+        LOG.trace("Called async listTaskRunLineages");
+        final ListTaskRunLineagesRequest interceptedRequest =
+                ListTaskRunLineagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaskRunLineagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListTaskRunLineages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListTaskRunLineages");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunLineagesResponse>
+                transformer =
+                        ListTaskRunLineagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>,
+                        java.util.concurrent.Future<ListTaskRunLineagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTaskRunLineagesRequest, ListTaskRunLineagesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

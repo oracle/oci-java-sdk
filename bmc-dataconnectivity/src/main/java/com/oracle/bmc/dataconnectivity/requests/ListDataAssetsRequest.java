@@ -12,12 +12,12 @@ import com.oracle.bmc.dataconnectivity.model.*;
 public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
@@ -56,23 +56,23 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return fields;
     }
     /**
-     * DataAsset type which needs to be listed while listing dataAssets
+     * Artifact type which needs to be listed while listing Artifacts.
      */
     private java.util.List<String> includeTypes;
 
     /**
-     * DataAsset type which needs to be listed while listing dataAssets
+     * Artifact type which needs to be listed while listing Artifacts.
      */
     public java.util.List<String> getIncludeTypes() {
         return includeTypes;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      **/
     public enum SortBy {
         Id("id"),
@@ -109,7 +109,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -190,12 +190,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return opcRequestId;
     }
     /**
-     * Types which wont be listed while listing dataAsset/Connection
+     * The types that will be excluded from the list of data assets/connections.
      */
     private java.util.List<String> excludeTypes;
 
     /**
-     * Types which wont be listed while listing dataAsset/Connection
+     * The types that will be excluded from the list of data assets/connections.
      */
     public java.util.List<String> getExcludeTypes() {
         return excludeTypes;
@@ -260,23 +260,23 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return folderId;
     }
     /**
-     * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
      */
     private java.util.List<String> endpointIds;
 
     /**
-     * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
      */
     public java.util.List<String> getEndpointIds() {
         return endpointIds;
     }
     /**
-     * Endpoints which will be excluded while listing dataAssets
+     * Endpoints which will be excluded while listing data assets.
      */
     private java.util.List<String> excludeEndpointIds;
 
     /**
-     * Endpoints which will be excluded while listing dataAssets
+     * Endpoints which will be excluded while listing data assets.
      */
     public java.util.List<String> getExcludeEndpointIds() {
         return excludeEndpointIds;
@@ -290,12 +290,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -359,12 +359,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * DataAsset type which needs to be listed while listing dataAssets
+         * Artifact type which needs to be listed while listing Artifacts.
          */
         private java.util.List<String> includeTypes = null;
 
         /**
-         * DataAsset type which needs to be listed while listing dataAssets
+         * Artifact type which needs to be listed while listing Artifacts.
          * @param includeTypes the value to set
          * @return this builder instance
          */
@@ -374,7 +374,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Singular setter. DataAsset type which needs to be listed while listing dataAssets
+         * Singular setter. Artifact type which needs to be listed while listing Artifacts.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -383,12 +383,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order are by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -449,12 +449,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Types which wont be listed while listing dataAsset/Connection
+         * The types that will be excluded from the list of data assets/connections.
          */
         private java.util.List<String> excludeTypes = null;
 
         /**
-         * Types which wont be listed while listing dataAsset/Connection
+         * The types that will be excluded from the list of data assets/connections.
          * @param excludeTypes the value to set
          * @return this builder instance
          */
@@ -464,7 +464,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Singular setter. Types which wont be listed while listing dataAsset/Connection
+         * Singular setter. The types that will be excluded from the list of data assets/connections.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -503,12 +503,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
          */
         private java.util.List<String> endpointIds = null;
 
         /**
-         * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
          * @param endpointIds the value to set
          * @return this builder instance
          */
@@ -518,7 +518,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Singular setter. Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * Singular setter. Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -527,12 +527,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Endpoints which will be excluded while listing dataAssets
+         * Endpoints which will be excluded while listing data assets.
          */
         private java.util.List<String> excludeEndpointIds = null;
 
         /**
-         * Endpoints which will be excluded while listing dataAssets
+         * Endpoints which will be excluded while listing data assets.
          * @param excludeEndpointIds the value to set
          * @return this builder instance
          */
@@ -542,7 +542,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Singular setter. Endpoints which will be excluded while listing dataAssets
+         * Singular setter. Endpoints which will be excluded while listing data assets.
          * @param singularValue the singular value to set
          * @return this builder instance
          */

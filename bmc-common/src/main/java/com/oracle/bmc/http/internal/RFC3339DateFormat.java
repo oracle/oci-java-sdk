@@ -33,5 +33,5 @@ public class RFC3339DateFormat extends StdDateFormat {
         return new RFC3339DateFormat();
     }
 
-    RFC3339DateFormat() {}
+    public RFC3339DateFormat() {}
 }

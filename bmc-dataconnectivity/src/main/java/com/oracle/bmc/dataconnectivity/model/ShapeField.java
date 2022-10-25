@@ -104,13 +104,13 @@ public final class ShapeField extends TypedObject {
             return this;
         }
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * @param labels the value to set
          * @return this builder
          **/
@@ -231,13 +231,13 @@ public final class ShapeField extends TypedObject {
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * @return the value
      **/
     public java.util.List<String> getLabels() {

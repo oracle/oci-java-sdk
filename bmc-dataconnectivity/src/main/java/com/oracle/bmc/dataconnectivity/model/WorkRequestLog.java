@@ -45,13 +45,13 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The time the log message was written. An RFC3339 formatted datetime string
+         * Time when the log message was written. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written. An RFC3339 formatted datetime string
+         * Time when the log message was written. An RFC3339 formatted datetime string.
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -110,13 +110,13 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * Time when the log message was written. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * Time when the log message was written. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimestamp() {

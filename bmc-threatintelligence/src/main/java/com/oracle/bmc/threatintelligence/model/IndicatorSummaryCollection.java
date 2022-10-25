@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IndicatorSummaryCollection.Builder.class
 )
@@ -31,13 +31,13 @@ public final class IndicatorSummaryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of indicators
+         * The list of indicator summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<IndicatorSummary> items;
 
         /**
-         * The list of indicators
+         * The list of indicator summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class IndicatorSummaryCollection
     }
 
     /**
-     * The list of indicators
+     * The list of indicator summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<IndicatorSummary> items;
 
     /**
-     * The list of indicators
+     * The list of indicator summaries.
      * @return the value
      **/
     public java.util.List<IndicatorSummary> getItems() {

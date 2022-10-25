@@ -176,6 +176,9 @@ public interface MonitoringAsync extends AutoCloseable {
 
     /**
      * List the status of each alarm in the specified compartment.
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest, Consumer, Consumer) retrieveDimensionStates}.
+     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
      * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
      * <p>
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
@@ -227,7 +230,7 @@ public interface MonitoringAsync extends AutoCloseable {
      * <p>
      *A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
      * A dimension is a qualifier provided in a metric definition.
-     * A metric stream is an individual set of aggregated data for a metric, typically specific to a resource.
+     * A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
      * For more information about metric-related concepts, see [Monitoring Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
      * <p>
      * The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
@@ -267,6 +270,32 @@ public interface MonitoringAsync extends AutoCloseable {
             RemoveAlarmSuppressionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RemoveAlarmSuppressionRequest, RemoveAlarmSuppressionResponse>
+                    handler);
+
+    /**
+     * Lists the current alarm status of each metric stream, where status is derived from the metric stream's last associated transition.
+     * Optionally filter by status value and one or more dimension key-value pairs.
+     * This operation is only valid for alarms that have notifications per dimension enabled (`isNotificationsPerMetricDimensionEnabled=true`).
+     *  If `isNotificationsPerMetricDimensionEnabled` for the alarm is false or null, then no results are returned.
+     * <p>
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     *
+     *  This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     *  Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     *  or transactions, per second (TPS) for a given tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RetrieveDimensionStatesResponse> retrieveDimensionStates(
+            RetrieveDimensionStatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>
                     handler);
 
     /**

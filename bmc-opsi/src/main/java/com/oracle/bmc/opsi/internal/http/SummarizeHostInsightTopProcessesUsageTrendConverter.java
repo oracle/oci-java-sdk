@@ -118,6 +118,14 @@ public class SummarizeHostInsightTopProcessesUsageTrendConverter {
                                     request.getHostId()));
         }
 
+        if (request.getProcessHash() != null) {
+            target =
+                    target.queryParam(
+                            "processHash",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getProcessHash()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

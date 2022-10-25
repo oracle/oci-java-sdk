@@ -906,6 +906,59 @@ public class MonitoringAsyncClient implements MonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RetrieveDimensionStatesResponse> retrieveDimensionStates(
+            RetrieveDimensionStatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>
+                    handler) {
+        LOG.trace("Called async retrieveDimensionStates");
+        final RetrieveDimensionStatesRequest interceptedRequest =
+                RetrieveDimensionStatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveDimensionStatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "RetrieveDimensionStates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmDimensionStatesCollection/RetrieveDimensionStates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RetrieveDimensionStatesResponse>
+                transformer =
+                        RetrieveDimensionStatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>,
+                        java.util.concurrent.Future<RetrieveDimensionStatesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRetrieveDimensionStatesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeMetricsDataResponse> summarizeMetricsData(
             SummarizeMetricsDataRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

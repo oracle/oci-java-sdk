@@ -6,7 +6,6 @@ package com.oracle.bmc.model.internal;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.oracle.bmc.http.internal.RestClientFactory;
 import javax.annotation.Nonnull;
 
 /**
@@ -20,7 +19,7 @@ public class JsonConverter {
      * Object mapper to support jackson json operations
      */
     private static final ObjectMapper mapper =
-            RestClientFactory.getObjectMapper()
+            com.oracle.bmc.http.Serialization.getObjectMapper()
                     .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     /**

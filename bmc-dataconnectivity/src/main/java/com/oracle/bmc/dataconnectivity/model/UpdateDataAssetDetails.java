@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Properties used in data asset update operations.
+ * Properties used in the update data asset operations.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -111,13 +111,13 @@ public final class UpdateDataAssetDetails
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -175,13 +175,13 @@ public final class UpdateDataAssetDetails
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -191,13 +191,13 @@ public final class UpdateDataAssetDetails
             return this;
         }
         /**
-         * The external key for the object.
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object.
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -207,13 +207,13 @@ public final class UpdateDataAssetDetails
             return this;
         }
         /**
-         * Additional properties for the data asset.
+         * Additional properties of the data asset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
         private java.util.Map<String, String> assetProperties;
 
         /**
-         * Additional properties for the data asset.
+         * Additional properties of the data asset.
          * @param assetProperties the value to set
          * @return this builder
          **/
@@ -223,13 +223,13 @@ public final class UpdateDataAssetDetails
             return this;
         }
         /**
-         * All the properties for the data asset in a key-value map format.
+         * All the properties of the data asset in a key-value map format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, Object> properties;
 
         /**
-         * All the properties for the data asset in a key-value map format.
+         * All the properties of the data asset in a key-value map format.
          * @param properties the value to set
          * @return this builder
          **/
@@ -429,13 +429,13 @@ public final class UpdateDataAssetDetails
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -485,13 +485,13 @@ public final class UpdateDataAssetDetails
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -499,13 +499,13 @@ public final class UpdateDataAssetDetails
     }
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {
@@ -513,13 +513,13 @@ public final class UpdateDataAssetDetails
     }
 
     /**
-     * Additional properties for the data asset.
+     * Additional properties of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
     private final java.util.Map<String, String> assetProperties;
 
     /**
-     * Additional properties for the data asset.
+     * Additional properties of the data asset.
      * @return the value
      **/
     public java.util.Map<String, String> getAssetProperties() {
@@ -527,13 +527,13 @@ public final class UpdateDataAssetDetails
     }
 
     /**
-     * All the properties for the data asset in a key-value map format.
+     * All the properties of the data asset in a key-value map format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, Object> properties;
 
     /**
-     * All the properties for the data asset in a key-value map format.
+     * All the properties of the data asset in a key-value map format.
      * @return the value
      **/
     public java.util.Map<String, Object> getProperties() {

@@ -137,7 +137,7 @@ public class EntityFactory {
         try {
             return (body instanceof String)
                     ? (String) body
-                    : RestClientFactory.getObjectMapper().writeValueAsString(body);
+                    : com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(body);
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Unable to process JSON body", e);
         }

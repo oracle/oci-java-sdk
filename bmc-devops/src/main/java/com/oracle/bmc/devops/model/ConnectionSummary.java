@@ -27,6 +27,10 @@ package com.oracle.bmc.devops.model;
         name = "BITBUCKET_CLOUD_APP_PASSWORD"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VbsAccessTokenConnectionSummary.class,
+        name = "VBS_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubAccessTokenConnectionSummary.class,
         name = "GITHUB_ACCESS_TOKEN"
     ),

@@ -59,6 +59,17 @@ public class DeleteMonitoredResourceRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to delete the associated children or not for given resource.
+     */
+    private Boolean isDeleteMembers;
+
+    /**
+     * A filter to delete the associated children or not for given resource.
+     */
+    public Boolean getIsDeleteMembers() {
+        return isDeleteMembers;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -127,6 +138,21 @@ public class DeleteMonitoredResourceRequest
         }
 
         /**
+         * A filter to delete the associated children or not for given resource.
+         */
+        private Boolean isDeleteMembers = null;
+
+        /**
+         * A filter to delete the associated children or not for given resource.
+         * @param isDeleteMembers the value to set
+         * @return this builder instance
+         */
+        public Builder isDeleteMembers(Boolean isDeleteMembers) {
+            this.isDeleteMembers = isDeleteMembers;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -157,6 +183,7 @@ public class DeleteMonitoredResourceRequest
             monitoredResourceId(o.getMonitoredResourceId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isDeleteMembers(o.getIsDeleteMembers());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -192,8 +219,9 @@ public class DeleteMonitoredResourceRequest
             request.monitoredResourceId = monitoredResourceId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isDeleteMembers = isDeleteMembers;
             return request;
-            // new DeleteMonitoredResourceRequest(monitoredResourceId, ifMatch, opcRequestId);
+            // new DeleteMonitoredResourceRequest(monitoredResourceId, ifMatch, opcRequestId, isDeleteMembers);
         }
     }
 
@@ -205,7 +233,8 @@ public class DeleteMonitoredResourceRequest
         return new Builder()
                 .monitoredResourceId(monitoredResourceId)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isDeleteMembers(isDeleteMembers);
     }
 
     /**
@@ -224,6 +253,7 @@ public class DeleteMonitoredResourceRequest
         sb.append(",monitoredResourceId=").append(String.valueOf(this.monitoredResourceId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isDeleteMembers=").append(String.valueOf(this.isDeleteMembers));
         sb.append(")");
         return sb.toString();
     }
@@ -241,7 +271,8 @@ public class DeleteMonitoredResourceRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.monitoredResourceId, other.monitoredResourceId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isDeleteMembers, other.isDeleteMembers);
     }
 
     @Override
@@ -255,6 +286,9 @@ public class DeleteMonitoredResourceRequest
                                 : this.monitoredResourceId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeleteMembers == null ? 43 : this.isDeleteMembers.hashCode());
         return result;
     }
 }

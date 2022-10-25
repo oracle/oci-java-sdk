@@ -1110,6 +1110,45 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public DeletePreferredCredentialResponse deletePreferredCredential(
+            DeletePreferredCredentialRequest request) {
+        LOG.trace("Called deletePreferredCredential");
+        final DeletePreferredCredentialRequest interceptedRequest =
+                DeletePreferredCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePreferredCredentialConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeletePreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/DeletePreferredCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePreferredCredentialResponse>
+                transformer =
+                        DeletePreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DropTablespaceResponse dropTablespace(DropTablespaceRequest request) {
         LOG.trace("Called dropTablespace");
         final DropTablespaceRequest interceptedRequest =
@@ -1740,6 +1779,44 @@ public class DbManagementClient implements DbManagement {
                         "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PdbMetrics/GetPdbMetrics");
         java.util.function.Function<javax.ws.rs.core.Response, GetPdbMetricsResponse> transformer =
                 GetPdbMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetPreferredCredentialResponse getPreferredCredential(
+            GetPreferredCredentialRequest request) {
+        LOG.trace("Called getPreferredCredential");
+        final GetPreferredCredentialRequest interceptedRequest =
+                GetPreferredCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPreferredCredentialConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetPreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/GetPreferredCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPreferredCredentialResponse>
+                transformer =
+                        GetPreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2535,6 +2612,44 @@ public class DbManagementClient implements DbManagement {
                         ListOptimizerStatisticsCollectionOperationsResponse>
                 transformer =
                         ListOptimizerStatisticsCollectionOperationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPreferredCredentialsResponse listPreferredCredentials(
+            ListPreferredCredentialsRequest request) {
+        LOG.trace("Called listPreferredCredentials");
+        final ListPreferredCredentialsRequest interceptedRequest =
+                ListPreferredCredentialsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPreferredCredentialsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListPreferredCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/ListPreferredCredentials");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPreferredCredentialsResponse>
+                transformer =
+                        ListPreferredCredentialsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3520,6 +3635,48 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public TestPreferredCredentialResponse testPreferredCredential(
+            TestPreferredCredentialRequest request) {
+        LOG.trace("Called testPreferredCredential");
+        final TestPreferredCredentialRequest interceptedRequest =
+                TestPreferredCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestPreferredCredentialConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "TestPreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/TestPreferredCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, TestPreferredCredentialResponse>
+                transformer =
+                        TestPreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getTestPreferredCredentialDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateDbManagementPrivateEndpointResponse updateDbManagementPrivateEndpoint(
             UpdateDbManagementPrivateEndpointRequest request) {
         LOG.trace("Called updateDbManagementPrivateEndpoint");
@@ -3638,6 +3795,49 @@ public class DbManagementClient implements DbManagement {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateManagedDatabaseGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdatePreferredCredentialResponse updatePreferredCredential(
+            UpdatePreferredCredentialRequest request) {
+        LOG.trace("Called updatePreferredCredential");
+        final UpdatePreferredCredentialRequest interceptedRequest =
+                UpdatePreferredCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePreferredCredentialConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdatePreferredCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/UpdatePreferredCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePreferredCredentialResponse>
+                transformer =
+                        UpdatePreferredCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdatePreferredCredentialDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

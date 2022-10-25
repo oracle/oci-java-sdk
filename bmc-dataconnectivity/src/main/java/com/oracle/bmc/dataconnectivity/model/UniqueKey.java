@@ -69,13 +69,13 @@ public class UniqueKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -90,13 +90,13 @@ public class UniqueKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {

@@ -109,13 +109,13 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
             return this;
         }
         /**
-         * The external key for the object.
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object.
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -308,13 +308,13 @@ public final class OperationSummaryFromProcedure extends OperationSummary {
     }
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {

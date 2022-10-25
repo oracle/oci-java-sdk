@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * This is the collection of operation summaries, it will contain very shallow details of an operation.
+ * This is the collection of operation summaries, with minimal details of an operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class OperationSummaryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of operation summary
+         * The array of operation summary.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<OperationSummary> items;
 
         /**
-         * The array of operation summary
+         * The array of operation summary.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class OperationSummaryCollection
     }
 
     /**
-     * The array of operation summary
+     * The array of operation summary.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<OperationSummary> items;
 
     /**
-     * The array of operation summary
+     * The array of operation summary.
      * @return the value
      **/
     public java.util.List<OperationSummary> getItems() {

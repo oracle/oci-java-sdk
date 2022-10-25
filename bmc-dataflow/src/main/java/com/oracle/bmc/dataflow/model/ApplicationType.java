@@ -12,6 +12,7 @@ package com.oracle.bmc.dataflow.model;
 public enum ApplicationType {
     Batch("BATCH"),
     Streaming("STREAMING"),
+    Session("SESSION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

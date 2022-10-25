@@ -67,14 +67,14 @@ public class HostResourceStatistics extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      * @return the value
      **/

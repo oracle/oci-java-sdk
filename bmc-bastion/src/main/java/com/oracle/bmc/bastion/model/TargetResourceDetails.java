@@ -23,6 +23,10 @@ package com.oracle.bmc.bastion.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DynamicPortForwardingSessionTargetResourceDetails.class,
+        name = "DYNAMIC_PORT_FORWARDING"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ManagedSshSessionTargetResourceDetails.class,
         name = "MANAGED_SSH"
     ),
@@ -34,24 +38,9 @@ package com.oracle.bmc.bastion.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class TargetResourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targetResourcePort"})
-    protected TargetResourceDetails(Integer targetResourcePort) {
+    @java.beans.ConstructorProperties({})
+    protected TargetResourceDetails() {
         super();
-        this.targetResourcePort = targetResourcePort;
-    }
-
-    /**
-     * The port number to connect to on the target resource.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
-    private final Integer targetResourcePort;
-
-    /**
-     * The port number to connect to on the target resource.
-     * @return the value
-     **/
-    public Integer getTargetResourcePort() {
-        return targetResourcePort;
     }
 
     @Override
@@ -68,7 +57,6 @@ public class TargetResourceDetails extends com.oracle.bmc.http.internal.Explicit
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TargetResourceDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
     }
@@ -83,19 +71,13 @@ public class TargetResourceDetails extends com.oracle.bmc.http.internal.Explicit
         }
 
         TargetResourceDetails other = (TargetResourceDetails) o;
-        return java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
-                && super.equals(other);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result =
-                (result * PRIME)
-                        + (this.targetResourcePort == null
-                                ? 43
-                                : this.targetResourcePort.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

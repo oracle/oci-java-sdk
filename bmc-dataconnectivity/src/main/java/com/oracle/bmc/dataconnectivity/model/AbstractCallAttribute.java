@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The call attributes
+ * The call attributes.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,6 +25,10 @@ package com.oracle.bmc.dataconnectivity.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BipCallAttribute.class,
         name = "BIPCALLATTRIBUTE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GenericRestCallAttribute.class,
+        name = "GENERIC_REST_CALL_ATTRIBUTE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -75,10 +79,11 @@ public class AbstractCallAttribute extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The operation type
+     * The operation type.
      **/
     public enum ModelType {
         Bipcallattribute("BIPCALLATTRIBUTE"),
+        GenericRestCallAttribute("GENERIC_REST_CALL_ATTRIBUTE"),
         ;
 
         private final String value;

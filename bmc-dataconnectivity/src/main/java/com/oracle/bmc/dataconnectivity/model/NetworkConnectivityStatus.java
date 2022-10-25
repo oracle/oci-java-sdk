@@ -94,13 +94,13 @@ public final class NetworkConnectivityStatus
             return this;
         }
         /**
-         * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+         * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
         private java.util.Date timeLastUpdated;
 
         /**
-         * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+         * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
          * @param timeLastUpdated the value to set
          * @return this builder
          **/
@@ -219,13 +219,13 @@ public final class NetworkConnectivityStatus
     }
 
     /**
-     * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+     * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
     private final java.util.Date timeLastUpdated;
 
     /**
-     * Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+     * The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
      * @return the value
      **/
     public java.util.Date getTimeLastUpdated() {

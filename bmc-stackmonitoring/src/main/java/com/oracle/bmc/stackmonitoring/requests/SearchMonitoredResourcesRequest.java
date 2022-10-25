@@ -61,6 +61,68 @@ public class SearchMonitoredResourcesRequest
         return page;
     }
     /**
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return only the information
+     * (fields) required by the client. In this mechanism, the client
+     * sends the required field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * return and should be a query string parameter called "fields" of
+     * an array type, provide the values as enums, and use collectionFormat.
+     *
+     */
+    private java.util.List<String> fields;
+
+    /**
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return only the information
+     * (fields) required by the client. In this mechanism, the client
+     * sends the required field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * return and should be a query string parameter called "fields" of
+     * an array type, provide the values as enums, and use collectionFormat.
+     *
+     */
+    public java.util.List<String> getFields() {
+        return fields;
+    }
+    /**
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return all the information except
+     * the fields requested to be excluded (excludeFields) by the client.
+     * In this mechanism, the client
+     * sends the exclude field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * exlude and to return and should be a query string parameter
+     * called "excludeFields" of an array type, provide the values
+     * as enums, and use collectionFormat.
+     *
+     */
+    private java.util.List<String> excludeFields;
+
+    /**
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs, to return all the information except
+     * the fields requested to be excluded (excludeFields) by the client.
+     * In this mechanism, the client
+     * sends the exclude field names as the query parameters for
+     * an API to the server, and the server trims down the default
+     * response content by removing the fields that are not required
+     * by the client. The parameter controls which fields to
+     * exlude and to return and should be a query string parameter
+     * called "excludeFields" of an array type, provide the values
+     * as enums, and use collectionFormat.
+     *
+     */
+    public java.util.List<String> getExcludeFields() {
+        return excludeFields;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
      *
@@ -197,6 +259,114 @@ public class SearchMonitoredResourcesRequest
         }
 
         /**
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return only the information
+         * (fields) required by the client. In this mechanism, the client
+         * sends the required field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * return and should be a query string parameter called "fields" of
+         * an array type, provide the values as enums, and use collectionFormat.
+         *
+         */
+        private java.util.List<String> fields = null;
+
+        /**
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return only the information
+         * (fields) required by the client. In this mechanism, the client
+         * sends the required field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * return and should be a query string parameter called "fields" of
+         * an array type, provide the values as enums, and use collectionFormat.
+         *
+         * @param fields the value to set
+         * @return this builder instance
+         */
+        public Builder fields(java.util.List<String> fields) {
+            this.fields = fields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return only the information
+         * (fields) required by the client. In this mechanism, the client
+         * sends the required field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * return and should be a query string parameter called "fields" of
+         * an array type, provide the values as enums, and use collectionFormat.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder fields(String singularValue) {
+            return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return all the information except
+         * the fields requested to be excluded (excludeFields) by the client.
+         * In this mechanism, the client
+         * sends the exclude field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * exlude and to return and should be a query string parameter
+         * called "excludeFields" of an array type, provide the values
+         * as enums, and use collectionFormat.
+         *
+         */
+        private java.util.List<String> excludeFields = null;
+
+        /**
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return all the information except
+         * the fields requested to be excluded (excludeFields) by the client.
+         * In this mechanism, the client
+         * sends the exclude field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * exlude and to return and should be a query string parameter
+         * called "excludeFields" of an array type, provide the values
+         * as enums, and use collectionFormat.
+         *
+         * @param excludeFields the value to set
+         * @return this builder instance
+         */
+        public Builder excludeFields(java.util.List<String> excludeFields) {
+            this.excludeFields = excludeFields;
+            return this;
+        }
+
+        /**
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs, to return all the information except
+         * the fields requested to be excluded (excludeFields) by the client.
+         * In this mechanism, the client
+         * sends the exclude field names as the query parameters for
+         * an API to the server, and the server trims down the default
+         * response content by removing the fields that are not required
+         * by the client. The parameter controls which fields to
+         * exlude and to return and should be a query string parameter
+         * called "excludeFields" of an array type, provide the values
+         * as enums, and use collectionFormat.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder excludeFields(String singularValue) {
+            return this.excludeFields(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
@@ -296,6 +466,8 @@ public class SearchMonitoredResourcesRequest
             searchMonitoredResourcesDetails(o.getSearchMonitoredResourcesDetails());
             limit(o.getLimit());
             page(o.getPage());
+            fields(o.getFields());
+            excludeFields(o.getExcludeFields());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
@@ -346,11 +518,13 @@ public class SearchMonitoredResourcesRequest
             request.searchMonitoredResourcesDetails = searchMonitoredResourcesDetails;
             request.limit = limit;
             request.page = page;
+            request.fields = fields;
+            request.excludeFields = excludeFields;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             return request;
-            // new SearchMonitoredResourcesRequest(searchMonitoredResourcesDetails, limit, page, opcRequestId, opcRetryToken, ifMatch);
+            // new SearchMonitoredResourcesRequest(searchMonitoredResourcesDetails, limit, page, fields, excludeFields, opcRequestId, opcRetryToken, ifMatch);
         }
     }
 
@@ -363,6 +537,8 @@ public class SearchMonitoredResourcesRequest
                 .searchMonitoredResourcesDetails(searchMonitoredResourcesDetails)
                 .limit(limit)
                 .page(page)
+                .fields(fields)
+                .excludeFields(excludeFields)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch);
@@ -385,6 +561,8 @@ public class SearchMonitoredResourcesRequest
                 .append(String.valueOf(this.searchMonitoredResourcesDetails));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(",excludeFields=").append(String.valueOf(this.excludeFields));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
@@ -407,6 +585,8 @@ public class SearchMonitoredResourcesRequest
                         this.searchMonitoredResourcesDetails, other.searchMonitoredResourcesDetails)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.excludeFields, other.excludeFields)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
@@ -423,6 +603,10 @@ public class SearchMonitoredResourcesRequest
                                 : this.searchMonitoredResourcesDetails.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludeFields == null ? 43 : this.excludeFields.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

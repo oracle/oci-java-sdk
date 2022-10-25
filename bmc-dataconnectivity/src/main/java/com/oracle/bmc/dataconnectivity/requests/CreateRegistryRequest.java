@@ -25,13 +25,13 @@ public class CreateRegistryRequest
         return createRegistryDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -91,13 +91,13 @@ public class CreateRegistryRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

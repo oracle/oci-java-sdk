@@ -1501,57 +1501,6 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteConnectionValidationResponse>
-            deleteConnectionValidation(
-                    DeleteConnectionValidationRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteConnectionValidationRequest,
-                                    DeleteConnectionValidationResponse>
-                            handler) {
-        LOG.trace("Called async deleteConnectionValidation");
-        final DeleteConnectionValidationRequest interceptedRequest =
-                DeleteConnectionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteConnectionValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DataConnectivityManagement",
-                        "DeleteConnectionValidation",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
-                transformer =
-                        DeleteConnectionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteConnectionValidationRequest,
-                                DeleteConnectionValidationResponse>,
-                        java.util.concurrent.Future<DeleteConnectionValidationResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<DeleteDataAssetResponse> deleteDataAsset(
             DeleteDataAssetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1785,6 +1734,57 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
     }
 
     @Override
+    public java.util.concurrent.Future<DeriveEntitiesResponse> deriveEntities(
+            DeriveEntitiesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeriveEntitiesRequest, DeriveEntitiesResponse>
+                    handler) {
+        LOG.trace("Called async deriveEntities");
+        final DeriveEntitiesRequest interceptedRequest =
+                DeriveEntitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeriveEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataConnectivityManagement",
+                        "DeriveEntities",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeriveEntitiesResponse>
+                transformer =
+                        DeriveEntitiesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeriveEntitiesRequest, DeriveEntitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeriveEntitiesRequest, DeriveEntitiesResponse>,
+                        java.util.concurrent.Future<DeriveEntitiesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDeriveEntitiesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeriveEntitiesRequest, DeriveEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -1816,54 +1816,6 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetConnectionRequest, GetConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetConnectionValidationResponse> getConnectionValidation(
-            GetConnectionValidationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetConnectionValidationRequest, GetConnectionValidationResponse>
-                    handler) {
-        LOG.trace("Called async getConnectionValidation");
-        final GetConnectionValidationRequest interceptedRequest =
-                GetConnectionValidationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConnectionValidationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DataConnectivityManagement",
-                        "GetConnectionValidation",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetConnectionValidationResponse>
-                transformer =
-                        GetConnectionValidationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetConnectionValidationRequest, GetConnectionValidationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetConnectionValidationRequest, GetConnectionValidationResponse>,
-                        java.util.concurrent.Future<GetConnectionValidationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetConnectionValidationRequest, GetConnectionValidationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1996,6 +1948,54 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetEndpointRequest, GetEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEngineConfigurationsResponse> getEngineConfigurations(
+            GetEngineConfigurationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEngineConfigurationsRequest, GetEngineConfigurationsResponse>
+                    handler) {
+        LOG.trace("Called async getEngineConfigurations");
+        final GetEngineConfigurationsRequest interceptedRequest =
+                GetEngineConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEngineConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataConnectivityManagement",
+                        "GetEngineConfigurations",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetEngineConfigurationsResponse>
+                transformer =
+                        GetEngineConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetEngineConfigurationsRequest, GetEngineConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEngineConfigurationsRequest, GetEngineConfigurationsResponse>,
+                        java.util.concurrent.Future<GetEngineConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEngineConfigurationsRequest, GetEngineConfigurationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2349,55 +2349,6 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListConnectionValidationsResponse> listConnectionValidations(
-            ListConnectionValidationsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListConnectionValidationsRequest, ListConnectionValidationsResponse>
-                    handler) {
-        LOG.trace("Called async listConnectionValidations");
-        final ListConnectionValidationsRequest interceptedRequest =
-                ListConnectionValidationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListConnectionValidationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DataConnectivityManagement",
-                        "ListConnectionValidations",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListConnectionValidationsResponse>
-                transformer =
-                        ListConnectionValidationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListConnectionValidationsRequest, ListConnectionValidationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListConnectionValidationsRequest,
-                                ListConnectionValidationsResponse>,
-                        java.util.concurrent.Future<ListConnectionValidationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListConnectionValidationsRequest, ListConnectionValidationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

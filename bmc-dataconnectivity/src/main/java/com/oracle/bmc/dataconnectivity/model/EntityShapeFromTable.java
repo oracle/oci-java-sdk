@@ -52,13 +52,13 @@ public final class EntityShapeFromTable extends EntityShape {
             return this;
         }
         /**
-         * The object's model version.
+         * The model version of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * The object's model version.
+         * The model version of the object.
          * @param modelVersion the value to set
          * @return this builder
          **/
@@ -77,13 +77,13 @@ public final class EntityShapeFromTable extends EntityShape {
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -93,13 +93,13 @@ public final class EntityShapeFromTable extends EntityShape {
             return this;
         }
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          * @param description the value to set
          * @return this builder
          **/
@@ -125,13 +125,13 @@ public final class EntityShapeFromTable extends EntityShape {
             return this;
         }
         /**
-         * The external key for the object.
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object.
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -271,19 +271,35 @@ public final class EntityShapeFromTable extends EntityShape {
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
+            return this;
+        }
+        /**
+         * Map<String, String> for entity properties
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("entityProperties")
+        private java.util.Map<String, String> entityProperties;
+
+        /**
+         * Map<String, String> for entity properties
+         * @param entityProperties the value to set
+         * @return this builder
+         **/
+        public Builder entityProperties(java.util.Map<String, String> entityProperties) {
+            this.entityProperties = entityProperties;
+            this.__explicitlySet__.add("entityProperties");
             return this;
         }
 
@@ -310,7 +326,8 @@ public final class EntityShapeFromTable extends EntityShape {
                             this.resourceName,
                             this.dataFormat,
                             this.objectStatus,
-                            this.identifier);
+                            this.identifier,
+                            this.entityProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -373,6 +390,9 @@ public final class EntityShapeFromTable extends EntityShape {
             if (model.wasPropertyExplicitlySet("identifier")) {
                 this.identifier(model.getIdentifier());
             }
+            if (model.wasPropertyExplicitlySet("entityProperties")) {
+                this.entityProperties(model.getEntityProperties());
+            }
             return this;
         }
     }
@@ -407,7 +427,8 @@ public final class EntityShapeFromTable extends EntityShape {
             String resourceName,
             DataFormat dataFormat,
             Integer objectStatus,
-            String identifier) {
+            String identifier,
+            java.util.Map<String, String> entityProperties) {
         super(metadata);
         this.key = key;
         this.modelVersion = modelVersion;
@@ -426,6 +447,7 @@ public final class EntityShapeFromTable extends EntityShape {
         this.dataFormat = dataFormat;
         this.objectStatus = objectStatus;
         this.identifier = identifier;
+        this.entityProperties = entityProperties;
     }
 
     /**
@@ -443,13 +465,13 @@ public final class EntityShapeFromTable extends EntityShape {
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -464,13 +486,13 @@ public final class EntityShapeFromTable extends EntityShape {
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -478,13 +500,13 @@ public final class EntityShapeFromTable extends EntityShape {
     }
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      * @return the value
      **/
     public String getDescription() {
@@ -506,13 +528,13 @@ public final class EntityShapeFromTable extends EntityShape {
     }
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {
@@ -549,6 +571,7 @@ public final class EntityShapeFromTable extends EntityShape {
         File("FILE"),
         Sql("SQL"),
         DataStore("DATA_STORE"),
+        Message("MESSAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -683,17 +706,31 @@ public final class EntityShapeFromTable extends EntityShape {
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
         return identifier;
+    }
+
+    /**
+     * Map<String, String> for entity properties
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entityProperties")
+    private final java.util.Map<String, String> entityProperties;
+
+    /**
+     * Map<String, String> for entity properties
+     * @return the value
+     **/
+    public java.util.Map<String, String> getEntityProperties() {
+        return entityProperties;
     }
 
     @Override
@@ -727,6 +764,7 @@ public final class EntityShapeFromTable extends EntityShape {
         sb.append(", dataFormat=").append(String.valueOf(this.dataFormat));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", entityProperties=").append(String.valueOf(this.entityProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -758,6 +796,7 @@ public final class EntityShapeFromTable extends EntityShape {
                 && java.util.Objects.equals(this.dataFormat, other.dataFormat)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.entityProperties, other.entityProperties)
                 && super.equals(other);
     }
 
@@ -786,6 +825,9 @@ public final class EntityShapeFromTable extends EntityShape {
         result = (result * PRIME) + (this.dataFormat == null ? 43 : this.dataFormat.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entityProperties == null ? 43 : this.entityProperties.hashCode());
         return result;
     }
 }

@@ -7,7 +7,7 @@ package com.oracle.bmc.threatintelligence.model;
 /**
  * The set of supported indicator types.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum IndicatorType {
     DomainName("DOMAIN_NAME"),
     FileName("FILE_NAME"),

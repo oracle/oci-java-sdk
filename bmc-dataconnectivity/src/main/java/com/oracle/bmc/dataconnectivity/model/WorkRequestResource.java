@@ -52,8 +52,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         /**
          * The way in which this resource is affected by the work tracked in the work request.
          * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-         * or DELETED, respectively.
+         * work is complete for that resource, after which it moves to CREATED, UPDATED,
+         * or DELETED state, respectively.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
@@ -62,8 +62,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         /**
          * The way in which this resource is affected by the work tracked in the work request.
          * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-         * or DELETED, respectively.
+         * work is complete for that resource, after which it moves to CREATED, UPDATED,
+         * or DELETED state, respectively.
          *
          * @param actionType the value to set
          * @return this builder
@@ -90,13 +90,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The URI path that the user can do a GET on to access the resource metadata
+         * The URI path that the user can do a GET on to access the resource metadata.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
-         * The URI path that the user can do a GET on to access the resource metadata
+         * The URI path that the user can do a GET on to access the resource metadata.
          * @param entityUri the value to set
          * @return this builder
          **/
@@ -165,8 +165,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     /**
      * The way in which this resource is affected by the work tracked in the work request.
      * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * work is complete for that resource, after which it moves to CREATED, UPDATED,
+     * or DELETED state, respectively.
      *
      **/
     public enum ActionType {
@@ -223,8 +223,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     /**
      * The way in which this resource is affected by the work tracked in the work request.
      * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * work is complete for that resource, after which it moves to CREATED, UPDATED,
+     * or DELETED state, respectively.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
@@ -233,8 +233,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     /**
      * The way in which this resource is affected by the work tracked in the work request.
      * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * work is complete for that resource, after which it moves to CREATED, UPDATED,
+     * or DELETED state, respectively.
      *
      * @return the value
      **/
@@ -257,13 +257,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that the user can do a GET on to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that the user can do a GET on to access the resource metadata.
      * @return the value
      **/
     public String getEntityUri() {

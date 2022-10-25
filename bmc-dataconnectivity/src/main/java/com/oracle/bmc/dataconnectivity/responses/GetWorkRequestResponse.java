@@ -9,12 +9,14 @@ import com.oracle.bmc.dataconnectivity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See {@code if-match}.
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See {@code if-match}.
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,17 +24,15 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,15 +41,15 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * some decimal number representing the number of seconds the client should wait before polling this endpoint again
+     * Indicates the waiting time, in seconds, before making a follow-up request.
      */
-    private Float retryAfter;
+    private Integer retryAfter;
 
     /**
-     * some decimal number representing the number of seconds the client should wait before polling this endpoint again
+     * Indicates the waiting time, in seconds, before making a follow-up request.
      * @return the value
      */
-    public Float getRetryAfter() {
+    public Integer getRetryAfter() {
         return retryAfter;
     }
 
@@ -79,7 +79,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
-            Float retryAfter,
+            Integer retryAfter,
             com.oracle.bmc.dataconnectivity.model.WorkRequest workRequest) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
@@ -104,12 +104,14 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * For optimistic concurrency control. See {@code if-match}.
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See {@code if-match}.
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -119,17 +121,15 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -140,16 +140,16 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * some decimal number representing the number of seconds the client should wait before polling this endpoint again
+         * Indicates the waiting time, in seconds, before making a follow-up request.
          */
-        private Float retryAfter;
+        private Integer retryAfter;
 
         /**
-         * some decimal number representing the number of seconds the client should wait before polling this endpoint again
+         * Indicates the waiting time, in seconds, before making a follow-up request.
          * @param retryAfter the value to set
          * @return this builder
          */
-        public Builder retryAfter(Float retryAfter) {
+        public Builder retryAfter(Integer retryAfter) {
             this.retryAfter = retryAfter;
             return this;
         }

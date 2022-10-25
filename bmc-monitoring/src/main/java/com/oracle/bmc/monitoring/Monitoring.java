@@ -162,6 +162,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * List the status of each alarm in the specified compartment.
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     * The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
      * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
      * <p>
      * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
@@ -208,7 +211,7 @@ public interface Monitoring extends AutoCloseable {
      * <p>
      *A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
      * A dimension is a qualifier provided in a metric definition.
-     * A metric stream is an individual set of aggregated data for a metric, typically specific to a resource.
+     * A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
      * For more information about metric-related concepts, see [Monitoring Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
      * <p>
      * The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
@@ -242,6 +245,28 @@ public interface Monitoring extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/RemoveAlarmSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveAlarmSuppression API.
      */
     RemoveAlarmSuppressionResponse removeAlarmSuppression(RemoveAlarmSuppressionRequest request);
+
+    /**
+     * Lists the current alarm status of each metric stream, where status is derived from the metric stream's last associated transition.
+     * Optionally filter by status value and one or more dimension key-value pairs.
+     * This operation is only valid for alarms that have notifications per dimension enabled (`isNotificationsPerMetricDimensionEnabled=true`).
+     *  If `isNotificationsPerMetricDimensionEnabled` for the alarm is false or null, then no results are returned.
+     * <p>
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     *
+     *  This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     *  Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     *  or transactions, per second (TPS) for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/RetrieveDimensionStatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveDimensionStates API.
+     */
+    RetrieveDimensionStatesResponse retrieveDimensionStates(RetrieveDimensionStatesRequest request);
 
     /**
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.

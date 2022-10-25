@@ -14,7 +14,7 @@ package com.oracle.bmc.ailanguage.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SentimentDocumentResult.Builder.class
 )
@@ -49,13 +49,13 @@ public final class SentimentDocumentResult
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Document Unique Identifier.
+         * Document unique identifier defined by the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Document Unique Identifier.
+         * Document unique identifier defined by the user.
          * @param key the value to set
          * @return this builder
          **/
@@ -133,13 +133,13 @@ public final class SentimentDocumentResult
             return this;
         }
         /**
-         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
          * @param languageCode the value to set
          * @return this builder
          **/
@@ -203,13 +203,13 @@ public final class SentimentDocumentResult
     }
 
     /**
-     * Document Unique Identifier.
+     * Document unique identifier defined by the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Document Unique Identifier.
+     * Document unique identifier defined by the user.
      * @return the value
      **/
     public String getKey() {
@@ -277,13 +277,13 @@ public final class SentimentDocumentResult
     }
 
     /**
-     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
      * @return the value
      **/
     public String getLanguageCode() {

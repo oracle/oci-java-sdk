@@ -56,12 +56,12 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return page;
     }
     /**
-     * This parameter allows list registries to deep look at whole tenancy.
+     * This parameter allows list registries to deep look at the whole tenancy.
      */
     private Boolean isDeepLookup;
 
     /**
-     * This parameter allows list registries to deep look at whole tenancy.
+     * This parameter allows list registries to deep look at the whole tenancy.
      */
     public Boolean getIsDeepLookup() {
         return isDeepLookup;
@@ -207,12 +207,12 @@ public class ListRegistriesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * This parameter allows list registries to deep look at whole tenancy.
+         * This parameter allows list registries to deep look at the whole tenancy.
          */
         private Boolean isDeepLookup = null;
 
         /**
-         * This parameter allows list registries to deep look at whole tenancy.
+         * This parameter allows list registries to deep look at the whole tenancy.
          * @param isDeepLookup the value to set
          * @return this builder instance
          */

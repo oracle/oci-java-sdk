@@ -8,7 +8,7 @@ import com.oracle.bmc.dataconnectivity.requests.*;
 import com.oracle.bmc.dataconnectivity.responses.*;
 
 /**
- * Use the DCMS APIs to perform Metadata/Data operations.
+ * Use the Data Connectivity Management Service APIs to perform common extract, load, and transform (ETL) tasks.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public interface NetworkValidationAsync extends AutoCloseable {
@@ -52,7 +52,7 @@ public interface NetworkValidationAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * This api is used to get Network Connectivity Status for all the Data Assets attatched to the provided Private endpoint.
+     * This API is used to get the network connectivity status fofor all the data assets attached to the provided private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

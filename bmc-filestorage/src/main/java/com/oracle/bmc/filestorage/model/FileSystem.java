@@ -15,8 +15,6 @@ package com.oracle.bmc.filestorage.model;
  * administrator. If you're an administrator who needs to write
  * policies to give users access, see [Getting Started with
  * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -45,7 +43,9 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         "sourceDetails",
         "isCloneParent",
         "isHydrated",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "isTargetable",
+        "replicationTargetId"
     })
     public FileSystem(
             String availabilityDomain,
@@ -61,7 +61,9 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             SourceDetails sourceDetails,
             Boolean isCloneParent,
             Boolean isHydrated,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            Boolean isTargetable,
+            String replicationTargetId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -77,6 +79,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         this.isCloneParent = isCloneParent;
         this.isHydrated = isHydrated;
         this.lifecycleDetails = lifecycleDetails;
+        this.isTargetable = isTargetable;
+        this.replicationTargetId = replicationTargetId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -303,7 +307,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         }
         /**
          * Specifies whether the file system has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
@@ -311,7 +315,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
 
         /**
          * Specifies whether the file system has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param isCloneParent the value to set
          * @return this builder
@@ -325,7 +329,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
          * Specifies whether the data has finished copying from the source to the clone.
          * Hydration can take up to several hours to complete depending on the size of the source.
          * The source and clone remain available during hydration, but there may be some performance impact.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
@@ -335,7 +339,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
          * Specifies whether the data has finished copying from the source to the clone.
          * Hydration can take up to several hours to complete depending on the size of the source.
          * The source and clone remain available during hydration, but there may be some performance impact.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          * @param isHydrated the value to set
          * @return this builder
@@ -361,6 +365,46 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Specifies whether the file system can be used as a target file system for replication.
+         * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isTargetable")
+        private Boolean isTargetable;
+
+        /**
+         * Specifies whether the file system can be used as a target file system for replication.
+         * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+         *
+         * @param isTargetable the value to set
+         * @return this builder
+         **/
+        public Builder isTargetable(Boolean isTargetable) {
+            this.isTargetable = isTargetable;
+            this.__explicitlySet__.add("isTargetable");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system.
+         * Empty if the file system is not being used as target in a replication.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationTargetId")
+        private String replicationTargetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system.
+         * Empty if the file system is not being used as target in a replication.
+         *
+         * @param replicationTargetId the value to set
+         * @return this builder
+         **/
+        public Builder replicationTargetId(String replicationTargetId) {
+            this.replicationTargetId = replicationTargetId;
+            this.__explicitlySet__.add("replicationTargetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -381,7 +425,9 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.sourceDetails,
                             this.isCloneParent,
                             this.isHydrated,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.isTargetable,
+                            this.replicationTargetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -431,6 +477,12 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isTargetable")) {
+                this.isTargetable(model.getIsTargetable());
+            }
+            if (model.wasPropertyExplicitlySet("replicationTargetId")) {
+                this.replicationTargetId(model.getReplicationTargetId());
             }
             return this;
         }
@@ -551,6 +603,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         Active("ACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
+        Failed("FAILED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -696,7 +749,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Specifies whether the file system has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
@@ -704,7 +757,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Specifies whether the file system has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      **/
@@ -716,7 +769,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
      * Specifies whether the data has finished copying from the source to the clone.
      * Hydration can take up to several hours to complete depending on the size of the source.
      * The source and clone remain available during hydration, but there may be some performance impact.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
@@ -726,7 +779,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
      * Specifies whether the data has finished copying from the source to the clone.
      * Hydration can take up to several hours to complete depending on the size of the source.
      * The source and clone remain available during hydration, but there may be some performance impact.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      * @return the value
      **/
@@ -746,6 +799,42 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
      **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
+    }
+
+    /**
+     * Specifies whether the file system can be used as a target file system for replication.
+     * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isTargetable")
+    private final Boolean isTargetable;
+
+    /**
+     * Specifies whether the file system can be used as a target file system for replication.
+     * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     *
+     * @return the value
+     **/
+    public Boolean getIsTargetable() {
+        return isTargetable;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system.
+     * Empty if the file system is not being used as target in a replication.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationTargetId")
+    private final String replicationTargetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system.
+     * Empty if the file system is not being used as target in a replication.
+     *
+     * @return the value
+     **/
+    public String getReplicationTargetId() {
+        return replicationTargetId;
     }
 
     @Override
@@ -776,6 +865,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", isTargetable=").append(String.valueOf(this.isTargetable));
+        sb.append(", replicationTargetId=").append(String.valueOf(this.replicationTargetId));
         sb.append(")");
         return sb.toString();
     }
@@ -804,6 +895,8 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.isTargetable, other.isTargetable)
+                && java.util.Objects.equals(this.replicationTargetId, other.replicationTargetId)
                 && super.equals(other);
     }
 
@@ -839,6 +932,12 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.isTargetable == null ? 43 : this.isTargetable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationTargetId == null
+                                ? 43
+                                : this.replicationTargetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

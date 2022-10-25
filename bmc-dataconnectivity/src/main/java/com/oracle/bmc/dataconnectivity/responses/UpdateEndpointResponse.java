@@ -9,12 +9,14 @@ import com.oracle.bmc.dataconnectivity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See {@code if-match}.
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See {@code if-match}.
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,37 +24,37 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
-     */
-    private String opcWorkRequestId;
-
-    /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
-     * @return the value
-     */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
-    }
-
-    /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
     }
 
     /**
@@ -72,21 +74,21 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         "__httpStatusCode__",
         "headers",
         "etag",
-        "opcWorkRequestId",
         "opcRequestId",
+        "opcWorkRequestId",
         "endpoint"
     })
     private UpdateEndpointResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
-            String opcWorkRequestId,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.dataconnectivity.model.Endpoint endpoint) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
-        this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.endpoint = endpoint;
     }
 
@@ -106,12 +108,14 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * For optimistic concurrency control. See {@code if-match}.
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See {@code if-match}.
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -121,40 +125,40 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
-         */
-        private String opcWorkRequestId;
-
-        /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
-         * @param opcWorkRequestId the value to set
-         * @return this builder
-         */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
-            return this;
-        }
-
-        /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -181,8 +185,8 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             etag(o.getEtag());
-            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             endpoint(o.getEndpoint());
 
             return this;
@@ -194,7 +198,7 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public UpdateEndpointResponse build() {
             return new UpdateEndpointResponse(
-                    __httpStatusCode__, headers, etag, opcWorkRequestId, opcRequestId, endpoint);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId, endpoint);
         }
     }
 
@@ -212,8 +216,8 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
-        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",endpoint=").append(String.valueOf(endpoint));
         sb.append(")");
         return sb.toString();
@@ -231,8 +235,8 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         UpdateEndpointResponse other = (UpdateEndpointResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.endpoint, other.endpoint);
     }
 
@@ -241,10 +245,10 @@ public class UpdateEndpointResponse extends com.oracle.bmc.responses.BmcResponse
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         return result;
     }

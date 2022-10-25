@@ -27,18 +27,24 @@ public final class RecallArchivedDataDetails
         "compartmentId",
         "timeDataEnded",
         "timeDataStarted",
-        "dataType"
+        "dataType",
+        "logSets",
+        "query"
     })
     public RecallArchivedDataDetails(
             String compartmentId,
             java.util.Date timeDataEnded,
             java.util.Date timeDataStarted,
-            StorageDataType dataType) {
+            StorageDataType dataType,
+            String logSets,
+            String query) {
         super();
         this.compartmentId = compartmentId;
         this.timeDataEnded = timeDataEnded;
         this.timeDataStarted = timeDataStarted;
         this.dataType = dataType;
+        this.logSets = logSets;
+        this.query = query;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,6 +113,38 @@ public final class RecallArchivedDataDetails
             this.__explicitlySet__.add("dataType");
             return this;
         }
+        /**
+         * This is a list of comma-separated log sets that recalled data belongs to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+        private String logSets;
+
+        /**
+         * This is a list of comma-separated log sets that recalled data belongs to.
+         * @param logSets the value to set
+         * @return this builder
+         **/
+        public Builder logSets(String logSets) {
+            this.logSets = logSets;
+            this.__explicitlySet__.add("logSets");
+            return this;
+        }
+        /**
+         * This is the query that identifies the recalled data.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("query")
+        private String query;
+
+        /**
+         * This is the query that identifies the recalled data.
+         * @param query the value to set
+         * @return this builder
+         **/
+        public Builder query(String query) {
+            this.query = query;
+            this.__explicitlySet__.add("query");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -117,7 +155,9 @@ public final class RecallArchivedDataDetails
                             this.compartmentId,
                             this.timeDataEnded,
                             this.timeDataStarted,
-                            this.dataType);
+                            this.dataType,
+                            this.logSets,
+                            this.query);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -137,6 +177,12 @@ public final class RecallArchivedDataDetails
             }
             if (model.wasPropertyExplicitlySet("dataType")) {
                 this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("logSets")) {
+                this.logSets(model.getLogSets());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
             }
             return this;
         }
@@ -209,6 +255,34 @@ public final class RecallArchivedDataDetails
         return dataType;
     }
 
+    /**
+     * This is a list of comma-separated log sets that recalled data belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+    private final String logSets;
+
+    /**
+     * This is a list of comma-separated log sets that recalled data belongs to.
+     * @return the value
+     **/
+    public String getLogSets() {
+        return logSets;
+    }
+
+    /**
+     * This is the query that identifies the recalled data.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("query")
+    private final String query;
+
+    /**
+     * This is the query that identifies the recalled data.
+     * @return the value
+     **/
+    public String getQuery() {
+        return query;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -227,6 +301,8 @@ public final class RecallArchivedDataDetails
         sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
         sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
+        sb.append(", logSets=").append(String.valueOf(this.logSets));
+        sb.append(", query=").append(String.valueOf(this.query));
         sb.append(")");
         return sb.toString();
     }
@@ -245,6 +321,8 @@ public final class RecallArchivedDataDetails
                 && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
                 && java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
                 && java.util.Objects.equals(this.dataType, other.dataType)
+                && java.util.Objects.equals(this.logSets, other.logSets)
+                && java.util.Objects.equals(this.query, other.query)
                 && super.equals(other);
     }
 
@@ -262,6 +340,8 @@ public final class RecallArchivedDataDetails
                 (result * PRIME)
                         + (this.timeDataStarted == null ? 43 : this.timeDataStarted.hashCode());
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
+        result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

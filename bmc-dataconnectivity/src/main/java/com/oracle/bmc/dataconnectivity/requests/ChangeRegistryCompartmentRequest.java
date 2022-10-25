@@ -14,24 +14,24 @@ public class ChangeRegistryCompartmentRequest
                 com.oracle.bmc.dataconnectivity.model.ChangeRegistryCompartmentDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * The details of change compartment action.
+     * The details of the change compartment action.
      */
     private com.oracle.bmc.dataconnectivity.model.ChangeRegistryCompartmentDetails
             changeRegistryCompartmentDetails;
 
     /**
-     * The details of change compartment action.
+     * The details of the change compartment action.
      */
     public com.oracle.bmc.dataconnectivity.model.ChangeRegistryCompartmentDetails
             getChangeRegistryCompartmentDetails() {
@@ -72,13 +72,13 @@ public class ChangeRegistryCompartmentRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -104,12 +104,12 @@ public class ChangeRegistryCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -119,13 +119,13 @@ public class ChangeRegistryCompartmentRequest
         }
 
         /**
-         * The details of change compartment action.
+         * The details of the change compartment action.
          */
         private com.oracle.bmc.dataconnectivity.model.ChangeRegistryCompartmentDetails
                 changeRegistryCompartmentDetails = null;
 
         /**
-         * The details of change compartment action.
+         * The details of the change compartment action.
          * @param changeRegistryCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -179,13 +179,13 @@ public class ChangeRegistryCompartmentRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

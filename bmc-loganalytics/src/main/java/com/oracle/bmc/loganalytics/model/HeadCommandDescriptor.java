@@ -72,6 +72,15 @@ public final class HeadCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * Value specified as limit argument in queryString
          *
@@ -102,6 +111,7 @@ public final class HeadCommandDescriptor extends AbstractCommandDescriptor {
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.limit);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -125,6 +135,9 @@ public final class HeadCommandDescriptor extends AbstractCommandDescriptor {
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("limit")) {
                 this.limit(model.getLimit());
@@ -151,8 +164,15 @@ public final class HeadCommandDescriptor extends AbstractCommandDescriptor {
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             Integer limit) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.limit = limit;
     }
 

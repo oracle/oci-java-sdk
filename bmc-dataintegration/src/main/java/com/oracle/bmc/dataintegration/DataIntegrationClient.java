@@ -3214,6 +3214,80 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public GetRuntimeOperatorResponse getRuntimeOperator(GetRuntimeOperatorRequest request) {
+        LOG.trace("Called getRuntimeOperator");
+        final GetRuntimeOperatorRequest interceptedRequest =
+                GetRuntimeOperatorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRuntimeOperatorConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetRuntimeOperator",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperator/GetRuntimeOperator");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRuntimeOperatorResponse>
+                transformer =
+                        GetRuntimeOperatorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRuntimePipelineResponse getRuntimePipeline(GetRuntimePipelineRequest request) {
+        LOG.trace("Called getRuntimePipeline");
+        final GetRuntimePipelineRequest interceptedRequest =
+                GetRuntimePipelineConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRuntimePipelineConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetRuntimePipeline",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipeline/GetRuntimePipeline");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRuntimePipelineResponse>
+                transformer =
+                        GetRuntimePipelineConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetScheduleResponse getSchedule(GetScheduleRequest request) {
         LOG.trace("Called getSchedule");
         final GetScheduleRequest interceptedRequest =
@@ -3866,6 +3940,45 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public ListDisApplicationTaskRunLineagesResponse listDisApplicationTaskRunLineages(
+            ListDisApplicationTaskRunLineagesRequest request) {
+        LOG.trace("Called listDisApplicationTaskRunLineages");
+        final ListDisApplicationTaskRunLineagesRequest interceptedRequest =
+                ListDisApplicationTaskRunLineagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDisApplicationTaskRunLineagesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListDisApplicationTaskRunLineages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListDisApplicationTaskRunLineages");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDisApplicationTaskRunLineagesResponse>
+                transformer =
+                        ListDisApplicationTaskRunLineagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListDisApplicationsResponse listDisApplications(ListDisApplicationsRequest request) {
         LOG.trace("Called listDisApplications");
         final ListDisApplicationsRequest interceptedRequest =
@@ -4305,6 +4418,80 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public ListRuntimeOperatorsResponse listRuntimeOperators(ListRuntimeOperatorsRequest request) {
+        LOG.trace("Called listRuntimeOperators");
+        final ListRuntimeOperatorsRequest interceptedRequest =
+                ListRuntimeOperatorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRuntimeOperatorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListRuntimeOperators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperatorSummaryCollection/ListRuntimeOperators");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRuntimeOperatorsResponse>
+                transformer =
+                        ListRuntimeOperatorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRuntimePipelinesResponse listRuntimePipelines(ListRuntimePipelinesRequest request) {
+        LOG.trace("Called listRuntimePipelines");
+        final ListRuntimePipelinesRequest interceptedRequest =
+                ListRuntimePipelinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRuntimePipelinesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListRuntimePipelines",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipelineSummaryCollection/ListRuntimePipelines");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRuntimePipelinesResponse>
+                transformer =
+                        ListRuntimePipelinesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListSchedulesResponse listSchedules(ListSchedulesRequest request) {
         LOG.trace("Called listSchedules");
         final ListSchedulesRequest interceptedRequest =
@@ -4359,6 +4546,43 @@ public class DataIntegrationClient implements DataIntegration {
                         "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas");
         java.util.function.Function<javax.ws.rs.core.Response, ListSchemasResponse> transformer =
                 ListSchemasConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTaskRunLineagesResponse listTaskRunLineages(ListTaskRunLineagesRequest request) {
+        LOG.trace("Called listTaskRunLineages");
+        final ListTaskRunLineagesRequest interceptedRequest =
+                ListTaskRunLineagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaskRunLineagesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListTaskRunLineages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListTaskRunLineages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTaskRunLineagesResponse>
+                transformer =
+                        ListTaskRunLineagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

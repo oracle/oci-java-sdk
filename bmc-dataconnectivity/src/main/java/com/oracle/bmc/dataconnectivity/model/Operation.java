@@ -25,15 +25,27 @@ package com.oracle.bmc.dataconnectivity.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OperationFromProcedure.class,
         name = "PROCEDURE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OperationFromApi.class,
+        name = "API"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Operation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"metadata"})
-    protected Operation(ObjectMetadata metadata) {
+    @java.beans.ConstructorProperties({"operationAttributes", "metadata"})
+    protected Operation(AbstractOperationAttributes operationAttributes, ObjectMetadata metadata) {
         super();
+        this.operationAttributes = operationAttributes;
         this.metadata = metadata;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationAttributes")
+    private final AbstractOperationAttributes operationAttributes;
+
+    public AbstractOperationAttributes getOperationAttributes() {
+        return operationAttributes;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
@@ -57,7 +69,8 @@ public class Operation extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Operation(");
         sb.append("super=").append(super.toString());
-        sb.append("metadata=").append(String.valueOf(this.metadata));
+        sb.append("operationAttributes=").append(String.valueOf(this.operationAttributes));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
     }
@@ -72,13 +85,20 @@ public class Operation extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
 
         Operation other = (Operation) o;
-        return java.util.Objects.equals(this.metadata, other.metadata) && super.equals(other);
+        return java.util.Objects.equals(this.operationAttributes, other.operationAttributes)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.operationAttributes == null
+                                ? 43
+                                : this.operationAttributes.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
@@ -89,6 +109,7 @@ public class Operation extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      **/
     public enum ModelType {
         Procedure("PROCEDURE"),
+        Api("API"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

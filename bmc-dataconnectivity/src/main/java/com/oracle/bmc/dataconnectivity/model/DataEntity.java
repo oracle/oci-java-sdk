@@ -41,15 +41,34 @@ package com.oracle.bmc.dataconnectivity.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataEntityFromFile.class,
         name = "FILE_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DerivedEntity.class,
+        name = "DERIVED_ENTITY"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DataEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"metadata"})
-    protected DataEntity(ObjectMetadata metadata) {
+    @java.beans.ConstructorProperties({"entityProperties", "metadata"})
+    protected DataEntity(java.util.Map<String, String> entityProperties, ObjectMetadata metadata) {
         super();
+        this.entityProperties = entityProperties;
         this.metadata = metadata;
+    }
+
+    /**
+     * Map<String, String> for entity properties
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entityProperties")
+    private final java.util.Map<String, String> entityProperties;
+
+    /**
+     * Map<String, String> for entity properties
+     * @return the value
+     **/
+    public java.util.Map<String, String> getEntityProperties() {
+        return entityProperties;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
@@ -73,7 +92,8 @@ public class DataEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataEntity(");
         sb.append("super=").append(super.toString());
-        sb.append("metadata=").append(String.valueOf(this.metadata));
+        sb.append("entityProperties=").append(String.valueOf(this.entityProperties));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
     }
@@ -88,13 +108,18 @@ public class DataEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
 
         DataEntity other = (DataEntity) o;
-        return java.util.Objects.equals(this.metadata, other.metadata) && super.equals(other);
+        return java.util.Objects.equals(this.entityProperties, other.entityProperties)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.entityProperties == null ? 43 : this.entityProperties.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
@@ -109,6 +134,8 @@ public class DataEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         FileEntity("FILE_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        DerivedEntity("DERIVED_ENTITY"),
+        MessageEntity("MESSAGE_ENTITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -34,6 +34,17 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         return statement;
     }
     /**
+     * Include a query execution plan in the result.
+     */
+    private Boolean isGetQueryPlan;
+
+    /**
+     * Include a query execution plan in the result.
+     */
+    public Boolean getIsGetQueryPlan() {
+        return isGetQueryPlan;
+    }
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -83,6 +94,21 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * Include a query execution plan in the result.
+         */
+        private Boolean isGetQueryPlan = null;
+
+        /**
+         * Include a query execution plan in the result.
+         * @param isGetQueryPlan the value to set
+         * @return this builder instance
+         */
+        public Builder isGetQueryPlan(Boolean isGetQueryPlan) {
+            this.isGetQueryPlan = isGetQueryPlan;
+            return this;
+        }
+
+        /**
          * The client request ID for tracing.
          */
         private String opcRequestId = null;
@@ -127,6 +153,7 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(PrepareStatementRequest o) {
             compartmentId(o.getCompartmentId());
             statement(o.getStatement());
+            isGetQueryPlan(o.getIsGetQueryPlan());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -162,9 +189,10 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
             PrepareStatementRequest request = new PrepareStatementRequest();
             request.compartmentId = compartmentId;
             request.statement = statement;
+            request.isGetQueryPlan = isGetQueryPlan;
             request.opcRequestId = opcRequestId;
             return request;
-            // new PrepareStatementRequest(compartmentId, statement, opcRequestId);
+            // new PrepareStatementRequest(compartmentId, statement, isGetQueryPlan, opcRequestId);
         }
     }
 
@@ -176,6 +204,7 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         return new Builder()
                 .compartmentId(compartmentId)
                 .statement(statement)
+                .isGetQueryPlan(isGetQueryPlan)
                 .opcRequestId(opcRequestId);
     }
 
@@ -194,6 +223,7 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",statement=").append(String.valueOf(this.statement));
+        sb.append(",isGetQueryPlan=").append(String.valueOf(this.isGetQueryPlan));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -212,6 +242,7 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.statement, other.statement)
+                && java.util.Objects.equals(this.isGetQueryPlan, other.isGetQueryPlan)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -223,6 +254,9 @@ public class PrepareStatementRequest extends com.oracle.bmc.requests.BmcRequest<
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.statement == null ? 43 : this.statement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isGetQueryPlan == null ? 43 : this.isGetQueryPlan.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

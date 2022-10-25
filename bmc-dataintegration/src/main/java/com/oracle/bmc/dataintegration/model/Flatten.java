@@ -151,6 +151,15 @@ public final class Flatten extends Operator {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("materializedFlattenField")
+        private MaterializedDynamicField materializedFlattenField;
+
+        public Builder materializedFlattenField(MaterializedDynamicField materializedFlattenField) {
+            this.materializedFlattenField = materializedFlattenField;
+            this.__explicitlySet__.add("materializedFlattenField");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -170,7 +179,8 @@ public final class Flatten extends Operator {
                             this.parameters,
                             this.opConfigValues,
                             this.flattenDetails,
-                            this.flattenField);
+                            this.flattenField,
+                            this.materializedFlattenField);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +231,9 @@ public final class Flatten extends Operator {
             if (model.wasPropertyExplicitlySet("flattenField")) {
                 this.flattenField(model.getFlattenField());
             }
+            if (model.wasPropertyExplicitlySet("materializedFlattenField")) {
+                this.materializedFlattenField(model.getMaterializedFlattenField());
+            }
             return this;
         }
     }
@@ -251,7 +264,8 @@ public final class Flatten extends Operator {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             FlattenDetails flattenDetails,
-            DynamicProxyField flattenField) {
+            DynamicProxyField flattenField,
+            MaterializedDynamicField materializedFlattenField) {
         super(
                 key,
                 modelVersion,
@@ -267,6 +281,7 @@ public final class Flatten extends Operator {
                 opConfigValues);
         this.flattenDetails = flattenDetails;
         this.flattenField = flattenField;
+        this.materializedFlattenField = materializedFlattenField;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("flattenDetails")
@@ -281,6 +296,13 @@ public final class Flatten extends Operator {
 
     public DynamicProxyField getFlattenField() {
         return flattenField;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("materializedFlattenField")
+    private final MaterializedDynamicField materializedFlattenField;
+
+    public MaterializedDynamicField getMaterializedFlattenField() {
+        return materializedFlattenField;
     }
 
     @Override
@@ -299,6 +321,8 @@ public final class Flatten extends Operator {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", flattenDetails=").append(String.valueOf(this.flattenDetails));
         sb.append(", flattenField=").append(String.valueOf(this.flattenField));
+        sb.append(", materializedFlattenField=")
+                .append(String.valueOf(this.materializedFlattenField));
         sb.append(")");
         return sb.toString();
     }
@@ -315,6 +339,8 @@ public final class Flatten extends Operator {
         Flatten other = (Flatten) o;
         return java.util.Objects.equals(this.flattenDetails, other.flattenDetails)
                 && java.util.Objects.equals(this.flattenField, other.flattenField)
+                && java.util.Objects.equals(
+                        this.materializedFlattenField, other.materializedFlattenField)
                 && super.equals(other);
     }
 
@@ -326,6 +352,11 @@ public final class Flatten extends Operator {
                 (result * PRIME)
                         + (this.flattenDetails == null ? 43 : this.flattenDetails.hashCode());
         result = (result * PRIME) + (this.flattenField == null ? 43 : this.flattenField.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.materializedFlattenField == null
+                                ? 43
+                                : this.materializedFlattenField.hashCode());
         return result;
     }
 }

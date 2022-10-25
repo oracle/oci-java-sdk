@@ -119,6 +119,15 @@ public class ListSchemasConverter {
                                     request.getEndpointId()));
         }
 
+        if (request.getIncludeTypes() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "includeTypes",
+                            request.getIncludeTypes(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

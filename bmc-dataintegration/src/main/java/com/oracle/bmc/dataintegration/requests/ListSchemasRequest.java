@@ -88,6 +88,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
+        TimeUpdated("TIME_UPDATED"),
         ;
 
         private final String value;
@@ -209,6 +210,17 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public java.util.List<String> getNameList() {
         return nameList;
+    }
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    private java.util.List<String> includeTypes;
+
+    /**
+     * Artifact type which needs to be listed while listing Artifacts.
+     */
+    public java.util.List<String> getIncludeTypes() {
+        return includeTypes;
     }
 
     public static class Builder
@@ -408,6 +420,30 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         */
+        private java.util.List<String> includeTypes = null;
+
+        /**
+         * Artifact type which needs to be listed while listing Artifacts.
+         * @param includeTypes the value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(java.util.List<String> includeTypes) {
+            this.includeTypes = includeTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. Artifact type which needs to be listed while listing Artifacts.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder includeTypes(String singularValue) {
+            return this.includeTypes(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -446,6 +482,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             name(o.getName());
             opcRequestId(o.getOpcRequestId());
             nameList(o.getNameList());
+            includeTypes(o.getIncludeTypes());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -489,8 +526,9 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.name = name;
             request.opcRequestId = opcRequestId;
             request.nameList = nameList;
+            request.includeTypes = includeTypes;
             return request;
-            // new ListSchemasRequest(workspaceId, connectionKey, schemaResourceName, page, limit, fields, sortBy, sortOrder, name, opcRequestId, nameList);
+            // new ListSchemasRequest(workspaceId, connectionKey, schemaResourceName, page, limit, fields, sortBy, sortOrder, name, opcRequestId, nameList, includeTypes);
         }
     }
 
@@ -510,7 +548,8 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .sortOrder(sortOrder)
                 .name(name)
                 .opcRequestId(opcRequestId)
-                .nameList(nameList);
+                .nameList(nameList)
+                .includeTypes(includeTypes);
     }
 
     /**
@@ -537,6 +576,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",nameList=").append(String.valueOf(this.nameList));
+        sb.append(",includeTypes=").append(String.valueOf(this.includeTypes));
         sb.append(")");
         return sb.toString();
     }
@@ -562,7 +602,8 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.nameList, other.nameList);
+                && java.util.Objects.equals(this.nameList, other.nameList)
+                && java.util.Objects.equals(this.includeTypes, other.includeTypes);
     }
 
     @Override
@@ -586,6 +627,7 @@ public class ListSchemasRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.nameList == null ? 43 : this.nameList.hashCode());
+        result = (result * PRIME) + (this.includeTypes == null ? 43 : this.includeTypes.hashCode());
         return result;
     }
 }

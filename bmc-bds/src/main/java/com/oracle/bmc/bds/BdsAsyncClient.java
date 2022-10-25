@@ -2039,6 +2039,108 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartBdsInstanceResponse> startBdsInstance(
+            StartBdsInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartBdsInstanceRequest, StartBdsInstanceResponse>
+                    handler) {
+        LOG.trace("Called async startBdsInstance");
+        final StartBdsInstanceRequest interceptedRequest =
+                StartBdsInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartBdsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "StartBdsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/StartBdsInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartBdsInstanceResponse>
+                transformer =
+                        StartBdsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartBdsInstanceRequest, StartBdsInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartBdsInstanceRequest, StartBdsInstanceResponse>,
+                        java.util.concurrent.Future<StartBdsInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStartBdsInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartBdsInstanceRequest, StartBdsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBdsInstanceResponse> stopBdsInstance(
+            StopBdsInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopBdsInstanceRequest, StopBdsInstanceResponse>
+                    handler) {
+        LOG.trace("Called async stopBdsInstance");
+        final StopBdsInstanceRequest interceptedRequest =
+                StopBdsInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopBdsInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "StopBdsInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/StopBdsInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopBdsInstanceResponse>
+                transformer =
+                        StopBdsInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopBdsInstanceRequest, StopBdsInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopBdsInstanceRequest, StopBdsInstanceResponse>,
+                        java.util.concurrent.Future<StopBdsInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStopBdsInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopBdsInstanceRequest, StopBdsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<TestBdsMetastoreConfigurationResponse>
             testBdsMetastoreConfiguration(
                     TestBdsMetastoreConfigurationRequest request,

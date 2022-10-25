@@ -40,23 +40,23 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return opcRequestId;
     }
     /**
-     * DCMS registry or endpoint id
+     * DCMS registry ID
      */
-    private String resourceId;
+    private String registryId;
 
     /**
-     * DCMS registry or endpoint id
+     * DCMS registry ID
      */
-    public String getResourceId() {
-        return resourceId;
+    public String getRegistryId() {
+        return registryId;
     }
     /**
-     * Work Request status.
+     * Work request status.
      */
     private WorkRequestStatus workRequestStatus;
 
     /**
-     * Work Request status.
+     * Work request status.
      **/
     public enum WorkRequestStatus {
         Accepted("ACCEPTED"),
@@ -96,7 +96,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * Work Request status.
+     * Work request status.
      */
     public WorkRequestStatus getWorkRequestStatus() {
         return workRequestStatus;
@@ -168,27 +168,27 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * DCMS registry or endpoint id
+         * DCMS registry ID
          */
-        private String resourceId = null;
+        private String registryId = null;
 
         /**
-         * DCMS registry or endpoint id
-         * @param resourceId the value to set
+         * DCMS registry ID
+         * @param registryId the value to set
          * @return this builder instance
          */
-        public Builder resourceId(String resourceId) {
-            this.resourceId = resourceId;
+        public Builder registryId(String registryId) {
+            this.registryId = registryId;
             return this;
         }
 
         /**
-         * Work Request status.
+         * Work request status.
          */
         private WorkRequestStatus workRequestStatus = null;
 
         /**
-         * Work Request status.
+         * Work request status.
          * @param workRequestStatus the value to set
          * @return this builder instance
          */
@@ -257,7 +257,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
-            resourceId(o.getResourceId());
+            registryId(o.getRegistryId());
             workRequestStatus(o.getWorkRequestStatus());
             page(o.getPage());
             limit(o.getLimit());
@@ -295,12 +295,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             ListWorkRequestsRequest request = new ListWorkRequestsRequest();
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
-            request.resourceId = resourceId;
+            request.registryId = registryId;
             request.workRequestStatus = workRequestStatus;
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, opcRequestId, resourceId, workRequestStatus, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, opcRequestId, registryId, workRequestStatus, page, limit);
         }
     }
 
@@ -312,7 +312,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return new Builder()
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
-                .resourceId(resourceId)
+                .registryId(registryId)
                 .workRequestStatus(workRequestStatus)
                 .page(page)
                 .limit(limit);
@@ -333,7 +333,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(",registryId=").append(String.valueOf(this.registryId));
         sb.append(",workRequestStatus=").append(String.valueOf(this.workRequestStatus));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -354,7 +354,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.registryId, other.registryId)
                 && java.util.Objects.equals(this.workRequestStatus, other.workRequestStatus)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit);
@@ -368,7 +368,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
         result =
                 (result * PRIME)
                         + (this.workRequestStatus == null ? 43 : this.workRequestStatus.hashCode());

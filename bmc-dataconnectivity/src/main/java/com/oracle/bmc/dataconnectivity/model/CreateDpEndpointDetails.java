@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Properties used in endpoint create operations.
+ * Properties used in the create operations of the endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class CreateDpEndpointDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Generated key that can be used in API calls to identify endpoint. On scenarios where reference to the endpoint is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify endpoint. On scenarios where reference to the endpoint is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
      * @return the value
      **/
     public String getKey() {
@@ -103,13 +103,13 @@ public class CreateDpEndpointDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -117,13 +117,13 @@ public class CreateDpEndpointDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * User-defined description for the endpoint.
+     * User-defined description of the endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User-defined description for the endpoint.
+     * User-defined description of the endpoint.
      * @return the value
      **/
     public String getDescription() {
@@ -159,13 +159,13 @@ public class CreateDpEndpointDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -173,13 +173,13 @@ public class CreateDpEndpointDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * List of data assets which belongs to this endpoint
+     * The list of data assets that belong to the endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssets")
     private final java.util.List<DataAsset> dataAssets;
 
     /**
-     * List of data assets which belongs to this endpoint
+     * The list of data assets that belong to the endpoint.
      * @return the value
      **/
     public java.util.List<DataAsset> getDataAssets() {

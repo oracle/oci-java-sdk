@@ -28,6 +28,7 @@ public final class SearchMonitoredResourcesDetails
         "nameContains",
         "type",
         "hostName",
+        "externalId",
         "hostNameContains",
         "managementAgentId",
         "lifecycleState",
@@ -46,6 +47,7 @@ public final class SearchMonitoredResourcesDetails
             String nameContains,
             String type,
             String hostName,
+            String externalId,
             String hostNameContains,
             String managementAgentId,
             ResourceLifecycleState lifecycleState,
@@ -63,6 +65,7 @@ public final class SearchMonitoredResourcesDetails
         this.nameContains = nameContains;
         this.type = type;
         this.hostName = hostName;
+        this.externalId = externalId;
         this.hostNameContains = hostNameContains;
         this.managementAgentId = managementAgentId;
         this.lifecycleState = lifecycleState;
@@ -156,6 +159,30 @@ public final class SearchMonitoredResourcesDetails
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
+            return this;
+        }
+        /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only following resource type identifiers - externalcontainerdatabase,
+         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+        private String externalId;
+
+        /**
+         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only following resource type identifiers - externalcontainerdatabase,
+         * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+         *
+         * @param externalId the value to set
+         * @return this builder
+         **/
+        public Builder externalId(String externalId) {
+            this.externalId = externalId;
+            this.__explicitlySet__.add("externalId");
             return this;
         }
         /**
@@ -416,6 +443,7 @@ public final class SearchMonitoredResourcesDetails
                             this.nameContains,
                             this.type,
                             this.hostName,
+                            this.externalId,
                             this.hostNameContains,
                             this.managementAgentId,
                             this.lifecycleState,
@@ -449,6 +477,9 @@ public final class SearchMonitoredResourcesDetails
             }
             if (model.wasPropertyExplicitlySet("hostName")) {
                 this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("externalId")) {
+                this.externalId(model.getExternalId());
             }
             if (model.wasPropertyExplicitlySet("hostNameContains")) {
                 this.hostNameContains(model.getHostNameContains());
@@ -566,6 +597,28 @@ public final class SearchMonitoredResourcesDetails
      **/
     public String getHostName() {
         return hostName;
+    }
+
+    /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only following resource type identifiers - externalcontainerdatabase,
+     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalId")
+    private final String externalId;
+
+    /**
+     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only following resource type identifiers - externalcontainerdatabase,
+     * externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+     *
+     * @return the value
+     **/
+    public String getExternalId() {
+        return externalId;
     }
 
     /**
@@ -846,6 +899,7 @@ public final class SearchMonitoredResourcesDetails
         sb.append(", nameContains=").append(String.valueOf(this.nameContains));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
+        sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", hostNameContains=").append(String.valueOf(this.hostNameContains));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -878,6 +932,7 @@ public final class SearchMonitoredResourcesDetails
                 && java.util.Objects.equals(this.nameContains, other.nameContains)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.hostNameContains, other.hostNameContains)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -905,6 +960,7 @@ public final class SearchMonitoredResourcesDetails
         result = (result * PRIME) + (this.nameContains == null ? 43 : this.nameContains.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostNameContains == null ? 43 : this.hostNameContains.hashCode());

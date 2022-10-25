@@ -30,13 +30,13 @@ public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Map of DataAsset name as key and results as value
+         * Mapping the DataAsset name as the key to the results as the value.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceInfo")
         private java.util.Map<String, ValidationResult> referenceInfo;
 
         /**
-         * Map of DataAsset name as key and results as value
+         * Mapping the DataAsset name as the key to the results as the value.
          * @param referenceInfo the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class AttachDataAssetInfo extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Map of DataAsset name as key and results as value
+     * Mapping the DataAsset name as the key to the results as the value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceInfo")
     private final java.util.Map<String, ValidationResult> referenceInfo;
 
     /**
-     * Map of DataAsset name as key and results as value
+     * Mapping the DataAsset name as the key to the results as the value.
      * @return the value
      **/
     public java.util.Map<String, ValidationResult> getReferenceInfo() {

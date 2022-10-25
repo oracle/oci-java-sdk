@@ -42,6 +42,10 @@ public class PostMetricDataConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getContentEncoding() != null) {
+            ib.header("content-encoding", request.getContentEncoding());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

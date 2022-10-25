@@ -71,7 +71,7 @@ The SDK for Java also provides an environment variable to switch back to the old
 
 ### Switching off auto-close of streams 
 
-For API calls that return binary/stream response, the SDK will auto-close the stream once the stream has been completely read by the customer. If reading the stream completely, the SDK will automatically try to close the stream to release the connection from the connection pool, to disable this feature of auto-closing streams on full read, please call `ResponseHelper.shouldAutoCloseResponseInputStream(false)`. This is because the SDK for Java supports the Apache Connector for sending requests and managing connections to the service. By default, the Apache Connector supports connection pooling and in the cases where the stream from the response is not closed, the connections don't get released from the connection pool and in turn results in an indefinite wait time.
+For API calls that return binary/stream response, the SDK will auto-close the stream once the stream has been completely read by the customer. If reading the stream completely, the SDK will automatically try to close the stream to release the connection from the connection pool, to disable this feature of auto-closing streams on full read, please call `Options.shouldAutoCloseResponseInputStream(false)`. This is because the SDK for Java supports the Apache Connector for sending requests and managing connections to the service. By default, the Apache Connector supports connection pooling and in the cases where the stream from the response is not closed, the connections don't get released from the connection pool and in turn results in an indefinite wait time.
 
 ## Configuration for Apache Connector
 

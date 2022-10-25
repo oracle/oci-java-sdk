@@ -6,8 +6,10 @@ package com.oracle.bmc.auth.internal;
 
 import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
+import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.internal.Validate;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -102,7 +104,10 @@ public class FileBasedResourcePrincipalFederationClient
         try {
             securityToken =
                     new String(
-                            Files.readAllBytes(Paths.get(this.resourcePrincipalSessionTokenPath)));
+                            StreamUtils.toByteArray(
+                                    new FileInputStream(
+                                            new File(this.resourcePrincipalSessionTokenPath))),
+                            Charset.defaultCharset());
         } catch (IOException e) {
             throw new RuntimeException("cannot read token from file", e);
         }

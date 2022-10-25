@@ -44,6 +44,8 @@ public final class ExadataInfrastructureSummary
         "additionalStorageCount",
         "activatedStorageCount",
         "computeCount",
+        "additionalComputeCount",
+        "additionalComputeSystemModel",
         "cloudControlPlaneServer1",
         "cloudControlPlaneServer2",
         "netmask",
@@ -88,6 +90,8 @@ public final class ExadataInfrastructureSummary
             Integer additionalStorageCount,
             Integer activatedStorageCount,
             Integer computeCount,
+            Integer additionalComputeCount,
+            AdditionalComputeSystemModel additionalComputeSystemModel,
             String cloudControlPlaneServer1,
             String cloudControlPlaneServer2,
             String netmask,
@@ -131,6 +135,8 @@ public final class ExadataInfrastructureSummary
         this.additionalStorageCount = additionalStorageCount;
         this.activatedStorageCount = activatedStorageCount;
         this.computeCount = computeCount;
+        this.additionalComputeCount = additionalComputeCount;
+        this.additionalComputeSystemModel = additionalComputeSystemModel;
         this.cloudControlPlaneServer1 = cloudControlPlaneServer1;
         this.cloudControlPlaneServer2 = cloudControlPlaneServer2;
         this.netmask = netmask;
@@ -464,6 +470,45 @@ public final class ExadataInfrastructureSummary
         public Builder computeCount(Integer computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
+            return this;
+        }
+        /**
+         * The requested number of additional compute servers for the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeCount")
+        private Integer additionalComputeCount;
+
+        /**
+         * The requested number of additional compute servers for the Exadata infrastructure.
+         * @param additionalComputeCount the value to set
+         * @return this builder
+         **/
+        public Builder additionalComputeCount(Integer additionalComputeCount) {
+            this.additionalComputeCount = additionalComputeCount;
+            this.__explicitlySet__.add("additionalComputeCount");
+            return this;
+        }
+        /**
+         * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+         * server resources available for use. For more information, please see [System and Shape Configuration Options]
+         * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeSystemModel")
+        private AdditionalComputeSystemModel additionalComputeSystemModel;
+
+        /**
+         * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+         * server resources available for use. For more information, please see [System and Shape Configuration Options]
+         * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         *
+         * @param additionalComputeSystemModel the value to set
+         * @return this builder
+         **/
+        public Builder additionalComputeSystemModel(
+                AdditionalComputeSystemModel additionalComputeSystemModel) {
+            this.additionalComputeSystemModel = additionalComputeSystemModel;
+            this.__explicitlySet__.add("additionalComputeSystemModel");
             return this;
         }
         /**
@@ -872,6 +917,8 @@ public final class ExadataInfrastructureSummary
                             this.additionalStorageCount,
                             this.activatedStorageCount,
                             this.computeCount,
+                            this.additionalComputeCount,
+                            this.additionalComputeSystemModel,
                             this.cloudControlPlaneServer1,
                             this.cloudControlPlaneServer2,
                             this.netmask,
@@ -959,6 +1006,12 @@ public final class ExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("additionalComputeCount")) {
+                this.additionalComputeCount(model.getAdditionalComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("additionalComputeSystemModel")) {
+                this.additionalComputeSystemModel(model.getAdditionalComputeSystemModel());
             }
             if (model.wasPropertyExplicitlySet("cloudControlPlaneServer1")) {
                 this.cloudControlPlaneServer1(model.getCloudControlPlaneServer1());
@@ -1369,6 +1422,93 @@ public final class ExadataInfrastructureSummary
      **/
     public Integer getComputeCount() {
         return computeCount;
+    }
+
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeCount")
+    private final Integer additionalComputeCount;
+
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     * @return the value
+     **/
+    public Integer getAdditionalComputeCount() {
+        return additionalComputeCount;
+    }
+
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+     * server resources available for use. For more information, please see [System and Shape Configuration Options]
+     * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     *
+     **/
+    public enum AdditionalComputeSystemModel {
+        X7("X7"),
+        X8("X8"),
+        X8M("X8M"),
+        X9M("X9M"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AdditionalComputeSystemModel.class);
+
+        private final String value;
+        private static java.util.Map<String, AdditionalComputeSystemModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AdditionalComputeSystemModel v : AdditionalComputeSystemModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AdditionalComputeSystemModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AdditionalComputeSystemModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AdditionalComputeSystemModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+     * server resources available for use. For more information, please see [System and Shape Configuration Options]
+     * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeSystemModel")
+    private final AdditionalComputeSystemModel additionalComputeSystemModel;
+
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+     * server resources available for use. For more information, please see [System and Shape Configuration Options]
+     * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     *
+     * @return the value
+     **/
+    public AdditionalComputeSystemModel getAdditionalComputeSystemModel() {
+        return additionalComputeSystemModel;
     }
 
     /**
@@ -1785,6 +1925,9 @@ public final class ExadataInfrastructureSummary
         sb.append(", additionalStorageCount=").append(String.valueOf(this.additionalStorageCount));
         sb.append(", activatedStorageCount=").append(String.valueOf(this.activatedStorageCount));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", additionalComputeCount=").append(String.valueOf(this.additionalComputeCount));
+        sb.append(", additionalComputeSystemModel=")
+                .append(String.valueOf(this.additionalComputeSystemModel));
         sb.append(", cloudControlPlaneServer1=")
                 .append(String.valueOf(this.cloudControlPlaneServer1));
         sb.append(", cloudControlPlaneServer2=")
@@ -1846,6 +1989,10 @@ public final class ExadataInfrastructureSummary
                         this.additionalStorageCount, other.additionalStorageCount)
                 && java.util.Objects.equals(this.activatedStorageCount, other.activatedStorageCount)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(
+                        this.additionalComputeCount, other.additionalComputeCount)
+                && java.util.Objects.equals(
+                        this.additionalComputeSystemModel, other.additionalComputeSystemModel)
                 && java.util.Objects.equals(
                         this.cloudControlPlaneServer1, other.cloudControlPlaneServer1)
                 && java.util.Objects.equals(
@@ -1933,6 +2080,16 @@ public final class ExadataInfrastructureSummary
                                 ? 43
                                 : this.activatedStorageCount.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalComputeCount == null
+                                ? 43
+                                : this.additionalComputeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalComputeSystemModel == null
+                                ? 43
+                                : this.additionalComputeSystemModel.hashCode());
         result =
                 (result * PRIME)
                         + (this.cloudControlPlaneServer1 == null

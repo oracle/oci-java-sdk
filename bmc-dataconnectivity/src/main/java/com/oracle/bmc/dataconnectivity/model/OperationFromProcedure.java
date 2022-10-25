@@ -27,6 +27,15 @@ package com.oracle.bmc.dataconnectivity.model;
 public final class OperationFromProcedure extends Operation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("operationAttributes")
+        private AbstractOperationAttributes operationAttributes;
+
+        public Builder operationAttributes(AbstractOperationAttributes operationAttributes) {
+            this.operationAttributes = operationAttributes;
+            this.__explicitlySet__.add("operationAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ObjectMetadata metadata;
 
@@ -118,13 +127,13 @@ public final class OperationFromProcedure extends Operation {
             return this;
         }
         /**
-         * The external key for the object.
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object.
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -172,6 +181,7 @@ public final class OperationFromProcedure extends Operation {
         public OperationFromProcedure build() {
             OperationFromProcedure model =
                     new OperationFromProcedure(
+                            this.operationAttributes,
                             this.metadata,
                             this.key,
                             this.modelVersion,
@@ -190,6 +200,9 @@ public final class OperationFromProcedure extends Operation {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(OperationFromProcedure model) {
+            if (model.wasPropertyExplicitlySet("operationAttributes")) {
+                this.operationAttributes(model.getOperationAttributes());
+            }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
             }
@@ -237,6 +250,7 @@ public final class OperationFromProcedure extends Operation {
 
     @Deprecated
     public OperationFromProcedure(
+            AbstractOperationAttributes operationAttributes,
             ObjectMetadata metadata,
             String key,
             String modelVersion,
@@ -247,7 +261,7 @@ public final class OperationFromProcedure extends Operation {
             String externalKey,
             String resourceName,
             Integer objectStatus) {
-        super(metadata);
+        super(operationAttributes, metadata);
         this.key = key;
         this.modelVersion = modelVersion;
         this.parentRef = parentRef;
@@ -330,13 +344,13 @@ public final class OperationFromProcedure extends Operation {
     }
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object.
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {

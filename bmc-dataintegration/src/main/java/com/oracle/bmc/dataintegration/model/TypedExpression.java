@@ -103,6 +103,22 @@ public final class TypedExpression extends TypedObject {
             this.__explicitlySet__.add("expression");
             return this;
         }
+        /**
+         * The object type.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        /**
+         * The object type.
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -117,7 +133,8 @@ public final class TypedExpression extends TypedObject {
                             this.objectStatus,
                             this.name,
                             this.description,
-                            this.expression);
+                            this.expression,
+                            this.type);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -150,6 +167,9 @@ public final class TypedExpression extends TypedObject {
             if (model.wasPropertyExplicitlySet("expression")) {
                 this.expression(model.getExpression());
             }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
             return this;
         }
     }
@@ -174,9 +194,11 @@ public final class TypedExpression extends TypedObject {
             Integer objectStatus,
             String name,
             String description,
-            String expression) {
+            String expression,
+            String type) {
         super(key, modelVersion, parentRef, configValues, objectStatus, name, description);
         this.expression = expression;
+        this.type = type;
     }
 
     /**
@@ -191,6 +213,20 @@ public final class TypedExpression extends TypedObject {
      **/
     public String getExpression() {
         return expression;
+    }
+
+    /**
+     * The object type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final String type;
+
+    /**
+     * The object type.
+     * @return the value
+     **/
+    public String getType() {
+        return type;
     }
 
     @Override
@@ -208,6 +244,7 @@ public final class TypedExpression extends TypedObject {
         sb.append("TypedExpression(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", expression=").append(String.valueOf(this.expression));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(")");
         return sb.toString();
     }
@@ -222,7 +259,9 @@ public final class TypedExpression extends TypedObject {
         }
 
         TypedExpression other = (TypedExpression) o;
-        return java.util.Objects.equals(this.expression, other.expression) && super.equals(other);
+        return java.util.Objects.equals(this.expression, other.expression)
+                && java.util.Objects.equals(this.type, other.type)
+                && super.equals(other);
     }
 
     @Override
@@ -230,6 +269,7 @@ public final class TypedExpression extends TypedObject {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         return result;
     }
 }

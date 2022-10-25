@@ -11965,6 +11965,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ResizeVmClusterNetworkResponse> resizeVmClusterNetwork(
+            ResizeVmClusterNetworkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ResizeVmClusterNetworkRequest, ResizeVmClusterNetworkResponse>
+                    handler) {
+        LOG.trace("Called async resizeVmClusterNetwork");
+        final ResizeVmClusterNetworkRequest interceptedRequest =
+                ResizeVmClusterNetworkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResizeVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ResizeVmClusterNetwork",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ResizeVmClusterNetwork");
+        final java.util.function.Function<javax.ws.rs.core.Response, ResizeVmClusterNetworkResponse>
+                transformer =
+                        ResizeVmClusterNetworkConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ResizeVmClusterNetworkRequest, ResizeVmClusterNetworkResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ResizeVmClusterNetworkRequest, ResizeVmClusterNetworkResponse>,
+                        java.util.concurrent.Future<ResizeVmClusterNetworkResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getResizeVmClusterNetworkDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ResizeVmClusterNetworkRequest, ResizeVmClusterNetworkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RestartAutonomousContainerDatabaseResponse>
             restartAutonomousContainerDatabase(
                     RestartAutonomousContainerDatabaseRequest request,

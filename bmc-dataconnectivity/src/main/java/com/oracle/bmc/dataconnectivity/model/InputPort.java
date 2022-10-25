@@ -88,13 +88,13 @@ public final class InputPort extends TypedObject {
             return this;
         }
         /**
-         * The port details for the data asset.Type.
+         * The port details of the data asset type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("portType")
         private PortType portType;
 
         /**
-         * The port details for the data asset.Type.
+         * The port details of the data asset type.
          * @param portType the value to set
          * @return this builder
          **/
@@ -202,7 +202,7 @@ public final class InputPort extends TypedObject {
     }
 
     /**
-     * The port details for the data asset.Type.
+     * The port details of the data asset type.
      **/
     public enum PortType {
         Data("DATA"),
@@ -238,13 +238,13 @@ public final class InputPort extends TypedObject {
         }
     };
     /**
-     * The port details for the data asset.Type.
+     * The port details of the data asset type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portType")
     private final PortType portType;
 
     /**
-     * The port details for the data asset.Type.
+     * The port details of the data asset type.
      * @return the value
      **/
     public PortType getPortType() {

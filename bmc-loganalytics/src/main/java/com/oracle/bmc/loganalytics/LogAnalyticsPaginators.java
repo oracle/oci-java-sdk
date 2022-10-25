@@ -962,6 +962,120 @@ public class LogAnalyticsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listIngestTimeRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListIngestTimeRulesResponse> listIngestTimeRulesResponseIterator(
+            final ListIngestTimeRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListIngestTimeRulesRequest.Builder, ListIngestTimeRulesRequest,
+                ListIngestTimeRulesResponse>(
+                new java.util.function.Supplier<ListIngestTimeRulesRequest.Builder>() {
+                    @Override
+                    public ListIngestTimeRulesRequest.Builder get() {
+                        return ListIngestTimeRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListIngestTimeRulesResponse, String>() {
+                    @Override
+                    public String apply(ListIngestTimeRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIngestTimeRulesRequest.Builder>,
+                        ListIngestTimeRulesRequest>() {
+                    @Override
+                    public ListIngestTimeRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIngestTimeRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>() {
+                    @Override
+                    public ListIngestTimeRulesResponse apply(ListIngestTimeRulesRequest request) {
+                        return client.listIngestTimeRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.IngestTimeRuleSummary} objects
+     * contained in responses from the listIngestTimeRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.IngestTimeRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.IngestTimeRuleSummary>
+            listIngestTimeRulesRecordIterator(final ListIngestTimeRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListIngestTimeRulesRequest.Builder, ListIngestTimeRulesRequest,
+                ListIngestTimeRulesResponse,
+                com.oracle.bmc.loganalytics.model.IngestTimeRuleSummary>(
+                new java.util.function.Supplier<ListIngestTimeRulesRequest.Builder>() {
+                    @Override
+                    public ListIngestTimeRulesRequest.Builder get() {
+                        return ListIngestTimeRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListIngestTimeRulesResponse, String>() {
+                    @Override
+                    public String apply(ListIngestTimeRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIngestTimeRulesRequest.Builder>,
+                        ListIngestTimeRulesRequest>() {
+                    @Override
+                    public ListIngestTimeRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIngestTimeRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListIngestTimeRulesRequest, ListIngestTimeRulesResponse>() {
+                    @Override
+                    public ListIngestTimeRulesResponse apply(ListIngestTimeRulesRequest request) {
+                        return client.listIngestTimeRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListIngestTimeRulesResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.IngestTimeRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.IngestTimeRuleSummary>
+                            apply(ListIngestTimeRulesResponse response) {
+                        return response.getIngestTimeRuleSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listLabelPriorities operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2948,6 +3062,115 @@ public class LogAnalyticsPaginators {
                                     com.oracle.bmc.loganalytics.model.LogAnalyticsResourceCategory>
                             apply(ListResourceCategoriesResponse response) {
                         return response.getLogAnalyticsResourceCategoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRulesResponse> listRulesResponseIterator(final ListRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRulesRequest.Builder, ListRulesRequest, ListRulesResponse>(
+                new java.util.function.Supplier<ListRulesRequest.Builder>() {
+                    @Override
+                    public ListRulesRequest.Builder get() {
+                        return ListRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRulesResponse, String>() {
+                    @Override
+                    public String apply(ListRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRulesRequest.Builder>,
+                        ListRulesRequest>() {
+                    @Override
+                    public ListRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListRulesRequest, ListRulesResponse>() {
+                    @Override
+                    public ListRulesResponse apply(ListRulesRequest request) {
+                        return client.listRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.RuleSummary} objects
+     * contained in responses from the listRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.RuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.RuleSummary> listRulesRecordIterator(
+            final ListRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRulesRequest.Builder, ListRulesRequest, ListRulesResponse,
+                com.oracle.bmc.loganalytics.model.RuleSummary>(
+                new java.util.function.Supplier<ListRulesRequest.Builder>() {
+                    @Override
+                    public ListRulesRequest.Builder get() {
+                        return ListRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRulesResponse, String>() {
+                    @Override
+                    public String apply(ListRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRulesRequest.Builder>,
+                        ListRulesRequest>() {
+                    @Override
+                    public ListRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListRulesRequest, ListRulesResponse>() {
+                    @Override
+                    public ListRulesResponse apply(ListRulesRequest request) {
+                        return client.listRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRulesResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.RuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.RuleSummary> apply(
+                            ListRulesResponse response) {
+                        return response.getRuleSummaryCollection().getItems();
                     }
                 });
     }

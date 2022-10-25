@@ -32,7 +32,6 @@ import javax.annotation.concurrent.Immutable;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.VisibleForTesting;
-import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -189,6 +188,10 @@ public class RequestSignerImpl implements RequestSigner {
             final Map<String, List<String>> allHeaders = new HashMap<>();
             allHeaders.putAll(existingHeaders);
             for (Map.Entry<String, String> e : missingHeaders.entrySet()) {
+                if (e.getValue() == null) {
+                    throw new NullPointerException(
+                            "Expecting exactly one value for header " + e.getKey());
+                }
                 LOG.trace("Adding missing header '{}' = '{}'", e.getKey(), e.getValue());
                 allHeaders.put(
                         e.getKey(), Collections.unmodifiableList(Arrays.asList(e.getValue())));
@@ -278,7 +281,7 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
-            return RestClientFactory.getObjectMapper().writeValueAsString(headers);
+            return com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(headers);
         } catch (JsonProcessingException ex) {
             LOG.debug("Unable to serialize headers to JSON string", ex);
             return "UNABLE TO SERIALIZE";

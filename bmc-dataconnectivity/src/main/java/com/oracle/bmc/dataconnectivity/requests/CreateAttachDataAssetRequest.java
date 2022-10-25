@@ -14,35 +14,35 @@ public class CreateAttachDataAssetRequest
                 com.oracle.bmc.dataconnectivity.model.CreateAttachDataAssetDetails> {
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     private String registryId;
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public String getRegistryId() {
         return registryId;
     }
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     private String endpointId;
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     public String getEndpointId() {
         return endpointId;
     }
     /**
-     * Request body parameters to attach data asset to an private endpoint
+     * Request body parameters to attach data asset to a private endpoint.
      */
     private com.oracle.bmc.dataconnectivity.model.CreateAttachDataAssetDetails
             createAttachDataAssetDetails;
 
     /**
-     * Request body parameters to attach data asset to an private endpoint
+     * Request body parameters to attach data asset to a private endpoint.
      */
     public com.oracle.bmc.dataconnectivity.model.CreateAttachDataAssetDetails
             getCreateAttachDataAssetDetails() {
@@ -66,13 +66,13 @@ public class CreateAttachDataAssetRequest
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
      *
      */
     public String getOpcRetryToken() {
@@ -115,12 +115,12 @@ public class CreateAttachDataAssetRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         private String registryId = null;
 
         /**
-         * The registry Ocid.
+         * The registry OCID.
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -130,12 +130,12 @@ public class CreateAttachDataAssetRequest
         }
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          */
         private String endpointId = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          * @param endpointId the value to set
          * @return this builder instance
          */
@@ -145,13 +145,13 @@ public class CreateAttachDataAssetRequest
         }
 
         /**
-         * Request body parameters to attach data asset to an private endpoint
+         * Request body parameters to attach data asset to a private endpoint.
          */
         private com.oracle.bmc.dataconnectivity.model.CreateAttachDataAssetDetails
                 createAttachDataAssetDetails = null;
 
         /**
-         * Request body parameters to attach data asset to an private endpoint
+         * Request body parameters to attach data asset to a private endpoint.
          * @param createAttachDataAssetDetails the value to set
          * @return this builder instance
          */
@@ -184,13 +184,13 @@ public class CreateAttachDataAssetRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without the risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance

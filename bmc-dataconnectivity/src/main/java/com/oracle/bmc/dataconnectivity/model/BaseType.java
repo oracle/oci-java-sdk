@@ -103,13 +103,13 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -131,13 +131,13 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
     }
 
     /**
-     * A user defined description for the object.
+     * A user-defined description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user defined description for the object.
+     * A user-defined description for the object.
      * @return the value
      **/
     public String getDescription() {
@@ -202,7 +202,7 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
     }
 
     /**
-     * The property which disciminates the subtypes.
+     * The property which differentiates the subtypes.
      **/
     public enum ModelType {
         StructuredType("STRUCTURED_TYPE"),

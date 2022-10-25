@@ -6,18 +6,18 @@ package com.oracle.bmc.ailanguage.responses;
 
 import com.oracle.bmc.ailanguage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, provide the request ID.
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, provide the request ID.
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -74,14 +74,14 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, provide the request ID.
+         * Oracle about a particular request, please provide the request ID.
          *
          */
         private String opcRequestId;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, provide the request ID.
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder

@@ -23,17 +23,28 @@ package com.oracle.bmc.analytics.model;
 public final class CreatePrivateAccessChannelDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "vcnId", "subnetId", "privateSourceDnsZones"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "vcnId",
+        "subnetId",
+        "privateSourceDnsZones",
+        "privateSourceScanHosts",
+        "networkSecurityGroupIds"
+    })
     public CreatePrivateAccessChannelDetails(
             String displayName,
             String vcnId,
             String subnetId,
-            java.util.List<PrivateSourceDnsZone> privateSourceDnsZones) {
+            java.util.List<PrivateSourceDnsZone> privateSourceDnsZones,
+            java.util.List<PrivateSourceScanHost> privateSourceScanHosts,
+            java.util.List<String> networkSecurityGroupIds) {
         super();
         this.displayName = displayName;
         this.vcnId = vcnId;
         this.subnetId = subnetId;
         this.privateSourceDnsZones = privateSourceDnsZones;
+        this.privateSourceScanHosts = privateSourceScanHosts;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -115,6 +126,43 @@ public final class CreatePrivateAccessChannelDetails
             this.__explicitlySet__.add("privateSourceDnsZones");
             return this;
         }
+        /**
+         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
+        private java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
+
+        /**
+         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         *
+         * @param privateSourceScanHosts the value to set
+         * @return this builder
+         **/
+        public Builder privateSourceScanHosts(
+                java.util.List<PrivateSourceScanHost> privateSourceScanHosts) {
+            this.privateSourceScanHosts = privateSourceScanHosts;
+            this.__explicitlySet__.add("privateSourceScanHosts");
+            return this;
+        }
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         * @param networkSecurityGroupIds the value to set
+         * @return this builder
+         **/
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -125,7 +173,9 @@ public final class CreatePrivateAccessChannelDetails
                             this.displayName,
                             this.vcnId,
                             this.subnetId,
-                            this.privateSourceDnsZones);
+                            this.privateSourceDnsZones,
+                            this.privateSourceScanHosts,
+                            this.networkSecurityGroupIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -145,6 +195,12 @@ public final class CreatePrivateAccessChannelDetails
             }
             if (model.wasPropertyExplicitlySet("privateSourceDnsZones")) {
                 this.privateSourceDnsZones(model.getPrivateSourceDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("privateSourceScanHosts")) {
+                this.privateSourceScanHosts(model.getPrivateSourceScanHosts());
+            }
+            if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
+                this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
             }
             return this;
         }
@@ -229,6 +285,38 @@ public final class CreatePrivateAccessChannelDetails
         return privateSourceDnsZones;
     }
 
+    /**
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
+    private final java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
+
+    /**
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     *
+     * @return the value
+     **/
+    public java.util.List<PrivateSourceScanHost> getPrivateSourceScanHosts() {
+        return privateSourceScanHosts;
+    }
+
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -247,6 +335,9 @@ public final class CreatePrivateAccessChannelDetails
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateSourceDnsZones=").append(String.valueOf(this.privateSourceDnsZones));
+        sb.append(", privateSourceScanHosts=").append(String.valueOf(this.privateSourceScanHosts));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(")");
         return sb.toString();
     }
@@ -265,6 +356,10 @@ public final class CreatePrivateAccessChannelDetails
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateSourceDnsZones, other.privateSourceDnsZones)
+                && java.util.Objects.equals(
+                        this.privateSourceScanHosts, other.privateSourceScanHosts)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && super.equals(other);
     }
 
@@ -280,6 +375,16 @@ public final class CreatePrivateAccessChannelDetails
                         + (this.privateSourceDnsZones == null
                                 ? 43
                                 : this.privateSourceDnsZones.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateSourceScanHosts == null
+                                ? 43
+                                : this.privateSourceScanHosts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -109,6 +109,8 @@ public class DataEntitySummary extends com.oracle.bmc.http.internal.ExplicitlySe
         FileEntity("FILE_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        DerivedEntity("DERIVED_ENTITY"),
+        MessageEntity("MESSAGE_ENTITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

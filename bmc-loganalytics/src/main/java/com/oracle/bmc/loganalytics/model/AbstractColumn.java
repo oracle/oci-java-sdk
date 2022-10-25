@@ -35,7 +35,23 @@ package com.oracle.bmc.loganalytics.model;
         value = TrendColumn.class,
         name = "TREND_COLUMN"
     ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TimeStatsColumn.class,
+        name = "TIME_STATS_COLUMN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TimeClusterColumn.class,
+        name = "TIME_CLUSTER_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Column.class, name = "COLUMN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TimeClusterDataColumn.class,
+        name = "TIME_CLUSTER_DATA_COLUMN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TimeStatsDataColumn.class,
+        name = "TIME_STATS_DATA_COLUMN"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ChartColumn.class,
         name = "CHART_COLUMN"
@@ -353,6 +369,10 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Column("COLUMN"),
         ChartColumn("CHART_COLUMN"),
         ChartDataColumn("CHART_DATA_COLUMN"),
+        TimeStatsColumn("TIME_STATS_COLUMN"),
+        TimeStatsDataColumn("TIME_STATS_DATA_COLUMN"),
+        TimeClusterColumn("TIME_CLUSTER_COLUMN"),
+        TimeClusterDataColumn("TIME_CLUSTER_DATA_COLUMN"),
         TimeColumn("TIME_COLUMN"),
         TrendColumn("TREND_COLUMN"),
         ClassifyColumn("CLASSIFY_COLUMN"),
