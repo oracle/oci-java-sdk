@@ -8,7 +8,7 @@ import com.oracle.bmc.ailanguage.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageTextClassificationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DetectLanguageTextClassificationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class DetectLanguageTextClassificationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails> {

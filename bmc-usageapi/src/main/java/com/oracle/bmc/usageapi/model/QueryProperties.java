@@ -163,13 +163,13 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
          * @param isAggregateByTime the value to set
          * @return this builder
          **/
@@ -455,13 +455,13 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * @return the value
      **/
     public Boolean getIsAggregateByTime() {

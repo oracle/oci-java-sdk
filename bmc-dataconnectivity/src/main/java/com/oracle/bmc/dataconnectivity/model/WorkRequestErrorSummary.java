@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A work request error summary object.
+ * The list of work request log summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,16 +33,16 @@ public final class WorkRequestErrorSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occured. Error codes are listed in
+         * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occured. Error codes are listed in
+         * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
          * @return this builder
@@ -124,16 +124,16 @@ public final class WorkRequestErrorSummary
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. Error codes are listed in
+     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. Error codes are listed in
+     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
      *
      * @return the value
      **/

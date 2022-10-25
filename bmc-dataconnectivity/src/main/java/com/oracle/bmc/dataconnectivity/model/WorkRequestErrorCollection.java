@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * List of WorkRequestError summaries.
+ * The list of work request error summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class WorkRequestErrorCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of WorkRequestError summariess
+         * The array of work request error summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestError> items;
 
         /**
-         * The array of WorkRequestError summariess
+         * The array of work request error summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class WorkRequestErrorCollection
     }
 
     /**
-     * The array of WorkRequestError summariess
+     * The array of work request error summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestError> items;
 
     /**
-     * The array of WorkRequestError summariess
+     * The array of work request error summaries.
      * @return the value
      **/
     public java.util.List<WorkRequestError> getItems() {

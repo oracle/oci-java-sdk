@@ -69,13 +69,13 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
             return this;
         }
         /**
-         * Date from where extract should start
+         * Date from where extract should start.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("initialExtractDate")
         private java.util.Date initialExtractDate;
 
         /**
-         * Date from where extract should start
+         * Date from where extract should start.
          * @param initialExtractDate the value to set
          * @return this builder
          **/
@@ -236,13 +236,13 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
     }
 
     /**
-     * Date from where extract should start
+     * Date from where extract should start.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialExtractDate")
     private final java.util.Date initialExtractDate;
 
     /**
-     * Date from where extract should start
+     * Date from where extract should start.
      * @return the value
      **/
     public java.util.Date getInitialExtractDate() {

@@ -9,16 +9,33 @@ import com.oracle.bmc.resourcesearch.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Pagination token
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * Pagination token
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
+    }
+
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
+    private String opcPreviousPage;
+
+    /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     * @return the value
+     */
+    public String getOpcPreviousPage() {
+        return opcPreviousPage;
     }
 
     /**
@@ -56,6 +73,7 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         "__httpStatusCode__",
         "headers",
         "opcNextPage",
+        "opcPreviousPage",
         "opcRequestId",
         "resourceSummaryCollection"
     })
@@ -63,11 +81,13 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
+            String opcPreviousPage,
             String opcRequestId,
             com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
                     resourceSummaryCollection) {
         super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
+        this.opcPreviousPage = opcPreviousPage;
         this.opcRequestId = opcRequestId;
         this.resourceSummaryCollection = resourceSummaryCollection;
     }
@@ -88,17 +108,36 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Pagination token
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * Pagination token
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param opcNextPage the value to set
          * @return this builder
          */
         public Builder opcNextPage(String opcNextPage) {
             this.opcNextPage = opcNextPage;
+            return this;
+        }
+
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         */
+        private String opcPreviousPage;
+
+        /**
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * @param opcPreviousPage the value to set
+         * @return this builder
+         */
+        public Builder opcPreviousPage(String opcPreviousPage) {
+            this.opcPreviousPage = opcPreviousPage;
             return this;
         }
 
@@ -147,6 +186,7 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
+            opcPreviousPage(o.getOpcPreviousPage());
             opcRequestId(o.getOpcRequestId());
             resourceSummaryCollection(o.getResourceSummaryCollection());
 
@@ -162,6 +202,7 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
                     __httpStatusCode__,
                     headers,
                     opcNextPage,
+                    opcPreviousPage,
                     opcRequestId,
                     resourceSummaryCollection);
         }
@@ -181,6 +222,7 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPreviousPage=").append(String.valueOf(opcPreviousPage));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",resourceSummaryCollection=").append(String.valueOf(resourceSummaryCollection));
         sb.append(")");
@@ -199,6 +241,7 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         SearchResourcesResponse other = (SearchResourcesResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPreviousPage, other.opcPreviousPage)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
                         this.resourceSummaryCollection, other.resourceSummaryCollection);
@@ -209,6 +252,9 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcPreviousPage == null ? 43 : this.opcPreviousPage.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

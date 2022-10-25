@@ -26,6 +26,7 @@ import org.slf4j.Logger;
  *
  * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use RefreshAuthTokenWrappingAsyncHandler anymore
  */
+@Deprecated
 public abstract class RefreshAuthTokenWrappingAsyncHandler<REQUEST, RESPONSE>
         implements AsyncHandler<REQUEST, RESPONSE> {
     private static final int NUM_TRIES_ALLOWED = 2;

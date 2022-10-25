@@ -14,12 +14,12 @@ public class UpdateEndpointRequest
                 com.oracle.bmc.dataconnectivity.model.UpdateEndpointDetails> {
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     private String endpointId;
 
     /**
-     * DCMS Endpoint id
+     * DCMS endpoint ID.
      */
     public String getEndpointId() {
         return endpointId;
@@ -36,12 +36,12 @@ public class UpdateEndpointRequest
         return updateEndpointDetails;
     }
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     private String registryId;
 
     /**
-     * DCMS registry id
+     * DCMS registry ID
      */
     public String getRegistryId() {
         return registryId;
@@ -100,12 +100,12 @@ public class UpdateEndpointRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          */
         private String endpointId = null;
 
         /**
-         * DCMS Endpoint id
+         * DCMS endpoint ID.
          * @param endpointId the value to set
          * @return this builder instance
          */
@@ -132,12 +132,12 @@ public class UpdateEndpointRequest
         }
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          */
         private String registryId = null;
 
         /**
-         * DCMS registry id
+         * DCMS registry ID
          * @param registryId the value to set
          * @return this builder instance
          */

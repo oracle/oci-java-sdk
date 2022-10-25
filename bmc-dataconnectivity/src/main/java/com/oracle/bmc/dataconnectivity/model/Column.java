@@ -29,13 +29,13 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Column Name.
+         * Column name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Column Name.
+         * Column name.
          * @param name the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * Column Name.
+     * Column name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Column Name.
+     * Column name.
      * @return the value
      **/
     public String getName() {

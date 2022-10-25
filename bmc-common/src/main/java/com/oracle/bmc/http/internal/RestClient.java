@@ -70,6 +70,7 @@ public class RestClient implements AutoCloseable {
     private final ClientConfigurator clientConfigurator;
     private WrappedWebTarget baseTarget;
 
+    private String requestUri;
     /**
      * Create a new client that uses a provided client to make all its requests.
      * It's up to the caller to properly configure the client.
@@ -162,6 +163,27 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Gets the requestURI for this client.
+     * @return the requestURI
+     */
+    public String getRequestUri() {
+        if (this.requestUri == null) {
+            throw new NullPointerException("No requestURI has been configured");
+        }
+        return this.requestUri;
+    }
+
+    /**
+     * Sets the requestURI for this client.
+     */
+    public void setRequestUri(@Nonnull String requestUri) {
+        if (requestUri == null) {
+            throw new java.lang.NullPointerException("requestURI is marked non-null but is null");
+        }
+        this.requestUri = requestUri;
+    }
+
+    /**
      * Gets the underlying circuitBreaker implementation for this client
      * @return CircuitBreaker
      */
@@ -174,7 +196,7 @@ public class RestClient implements AutoCloseable {
 
     /**
      * Ideal name for this method is decorateSupplierWithCircuitBreaker. However, I shortened it due to it's being private
-     * It takes a Supplier<Response> and returns a Supplier<Response>, this pattern allows users to chain different
+     * It takes a {@code Supplier<Response>} and returns a {@code Supplier<Response>}, this pattern allows users to chain different
      * functionalities.
      * @param supplier a supplier of Response
      * @return a supplier of Response
@@ -187,7 +209,7 @@ public class RestClient implements AutoCloseable {
                 try {
                     return circuitBreaker.decorateSupplier(supplier).get();
                 } catch (CallNotAllowedException e) {
-                    throw new BmcException(false, "CircuitBreaker is OPEN!", e, null);
+                    throw new BmcException(false, circuitBreakerCallNotPermittedError(), e, null);
                 }
             };
         }
@@ -195,10 +217,10 @@ public class RestClient implements AutoCloseable {
 
     /**
      * Ideal name for this method is decorateFutureSupplierWithCircuitBreaker. However, I shortened it due to it's being private
-     * It takes a Supplier<Future<Response>> and returns a Supplier<Future<Response>>, this pattern allows users to chain
+     * It takes a {@code Supplier<Future<Response>>} and returns a {@code Supplier<Future<Response>>}, this pattern allows users to chain
      * different functionalities.
-     * @param supplier a Supplier of Future<Response>
-     * @return a Supplier of Future<Response>
+     * @param supplier a Supplier of {@code Future<Response>}
+     * @return a Supplier of {@code Future<Response>}
      */
     private Supplier<Future<Response>> decorateFuture(Supplier<Future<Response>> supplier) {
         if (circuitBreaker == null) {
@@ -208,10 +230,41 @@ public class RestClient implements AutoCloseable {
                 try {
                     return circuitBreaker.decorateFuture(supplier).get();
                 } catch (CallNotPermittedException e) {
-                    throw new BmcException(false, "CircuitBreaker is OPEN!", e, null);
+                    throw new BmcException(false, circuitBreakerCallNotPermittedError(), e, null);
                 }
             };
         }
+    }
+
+    /**
+     * Generates CircuitBreaker message when it's open.
+     *
+     * @return a message with error details
+     */
+    private String circuitBreakerCallNotPermittedError() {
+        StringBuilder messageBuilder = new StringBuilder();
+        messageBuilder
+                .append("CircuitBreaker is OPEN and all the requests sent in a window of ")
+                .append(
+                        circuitBreaker
+                                .getInternalCircuitBreakerConfig()
+                                .getWaitDurationInOpenState()
+                                .getSeconds())
+                .append(" seconds will be rejected..\n");
+
+        if (requestUri != null) {
+            messageBuilder
+                    .append("URL which CircuitBreaker rejected is - ")
+                    .append(getRequestUri() + "\n");
+        }
+
+        if (circuitBreaker.getHistory() != null && !circuitBreaker.getHistory().trim().isEmpty()) {
+            messageBuilder
+                    .append("Errors which opened the CircuitBreaker:\n")
+                    .append(circuitBreaker.getHistory());
+        }
+
+        return messageBuilder.toString();
     }
 
     // Rest APIs
@@ -234,6 +287,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         try {
             return decorateSupplier(ib::get).get();
         } catch (ProcessingException ex) {
@@ -267,6 +323,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
 
         if (onSuccess == null && onError == null) {
             return decorateFuture(ib.async()::get).get();
@@ -355,6 +414,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         try {
             Entity<?> requestBody =
                     this.entityFactory.forPost(request, attemptToSerialize(request, body));
@@ -393,6 +455,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         Entity<?> requestBody =
                 this.entityFactory.forPost(request, attemptToSerialize(request, body));
 
@@ -617,6 +682,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         try {
             Entity<?> requestBody =
                     this.entityFactory.forPatch(request, attemptToSerialize(request, body));
@@ -684,6 +752,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         Entity<?> requestBody =
                 this.entityFactory.forPatch(request, attemptToSerialize(request, body));
 
@@ -854,6 +925,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         try {
             Entity<?> requestBody =
                     this.entityFactory.forPut(request, attemptToSerialize(request, body));
@@ -930,6 +1004,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         Entity<?> requestBody =
                 this.entityFactory.forPut(request, attemptToSerialize(request, body));
 
@@ -1078,6 +1155,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         try {
             return decorateSupplier(() -> ib.delete(Response.class)).get();
         } catch (ProcessingException e) {
@@ -1115,6 +1195,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         if (onSuccess == null && onError == null) {
             return decorateFuture(() -> ib.async().delete()).get();
         } else {
@@ -1202,6 +1285,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
         try {
             return decorateSupplier(ib::head).get();
         } catch (ProcessingException ex) {
@@ -1240,6 +1326,9 @@ public class RestClient implements AutoCloseable {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         InvocationInformation info = preprocessRequest(ib, request);
+        if (ib.getRequestUri() != null) {
+            setRequestUri(ib.getRequestUri().toString());
+        }
 
         if (onSuccess == null && onError == null) {
             return decorateFuture(ib.async()::head).get();
@@ -1292,7 +1381,7 @@ public class RestClient implements AutoCloseable {
      * @param <REQUEST> type of the request
      * @param <RESPONSE> type of the response
      * @return future for the head request
-     * @Deprecated use method without Guava parameters instead
+     * @deprecated use method without Guava parameters instead
      */
     @InternalSdk(backwardCompatibilityRequired = true)
     @Deprecated
@@ -1749,7 +1838,7 @@ public class RestClient implements AutoCloseable {
                 }
                 return body;
             } else if (body != null) {
-                return RestClientFactory.getObjectMapper().writeValueAsString(body);
+                return com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(body);
             } else {
                 return "";
             }

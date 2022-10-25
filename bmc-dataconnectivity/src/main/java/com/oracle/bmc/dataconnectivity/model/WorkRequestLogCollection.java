@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * List of WorkRequestLog summaries.
+ * The list of work request log summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class WorkRequestLogCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The array of WorkRequestLog summariess
+         * The list of work request log summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestLog> items;
 
         /**
-         * The array of WorkRequestLog summariess
+         * The list of work request log summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class WorkRequestLogCollection
     }
 
     /**
-     * The array of WorkRequestLog summariess
+     * The list of work request log summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestLog> items;
 
     /**
-     * The array of WorkRequestLog summariess
+     * The list of work request log summaries.
      * @return the value
      **/
     public java.util.List<WorkRequestLog> getItems() {

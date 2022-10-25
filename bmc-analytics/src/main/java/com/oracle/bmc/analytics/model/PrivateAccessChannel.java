@@ -29,7 +29,9 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
         "subnetId",
         "ipAddress",
         "egressSourceIpAddresses",
-        "privateSourceDnsZones"
+        "privateSourceDnsZones",
+        "privateSourceScanHosts",
+        "networkSecurityGroupIds"
     })
     public PrivateAccessChannel(
             String key,
@@ -38,7 +40,9 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
             String subnetId,
             String ipAddress,
             java.util.List<String> egressSourceIpAddresses,
-            java.util.List<PrivateSourceDnsZone> privateSourceDnsZones) {
+            java.util.List<PrivateSourceDnsZone> privateSourceDnsZones,
+            java.util.List<PrivateSourceScanHost> privateSourceScanHosts,
+            java.util.List<String> networkSecurityGroupIds) {
         super();
         this.key = key;
         this.displayName = displayName;
@@ -47,6 +51,8 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
         this.ipAddress = ipAddress;
         this.egressSourceIpAddresses = egressSourceIpAddresses;
         this.privateSourceDnsZones = privateSourceDnsZones;
+        this.privateSourceScanHosts = privateSourceScanHosts;
+        this.networkSecurityGroupIds = networkSecurityGroupIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -184,6 +190,43 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("privateSourceDnsZones");
             return this;
         }
+        /**
+         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
+        private java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
+
+        /**
+         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         *
+         * @param privateSourceScanHosts the value to set
+         * @return this builder
+         **/
+        public Builder privateSourceScanHosts(
+                java.util.List<PrivateSourceScanHost> privateSourceScanHosts) {
+            this.privateSourceScanHosts = privateSourceScanHosts;
+            this.__explicitlySet__.add("privateSourceScanHosts");
+            return this;
+        }
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        /**
+         * Network Security Group OCIDs for an Analytics instance.
+         *
+         * @param networkSecurityGroupIds the value to set
+         * @return this builder
+         **/
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -197,7 +240,9 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
                             this.subnetId,
                             this.ipAddress,
                             this.egressSourceIpAddresses,
-                            this.privateSourceDnsZones);
+                            this.privateSourceDnsZones,
+                            this.privateSourceScanHosts,
+                            this.networkSecurityGroupIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -226,6 +271,12 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("privateSourceDnsZones")) {
                 this.privateSourceDnsZones(model.getPrivateSourceDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("privateSourceScanHosts")) {
+                this.privateSourceScanHosts(model.getPrivateSourceScanHosts());
+            }
+            if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
+                this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
             }
             return this;
         }
@@ -360,6 +411,38 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
         return privateSourceDnsZones;
     }
 
+    /**
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
+    private final java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
+
+    /**
+     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     *
+     * @return the value
+     **/
+    public java.util.List<PrivateSourceScanHost> getPrivateSourceScanHosts() {
+        return privateSourceScanHosts;
+    }
+
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    private final java.util.List<String> networkSecurityGroupIds;
+
+    /**
+     * Network Security Group OCIDs for an Analytics instance.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getNetworkSecurityGroupIds() {
+        return networkSecurityGroupIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -382,6 +465,9 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
         sb.append(", egressSourceIpAddresses=")
                 .append(String.valueOf(this.egressSourceIpAddresses));
         sb.append(", privateSourceDnsZones=").append(String.valueOf(this.privateSourceDnsZones));
+        sb.append(", privateSourceScanHosts=").append(String.valueOf(this.privateSourceScanHosts));
+        sb.append(", networkSecurityGroupIds=")
+                .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(")");
         return sb.toString();
     }
@@ -404,6 +490,10 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(
                         this.egressSourceIpAddresses, other.egressSourceIpAddresses)
                 && java.util.Objects.equals(this.privateSourceDnsZones, other.privateSourceDnsZones)
+                && java.util.Objects.equals(
+                        this.privateSourceScanHosts, other.privateSourceScanHosts)
+                && java.util.Objects.equals(
+                        this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && super.equals(other);
     }
 
@@ -426,6 +516,16 @@ public final class PrivateAccessChannel extends com.oracle.bmc.http.internal.Exp
                         + (this.privateSourceDnsZones == null
                                 ? 43
                                 : this.privateSourceDnsZones.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateSourceScanHosts == null
+                                ? 43
+                                : this.privateSourceScanHosts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkSecurityGroupIds == null
+                                ? 43
+                                : this.networkSecurityGroupIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

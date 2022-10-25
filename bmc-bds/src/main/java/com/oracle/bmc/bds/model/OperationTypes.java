@@ -36,6 +36,8 @@ public enum OperationTypes {
     TestMetastoreConfig("TEST_METASTORE_CONFIG"),
     PatchBds("PATCH_BDS"),
     PatchOdh("PATCH_ODH"),
+    StopBds("STOP_BDS"),
+    StartBds("START_BDS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

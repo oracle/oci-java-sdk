@@ -93,6 +93,22 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
+        /**
+         * The namespace of OKE Canary deployment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+        private String namespace;
+
+        /**
+         * The namespace of OKE Canary deployment.
+         * @param namespace the value to set
+         * @return this builder
+         **/
+        public Builder namespace(String namespace) {
+            this.namespace = namespace;
+            this.__explicitlySet__.add("namespace");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -106,7 +122,8 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
                             this.timeFinished,
                             this.status,
                             this.deployStagePredecessors,
-                            this.deployStageExecutionProgressDetails);
+                            this.deployStageExecutionProgressDetails,
+                            this.namespace);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -137,6 +154,9 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
                 this.deployStageExecutionProgressDetails(
                         model.getDeployStageExecutionProgressDetails());
             }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
             return this;
         }
     }
@@ -160,8 +180,8 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
             java.util.Date timeFinished,
             Status status,
             DeployStagePredecessorCollection deployStagePredecessors,
-            java.util.List<DeployStageExecutionProgressDetails>
-                    deployStageExecutionProgressDetails) {
+            java.util.List<DeployStageExecutionProgressDetails> deployStageExecutionProgressDetails,
+            String namespace) {
         super(
                 deployStageDisplayName,
                 deployStageId,
@@ -170,6 +190,21 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
                 status,
                 deployStagePredecessors,
                 deployStageExecutionProgressDetails);
+        this.namespace = namespace;
+    }
+
+    /**
+     * The namespace of OKE Canary deployment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+    private final String namespace;
+
+    /**
+     * The namespace of OKE Canary deployment.
+     * @return the value
+     **/
+    public String getNamespace() {
+        return namespace;
     }
 
     @Override
@@ -186,6 +221,7 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OkeCanaryDeployStageExecutionProgress(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(")");
         return sb.toString();
     }
@@ -200,13 +236,14 @@ public final class OkeCanaryDeployStageExecutionProgress extends DeployStageExec
         }
 
         OkeCanaryDeployStageExecutionProgress other = (OkeCanaryDeployStageExecutionProgress) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.namespace, other.namespace) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         return result;
     }
 }

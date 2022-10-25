@@ -5,7 +5,7 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * Dimensions characterizing the group
+ * The indicator dimension that was counted, such as the indicator type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.threatintelligence.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IndicatorCountDimensions.Builder.class
 )
@@ -32,13 +32,13 @@ public final class IndicatorCountDimensions
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier
+         * The compartment OCID that contains the indicator type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The compartment OCID that contains the indicator type.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class IndicatorCountDimensions
             return this;
         }
         /**
-         * The indicator type that corresponds to the count.
+         * The indicator type that was counted.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private IndicatorType type;
 
         /**
-         * The indicator type that corresponds to the count.
+         * The indicator type that was counted.
          * @param type the value to set
          * @return this builder
          **/
@@ -100,13 +100,13 @@ public final class IndicatorCountDimensions
     }
 
     /**
-     * Compartment Identifier
+     * The compartment OCID that contains the indicator type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The compartment OCID that contains the indicator type.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -114,13 +114,13 @@ public final class IndicatorCountDimensions
     }
 
     /**
-     * The indicator type that corresponds to the count.
+     * The indicator type that was counted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final IndicatorType type;
 
     /**
-     * The indicator type that corresponds to the count.
+     * The indicator type that was counted.
      * @return the value
      **/
     public IndicatorType getType() {

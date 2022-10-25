@@ -21,7 +21,7 @@ import com.oracle.bmc.threatintelligence.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ThreatintelAsyncClient implements ThreatintelAsync {
     /**
      * Service instance for Threatintel.
@@ -452,7 +452,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "Threatintel",
                         "GetIndicator",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/Indicator/GetIndicator");
         final java.util.function.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
                 transformer =
                         GetIndicatorConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -497,7 +497,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "Threatintel",
                         "ListIndicatorCounts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/IndicatorCountCollection/ListIndicatorCounts");
         final java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorCountsResponse>
                 transformer =
                         ListIndicatorCountsConverter.fromResponse(
@@ -544,7 +544,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "Threatintel",
                         "ListIndicators",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/IndicatorSummaryCollection/ListIndicators");
         final java.util.function.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
                 transformer =
                         ListIndicatorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -589,7 +589,7 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                         "Threatintel",
                         "ListThreatTypes",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/ThreatTypesCollection/ListThreatTypes");
         final java.util.function.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
                 transformer =
                         ListThreatTypesConverter.fromResponse(
@@ -607,6 +607,58 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListThreatTypesRequest, ListThreatTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeIndicatorsResponse> summarizeIndicators(
+            SummarizeIndicatorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeIndicatorsRequest, SummarizeIndicatorsResponse>
+                    handler) {
+        LOG.trace("Called async summarizeIndicators");
+        final SummarizeIndicatorsRequest interceptedRequest =
+                SummarizeIndicatorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeIndicatorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Threatintel",
+                        "SummarizeIndicators",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/Indicator/SummarizeIndicators");
+        final java.util.function.Function<javax.ws.rs.core.Response, SummarizeIndicatorsResponse>
+                transformer =
+                        SummarizeIndicatorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeIndicatorsRequest, SummarizeIndicatorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeIndicatorsRequest, SummarizeIndicatorsResponse>,
+                        java.util.concurrent.Future<SummarizeIndicatorsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSummarizeIndicatorsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeIndicatorsRequest, SummarizeIndicatorsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

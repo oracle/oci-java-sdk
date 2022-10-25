@@ -44,13 +44,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * The object's model version.
+         * The model version of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * The object's model version.
+         * The model version of the object.
          * @param modelVersion the value to set
          * @return this builder
          **/
@@ -69,13 +69,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Detailed description for the object.
+         * Detailed description of the object.
          * @param description the value to set
          * @return this builder
          **/
@@ -117,13 +117,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * The external key for the object
+         * The external key of the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
         /**
-         * The external key for the object
+         * The external key of the object.
          * @param externalKey the value to set
          * @return this builder
          **/
@@ -254,13 +254,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -270,13 +270,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * Filters present in the Datastore. It can be Null.
+         * Filters present in the datastore. It can be null.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private String filters;
 
         /**
-         * Filters present in the Datastore. It can be Null.
+         * Filters present in the datastore. It can be null.
          * @param filters the value to set
          * @return this builder
          **/
@@ -286,13 +286,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * It shows whether or not effective date is disabled
+         * It shows whether the effective date is disabled.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
         private Boolean isEffectiveDateDisabled;
 
         /**
-         * It shows whether or not effective date is disabled
+         * It shows whether the effective date is disabled.
          * @param isEffectiveDateDisabled the value to set
          * @return this builder
          **/
@@ -302,13 +302,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * It shows whether the datastore is of flex type
+         * It shows whether the datastore is of flex type..
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
         private Boolean isFlexDataStore;
 
         /**
-         * It shows whether the datastore is of flex type
+         * It shows whether the datastore is of flex type..
          * @param isFlexDataStore the value to set
          * @return this builder
          **/
@@ -318,13 +318,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * It shows whether the extraction of this datastore will stop on error
+         * It shows whether the extraction of this datastore will stop when an error occurs.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
         private Boolean isSilentError;
 
         /**
-         * It shows whether the extraction of this datastore will stop on error
+         * It shows whether the extraction of this datastore will stop when an error occurs.
          * @param isSilentError the value to set
          * @return this builder
          **/
@@ -334,13 +334,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
             return this;
         }
         /**
-         * It shows whether the datastore supports Incremental Extract or not.
+         * It shows whether the datastore supports incremental extract.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
         private Boolean supportsIncremental;
 
         /**
-         * It shows whether the datastore supports Incremental Extract or not.
+         * It shows whether the datastore supports incremental extract.
          * @param supportsIncremental the value to set
          * @return this builder
          **/
@@ -525,13 +525,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * The object's model version.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * The object's model version.
+     * The model version of the object.
      * @return the value
      **/
     public String getModelVersion() {
@@ -546,13 +546,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -560,13 +560,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Detailed description for the object.
+     * Detailed description of the object.
      * @return the value
      **/
     public String getDescription() {
@@ -588,13 +588,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * The external key for the object
+     * The external key of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
-     * The external key for the object
+     * The external key of the object.
      * @return the value
      **/
     public String getExternalKey() {
@@ -631,6 +631,7 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         File("FILE"),
         Sql("SQL"),
         DataStore("DATA_STORE"),
+        Message("MESSAGE"),
         ;
 
         private final String value;
@@ -745,13 +746,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -759,13 +760,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * Filters present in the Datastore. It can be Null.
+     * Filters present in the datastore. It can be null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filters")
     private final String filters;
 
     /**
-     * Filters present in the Datastore. It can be Null.
+     * Filters present in the datastore. It can be null.
      * @return the value
      **/
     public String getFilters() {
@@ -773,13 +774,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * It shows whether or not effective date is disabled
+     * It shows whether the effective date is disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEffectiveDateDisabled")
     private final Boolean isEffectiveDateDisabled;
 
     /**
-     * It shows whether or not effective date is disabled
+     * It shows whether the effective date is disabled.
      * @return the value
      **/
     public Boolean getIsEffectiveDateDisabled() {
@@ -787,13 +788,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * It shows whether the datastore is of flex type
+     * It shows whether the datastore is of flex type..
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexDataStore")
     private final Boolean isFlexDataStore;
 
     /**
-     * It shows whether the datastore is of flex type
+     * It shows whether the datastore is of flex type..
      * @return the value
      **/
     public Boolean getIsFlexDataStore() {
@@ -801,13 +802,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * It shows whether the extraction of this datastore will stop on error
+     * It shows whether the extraction of this datastore will stop when an error occurs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSilentError")
     private final Boolean isSilentError;
 
     /**
-     * It shows whether the extraction of this datastore will stop on error
+     * It shows whether the extraction of this datastore will stop when an error occurs.
      * @return the value
      **/
     public Boolean getIsSilentError() {
@@ -815,13 +816,13 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
     }
 
     /**
-     * It shows whether the datastore supports Incremental Extract or not.
+     * It shows whether the datastore supports incremental extract.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportsIncremental")
     private final Boolean supportsIncremental;
 
     /**
-     * It shows whether the datastore supports Incremental Extract or not.
+     * It shows whether the datastore supports incremental extract.
      * @return the value
      **/
     public Boolean getSupportsIncremental() {

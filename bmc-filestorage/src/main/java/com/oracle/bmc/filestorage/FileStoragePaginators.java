@@ -476,6 +476,235 @@ public class FileStoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listReplicationTargets operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReplicationTargetsResponse> listReplicationTargetsResponseIterator(
+            final ListReplicationTargetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReplicationTargetsRequest.Builder, ListReplicationTargetsRequest,
+                ListReplicationTargetsResponse>(
+                new java.util.function.Supplier<ListReplicationTargetsRequest.Builder>() {
+                    @Override
+                    public ListReplicationTargetsRequest.Builder get() {
+                        return ListReplicationTargetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListReplicationTargetsResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationTargetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationTargetsRequest.Builder>,
+                        ListReplicationTargetsRequest>() {
+                    @Override
+                    public ListReplicationTargetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationTargetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListReplicationTargetsRequest, ListReplicationTargetsResponse>() {
+                    @Override
+                    public ListReplicationTargetsResponse apply(
+                            ListReplicationTargetsRequest request) {
+                        return client.listReplicationTargets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationTargetSummary} objects
+     * contained in responses from the listReplicationTargets operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationTargetSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.filestorage.model.ReplicationTargetSummary>
+            listReplicationTargetsRecordIterator(final ListReplicationTargetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReplicationTargetsRequest.Builder, ListReplicationTargetsRequest,
+                ListReplicationTargetsResponse,
+                com.oracle.bmc.filestorage.model.ReplicationTargetSummary>(
+                new java.util.function.Supplier<ListReplicationTargetsRequest.Builder>() {
+                    @Override
+                    public ListReplicationTargetsRequest.Builder get() {
+                        return ListReplicationTargetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListReplicationTargetsResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationTargetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationTargetsRequest.Builder>,
+                        ListReplicationTargetsRequest>() {
+                    @Override
+                    public ListReplicationTargetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationTargetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListReplicationTargetsRequest, ListReplicationTargetsResponse>() {
+                    @Override
+                    public ListReplicationTargetsResponse apply(
+                            ListReplicationTargetsRequest request) {
+                        return client.listReplicationTargets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListReplicationTargetsResponse,
+                        java.util.List<
+                                com.oracle.bmc.filestorage.model.ReplicationTargetSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary>
+                            apply(ListReplicationTargetsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listReplications operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReplicationsResponse> listReplicationsResponseIterator(
+            final ListReplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReplicationsRequest.Builder, ListReplicationsRequest, ListReplicationsResponse>(
+                new java.util.function.Supplier<ListReplicationsRequest.Builder>() {
+                    @Override
+                    public ListReplicationsRequest.Builder get() {
+                        return ListReplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListReplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationsRequest.Builder>,
+                        ListReplicationsRequest>() {
+                    @Override
+                    public ListReplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListReplicationsRequest, ListReplicationsResponse>() {
+                    @Override
+                    public ListReplicationsResponse apply(ListReplicationsRequest request) {
+                        return client.listReplications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationSummary} objects
+     * contained in responses from the listReplications operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.filestorage.model.ReplicationSummary>
+            listReplicationsRecordIterator(final ListReplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReplicationsRequest.Builder, ListReplicationsRequest, ListReplicationsResponse,
+                com.oracle.bmc.filestorage.model.ReplicationSummary>(
+                new java.util.function.Supplier<ListReplicationsRequest.Builder>() {
+                    @Override
+                    public ListReplicationsRequest.Builder get() {
+                        return ListReplicationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListReplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationsRequest.Builder>,
+                        ListReplicationsRequest>() {
+                    @Override
+                    public ListReplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListReplicationsRequest, ListReplicationsResponse>() {
+                    @Override
+                    public ListReplicationsResponse apply(ListReplicationsRequest request) {
+                        return client.listReplications(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListReplicationsResponse,
+                        java.util.List<com.oracle.bmc.filestorage.model.ReplicationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.filestorage.model.ReplicationSummary>
+                            apply(ListReplicationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSnapshots operation. This iterable
      * will fetch more data from the server as needed.
      *

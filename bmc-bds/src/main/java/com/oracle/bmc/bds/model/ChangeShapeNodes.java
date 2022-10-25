@@ -28,7 +28,8 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         "masterShapeConfig",
         "utility",
         "utilityShapeConfig",
-        "cloudsql"
+        "cloudsql",
+        "cloudsqlShapeConfig"
     })
     public ChangeShapeNodes(
             String worker,
@@ -39,7 +40,8 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
             ShapeConfigDetails masterShapeConfig,
             String utility,
             ShapeConfigDetails utilityShapeConfig,
-            String cloudsql) {
+            String cloudsql,
+            ShapeConfigDetails cloudsqlShapeConfig) {
         super();
         this.worker = worker;
         this.workerShapeConfig = workerShapeConfig;
@@ -50,6 +52,7 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         this.utility = utility;
         this.utilityShapeConfig = utilityShapeConfig;
         this.cloudsql = cloudsql;
+        this.cloudsqlShapeConfig = cloudsqlShapeConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -156,19 +159,28 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+         * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudsql")
         private String cloudsql;
 
         /**
-         * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+         * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param cloudsql the value to set
          * @return this builder
          **/
         public Builder cloudsql(String cloudsql) {
             this.cloudsql = cloudsql;
             this.__explicitlySet__.add("cloudsql");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudsqlShapeConfig")
+        private ShapeConfigDetails cloudsqlShapeConfig;
+
+        public Builder cloudsqlShapeConfig(ShapeConfigDetails cloudsqlShapeConfig) {
+            this.cloudsqlShapeConfig = cloudsqlShapeConfig;
+            this.__explicitlySet__.add("cloudsqlShapeConfig");
             return this;
         }
 
@@ -186,7 +198,8 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
                             this.masterShapeConfig,
                             this.utility,
                             this.utilityShapeConfig,
-                            this.cloudsql);
+                            this.cloudsql,
+                            this.cloudsqlShapeConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +234,9 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("cloudsql")) {
                 this.cloudsql(model.getCloudsql());
+            }
+            if (model.wasPropertyExplicitlySet("cloudsqlShapeConfig")) {
+                this.cloudsqlShapeConfig(model.getCloudsqlShapeConfig());
             }
             return this;
         }
@@ -322,17 +338,24 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+     * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudsql")
     private final String cloudsql;
 
     /**
-     * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+     * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
      **/
     public String getCloudsql() {
         return cloudsql;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudsqlShapeConfig")
+    private final ShapeConfigDetails cloudsqlShapeConfig;
+
+    public ShapeConfigDetails getCloudsqlShapeConfig() {
+        return cloudsqlShapeConfig;
     }
 
     @Override
@@ -359,6 +382,7 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
         sb.append(", utility=").append(String.valueOf(this.utility));
         sb.append(", utilityShapeConfig=").append(String.valueOf(this.utilityShapeConfig));
         sb.append(", cloudsql=").append(String.valueOf(this.cloudsql));
+        sb.append(", cloudsqlShapeConfig=").append(String.valueOf(this.cloudsqlShapeConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -383,6 +407,7 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.utility, other.utility)
                 && java.util.Objects.equals(this.utilityShapeConfig, other.utilityShapeConfig)
                 && java.util.Objects.equals(this.cloudsql, other.cloudsql)
+                && java.util.Objects.equals(this.cloudsqlShapeConfig, other.cloudsqlShapeConfig)
                 && super.equals(other);
     }
 
@@ -413,6 +438,11 @@ public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.Explici
                                 ? 43
                                 : this.utilityShapeConfig.hashCode());
         result = (result * PRIME) + (this.cloudsql == null ? 43 : this.cloudsql.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudsqlShapeConfig == null
+                                ? 43
+                                : this.cloudsqlShapeConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -39,6 +39,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "NAME_PATTERN_RULE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GroupedNamePatternRule.class,
+        name = "GROUPED_NAME_PATTERN_RULE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = NameListRule.class,
         name = "NAME_LIST_RULE"
     )
@@ -228,6 +232,7 @@ public class ProjectionRule extends com.oracle.bmc.http.internal.ExplicitlySetBm
         NameListRule("NAME_LIST_RULE"),
         TypedNamePatternRule("TYPED_NAME_PATTERN_RULE"),
         RenameRule("RENAME_RULE"),
+        GroupedNamePatternRule("GROUPED_NAME_PATTERN_RULE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Holder for IN/INOUT params' values.
+ * Holder for IN/INOUT parameter values.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,13 +30,13 @@ public final class OperationInputRecord extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * values of IN/INOUT params.
+         * Values of IN/INOUT parameter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<Object> fieldValues;
 
         /**
-         * values of IN/INOUT params.
+         * Values of IN/INOUT parameter.
          * @param fieldValues the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class OperationInputRecord extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * values of IN/INOUT params.
+     * Values of IN/INOUT parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<Object> fieldValues;
 
     /**
-     * values of IN/INOUT params.
+     * Values of IN/INOUT parameter.
      * @return the value
      **/
     public java.util.List<Object> getFieldValues() {

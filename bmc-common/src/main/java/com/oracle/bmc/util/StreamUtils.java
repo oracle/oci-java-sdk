@@ -20,9 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * Utility methods to work with streams.
@@ -104,9 +102,10 @@ public class StreamUtils {
         if (!(inputStream instanceof BufferedInputStream)) {
             inputStream = new BufferedInputStream(inputStream);
         }
-        int ch;
-        while (-1 != (ch = inputStream.read())) {
-            baos.write(ch);
+        byte[] buf = new byte[4096];
+        int bytesRead = 0;
+        while (-1 != (bytesRead = inputStream.read(buf))) {
+            baos.write(buf, 0, bytesRead);
         }
         return baos.toByteArray();
     }

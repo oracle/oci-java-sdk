@@ -23,6 +23,10 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ArrayType.class,
+        name = "ARRAY_TYPE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConfiguredType.class,
         name = "CONFIGURED_TYPE"
     ),
@@ -36,6 +40,11 @@ package com.oracle.bmc.dataintegration.model;
         name = "DERIVED_TYPE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = DataType.class, name = "DATA_TYPE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MaterializedCompositeType.class,
+        name = "MATERIALIZED_COMPOSITE_TYPE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = MapType.class, name = "MAP_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CompositeType.class,
         name = "COMPOSITE_TYPE"
@@ -213,6 +222,9 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         ConfiguredType("CONFIGURED_TYPE"),
         CompositeType("COMPOSITE_TYPE"),
         DerivedType("DERIVED_TYPE"),
+        ArrayType("ARRAY_TYPE"),
+        MapType("MAP_TYPE"),
+        MaterializedCompositeType("MATERIALIZED_COMPOSITE_TYPE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

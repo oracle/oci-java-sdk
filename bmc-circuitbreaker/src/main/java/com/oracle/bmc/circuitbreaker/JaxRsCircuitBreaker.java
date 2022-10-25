@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.circuitbreaker;
 
+import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
+
 import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -47,4 +49,18 @@ public interface JaxRsCircuitBreaker {
      * @return the state of this CircuitBreaker
      */
     CircuitBreakerState getState();
+
+    /**
+     * Returns the default configuration of the CircuitBreaker
+     *
+     * @return the internal configuration of the CircuitBreaker
+     */
+    CircuitBreakerConfig getInternalCircuitBreakerConfig();
+
+    /**
+     * Returns the error history of CircuitBreaker which caused the change in state.
+     *
+     * @return the error history as a concatenated string
+     */
+    String getHistory();
 }

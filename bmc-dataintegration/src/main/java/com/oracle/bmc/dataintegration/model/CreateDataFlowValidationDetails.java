@@ -36,7 +36,9 @@ public final class CreateDataFlowValidationDetails
         "flowConfigValues",
         "objectStatus",
         "metadata",
-        "keyMap"
+        "keyMap",
+        "typedObjectMap",
+        "targetFieldMapSummary"
     })
     public CreateDataFlowValidationDetails(
             String key,
@@ -52,7 +54,9 @@ public final class CreateDataFlowValidationDetails
             ConfigValues flowConfigValues,
             Integer objectStatus,
             ObjectMetadata metadata,
-            java.util.Map<String, String> keyMap) {
+            java.util.Map<String, String> keyMap,
+            java.util.Map<String, TypedObjectWrapper> typedObjectMap,
+            java.util.Map<String, FieldMapWrapper> targetFieldMapSummary) {
         super();
         this.key = key;
         this.modelType = modelType;
@@ -68,6 +72,8 @@ public final class CreateDataFlowValidationDetails
         this.objectStatus = objectStatus;
         this.metadata = metadata;
         this.keyMap = keyMap;
+        this.typedObjectMap = typedObjectMap;
+        this.targetFieldMapSummary = targetFieldMapSummary;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -275,6 +281,39 @@ public final class CreateDataFlowValidationDetails
             this.__explicitlySet__.add("keyMap");
             return this;
         }
+        /**
+         * A hash map that maps TypedObject keys to the object itself, for java sdk.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("typedObjectMap")
+        private java.util.Map<String, TypedObjectWrapper> typedObjectMap;
+
+        /**
+         * A hash map that maps TypedObject keys to the object itself, for java sdk.
+         * @param typedObjectMap the value to set
+         * @return this builder
+         **/
+        public Builder typedObjectMap(java.util.Map<String, TypedObjectWrapper> typedObjectMap) {
+            this.typedObjectMap = typedObjectMap;
+            this.__explicitlySet__.add("typedObjectMap");
+            return this;
+        }
+        /**
+         * A hash map that maps TypedObject keys to a field map that maps to the typed object as a target, for java sdk.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetFieldMapSummary")
+        private java.util.Map<String, FieldMapWrapper> targetFieldMapSummary;
+
+        /**
+         * A hash map that maps TypedObject keys to a field map that maps to the typed object as a target, for java sdk.
+         * @param targetFieldMapSummary the value to set
+         * @return this builder
+         **/
+        public Builder targetFieldMapSummary(
+                java.util.Map<String, FieldMapWrapper> targetFieldMapSummary) {
+            this.targetFieldMapSummary = targetFieldMapSummary;
+            this.__explicitlySet__.add("targetFieldMapSummary");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -295,7 +334,9 @@ public final class CreateDataFlowValidationDetails
                             this.flowConfigValues,
                             this.objectStatus,
                             this.metadata,
-                            this.keyMap);
+                            this.keyMap,
+                            this.typedObjectMap,
+                            this.targetFieldMapSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -345,6 +386,12 @@ public final class CreateDataFlowValidationDetails
             }
             if (model.wasPropertyExplicitlySet("keyMap")) {
                 this.keyMap(model.getKeyMap());
+            }
+            if (model.wasPropertyExplicitlySet("typedObjectMap")) {
+                this.typedObjectMap(model.getTypedObjectMap());
+            }
+            if (model.wasPropertyExplicitlySet("targetFieldMapSummary")) {
+                this.targetFieldMapSummary(model.getTargetFieldMapSummary());
             }
             return this;
         }
@@ -536,6 +583,34 @@ public final class CreateDataFlowValidationDetails
         return keyMap;
     }
 
+    /**
+     * A hash map that maps TypedObject keys to the object itself, for java sdk.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typedObjectMap")
+    private final java.util.Map<String, TypedObjectWrapper> typedObjectMap;
+
+    /**
+     * A hash map that maps TypedObject keys to the object itself, for java sdk.
+     * @return the value
+     **/
+    public java.util.Map<String, TypedObjectWrapper> getTypedObjectMap() {
+        return typedObjectMap;
+    }
+
+    /**
+     * A hash map that maps TypedObject keys to a field map that maps to the typed object as a target, for java sdk.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetFieldMapSummary")
+    private final java.util.Map<String, FieldMapWrapper> targetFieldMapSummary;
+
+    /**
+     * A hash map that maps TypedObject keys to a field map that maps to the typed object as a target, for java sdk.
+     * @return the value
+     **/
+    public java.util.Map<String, FieldMapWrapper> getTargetFieldMapSummary() {
+        return targetFieldMapSummary;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -564,6 +639,8 @@ public final class CreateDataFlowValidationDetails
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
+        sb.append(", typedObjectMap=").append(String.valueOf(this.typedObjectMap));
+        sb.append(", targetFieldMapSummary=").append(String.valueOf(this.targetFieldMapSummary));
         sb.append(")");
         return sb.toString();
     }
@@ -592,6 +669,8 @@ public final class CreateDataFlowValidationDetails
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
+                && java.util.Objects.equals(this.typedObjectMap, other.typedObjectMap)
+                && java.util.Objects.equals(this.targetFieldMapSummary, other.targetFieldMapSummary)
                 && super.equals(other);
     }
 
@@ -617,6 +696,14 @@ public final class CreateDataFlowValidationDetails
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.typedObjectMap == null ? 43 : this.typedObjectMap.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetFieldMapSummary == null
+                                ? 43
+                                : this.targetFieldMapSummary.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

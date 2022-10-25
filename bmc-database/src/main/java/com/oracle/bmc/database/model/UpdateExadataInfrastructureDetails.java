@@ -35,6 +35,8 @@ public final class UpdateExadataInfrastructureDetails
         "contacts",
         "maintenanceWindow",
         "additionalStorageCount",
+        "additionalComputeCount",
+        "additionalComputeSystemModel",
         "dnsServer",
         "ntpServer",
         "timeZone",
@@ -53,6 +55,8 @@ public final class UpdateExadataInfrastructureDetails
             java.util.List<ExadataInfrastructureContact> contacts,
             MaintenanceWindow maintenanceWindow,
             Integer additionalStorageCount,
+            Integer additionalComputeCount,
+            AdditionalComputeSystemModel additionalComputeSystemModel,
             java.util.List<String> dnsServer,
             java.util.List<String> ntpServer,
             String timeZone,
@@ -70,6 +74,8 @@ public final class UpdateExadataInfrastructureDetails
         this.contacts = contacts;
         this.maintenanceWindow = maintenanceWindow;
         this.additionalStorageCount = additionalStorageCount;
+        this.additionalComputeCount = additionalComputeCount;
+        this.additionalComputeSystemModel = additionalComputeSystemModel;
         this.dnsServer = dnsServer;
         this.ntpServer = ntpServer;
         this.timeZone = timeZone;
@@ -234,6 +240,45 @@ public final class UpdateExadataInfrastructureDetails
             return this;
         }
         /**
+         * The requested number of additional compute servers for the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeCount")
+        private Integer additionalComputeCount;
+
+        /**
+         * The requested number of additional compute servers for the Exadata infrastructure.
+         * @param additionalComputeCount the value to set
+         * @return this builder
+         **/
+        public Builder additionalComputeCount(Integer additionalComputeCount) {
+            this.additionalComputeCount = additionalComputeCount;
+            this.__explicitlySet__.add("additionalComputeCount");
+            return this;
+        }
+        /**
+         * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+         * server resources available for use. For more information, please see [System and Shape Configuration Options]
+         * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeSystemModel")
+        private AdditionalComputeSystemModel additionalComputeSystemModel;
+
+        /**
+         * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+         * server resources available for use. For more information, please see [System and Shape Configuration Options]
+         * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+         *
+         * @param additionalComputeSystemModel the value to set
+         * @return this builder
+         **/
+        public Builder additionalComputeSystemModel(
+                AdditionalComputeSystemModel additionalComputeSystemModel) {
+            this.additionalComputeSystemModel = additionalComputeSystemModel;
+            this.__explicitlySet__.add("additionalComputeSystemModel");
+            return this;
+        }
+        /**
          * The list of DNS server IP addresses. Maximum of 3 allowed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
@@ -367,6 +412,8 @@ public final class UpdateExadataInfrastructureDetails
                             this.contacts,
                             this.maintenanceWindow,
                             this.additionalStorageCount,
+                            this.additionalComputeCount,
+                            this.additionalComputeSystemModel,
                             this.dnsServer,
                             this.ntpServer,
                             this.timeZone,
@@ -410,6 +457,12 @@ public final class UpdateExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("additionalStorageCount")) {
                 this.additionalStorageCount(model.getAdditionalStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("additionalComputeCount")) {
+                this.additionalComputeCount(model.getAdditionalComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("additionalComputeSystemModel")) {
+                this.additionalComputeSystemModel(model.getAdditionalComputeSystemModel());
             }
             if (model.wasPropertyExplicitlySet("dnsServer")) {
                 this.dnsServer(model.getDnsServer());
@@ -578,6 +631,80 @@ public final class UpdateExadataInfrastructureDetails
     }
 
     /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeCount")
+    private final Integer additionalComputeCount;
+
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     * @return the value
+     **/
+    public Integer getAdditionalComputeCount() {
+        return additionalComputeCount;
+    }
+
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+     * server resources available for use. For more information, please see [System and Shape Configuration Options]
+     * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     *
+     **/
+    public enum AdditionalComputeSystemModel {
+        X7("X7"),
+        X8("X8"),
+        X8M("X8M"),
+        X9M("X9M"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AdditionalComputeSystemModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AdditionalComputeSystemModel v : AdditionalComputeSystemModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AdditionalComputeSystemModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AdditionalComputeSystemModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AdditionalComputeSystemModel: " + key);
+        }
+    };
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+     * server resources available for use. For more information, please see [System and Shape Configuration Options]
+     * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalComputeSystemModel")
+    private final AdditionalComputeSystemModel additionalComputeSystemModel;
+
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+     * server resources available for use. For more information, please see [System and Shape Configuration Options]
+     * (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     *
+     * @return the value
+     **/
+    public AdditionalComputeSystemModel getAdditionalComputeSystemModel() {
+        return additionalComputeSystemModel;
+    }
+
+    /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
@@ -707,6 +834,9 @@ public final class UpdateExadataInfrastructureDetails
         sb.append(", contacts=").append(String.valueOf(this.contacts));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", additionalStorageCount=").append(String.valueOf(this.additionalStorageCount));
+        sb.append(", additionalComputeCount=").append(String.valueOf(this.additionalComputeCount));
+        sb.append(", additionalComputeSystemModel=")
+                .append(String.valueOf(this.additionalComputeSystemModel));
         sb.append(", dnsServer=").append(String.valueOf(this.dnsServer));
         sb.append(", ntpServer=").append(String.valueOf(this.ntpServer));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
@@ -741,6 +871,10 @@ public final class UpdateExadataInfrastructureDetails
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
                         this.additionalStorageCount, other.additionalStorageCount)
+                && java.util.Objects.equals(
+                        this.additionalComputeCount, other.additionalComputeCount)
+                && java.util.Objects.equals(
+                        this.additionalComputeSystemModel, other.additionalComputeSystemModel)
                 && java.util.Objects.equals(this.dnsServer, other.dnsServer)
                 && java.util.Objects.equals(this.ntpServer, other.ntpServer)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
@@ -787,6 +921,16 @@ public final class UpdateExadataInfrastructureDetails
                         + (this.additionalStorageCount == null
                                 ? 43
                                 : this.additionalStorageCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalComputeCount == null
+                                ? 43
+                                : this.additionalComputeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalComputeSystemModel == null
+                                ? 43
+                                : this.additionalComputeSystemModel.hashCode());
         result = (result * PRIME) + (this.dnsServer == null ? 43 : this.dnsServer.hashCode());
         result = (result * PRIME) + (this.ntpServer == null ? 43 : this.ntpServer.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());

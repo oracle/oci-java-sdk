@@ -67,6 +67,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "FUNCTION_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DecisionOperator.class,
+        name = "DECISION_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Intersect.class,
         name = "INTERSECT_OPERATOR"
     ),
@@ -407,6 +411,7 @@ public class Operator extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         StartOperator("START_OPERATOR"),
         EndOperator("END_OPERATOR"),
         PipelineOperator("PIPELINE_OPERATOR"),
+        DecisionOperator("DECISION_OPERATOR"),
         TaskOperator("TASK_OPERATOR"),
         ExpressionOperator("EXPRESSION_OPERATOR"),
         LookupOperator("LOOKUP_OPERATOR"),

@@ -81,7 +81,7 @@ public class DateRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * Defines whether the schedule date range is STATIC or DYNAMIC
+     * Defines whether the schedule date range is STATIC or DYNAMIC.
      **/
     public enum DateRangeType {
         Static("STATIC"),

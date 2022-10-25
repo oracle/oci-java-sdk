@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Holder for parameters names.
+ * Holder for parameter names.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,13 +42,13 @@ public final class CallOperationConfig extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of names of IN/INOUT parameters.
+         * The list of names of the IN/INOUT parameters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("inFields")
         private java.util.List<String> inFields;
 
         /**
-         * List of names of IN/INOUT parameters.
+         * The list of names of the IN/INOUT parameters.
          * @param inFields the value to set
          * @return this builder
          **/
@@ -58,13 +58,13 @@ public final class CallOperationConfig extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of names of OUT/INOUT parameters.
+         * The list of names of the OUT/INOUT parameters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("outFields")
         private java.util.List<String> outFields;
 
         /**
-         * List of names of OUT/INOUT parameters.
+         * The list of names of the OUT/INOUT parameters.
          * @param outFields the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class CallOperationConfig extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of push down operations.
+         * The List of push down operations.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pushDownOperations")
         private java.util.List<PushDownOperation> pushDownOperations;
 
         /**
-         * List of push down operations.
+         * The List of push down operations.
          * @param pushDownOperations the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class CallOperationConfig extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of names of IN/INOUT parameters.
+     * The list of names of the IN/INOUT parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inFields")
     private final java.util.List<String> inFields;
 
     /**
-     * List of names of IN/INOUT parameters.
+     * The list of names of the IN/INOUT parameters.
      * @return the value
      **/
     public java.util.List<String> getInFields() {
@@ -159,13 +159,13 @@ public final class CallOperationConfig extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of names of OUT/INOUT parameters.
+     * The list of names of the OUT/INOUT parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outFields")
     private final java.util.List<String> outFields;
 
     /**
-     * List of names of OUT/INOUT parameters.
+     * The list of names of the OUT/INOUT parameters.
      * @return the value
      **/
     public java.util.List<String> getOutFields() {
@@ -180,13 +180,13 @@ public final class CallOperationConfig extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of push down operations.
+     * The List of push down operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pushDownOperations")
     private final java.util.List<PushDownOperation> pushDownOperations;
 
     /**
-     * List of push down operations.
+     * The List of push down operations.
      * @return the value
      **/
     public java.util.List<PushDownOperation> getPushDownOperations() {

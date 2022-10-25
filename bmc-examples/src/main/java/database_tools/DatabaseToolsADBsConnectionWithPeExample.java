@@ -4,8 +4,8 @@
  */
 package database_tools;
 
-import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.ConfigFileReader;
+import com.oracle.bmc.Options;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.database.DatabaseClient;
@@ -21,7 +21,6 @@ import com.oracle.bmc.databasetools.DatabaseToolsWaiters;
 import com.oracle.bmc.databasetools.model.*;
 import com.oracle.bmc.databasetools.requests.*;
 import com.oracle.bmc.databasetools.responses.*;
-import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.keymanagement.KmsManagementClient;
 import com.oracle.bmc.keymanagement.KmsVaultClient;
 import com.oracle.bmc.keymanagement.model.Vault;
@@ -39,6 +38,7 @@ import com.oracle.bmc.vault.requests.ScheduleSecretDeletionRequest;
 import com.oracle.bmc.vault.responses.CreateSecretResponse;
 import com.oracle.bmc.vault.responses.ScheduleSecretDeletionResponse;
 import com.oracle.bmc.util.internal.FileUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -261,7 +261,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         assert defaultCompartmentId != null : "createSecret. Compartment Id must not be null";
 
         System.out.println(String.format("Getting Database %s wallet...", autonomousDatabaseId));
-        ResponseHelper.shouldAutoCloseResponseInputStream(false);
+        Options.shouldAutoCloseResponseInputStream(false);
         GenerateAutonomousDatabaseWalletResponse walletResponse =
                 databaseClient.generateAutonomousDatabaseWallet(
                         GenerateAutonomousDatabaseWalletRequest.builder()

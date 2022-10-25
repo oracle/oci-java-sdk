@@ -138,6 +138,19 @@ public interface DataFlow extends AutoCloseable {
     CreateRunResponse createRun(CreateRunRequest request);
 
     /**
+     * Executes a statement for a Session run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStatement API.
+     */
+    CreateStatementResponse createStatement(CreateStatementRequest request);
+
+    /**
      * Deletes an application using an `applicationId`.
      *
      * @param request The request object containing the details to send
@@ -176,6 +189,19 @@ public interface DataFlow extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRun API.
      */
     DeleteRunResponse deleteRun(DeleteRunRequest request);
+
+    /**
+     * Cancels the specified statement for a Session run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStatement API.
+     */
+    DeleteStatementResponse deleteStatement(DeleteStatementRequest request);
 
     /**
      * Retrieves an application using an `applicationId`.
@@ -228,6 +254,19 @@ public interface DataFlow extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunLog API.
      */
     GetRunLogResponse getRunLog(GetRunLogRequest request);
+
+    /**
+     * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStatement API.
+     */
+    GetStatementResponse getStatement(GetStatementRequest request);
 
     /**
      * Gets the status of the work request with the given OCID.
@@ -293,6 +332,19 @@ public interface DataFlow extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuns API.
      */
     ListRunsResponse listRuns(ListRunsRequest request);
+
+    /**
+     * Lists all statements for a Session run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStatements API.
+     */
+    ListStatementsResponse listStatements(ListStatementsRequest request);
 
     /**
      * Return a (paginated) list of errors for a given work request.

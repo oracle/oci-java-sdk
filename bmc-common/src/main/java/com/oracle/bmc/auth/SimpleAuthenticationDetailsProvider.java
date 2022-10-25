@@ -40,6 +40,7 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
      * @param privateKeySupplier
      * @param region
      */
+    @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
         "userId",
@@ -196,6 +197,7 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
          * @param privateKeySupplier private key supplier
          * @return this builder
          */
+        @Deprecated
         public SimpleAuthenticationDetailsProviderBuilder privateKeySupplier(
                 com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream>
                         privateKeySupplier) {

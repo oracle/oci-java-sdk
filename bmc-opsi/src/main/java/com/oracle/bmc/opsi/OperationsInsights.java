@@ -1621,6 +1621,22 @@ public interface OperationsInsights extends AutoCloseable {
                     SummarizeHostInsightResourceUtilizationInsightRequest request);
 
     /**
+     * Returns response with aggregated data (timestamp, usageData) for top processes on a specific date.
+     * Data is aggregated for the time specified and processes are sorted descendent by the process metric specified (CPU, MEMORY, VIRTUAL_MEMORY).
+     * hostInsightId, processMetric must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightTopProcessesUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeHostInsightTopProcessesUsage API.
+     */
+    SummarizeHostInsightTopProcessesUsageResponse summarizeHostInsightTopProcessesUsage(
+            SummarizeHostInsightTopProcessesUsageRequest request);
+
+    /**
      * Returns response with aggregated time series data (timeIntervalstart, timeIntervalEnd, commandArgs, usageData) for top processes.
      * Data is aggregated for the time period specified and proceses are sorted descendent by the proces metric specified (CPU, MEMORY, VIRTUAL_MEMORY).
      * HostInsight Id and Process metric must be specified

@@ -75,13 +75,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
          * @param key the value to set
          * @return this builder
          **/
@@ -123,13 +123,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -187,13 +187,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -212,13 +212,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
         private java.util.List<ConnectionProperty> connectionProperties;
 
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          * @param connectionProperties the value to set
          * @return this builder
          **/
@@ -229,13 +229,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * All the properties for the connection in a key-value map format.
+         * All the properties of the connection in a key-value map format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, Object> properties;
 
         /**
-         * All the properties for the connection in a key-value map format.
+         * All the properties of the connection in a key-value map format.
          * @param properties the value to set
          * @return this builder
          **/
@@ -261,13 +261,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          * @param isDefault the value to set
          * @return this builder
          **/
@@ -385,13 +385,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
      * @return the value
      **/
     public String getKey() {
@@ -427,13 +427,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -483,13 +483,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -504,13 +504,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The properties for the connection.
+     * The properties of the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
     private final java.util.List<ConnectionProperty> connectionProperties;
 
     /**
-     * The properties for the connection.
+     * The properties of the connection.
      * @return the value
      **/
     public java.util.List<ConnectionProperty> getConnectionProperties() {
@@ -518,13 +518,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * All the properties for the connection in a key-value map format.
+     * All the properties of the connection in a key-value map format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, Object> properties;
 
     /**
-     * All the properties for the connection in a key-value map format.
+     * All the properties of the connection in a key-value map format.
      * @return the value
      **/
     public java.util.Map<String, Object> getProperties() {
@@ -546,13 +546,13 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The default property for the connection.
+     * The default property of the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * The default property for the connection.
+     * The default property of the connection.
      * @return the value
      **/
     public Boolean getIsDefault() {

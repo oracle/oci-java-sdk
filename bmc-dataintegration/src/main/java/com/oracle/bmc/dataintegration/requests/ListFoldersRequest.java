@@ -176,6 +176,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
+        TimeUpdated("TIME_UPDATED"),
         ;
 
         private final String value;

@@ -61,13 +61,13 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Error message, if whole operation is failed.
+         * Error message when the whole operation fails.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Error message, if whole operation is failed.
+         * Error message when the whole operation fails.
          * @param errorMessage the value to set
          * @return this builder
          **/
@@ -93,13 +93,13 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of names of OUT/INOUT params.
+         * The list of names of OUT/INOUT parameters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("outParams")
         private java.util.List<String> outParams;
 
         /**
-         * List of names of OUT/INOUT params.
+         * The list of names of OUT/INOUT parameters.
          * @param outParams the value to set
          * @return this builder
          **/
@@ -109,13 +109,13 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of operation execution result for each input set.
+         * The list of operation execution result for each input set.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
         private java.util.List<OperationExecResult> operationResult;
 
         /**
-         * List of operation execution result for each input set.
+         * The list of operation execution result for each input set.
          * @param operationResult the value to set
          * @return this builder
          **/
@@ -189,13 +189,13 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Error message, if whole operation is failed.
+     * Error message when the whole operation fails.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * Error message, if whole operation is failed.
+     * Error message when the whole operation fails.
      * @return the value
      **/
     public String getErrorMessage() {
@@ -217,13 +217,13 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of names of OUT/INOUT params.
+     * The list of names of OUT/INOUT parameters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outParams")
     private final java.util.List<String> outParams;
 
     /**
-     * List of names of OUT/INOUT params.
+     * The list of names of OUT/INOUT parameters.
      * @return the value
      **/
     public java.util.List<String> getOutParams() {
@@ -231,13 +231,13 @@ public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of operation execution result for each input set.
+     * The list of operation execution result for each input set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationResult")
     private final java.util.List<OperationExecResult> operationResult;
 
     /**
-     * List of operation execution result for each input set.
+     * The list of operation execution result for each input set.
      * @return the value
      **/
     public java.util.List<OperationExecResult> getOperationResult() {

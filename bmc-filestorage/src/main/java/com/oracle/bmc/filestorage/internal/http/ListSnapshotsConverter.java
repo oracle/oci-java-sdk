@@ -34,12 +34,6 @@ public class ListSnapshotsConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20171215").path("snapshots");
 
-        target =
-                target.queryParam(
-                        "fileSystemId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getFileSystemId()));
-
         if (request.getLimit() != null) {
             target =
                     target.queryParam(
@@ -71,6 +65,12 @@ public class ListSnapshotsConverter {
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getId()));
         }
+
+        target =
+                target.queryParam(
+                        "fileSystemId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getFileSystemId()));
 
         if (request.getSortOrder() != null) {
             target =

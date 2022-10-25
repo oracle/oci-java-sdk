@@ -8,27 +8,27 @@ import com.oracle.bmc.threatintelligence.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/GetIndicatorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetIndicatorRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique indicator identifier
+     * The unique identifier (OCID) of the threat indicator.
      */
     private String indicatorId;
 
     /**
-     * unique indicator identifier
+     * The unique identifier (OCID) of the threat indicator.
      */
     public String getIndicatorId() {
         return indicatorId;
     }
     /**
-     * The ID of the tenancy to use to filter results.
+     * The OCID of the tenancy (root compartment) that is used to filter results.
      */
     private String compartmentId;
 
     /**
-     * The ID of the tenancy to use to filter results.
+     * The OCID of the tenancy (root compartment) that is used to filter results.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -53,12 +53,12 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * unique indicator identifier
+         * The unique identifier (OCID) of the threat indicator.
          */
         private String indicatorId = null;
 
         /**
-         * unique indicator identifier
+         * The unique identifier (OCID) of the threat indicator.
          * @param indicatorId the value to set
          * @return this builder instance
          */
@@ -68,12 +68,12 @@ public class GetIndicatorRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The ID of the tenancy to use to filter results.
+         * The OCID of the tenancy (root compartment) that is used to filter results.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the tenancy to use to filter results.
+         * The OCID of the tenancy (root compartment) that is used to filter results.
          * @param compartmentId the value to set
          * @return this builder instance
          */

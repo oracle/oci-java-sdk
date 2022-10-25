@@ -51,7 +51,9 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         "timeCreated",
         "timeUpdated",
         "type",
-        "warehouseBucketUri"
+        "warehouseBucketUri",
+        "maxDurationInMinutes",
+        "idleTimeoutInMinutes"
     })
     public Application(
             ApplicationLogConfig applicationLogConfig,
@@ -84,7 +86,9 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             ApplicationType type,
-            String warehouseBucketUri) {
+            String warehouseBucketUri,
+            Long maxDurationInMinutes,
+            Long idleTimeoutInMinutes) {
         super();
         this.applicationLogConfig = applicationLogConfig;
         this.archiveUri = archiveUri;
@@ -117,6 +121,8 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         this.timeUpdated = timeUpdated;
         this.type = type;
         this.warehouseBucketUri = warehouseBucketUri;
+        this.maxDurationInMinutes = maxDurationInMinutes;
+        this.idleTimeoutInMinutes = idleTimeoutInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -131,7 +137,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+         * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
          * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          **/
@@ -139,7 +145,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         private String archiveUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+         * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
          * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param archiveUri the value to set
@@ -711,6 +717,46 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("warehouseBucketUri");
             return this;
         }
+        /**
+         * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+         * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDurationInMinutes")
+        private Long maxDurationInMinutes;
+
+        /**
+         * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+         * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+         *
+         * @param maxDurationInMinutes the value to set
+         * @return this builder
+         **/
+        public Builder maxDurationInMinutes(Long maxDurationInMinutes) {
+            this.maxDurationInMinutes = maxDurationInMinutes;
+            this.__explicitlySet__.add("maxDurationInMinutes");
+            return this;
+        }
+        /**
+         * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+         * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
+        private Long idleTimeoutInMinutes;
+
+        /**
+         * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+         * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+         *
+         * @param idleTimeoutInMinutes the value to set
+         * @return this builder
+         **/
+        public Builder idleTimeoutInMinutes(Long idleTimeoutInMinutes) {
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
+            this.__explicitlySet__.add("idleTimeoutInMinutes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -748,7 +794,9 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.timeCreated,
                             this.timeUpdated,
                             this.type,
-                            this.warehouseBucketUri);
+                            this.warehouseBucketUri,
+                            this.maxDurationInMinutes,
+                            this.idleTimeoutInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -850,6 +898,12 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
             if (model.wasPropertyExplicitlySet("warehouseBucketUri")) {
                 this.warehouseBucketUri(model.getWarehouseBucketUri());
             }
+            if (model.wasPropertyExplicitlySet("maxDurationInMinutes")) {
+                this.maxDurationInMinutes(model.getMaxDurationInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("idleTimeoutInMinutes")) {
+                this.idleTimeoutInMinutes(model.getIdleTimeoutInMinutes());
+            }
             return this;
         }
     }
@@ -873,7 +927,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
      * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
@@ -881,7 +935,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     private final String archiveUri;
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
      * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
@@ -1392,6 +1446,42 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         return warehouseBucketUri;
     }
 
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+     * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDurationInMinutes")
+    private final Long maxDurationInMinutes;
+
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+     * once it reaches this duration from the time it transitions to {@code IN_PROGRESS} state.
+     *
+     * @return the value
+     **/
+    public Long getMaxDurationInMinutes() {
+        return maxDurationInMinutes;
+    }
+
+    /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+     * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
+    private final Long idleTimeoutInMinutes;
+
+    /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+     * Note: This parameter is currently only applicable for Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+     *
+     * @return the value
+     **/
+    public Long getIdleTimeoutInMinutes() {
+        return idleTimeoutInMinutes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1437,6 +1527,8 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
+        sb.append(", maxDurationInMinutes=").append(String.valueOf(this.maxDurationInMinutes));
+        sb.append(", idleTimeoutInMinutes=").append(String.valueOf(this.idleTimeoutInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -1482,6 +1574,8 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
+                && java.util.Objects.equals(this.maxDurationInMinutes, other.maxDurationInMinutes)
+                && java.util.Objects.equals(this.idleTimeoutInMinutes, other.idleTimeoutInMinutes)
                 && super.equals(other);
     }
 
@@ -1550,6 +1644,16 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.warehouseBucketUri == null
                                 ? 43
                                 : this.warehouseBucketUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxDurationInMinutes == null
+                                ? 43
+                                : this.maxDurationInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.idleTimeoutInMinutes == null
+                                ? 43
+                                : this.idleTimeoutInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

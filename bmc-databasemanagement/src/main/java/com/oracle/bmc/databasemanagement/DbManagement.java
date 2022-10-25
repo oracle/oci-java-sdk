@@ -265,6 +265,20 @@ public interface DbManagement extends AutoCloseable {
             DeleteManagedDatabaseGroupRequest request);
 
     /**
+     * Deletes the preferred credential based on the credentialName.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeletePreferredCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePreferredCredential API.
+     */
+    DeletePreferredCredentialResponse deletePreferredCredential(
+            DeletePreferredCredentialRequest request);
+
+    /**
      * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
      *
      * @param request The request object containing the details to send
@@ -493,6 +507,19 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetPdbMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPdbMetrics API.
      */
     GetPdbMetricsResponse getPdbMetrics(GetPdbMetricsRequest request);
+
+    /**
+     * Gets the preferred credential details for a Managed Database based on credentialName.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetPreferredCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPreferredCredential API.
+     */
+    GetPreferredCredentialResponse getPreferredCredential(GetPreferredCredentialRequest request);
 
     /**
      * Gets the details of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
@@ -799,6 +826,20 @@ public interface DbManagement extends AutoCloseable {
      */
     ListOptimizerStatisticsCollectionOperationsResponse listOptimizerStatisticsCollectionOperations(
             ListOptimizerStatisticsCollectionOperationsRequest request);
+
+    /**
+     * Gets the list of preferred credentials for a given Managed Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListPreferredCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPreferredCredentials API.
+     */
+    ListPreferredCredentialsResponse listPreferredCredentials(
+            ListPreferredCredentialsRequest request);
 
     /**
      * Gets the list of users on whose behalf the current user acts as proxy.
@@ -1147,6 +1188,19 @@ public interface DbManagement extends AutoCloseable {
             SummarizeJobExecutionsStatusesRequest request);
 
     /**
+     * Tests the preferred credential.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/TestPreferredCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestPreferredCredential API.
+     */
+    TestPreferredCredentialResponse testPreferredCredential(TestPreferredCredentialRequest request);
+
+    /**
      * Updates one or more attributes of a specific Database Management private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1185,6 +1239,20 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateManagedDatabaseGroupResponse updateManagedDatabaseGroup(
             UpdateManagedDatabaseGroupRequest request);
+
+    /**
+     * Updates the preferred credential based on the credentialName.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdatePreferredCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePreferredCredential API.
+     */
+    UpdatePreferredCredentialResponse updatePreferredCredential(
+            UpdatePreferredCredentialRequest request);
 
     /**
      * Updates the attributes of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.

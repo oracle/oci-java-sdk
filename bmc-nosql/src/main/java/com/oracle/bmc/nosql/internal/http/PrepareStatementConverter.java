@@ -47,6 +47,14 @@ public class PrepareStatementConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getStatement()));
 
+        if (request.getIsGetQueryPlan() != null) {
+            target =
+                    target.queryParam(
+                            "isGetQueryPlan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsGetQueryPlan()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

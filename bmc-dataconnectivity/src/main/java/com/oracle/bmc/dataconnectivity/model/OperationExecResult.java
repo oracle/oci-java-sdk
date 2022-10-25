@@ -45,13 +45,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Status of the operation job for particular set of input.
+         * Status of the operation job for a particular set of input.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
         private ExecutionStatus executionStatus;
 
         /**
-         * Status of the operation job for particular set of input.
+         * Status of the operation job for a particular set of input.
          * @param executionStatus the value to set
          * @return this builder
          **/
@@ -61,13 +61,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Error message if execution of operation is failed.
+         * Error message when the execution of operation fails.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Error message if execution of operation is failed.
+         * Error message when the execution of operation fails.
          * @param errorMessage the value to set
          * @return this builder
          **/
@@ -93,13 +93,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of emitted rows for each OUT/INOUT param.
+         * The list of emitted rows for each OUT/INOUT parameter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
         private java.util.List<java.util.List<Object>> outputValues;
 
         /**
-         * List of emitted rows for each OUT/INOUT param.
+         * The list of emitted rows for each OUT/INOUT parameter.
          * @param outputValues the value to set
          * @return this builder
          **/
@@ -109,13 +109,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * True, if error message should be displayed on UI.
+         * True, if the error message must be displayed in the UI.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
         private Boolean isWhitelistedErrorMessage;
 
         /**
-         * True, if error message should be displayed on UI.
+         * True, if the error message must be displayed in the UI.
          * @param isWhitelistedErrorMessage the value to set
          * @return this builder
          **/
@@ -175,7 +175,7 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Status of the operation job for particular set of input.
+     * Status of the operation job for a particular set of input.
      **/
     public enum ExecutionStatus {
         Failed("FAILED"),
@@ -225,13 +225,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * Status of the operation job for particular set of input.
+     * Status of the operation job for a particular set of input.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     private final ExecutionStatus executionStatus;
 
     /**
-     * Status of the operation job for particular set of input.
+     * Status of the operation job for a particular set of input.
      * @return the value
      **/
     public ExecutionStatus getExecutionStatus() {
@@ -239,13 +239,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Error message if execution of operation is failed.
+     * Error message when the execution of operation fails.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * Error message if execution of operation is failed.
+     * Error message when the execution of operation fails.
      * @return the value
      **/
     public String getErrorMessage() {
@@ -267,13 +267,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of emitted rows for each OUT/INOUT param.
+     * The list of emitted rows for each OUT/INOUT parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
     private final java.util.List<java.util.List<Object>> outputValues;
 
     /**
-     * List of emitted rows for each OUT/INOUT param.
+     * The list of emitted rows for each OUT/INOUT parameter.
      * @return the value
      **/
     public java.util.List<java.util.List<Object>> getOutputValues() {
@@ -281,13 +281,13 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * True, if error message should be displayed on UI.
+     * True, if the error message must be displayed in the UI.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
     private final Boolean isWhitelistedErrorMessage;
 
     /**
-     * True, if error message should be displayed on UI.
+     * True, if the error message must be displayed in the UI.
      * @return the value
      **/
     public Boolean getIsWhitelistedErrorMessage() {

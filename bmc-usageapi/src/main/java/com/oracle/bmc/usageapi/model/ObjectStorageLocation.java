@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The object storage location where usage/cost CSVs will be uploaded
+ * The object storage location where usage or cost CSVs will be uploaded.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,13 +28,13 @@ public final class ObjectStorageLocation extends ResultLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The destination Object Store Region specified by customer
+         * The destination Object Store Region specified by the customer.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * The destination Object Store Region specified by customer
+         * The destination Object Store Region specified by the customer.
          * @param region the value to set
          * @return this builder
          **/
@@ -44,13 +44,13 @@ public final class ObjectStorageLocation extends ResultLocation {
             return this;
         }
         /**
-         * The namespace needed to determine object storage bucket.
+         * The namespace needed to determine the object storage bucket.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The namespace needed to determine object storage bucket.
+         * The namespace needed to determine the object storage bucket.
          * @param namespace the value to set
          * @return this builder
          **/
@@ -60,13 +60,13 @@ public final class ObjectStorageLocation extends ResultLocation {
             return this;
         }
         /**
-         * The bucket name where usage/cost CSVs will be uploaded
+         * The bucket name where usage or cost CSVs will be uploaded.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
-         * The bucket name where usage/cost CSVs will be uploaded
+         * The bucket name where usage or cost CSVs will be uploaded.
          * @param bucketName the value to set
          * @return this builder
          **/
@@ -123,13 +123,13 @@ public final class ObjectStorageLocation extends ResultLocation {
     }
 
     /**
-     * The destination Object Store Region specified by customer
+     * The destination Object Store Region specified by the customer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * The destination Object Store Region specified by customer
+     * The destination Object Store Region specified by the customer.
      * @return the value
      **/
     public String getRegion() {
@@ -137,13 +137,13 @@ public final class ObjectStorageLocation extends ResultLocation {
     }
 
     /**
-     * The namespace needed to determine object storage bucket.
+     * The namespace needed to determine the object storage bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The namespace needed to determine object storage bucket.
+     * The namespace needed to determine the object storage bucket.
      * @return the value
      **/
     public String getNamespace() {
@@ -151,13 +151,13 @@ public final class ObjectStorageLocation extends ResultLocation {
     }
 
     /**
-     * The bucket name where usage/cost CSVs will be uploaded
+     * The bucket name where usage or cost CSVs will be uploaded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
-     * The bucket name where usage/cost CSVs will be uploaded
+     * The bucket name where usage or cost CSVs will be uploaded.
      * @return the value
      **/
     public String getBucketName() {

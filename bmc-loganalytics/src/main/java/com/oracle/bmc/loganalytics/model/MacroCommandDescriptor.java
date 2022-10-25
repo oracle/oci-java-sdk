@@ -73,6 +73,15 @@ public final class MacroCommandDescriptor extends AbstractCommandDescriptor {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -83,7 +92,8 @@ public final class MacroCommandDescriptor extends AbstractCommandDescriptor {
                             this.internalQueryString,
                             this.category,
                             this.referencedFields,
-                            this.declaredFields);
+                            this.declaredFields,
+                            this.isHidden);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -107,6 +117,9 @@ public final class MacroCommandDescriptor extends AbstractCommandDescriptor {
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
             }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
             return this;
         }
     }
@@ -128,8 +141,15 @@ public final class MacroCommandDescriptor extends AbstractCommandDescriptor {
             String internalQueryString,
             String category,
             java.util.List<AbstractField> referencedFields,
-            java.util.List<AbstractField> declaredFields) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+            java.util.List<AbstractField> declaredFields,
+            Boolean isHidden) {
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
     }
 
     @Override

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Summary of a Endpoint.
+ * Summary of an endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -58,13 +58,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier that is immutable on creation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier that is immutable on creation.
          * @param id the value to set
          * @return this builder
          **/
@@ -90,13 +90,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Data Connectivity Management Endpoint display name, Endpoints can be renamed
+         * Data Connectivity Management Endpoint display name; endpoints can be renamed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Connectivity Management Endpoint display name, Endpoints can be renamed
+         * Data Connectivity Management Endpoint display name; endpoints can be renamed.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -122,13 +122,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -138,13 +138,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -154,7 +154,7 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          **/
@@ -162,7 +162,7 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
          * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
@@ -297,13 +297,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable on creation.
      * @return the value
      **/
     public String getId() {
@@ -325,13 +325,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Data Connectivity Management Endpoint display name, Endpoints can be renamed
+     * Data Connectivity Management Endpoint display name; endpoints can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Connectivity Management Endpoint display name, Endpoints can be renamed
+     * Data Connectivity Management Endpoint display name; endpoints can be renamed.
      * @return the value
      **/
     public String getDisplayName() {
@@ -353,13 +353,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -367,13 +367,13 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -381,7 +381,7 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      **/
@@ -389,7 +389,7 @@ public final class EndpointSummary extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value

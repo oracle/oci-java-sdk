@@ -21,10 +21,11 @@ package com.oracle.bmc.nosql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PreparedStatement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"statement", "usage"})
-    public PreparedStatement(String statement, RequestUsage usage) {
+    @java.beans.ConstructorProperties({"statement", "queryPlan", "usage"})
+    public PreparedStatement(String statement, Object queryPlan, RequestUsage usage) {
         super();
         this.statement = statement;
+        this.queryPlan = queryPlan;
         this.usage = usage;
     }
 
@@ -50,6 +51,24 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("statement");
             return this;
         }
+        /**
+         * A representation of the query plan as a schema-less JSON object.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("queryPlan")
+        private Object queryPlan;
+
+        /**
+         * A representation of the query plan as a schema-less JSON object.
+         *
+         * @param queryPlan the value to set
+         * @return this builder
+         **/
+        public Builder queryPlan(Object queryPlan) {
+            this.queryPlan = queryPlan;
+            this.__explicitlySet__.add("queryPlan");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private RequestUsage usage;
@@ -64,7 +83,8 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PreparedStatement build() {
-            PreparedStatement model = new PreparedStatement(this.statement, this.usage);
+            PreparedStatement model =
+                    new PreparedStatement(this.statement, this.queryPlan, this.usage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -75,6 +95,9 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
         public Builder copy(PreparedStatement model) {
             if (model.wasPropertyExplicitlySet("statement")) {
                 this.statement(model.getStatement());
+            }
+            if (model.wasPropertyExplicitlySet("queryPlan")) {
+                this.queryPlan(model.getQueryPlan());
             }
             if (model.wasPropertyExplicitlySet("usage")) {
                 this.usage(model.getUsage());
@@ -112,6 +135,22 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
         return statement;
     }
 
+    /**
+     * A representation of the query plan as a schema-less JSON object.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("queryPlan")
+    private final Object queryPlan;
+
+    /**
+     * A representation of the query plan as a schema-less JSON object.
+     *
+     * @return the value
+     **/
+    public Object getQueryPlan() {
+        return queryPlan;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final RequestUsage usage;
 
@@ -134,6 +173,7 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
         sb.append("PreparedStatement(");
         sb.append("super=").append(super.toString());
         sb.append("statement=").append(String.valueOf(this.statement));
+        sb.append(", queryPlan=").append(String.valueOf(this.queryPlan));
         sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(")");
         return sb.toString();
@@ -150,6 +190,7 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
 
         PreparedStatement other = (PreparedStatement) o;
         return java.util.Objects.equals(this.statement, other.statement)
+                && java.util.Objects.equals(this.queryPlan, other.queryPlan)
                 && java.util.Objects.equals(this.usage, other.usage)
                 && super.equals(other);
     }
@@ -159,6 +200,7 @@ public final class PreparedStatement extends com.oracle.bmc.http.internal.Explic
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.statement == null ? 43 : this.statement.hashCode());
+        result = (result * PRIME) + (this.queryPlan == null ? 43 : this.queryPlan.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

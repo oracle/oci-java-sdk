@@ -12,10 +12,13 @@ import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
 
@@ -30,6 +33,8 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
 
     private static final String INCORRECT_STATE_RESPONSE_STATUS = "IncorrectState";
 
+    private final int numberOfRecordedHisotry;
+    private Deque<String> historyQueue;
     /**
      * Creates a {@link JaxRsCircuitBreakerImpl}
      *
@@ -63,6 +68,8 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
 
         this.circuitBreaker = CircuitBreaker.of("default", custom.build());
         this.recordHttpStatuses = configuration.getRecordHttpStatuses();
+        this.historyQueue = new ArrayDeque<>();
+        this.numberOfRecordedHisotry = configuration.getNumberOfRecordedHistoryRepsonse();
     }
 
     private boolean isResponseStatusIncorrectState(Response response) {
@@ -91,6 +98,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
             try {
                 return circuitBreakerSupplier.get();
             } catch (HttpStatusErrorException e) {
+                this.addToHistory(e);
                 return e.getResponse();
             } catch (CallNotPermittedException e) {
                 throw CallNotAllowedException.createCallNotAllowedException(
@@ -119,6 +127,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
             try {
                 return circuitBreakerFunction.apply(inv);
             } catch (HttpStatusErrorException e) {
+                this.addToHistory(e);
                 return e.getResponse();
             } catch (CallNotPermittedException e) {
                 throw CallNotAllowedException.createCallNotAllowedException(
@@ -163,12 +172,31 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
     }
 
     // @VisibleForTesting
-    CircuitBreakerConfig getInternalCircuitBreakerConfig() {
+    public CircuitBreakerConfig getInternalCircuitBreakerConfig() {
         return circuitBreaker.getCircuitBreakerConfig();
     }
 
     // @VisibleForTesting
     Set<Integer> getRecordHttpStatuses() {
         return recordHttpStatuses;
+    }
+
+    public void addToHistory(HttpStatusErrorException err) {
+
+        if (historyQueue.size() >= numberOfRecordedHisotry) {
+            historyQueue.removeFirst();
+        }
+
+        StringBuilder historyBuilder =
+                new StringBuilder()
+                        .append("Error - " + err.toString() + "; ")
+                        .append("ErrorMessage - " + err.getResponse().getStatusInfo() + "; ")
+                        .append("ErrorCode - " + err.getResponse().getStatus());
+
+        historyQueue.add(historyBuilder.toString());
+    }
+
+    public String getHistory() {
+        return historyQueue.stream().collect(Collectors.joining("\n"));
     }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Represents reference details of a dcms artifact.
+ * Represents reference details of a DCMS artifact.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,13 +83,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Generated key that can be used in API calls to identify referenceinfo.
+         * Generated key that can be used in API calls to identify the referenceinfo.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify referenceinfo.
+         * Generated key that can be used in API calls to identify the referenceinfo.
          * @param key the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
          **/
@@ -179,13 +179,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -195,13 +195,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * unique id of dcms artifact that is getting registered.
+         * The unique ID of the DCMS artifact that is getting registered.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dcmsArtifactId")
         private String dcmsArtifactId;
 
         /**
-         * unique id of dcms artifact that is getting registered.
+         * The unique ID of the DCMS artifact that is getting registered.
          * @param dcmsArtifactId the value to set
          * @return this builder
          **/
@@ -211,13 +211,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * unique id of service which is referencing data asset.
+         * The unique ID of the service that is referencing a data asset.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
         private String serviceArtifactId;
 
         /**
-         * unique id of service which is referencing data asset.
+         * The unique ID of the service that is referencing a data asset.
          * @param serviceArtifactId the value to set
          * @return this builder
          **/
@@ -227,13 +227,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * count of how many times a data asset has been registered by a service.
+         * The number of times a data asset has been registered by a service.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
         private Integer referenceCount;
 
         /**
-         * count of how many times a data asset has been registered by a service.
+         * The number of times a data asset has been registered by a service.
          * @param referenceCount the value to set
          * @return this builder
          **/
@@ -357,13 +357,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Generated key that can be used in API calls to identify referenceinfo.
+     * Generated key that can be used in API calls to identify the referenceinfo.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify referenceinfo.
+     * Generated key that can be used in API calls to identify the referenceinfo.
      * @return the value
      **/
     public String getKey() {
@@ -385,13 +385,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
      **/
     public String getName() {
@@ -441,13 +441,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * @return the value
      **/
     public String getIdentifier() {
@@ -455,13 +455,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * unique id of dcms artifact that is getting registered.
+     * The unique ID of the DCMS artifact that is getting registered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dcmsArtifactId")
     private final String dcmsArtifactId;
 
     /**
-     * unique id of dcms artifact that is getting registered.
+     * The unique ID of the DCMS artifact that is getting registered.
      * @return the value
      **/
     public String getDcmsArtifactId() {
@@ -469,13 +469,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * unique id of service which is referencing data asset.
+     * The unique ID of the service that is referencing a data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceArtifactId")
     private final String serviceArtifactId;
 
     /**
-     * unique id of service which is referencing data asset.
+     * The unique ID of the service that is referencing a data asset.
      * @return the value
      **/
     public String getServiceArtifactId() {
@@ -483,13 +483,13 @@ public final class ReferenceInfo extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * count of how many times a data asset has been registered by a service.
+     * The number of times a data asset has been registered by a service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
     private final Integer referenceCount;
 
     /**
-     * count of how many times a data asset has been registered by a service.
+     * The number of times a data asset has been registered by a service.
      * @return the value
      **/
     public Integer getReferenceCount() {

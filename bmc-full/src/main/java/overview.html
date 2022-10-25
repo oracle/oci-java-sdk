@@ -52,18 +52,20 @@
     <h2>Instantiating Service Clients</h2>
     <p>Now that you have configured a credentials provider and client configuration, a service client may be instantiated:
     
-    <pre><code>ObjectStorage client = new ObjectStorageClient(provider, clientConfig);</code></pre>
+    <pre><code>ObjectStorage client = ObjectStorageClient.builder()
+                                          .region(Region.US_PHOENIX_1)
+                                          .configuration(clientConfig)
+                                          .build(provider);</code></pre>
     
     <h2>Setting the Endpoints</h2>
     <p>Service endpoints can be set in one of two ways.</p>
     
     <ul>
-      <li>Call <code>setEndpoint()</code> on the service instance. This lets you to specify a full host name (for example, https://www.example.com).</li>        
-      <li>Call <code>setRegion()</code> on the service instance. This selects the appropriate hostname for the service for the given region.</li>
+      <li>Call <code>endpoint()</code> on the client builder instance. This lets you to specify a full host name (for example, https://www.example.com).</li>        
+      <li>Call <code>region()</code> on the client builder instance. This selects the appropriate hostname for the service for the given region.</li>
     </ul>
     
-    <p>Ex, using the previously constructed client:
-    <pre><code>client.setRegion(Region.US_PHOENIX_1);</code></pre>
+    <p>For an example, see the code above.</p>
     
     
 </body>

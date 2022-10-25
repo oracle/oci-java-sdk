@@ -10,7 +10,7 @@ import com.oracle.bmc.ailanguage.requests.*;
 import com.oracle.bmc.ailanguage.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class DetectDominantLanguageConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -35,7 +35,7 @@ public class DetectDominantLanguageConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20210101")
+                        .path("/20221001")
                         .path("actions")
                         .path("detectDominantLanguage");
 
@@ -124,6 +124,17 @@ public class DetectDominantLanguageConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> sunsetHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "sunset");
+                                if (sunsetHeader.isPresent()) {
+                                    builder.sunset(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "sunset",
+                                                    sunsetHeader.get().get(0),
                                                     String.class));
                                 }
 

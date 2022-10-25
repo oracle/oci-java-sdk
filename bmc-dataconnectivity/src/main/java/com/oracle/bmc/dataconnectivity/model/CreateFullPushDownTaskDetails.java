@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The full pushdown task parameter
+ * The full pushdown task parameter.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +33,13 @@ public final class CreateFullPushDownTaskDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of of FullPushDownTask.
+         * The type of FullPushDownTask.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
-         * The type of of FullPushDownTask.
+         * The type of FullPushDownTask.
          * @param modelType the value to set
          * @return this builder
          **/
@@ -106,13 +106,13 @@ public final class CreateFullPushDownTaskDetails
     }
 
     /**
-     * The type of of FullPushDownTask.
+     * The type of FullPushDownTask.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
-     * The type of of FullPushDownTask.
+     * The type of FullPushDownTask.
      * @return the value
      **/
     public String getModelType() {

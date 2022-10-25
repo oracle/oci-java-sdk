@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A metadata details of a profiling entity result.
+ * The metadata details of a profiling entity result.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +33,13 @@ public final class EntityProfileResult extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+         * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the list of attributes to profile as being passed via configuration.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeCount")
         private Integer attributeCount;
 
         /**
-         * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+         * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the list of attributes to profile as being passed via configuration.
          * @param attributeCount the value to set
          * @return this builder
          **/
@@ -49,13 +49,13 @@ public final class EntityProfileResult extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Number of rows were that were sampled
+         * Number of rows that are sampled.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampledRowCount")
         private Integer sampledRowCount;
 
         /**
-         * Number of rows were that were sampled
+         * Number of rows that are sampled.
          * @param sampledRowCount the value to set
          * @return this builder
          **/
@@ -121,13 +121,13 @@ public final class EntityProfileResult extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+     * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the list of attributes to profile as being passed via configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeCount")
     private final Integer attributeCount;
 
     /**
-     * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+     * Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the list of attributes to profile as being passed via configuration.
      * @return the value
      **/
     public Integer getAttributeCount() {
@@ -135,13 +135,13 @@ public final class EntityProfileResult extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Number of rows were that were sampled
+     * Number of rows that are sampled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampledRowCount")
     private final Integer sampledRowCount;
 
     /**
-     * Number of rows were that were sampled
+     * Number of rows that are sampled.
      * @return the value
      **/
     public Integer getSampledRowCount() {

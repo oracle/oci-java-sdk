@@ -27,14 +27,6 @@ package com.oracle.bmc.bastion.model;
 public final class ManagedSshSessionTargetResourceDetails extends TargetResourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
-        private Integer targetResourcePort;
-
-        public Builder targetResourcePort(Integer targetResourcePort) {
-            this.targetResourcePort = targetResourcePort;
-            this.__explicitlySet__.add("targetResourcePort");
-            return this;
-        }
         /**
          * The name of the user on the target resource operating system that the session uses for the connection.
          **/
@@ -100,6 +92,22 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
             this.__explicitlySet__.add("targetResourceDisplayName");
             return this;
         }
+        /**
+         * The port number to connect to on the target resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
+        private Integer targetResourcePort;
+
+        /**
+         * The port number to connect to on the target resource.
+         * @param targetResourcePort the value to set
+         * @return this builder
+         **/
+        public Builder targetResourcePort(Integer targetResourcePort) {
+            this.targetResourcePort = targetResourcePort;
+            this.__explicitlySet__.add("targetResourcePort");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -107,11 +115,11 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
         public ManagedSshSessionTargetResourceDetails build() {
             ManagedSshSessionTargetResourceDetails model =
                     new ManagedSshSessionTargetResourceDetails(
-                            this.targetResourcePort,
                             this.targetResourceOperatingSystemUserName,
                             this.targetResourceId,
                             this.targetResourcePrivateIpAddress,
-                            this.targetResourceDisplayName);
+                            this.targetResourceDisplayName,
+                            this.targetResourcePort);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -120,9 +128,6 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ManagedSshSessionTargetResourceDetails model) {
-            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
-                this.targetResourcePort(model.getTargetResourcePort());
-            }
             if (model.wasPropertyExplicitlySet("targetResourceOperatingSystemUserName")) {
                 this.targetResourceOperatingSystemUserName(
                         model.getTargetResourceOperatingSystemUserName());
@@ -135,6 +140,9 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
             }
             if (model.wasPropertyExplicitlySet("targetResourceDisplayName")) {
                 this.targetResourceDisplayName(model.getTargetResourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
+                this.targetResourcePort(model.getTargetResourcePort());
             }
             return this;
         }
@@ -153,16 +161,17 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
 
     @Deprecated
     public ManagedSshSessionTargetResourceDetails(
-            Integer targetResourcePort,
             String targetResourceOperatingSystemUserName,
             String targetResourceId,
             String targetResourcePrivateIpAddress,
-            String targetResourceDisplayName) {
-        super(targetResourcePort);
+            String targetResourceDisplayName,
+            Integer targetResourcePort) {
+        super();
         this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
         this.targetResourceId = targetResourceId;
         this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
         this.targetResourceDisplayName = targetResourceDisplayName;
+        this.targetResourcePort = targetResourcePort;
     }
 
     /**
@@ -221,6 +230,20 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
         return targetResourceDisplayName;
     }
 
+    /**
+     * The port number to connect to on the target resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetResourcePort")
+    private final Integer targetResourcePort;
+
+    /**
+     * The port number to connect to on the target resource.
+     * @return the value
+     **/
+    public Integer getTargetResourcePort() {
+        return targetResourcePort;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -242,6 +265,7 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
                 .append(String.valueOf(this.targetResourcePrivateIpAddress));
         sb.append(", targetResourceDisplayName=")
                 .append(String.valueOf(this.targetResourceDisplayName));
+        sb.append(", targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
     }
@@ -264,6 +288,7 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
                         this.targetResourcePrivateIpAddress, other.targetResourcePrivateIpAddress)
                 && java.util.Objects.equals(
                         this.targetResourceDisplayName, other.targetResourceDisplayName)
+                && java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
                 && super.equals(other);
     }
 
@@ -289,6 +314,11 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
                         + (this.targetResourceDisplayName == null
                                 ? 43
                                 : this.targetResourceDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetResourcePort == null
+                                ? 43
+                                : this.targetResourcePort.hashCode());
         return result;
     }
 }

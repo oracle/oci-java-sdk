@@ -31,6 +31,10 @@ package com.oracle.bmc.devops.model;
         name = "GITHUB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VbsTriggerCreateResult.class,
+        name = "VBS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabTriggerCreateResult.class,
         name = "GITLAB"
     ),

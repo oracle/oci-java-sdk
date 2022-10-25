@@ -72,6 +72,15 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
             this.__explicitlySet__.add("declaredFields");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
         /**
          * Optional timestamp datatype field if specified. Default field is time.
          *
@@ -156,6 +165,7 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
                             this.category,
                             this.referencedFields,
                             this.declaredFields,
+                            this.isHidden,
                             this.time,
                             this.span,
                             this.groupByFields,
@@ -182,6 +192,9 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
             }
             if (model.wasPropertyExplicitlySet("declaredFields")) {
                 this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("time")) {
                 this.time(model.getTime());
@@ -217,11 +230,18 @@ public final class TimeStatsCommandDescriptor extends AbstractCommandDescriptor 
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            Boolean isHidden,
             AbstractField time,
             String span,
             java.util.List<AbstractField> groupByFields,
             java.util.List<FunctionField> functions) {
-        super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        super(
+                displayQueryString,
+                internalQueryString,
+                category,
+                referencedFields,
+                declaredFields,
+                isHidden);
         this.time = time;
         this.span = span;
         this.groupByFields = groupByFields;

@@ -14,7 +14,7 @@ package com.oracle.bmc.ailanguage.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentError.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DocumentError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -29,13 +29,13 @@ public final class DocumentError extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique Document Identifier.
+         * Document unique identifier defined by the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Unique Document Identifier.
+         * Document unique identifier defined by the user.
          * @param key the value to set
          * @return this builder
          **/
@@ -89,13 +89,13 @@ public final class DocumentError extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Unique Document Identifier.
+     * Document unique identifier defined by the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Unique Document Identifier.
+     * Document unique identifier defined by the user.
      * @return the value
      **/
     public String getKey() {

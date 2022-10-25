@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * A summary type containing information about the object including its key, name and when/who created/updated it.
+ * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -188,13 +188,13 @@ public final class ObjectMetadata extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
         private String identifierPath;
 
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          * @param identifierPath the value to set
          * @return this builder
          **/
@@ -236,13 +236,13 @@ public final class ObjectMetadata extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * Labels are keywords or tags that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * Labels are keywords or tags that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * @param labels the value to set
          * @return this builder
          **/
@@ -252,13 +252,13 @@ public final class ObjectMetadata extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether this object is a favorite.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
         private Boolean isFavorite;
 
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether this object is a favorite.
          * @param isFavorite the value to set
          * @return this builder
          **/
@@ -455,13 +455,13 @@ public final class ObjectMetadata extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The full path to identify this object.
+     * The full path to identify the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
     private final String identifierPath;
 
     /**
-     * The full path to identify this object.
+     * The full path to identify the object.
      * @return the value
      **/
     public String getIdentifierPath() {
@@ -497,13 +497,13 @@ public final class ObjectMetadata extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * Labels are keywords or tags that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * Labels are keywords or tags that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * @return the value
      **/
     public java.util.List<String> getLabels() {
@@ -511,13 +511,13 @@ public final class ObjectMetadata extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Specifies whether this object is a favorite or not.
+     * Specifies whether this object is a favorite.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     private final Boolean isFavorite;
 
     /**
-     * Specifies whether this object is a favorite or not.
+     * Specifies whether this object is a favorite.
      * @return the value
      **/
     public Boolean getIsFavorite() {

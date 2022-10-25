@@ -118,6 +118,7 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region AF_JOHANNESBURG_1 = register("af-johannesburg-1", Realm.OC1, "jnb");
     public static final Region EU_PARIS_1 = register("eu-paris-1", Realm.OC1, "cdg");
     public static final Region MX_QUERETARO_1 = register("mx-queretaro-1", Realm.OC1, "qro");
+    public static final Region EU_MADRID_1 = register("eu-madrid-1", Realm.OC1, "mad");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -142,6 +143,9 @@ public final class Region implements Serializable, Comparable<Region> {
     // OC10
     public static final Region AP_DCC_CANBERRA_1 = register("ap-dcc-canberra-1", Realm.OC10, "wga");
 
+    // OC14
+    public static final Region EU_DCC_MILAN_1 = register("eu-dcc-milan-1", Realm.OC14, "bgy");
+
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
 
@@ -156,7 +160,7 @@ public final class Region implements Serializable, Comparable<Region> {
      * The region key as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      * or null if none.
      *
-     * Not using Optional<String> here, since that is not serializable.
+     * Not using {@code Optional<String>} here, since that is not serializable.
      */
     private final String regionCode;
 
